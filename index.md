@@ -9,7 +9,7 @@ title: Home
     
     <!-- Left: Logo -->
     <div class="header-logo">
-      <a href="/"><img src="Logo%20Plain.png" alt="Tour With Anand"></a>
+      <a href="/"><img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand"></a>
     </div>
 
     <!-- Center: Navigation -->
@@ -36,15 +36,12 @@ title: Home
         <a href="tel:+919400620615" class="phone-number">+9194006 20615</a>
       </div>
     </div>
-
   </div>
 </header>
 
 
 <!-- ================= HERO BANNER SECTION ================= -->
 <section class="hero-slider">
-
-  <!-- Desktop Slide 1 -->
   <div class="hero-slide active" style="background-image:url('Hero%20Banner%202.png');">
     <div class="hero-overlay">
       <div class="hero-content">
@@ -55,7 +52,6 @@ title: Home
     </div>
   </div>
 
-  <!-- Desktop Slide 2 -->
   <div class="hero-slide" style="background-image:url('Hero%20Banner%201.png');">
     <div class="hero-overlay">
       <div class="hero-content">
@@ -66,7 +62,6 @@ title: Home
     </div>
   </div>
 
-  <!-- Desktop Slide 3 -->
   <div class="hero-slide" style="background-image:url('Hero%20Banner%203.jpg');">
     <div class="hero-overlay">
       <div class="hero-content">
@@ -77,66 +72,41 @@ title: Home
     </div>
   </div>
 
-  <!-- Mobile Hero Section -->
   <div class="mobile-hero">
     <video class="mobile-hero-video" autoplay loop muted playsinline poster="Hero%20Banner%202.png">
       <source src="https://tourwithanand.com/wp-content/uploads/2026/06/U_made_a_mistake_U_have_to_rem-online-video-cutter.com_.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
-
     <div class="mobile-video-caption">
         <p>Hi Friends, I'm MAXX! Connect with my friend Anand</p>
-        <a href="https://wa.me/919400620615" class="mobile-whatsapp-btn" target="_blank" rel="noopener">
-          Chat on WhatsApp
-        </a>
+        <a href="https://wa.me/919400620615" class="mobile-whatsapp-btn">Chat on WhatsApp</a>
     </div>
-    
     <h1>Kochi Airport Taxi Service & South India Tours</h1>
-
-    <p>
-      Tour With Anand provides reliable Kochi Airport taxi services and personalized South India tour packages with private vehicles. We offer safe airport pickup and drop, premium travel comfort, and complete travel support across Kerala and Tamil Nadu.
-    </p>
-
+    <p>Tour With Anand provides reliable Kochi Airport taxi services and personalized South India tour packages with private vehicles.</p>
     <div class="mobile-cta">
       <a href="tel:+919400620615" class="call-btn">📞 Call Anand</a>
       <a href="https://wa.me/919400620615" class="whatsapp-btn">💬 Book Now</a>
     </div>
   </div>
-
 </section>
 
 
 <!-- ================= STYLES ================= -->
 <style>
-/* --- RESET GITHUB THEME DEFAULTS --- */
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: #21242b;
-}
-
-/* Hide the default GitHub Pages title bar */
-header:not(.site-header), .page-header {
-  display: none !important;
-}
-
-/* Remove spacing from default theme wrappers */
-.wrapper, .main-content, .container, .container-lg {
-  max-width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
+/* --- REMOVE GITHUB DEFAULTS --- */
+html, body { margin: 0 !important; padding: 0 !important; background-color: #21242b; }
+.page-header, .project-name, .project-tagline, header:not(.site-header), .main-content { display: none !important; }
+.wrapper { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
 
 /* --- HEADER STYLES --- */
 .site-header {
-  position: relative;
-  z-index: 10;
-  background-color: #21242b;
-  font-family: Arial, sans-serif;
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  border-bottom: 2px solid #1a1c22;
+  position: absolute; /* Place on top of the banner */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(33, 36, 43, 0.9); /* Slight transparency for elegance */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 0;
 }
 
 .header-container {
@@ -145,239 +115,44 @@ header:not(.site-header), .page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 0 40px;
 }
 
-.header-logo img {
-  height: 55px; 
-  display: block;
-}
+.header-logo img { height: 50px; display: block; }
+.header-nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+.header-nav a { color: #ffffff; text-decoration: none; font-size: 13px; line-height: 1.2; font-weight: 500; }
+.header-nav a:hover { color: #ffcc00; }
 
-.header-nav ul {
-  display: flex;
-  gap: 35px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-.header-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  line-height: 1.3;
-  text-align: left;
-  display: block;
-  transition: color 0.3s ease;
-}
-
-.header-nav a:hover {
-  color: #ffcc00;
-}
-
-.header-phone-section {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.phone-icon-box {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 10px;
-  border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.phone-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.phone-label {
-  font-size: 12px;
-  color: #a0a0a0;
-  margin-bottom: 3px;
-}
-
-.phone-number {
-  font-size: 16px;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.phone-number:hover {
-  color: #ffcc00;
-}
+.header-phone-section { display: flex; align-items: center; gap: 10px; }
+.phone-icon-box { border: 1px solid #ffcc00; padding: 8px; border-radius: 50%; display: flex; }
+.phone-text { display: flex; flex-direction: column; }
+.phone-label { font-size: 10px; color: #a0a0a0; }
+.phone-number { font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; }
 
 /* --- HERO STYLES --- */
-.hero-slider {
-  position: relative;
-  height: 85vh; 
-  overflow: hidden;
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: top center; 
-  opacity: 0;
-  transition: opacity 1.2s ease;
-}
-
-.hero-slide.active {
-  opacity: 1;
-}
-
-.hero-overlay {
-  height: 100%;
-  background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.25));
-  display: flex;
-  align-items: center;
-}
-
-.hero-content {
-  max-width: 650px;
-  padding: 60px;
-  color: #fff;
-}
-
-.hero-content h1 {
-  font-size: 46px;
-  color: #ffcc00;
-  margin-bottom: 20px;
-  margin-top: 0;
-}
-
-.hero-content p {
-  font-size: 18px;
-  margin: 18px 0 28px;
-}
-
-.hero-btn {
-  background: linear-gradient(135deg, #ffcc00, #e6b800);
-  color: #000;
-  padding: 14px 34px;
-  border-radius: 35px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
-}
+.hero-slider { position: relative; height: 100vh; overflow: hidden; width: 100%; }
+.hero-slide { position: absolute; inset: 0; background-size: cover; background-position: top center; opacity: 0; transition: opacity 1.2s ease; }
+.hero-slide.active { opacity: 1; }
+.hero-overlay { height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.1)); display: flex; align-items: center; }
+.hero-content { max-width: 600px; padding: 40px 100px; color: #fff; }
+.hero-content h1 { font-size: 44px; color: #ffcc00; margin-bottom: 15px; }
+.hero-btn { background: #ffcc00; color: #000; padding: 12px 30px; border-radius: 30px; font-weight: 700; text-decoration: none; display: inline-block; }
 
 /* --- MOBILE STYLES --- */
-.mobile-hero {
-  display: none;
-  padding: 40px 20px;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(180deg, #0b0f14, #000);
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-
-.mobile-hero-video {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  margin: 0 auto 10px;
-  display: block;
-  border-radius: 8px;
-}
-
-.mobile-video-caption {
-  background-color: #111;
-  padding: 15px;
-  margin-bottom: 25px;
-  border-radius: 8px;
-}
-.mobile-video-caption p {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0 0 10px 0;
-}
-.mobile-whatsapp-btn {
-  display: inline-block;
-  background-color: #25D366;
-  color: #000;
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.mobile-hero h1 {
-  color: #ffcc00;
-  font-size: 28px;
-  margin-bottom: 14px;
-  margin-top: 0;
-}
-
-.mobile-hero p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #e0e0e0;
-  margin-bottom: 30px;
-}
-
-.mobile-cta {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: center;
-}
-
-.call-btn, .whatsapp-btn {
-  width: 100%;
-  max-width: 300px;
-  padding: 14px;
-  border-radius: 40px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.call-btn {
-  border: 2px solid #ffcc00;
-  color: #ffcc00;
-}
-
-.whatsapp-btn {
-  background: linear-gradient(135deg, #ffcc00, #e6b800);
-  color: #000;
-}
-
-/* --- RESPONSIVE ADJUSTMENTS --- */
-@media (max-width: 1150px) {
+.mobile-hero { display: none; padding: 80px 20px; text-align: center; color: #fff; background: #000; }
+@media (max-width: 1000px) {
   .header-nav { display: none; }
-}
-
-@media (max-width: 768px) {
   .hero-slide { display: none; }
   .mobile-hero { display: block; }
-  .hero-slider { height: auto; }
-  .header-container { padding: 15px 20px; justify-content: center; }
-  .header-phone-section { display: none; } 
 }
 </style>
 
-<!-- ================= SCRIPTS ================= -->
 <script>
 const slides = document.querySelectorAll(".hero-slide");
 let current = 0;
-if (window.innerWidth > 768) {
-  setInterval(() => {
-    slides[current].classList.remove("active");
-    current = (current + 1) % slides.length;
-    slides[current].classList.add("active");
-  }, 5000);
-}
+setInterval(() => {
+  slides[current].classList.remove("active");
+  current = (current + 1) % slides.length;
+  slides[current].classList.add("active");
+}, 5000);
 </script>
