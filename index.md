@@ -85,14 +85,66 @@ title: Home
 </section>
 
 
+<section class="fleet-section">
+  <div class="fleet-inner">
+
+    <h2>Kochi Airport Taxi Options – Private Cabs & Airport Transfer Vehicles</h2>
+    
+    <p class="fleet-sub">
+      Choose the best <strong>Kochi Airport taxi service</strong> for safe and comfortable airport pickup and drop. We provide premium <strong>Cochin Airport taxi</strong> options for families, tourists, business travelers, and group tours across Kerala and South India.
+    </p>
+
+    <div class="fleet-slider">
+      <div class="fleet-card">
+        <div class="img-box">
+          <img src="Kochi%20Airport%20Innova%20Taxi%20Service.png" alt="Toyota Innova Crysta Kochi Airport Taxi Service">
+        </div>
+        <h3>Innova Crysta – Premium Taxi</h3>
+        <span>Best private taxi from Kochi Airport for family travel & long-distance trips</span>
+      </div>
+
+      <div class="fleet-card">
+        <div class="img-box">
+          <img src="Kochi%20Airport%20Ertiga%20Taxi%20Service.png" alt="Maruti Ertiga Cochin Airport Cab Service">
+        </div>
+        <h3>Ertiga – Comfortable Cab</h3>
+        <span>Affordable taxi from Kochi Airport for 4–5 passengers</span>
+      </div>
+
+      <div class="fleet-card">
+        <div class="img-box">
+          <img src="Kochi%20Airport%20Swift%20Dezire%20Taxi%20Service.png" alt="Swift Dzire Kochi Airport Pickup Taxi">
+        </div>
+        <h3>Sedan – Pickup & Drop Taxi</h3>
+        <span>Ideal for airport transfers and city travel in Kochi</span>
+      </div>
+
+      <div class="fleet-card">
+        <div class="img-box">
+          <img src="Kochi%20Airport%20Tempo%20Traveller.png" alt="Tempo Traveller Kochi Airport Group Taxi Service">
+        </div>
+        <h3>Tempo Traveller – Group Taxi</h3>
+        <span>Perfect for Kerala tour packages & airport group transfers</span>
+      </div>
+
+      <div class="fleet-card">
+        <div class="img-box">
+          <img src="Kochi%20Airport%20Bus%20Service.png" alt="Luxury Bus Cochin Airport Transfer Service">
+        </div>
+        <h3>Luxury Bus – Corporate Transfer</h3>
+        <span>Large group & corporate transportation from Kochi Airport</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <style>
 /* --- 1. AGGRESSIVE GITHUB THEME OVERRIDES --- */
-/* Hide ALL default GitHub headers, titles, and text */
 header:not(.site-header), .page-header, h1.project-name, h2.project-tagline {
     display: none !important;
 }
 
-/* Force the GitHub container to allow full-width elements */
 .markdown-body, .container, .container-lg, .wrapper {
     max-width: 100% !important;
     width: 100% !important;
@@ -129,7 +181,6 @@ body, html {
     box-sizing: border-box;
 }
 
-/* Logo Background Fix */
 .header-logo img { 
     height: 55px; 
     display: block; 
@@ -206,17 +257,121 @@ body, html {
 .call-btn { border: 2px solid #ffcc00; color: #ffcc00; }
 .whatsapp-btn { background: linear-gradient(135deg, #ffcc00, #e6b800); color: #000; }
 
-/* RESPONSIVE QUERIES */
+/* --- 5. FLEET SECTION STYLES --- */
+.fleet-section {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 100px 40px;
+  background: radial-gradient(circle at top, #1b1f27, #0b0f14);
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.fleet-inner {
+  max-width: 1400px;
+  margin: auto;
+  text-align: center;
+}
+
+.fleet-section h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.fleet-sub {
+  max-width: 850px;
+  margin: 0 auto 60px;
+  color: #ccc;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.fleet-slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 40px) / 3);
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px; 
+}
+
+.fleet-slider::-webkit-scrollbar { display: none; }
+.fleet-slider { -ms-overflow-style: none; scrollbar-width: none; }
+
+.fleet-card {
+  scroll-snap-align: start;
+  background: linear-gradient(180deg, #111, #1c1f25);
+  border-radius: 22px;
+  padding: 20px;
+  border: 1px solid rgba(255,204,0,.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.fleet-card:hover {
+  transform: translateY(-10px);
+  border-color: #ffcc00;
+  box-shadow: 0 20px 40px rgba(0,0,0,.8);
+}
+
+.img-box {
+  width: 100%;
+  aspect-ratio: 28 / 10;
+  background: transparent; 
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fleet-card h3 {
+  color: #ffcc00;
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.fleet-card span {
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.6;
+  display: block;
+}
+
+/* --- RESPONSIVE QUERIES --- */
 @media (max-width: 1100px) {
   .header-nav { display: none; }
   .header-container { justify-content: space-around; }
 }
+
+@media (max-width: 992px) {
+  .fleet-slider { grid-auto-columns: calc((100% - 20px) / 2); }
+}
+
 @media (max-width: 768px) {
   .hero-slide { display: none; }
   .mobile-hero { display: block; }
   .hero-slider { height: auto; }
   .header-phone-section { display: none; }
   .header-container { justify-content: center; padding: 15px; }
+  
+  .fleet-section { padding: 70px 20px; }
+  .fleet-slider { grid-auto-columns: 85%; }
+  .fleet-section h2 { font-size: 26px; }
 }
 </style>
 
