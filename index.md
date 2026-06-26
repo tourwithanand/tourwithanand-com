@@ -108,6 +108,25 @@ title: Home
 
 <!-- ================= STYLES ================= -->
 <style>
+/* --- RESET GITHUB THEME DEFAULTS --- */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #21242b;
+}
+
+/* Hide the default GitHub Pages title bar */
+header:not(.site-header), .page-header {
+  display: none !important;
+}
+
+/* Remove spacing from default theme wrappers */
+.wrapper, .main-content, .container, .container-lg {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 /* --- HEADER STYLES --- */
 .site-header {
   position: relative;
@@ -208,7 +227,7 @@ title: Home
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: top center; /* Anchors the image to the top to prevent cropping */
+  background-position: top center; 
   opacity: 0;
   transition: opacity 1.2s ease;
 }
