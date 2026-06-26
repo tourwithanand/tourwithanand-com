@@ -244,6 +244,34 @@ title: Home
   </div>
 </section>
 
+<!-- ================= GUEST GALLERY SECTION ================= -->
+<section class="guest-gallery-section">
+  <div class="gallery-container">
+    <h2>Guest Moments with Tour With Anand</h2>
+    <p class="gallery-sub">
+      Real memories shared by our happy guests while exploring Kerala and South India with us.
+    </p>
+
+    <div class="gallery-slider">
+      <div class="gallery-card"><img src="Guest%20Happy%20Customers%20at%20Tour%20with%20anand.png" alt="Happy Customers at Tour with Anand" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Kochi%20Airport%20Taxi%20Service%20-%20Tour%20With%20Anand%20guest.png" alt="Kochi Airport Taxi Service Guest" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Kochi%20Airport%20Taxi%20Service%20at%20Tour%20With%20Anand%20guest.png" alt="Kochi Airport Taxi Service at Tour With Anand" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20South%20African%20Guest%20at%20Kochi%20Airport.png" alt="South African Guest at Kochi Airport" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20Guest%20at%20Munnar%20Taxi%20Service.png" alt="Guest at Munnar Taxi Service" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20With%20Guest%20at%20COK%20Airport.jpeg" alt="Tour With Anand With Guest at COK Airport" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20With%20Guest%20at%20Munnar.jpeg" alt="Tour With Anand With Guest at Munnar" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20With%20Guest.png" alt="Tour With Anand With Guest" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20at%20Kochi%20airport%20with%20Guest.jpeg" alt="Tour With Anand at Kochi airport with Guest" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20at%20Munnar%20Hill%20Station.png" alt="Tour With Anand at Munnar Hill Station" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20with%20Elephant%20ride.jpeg" alt="Tour With Anand with Elephant ride" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20with%20Family%20Guest.jpeg" alt="Tour With Anand with Family Guest" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20with%20guest%20at%20Hill%20Station.jpeg" alt="Tour With Anand with guest at Hill Station" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20US.png" alt="US Guest" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest%20Varughese-from-US-Tour-With-Anand.jpeg" alt="Varughese from US Tour With Anand" loading="lazy"></div>
+      <div class="gallery-card"><img src="Guest.png" alt="Tour Guest" loading="lazy"></div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= STYLES ================= -->
 <style>
@@ -623,6 +651,73 @@ body, html {
   display: block;
 }
 
+/* --- 9. GUEST GALLERY SECTION --- */
+.guest-gallery-section {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 100px 40px;
+  background: #12141a; 
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.gallery-container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.guest-gallery-section h2 { 
+  font-size: 38px; 
+  font-weight: 800; 
+  color: #fff; 
+  margin-bottom: 15px; 
+}
+
+.gallery-sub { 
+  max-width: 800px; 
+  margin: 0 auto 50px; 
+  color: #ccc; 
+  font-size: 17px; 
+  line-height: 1.8; 
+}
+
+.gallery-slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 300px;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+
+.gallery-slider::-webkit-scrollbar { display: none; }
+.gallery-slider { -ms-overflow-style: none; scrollbar-width: none; }
+
+.gallery-card {
+  scroll-snap-align: start;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 204, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  border-color: #ffcc00;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
 /* --- RESPONSIVE QUERIES --- */
 @media (max-width: 1100px) {
   .header-nav { display: none; }
@@ -654,6 +749,10 @@ body, html {
   .destinations-section { padding: 60px 20px 80px; }
   .destinations-grid { grid-template-columns: 1fr; gap: 40px; }
   .destinations-section h2 { font-size: 28px; }
+  
+  .guest-gallery-section { padding: 60px 20px 80px; }
+  .guest-gallery-section h2 { font-size: 28px; }
+  .gallery-slider { grid-auto-columns: 85%; }
 }
 </style>
 
