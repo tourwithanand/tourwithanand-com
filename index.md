@@ -3,13 +3,16 @@ layout: default
 title: Home
 ---
 
+<!-- ================= HEADER SECTION ================= -->
 <header class="site-header">
   <div class="header-container">
     
+    <!-- Left: Logo -->
     <div class="header-logo">
       <a href="/"><img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand"></a>
     </div>
 
+    <!-- Center: Navigation (Now placed next to the logo) -->
     <nav class="header-nav">
       <ul>
         <li><a href="#">About<br>Us</a></li>
@@ -21,6 +24,7 @@ title: Home
       </ul>
     </nav>
 
+    <!-- Right: Call Section (Pushed to the far right) -->
     <div class="header-phone-section">
       <div class="phone-icon-box">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -36,6 +40,7 @@ title: Home
 </header>
 
 
+<!-- ================= HERO BANNER SECTION ================= -->
 <section class="hero-slider">
   <div class="hero-slide active" style="background-image:url('Hero%20Banner%202.png');">
     <div class="hero-overlay">
@@ -67,6 +72,7 @@ title: Home
     </div>
   </div>
 
+  <!-- Mobile Hero Section -->
   <div class="mobile-hero">
     <video class="mobile-hero-video" autoplay loop muted playsinline poster="Hero%20Banner%202.png">
       <source src="https://tourwithanand.com/wp-content/uploads/2026/06/U_made_a_mistake_U_have_to_rem-online-video-cutter.com_.mp4" type="video/mp4">
@@ -85,6 +91,7 @@ title: Home
 </section>
 
 
+<!-- ================= FLEET SECTION ================= -->
 <section class="fleet-section">
   <div class="fleet-inner">
 
@@ -95,6 +102,7 @@ title: Home
     </p>
 
     <div class="fleet-slider">
+      <!-- INNOVA -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Innova%20Taxi%20Service.png" alt="Toyota Innova Crysta Kochi Airport Taxi Service">
@@ -103,6 +111,7 @@ title: Home
         <span>Best private taxi from Kochi Airport for family travel & long-distance trips</span>
       </div>
 
+      <!-- ERTIGA -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Ertiga%20Taxi%20Service.png" alt="Maruti Ertiga Cochin Airport Cab Service">
@@ -111,6 +120,7 @@ title: Home
         <span>Affordable taxi from Kochi Airport for 4–5 passengers</span>
       </div>
 
+      <!-- DZIRE -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Swift%20Dezire%20Taxi%20Service.png" alt="Swift Dzire Kochi Airport Pickup Taxi">
@@ -119,6 +129,7 @@ title: Home
         <span>Ideal for airport transfers and city travel in Kochi</span>
       </div>
 
+      <!-- TEMPO -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Tempo%20Traveller.png" alt="Tempo Traveller Kochi Airport Group Taxi Service">
@@ -127,6 +138,7 @@ title: Home
         <span>Perfect for Kerala tour packages & airport group transfers</span>
       </div>
 
+      <!-- BUS -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Bus%20Service.png" alt="Luxury Bus Cochin Airport Transfer Service">
@@ -139,9 +151,16 @@ title: Home
 </section>
 
 
+<!-- ================= STYLES ================= -->
 <style>
-/* --- 1. AGGRESSIVE GITHUB THEME OVERRIDES --- */
-header:not(.site-header), .page-header, h1.project-name, h2.project-tagline {
+/* --- 1. EXTREME GITHUB THEME OVERRIDES --- */
+/* This completely removes the blue "tourwithanand-com" default title and spacing */
+header:not(.site-header), 
+.page-header, 
+h1.project-name, 
+h2.project-tagline, 
+.site-title, 
+.repository-content > header {
     display: none !important;
 }
 
@@ -159,15 +178,15 @@ body, html {
     overflow-x: hidden;
 }
 
-/* --- 2. CUSTOM HEADER STYLES --- */
+/* --- 2. CUSTOM PREMIUM HEADER STYLES --- */
 .site-header {
     width: 100vw !important;
-    position: relative;
+    position: relative; /* Places header above the banner instead of overlapping */
     left: 50%;
     transform: translateX(-50%);
-    background-color: #21242b;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px 0;
+    background-color: #1a1c22; /* Sleek, dark premium color */
+    border-bottom: 2px solid #282c34;
+    padding: 12px 0;
     z-index: 100;
 }
 
@@ -175,9 +194,10 @@ body, html {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Aligns everything from left to right */
     align-items: center;
     padding: 0 40px;
+    gap: 40px; /* Perfect spacing between logo and menu links */
     box-sizing: border-box;
 }
 
@@ -185,19 +205,19 @@ body, html {
     height: 55px; 
     display: block; 
     background: transparent !important; 
-    background-color: transparent !important;
     border: none !important;
 }
 
+.header-nav { margin-right: auto; } /* Pushes the phone section far to the right */
 .header-nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
-.header-nav a { color: #ffffff; text-decoration: none; font-size: 13px; line-height: 1.2; font-weight: 500; }
+.header-nav a { color: #ffffff; text-decoration: none; font-size: 13px; line-height: 1.2; font-weight: 500; transition: color 0.3s; }
 .header-nav a:hover { color: #ffcc00; }
 
 .header-phone-section { display: flex; align-items: center; gap: 10px; }
 .phone-icon-box { border: 1px solid rgba(255, 255, 255, 0.15); padding: 8px; border-radius: 6px; display: flex; }
 .phone-text { display: flex; flex-direction: column; }
-.phone-label { font-size: 10px; color: #a0a0a0; margin-bottom: 2px; }
-.phone-number { font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; }
+.phone-label { font-size: 10px; color: #a0a0a0; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+.phone-number { font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; transition: color 0.3s; }
 .phone-number:hover { color: #ffcc00; }
 
 /* --- 3. HERO SLIDER STYLES --- */
@@ -214,7 +234,7 @@ body, html {
     position: absolute; 
     inset: 0; 
     background-size: cover; 
-    background-position: center; 
+    background-position: top center; /* Anchors image to the top so nothing is cut off */
     opacity: 0; 
     transition: opacity 1.2s ease; 
 }
@@ -231,7 +251,8 @@ body, html {
 .hero-content { max-width: 650px; padding: 40px 80px; color: #fff; }
 .hero-content h1 { font-size: 46px; color: #ffcc00; margin-bottom: 15px; margin-top: 0; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 25px 0; line-height: 1.5; color: #f0f0f0; }
-.hero-btn { background: linear-gradient(135deg, #ffcc00, #e6b800); color: #000; padding: 14px 34px; border-radius: 35px; font-weight: 700; text-decoration: none; display: inline-block; }
+.hero-btn { background: linear-gradient(135deg, #ffcc00, #e6b800); color: #000; padding: 14px 34px; border-radius: 35px; font-weight: 700; text-decoration: none; display: inline-block; transition: transform 0.2s; }
+.hero-btn:hover { transform: scale(1.05); }
 
 /* --- 4. MOBILE STYLES --- */
 .mobile-hero { 
@@ -275,20 +296,8 @@ body, html {
   text-align: center;
 }
 
-.fleet-section h2 {
-  font-size: 38px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.fleet-sub {
-  max-width: 850px;
-  margin: 0 auto 60px;
-  color: #ccc;
-  font-size: 17px;
-  line-height: 1.8;
-}
+.fleet-section h2 { font-size: 38px; font-weight: 800; margin-bottom: 20px; color: #fff; }
+.fleet-sub { max-width: 850px; margin: 0 auto 60px; color: #ccc; font-size: 17px; line-height: 1.8; }
 
 .fleet-slider {
   display: grid;
@@ -323,7 +332,7 @@ body, html {
 .img-box {
   width: 100%;
   aspect-ratio: 28 / 10;
-  background: transparent; 
+  background: #000 !important; /* Force Black Background For Vehicles */
   overflow: hidden;
   border-radius: 14px;
   margin-bottom: 15px;
@@ -332,30 +341,14 @@ body, html {
   justify-content: center;
 }
 
-.img-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.fleet-card h3 {
-  color: #ffcc00;
-  font-size: 18px;
-  margin-bottom: 8px;
-  margin-top: 0;
-}
-
-.fleet-card span {
-  font-size: 14px;
-  color: #ddd;
-  line-height: 1.6;
-  display: block;
-}
+.img-box img { width: 100%; height: 100%; object-fit: contain; }
+.fleet-card h3 { color: #ffcc00; font-size: 18px; margin-bottom: 8px; margin-top: 0; }
+.fleet-card span { font-size: 14px; color: #ddd; line-height: 1.6; display: block; }
 
 /* --- RESPONSIVE QUERIES --- */
 @media (max-width: 1100px) {
   .header-nav { display: none; }
-  .header-container { justify-content: space-around; }
+  .header-container { justify-content: space-between; }
 }
 
 @media (max-width: 992px) {
@@ -375,6 +368,7 @@ body, html {
 }
 </style>
 
+<!-- ================= SCRIPTS ================= -->
 <script>
 const slides = document.querySelectorAll(".hero-slide");
 let current = 0;
