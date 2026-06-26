@@ -62,15 +62,12 @@ title: Home
 </div>
 
 
-<!-- ================= CINEMATIC HERO SECTION ================= -->
-<section class="hero-slider">
+<!-- ================= DESKTOP CINEMATIC HERO SECTION ================= -->
+<section class="desktop-hero">
   
-  <!-- Slide 1 -->
+  <!-- Desktop Slide 1 -->
   <div class="hero-slide active">
-    <picture class="hero-bg">
-      <source media="(max-width: 768px)" srcset="Hero%20Banner%20Anand%202.png">
-      <img src="Hero%20Banner%202.png" alt="South India Tours">
-    </picture>
+    <div class="hero-bg"><img src="Hero%20Banner%202.png" alt="South India Tours"></div>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>South India Tours & Beyond</h1>
@@ -80,12 +77,9 @@ title: Home
     </div>
   </div>
 
-  <!-- Slide 2 -->
+  <!-- Desktop Slide 2 -->
   <div class="hero-slide">
-    <picture class="hero-bg">
-      <source media="(max-width: 768px)" srcset="Hero%20Banner%20Car.jpg">
-      <img src="Hero%20Banner%201.png" alt="Kerala Escapes">
-    </picture>
+    <div class="hero-bg"><img src="Hero%20Banner%201.png" alt="Kerala Escapes"></div>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Kerala & Tamil Nadu Escapes</h1>
@@ -95,12 +89,9 @@ title: Home
     </div>
   </div>
 
-  <!-- Slide 3 -->
+  <!-- Desktop Slide 3 -->
   <div class="hero-slide">
-    <picture class="hero-bg">
-      <source media="(max-width: 768px)" srcset="Hero%20Banner%20Anand.png">
-      <img src="Hero%20Banner%203.jpg" alt="Kochi Airport Taxi">
-    </picture>
+    <div class="hero-bg"><img src="Hero%20Banner%203.jpg" alt="Kochi Airport Taxi"></div>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Kochi Airport Transfers</h1>
@@ -109,7 +100,37 @@ title: Home
       </div>
     </div>
   </div>
+</section>
 
+<!-- ================= MOBILE HERO SECTION ================= -->
+<section class="mobile-hero">
+  <div class="m-hero-container">
+    
+    <!-- Mobile Slide 1 -->
+    <div class="m-hero-slide active">
+      <div class="m-hero-img">
+        <img src="Mobile%20Munnar%20Scenery%20Hero%20Section.jpg" alt="South India Tours">
+      </div>
+      <div class="m-hero-content">
+        <h1>South India Tours & Beyond</h1>
+        <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
+        <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
+      </div>
+    </div>
+
+    <!-- Mobile Slide 2 -->
+    <div class="m-hero-slide">
+      <div class="m-hero-img">
+        <img src="Mobile%20Hero%20Airprot.jpg" alt="Kochi Airport Taxi">
+      </div>
+      <div class="m-hero-content">
+        <h1>Kochi Airport Transfers</h1>
+        <p>Reliable 24/7 premium airport pickup and drop services with professional chauffeurs.</p>
+        <a href="https://wa.me/919400620615" class="luxury-btn">Book Your Ride</a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 
@@ -408,9 +429,6 @@ title: Home
     <div class="footer-col brand-col">
       <img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand" class="footer-logo">
       <p>Premium airport taxi and bespoke tour services across South India. Based near Kochi International Airport, dedicated to guest safety and comfort.</p>
-      <div class="footer-socials">
-        <!-- Add social icons here if needed -->
-      </div>
     </div>
 
     <div class="footer-col links-col">
@@ -506,7 +524,6 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 /* --- MOBILE HAMBURGER MENU --- */
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
 .hamburger span { width: 26px; height: 2px; background: #ffcc00; transition: 0.3s; border-radius: 2px; }
-
 .mobile-nav-overlay { position: fixed; top: 0; right: -100%; width: 100vw; height: 100vh; background: rgba(5, 6, 8, 0.98); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
 .mobile-nav-overlay.active { right: 0; }
 .close-menu { position: absolute; top: 25px; right: 30px; font-size: 30px; color: #fff; cursor: pointer; transition: 0.3s; }
@@ -520,10 +537,10 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .mobile-nav-btn.call { border: 1px solid #ffcc00; color: #ffcc00; }
 .mobile-nav-btn.wa { background: #25d366; color: #fff; border: 1px solid #25d366;}
 
-/* --- HERO SLIDER --- */
-.hero-slider { width: 100vw; position: relative; height: 100vh; overflow: hidden; margin-top: 0; background: #000; }
-.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.5s ease; }
-.hero-slide.active { opacity: 1; }
+/* --- DESKTOP HERO SLIDER --- */
+.desktop-hero { width: 100vw; position: relative; height: 100vh; overflow: hidden; margin-top: 0; background: #000; display: block; }
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; } /* Snappy perfectly synced fade */
+.hero-slide.active { opacity: 1; z-index: 2;}
 .hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden;}
 .hero-bg img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); transition: transform 15s linear; }
 .hero-slide.active .hero-bg img { transform: scale(1.1); }
@@ -531,6 +548,17 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .hero-content { max-width: 650px; padding: 0 100px; color: #fff; }
 .hero-content h1 { font-size: 58px; color: #fff; margin-bottom: 20px; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 35px 0; line-height: 1.6; color: #b0b5be; font-weight: 300; }
+
+/* --- MOBILE HERO SLIDER --- */
+.mobile-hero { display: none; position: relative; width: 100vw; padding-top: 75px; background: #0a0b0e; } /* Push down under header */
+.m-hero-container { position: relative; width: 100%; display: grid; }
+.m-hero-slide { grid-area: 1 / 1; opacity: 0; transition: opacity 0.8s ease; visibility: hidden; display: flex; flex-direction: column;}
+.m-hero-slide.active { opacity: 1; visibility: visible; z-index: 2; }
+.m-hero-img { width: 100%; height: 350px; }
+.m-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+.m-hero-content { padding: 40px 20px 60px; text-align: center; background: #0a0b0e; flex: 1;}
+.m-hero-content h1 { font-size: 34px; color: #fff; margin-bottom: 15px; line-height: 1.2;}
+.m-hero-content p { font-size: 16px; color: #a0a4ab; margin-bottom: 25px; line-height: 1.6; }
 
 /* --- SECTIONS SPACING --- */
 .fleet-section, .unesco-section, .guest-gallery-section, .faq-section { padding: 120px 0; background: #0e1015; width: 100vw; }
@@ -624,16 +652,11 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 
 /* --- FOOTER --- */
 .luxury-footer { background: #050608; border-top: 1px solid rgba(255,204,0,0.1); width: 100vw; position: relative;}
-/* Adds a subtle premium glow to the footer */
 .luxury-footer::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width: 80%; height: 1px; box-shadow: 0 0 30px 2px rgba(255,204,0,0.2); }
-
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; padding: 80px 40px; }
 .footer-col h3 { color: #fff; font-size: 20px; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
 .footer-col p { color: #a0a4ab; font-size: 15px; line-height: 1.8; margin-bottom: 15px; }
-
-/* LOGO FIX EXACTLY AS REQUESTED */
 .footer-logo { height: 65px; margin-bottom: 20px; display: block; background: transparent !important; background-color: transparent !important; border: none !important; }
-
 .links-col ul { list-style: none; padding: 0; margin: 0; }
 .links-col ul li { margin-bottom: 12px; }
 .links-col ul li a { color: #a0a4ab; text-decoration: none; font-size: 15px; transition: color 0.3s ease; }
@@ -653,13 +676,12 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .float-wa { background: linear-gradient(135deg, #25d366, #1da851); box-shadow: 0 10px 25px rgba(37,211,102,0.4); }
 .float-call { background: linear-gradient(135deg, #2f80ed, #1c66c9); box-shadow: 0 10px 25px rgba(47,128,237,0.4); }
 
-
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 1100px) {
   .header-nav { display: none; }
   .header-phone-section { display: none; }
   .header-container { justify-content: space-between; }
-  .hamburger { display: flex; } /* Shows Mobile Menu Icon */
+  .hamburger { display: flex; } 
   
   .message-wrap { flex-direction: column; text-align: center; }
   .message-img { margin-bottom: 40px; }
@@ -676,13 +698,12 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 }
 
 @media (max-width: 768px) {
+  /* HIDE DESKTOP HERO, SHOW MOBILE HERO */
+  .desktop-hero { display: none; }
+  .mobile-hero { display: block; }
+  
   .section-container { padding: 0 20px; }
   .section-title { font-size: 32px; }
-  
-  .hero-overlay { padding-top: 80px; background: rgba(0,0,0,0.65); }
-  .hero-content { padding: 0 20px; text-align: center; }
-  .hero-content h1 { font-size: 38px; }
-  .hero-content p { font-size: 16px; }
 
   .fleet-section, .destinations-section, .unesco-section, .message-section, .guest-gallery-section, .review-section, .blog-section, .faq-section, .lead-form-section { padding: 80px 0; }
   
@@ -734,14 +755,27 @@ function toggleMobileMenu() {
   document.getElementById('mobileNav').classList.toggle('active');
 }
 
-// Hero Slider Script runs on all devices
-const slides = document.querySelectorAll(".hero-slide");
-let current = 0;
-setInterval(() => {
-  slides[current].classList.remove("active");
-  current = (current + 1) % slides.length;
-  slides[current].classList.add("active");
-}, 5000); 
+// DESKTOP Hero Slider Logic
+const dSlides = document.querySelectorAll(".desktop-hero .hero-slide");
+let dCurrent = 0;
+if(dSlides.length > 0) {
+  setInterval(() => {
+    dSlides[dCurrent].classList.remove("active");
+    dCurrent = (dCurrent + 1) % dSlides.length;
+    dSlides[dCurrent].classList.add("active");
+  }, 5000); 
+}
+
+// MOBILE Hero Slider Logic
+const mSlides = document.querySelectorAll(".mobile-hero .m-hero-slide");
+let mCurrent = 0;
+if(mSlides.length > 0) {
+  setInterval(() => {
+    mSlides[mCurrent].classList.remove("active");
+    mCurrent = (mCurrent + 1) % mSlides.length;
+    mSlides[mCurrent].classList.add("active");
+  }, 5000); 
+}
 
 // WhatsApp Form Script
 function sendWhatsApp() {
