@@ -1,8 +1,15 @@
+---
+layout: default
+title: Home
+---
+
 <section class="hero-slider">
 
-  <div class="hero-slide active" style="background-image:url('https://tourwithanand.com/wp-content/uploads/2025/06/home-banner-2.png');">
+  <!-- Desktop Slide 1 -->
+  <div class="hero-slide active" style="background-image:url('Hero%20Banner%202.png');">
     <div class="hero-overlay">
       <div class="hero-content">
+        <img src="Tour%20With%20Anand%20Logo.png" alt="Tour With Anand Logo" style="max-width: 180px; margin-bottom: 20px;">
         <h1>South India Tours & Beyond</h1>
         <p>Kochi Airport–based personalized South India tours with brand new vehicles, premium service, and complete travel support across Kerala and Tamil Nadu.</p>
         <a href="https://wa.me/919400620615" class="hero-btn">Book Now</a>
@@ -10,9 +17,11 @@
     </div>
   </div>
 
-  <div class="hero-slide" style="background-image:url('https://tourwithanand.com/wp-content/uploads/2025/06/home-banner-1.png');">
+  <!-- Desktop Slide 2 -->
+  <div class="hero-slide" style="background-image:url('Hero%20Banner%201.png');">
     <div class="hero-overlay">
       <div class="hero-content">
+        <img src="Tour%20With%20Anand%20Logo.png" alt="Tour With Anand Logo" style="max-width: 180px; margin-bottom: 20px;">
         <h1>Kerala & Tamil Nadu Tour Packages</h1>
         <p>Custom holidays and pilgrimage tours across South India.</p>
         <a href="https://wa.me/919400620615" class="hero-btn">Book Now</a>
@@ -20,9 +29,11 @@
     </div>
   </div>
 
-  <div class="hero-slide" style="background-image:url('https://tourwithanand.com/wp-content/uploads/2025/06/travel.jpg');">
+  <!-- Desktop Slide 3 -->
+  <div class="hero-slide" style="background-image:url('Hero%20Banner%203.jpg');">
     <div class="hero-overlay">
       <div class="hero-content">
+        <img src="Tour%20With%20Anand%20Logo.png" alt="Tour With Anand Logo" style="max-width: 180px; margin-bottom: 20px;">
         <h1>Kochi Airport Taxi Service</h1>
         <p>24×7 airport pickup and drop with professional drivers.</p>
         <a href="https://wa.me/919400620615" class="hero-btn">Book Now</a>
@@ -30,14 +41,17 @@
     </div>
   </div>
 
+  <!-- Mobile Hero Section -->
   <div class="mobile-hero">
-    <video class="mobile-hero-video" autoplay loop muted playsinline poster="https://tourwithanand.com/wp-content/uploads/2025/06/home-banner-2.png">
+    <img src="Tour%20With%20Anand%20Logo.png" alt="Tour With Anand Logo" style="max-width: 150px; margin: 0 auto 20px; display: block;">
+    
+    <video class="mobile-hero-video" autoplay loop muted playsinline poster="Hero%20Banner%202.png">
       <source src="https://tourwithanand.com/wp-content/uploads/2026/06/U_made_a_mistake_U_have_to_rem-online-video-cutter.com_.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
     <div class="mobile-video-caption">
-        <p>Hi Friends, I'm MAX! Connect with my friend Anand</p>
+        <p>Hi Friends, I'm MAXX! Connect with my friend Anand</p>
         <a href="https://wa.me/919400620615" class="mobile-whatsapp-btn" target="_blank" rel="noopener">
           Chat on WhatsApp
         </a>
@@ -63,6 +77,10 @@
   position: relative;
   height: 90vh;
   overflow: hidden;
+  /* Screen width fix */
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .hero-slide {
@@ -119,13 +137,17 @@
   text-align: center;
   color: #fff;
   background: linear-gradient(180deg, #0b0f14, #000);
+  /* Screen width fix applied to mobile background as well */
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .mobile-hero-video {
   width: 100%;
   max-width: 400px;
   height: auto;
-  margin: 0 auto 10px; /* Reduced bottom margin to make caption closer */
+  margin: 0 auto 10px;
   display: block;
   border-radius: 8px;
 }
