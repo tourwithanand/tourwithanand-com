@@ -3,16 +3,13 @@ layout: default
 title: Home
 ---
 
-<!-- ================= HEADER SECTION ================= -->
 <header class="site-header">
   <div class="header-container">
     
-    <!-- Left: Logo -->
     <div class="header-logo">
       <a href="/"><img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand"></a>
     </div>
 
-    <!-- Center: Navigation -->
     <nav class="header-nav">
       <ul>
         <li><a href="#">About<br>Us</a></li>
@@ -24,7 +21,6 @@ title: Home
       </ul>
     </nav>
 
-    <!-- Right: Call Section -->
     <div class="header-phone-section">
       <div class="phone-icon-box">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -40,7 +36,6 @@ title: Home
 </header>
 
 
-<!-- ================= HERO BANNER SECTION ================= -->
 <section class="hero-slider">
   <div class="hero-slide active" style="background-image:url('Hero%20Banner%202.png');">
     <div class="hero-overlay">
@@ -90,69 +85,149 @@ title: Home
 </section>
 
 
-<!-- ================= STYLES ================= -->
 <style>
-/* --- REMOVE GITHUB DEFAULTS --- */
-html, body { margin: 0 !important; padding: 0 !important; background-color: #21242b; }
-.page-header, .project-name, .project-tagline, header:not(.site-header), .main-content { display: none !important; }
-.wrapper { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+/* --- 1. AGGRESSIVE GITHUB THEME OVERRIDES --- */
+/* Hide ALL default GitHub headers, titles, and text */
+header:not(.site-header), .page-header, h1.project-name, h2.project-tagline {
+    display: none !important;
+}
 
-/* --- HEADER STYLES --- */
+/* Force the GitHub container to allow full-width elements */
+.markdown-body, .container, .container-lg, .wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #21242b !important;
+    overflow-x: hidden;
+}
+
+/* --- 2. CUSTOM HEADER STYLES --- */
 .site-header {
-  position: absolute; /* Place on top of the banner */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background-color: rgba(33, 36, 43, 0.9); /* Slight transparency for elegance */
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding: 10px 0;
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #21242b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 0;
+    z-index: 100;
 }
 
 .header-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
-.header-logo img { height: 50px; display: block; }
+/* Logo Background Fix */
+.header-logo img { 
+    height: 55px; 
+    display: block; 
+    background: transparent !important; 
+    background-color: transparent !important;
+    border: none !important;
+}
+
 .header-nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
 .header-nav a { color: #ffffff; text-decoration: none; font-size: 13px; line-height: 1.2; font-weight: 500; }
 .header-nav a:hover { color: #ffcc00; }
 
 .header-phone-section { display: flex; align-items: center; gap: 10px; }
-.phone-icon-box { border: 1px solid #ffcc00; padding: 8px; border-radius: 50%; display: flex; }
+.phone-icon-box { border: 1px solid rgba(255, 255, 255, 0.15); padding: 8px; border-radius: 6px; display: flex; }
 .phone-text { display: flex; flex-direction: column; }
-.phone-label { font-size: 10px; color: #a0a0a0; }
+.phone-label { font-size: 10px; color: #a0a0a0; margin-bottom: 2px; }
 .phone-number { font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; }
+.phone-number:hover { color: #ffcc00; }
 
-/* --- HERO STYLES --- */
-.hero-slider { position: relative; height: 100vh; overflow: hidden; width: 100%; }
-.hero-slide { position: absolute; inset: 0; background-size: cover; background-position: top center; opacity: 0; transition: opacity 1.2s ease; }
+/* --- 3. HERO SLIDER STYLES --- */
+.hero-slider { 
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 85vh; 
+    overflow: hidden; 
+}
+
+.hero-slide { 
+    position: absolute; 
+    inset: 0; 
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0; 
+    transition: opacity 1.2s ease; 
+}
+
 .hero-slide.active { opacity: 1; }
-.hero-overlay { height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.1)); display: flex; align-items: center; }
-.hero-content { max-width: 600px; padding: 40px 100px; color: #fff; }
-.hero-content h1 { font-size: 44px; color: #ffcc00; margin-bottom: 15px; }
-.hero-btn { background: #ffcc00; color: #000; padding: 12px 30px; border-radius: 30px; font-weight: 700; text-decoration: none; display: inline-block; }
 
-/* --- MOBILE STYLES --- */
-.mobile-hero { display: none; padding: 80px 20px; text-align: center; color: #fff; background: #000; }
-@media (max-width: 1000px) {
+.hero-overlay { 
+    height: 100%; 
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.25)); 
+    display: flex; 
+    align-items: center; 
+}
+
+.hero-content { max-width: 650px; padding: 40px 80px; color: #fff; }
+.hero-content h1 { font-size: 46px; color: #ffcc00; margin-bottom: 15px; margin-top: 0; line-height: 1.1; }
+.hero-content p { font-size: 18px; margin: 0 0 25px 0; line-height: 1.5; color: #f0f0f0; }
+.hero-btn { background: linear-gradient(135deg, #ffcc00, #e6b800); color: #000; padding: 14px 34px; border-radius: 35px; font-weight: 700; text-decoration: none; display: inline-block; }
+
+/* --- 4. MOBILE STYLES --- */
+.mobile-hero { 
+    display: none; 
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 60px 20px; 
+    text-align: center; 
+    color: #fff; 
+    background: #000; 
+}
+
+.mobile-hero-video { width: 100%; max-width: 400px; height: auto; margin: 0 auto 10px; display: block; border-radius: 8px; }
+.mobile-video-caption { background-color: #111; padding: 15px; margin-bottom: 25px; border-radius: 8px; }
+.mobile-video-caption p { color: #fff; font-size: 16px; font-weight: 700; margin: 0 0 10px 0; }
+.mobile-whatsapp-btn { display: inline-block; background-color: #25D366; color: #000; padding: 10px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 14px; }
+.mobile-hero h1 { color: #ffcc00; font-size: 28px; margin-bottom: 14px; margin-top: 0; }
+.mobile-hero p { font-size: 15px; line-height: 1.6; color: #e0e0e0; margin-bottom: 30px; }
+.mobile-cta { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.call-btn, .whatsapp-btn { width: 100%; max-width: 300px; padding: 14px; border-radius: 40px; font-weight: 700; text-decoration: none; }
+.call-btn { border: 2px solid #ffcc00; color: #ffcc00; }
+.whatsapp-btn { background: linear-gradient(135deg, #ffcc00, #e6b800); color: #000; }
+
+/* RESPONSIVE QUERIES */
+@media (max-width: 1100px) {
   .header-nav { display: none; }
+  .header-container { justify-content: space-around; }
+}
+@media (max-width: 768px) {
   .hero-slide { display: none; }
   .mobile-hero { display: block; }
+  .hero-slider { height: auto; }
+  .header-phone-section { display: none; }
+  .header-container { justify-content: center; padding: 15px; }
 }
 </style>
 
 <script>
 const slides = document.querySelectorAll(".hero-slide");
 let current = 0;
-setInterval(() => {
-  slides[current].classList.remove("active");
-  current = (current + 1) % slides.length;
-  slides[current].classList.add("active");
-}, 5000);
+if (window.innerWidth > 768) {
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 5000);
+}
 </script>
