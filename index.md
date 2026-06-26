@@ -11,6 +11,7 @@ title: Home
       <a href="/"><img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand"></a>
     </div>
 
+    <!-- Desktop Nav -->
     <nav class="header-nav">
       <ul>
         <li><a href="#">About Us</a></li>
@@ -21,6 +22,7 @@ title: Home
       </ul>
     </nav>
 
+    <!-- Header Contact -->
     <div class="header-phone-section">
       <div class="phone-icon-box">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -32,13 +34,43 @@ title: Home
         <a href="tel:+919400620615" class="phone-number">+9194006 20615</a>
       </div>
     </div>
+
+    <!-- Mobile Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
   </div>
 </header>
+
+<!-- ================= MOBILE MENU OVERLAY ================= -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="close-menu" onclick="toggleMobileMenu()">✕</div>
+  <ul class="mobile-nav-list">
+    <li><a href="#" onclick="toggleMobileMenu()">About Us</a></li>
+    <li><a href="#" onclick="toggleMobileMenu()">Kochi Airport Taxi</a></li>
+    <li><a href="#" onclick="toggleMobileMenu()">Tempo Rentals</a></li>
+    <li><a href="#" onclick="toggleMobileMenu()">South India Tours</a></li>
+    <li><a href="#" onclick="toggleMobileMenu()">Reviews</a></li>
+  </ul>
+  <div class="mobile-nav-contact">
+    <a href="tel:+919400620615" class="mobile-nav-btn call">📞 Call Now</a>
+    <a href="https://wa.me/919400620615" class="mobile-nav-btn wa">💬 WhatsApp</a>
+  </div>
+</div>
 
 
 <!-- ================= CINEMATIC HERO SECTION ================= -->
 <section class="hero-slider">
-  <div class="hero-slide active" style="background-image:url('Hero%20Banner%202.png');">
+  
+  <!-- Slide 1 -->
+  <div class="hero-slide active">
+    <picture class="hero-bg">
+      <source media="(max-width: 768px)" srcset="Hero%20Banner%20Anand%202.png">
+      <img src="Hero%20Banner%202.png" alt="South India Tours">
+    </picture>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>South India Tours & Beyond</h1>
@@ -48,7 +80,12 @@ title: Home
     </div>
   </div>
 
-  <div class="hero-slide" style="background-image:url('Hero%20Banner%201.png');">
+  <!-- Slide 2 -->
+  <div class="hero-slide">
+    <picture class="hero-bg">
+      <source media="(max-width: 768px)" srcset="Hero%20Banner%20Car.jpg">
+      <img src="Hero%20Banner%201.png" alt="Kerala Escapes">
+    </picture>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Kerala & Tamil Nadu Escapes</h1>
@@ -58,7 +95,12 @@ title: Home
     </div>
   </div>
 
-  <div class="hero-slide" style="background-image:url('Hero%20Banner%203.jpg');">
+  <!-- Slide 3 -->
+  <div class="hero-slide">
+    <picture class="hero-bg">
+      <source media="(max-width: 768px)" srcset="Hero%20Banner%20Anand.png">
+      <img src="Hero%20Banner%203.jpg" alt="Kochi Airport Taxi">
+    </picture>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Kochi Airport Transfers</h1>
@@ -67,6 +109,7 @@ title: Home
       </div>
     </div>
   </div>
+
 </section>
 
 
@@ -365,6 +408,9 @@ title: Home
     <div class="footer-col brand-col">
       <img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand" class="footer-logo">
       <p>Premium airport taxi and bespoke tour services across South India. Based near Kochi International Airport, dedicated to guest safety and comfort.</p>
+      <div class="footer-socials">
+        <!-- Add social icons here if needed -->
+      </div>
     </div>
 
     <div class="footer-col links-col">
@@ -380,9 +426,18 @@ title: Home
 
     <div class="footer-col contact-col">
       <h3>Contact Us</h3>
-      <p><strong>Phone:</strong> <br><a href="tel:+919400620615">+91 94006 20615</a></p>
-      <p><strong>Email:</strong> <br><a href="mailto:infostarkholidays@gmail.com">infostarkholidays@gmail.com</a></p>
-      <p><strong>Location:</strong> <br>Kochi International Airport (COK), Kerala, India</p>
+      <div class="footer-contact-item">
+        <span class="icon">📞</span>
+        <a href="tel:+919400620615">+91 94006 20615</a>
+      </div>
+      <div class="footer-contact-item">
+        <span class="icon">✉️</span>
+        <a href="mailto:infostarkholidays@gmail.com">infostarkholidays@gmail.com</a>
+      </div>
+      <div class="footer-contact-item">
+        <span class="icon">📍</span>
+        <span>Kochi International Airport (COK), Kerala, India</span>
+      </div>
     </div>
 
   </div>
@@ -393,6 +448,16 @@ title: Home
     </div>
   </div>
 </footer>
+
+<!-- ================= STICKY FLOATING CONTACT WIDGETS ================= -->
+<div class="floating-widgets">
+  <a href="tel:+919400620615" class="float-btn float-call" title="Call Us">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+  <a href="https://wa.me/919400620615" class="float-btn float-wa" title="WhatsApp Us">
+    <svg viewBox="0 0 24 24"><path d="M12.031 21c-1.566 0-3.093-.418-4.425-1.214l-4.908 1.288 1.309-4.786C3.125 14.935 2.656 13.504 2.656 12 2.656 6.837 6.856 2.637 12.031 2.637c5.174 0 9.375 4.2 9.375 9.363s-4.201 9.363-9.375 9.363zm0-17.062c-4.256 0-7.72 3.464-7.72 7.7 0 1.36.353 2.689 1.023 3.856l-.77 2.81 2.872-.754c1.127.611 2.392.933 3.684.933 4.256 0 7.719-3.465 7.719-7.701 0-4.236-3.463-7.7-7.719-7.7zm4.238 10.518c-.232-.116-1.374-.679-1.587-.756-.213-.077-.367-.116-.522.116-.154.232-.598.756-.733.911-.135.155-.27.174-.502.058-1.53-.746-2.585-1.385-3.565-2.731-.135-.184.135-.164.593-.618.077-.077.116-.154.193-.27.077-.116.038-.232-.019-.348-.058-.116-.522-1.256-.715-1.72-.188-.452-.379-.391-.522-.398h-.445c-.154 0-.406.058-.618.29-.213.232-.811.792-.811 1.932 0 1.14.831 2.241.947 2.396.116.155 1.634 2.493 3.96 3.498.553.239.985.382 1.321.49.555.176 1.061.151 1.46.091.448-.067 1.374-.561 1.568-1.102.193-.541.193-1.005.135-1.102-.058-.097-.213-.155-.445-.271z"/></svg>
+  </a>
+</div>
 
 
 <!-- ================= PREMIUM CSS STYLES ================= -->
@@ -438,12 +503,31 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .phone-label { font-size: 9px; color: #888; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px; }
 .phone-number { font-size: 15px; font-family: 'Playfair Display', serif; font-weight: 700; color: #ffcc00; text-decoration: none; }
 
+/* --- MOBILE HAMBURGER MENU --- */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+.hamburger span { width: 26px; height: 2px; background: #ffcc00; transition: 0.3s; border-radius: 2px; }
+
+.mobile-nav-overlay { position: fixed; top: 0; right: -100%; width: 100vw; height: 100vh; background: rgba(5, 6, 8, 0.98); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.mobile-nav-overlay.active { right: 0; }
+.close-menu { position: absolute; top: 25px; right: 30px; font-size: 30px; color: #fff; cursor: pointer; transition: 0.3s; }
+.close-menu:hover { color: #ffcc00; }
+.mobile-nav-list { list-style: none; padding: 0; margin: 0; text-align: center; }
+.mobile-nav-list li { margin: 25px 0; }
+.mobile-nav-list a { font-family: 'Playfair Display', serif; color: #fff; font-size: 26px; text-decoration: none; transition: 0.3s; }
+.mobile-nav-list a:hover { color: #ffcc00; }
+.mobile-nav-contact { margin-top: 50px; display: flex; flex-direction: column; gap: 15px; width: 80%; max-width: 300px;}
+.mobile-nav-btn { display: block; padding: 15px; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; }
+.mobile-nav-btn.call { border: 1px solid #ffcc00; color: #ffcc00; }
+.mobile-nav-btn.wa { background: #25d366; color: #fff; border: 1px solid #25d366;}
+
 /* --- HERO SLIDER --- */
-.hero-slider { width: 100vw; position: relative; height: 100vh; overflow: hidden; margin-top: 0; }
-.hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease; }
-.hero-slide.active { opacity: 1; animation: kenburns 15s infinite alternate linear; }
-@keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
-.hero-overlay { height: 100%; background: linear-gradient(to right, rgba(10,11,14,0.95) 0%, rgba(10,11,14,0.4) 60%, transparent 100%); display: flex; align-items: center; padding-top: 60px; }
+.hero-slider { width: 100vw; position: relative; height: 100vh; overflow: hidden; margin-top: 0; background: #000; }
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.5s ease; }
+.hero-slide.active { opacity: 1; }
+.hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden;}
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); transition: transform 15s linear; }
+.hero-slide.active .hero-bg img { transform: scale(1.1); }
+.hero-overlay { height: 100%; background: linear-gradient(to right, rgba(10,11,14,0.95) 0%, rgba(10,11,14,0.4) 60%, transparent 100%); display: flex; align-items: center; padding-top: 60px; position: relative; z-index: 1;}
 .hero-content { max-width: 650px; padding: 0 100px; color: #fff; }
 .hero-content h1 { font-size: 58px; color: #fff; margin-bottom: 20px; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 35px 0; line-height: 1.6; color: #b0b5be; font-weight: 300; }
@@ -464,8 +548,8 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .fleet-card span { font-size: 14px; color: #888; line-height: 1.6; }
 
 /* --- PICTURE TAGS FOR RESPONSIVE IMAGES --- */
-.unesco-image-wrapper picture, .destination-card picture { display: block; width: 100%; }
-.unesco-image-wrapper img, .destination-card img { width: 100%; height: auto; display: block; }
+.unesco-image-wrapper picture, .destination-card picture { display: block; width: 100%; height: 100%; }
+.unesco-image-wrapper img, .destination-card img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
 /* --- DESTINATIONS --- */
 .destinations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 20px;}
@@ -539,25 +623,44 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .call-submit-btn:hover { background: #ffcc00; color: #000; }
 
 /* --- FOOTER --- */
-.luxury-footer { background: #050608; border-top: 1px solid rgba(255,204,0,0.1); width: 100vw; }
+.luxury-footer { background: #050608; border-top: 1px solid rgba(255,204,0,0.1); width: 100vw; position: relative;}
+/* Adds a subtle premium glow to the footer */
+.luxury-footer::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width: 80%; height: 1px; box-shadow: 0 0 30px 2px rgba(255,204,0,0.2); }
+
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; padding: 80px 40px; }
 .footer-col h3 { color: #fff; font-size: 20px; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
 .footer-col p { color: #a0a4ab; font-size: 15px; line-height: 1.8; margin-bottom: 15px; }
-.footer-logo { height: 60px; margin-bottom: 20px; }
+
+/* LOGO FIX EXACTLY AS REQUESTED */
+.footer-logo { height: 65px; margin-bottom: 20px; display: block; background: transparent !important; background-color: transparent !important; border: none !important; }
+
 .links-col ul { list-style: none; padding: 0; margin: 0; }
 .links-col ul li { margin-bottom: 12px; }
 .links-col ul li a { color: #a0a4ab; text-decoration: none; font-size: 15px; transition: color 0.3s ease; }
 .links-col ul li a:hover { color: #ffcc00; }
-.contact-col a { color: #ffcc00; text-decoration: none; transition: color 0.3s ease; }
-.contact-col a:hover { color: #fff; }
-.footer-bottom { background: #000; padding: 25px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer-bottom p { color: #666; font-size: 13px; margin: 0; }
+.contact-col { display: flex; flex-direction: column; gap: 15px;}
+.footer-contact-item { display: flex; align-items: flex-start; gap: 10px; color: #a0a4ab; font-size: 15px; line-height: 1.6;}
+.footer-contact-item a { color: #ffcc00; text-decoration: none; transition: color 0.3s ease; }
+.footer-contact-item a:hover { color: #fff; }
+.footer-bottom { background: #020203; padding: 25px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-bottom p { color: #555; font-size: 13px; margin: 0; }
+
+/* --- STICKY FLOATING WIDGETS --- */
+.floating-widgets { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
+.float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); transition: all 0.3s ease; }
+.float-btn:hover { transform: scale(1.1) translateY(-5px); }
+.float-btn svg { width: 30px; height: 30px; fill: #fff; }
+.float-wa { background: linear-gradient(135deg, #25d366, #1da851); box-shadow: 0 10px 25px rgba(37,211,102,0.4); }
+.float-call { background: linear-gradient(135deg, #2f80ed, #1c66c9); box-shadow: 0 10px 25px rgba(47,128,237,0.4); }
 
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 1100px) {
   .header-nav { display: none; }
+  .header-phone-section { display: none; }
   .header-container { justify-content: space-between; }
+  .hamburger { display: flex; } /* Shows Mobile Menu Icon */
+  
   .message-wrap { flex-direction: column; text-align: center; }
   .message-img { margin-bottom: 40px; }
   .message-content .section-title { text-align: center !important; }
@@ -573,11 +676,10 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 }
 
 @media (max-width: 768px) {
-  .header-phone-section { display: none; }
   .section-container { padding: 0 20px; }
   .section-title { font-size: 32px; }
   
-  .hero-overlay { padding-top: 100px; background: rgba(0,0,0,0.6); }
+  .hero-overlay { padding-top: 80px; background: rgba(0,0,0,0.65); }
   .hero-content { padding: 0 20px; text-align: center; }
   .hero-content h1 { font-size: 38px; }
   .hero-content p { font-size: 16px; }
@@ -617,11 +719,21 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
   
   .footer-grid { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; text-align: center; }
   .footer-logo { margin: 0 auto 20px; }
+  .footer-contact-item { justify-content: center; }
+  
+  .floating-widgets { bottom: 20px; right: 20px; }
+  .float-btn { width: 50px; height: 50px; }
+  .float-btn svg { width: 25px; height: 25px; }
 }
 </style>
 
 <!-- ================= SCRIPTS ================= -->
 <script>
+// Mobile Hamburger Menu Toggle
+function toggleMobileMenu() {
+  document.getElementById('mobileNav').classList.toggle('active');
+}
+
 // Hero Slider Script runs on all devices
 const slides = document.querySelectorAll(".hero-slide");
 let current = 0;
