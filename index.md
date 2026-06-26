@@ -450,21 +450,32 @@ body, html {
   box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
+/* CAR ZOOM FIXES HERE */
 .img-box {
   width: 100%;
-  aspect-ratio: 28 / 12;
-  background: #000 !important; 
+  aspect-ratio: 28 / 14; 
+  background: transparent !important; 
   overflow: hidden;
   border-radius: 14px;
   margin-bottom: 20px;
-  padding: 15px; 
+  padding: 0; /* Padding removed to allow cars to scale up freely */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
 }
 
-.img-box img { width: 100%; height: 100%; object-fit: contain; }
+.img-box img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+  transform: scale(1.4); /* Massively zooms in the cars */
+  transition: transform 0.3s ease;
+}
+
+.fleet-card:hover .img-box img {
+  transform: scale(1.5); /* Adds a slight extra zoom pop when you hover */
+}
+
 .fleet-card h3 { color: #ffcc00; font-size: 18px; margin-bottom: 8px; margin-top: 0; }
 .fleet-card span { font-size: 14px; color: #ddd; line-height: 1.6; display: block; }
 
@@ -592,7 +603,7 @@ body, html {
   transform: scale(1.05);
 }
 
-/* --- 8. DESTINATIONS SECTION --- */
+/* --- 8. DESTINATIONS SECTION (NEW ZOOM HOVER) --- */
 .destinations-section {
   width: 100vw !important;
   position: relative;
@@ -636,14 +647,25 @@ body, html {
   overflow: hidden;
   border: 1px solid rgba(255, 204, 0, 0.3);
   box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  z-index: 1; /* Keeps them normal until hovered */
 }
 
+/* MASSIVE FULL IMAGE POP-OUT EFFECT */
 .destination-card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.8); /* Blows the image up significantly */
+  z-index: 100; /* Forces it to pop above the other images */
   border-color: #ffcc00;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.9);
 }
+
+/* Ensures the left card pops out to the right, so it doesn't leave the screen */
+.destination-card:nth-child(3n+1) { transform-origin: left center; }
+/* Ensures the middle card pops out from the center */
+.destination-card:nth-child(3n+2) { transform-origin: center center; }
+/* Ensures the right card pops out to the left, so it doesn't leave the screen */
+.destination-card:nth-child(3n+3) { transform-origin: right center; }
 
 .destination-card img {
   width: 100%;
@@ -727,6 +749,10 @@ body, html {
 @media (max-width: 992px) {
   .fleet-slider { grid-auto-columns: calc((100% - 20px) / 2); }
   .destinations-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Readjusts pop-out effect for 2 columns */
+  .destination-card:nth-child(n) { transform-origin: center center; }
+  .destination-card:nth-child(2n+1):hover { transform-origin: left center; }
+  .destination-card:nth-child(2n+2):hover { transform-origin: right center; }
 }
 
 @media (max-width: 768px) {
@@ -749,6 +775,8 @@ body, html {
   .destinations-section { padding: 60px 20px 80px; }
   .destinations-grid { grid-template-columns: 1fr; gap: 40px; }
   .destinations-section h2 { font-size: 28px; }
+  /* Readjusts pop-out effect for 1 column */
+  .destination-card:nth-child(n):hover { transform-origin: center center; transform: scale(1.1); }
   
   .guest-gallery-section { padding: 60px 20px 80px; }
   .guest-gallery-section h2 { font-size: 28px; }
