@@ -110,10 +110,10 @@ title: Home
 <style>
 /* --- HEADER STYLES --- */
 .site-header {
+  position: relative;
+  z-index: 10;
   background-color: #21242b;
   font-family: Arial, sans-serif;
-  
-  /* Screen width fix applied to header */
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -130,7 +130,7 @@ title: Home
 }
 
 .header-logo img {
-  height: 55px; /* Adjust this value if your logo needs to be larger/smaller */
+  height: 55px; 
   display: block;
 }
 
@@ -197,9 +197,8 @@ title: Home
 /* --- HERO STYLES --- */
 .hero-slider {
   position: relative;
-  height: 85vh; /* slightly reduced to account for new header height */
+  height: 85vh; 
   overflow: hidden;
-  /* Screen width fix */
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -209,7 +208,7 @@ title: Home
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: top center; /* Anchors the image to the top to prevent cropping */
   opacity: 0;
   transition: opacity 1.2s ease;
 }
@@ -339,7 +338,6 @@ title: Home
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 1150px) {
-  /* Hides the complex desktop navigation on smaller screens to prevent layout breaking */
   .header-nav { display: none; }
 }
 
@@ -348,7 +346,7 @@ title: Home
   .mobile-hero { display: block; }
   .hero-slider { height: auto; }
   .header-container { padding: 15px 20px; justify-content: center; }
-  .header-phone-section { display: none; } /* Focus on just the logo for mobile header initially */
+  .header-phone-section { display: none; } 
 }
 </style>
 
