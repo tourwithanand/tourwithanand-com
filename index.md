@@ -3,16 +3,14 @@ layout: default
 title: Home
 ---
 
-<!-- ================= HEADER SECTION ================= -->
+<!-- ================= PREMIUM HEADER ================= -->
 <header class="luxury-header">
   <div class="header-container">
     
-    <!-- Left: Logo -->
     <div class="header-logo">
       <a href="/"><img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand"></a>
     </div>
 
-    <!-- Center: Navigation -->
     <nav class="header-nav">
       <ul>
         <li><a href="#">About Us</a></li>
@@ -23,7 +21,6 @@ title: Home
       </ul>
     </nav>
 
-    <!-- Right: Call Section -->
     <div class="header-phone-section">
       <div class="phone-icon-box">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -39,7 +36,7 @@ title: Home
 </header>
 
 
-<!-- ================= HERO BANNER SECTION (NOW ON ALL DEVICES) ================= -->
+<!-- ================= CINEMATIC HERO SECTION ================= -->
 <section class="hero-slider">
   <div class="hero-slide active" style="background-image:url('Hero%20Banner%202.png');">
     <div class="hero-overlay">
@@ -194,6 +191,197 @@ title: Home
   </div>
 </section>
 
+<!-- ================= GUEST REVIEWS SECTION ================= -->
+<section class="review-section">
+  <div class="section-container">
+    <h2 class="section-title">What Our Guests Say</h2>
+    <p class="section-subtitle">Read firsthand experiences from international and domestic travelers who explored India with us.</p>
+
+    <div class="review-slider">
+      <div class="review-card">
+        <p>“Our Kerala trip with Anand was absolutely smooth and stress-free. From airport pickup to hotel check-ins, everything was handled perfectly.”</p>
+        <strong>Daniel R</strong>
+        <span>Germany</span>
+      </div>
+      <div class="review-card">
+        <p>“We booked a 7-day Kerala tour with Tour With Anand and it exceeded our expectations. Clean vehicle and excellent guidance.”</p>
+        <strong>Nur Aisyah</strong>
+        <span>Malaysia</span>
+      </div>
+      <div class="review-card">
+        <p>“Anand is not just a driver, he is a true travel guide. He helped us explore hidden viewpoints and local culture.”</p>
+        <strong>Thomas & Eva</strong>
+        <span>France</span>
+      </div>
+      <div class="review-card">
+        <p>“Traveling with elders felt completely safe. Anand was polite, professional, and very supportive throughout.”</p>
+        <strong>Ravi K</strong>
+        <span>Bangalore</span>
+      </div>
+      <div class="review-card">
+        <p>“Everything was exactly as promised. No hidden charges and very honest service.”</p>
+        <strong>Lim Wei Chen</strong>
+        <span>Singapore</span>
+      </div>
+      <div class="review-card">
+        <p>“Even though our flight was delayed, Anand waited patiently at Kochi Airport. Very reliable service.”</p>
+        <strong>Fatima A</strong>
+        <span>Dubai</span>
+      </div>
+      <div class="review-card">
+        <p>“Our honeymoon trip was beautifully planned. Great suggestions and smooth travel.”</p>
+        <strong>Suresh & Anjali</strong>
+        <span>Chennai</span>
+      </div>
+      <div class="review-card">
+        <p>“The Alleppey houseboat arranged by Anand was excellent and well maintained.”</p>
+        <strong>Michael P</strong>
+        <span>United Kingdom</span>
+      </div>
+      <div class="review-card">
+        <p>“Very safe driving even in hill areas. We felt comfortable throughout.”</p>
+        <strong>Ahmed S</strong>
+        <span>Qatar</span>
+      </div>
+      <div class="review-card">
+        <p>“Anand was very friendly with our children and adjusted plans for our comfort.”</p>
+        <strong>Priya N</strong>
+        <span>Hyderabad</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG & TRAVEL TIPS SECTION ================= -->
+<section class="blog-section">
+  <div class="section-container">
+    <h2 class="section-title">Travel Tips & Stories</h2>
+    <p class="section-subtitle">Helpful travel guides, taxi tips and destination insights to plan your South India journey with confidence.</p>
+
+    <div class="blog-slider">
+      <a href="https://tourwithanand.com/tempo-traveller-from-kochi-airport-to-pamba/" class="blog-card">
+        <h3>Tempo Traveller to Pamba</h3>
+        <span>Group pilgrimage travel guide</span>
+      </a>
+      <a href="https://tourwithanand.com/kochi-airport-to-alleppey-taxi-service/" class="blog-card">
+        <h3>Kochi to Alleppey Taxi</h3>
+        <span>Backwater travel planning tips</span>
+      </a>
+      <a href="https://tourwithanand.com/taxi-service-in-kochi-tours-with-anand/" class="blog-card">
+        <h3>Taxi Service in Kochi</h3>
+        <span>Reliable local taxi booking guide</span>
+      </a>
+      <a href="https://tourwithanand.com/kochi-to-munnar-premium-taxi/" class="blog-card">
+        <h3>Kochi to Munnar Premium</h3>
+        <span>Comfortable hill station travel</span>
+      </a>
+      <a href="https://tourwithanand.com/affordable-airport-taxi-kochi/" class="blog-card">
+        <h3>Affordable Airport Taxi</h3>
+        <span>Save money with trusted service</span>
+      </a>
+      <a href="https://tourwithanand.com/tour-with-anand-is-the-best-taxi-service-in-kochi/" class="blog-card">
+        <h3>Best Taxi Service in Kochi</h3>
+        <span>Why travelers trust Tour With Anand</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ SECTION ================= -->
+<section class="faq-section">
+  <div class="section-container faq-container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Common questions asked by international travelers planning private tours in South India.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>1. Is it safe to travel in Kerala and South India by taxi?</h3>
+        <p>Yes, traveling in Kerala and South India by private taxi is very safe. We provide well-maintained vehicles, experienced drivers, and carefully planned routes to ensure a comfortable and secure journey.</p>
+      </div>
+      <div class="faq-item">
+        <h3>2. How can foreigners book a taxi or tour in Kochi?</h3>
+        <p>Foreign travelers can easily book our taxi or tour services through WhatsApp, email, or our official website. Advance booking is highly recommended.</p>
+      </div>
+      <div class="faq-item">
+        <h3>3. Do you provide English-speaking drivers?</h3>
+        <p>Yes. Our drivers speak English clearly and are experienced in assisting international guests from Europe, the Middle East, Malaysia, Singapore, and beyond.</p>
+      </div>
+      <div class="faq-item">
+        <h3>4. Do you offer Kochi Airport pickup and drop service?</h3>
+        <p>Yes. We provide 24×7 Kochi International Airport taxi service with flight tracking, on-time pickup, and assistance even if your flight is delayed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>5. Are your South India tour packages customizable?</h3>
+        <p>Yes. All South India tour packages are fully customizable based on your travel dates, interests, hotel preference, and budget.</p>
+      </div>
+      <div class="faq-item">
+        <h3>6. Are your taxi prices fixed or negotiable?</h3>
+        <p>Our pricing is transparent and fixed based on distance and itinerary. There are no hidden charges, and all details are clearly explained before confirmation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEAD FORM SECTION ================= -->
+<section class="lead-form-section">
+  <div class="section-container lead-form-container">
+    <h2 class="section-title">Send Your Travel Enquiry</h2>
+    <p class="section-subtitle" style="margin-bottom: 20px;">Planning a Kerala or South India holiday? You can contact us via WhatsApp or Email.</p>
+
+    <p class="contact-email">
+      📧 Email: <a href="mailto:infostarkholidays@gmail.com">infostarkholidays@gmail.com</a>
+    </p>
+
+    <form onsubmit="sendWhatsApp(); return false;" class="lead-form">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <textarea id="message" rows="5" placeholder="Tell us about your travel plans..." required></textarea>
+      
+      <div class="form-buttons">
+        <button type="submit" class="whatsapp-submit-btn">Send via WhatsApp</button>
+        <a href="tel:+919400620615" class="call-submit-btn">📞 Call Now</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ================= PREMIUM FOOTER ================= -->
+<footer class="luxury-footer">
+  <div class="section-container footer-grid">
+    
+    <div class="footer-col brand-col">
+      <img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand" class="footer-logo">
+      <p>Premium airport taxi and bespoke tour services across South India. Based near Kochi International Airport, dedicated to guest safety and comfort.</p>
+    </div>
+
+    <div class="footer-col links-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">About Anand</a></li>
+        <li><a href="#">Kochi Airport Taxi</a></li>
+        <li><a href="#">Kerala Tour Packages</a></li>
+        <li><a href="#">South India Heritage</a></li>
+        <li><a href="#">Guest Reviews</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col contact-col">
+      <h3>Contact Us</h3>
+      <p><strong>Phone:</strong> <br><a href="tel:+919400620615">+91 94006 20615</a></p>
+      <p><strong>Email:</strong> <br><a href="mailto:infostarkholidays@gmail.com">infostarkholidays@gmail.com</a></p>
+      <p><strong>Location:</strong> <br>Kochi International Airport (COK), Kerala, India</p>
+    </div>
+
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="section-container">
+      <p>&copy; 2026 Tour With Anand. All Rights Reserved. Managed by Stark Holidays.</p>
+    </div>
+  </div>
+</footer>
+
 
 <!-- ================= PREMIUM CSS STYLES ================= -->
 <style>
@@ -213,102 +401,46 @@ body, html {
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, .anand-name {
-    font-family: 'Playfair Display', Georgia, serif; 
-    font-weight: 600;
-}
-
+h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; }
 .section-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
 .section-title { font-size: 42px; color: #ffcc00; margin: 0 0 15px 0; text-align: center; letter-spacing: 1px; }
 .section-subtitle { max-width: 700px; margin: 0 auto 60px; color: #a0a4ab; font-size: 16px; line-height: 1.8; text-align: center; }
 
 /* --- BUTTONS --- */
-.luxury-btn {
-  background: linear-gradient(135deg, #e6b800, #b38f00);
-  color: #000;
-  padding: 16px 36px;
-  border-radius: 4px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-}
+.luxury-btn { background: linear-gradient(135deg, #e6b800, #b38f00); color: #000; padding: 16px 36px; border-radius: 4px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
 .luxury-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(230,184,0,0.3); color:#000; }
-
-.luxury-btn-outline {
-  background: transparent;
-  color: #ffcc00;
-  border: 1px solid #ffcc00;
-  padding: 16px 36px;
-  border-radius: 4px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 14px;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
+.luxury-btn-outline { background: transparent; color: #ffcc00; border: 1px solid #ffcc00; padding: 16px 36px; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease; }
 .luxury-btn-outline:hover { background: #ffcc00; color: #000; }
 
-/* --- 1. GLASSMORPHISM HEADER & FIX LOGO TRANSPARENCY --- */
-.luxury-header {
-    width: 100vw;
-    position: fixed; 
-    top: 0; left: 0;
-    background: rgba(10, 11, 14, 0.85); 
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 204, 0, 0.1);
-    padding: 12px 0;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
+/* --- HEADER --- */
+.luxury-header { width: 100vw; position: fixed; top: 0; left: 0; background: rgba(10, 11, 14, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 204, 0, 0.1); padding: 12px 0; z-index: 1000; transition: all 0.3s ease; }
 .header-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: center; padding: 0 40px; gap: 50px; }
-
-/* LOGO FIX EXACTLY AS REQUESTED */
-.header-logo img { 
-    height: 55px; 
-    display: block; 
-    background: transparent !important; 
-    background-color: transparent !important;
-    border: none !important;
-}
-
+.header-logo img { height: 55px; display: block; background: transparent !important; border: none !important; }
 .header-nav { margin-right: auto; } 
 .header-nav ul { display: flex; gap: 35px; list-style: none; margin: 0; padding: 0; }
 .header-nav a { color: #fff; text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; transition: color 0.3s; }
 .header-nav a:hover { color: #ffcc00; }
-
 .header-phone-section { display: flex; align-items: center; gap: 12px; }
 .phone-icon-box { border: 1px solid rgba(255, 204, 0, 0.3); padding: 8px; border-radius: 50%; display: flex; }
 .phone-text { display: flex; flex-direction: column; }
 .phone-label { font-size: 9px; color: #888; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px; }
 .phone-number { font-size: 15px; font-family: 'Playfair Display', serif; font-weight: 700; color: #ffcc00; text-decoration: none; }
 
-/* --- 2. HERO SLIDER (PLAYS ON DESKTOP & MOBILE) --- */
+/* --- HERO SLIDER --- */
 .hero-slider { width: 100vw; position: relative; height: 100vh; overflow: hidden; margin-top: 0; }
 .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease; }
 .hero-slide.active { opacity: 1; animation: kenburns 15s infinite alternate linear; }
-
-@keyframes kenburns {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.08); }
-}
-
+@keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
 .hero-overlay { height: 100%; background: linear-gradient(to right, rgba(10,11,14,0.95) 0%, rgba(10,11,14,0.4) 60%, transparent 100%); display: flex; align-items: center; padding-top: 60px; }
 .hero-content { max-width: 650px; padding: 0 100px; color: #fff; }
 .hero-content h1 { font-size: 58px; color: #fff; margin-bottom: 20px; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 35px 0; line-height: 1.6; color: #b0b5be; font-weight: 300; }
 
-/* --- 3. PREMIUM FLEET SECTION --- */
-.fleet-section { padding: 120px 0; background: #0e1015; width: 100vw; }
+/* --- SECTIONS SPACING --- */
+.fleet-section, .unesco-section, .guest-gallery-section, .faq-section { padding: 120px 0; background: #0e1015; width: 100vw; }
+.destinations-section, .message-section, .review-section, .blog-section, .lead-form-section { padding: 120px 0; background: #0a0b0e; width: 100vw; }
+
+/* --- FLEET --- */
 .fleet-slider { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 60px) / 3); gap: 30px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 30px; }
 .fleet-slider::-webkit-scrollbar { display: none; }
 .fleet-card { scroll-snap-align: start; background: #15181e; padding: 30px; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s ease; text-align: center; border-radius: 14px; }
@@ -319,28 +451,23 @@ h1, h2, h3, .anand-name {
 .fleet-card h3 { color: #fff; font-size: 22px; margin: 0 0 10px; font-family: 'Playfair Display', serif; }
 .fleet-card span { font-size: 14px; color: #888; line-height: 1.6; }
 
-/* --- 4. 3-COLUMN DESTINATIONS (POP-OUT ZOOM RESTORED) --- */
-.destinations-section { padding: 120px 0; background: radial-gradient(circle at bottom right, #1b1f27, #0b0f14); width: 100vw; }
+/* --- DESTINATIONS --- */
 .destinations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 20px;}
 .destination-card { background: #16181d; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 204, 0, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5); transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); position: relative; z-index: 1; }
-
-/* MASSIVE FULL IMAGE POP-OUT EFFECT */
 .destination-card:hover { transform: scale(1.8); z-index: 100; border-color: #ffcc00; box-shadow: 0 40px 80px rgba(0,0,0,0.9); }
 .destination-card:nth-child(3n+1) { transform-origin: left center; }
 .destination-card:nth-child(3n+2) { transform-origin: center center; }
 .destination-card:nth-child(3n+3) { transform-origin: right center; }
-
 .destination-card img { width: 100%; height: auto; display: block; }
 
-/* --- 5. UNESCO SECTION --- */
-.unesco-section { padding: 120px 0; background: #0e1015; width: 100vw; text-align: center; }
+/* --- UNESCO --- */
+.unesco-section { text-align: center; }
 .unesco-image-wrapper { width: 100%; border: 1px solid rgba(255, 204, 0, 0.2); background: #fff; padding: 5px; margin-bottom: 50px; border-radius: 14px; overflow: hidden; }
 .unesco-image-wrapper img { width: 100%; height: auto; display: block; }
 .unesco-text p { color: #a0a4ab; font-size: 18px; line-height: 1.8; max-width: 800px; margin: 0 auto 35px; }
 
-/* --- 6. EDITORIAL MESSAGE --- */
-.message-section { padding: 120px 0; background: #0a0b0e; width: 100vw; }
-.message-wrap { max-width: 1100px; margin: 0 auto; display: flex; gap: 80px; align-items: center; padding: 0 40px;}
+/* --- EDITORIAL MESSAGE --- */
+.message-wrap { max-width: 1100px; margin: 0 auto; display: flex; gap: 80px; align-items: center;}
 .message-img { width: 350px; position: relative; }
 .message-img::after { content: ''; position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px; border: 1px solid #ffcc00; z-index: 0; }
 .message-img img { width: 100%; height: auto; position: relative; z-index: 1; display: block; background: #15181e; }
@@ -349,14 +476,69 @@ h1, h2, h3, .anand-name {
 .anand-sign { margin-top: 30px; font-size: 15px; color: #666; font-style: italic; }
 .anand-name { font-size: 24px; color: #fff; font-style: normal; display: block; margin: 5px 0; }
 
-/* --- 7. GUEST GALLERY --- */
-.guest-gallery-section { padding: 120px 0; background: #0e1015; width: 100vw; text-align: center; }
-.gallery-slider { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 20px 40px 40px; }
+/* --- GUEST GALLERY --- */
+.gallery-slider { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 30px; }
 .gallery-slider::-webkit-scrollbar { display: none; }
 .gallery-card { flex: 0 0 350px; scroll-snap-align: center; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; border-radius: 14px;}
 .gallery-card:hover { border-color: #ffcc00; transform: scale(1.03); }
 .gallery-card img { width: 100%; height: 350px; object-fit: cover; display: block; filter: grayscale(20%); transition: filter 0.4s ease; }
 .gallery-card:hover img { filter: grayscale(0%); }
+
+/* --- REVIEWS --- */
+.review-slider { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 60px) / 3); gap: 30px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 30px;}
+.review-slider::-webkit-scrollbar { display: none; }
+.review-card { scroll-snap-align: start; background: #15181e; padding: 40px 30px; border-radius: 14px; text-align: left; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative;}
+.review-card:hover { border-color: rgba(255,204,0,0.3); transform: translateY(-5px); }
+.review-card::before { content: '“'; position: absolute; top: 10px; left: 20px; font-size: 60px; font-family: 'Playfair Display', serif; color: rgba(255,204,0,0.15); line-height: 1; }
+.review-card p { font-size: 15px; line-height: 1.8; margin-bottom: 25px; color: #dcdcdc; position: relative; z-index: 1;}
+.review-card strong { color: #ffcc00; display: block; font-size: 16px; font-family: 'Playfair Display', serif; }
+.review-card span { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- BLOG --- */
+.blog-slider { display: flex; gap: 30px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 30px; }
+.blog-slider::-webkit-scrollbar { display: none; }
+.blog-card { min-width: 320px; scroll-snap-align: start; background: #15181e; border-radius: 14px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); text-align: left; text-decoration: none; display: block; transition: all 0.3s ease; }
+.blog-card:hover { border-color: #ffcc00; transform: translateY(-5px); background: #1a1d24;}
+.blog-card h3 { color: #fff; font-size: 20px; margin-bottom: 10px; transition: color 0.3s ease; }
+.blog-card:hover h3 { color: #ffcc00; }
+.blog-card span { font-size: 14px; color: #a0a4ab; }
+
+/* --- FAQ --- */
+.faq-container { max-width: 1000px; }
+.faq-list { display: flex; flex-direction: column; gap: 20px; }
+.faq-item { background: #15181e; padding: 30px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.05); transition: border-color 0.3s ease; }
+.faq-item:hover { border-color: rgba(255,204,0,0.3); }
+.faq-item h3 { color: #ffcc00; font-size: 20px; margin-bottom: 15px; margin-top: 0; }
+.faq-item p { color: #a0a4ab; font-size: 15px; line-height: 1.8; margin: 0; }
+
+/* --- LEAD FORM --- */
+.lead-form-container { max-width: 600px; text-align: center; }
+.contact-email { margin-bottom: 30px; font-size: 16px; color: #a0a4ab; }
+.contact-email a { color: #ffcc00; text-decoration: none; font-weight: 600; }
+.contact-email a:hover { text-decoration: underline; }
+.lead-form input, .lead-form textarea { width: 100%; padding: 16px; margin-bottom: 20px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); background: #15181e; color: #fff; font-family: 'Inter', sans-serif; font-size: 15px; box-sizing: border-box; transition: all 0.3s ease; }
+.lead-form input:focus, .lead-form textarea:focus { border-color: #ffcc00; outline: none; box-shadow: 0 0 15px rgba(255,204,0,0.1); }
+.form-buttons { display: flex; gap: 15px; flex-direction: column; }
+.whatsapp-submit-btn { width: 100%; background: linear-gradient(135deg, #25d366, #1da851); color: #fff; padding: 16px; font-weight: 600; font-size: 15px; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+.whatsapp-submit-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37,211,102,0.3); }
+.call-submit-btn { display: block; width: 100%; background: transparent; color: #ffcc00; border: 1px solid #ffcc00; padding: 16px; border-radius: 8px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-sizing: border-box; }
+.call-submit-btn:hover { background: #ffcc00; color: #000; }
+
+/* --- FOOTER --- */
+.luxury-footer { background: #050608; border-top: 1px solid rgba(255,204,0,0.1); width: 100vw; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; padding: 80px 40px; }
+.footer-col h3 { color: #fff; font-size: 20px; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
+.footer-col p { color: #a0a4ab; font-size: 15px; line-height: 1.8; margin-bottom: 15px; }
+.footer-logo { height: 60px; margin-bottom: 20px; }
+.links-col ul { list-style: none; padding: 0; margin: 0; }
+.links-col ul li { margin-bottom: 12px; }
+.links-col ul li a { color: #a0a4ab; text-decoration: none; font-size: 15px; transition: color 0.3s ease; }
+.links-col ul li a:hover { color: #ffcc00; }
+.contact-col a { color: #ffcc00; text-decoration: none; transition: color 0.3s ease; }
+.contact-col a:hover { color: #fff; }
+.footer-bottom { background: #000; padding: 25px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-bottom p { color: #666; font-size: 13px; margin: 0; }
+
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 1100px) {
@@ -365,10 +547,11 @@ h1, h2, h3, .anand-name {
   .message-wrap { flex-direction: column; text-align: center; }
   .message-img { margin-bottom: 40px; }
   .message-content .section-title { text-align: center !important; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 992px) {
-  .fleet-slider { grid-auto-columns: calc((100% - 30px) / 2); }
+  .fleet-slider, .review-slider { grid-auto-columns: calc((100% - 30px) / 2); }
   .destinations-grid { grid-template-columns: repeat(2, 1fr); }
   .destination-card:nth-child(n) { transform-origin: center center; }
   .destination-card:nth-child(2n+1):hover { transform-origin: left center; }
@@ -380,33 +563,56 @@ h1, h2, h3, .anand-name {
   .section-container { padding: 0 20px; }
   .section-title { font-size: 32px; }
   
-  /* Hero section adjustments for mobile */
   .hero-overlay { padding-top: 100px; background: rgba(0,0,0,0.6); }
   .hero-content { padding: 0 20px; text-align: center; }
   .hero-content h1 { font-size: 38px; }
   .hero-content p { font-size: 16px; }
 
-  .fleet-section, .destinations-section, .unesco-section, .message-section, .guest-gallery-section { padding: 80px 0; }
+  .fleet-section, .destinations-section, .unesco-section, .message-section, .guest-gallery-section, .review-section, .blog-section, .faq-section, .lead-form-section { padding: 80px 0; }
   
-  .fleet-slider { grid-auto-columns: 85%; }
+  .fleet-slider, .review-slider { grid-auto-columns: 90%; }
+  .blog-card { min-width: 280px; }
   
-  /* Stacks destinations nicely on mobile but keeps the zoom hover */
   .destinations-grid { grid-template-columns: 1fr; gap: 40px; }
   .destination-card:nth-child(n):hover { transform-origin: center center; transform: scale(1.1); }
   
   .gallery-card { flex: 0 0 280px; }
   .gallery-card img { height: 280px; }
+  
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; text-align: center; }
+  .footer-logo { margin: 0 auto 20px; }
 }
 </style>
 
 <!-- ================= SCRIPTS ================= -->
 <script>
+// Hero Slider Script
 const slides = document.querySelectorAll(".hero-slide");
 let current = 0;
-// Slider now runs on ALL devices (PC and Mobile)
 setInterval(() => {
   slides[current].classList.remove("active");
   current = (current + 1) % slides.length;
   slides[current].classList.add("active");
 }, 5000); 
+
+// WhatsApp Form Script
+function sendWhatsApp() {
+  var name = document.getElementById("name").value;
+  var mobile = document.getElementById("mobile").value;
+  var email = document.getElementById("email").value;
+  var msg = document.getElementById("message").value;
+
+  var text =
+    "Hello Tour With Anand / Stark Holidays,%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Mobile: " + mobile + "%0A" +
+    "Email: " + email + "%0A%0A" +
+    "Travel Plan:%0A" + msg + "%0A%0A" +
+    "Contact Email: infostarkholidays@gmail.com";
+
+  window.open(
+    "https://wa.me/919400620615?text=" + text,
+    "_blank"
+  );
+}
 </script>
