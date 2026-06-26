@@ -3,6 +3,7 @@ layout: default
 title: Home
 ---
 
+<!-- ================= PREMIUM HEADER ================= -->
 <header class="luxury-header">
   <div class="header-container">
     
@@ -35,6 +36,7 @@ title: Home
 </header>
 
 
+<!-- ================= CINEMATIC HERO SECTION ================= -->
 <section class="hero-slider">
   <div class="hero-slide active" style="background-image:url('Hero%20Banner%202.png');">
     <div class="hero-overlay">
@@ -68,6 +70,7 @@ title: Home
 </section>
 
 
+<!-- ================= PREMIUM FLEET SECTION ================= -->
 <section class="fleet-section">
   <div class="section-container">
     <h2 class="section-title">Our Premium Fleet</h2>
@@ -104,6 +107,7 @@ title: Home
 </section>
 
 
+<!-- ================= 3-COLUMN DESTINATION SHOWCASE ================= -->
 <section class="destinations-section">
   <div class="section-container">
     <h2 class="section-title">Explore Top Destinations</h2>
@@ -133,6 +137,7 @@ title: Home
 </section>
 
 
+<!-- ================= UNESCO HERITAGE ================= -->
 <section class="unesco-section">
   <div class="section-container">
     <h2 class="section-title">World Heritage Trails</h2>
@@ -150,6 +155,7 @@ title: Home
 </section>
 
 
+<!-- ================= EDITORIAL MESSAGE FROM ANAND ================= -->
 <section class="message-section">
   <div class="message-wrap">
     <div class="message-img">
@@ -170,6 +176,7 @@ title: Home
 </section>
 
 
+<!-- ================= GUEST GALLERY ================= -->
 <section class="guest-gallery-section">
   <div class="section-container">
     <h2 class="section-title">Moments of Joy</h2>
@@ -196,6 +203,7 @@ title: Home
   </div>
 </section>
 
+<!-- ================= GUEST REVIEWS SECTION ================= -->
 <section class="review-section">
   <div class="section-container">
     <h2 class="section-title">What Our Guests Say</h2>
@@ -256,6 +264,7 @@ title: Home
   </div>
 </section>
 
+<!-- ================= BLOG & TRAVEL TIPS SECTION ================= -->
 <section class="blog-section">
   <div class="section-container">
     <h2 class="section-title">Travel Tips & Stories</h2>
@@ -290,6 +299,7 @@ title: Home
   </div>
 </section>
 
+<!-- ================= FAQ SECTION ================= -->
 <section class="faq-section">
   <div class="section-container faq-container">
     <h2 class="section-title">Frequently Asked Questions</h2>
@@ -324,6 +334,7 @@ title: Home
   </div>
 </section>
 
+<!-- ================= LEAD FORM SECTION ================= -->
 <section class="lead-form-section">
   <div class="section-container lead-form-container">
     <h2 class="section-title">Send Your Travel Enquiry</h2>
@@ -347,6 +358,7 @@ title: Home
   </div>
 </section>
 
+<!-- ================= PREMIUM FOOTER ================= -->
 <footer class="luxury-footer">
   <div class="section-container footer-grid">
     
@@ -383,6 +395,7 @@ title: Home
 </footer>
 
 
+<!-- ================= PREMIUM CSS STYLES ================= -->
 <style>
 /* --- BASE LUXURY THEME --- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
@@ -574,21 +587,32 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
   .fleet-slider, .review-slider { grid-auto-columns: 90%; }
   .blog-card { min-width: 280px; }
   
-  /* MOBIL DESTINATIONS CAROUSEL */
+  /* SMOOTH MOBILE DESTINATIONS CAROUSEL FIX */
   .destinations-grid { 
-    display: grid; 
-    grid-auto-flow: column; 
-    grid-auto-columns: 85%; 
+    display: flex !important;
+    flex-direction: row; 
     gap: 20px; 
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
-    padding-bottom: 20px; 
+    padding-bottom: 30px; 
+    margin: 0 -20px; 
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-overflow-scrolling: touch; 
   }
   .destinations-grid::-webkit-scrollbar { display: none; }
   .destinations-grid { -ms-overflow-style: none; scrollbar-width: none; }
-  .destination-card { scroll-snap-align: center; }
-  .destination-card:active { transform: scale(0.98); } /* Premium touch feedback */
-  .destination-card:hover { transform: none; box-shadow: 0 15px 35px rgba(0,0,0,0.5); } /* Removes desktop zoom hover on mobile */
+  
+  .destination-card { 
+    flex: 0 0 85%;
+    scroll-snap-align: center; 
+    border-radius: 16px;
+  }
+  .destination-card:hover { 
+    transform: none; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+    border-color: rgba(255, 204, 0, 0.3);
+  }
   
   .gallery-card { flex: 0 0 280px; }
   .gallery-card img { height: 280px; }
@@ -598,6 +622,7 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 }
 </style>
 
+<!-- ================= SCRIPTS ================= -->
 <script>
 // Hero Slider Script runs on all devices
 const slides = document.querySelectorAll(".hero-slide");
