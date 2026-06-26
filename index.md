@@ -116,19 +116,19 @@ title: Home
     <div class="destinations-grid">
       <div class="destination-card">
         <picture>
-          <source media="(max-width: 768px)" srcset="Mobile%20View%20Kerala-clean.png">
-          <img src="Kerala-Places%20To%20Visit.png" alt="Top Places to Visit in Kerala" loading="lazy">
+          <source media="(max-width: 768px)" srcset="Mobile%20View%20Kerala-clean.jpg">
+          <img src="Kerala-Places%20To%20Visit.jpg" alt="Top Places to Visit in Kerala" loading="lazy">
         </picture>
       </div>
       <div class="destination-card">
         <picture>
-          <source media="(max-width: 768px)" srcset="Mobile%20View%20Tamilnadu-clean.png">
-          <img src="TamilNadu-Places%20To%20Visit.png" alt="Top Places to Visit in Tamil Nadu" loading="lazy">
+          <source media="(max-width: 768px)" srcset="Mobile%20View%20Tamilnadu-clean.jpg">
+          <img src="TamilNadu-Places%20To%20Visit.jpg" alt="Top Places to Visit in Tamil Nadu" loading="lazy">
         </picture>
       </div>
       <div class="destination-card">
         <picture>
-          <source media="(max-width: 768px)" srcset="Mobile%20View%20Karnataka-clean.png">
+          <source media="(max-width: 768px)" srcset="Mobile%20View%20Karnataka-clean.jpg">
           <img src="Karnataka-Places%20to%20Visit.png" alt="Top Places to Visit in Karnataka" loading="lazy">
         </picture>
       </div>
@@ -143,8 +143,8 @@ title: Home
     <h2 class="section-title">World Heritage Trails</h2>
     <div class="unesco-image-wrapper">
       <picture>
-        <source media="(max-width: 768px)" srcset="Mobile%20View%20UNESCO-clean.png">
-        <img src="UNESCO%20Heritage%20Places.png" alt="UNESCO World Heritage Sites South India" loading="lazy">
+        <source media="(max-width: 768px)" srcset="Mobile%20View%20UNESCO-clean.jpg">
+        <img src="UNESCO%20Heritage%20Places.jpg" alt="UNESCO World Heritage Sites South India" loading="lazy">
       </picture>
     </div>
     <div class="unesco-text">
@@ -159,7 +159,7 @@ title: Home
 <section class="message-section">
   <div class="message-wrap">
     <div class="message-img">
-      <img src="Hero%20Image.png" alt="Anand" loading="lazy" />
+      <img src="Owner%20of%20Tour%20With%20Anand%20Sitting.png" alt="Anand" loading="lazy" />
     </div>
     <div class="message-content">
       <h2 class="section-title" style="text-align:left;">A Personal Welcome</h2>
@@ -587,31 +587,29 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
   .fleet-slider, .review-slider { grid-auto-columns: 90%; }
   .blog-card { min-width: 280px; }
   
-  /* SMOOTH MOBILE DESTINATIONS CAROUSEL FIX */
+  /* SMOOTH MOBILE DESTINATIONS CAROUSEL */
   .destinations-grid { 
     display: flex !important;
     flex-direction: row; 
-    gap: 20px; 
+    gap: 15px; 
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
-    padding-bottom: 30px; 
+    padding: 20px 20px 40px 20px; 
     margin: 0 -20px; 
-    padding-left: 20px;
-    padding-right: 20px;
     -webkit-overflow-scrolling: touch; 
   }
   .destinations-grid::-webkit-scrollbar { display: none; }
   .destinations-grid { -ms-overflow-style: none; scrollbar-width: none; }
   
   .destination-card { 
-    flex: 0 0 85%;
+    flex: 0 0 85vw;
     scroll-snap-align: center; 
     border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
   }
   .destination-card:hover { 
     transform: none; 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
-    border-color: rgba(255, 204, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
   }
   
   .gallery-card { flex: 0 0 280px; }
