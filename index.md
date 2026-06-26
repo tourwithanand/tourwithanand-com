@@ -102,6 +102,7 @@ title: Home
     </p>
 
     <div class="fleet-slider">
+      <!-- INNOVA -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Innova%20Taxi%20Service.png" alt="Toyota Innova Crysta Kochi Airport Taxi Service">
@@ -110,6 +111,7 @@ title: Home
         <span>Best private taxi from Kochi Airport for family travel & long-distance trips</span>
       </div>
 
+      <!-- ERTIGA -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Ertiga%20Taxi%20Service.png" alt="Maruti Ertiga Cochin Airport Cab Service">
@@ -118,6 +120,7 @@ title: Home
         <span>Affordable taxi from Kochi Airport for 4–5 passengers</span>
       </div>
 
+      <!-- DZIRE -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Swift%20Dezire%20Taxi%20Service.png" alt="Swift Dzire Kochi Airport Pickup Taxi">
@@ -126,6 +129,7 @@ title: Home
         <span>Ideal for airport transfers and city travel in Kochi</span>
       </div>
 
+      <!-- TEMPO -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Tempo%20Traveller.png" alt="Tempo Traveller Kochi Airport Group Taxi Service">
@@ -134,6 +138,7 @@ title: Home
         <span>Perfect for Kerala tour packages & airport group transfers</span>
       </div>
 
+      <!-- BUS -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Bus%20Service.png" alt="Luxury Bus Cochin Airport Transfer Service">
@@ -145,17 +150,14 @@ title: Home
   </div>
 </section>
 
+
 <!-- ================= MESSAGE FROM ANAND SECTION ================= -->
 <section class="message-anand-dark">
   <div class="message-wrap">
 
     <!-- IMAGE -->
     <div class="message-img">
-      <img 
-        src="Hero%20Image.png"
-        alt="Anand – Founder of Tour With Anand"
-        loading="lazy"
-      />
+      <img src="Hero%20Image.png" alt="Anand – Founder of Tour With Anand" loading="lazy" />
     </div>
 
     <!-- CONTENT -->
@@ -195,7 +197,7 @@ title: Home
       </p>
 
       <!-- BUTTON -->
-      <a href="/about-us/" class="about-btn">
+      <a href="/contact/" class="about-btn">
         Learn More About Us
       </a>
 
@@ -226,7 +228,7 @@ h2.project-tagline,
 body, html {
     margin: 0 !important;
     padding: 0 !important;
-    background-color: #21242b !important;
+    background-color: #1a1c22 !important;
     overflow-x: hidden;
 }
 
@@ -236,7 +238,7 @@ body, html {
     position: relative; 
     left: 50%;
     transform: translateX(-50%);
-    background-color: #1a1c22; 
+    background-color: #16181d; 
     border-bottom: 2px solid #282c34;
     padding: 12px 0;
     z-index: 100;
@@ -337,7 +339,7 @@ body, html {
   left: 50%;
   transform: translateX(-50%);
   padding: 100px 40px;
-  background: radial-gradient(circle at top, #1b1f27, #0b0f14);
+  background: radial-gradient(circle at top, #1b1f27, #12141a);
   color: #fff;
   box-sizing: border-box;
 }
@@ -364,33 +366,37 @@ body, html {
 .fleet-slider::-webkit-scrollbar { display: none; }
 .fleet-slider { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* Updated Fleet Card to match design */
 .fleet-card {
   scroll-snap-align: start;
-  background: linear-gradient(180deg, #111, #1c1f25);
-  border-radius: 22px;
-  padding: 20px;
-  border: 1px solid rgba(255,204,0,.25);
-  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  background: #16181d; /* Clean dark grey background */
+  border-radius: 20px;
+  padding: 18px;
+  border: 1px solid rgba(255, 204, 0, 0.6); /* Constant Gold border */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   text-align: left;
   transition: all 0.3s ease;
 }
 
 .fleet-card:hover {
-  transform: translateY(-10px);
-  border-color: #ffcc00;
-  box-shadow: 0 20px 40px rgba(0,0,0,.8);
+  transform: translateY(-8px);
+  border-color: #ffcc00; /* Brightens on hover */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
+/* Pitch Black Image Box with Padding */
 .img-box {
   width: 100%;
-  aspect-ratio: 28 / 10;
-  background: #000 !important; 
+  aspect-ratio: 28 / 12;
+  background: #000 !important; /* Pure Black Background */
   overflow: hidden;
   border-radius: 14px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  padding: 15px; /* Adds space around the vehicle */
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .img-box img { width: 100%; height: 100%; object-fit: contain; }
@@ -403,8 +409,8 @@ body, html {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  padding: 80px 20px;
-  background: radial-gradient(circle at top left, #1b1f27, #0b0f14);
+  padding: 100px 40px;
+  background: #12141a;
   color: #eaeaea;
   box-sizing: border-box;
 }
@@ -413,28 +419,33 @@ body, html {
   max-width: 1100px;
   margin: auto;
   display: flex;
-  gap: 50px;
+  gap: 60px;
   align-items: center;
 }
 
+/* Updated Anand Image to match design */
 .message-img {
-  width: 260px;
-  background: linear-gradient(180deg, #111, #1c1f25);
-  padding: 14px;
+  width: 290px;
+  background: linear-gradient(145deg, #2a2d34, #101216); /* Studio backdrop gradient */
   border-radius: 24px;
-  border: 2px solid rgba(255, 204, 0, 0.45);
+  border: 2px solid #ffcc00; /* Solid Gold Border */
   box-shadow: 0 20px 45px rgba(0,0,0,0.65);
+  display: flex;
+  align-items: flex-end; /* Anchors image to bottom */
+  justify-content: center;
+  overflow: hidden; /* This makes the image cut off perfectly at the rounded borders */
+  padding: 0; /* No padding so image touches borders */
 }
 
 .message-img img {
   width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 18px;
   display: block;
+  margin-bottom: -5px; /* Prevents weird sub-pixel gaps at the bottom */
 }
 
-.message-content { max-width: 680px; }
+.message-content { max-width: 650px; }
 .message-content h2 { font-size: 36px; margin-bottom: 18px; color: #ffcc00; margin-top: 0; }
 .message-content p { font-size: 16px; line-height: 1.9; margin-bottom: 14px; color: #dcdcdc; }
 .message-content strong { color: #ffffff; }
@@ -481,7 +492,7 @@ body, html {
   .fleet-section h2 { font-size: 26px; }
 
   .message-wrap { flex-direction: column; text-align: center; }
-  .message-img { width: 220px; }
+  .message-img { width: 240px; }
   .message-content h2 { font-size: 28px; }
 }
 </style>
