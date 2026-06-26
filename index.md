@@ -219,6 +219,31 @@ title: Home
   </div>
 </section>
 
+<!-- ================= STATE ATTRACTIONS SECTION ================= -->
+<section class="destinations-section">
+  <div class="destinations-container">
+    <h2>Explore Top Destinations</h2>
+    <p class="destinations-sub">Discover the most breathtaking attractions and hidden gems across our specialized tour routes in South India.</p>
+    
+    <div class="destinations-grid">
+      <!-- Kerala -->
+      <div class="destination-card">
+        <img src="Kerala-Places%20To%20Visit.png" alt="Top Places to Visit in Kerala" loading="lazy">
+      </div>
+      
+      <!-- Tamil Nadu -->
+      <div class="destination-card">
+        <img src="TamilNadu-Places%20To%20Visit.png" alt="Top Places to Visit in Tamil Nadu" loading="lazy">
+      </div>
+      
+      <!-- Karnataka -->
+      <div class="destination-card">
+        <img src="Karnataka-Places%20to%20Visit.png" alt="Top Places to Visit in Karnataka" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ================= STYLES ================= -->
 <style>
@@ -487,7 +512,7 @@ body, html {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  padding: 80px 40px 120px;
+  padding: 80px 40px 100px;
   background: #16181d;
   box-sizing: border-box;
   text-align: center;
@@ -539,6 +564,65 @@ body, html {
   transform: scale(1.05);
 }
 
+/* --- 8. DESTINATIONS SECTION --- */
+.destinations-section {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 80px 40px 100px;
+  background: radial-gradient(circle at bottom right, #1b1f27, #0b0f14);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.destinations-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.destinations-section h2 { 
+  font-size: 38px; 
+  font-weight: 800; 
+  margin-bottom: 15px; 
+  color: #fff; 
+}
+
+.destinations-sub { 
+  max-width: 800px; 
+  margin: 0 auto 50px; 
+  color: #ccc; 
+  font-size: 17px; 
+  line-height: 1.8; 
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.destination-card {
+  background: #16181d;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  border-color: #ffcc00;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+}
+
+.destination-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* --- RESPONSIVE QUERIES --- */
 @media (max-width: 1100px) {
   .header-nav { display: none; }
@@ -547,6 +631,7 @@ body, html {
 
 @media (max-width: 992px) {
   .fleet-slider { grid-auto-columns: calc((100% - 20px) / 2); }
+  .destinations-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -565,6 +650,10 @@ body, html {
   .message-content h2 { font-size: 28px; }
   
   .unesco-section { padding: 60px 20px 80px; }
+  
+  .destinations-section { padding: 60px 20px 80px; }
+  .destinations-grid { grid-template-columns: 1fr; gap: 40px; }
+  .destinations-section h2 { font-size: 28px; }
 }
 </style>
 
