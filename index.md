@@ -3,7 +3,6 @@ layout: default
 title: Home
 ---
 
-<!-- ================= PREMIUM HEADER ================= -->
 <header class="luxury-header">
   <div class="header-container">
     
@@ -11,7 +10,6 @@ title: Home
       <a href="/"><img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand"></a>
     </div>
 
-    <!-- Desktop Nav -->
     <nav class="header-nav">
       <ul>
         <li><a href="#">About Us</a></li>
@@ -22,7 +20,6 @@ title: Home
       </ul>
     </nav>
 
-    <!-- Header Contact -->
     <div class="header-phone-section">
       <div class="phone-icon-box">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -35,7 +32,6 @@ title: Home
       </div>
     </div>
 
-    <!-- Mobile Hamburger Icon -->
     <div class="hamburger" onclick="toggleMobileMenu()">
       <span></span>
       <span></span>
@@ -45,7 +41,6 @@ title: Home
   </div>
 </header>
 
-<!-- ================= MOBILE MENU OVERLAY ================= -->
 <div class="mobile-nav-overlay" id="mobileNav">
   <div class="close-menu" onclick="toggleMobileMenu()">✕</div>
   <ul class="mobile-nav-list">
@@ -62,10 +57,8 @@ title: Home
 </div>
 
 
-<!-- ================= DESKTOP CINEMATIC HERO SECTION ================= -->
 <section class="desktop-hero">
   
-  <!-- Desktop Slide 1 -->
   <div class="hero-slide active">
     <div class="hero-bg"><img src="Hero%20Banner%202.png" alt="South India Tours"></div>
     <div class="hero-overlay">
@@ -77,7 +70,6 @@ title: Home
     </div>
   </div>
 
-  <!-- Desktop Slide 2 -->
   <div class="hero-slide">
     <div class="hero-bg"><img src="Hero%20Banner%201.png" alt="Kerala Escapes"></div>
     <div class="hero-overlay">
@@ -89,7 +81,6 @@ title: Home
     </div>
   </div>
 
-  <!-- Desktop Slide 3 -->
   <div class="hero-slide">
     <div class="hero-bg"><img src="Hero%20Banner%203.jpg" alt="Kochi Airport Taxi"></div>
     <div class="hero-overlay">
@@ -102,27 +93,45 @@ title: Home
   </div>
 </section>
 
-<!-- ================= MOBILE HERO SECTION (VIDEO) ================= -->
 <section class="mobile-hero">
+  
   <div class="m-video-wrapper">
     <video id="mobileHeroVideo" src="TWA Cat Video - Hero Banner.mp4" autoplay muted playsinline></video>
     
-    <!-- Text appears on the right side after 6 seconds -->
     <div id="videoTextOverlay" class="video-text-overlay">
       Hi Friends, I'm MAXX - <br>
       <span class="highlight-text">Connect With My Friend Anand</span>
     </div>
   </div>
 
-  <div class="m-hero-content">
-    <h1>South India Tours & Beyond</h1>
-    <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
-    <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
+  <div class="m-hero-container">
+    
+    <div class="m-hero-slide active">
+      <div class="m-hero-img">
+        <img src="Mobile%20Munnar%20Scenery%20Hero%20Section.jpg" alt="South India Tours">
+      </div>
+      <div class="m-hero-content">
+        <h1>South India Tours & Beyond</h1>
+        <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
+        <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
+      </div>
+    </div>
+
+    <div class="m-hero-slide">
+      <div class="m-hero-img">
+        <img src="Mobile%20Hero%20Airprot.jpg" alt="Kochi Airport Taxi">
+      </div>
+      <div class="m-hero-content">
+        <h1>Kochi Airport Transfers</h1>
+        <p>Reliable 24/7 premium airport pickup and drop services with professional chauffeurs.</p>
+        <a href="https://wa.me/919400620615" class="luxury-btn">Book Your Ride</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
 
-<!-- ================= PREMIUM FLEET SECTION ================= -->
 <section class="fleet-section">
   <div class="section-container">
     <h2 class="section-title">Our Premium Fleet</h2>
@@ -159,7 +168,6 @@ title: Home
 </section>
 
 
-<!-- ================= 3-COLUMN DESTINATION SHOWCASE ================= -->
 <section class="destinations-section">
   <div class="section-container">
     <h2 class="section-title">Explore Top Destinations</h2>
@@ -189,7 +197,6 @@ title: Home
 </section>
 
 
-<!-- ================= UNESCO HERITAGE ================= -->
 <section class="unesco-section">
   <div class="section-container">
     <h2 class="section-title">World Heritage Trails</h2>
@@ -207,7 +214,6 @@ title: Home
 </section>
 
 
-<!-- ================= EDITORIAL MESSAGE FROM ANAND ================= -->
 <section class="message-section">
   <div class="message-wrap">
     <div class="message-img">
@@ -228,7 +234,6 @@ title: Home
 </section>
 
 
-<!-- ================= GUEST GALLERY ================= -->
 <section class="guest-gallery-section">
   <div class="section-container">
     <h2 class="section-title">Moments of Joy</h2>
@@ -255,7 +260,6 @@ title: Home
   </div>
 </section>
 
-<!-- ================= GUEST REVIEWS SECTION ================= -->
 <section class="review-section">
   <div class="section-container">
     <h2 class="section-title">What Our Guests Say</h2>
@@ -316,7 +320,6 @@ title: Home
   </div>
 </section>
 
-<!-- ================= BLOG & TRAVEL TIPS SECTION ================= -->
 <section class="blog-section">
   <div class="section-container">
     <h2 class="section-title">Travel Tips & Stories</h2>
@@ -351,7 +354,6 @@ title: Home
   </div>
 </section>
 
-<!-- ================= FAQ SECTION ================= -->
 <section class="faq-section">
   <div class="section-container faq-container">
     <h2 class="section-title">Frequently Asked Questions</h2>
@@ -386,7 +388,6 @@ title: Home
   </div>
 </section>
 
-<!-- ================= LEAD FORM SECTION ================= -->
 <section class="lead-form-section">
   <div class="section-container lead-form-container">
     <h2 class="section-title">Send Your Travel Enquiry</h2>
@@ -410,7 +411,6 @@ title: Home
   </div>
 </section>
 
-<!-- ================= PREMIUM FOOTER ================= -->
 <footer class="luxury-footer">
   <div class="section-container footer-grid">
     
@@ -455,7 +455,6 @@ title: Home
   </div>
 </footer>
 
-<!-- ================= STICKY FLOATING CONTACT WIDGETS ================= -->
 <div class="floating-widgets">
   <a href="tel:+919400620615" class="float-btn float-call" title="Call Us">
     <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -466,7 +465,6 @@ title: Home
 </div>
 
 
-<!-- ================= PREMIUM CSS STYLES ================= -->
 <style>
 /* --- BASE LUXURY THEME --- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
@@ -537,34 +535,34 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .hero-content h1 { font-size: 58px; color: #fff; margin-bottom: 20px; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 35px 0; line-height: 1.6; color: #b0b5be; font-weight: 300; }
 
-/* --- MOBILE VIDEO HERO --- */
+/* --- MOBILE VIDEO & SLIDER (UNCROPPED) --- */
 .mobile-hero { display: none; position: relative; width: 100vw; padding-top: 75px; background: #0a0b0e; }
+
 .m-video-wrapper { 
   position: relative; 
   width: 100%; 
-  aspect-ratio: 9/12; /* Optimized layout keeping right side visible */
-  max-height: 60vh; 
-  overflow: hidden; 
   background: #000; 
+  overflow: hidden;
 }
+/* Ensure the video scales down naturally without being cut */
 .m-video-wrapper video { 
   width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
+  height: auto; 
+  display: block; 
 }
 .video-text-overlay { 
   position: absolute; 
   top: 50%; 
   right: 5%; 
   transform: translateY(-50%); 
-  width: 55%; 
+  width: 45%; /* slightly narrower to accommodate a smaller screen height */
   text-align: right; 
   color: #fff; 
   font-family: 'Playfair Display', serif; 
-  font-size: 24px; 
+  font-size: 16px; /* Adjusted smaller so it fits uncropped video height perfectly */
   font-weight: 700; 
   line-height: 1.4; 
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.9); 
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9); 
   opacity: 0; 
   transition: opacity 0.8s ease-in; 
   z-index: 10; 
@@ -572,16 +570,25 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .video-text-overlay.show-text { opacity: 1; }
 .highlight-text { 
   color: #ffcc00; 
-  font-size: 14px; 
+  font-size: 11px; /* Scaled down slightly to fit well */
   font-family: 'Inter', sans-serif; 
   font-weight: 600; 
   text-transform: uppercase; 
-  letter-spacing: 1px; 
+  letter-spacing: 0.5px; 
   display: block; 
-  margin-top: 10px; 
+  margin-top: 5px; 
 }
-.m-hero-content { padding: 40px 20px 60px; text-align: center; background: #0a0b0e; }
-.m-hero-content h1 { font-size: 34px; color: #fff; margin-bottom: 15px; line-height: 1.2; }
+
+/* Restored image slider that sits directly underneath the video */
+.m-hero-container { position: relative; width: 100%; display: grid; margin-top: 0; }
+.m-hero-slide { grid-area: 1 / 1; opacity: 0; transition: opacity 0.8s ease; visibility: hidden; display: flex; flex-direction: column;}
+.m-hero-slide.active { opacity: 1; visibility: visible; z-index: 2; }
+/* Ensure the images below do not cut */
+.m-hero-img { width: 100%; height: auto; }
+.m-hero-img img { width: 100%; height: auto; display: block; object-fit: contain; }
+
+.m-hero-content { padding: 40px 20px 60px; text-align: center; background: #0a0b0e; flex: 1;}
+.m-hero-content h1 { font-size: 34px; color: #fff; margin-bottom: 15px; line-height: 1.2;}
 .m-hero-content p { font-size: 16px; color: #a0a4ab; margin-bottom: 25px; line-height: 1.6; }
 
 /* --- SECTIONS SPACING --- */
@@ -772,7 +779,6 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 }
 </style>
 
-<!-- ================= SCRIPTS ================= -->
 <script>
 // Mobile Hamburger Menu Toggle
 function toggleMobileMenu() {
@@ -790,7 +796,18 @@ if(dSlides.length > 0) {
   }, 5000); 
 }
 
-// MOBILE Video Hero Logic 
+// MOBILE Image Slider Logic (Re-enabled for the banners below the video)
+const mSlides = document.querySelectorAll(".mobile-hero .m-hero-slide");
+let mCurrent = 0;
+if(mSlides.length > 0) {
+  setInterval(() => {
+    mSlides[mCurrent].classList.remove("active");
+    mCurrent = (mCurrent + 1) % mSlides.length;
+    mSlides[mCurrent].classList.add("active");
+  }, 5000); 
+}
+
+// MOBILE Video Overlay Automation
 const mHeroVideo = document.getElementById("mobileHeroVideo");
 const mVideoText = document.getElementById("videoTextOverlay");
 
