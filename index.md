@@ -12,7 +12,7 @@ title: Home
       <a href="/"><img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand"></a>
     </div>
 
-    <!-- Center: Navigation (Now placed next to the logo) -->
+    <!-- Center: Navigation -->
     <nav class="header-nav">
       <ul>
         <li><a href="#">About<br>Us</a></li>
@@ -24,7 +24,7 @@ title: Home
       </ul>
     </nav>
 
-    <!-- Right: Call Section (Pushed to the far right) -->
+    <!-- Right: Call Section -->
     <div class="header-phone-section">
       <div class="phone-icon-box">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -102,7 +102,6 @@ title: Home
     </p>
 
     <div class="fleet-slider">
-      <!-- INNOVA -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Innova%20Taxi%20Service.png" alt="Toyota Innova Crysta Kochi Airport Taxi Service">
@@ -111,7 +110,6 @@ title: Home
         <span>Best private taxi from Kochi Airport for family travel & long-distance trips</span>
       </div>
 
-      <!-- ERTIGA -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Ertiga%20Taxi%20Service.png" alt="Maruti Ertiga Cochin Airport Cab Service">
@@ -120,7 +118,6 @@ title: Home
         <span>Affordable taxi from Kochi Airport for 4–5 passengers</span>
       </div>
 
-      <!-- DZIRE -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Swift%20Dezire%20Taxi%20Service.png" alt="Swift Dzire Kochi Airport Pickup Taxi">
@@ -129,7 +126,6 @@ title: Home
         <span>Ideal for airport transfers and city travel in Kochi</span>
       </div>
 
-      <!-- TEMPO -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Tempo%20Traveller.png" alt="Tempo Traveller Kochi Airport Group Taxi Service">
@@ -138,7 +134,6 @@ title: Home
         <span>Perfect for Kerala tour packages & airport group transfers</span>
       </div>
 
-      <!-- BUS -->
       <div class="fleet-card">
         <div class="img-box">
           <img src="Kochi%20Airport%20Bus%20Service.png" alt="Luxury Bus Cochin Airport Transfer Service">
@@ -150,11 +145,68 @@ title: Home
   </div>
 </section>
 
+<!-- ================= MESSAGE FROM ANAND SECTION ================= -->
+<section class="message-anand-dark">
+  <div class="message-wrap">
+
+    <!-- IMAGE -->
+    <div class="message-img">
+      <img 
+        src="Hero%20Image.png"
+        alt="Anand – Founder of Tour With Anand"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- CONTENT -->
+    <div class="message-content">
+      <h2>Message from Anand</h2>
+
+      <p>Hello and welcome to <strong>Tour With Anand</strong>,</p>
+
+      <p>
+        My name is Anand, and I personally take care of every guest who travels with us.
+        Based near Kochi International Airport, my mission is to make your journey in South India
+        safe, comfortable, and truly memorable.
+      </p>
+
+      <p>
+        From Kochi Airport pickup to complete South India tours, I ensure clean vehicles,
+        experienced drivers, clear communication, and transparent pricing.
+        Whether you are visiting Kerala for the first time or planning a longer journey,
+        my team and I will support you throughout your travel.
+      </p>
+
+      <p>
+        Guests from Europe, the Middle East, Malaysia, Singapore, and many other countries
+        travel with us every year. I understand the importance of punctual service,
+        local knowledge, and personal care when visiting a new destination.
+      </p>
+
+      <p>
+        When you choose Tour With Anand, you are not just booking a service —
+        you are traveling with someone who truly cares about your experience in India.
+      </p>
+
+      <p class="anand-sign">
+        Warm regards,<br>
+        <span class="anand-name">Anand</span><br>
+        Founder – Tour With Anand
+      </p>
+
+      <!-- BUTTON -->
+      <a href="/about-us/" class="about-btn">
+        Learn More About Us
+      </a>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- ================= STYLES ================= -->
 <style>
 /* --- 1. EXTREME GITHUB THEME OVERRIDES --- */
-/* This completely removes the blue "tourwithanand-com" default title and spacing */
 header:not(.site-header), 
 .page-header, 
 h1.project-name, 
@@ -181,10 +233,10 @@ body, html {
 /* --- 2. CUSTOM PREMIUM HEADER STYLES --- */
 .site-header {
     width: 100vw !important;
-    position: relative; /* Places header above the banner instead of overlapping */
+    position: relative; 
     left: 50%;
     transform: translateX(-50%);
-    background-color: #1a1c22; /* Sleek, dark premium color */
+    background-color: #1a1c22; 
     border-bottom: 2px solid #282c34;
     padding: 12px 0;
     z-index: 100;
@@ -194,10 +246,10 @@ body, html {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-start; /* Aligns everything from left to right */
+    justify-content: flex-start; 
     align-items: center;
     padding: 0 40px;
-    gap: 40px; /* Perfect spacing between logo and menu links */
+    gap: 40px; 
     box-sizing: border-box;
 }
 
@@ -208,7 +260,7 @@ body, html {
     border: none !important;
 }
 
-.header-nav { margin-right: auto; } /* Pushes the phone section far to the right */
+.header-nav { margin-right: auto; } 
 .header-nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
 .header-nav a { color: #ffffff; text-decoration: none; font-size: 13px; line-height: 1.2; font-weight: 500; transition: color 0.3s; }
 .header-nav a:hover { color: #ffcc00; }
@@ -234,7 +286,7 @@ body, html {
     position: absolute; 
     inset: 0; 
     background-size: cover; 
-    background-position: top center; /* Anchors image to the top so nothing is cut off */
+    background-position: top center; 
     opacity: 0; 
     transition: opacity 1.2s ease; 
 }
@@ -332,7 +384,7 @@ body, html {
 .img-box {
   width: 100%;
   aspect-ratio: 28 / 10;
-  background: #000 !important; /* Force Black Background For Vehicles */
+  background: #000 !important; 
   overflow: hidden;
   border-radius: 14px;
   margin-bottom: 15px;
@@ -344,6 +396,68 @@ body, html {
 .img-box img { width: 100%; height: 100%; object-fit: contain; }
 .fleet-card h3 { color: #ffcc00; font-size: 18px; margin-bottom: 8px; margin-top: 0; }
 .fleet-card span { font-size: 14px; color: #ddd; line-height: 1.6; display: block; }
+
+/* --- 6. MESSAGE FROM ANAND SECTION --- */
+.message-anand-dark {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 80px 20px;
+  background: radial-gradient(circle at top left, #1b1f27, #0b0f14);
+  color: #eaeaea;
+  box-sizing: border-box;
+}
+
+.message-wrap {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.message-img {
+  width: 260px;
+  background: linear-gradient(180deg, #111, #1c1f25);
+  padding: 14px;
+  border-radius: 24px;
+  border: 2px solid rgba(255, 204, 0, 0.45);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.65);
+}
+
+.message-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+  display: block;
+}
+
+.message-content { max-width: 680px; }
+.message-content h2 { font-size: 36px; margin-bottom: 18px; color: #ffcc00; margin-top: 0; }
+.message-content p { font-size: 16px; line-height: 1.9; margin-bottom: 14px; color: #dcdcdc; }
+.message-content strong { color: #ffffff; }
+
+.anand-sign { margin-top: 22px; font-size: 16px; }
+.anand-name { font-size: 18px; font-weight: 600; color: #ffcc00; }
+
+.about-btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: #ffcc00;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  background: #ffd633;
+  transform: translateY(-2px);
+}
 
 /* --- RESPONSIVE QUERIES --- */
 @media (max-width: 1100px) {
@@ -365,6 +479,10 @@ body, html {
   .fleet-section { padding: 70px 20px; }
   .fleet-slider { grid-auto-columns: 85%; }
   .fleet-section h2 { font-size: 26px; }
+
+  .message-wrap { flex-direction: column; text-align: center; }
+  .message-img { width: 220px; }
+  .message-content h2 { font-size: 28px; }
 }
 </style>
 
