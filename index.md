@@ -206,6 +206,20 @@ title: Home
 </section>
 
 
+<!-- ================= UNESCO HERITAGE SECTION ================= -->
+<section class="unesco-section">
+  <div class="unesco-container">
+    <div class="unesco-image-wrapper">
+      <img src="UNESCO%20Heritage%20Places.png" alt="Map of UNESCO World Heritage Sites in South India" loading="lazy">
+    </div>
+    <div class="unesco-text">
+      <p>Discover the rich history and cultural legacy of South India. We provide specialized, premium tour packages covering all major UNESCO World Heritage Sites across Kerala, Tamil Nadu, Karnataka, and Telangana.</p>
+      <a href="https://wa.me/919400620615" class="unesco-btn">Plan Your Heritage Tour</a>
+    </div>
+  </div>
+</section>
+
+
 <!-- ================= STYLES ================= -->
 <style>
 /* --- 1. EXTREME GITHUB THEME OVERRIDES --- */
@@ -366,13 +380,12 @@ body, html {
 .fleet-slider::-webkit-scrollbar { display: none; }
 .fleet-slider { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Updated Fleet Card to match design */
 .fleet-card {
   scroll-snap-align: start;
-  background: #16181d; /* Clean dark grey background */
+  background: #16181d; 
   border-radius: 20px;
   padding: 18px;
-  border: 1px solid rgba(255, 204, 0, 0.6); /* Constant Gold border */
+  border: 1px solid rgba(255, 204, 0, 0.6); 
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   text-align: left;
   transition: all 0.3s ease;
@@ -380,19 +393,18 @@ body, html {
 
 .fleet-card:hover {
   transform: translateY(-8px);
-  border-color: #ffcc00; /* Brightens on hover */
+  border-color: #ffcc00; 
   box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
-/* Pitch Black Image Box with Padding */
 .img-box {
   width: 100%;
   aspect-ratio: 28 / 12;
-  background: #000 !important; /* Pure Black Background */
+  background: #000 !important; 
   overflow: hidden;
   border-radius: 14px;
   margin-bottom: 20px;
-  padding: 15px; /* Adds space around the vehicle */
+  padding: 15px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -423,18 +435,17 @@ body, html {
   align-items: center;
 }
 
-/* Updated Anand Image to match design */
 .message-img {
   width: 290px;
-  background: linear-gradient(145deg, #2a2d34, #101216); /* Studio backdrop gradient */
+  background: linear-gradient(145deg, #2a2d34, #101216); 
   border-radius: 24px;
-  border: 2px solid #ffcc00; /* Solid Gold Border */
+  border: 2px solid #ffcc00; 
   box-shadow: 0 20px 45px rgba(0,0,0,0.65);
   display: flex;
-  align-items: flex-end; /* Anchors image to bottom */
+  align-items: flex-end; 
   justify-content: center;
-  overflow: hidden; /* This makes the image cut off perfectly at the rounded borders */
-  padding: 0; /* No padding so image touches borders */
+  overflow: hidden; 
+  padding: 0; 
 }
 
 .message-img img {
@@ -442,7 +453,7 @@ body, html {
   height: auto;
   object-fit: contain;
   display: block;
-  margin-bottom: -5px; /* Prevents weird sub-pixel gaps at the bottom */
+  margin-bottom: -5px; 
 }
 
 .message-content { max-width: 650px; }
@@ -470,6 +481,64 @@ body, html {
   transform: translateY(-2px);
 }
 
+/* --- 7. UNESCO HERITAGE SECTION --- */
+.unesco-section {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 80px 40px 120px;
+  background: #16181d;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.unesco-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.unesco-image-wrapper {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 204, 0, 0.4);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  margin-bottom: 40px;
+}
+
+.unesco-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.unesco-text p {
+  color: #dcdcdc;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.unesco-btn {
+  display: inline-block;
+  padding: 14px 34px;
+  border-radius: 35px;
+  background: transparent;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.unesco-btn:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
 /* --- RESPONSIVE QUERIES --- */
 @media (max-width: 1100px) {
   .header-nav { display: none; }
@@ -494,6 +563,8 @@ body, html {
   .message-wrap { flex-direction: column; text-align: center; }
   .message-img { width: 240px; }
   .message-content h2 { font-size: 28px; }
+  
+  .unesco-section { padding: 60px 20px 80px; }
 }
 </style>
 
