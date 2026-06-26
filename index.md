@@ -102,34 +102,22 @@ title: Home
   </div>
 </section>
 
-<!-- ================= MOBILE HERO SECTION ================= -->
+<!-- ================= MOBILE HERO SECTION (VIDEO) ================= -->
 <section class="mobile-hero">
-  <div class="m-hero-container">
+  <div class="m-video-wrapper">
+    <video id="mobileHeroVideo" src="TWA Cat Video - Hero Banner.mp4" autoplay muted playsinline></video>
     
-    <!-- Mobile Slide 1 -->
-    <div class="m-hero-slide active">
-      <div class="m-hero-img">
-        <img src="Mobile%20Munnar%20Scenery%20Hero%20Section.jpg" alt="South India Tours">
-      </div>
-      <div class="m-hero-content">
-        <h1>South India Tours & Beyond</h1>
-        <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
-        <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
-      </div>
+    <!-- Text appears on the right side after 6 seconds -->
+    <div id="videoTextOverlay" class="video-text-overlay">
+      Hi Friends, I'm MAXX - <br>
+      <span class="highlight-text">Connect With My Friend Anand</span>
     </div>
+  </div>
 
-    <!-- Mobile Slide 2 -->
-    <div class="m-hero-slide">
-      <div class="m-hero-img">
-        <img src="Mobile%20Hero%20Airprot.jpg" alt="Kochi Airport Taxi">
-      </div>
-      <div class="m-hero-content">
-        <h1>Kochi Airport Transfers</h1>
-        <p>Reliable 24/7 premium airport pickup and drop services with professional chauffeurs.</p>
-        <a href="https://wa.me/919400620615" class="luxury-btn">Book Your Ride</a>
-      </div>
-    </div>
-
+  <div class="m-hero-content">
+    <h1>South India Tours & Beyond</h1>
+    <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
+    <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
   </div>
 </section>
 
@@ -549,15 +537,51 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .hero-content h1 { font-size: 58px; color: #fff; margin-bottom: 20px; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 35px 0; line-height: 1.6; color: #b0b5be; font-weight: 300; }
 
-/* --- MOBILE HERO SLIDER --- */
-.mobile-hero { display: none; position: relative; width: 100vw; padding-top: 75px; background: #0a0b0e; } /* Push down under header */
-.m-hero-container { position: relative; width: 100%; display: grid; }
-.m-hero-slide { grid-area: 1 / 1; opacity: 0; transition: opacity 0.8s ease; visibility: hidden; display: flex; flex-direction: column;}
-.m-hero-slide.active { opacity: 1; visibility: visible; z-index: 2; }
-.m-hero-img { width: 100%; height: 350px; }
-.m-hero-img img { width: 100%; height: 100%; object-fit: cover; }
-.m-hero-content { padding: 40px 20px 60px; text-align: center; background: #0a0b0e; flex: 1;}
-.m-hero-content h1 { font-size: 34px; color: #fff; margin-bottom: 15px; line-height: 1.2;}
+/* --- MOBILE VIDEO HERO --- */
+.mobile-hero { display: none; position: relative; width: 100vw; padding-top: 75px; background: #0a0b0e; }
+.m-video-wrapper { 
+  position: relative; 
+  width: 100%; 
+  aspect-ratio: 9/12; /* Optimized layout keeping right side visible */
+  max-height: 60vh; 
+  overflow: hidden; 
+  background: #000; 
+}
+.m-video-wrapper video { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+.video-text-overlay { 
+  position: absolute; 
+  top: 50%; 
+  right: 5%; 
+  transform: translateY(-50%); 
+  width: 55%; 
+  text-align: right; 
+  color: #fff; 
+  font-family: 'Playfair Display', serif; 
+  font-size: 24px; 
+  font-weight: 700; 
+  line-height: 1.4; 
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.9); 
+  opacity: 0; 
+  transition: opacity 0.8s ease-in; 
+  z-index: 10; 
+}
+.video-text-overlay.show-text { opacity: 1; }
+.highlight-text { 
+  color: #ffcc00; 
+  font-size: 14px; 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 600; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  display: block; 
+  margin-top: 10px; 
+}
+.m-hero-content { padding: 40px 20px 60px; text-align: center; background: #0a0b0e; }
+.m-hero-content h1 { font-size: 34px; color: #fff; margin-bottom: 15px; line-height: 1.2; }
 .m-hero-content p { font-size: 16px; color: #a0a4ab; margin-bottom: 25px; line-height: 1.6; }
 
 /* --- SECTIONS SPACING --- */
@@ -766,15 +790,22 @@ if(dSlides.length > 0) {
   }, 5000); 
 }
 
-// MOBILE Hero Slider Logic
-const mSlides = document.querySelectorAll(".mobile-hero .m-hero-slide");
-let mCurrent = 0;
-if(mSlides.length > 0) {
-  setInterval(() => {
-    mSlides[mCurrent].classList.remove("active");
-    mCurrent = (mCurrent + 1) % mSlides.length;
-    mSlides[mCurrent].classList.add("active");
-  }, 5000); 
+// MOBILE Video Hero Logic 
+const mHeroVideo = document.getElementById("mobileHeroVideo");
+const mVideoText = document.getElementById("videoTextOverlay");
+
+if (mHeroVideo) {
+  // Show text on the right side once the video hits 6 seconds
+  mHeroVideo.addEventListener("timeupdate", function() {
+    if (mHeroVideo.currentTime >= 6 && !mVideoText.classList.contains("show-text")) {
+      mVideoText.classList.add("show-text");
+    }
+  });
+  
+  // Ensures the video strictly stays paused on the last frame
+  mHeroVideo.addEventListener("ended", function() {
+    mHeroVideo.pause();
+  });
 }
 
 // WhatsApp Form Script
