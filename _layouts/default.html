@@ -11,15 +11,15 @@
   <div class="header-container">
     
     <div class="header-logo">
-      <a href="/"><img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand"></a>
+      <a href="https://tourwithanand.in/tourwithanand-com.html"><img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand"></a>
     </div>
 
     <nav class="header-nav">
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="https://tourwithanand.in/tourwithanand-com.html">Home</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="/kochi-airport-taxi.html">Kochi Airport Taxi</a></li>
-        <li><a href="/tempo-traveller-rentals-kochi-kerala.html">Tempo Rentals</a></li>
+        <li><a href="https://tourwithanand.in/tourwithanand-com/kochi-airport-taxi.html">Kochi Airport Taxi</a></li>
+        <li><a href="https://tourwithanand.in/tourwithanand-com/tempo-traveller-rentals-kochi-kerala.html">Tempo Rentals</a></li>
         <li><a href="#">South India Tours</a></li>
         <li><a href="#">Reviews</a></li>
       </ul>
@@ -49,10 +49,10 @@
 <div class="mobile-nav-overlay" id="mobileNav">
   <div class="close-menu" onclick="toggleMobileMenu()">✕</div>
   <ul class="mobile-nav-list">
-    <li><a href="/" onclick="toggleMobileMenu()">Home</a></li>
+    <li><a href="https://tourwithanand.in/tourwithanand-com.html" onclick="toggleMobileMenu()">Home</a></li>
     <li><a href="#" onclick="toggleMobileMenu()">About Us</a></li>
-    <li><a href="/kochi-airport-taxi.html" onclick="toggleMobileMenu()">Kochi Airport Taxi</a></li>
-    <li><a href="#" onclick="toggleMobileMenu()">Tempo Rentals</a></li>
+    <li><a href="https://tourwithanand.in/tourwithanand-com/kochi-airport-taxi.html" onclick="toggleMobileMenu()">Kochi Airport Taxi</a></li>
+    <li><a href="https://tourwithanand.in/tourwithanand-com/tempo-traveller-rentals-kochi-kerala.html" onclick="toggleMobileMenu()">Tempo Rentals</a></li>
     <li><a href="#" onclick="toggleMobileMenu()">South India Tours</a></li>
     <li><a href="#" onclick="toggleMobileMenu()">Reviews</a></li>
   </ul>
@@ -77,7 +77,8 @@
       <h3>Quick Links</h3>
       <ul>
         <li><a href="#">About Anand</a></li>
-        <li><a href="/kochi-airport-taxi.html">Kochi Airport Taxi</a></li>
+        <li><a href="https://tourwithanand.in/tourwithanand-com/kochi-airport-taxi.html">Kochi Airport Taxi</a></li>
+        <li><a href="https://tourwithanand.in/tourwithanand-com/tempo-traveller-rentals-kochi-kerala.html">Tempo Rentals</a></li>
         <li><a href="#">Kerala Tour Packages</a></li>
         <li><a href="#">South India Heritage</a></li>
         <li><a href="#">Guest Reviews</a></li>
@@ -188,7 +189,7 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .hero-content h1 { font-size: 58px; color: #fff; margin-bottom: 20px; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 35px 0; line-height: 1.6; color: #b0b5be; font-weight: 300; }
 
-/* --- MOBILE VIDEO (CLEANED WITH TEXT OVERLAY & WATERMARK HIDDEN) --- */
+/* --- MOBILE VIDEO (CLEANED) --- */
 .mobile-hero { display: none; position: relative; width: 100vw; background: #0a0b0e; }
 
 .m-video-wrapper { 
@@ -204,41 +205,6 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
   transform: scale(1.18); 
   transform-origin: left top; 
 }
-
-/* Beautiful Cinematic Text Overlay */
-.video-text-overlay { 
-  position: absolute; 
-  top: 50%; 
-  right: 5%; 
-  transform: translateY(-50%); 
-  width: 50%; 
-  text-align: right; 
-  opacity: 0; 
-  transition: opacity 1.5s ease-in-out; 
-  z-index: 10; 
-  pointer-events: none; 
-}
-.video-text-overlay.show-text { opacity: 1; }
-
-.maxx-intro {
-  font-family: 'Playfair Display', serif; 
-  font-size: 20px; 
-  font-weight: 700; 
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.9); 
-}
-.maxx-sub {
-  color: #ffcc00; 
-  font-size: 12px; 
-  font-family: 'Inter', sans-serif; 
-  font-weight: 600; 
-  text-transform: uppercase; 
-  letter-spacing: 1px; 
-  display: block; 
-  margin-top: 5px; 
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
-}
-
 
 /* Mobile Hero Clean CTA Section */
 .m-hero-cta { 
@@ -490,19 +456,9 @@ if(dSlides.length > 0) {
   }, 5000); 
 }
 
-// MOBILE Video Overlay Automation
+// MOBILE Video Pause Logic
 const mHeroVideo = document.getElementById("mobileHeroVideo");
-const mVideoText = document.getElementById("videoTextOverlay");
-
 if (mHeroVideo) {
-  // Show text on the right side once the video hits 6 seconds
-  mHeroVideo.addEventListener("timeupdate", function() {
-    if (mHeroVideo.currentTime >= 6 && mVideoText && !mVideoText.classList.contains("show-text")) {
-      mVideoText.classList.add("show-text");
-    }
-  });
-  
-  // Ensures the video strictly stays paused on the last frame
   mHeroVideo.addEventListener("ended", function() {
     mHeroVideo.pause();
   });
