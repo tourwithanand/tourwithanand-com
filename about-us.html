@@ -3,7 +3,7 @@ layout: default
 title: About Anand & Tour With Anand
 ---
 
-<!-- 1. MINIMALIST HERO SECTION (No Background Image) -->
+<!-- 1. MINIMALIST HERO SECTION -->
 <section class="about-hero-simple">
   <div class="section-container text-center">
     <h1>About Us</h1>
@@ -11,70 +11,65 @@ title: About Anand & Tour With Anand
   </div>
 </section>
 
-<!-- 2. WELCOME SECTION -->
+<!-- 2. WELCOME SECTION WITH IMAGE -->
 <section class="about-anand-section">
   <div class="section-container">
-    <div class="about-content">
-      <h2>A Personal Welcome from Anand</h2>
-      <p>Hi dear guest, this is Anand from Kochi, Kerala, the beautiful Indian state aptly called “God’s own country”. My professional team and I are on a journey to provide the very best of our lovely state to our beloved clients from across the world.</p>
-      <p>My journey into the tourism industry began in 2009 after a successful career with BMW in Muscat. The one poignant fact that struck me early on was a serious dearth of trained, language-proficient professionals and drivers capable of catering to the high standards expected by international and national guests.</p>
+    <div class="welcome-grid">
+      <div class="welcome-content">
+        <h2>A Personal Welcome from Anand</h2>
+        <p>Hi dear guest, this is Anand from Kochi, Kerala, the beautiful Indian state aptly called “God’s own country”. My professional team and I are on a journey to provide the very best of our lovely state to our beloved clients from across the world.</p>
+        <p>My journey into the tourism industry began in 2009 after a successful career with BMW in Muscat. The one poignant fact that struck me early on was a serious dearth of trained, language-proficient professionals and drivers capable of catering to the high standards expected by international and national guests.</p>
+      </div>
+      <div class="welcome-img">
+        <img src="Hero%20Image.png" alt="Anand" class="about-portrait">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 3. PHILOSOPHY SECTION WITH IMAGE ON RIGHT -->
+<!-- 3. PHILOSOPHY SECTION (Text only) -->
 <section class="philosophy-section">
-  <div class="section-container">
-    <div class="philosophy-grid">
-      <div class="philosophy-text">
-        <h3>Our Work Philosophy</h3>
-        <p>As the years progressed, we analysed that a huge chunk of service productivity was being eroded by middlemen. We strongly felt this breach of trust should be mended by us, the actual service providers. Hence we decided to take the plunge and connect with our clients directly.</p>
-        <p>We specialize in taxi operations, tour packages and other related activities for experiencing entire South India. Our team is compact, educated and well trained, with a strong impetus on <strong>honesty, discipline, punctuality and cleanliness</strong>.</p>
-        <p>It’s our pleasure to talk and deal with each and every client so that before finalising the travel itinerary, both you and we will have the opportunity to understand each other. No false promises, hidden charges or loss of trust—this is my solemn promise.</p>
-        
-        <div class="anand-signature">
-          Warmest regards,<br>
-          <strong>Anand</strong><br>
-          Founder, Tour With Anand
-        </div>
-      </div>
+  <div class="section-container minimal-container">
+    <div class="philosophy-text">
+      <h3>Our Work Philosophy</h3>
+      <p>As the years progressed, we analysed that a huge chunk of service productivity was being eroded by middlemen. We strongly felt this breach of trust should be mended by us, the actual service providers. Hence we decided to take the plunge and connect with our clients directly.</p>
+      <p>We specialize in taxi operations, tour packages and other related activities for experiencing entire South India. Our team is compact, educated and well trained, with a strong impetus on <strong>honesty, discipline, punctuality and cleanliness</strong>.</p>
+      <p>It’s our pleasure to talk and deal with each and every client so that before finalising the travel itinerary, both you and we will have the opportunity to understand each other. No false promises, hidden charges or loss of trust—this is my solemn promise.</p>
       
-      <div class="philosophy-img">
-        <img src="Anand%20-%20Tour%20With%20Anand%20B&W.png" alt="Anand" class="philosophy-portrait">
+      <div class="anand-signature">
+        Warmest regards,<br>
+        <strong>Anand</strong><br>
+        Founder, Tour With Anand
       </div>
     </div>
   </div>
 </section>
 
 <style>
-/* Clean Header Styling */
-.about-hero-simple { 
-  width: 100vw; 
-  padding: 150px 0 80px 0; 
-  background-color: #0a0b0e; 
-  text-align: center; 
-}
+/* Minimalist Hero */
+.about-hero-simple { width: 100vw; padding: 150px 0 80px 0; background-color: #0a0b0e; text-align: center; }
 .about-hero-simple h1 { font-size: 56px; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 15px; }
 .about-hero-simple p { font-size: 16px; color: #ffcc00; letter-spacing: 3px; text-transform: uppercase; }
 
-/* Content Styling */
+/* Welcome Section with Image */
 .about-anand-section { padding: 40px 0 80px 0; background: #0a0b0e; }
-.about-content h2 { color: #ffcc00; font-size: 36px; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
-.about-content p { color: #a0a4ab; font-size: 17px; line-height: 1.9; margin-bottom: 20px; max-width: 900px; }
+.welcome-grid { display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: start; }
+.welcome-content h2 { color: #ffcc00; font-size: 36px; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
+.welcome-content p { color: #a0a4ab; font-size: 17px; line-height: 1.9; margin-bottom: 20px; }
+.about-portrait { width: 100%; border-radius: 8px; border: 1px solid rgba(255,204,0,0.2); }
 
-/* Philosophy Grid */
+/* Philosophy Section */
 .philosophy-section { padding: 80px 0; background: #0e1015; }
-.philosophy-grid { display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: start; }
+.minimal-container { max-width: 900px; margin: 0 auto; }
 .philosophy-text h3 { color: #fff; font-size: 32px; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
 .philosophy-text p { color: #a0a4ab; font-size: 17px; line-height: 1.8; margin-bottom: 20px; }
-.philosophy-portrait { width: 100%; border-radius: 8px; border: 1px solid rgba(255,204,0,0.2); }
 .anand-signature { margin-top: 30px; font-style: italic; color: #888; }
 .anand-signature strong { color: #fff; font-style: normal; display: block; margin: 5px 0; font-size: 20px; font-family: 'Playfair Display', serif; }
 
 @media (max-width: 992px) {
-  .philosophy-grid { grid-template-columns: 1fr; }
-  .philosophy-img { order: -1; text-align: center; }
-  .philosophy-portrait { max-width: 350px; }
+  .welcome-grid { grid-template-columns: 1fr; }
+  .welcome-img { order: -1; text-align: center; }
+  .about-portrait { max-width: 350px; }
 }
 @media (max-width: 768px) {
   .about-hero-simple { padding: 120px 0 50px 0; }
