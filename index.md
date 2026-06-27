@@ -94,40 +94,14 @@ title: Home
 </section>
 
 <section class="mobile-hero">
-  
   <div class="m-video-wrapper">
     <video id="mobileHeroVideo" src="TWA Cat Video - Hero Banner.mp4" autoplay muted playsinline></video>
-    
-    <div id="videoTextOverlay" class="video-text-overlay">
-      Hi Friends, I'm MAXX - <br>
-      <span class="highlight-text">Connect With My Friend Anand</span>
-    </div>
   </div>
-
-  <div class="m-hero-container">
-    
-    <div class="m-hero-slide active">
-      <div class="m-hero-img">
-        <img src="Mobile%20Munnar%20Scenery%20Hero%20Section.jpg" alt="South India Tours">
-      </div>
-      <div class="m-hero-content">
-        <h1>South India Tours & Beyond</h1>
-        <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
-        <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
-      </div>
-    </div>
-
-    <div class="m-hero-slide">
-      <div class="m-hero-img">
-        <img src="Mobile%20Hero%20Airprot.jpg" alt="Kochi Airport Taxi">
-      </div>
-      <div class="m-hero-content">
-        <h1>Kochi Airport Transfers</h1>
-        <p>Reliable 24/7 premium airport pickup and drop services with professional chauffeurs.</p>
-        <a href="https://wa.me/919400620615" class="luxury-btn">Book Your Ride</a>
-      </div>
-    </div>
-
+  
+  <div class="m-hero-cta">
+    <h1>South India Tours & Beyond</h1>
+    <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
+    <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
   </div>
 </section>
 
@@ -459,7 +433,7 @@ title: Home
   <a href="tel:+919400620615" class="float-btn float-call" title="Call Us">
     <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
   </a>
-  <a href="https://wa.me/919400620615" class="float-btn float-wa" title="WhatsApp Us">
+  <a href="https://wa.me/919400620615" class="float-btn float-wa" title="WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M12.031 21c-1.566 0-3.093-.418-4.425-1.214l-4.908 1.288 1.309-4.786C3.125 14.935 2.656 13.504 2.656 12 2.656 6.837 6.856 2.637 12.031 2.637c5.174 0 9.375 4.2 9.375 9.363s-4.201 9.363-9.375 9.363zm0-17.062c-4.256 0-7.72 3.464-7.72 7.7 0 1.36.353 2.689 1.023 3.856l-.77 2.81 2.872-.754c1.127.611 2.392.933 3.684.933 4.256 0 7.719-3.465 7.719-7.701 0-4.236-3.463-7.7-7.719-7.7zm4.238 10.518c-.232-.116-1.374-.679-1.587-.756-.213-.077-.367-.116-.522.116-.154.232-.598.756-.733.911-.135.155-.27.174-.502.058-1.53-.746-2.585-1.385-3.565-2.731-.135-.184.135-.164.593-.618.077-.077.116-.154.193-.27.077-.116.038-.232-.019-.348-.058-.116-.522-1.256-.715-1.72-.188-.452-.379-.391-.522-.398h-.445c-.154 0-.406.058-.618.29-.213.232-.811.792-.811 1.932 0 1.14.831 2.241.947 2.396.116.155 1.634 2.493 3.96 3.498.553.239.985.382 1.321.49.555.176 1.061.151 1.46.091.448-.067 1.374-.561 1.568-1.102.193-.541.193-1.005.135-1.102-.058-.097-.213-.155-.445-.271z"/></svg>
   </a>
 </div>
@@ -525,7 +499,7 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 
 /* --- DESKTOP HERO SLIDER --- */
 .desktop-hero { width: 100vw; position: relative; height: 100vh; overflow: hidden; margin-top: 0; background: #000; display: block; }
-.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; } /* Snappy perfectly synced fade */
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; } 
 .hero-slide.active { opacity: 1; z-index: 2;}
 .hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden;}
 .hero-bg img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); transition: transform 15s linear; }
@@ -535,8 +509,8 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .hero-content h1 { font-size: 58px; color: #fff; margin-bottom: 20px; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 35px 0; line-height: 1.6; color: #b0b5be; font-weight: 300; }
 
-/* --- MOBILE VIDEO & SLIDER (UNCROPPED) --- */
-.mobile-hero { display: none; position: relative; width: 100vw; padding-top: 75px; background: #0a0b0e; }
+/* --- MOBILE VIDEO (CLEANED) --- */
+.mobile-hero { display: none; position: relative; width: 100vw; background: #0a0b0e; }
 
 .m-video-wrapper { 
   position: relative; 
@@ -544,52 +518,31 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
   background: #000; 
   overflow: hidden;
 }
-/* Ensure the video scales down naturally without being cut */
 .m-video-wrapper video { 
   width: 100%; 
   height: auto; 
   display: block; 
 }
-.video-text-overlay { 
-  position: absolute; 
-  top: 50%; 
-  right: 5%; 
-  transform: translateY(-50%); 
-  width: 45%; /* slightly narrower to accommodate a smaller screen height */
-  text-align: right; 
+
+/* Mobile Hero Clean CTA Section */
+.m-hero-cta { 
+  padding: 30px 20px 40px; 
+  text-align: center; 
+  background: #0a0b0e; 
+}
+.m-hero-cta h1 { 
+  font-size: 32px; 
   color: #fff; 
-  font-family: 'Playfair Display', serif; 
-  font-size: 16px; /* Adjusted smaller so it fits uncropped video height perfectly */
-  font-weight: 700; 
-  line-height: 1.4; 
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.9); 
-  opacity: 0; 
-  transition: opacity 0.8s ease-in; 
-  z-index: 10; 
+  margin-bottom: 12px; 
+  line-height: 1.2;
 }
-.video-text-overlay.show-text { opacity: 1; }
-.highlight-text { 
-  color: #ffcc00; 
-  font-size: 11px; /* Scaled down slightly to fit well */
-  font-family: 'Inter', sans-serif; 
-  font-weight: 600; 
-  text-transform: uppercase; 
-  letter-spacing: 0.5px; 
-  display: block; 
-  margin-top: 5px; 
+.m-hero-cta p { 
+  font-size: 15px; 
+  color: #a0a4ab; 
+  margin-bottom: 25px; 
+  line-height: 1.5; 
 }
 
-/* Restored image slider that sits directly underneath the video */
-.m-hero-container { position: relative; width: 100%; display: grid; margin-top: 0; }
-.m-hero-slide { grid-area: 1 / 1; opacity: 0; transition: opacity 0.8s ease; visibility: hidden; display: flex; flex-direction: column;}
-.m-hero-slide.active { opacity: 1; visibility: visible; z-index: 2; }
-/* Ensure the images below do not cut */
-.m-hero-img { width: 100%; height: auto; }
-.m-hero-img img { width: 100%; height: auto; display: block; object-fit: contain; }
-
-.m-hero-content { padding: 40px 20px 60px; text-align: center; background: #0a0b0e; flex: 1;}
-.m-hero-content h1 { font-size: 34px; color: #fff; margin-bottom: 15px; line-height: 1.2;}
-.m-hero-content p { font-size: 16px; color: #a0a4ab; margin-bottom: 25px; line-height: 1.6; }
 
 /* --- SECTIONS SPACING --- */
 .fleet-section, .unesco-section, .guest-gallery-section, .faq-section { padding: 120px 0; background: #0e1015; width: 100vw; }
@@ -699,9 +652,9 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .footer-bottom { background: #020203; padding: 25px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
 .footer-bottom p { color: #555; font-size: 13px; margin: 0; }
 
-/* --- STICKY FLOATING WIDGETS --- */
+/* --- STICKY FLOATING WIDGETS (DESKTOP DEFAULT) --- */
 .floating-widgets { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
-.float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); transition: all 0.3s ease; }
+.float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); transition: all 0.3s ease; text-decoration: none; }
 .float-btn:hover { transform: scale(1.1) translateY(-5px); }
 .float-btn svg { width: 30px; height: 30px; fill: #fff; }
 .float-wa { background: linear-gradient(135deg, #25d366, #1da851); box-shadow: 0 10px 25px rgba(37,211,102,0.4); }
@@ -731,12 +684,14 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 @media (max-width: 768px) {
   /* HIDE DESKTOP HERO, SHOW MOBILE HERO */
   .desktop-hero { display: none; }
-  .mobile-hero { display: block; }
+  .mobile-hero { display: block; padding-top: 65px; } /* clear header */
   
-  .section-container { padding: 0 20px; }
-  .section-title { font-size: 32px; }
+  .section-container { padding: 0 15px; }
+  .section-title { font-size: 28px; margin-bottom: 10px;}
+  .section-subtitle { font-size: 14px; margin-bottom: 35px; }
 
-  .fleet-section, .destinations-section, .unesco-section, .message-section, .guest-gallery-section, .review-section, .blog-section, .faq-section, .lead-form-section { padding: 80px 0; }
+  /* Reduced extreme padding for mobile view to fix crowded feeling */
+  .fleet-section, .destinations-section, .unesco-section, .message-section, .guest-gallery-section, .review-section, .blog-section, .faq-section, .lead-form-section { padding: 50px 0; }
   
   .fleet-slider, .review-slider { grid-auto-columns: 90%; }
   .blog-card { min-width: 280px; }
@@ -748,8 +703,8 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
     gap: 15px; 
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
-    padding: 20px 20px 40px 20px; 
-    margin: 0 -20px; 
+    padding: 20px 15px 40px 15px; 
+    margin: 0 -15px; 
     -webkit-overflow-scrolling: touch; 
   }
   .destinations-grid::-webkit-scrollbar { display: none; }
@@ -769,13 +724,36 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
   .gallery-card { flex: 0 0 280px; }
   .gallery-card img { height: 280px; }
   
-  .footer-grid { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; padding: 40px 15px 80px; text-align: center; }
   .footer-logo { margin: 0 auto 20px; }
   .footer-contact-item { justify-content: center; }
   
-  .floating-widgets { bottom: 20px; right: 20px; }
-  .float-btn { width: 50px; height: 50px; }
-  .float-btn svg { width: 25px; height: 25px; }
+  /* CONVERT FLOATING CORNER WIDGETS TO A CLEAN STICKY BOTTOM BAR */
+  body { padding-bottom: 55px !important; }
+  .floating-widgets { 
+    bottom: 0; right: 0; left: 0; 
+    flex-direction: row; 
+    gap: 0; 
+    background: #15181e;
+  }
+  .float-btn { 
+    width: 50%; 
+    height: 55px; 
+    border-radius: 0; 
+    box-shadow: none; 
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+  }
+  .float-btn:hover { transform: none; }
+  .float-btn svg { width: 20px; height: 20px; }
+  
+  /* Inject text purely through CSS for the mobile sticky bar */
+  .float-btn::after { content: attr(title); }
+  .float-call { background: #1c66c9; border-right: 1px solid rgba(255,255,255,0.1); }
+  .float-wa { background: #1da851; }
 }
 </style>
 
@@ -796,29 +774,9 @@ if(dSlides.length > 0) {
   }, 5000); 
 }
 
-// MOBILE Image Slider Logic (Re-enabled for the banners below the video)
-const mSlides = document.querySelectorAll(".mobile-hero .m-hero-slide");
-let mCurrent = 0;
-if(mSlides.length > 0) {
-  setInterval(() => {
-    mSlides[mCurrent].classList.remove("active");
-    mCurrent = (mCurrent + 1) % mSlides.length;
-    mSlides[mCurrent].classList.add("active");
-  }, 5000); 
-}
-
-// MOBILE Video Overlay Automation
+// Mobile Video - Playback loop pause logic
 const mHeroVideo = document.getElementById("mobileHeroVideo");
-const mVideoText = document.getElementById("videoTextOverlay");
-
 if (mHeroVideo) {
-  // Show text on the right side once the video hits 6 seconds
-  mHeroVideo.addEventListener("timeupdate", function() {
-    if (mHeroVideo.currentTime >= 6 && !mVideoText.classList.contains("show-text")) {
-      mVideoText.classList.add("show-text");
-    }
-  });
-  
   // Ensures the video strictly stays paused on the last frame
   mHeroVideo.addEventListener("ended", function() {
     mHeroVideo.pause();
