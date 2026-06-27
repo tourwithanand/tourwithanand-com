@@ -3,13 +3,11 @@ layout: default
 title: About Anand & Tour With Anand
 ---
 
-<!-- 1. FULL WIDTH HERO WITH BACKGROUND IMAGE -->
-<section class="about-hero-banner" style="background-image: url('image_7cb621.jpg');">
-  <div class="hero-overlay">
-    <div class="section-container text-center">
-      <h1>About Us</h1>
-      <p>CRAFTING EXCEPTIONAL JOURNEYS ACROSS GOD'S OWN COUNTRY</p>
-    </div>
+<!-- 1. MINIMALIST HERO SECTION (No Background Image) -->
+<section class="about-hero-simple">
+  <div class="section-container text-center">
+    <h1>About Us</h1>
+    <p>CRAFTING EXCEPTIONAL JOURNEYS ACROSS GOD'S OWN COUNTRY</p>
   </div>
 </section>
 
@@ -49,14 +47,18 @@ title: About Anand & Tour With Anand
 </section>
 
 <style>
-/* Hero Styling */
-.about-hero-banner { width: 100vw; height: 50vh; background-position: center; background-size: cover; position: relative; }
-.hero-overlay { position: absolute; inset: 0; background: rgba(10, 11, 14, 0.7); display: flex; align-items: center; justify-content: center; }
-.hero-overlay h1 { font-size: 56px; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 10px; }
-.hero-overlay p { font-size: 16px; color: #ffcc00; letter-spacing: 2px; text-transform: uppercase; }
+/* Clean Header Styling */
+.about-hero-simple { 
+  width: 100vw; 
+  padding: 150px 0 80px 0; 
+  background-color: #0a0b0e; 
+  text-align: center; 
+}
+.about-hero-simple h1 { font-size: 56px; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 15px; }
+.about-hero-simple p { font-size: 16px; color: #ffcc00; letter-spacing: 3px; text-transform: uppercase; }
 
 /* Content Styling */
-.about-anand-section { padding: 80px 0; background: #0a0b0e; }
+.about-anand-section { padding: 40px 0 80px 0; background: #0a0b0e; }
 .about-content h2 { color: #ffcc00; font-size: 36px; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
 .about-content p { color: #a0a4ab; font-size: 17px; line-height: 1.9; margin-bottom: 20px; max-width: 900px; }
 
@@ -67,7 +69,7 @@ title: About Anand & Tour With Anand
 .philosophy-text p { color: #a0a4ab; font-size: 17px; line-height: 1.8; margin-bottom: 20px; }
 .philosophy-portrait { width: 100%; border-radius: 8px; border: 1px solid rgba(255,204,0,0.2); }
 .anand-signature { margin-top: 30px; font-style: italic; color: #888; }
-.anand-signature strong { color: #fff; font-style: normal; display: block; margin: 5px 0; font-size: 20px; }
+.anand-signature strong { color: #fff; font-style: normal; display: block; margin: 5px 0; font-size: 20px; font-family: 'Playfair Display', serif; }
 
 @media (max-width: 992px) {
   .philosophy-grid { grid-template-columns: 1fr; }
@@ -75,6 +77,7 @@ title: About Anand & Tour With Anand
   .philosophy-portrait { max-width: 350px; }
 }
 @media (max-width: 768px) {
-  .hero-overlay h1 { font-size: 36px; }
+  .about-hero-simple { padding: 120px 0 50px 0; }
+  .about-hero-simple h1 { font-size: 40px; }
 }
 </style>
