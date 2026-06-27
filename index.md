@@ -513,7 +513,7 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .hero-content h1 { font-size: 58px; color: #fff; margin-bottom: 20px; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 35px 0; line-height: 1.6; color: #b0b5be; font-weight: 300; }
 
-/* --- MOBILE VIDEO (CLEANED WITH TEXT OVERLAY) --- */
+/* --- MOBILE VIDEO (CLEANED WITH TEXT OVERLAY & WATERMARK HIDDEN) --- */
 .mobile-hero { display: none; position: relative; width: 100vw; background: #0a0b0e; }
 
 .m-video-wrapper { 
@@ -526,7 +526,9 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
   width: 100%; 
   height: auto; 
   display: block; 
-  transform: scale(1.08); /* Scales video to clean up the edges and hide watermarks */
+  /* Increased scale and anchored to top-left to hide the watermark completely */
+  transform: scale(1.18); 
+  transform-origin: left top; 
 }
 
 /* Beautiful Cinematic Text Overlay */
