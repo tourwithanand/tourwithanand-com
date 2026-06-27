@@ -96,6 +96,10 @@ title: Home
 <section class="mobile-hero">
   <div class="m-video-wrapper">
     <video id="mobileHeroVideo" src="TWA Cat Video - Hero Banner.mp4" autoplay muted playsinline></video>
+    <div id="videoTextOverlay" class="video-text-overlay">
+      <span class="maxx-intro">Hi, I'm Maxx!</span><br>
+      <span class="maxx-sub">Connect With My Friend Anand</span>
+    </div>
   </div>
   
   <div class="m-hero-cta">
@@ -509,7 +513,7 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
 .hero-content h1 { font-size: 58px; color: #fff; margin-bottom: 20px; line-height: 1.1; }
 .hero-content p { font-size: 18px; margin: 0 0 35px 0; line-height: 1.6; color: #b0b5be; font-weight: 300; }
 
-/* --- MOBILE VIDEO (CLEANED) --- */
+/* --- MOBILE VIDEO (CLEANED WITH TEXT OVERLAY) --- */
 .mobile-hero { display: none; position: relative; width: 100vw; background: #0a0b0e; }
 
 .m-video-wrapper { 
@@ -522,7 +526,43 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
   width: 100%; 
   height: auto; 
   display: block; 
+  transform: scale(1.08); /* Scales video to clean up the edges and hide watermarks */
 }
+
+/* Beautiful Cinematic Text Overlay */
+.video-text-overlay { 
+  position: absolute; 
+  top: 50%; 
+  right: 5%; 
+  transform: translateY(-50%); 
+  width: 50%; 
+  text-align: right; 
+  opacity: 0; 
+  transition: opacity 1.5s ease-in-out; /* Smooth cinematic fade in */
+  z-index: 10; 
+  pointer-events: none; /* Allows user to still interact with the video behind it if needed */
+}
+.video-text-overlay.show-text { opacity: 1; }
+
+.maxx-intro {
+  font-family: 'Playfair Display', serif; 
+  font-size: 20px; 
+  font-weight: 700; 
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9); 
+}
+.maxx-sub {
+  color: #ffcc00; 
+  font-size: 12px; 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 600; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  display: block; 
+  margin-top: 5px; 
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
 
 /* Mobile Hero Clean CTA Section */
 .m-hero-cta { 
@@ -774,9 +814,18 @@ if(dSlides.length > 0) {
   }, 5000); 
 }
 
-// Mobile Video - Playback loop pause logic
+// MOBILE Video Overlay Automation
 const mHeroVideo = document.getElementById("mobileHeroVideo");
+const mVideoText = document.getElementById("videoTextOverlay");
+
 if (mHeroVideo) {
+  // Show text on the right side once the video hits 6 seconds
+  mHeroVideo.addEventListener("timeupdate", function() {
+    if (mHeroVideo.currentTime >= 6 && !mVideoText.classList.contains("show-text")) {
+      mVideoText.classList.add("show-text");
+    }
+  });
+  
   // Ensures the video strictly stays paused on the last frame
   mHeroVideo.addEventListener("ended", function() {
     mHeroVideo.pause();
