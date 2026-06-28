@@ -3,6 +3,56 @@ layout: default
 title: Home
 ---
 
+<style>
+  /* Mobile Hero & Video Overlay Fixes */
+  .mobile-hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .m-video-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #000; /* Prevents white flash during initial page load */
+    overflow: hidden;
+  }
+
+  #mobileHeroVideo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .video-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    z-index: 2;
+    pointer-events: none; /* Prevents the text layer from intercepting screen taps/clicks */
+  }
+
+  .maxx-intro {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  .maxx-sub {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  }
+</style>
+
 <section class="desktop-hero">
   <div class="hero-slide active">
     <div class="hero-bg"><img src="Hero%20Banner%202.png" alt="South India Tours"></div>
@@ -40,7 +90,15 @@ title: Home
 
 <section class="mobile-hero">
   <div class="m-video-wrapper">
-    <video id="mobileHeroVideo" src="TWA Cat Video - Hero Banner.mp4" autoplay muted playsinline></video>
+    <video id="mobileHeroVideo" 
+           src="TWA Cat Video - Hero Banner.mp4" 
+           poster="Mobile-Hero-Poster.jpg" 
+           autoplay 
+           loop 
+           muted 
+           playsinline 
+           preload="auto">
+    </video>
     <div id="videoTextOverlay" class="video-text-overlay">
       <span class="maxx-intro">Hi, I'm Maxx!</span><br>
       <span class="maxx-sub">Connect With My Friend Anand</span>
@@ -53,7 +111,6 @@ title: Home
     <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
   </div>
 </section>
-
 
 <section class="fleet-section">
   <div class="section-container">
@@ -90,7 +147,6 @@ title: Home
   </div>
 </section>
 
-
 <section class="destinations-section">
   <div class="section-container">
     <h2 class="section-title">Explore Top Destinations</h2>
@@ -119,7 +175,6 @@ title: Home
   </div>
 </section>
 
-
 <section class="unesco-section">
   <div class="section-container">
     <h2 class="section-title">World Heritage Trails</h2>
@@ -135,7 +190,6 @@ title: Home
     </div>
   </div>
 </section>
-
 
 <section class="message-section">
   <div class="message-wrap">
@@ -155,7 +209,6 @@ title: Home
     </div>
   </div>
 </section>
-
 
 <section class="guest-gallery-section">
   <div class="section-container">
