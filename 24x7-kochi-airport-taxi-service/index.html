@@ -3,10 +3,28 @@ layout: default
 title: 24X7 Kochi Airport Taxi Service & Premium Transfers
 ---
 
-<!-- RESPONSIVE IMAGE BANNER (Watermark hidden via CSS scaling) -->
-<section class="premium-image-banner">
+<!-- DESKTOP BANNER (Hidden on Mobile) -->
+<section class="premium-image-banner desktop-only">
   <div class="banner-wrapper">
+    <!-- Hiding watermark via CSS scaling -->
     <img src="/24X7-Kochi-Airport-Taxi-Service-By-Tour-With-Anand.png" alt="24x7 Kochi Airport Taxi Service by Tour With Anand" class="responsive-banner">
+  </div>
+</section>
+
+<!-- MOBILE CAT VIDEO BANNER (Hidden on Desktop) -->
+<section class="mobile-video-banner mobile-only">
+  <div class="video-flex-container">
+    <div class="video-box">
+      <!-- Added playsinline to prevent iOS fullscreen takeover -->
+      <video id="catVideo" autoplay muted playsinline>
+        <source src="/TWA Cat Video - Hero Banner.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="text-box delayed-text">
+      <h2>Premium<br>Transfers</h2>
+      <p>Book your safe, 24/7 Kochi Airport taxi instantly.</p>
+      <a href="https://wa.me/919400620615" class="luxury-btn small-btn">Book Now</a>
+    </div>
   </div>
 </section>
 
@@ -17,6 +35,10 @@ title: 24X7 Kochi Airport Taxi Service & Premium Transfers
     <!-- SEO INTRODUCTION -->
     <div class="document-text-block text-center-intro">
       <h1 class="seo-page-title">24X7 Kochi Airport Taxi Service</h1>
+      
+      <!-- NEW HERO AIRPORT IMAGE UNDER HEADLINE -->
+      <img src="/Mobile Hero Airprot.jpg" alt="Kochi Airport Arrival Taxi" class="hero-intro-img">
+      
       <p>Welcome to <strong>Tour With Anand</strong>, your most trusted partner for premium, round-the-clock airport transfers. Whether you are landing at Cochin International Airport (COK) at noon or midnight, our professional chauffeurs and pristine vehicles guarantee a seamless, safe, and comfortable journey to any destination across Kerala.</p>
     </div>
 
@@ -27,18 +49,22 @@ title: 24X7 Kochi Airport Taxi Service & Premium Transfers
       
       <div class="fleet-features-grid">
         <div class="feature-box">
+          <img src="/Kochi Airport Innova Taxi Service.png" alt="Innova Crysta Taxi Kochi" class="fleet-img">
           <h3>Toyota Innova Crysta</h3>
           <p>The gold standard for executive travel and families. Unmatched suspension, captain seats, and exceptional comfort for long journeys to Munnar or Thekkady.</p>
         </div>
         <div class="feature-box">
+          <img src="/Kochi Airport Ertiga Taxi Service.png" alt="Ertiga Taxi Kochi" class="fleet-img">
           <h3>Maruti Ertiga</h3>
           <p>A highly popular, spacious, and economical choice for small families or groups of up to 5 passengers carrying standard luggage.</p>
         </div>
         <div class="feature-box">
+          <img src="/Kochi Airport Swift Dezire Taxi Service.png" alt="Premium Sedan Taxi Kochi" class="fleet-img">
           <h3>Premium Sedans</h3>
           <p>Perfect for solo corporate travelers or couples. Swift, efficient, and highly comfortable for city drops or quick transfers to Fort Kochi and Alleppey.</p>
         </div>
         <div class="feature-box">
+          <img src="/Kochi Airport Tempo Traveller.png" alt="Tempo Traveller Rentals Kochi" class="fleet-img">
           <h3>Tempo Travellers</h3>
           <p>Traveling with a large group? We provide luxury 12 to 26-seater Tempo Travellers and Force Urbanias directly from the airport terminal.</p>
         </div>
@@ -148,32 +174,28 @@ title: 24X7 Kochi Airport Taxi Service & Premium Transfers
   </div>
 </section>
 
-<!-- CSS SPECIFIC TO INNER PAGES -->
+<!-- CSS SPECIFIC TO INNER PAGES & ADS LANDING -->
 <style>
 /* Responsive Banner Styling - Scaled to hide watermark */
-.premium-image-banner {
-  width: 100vw;
-  background-color: #0a0b0e;
-  padding-top: 80px; /* Clears your fixed header */
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-}
-.banner-wrapper {
-  width: 100%;
-  max-width: 1400px;
-  position: relative;
-  overflow: hidden;
-}
-.responsive-banner {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  transform: scale(1.05); /* Slightly scales image to push the watermark out of view */
-  transform-origin: top left;
-  border-bottom: 1px solid rgba(255,204,0,0.1);
-}
+.premium-image-banner { width: 100vw; background-color: #0a0b0e; padding-top: 80px; display: flex; justify-content: center; overflow: hidden; }
+.banner-wrapper { width: 100%; max-width: 1400px; position: relative; overflow: hidden; }
+.responsive-banner { width: 100%; height: auto; display: block; object-fit: contain; transform: scale(1.05); transform-origin: top left; border-bottom: 1px solid rgba(255,204,0,0.1); }
+
+/* MOBILE VIDEO BANNER SETTINGS */
+.mobile-video-banner { display: none; width: 100vw; background: #0a0b0e; padding-top: 80px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,204,0,0.1); }
+.video-flex-container { display: flex; align-items: center; justify-content: space-between; max-width: 1000px; margin: 0 auto; padding: 0 15px; }
+.video-box { flex: 0 0 52%; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,204,0,0.3); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.video-box video { width: 100%; height: auto; display: block; }
+
+/* 6-Second Delay Animation for Text */
+.delayed-text { flex: 0 0 42%; opacity: 0; animation: fadeInDelay 0.5s forwards; animation-delay: 6s; text-align: left; }
+.delayed-text h2 { color: #ffcc00; font-size: 22px; margin: 0 0 8px; font-family: 'Playfair Display', serif; line-height: 1.2; }
+.delayed-text p { font-size: 13px; color: #dcdcdc; margin: 0 0 15px; line-height: 1.5; }
+.small-btn { padding: 10px 18px; font-size: 13px; }
+@keyframes fadeInDelay { to { opacity: 1; } }
+
+/* Hero Image under H1 */
+.hero-intro-img { width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto 35px; border-radius: 12px; border: 1px solid rgba(255,204,0,0.2); box-shadow: 0 15px 30px rgba(0,0,0,0.6); }
 
 /* Content Layout */
 .document-content-section { padding: 60px 0 80px; background: #0a0b0e; width: 100vw; }
@@ -181,15 +203,17 @@ title: 24X7 Kochi Airport Taxi Service & Premium Transfers
 
 /* SEO Page Title */
 .text-center-intro { text-align: center; margin-bottom: 60px; }
-.seo-page-title { color: #ffcc00; font-size: 42px; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+.seo-page-title { color: #ffcc00; font-size: 42px; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
 .text-center-intro p { font-size: 18px; color: #dcdcdc; max-width: 800px; margin: 0 auto; line-height: 1.8; }
 
-/* Feature Box Grid */
+/* Fleet Grid & Car Images */
 .fleet-features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 30px; margin-bottom: 50px;}
-.feature-box { background: #15181e; padding: 30px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; }
+.feature-box { background: #15181e; padding: 30px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; text-align: center; }
 .feature-box:hover { border-color: rgba(255,204,0,0.4); transform: translateY(-5px); background: #1a1d24; }
+.fleet-img { width: 100%; height: 160px; object-fit: contain; margin-bottom: 20px; filter: drop-shadow(0 15px 15px rgba(0,0,0,0.4)); transition: transform 0.4s ease; }
+.feature-box:hover .fleet-img { transform: scale(1.08); }
 .feature-box h3 { color: #ffcc00 !important; margin-top: 0 !important; font-size: 20px !important; margin-bottom: 12px !important; }
-.feature-box p { font-size: 15px !important; margin-bottom: 0 !important; color: #a0a4ab !important;}
+.feature-box p { font-size: 15px !important; margin-bottom: 0 !important; color: #a0a4ab !important; text-align: left;}
 
 /* Standard Typography */
 .document-text-block h2 { color: #fff; font-size: 34px; margin: 50px 0 20px; border-bottom: 1px solid rgba(255,204,0,0.2); padding-bottom: 15px; font-family: 'Playfair Display', serif; }
@@ -213,21 +237,40 @@ title: 24X7 Kochi Airport Taxi Service & Premium Transfers
 .cta-block { background: linear-gradient(145deg, #15181e, #0e1015); border: 1px solid rgba(255,204,0,0.4); padding: 50px; text-align: center; border-radius: 12px; margin-top: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);}
 .cta-block p { font-size: 24px; color: #fff; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
 
-/* Mobile Adjustments */
+/* Mobile Visibility Handling */
+.mobile-only { display: none; }
+
 @media (max-width: 992px) {
   .fleet-features-grid, .faq-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .premium-image-banner { padding-top: 60px; }
+  /* Hide Desktop elements, show Mobile elements */
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
   
   .document-content-section { padding: 40px 0; }
   .seo-page-title { font-size: 32px; }
   .text-center-intro p { font-size: 16px; }
   
-  .document-text-block h2 { font-size: 26px; }
+  .hero-intro-img { margin: 10px auto 25px; }
+  .fleet-img { height: 140px; }
   
+  .document-text-block h2 { font-size: 26px; }
   .cta-block { padding: 35px 20px; }
   .cta-block p { font-size: 20px; }
 }
 </style>
+
+<!-- SCRIPT TO PAUSE VIDEO AT THE END -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var catVideo = document.getElementById('catVideo');
+  if(catVideo) {
+    catVideo.addEventListener('ended', function() {
+      // Freezes on the last frame
+      catVideo.pause();
+    });
+  }
+});
+</script>
