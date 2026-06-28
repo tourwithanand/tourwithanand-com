@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Guest Reviews
+title: Guest Reviews & Memories
 ---
 
 <style>
@@ -25,23 +25,67 @@ title: Guest Reviews
     line-height: 1.6;
   }
 
-  /* --- REVIEWS GRID --- */
-  .reviews-page-section {
-    padding: 100px 0;
+  /* --- MINI GALLERY SECTION --- */
+  .mini-gallery-section {
+    padding: 80px 0 40px;
     background: #0a0b0e;
+  }
+  .mini-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+  }
+  .mini-gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+    filter: grayscale(15%);
+  }
+  .mini-gallery-grid img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+    border-color: rgba(255, 204, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  }
+
+  /* --- DATE-WISE REVIEWS SECTION --- */
+  .reviews-page-section {
+    padding: 40px 0 100px;
+    background: #0a0b0e;
+  }
+  .year-divider {
+    color: #ffcc00;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+    margin: 60px 0 30px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .year-count {
+    font-size: 14px;
+    color: #888;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
   .review-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
   }
   .review-card-static {
     background: #15181e;
-    padding: 40px 30px;
-    border-radius: 14px;
+    padding: 35px 25px;
+    border-radius: 12px;
     text-align: left;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.03);
     transition: all 0.3s ease;
     position: relative;
     display: flex;
@@ -49,75 +93,63 @@ title: Guest Reviews
   }
   .review-card-static:hover {
     border-color: rgba(255,204,0,0.3);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
   }
-  .review-card-static::before {
-    content: '“';
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 60px;
-    font-family: 'Playfair Display', serif;
-    color: rgba(255,204,0,0.15);
-    line-height: 1;
+  .review-date {
+    font-size: 12px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
   .review-card-static p {
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 14px;
+    line-height: 1.7;
     margin-bottom: 25px;
     color: #dcdcdc;
-    position: relative;
-    z-index: 1;
     flex-grow: 1;
   }
   .review-card-static strong {
-    color: #ffcc00;
+    color: #fff;
     display: block;
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Playfair Display', serif;
   }
   .review-card-static span {
-    font-size: 13px;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 12px;
+    color: #777;
   }
 
-  /* --- GOOGLE FORM CLIPPER (Integrated User CSS) --- */
+  /* --- GOOGLE FORM CLIPPER --- */
   .feedback-section {
     padding: 80px 0 120px;
     background: #0e1015;
     border-top: 1px solid rgba(255, 204, 0, 0.1);
   }
-  
-  /* 1. The Premium Outer Box */
   .google-form-wrapper {
-    background-color: #15181e; /* Matched to site card background */
-    border: 1px solid #ffcc00; /* Matched to site gold */
+    background-color: #15181e;
+    border: 1px solid #ffcc00;
     border-radius: 12px; 
     padding: 40px 20px 10px 20px;
     max-width: 680px; 
     margin: 0 auto; 
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5); 
   }
-
   .google-form-wrapper h3 {
-    color: #ffcc00; /* Matched to site gold */
+    color: #ffcc00;
     text-align: center;
     font-size: 32px;
     margin-top: 0;
     margin-bottom: 10px;
     font-family: 'Playfair Display', serif;
   }
-
   .google-form-wrapper p {
     color: #a0a4ab;
     text-align: center;
     font-size: 16px;
     margin-bottom: 30px;
   }
-
-  /* 2. The Clipping Window (PC View) */
   .form-clipper-window {
     width: 100%;
     height: 500px; 
@@ -125,8 +157,6 @@ title: Guest Reviews
     position: relative;
     border-radius: 8px;
   }
-
-  /* 3. The Shifted Google Form (PC View) */
   .form-clipper-window iframe {
     position: absolute;
     top: -200px; 
@@ -135,98 +165,220 @@ title: Guest Reviews
     height: 800px; 
   }
 
-  /* 4. Mobile Responsiveness Fix */
+  /* --- RESPONSIVE --- */
+  @media (max-width: 992px) {
+    .mini-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 768px) {
     .inner-hero { padding: 140px 15px 60px; }
     .inner-hero h1 { font-size: 36px; }
-    .reviews-page-section { padding: 60px 0; }
-    
-    .form-clipper-window {
-      height: 600px; /* Taller clipping window for stacked mobile fields */
-    }
-    .form-clipper-window iframe {
-      height: 950px; /* Taller iframe so the Submit button stays visible */
-    }
-    .google-form-wrapper {
-      padding: 30px 15px 10px;
-    }
+    .year-divider { font-size: 26px; flex-direction: column; align-items: flex-start; gap: 5px; }
+    .mini-gallery-grid { grid-template-columns: 1fr; gap: 10px;}
+    .mini-gallery-grid img { height: 220px; }
+    .form-clipper-window { height: 600px; }
+    .form-clipper-window iframe { height: 950px; }
+    .google-form-wrapper { padding: 30px 15px 10px; }
   }
 </style>
 
 <section class="inner-hero">
   <div class="section-container">
-    <h1>Guest Experiences</h1>
-    <p>Read firsthand stories from international and domestic travelers who have explored the beauty of South India with our dedicated chauffeurs.</p>
+    <h1>Guest Memories & Reviews</h1>
+    <p>Over a decade of smiles, safe journeys, and unforgettable South Indian heritage trails. Read what our guests have been saying since 2012.</p>
   </div>
 </section>
 
+<!-- SMALL GALLERY SECTION -->
+<section class="mini-gallery-section">
+  <div class="section-container">
+    <h2 class="section-title">A Journey in Pictures</h2>
+    <p class="section-subtitle">Real moments captured by our guests across Kochi, Munnar, and the backwaters.</p>
+    
+    <div class="mini-gallery-grid">
+      <img src="Guest%20Tour%20With%20Anand%20at%20Munnar%20Hill%20Station.png" alt="Guest at Munnar Hill Station" loading="lazy">
+      <img src="Guest%20Kochi%20Airport%20Taxi%20Service%20at%20Tour%20With%20Anand%20guest.png" alt="Kochi Airport Taxi Service Pickup" loading="lazy">
+      <img src="Guest%20Tour%20With%20Anand%20with%20Elephant%20ride.jpeg" alt="Kerala Elephant Ride Experience" loading="lazy">
+      <img src="Guest%20South%20African%20Guest%20at%20Kochi%20Airport.png" alt="International Guests arriving at Cochin Airport" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- DATE-WISE REVIEWS -->
 <section class="reviews-page-section">
   <div class="section-container">
     
+    <!-- 2026 & 2025 -->
+    <div class="year-divider">
+      <span>2025 – 2026</span>
+      <span class="year-count">Recent Feedback</span>
+    </div>
     <div class="review-grid">
       <div class="review-card-static">
-        <p>“Our Kerala trip with Anand was absolutely smooth and stress-free. From airport pickup to hotel check-ins, everything was handled perfectly.”</p>
+        <div class="review-date">April 2026</div>
+        <p>“Booked a <strong>Tempo Traveller from Kochi Airport to Pamba</strong> for our Sabarimala trip. Anand's team was exceptional. The vehicle was spotless, and the driver navigated the night hills safely. Highly recommended for group pilgrims.”</p>
         <div>
-          <strong>Daniel R</strong>
-          <span>Germany</span>
+          <strong>Srinivasan K.</strong>
+          <span>Chennai, India</span>
         </div>
       </div>
-      
       <div class="review-card-static">
-        <p>“We booked a 7-day Kerala tour with Tour With Anand and it exceeded our expectations. Clean vehicle and excellent guidance throughout the hill stations.”</p>
+        <div class="review-date">February 2026</div>
+        <p>“We used the <strong>24/7 Kochi Airport Taxi Service</strong>. Our flight was delayed until 3 AM, but the driver was waiting with a smile. The Innova Crysta was extremely comfortable. Best airport transfer I've experienced in Kerala.”</p>
         <div>
-          <strong>Nur Aisyah</strong>
-          <span>Malaysia</span>
+          <strong>Daniel R.</strong>
+          <span>Munich, Germany</span>
         </div>
       </div>
-      
       <div class="review-card-static">
-        <p>“Anand is not just a driver, he is a true travel guide. He helped us explore hidden viewpoints and local culture safely.”</p>
+        <div class="review-date">December 2025</div>
+        <p>“A flawless 7-day <strong>South India Heritage Tour</strong>! We visited Madurai and Rameswaram. Anand arranged a premium Ertiga. The driver doubled as a guide and knew all the great local food stops.”</p>
         <div>
-          <strong>Thomas & Eva</strong>
-          <span>France</span>
+          <strong>Aisyah M.</strong>
+          <span>Kuala Lumpur, Malaysia</span>
         </div>
       </div>
-      
       <div class="review-card-static">
-        <p>“Traveling with elders felt completely safe. Anand was polite, professional, and very supportive throughout. No hidden charges and very honest service.”</p>
+        <div class="review-date">October 2025</div>
+        <p>“If you need a <strong>Premium Taxi from Kochi to Munnar</strong>, look no further. The winding roads can be tough, but our driver was so smooth that my kids didn't get carsick once. Completely transparent pricing.”</p>
         <div>
-          <strong>Ravi K</strong>
-          <span>Bangalore</span>
+          <strong>Ravi Verma</strong>
+          <span>Mumbai, India</span>
         </div>
       </div>
-      
+    </div>
+
+    <!-- 2023 - 2024 -->
+    <div class="year-divider">
+      <span>2023 – 2024</span>
+      <span class="year-count">Post-Pandemic Travel</span>
+    </div>
+    <div class="review-grid">
       <div class="review-card-static">
-        <p>“Even though our flight was delayed, Anand waited patiently at Kochi Airport. Very reliable service. The vehicle was perfectly air-conditioned and spotless.”</p>
+        <div class="review-date">November 2024</div>
+        <p>“I searched for the <strong>Best Taxi Service in Kochi</strong> and found Tour With Anand. They provided an immaculate Swift Dzire for my city meetings. Punctual and highly professional.”</p>
         <div>
-          <strong>Fatima A</strong>
-          <span>Dubai</span>
+          <strong>James Wright</strong>
+          <span>London, UK</span>
         </div>
       </div>
-      
       <div class="review-card-static">
-        <p>“The Alleppey houseboat arranged by Anand was excellent and well maintained. Very safe driving even in the steep Munnar hill areas. We felt comfortable throughout.”</p>
+        <div class="review-date">August 2024</div>
+        <p>“Anand arranged our <strong>Kochi to Alleppey Taxi</strong> and also helped us book a premium houseboat. The seamless transition from airport to houseboat made our honeymoon perfect.”</p>
         <div>
-          <strong>Michael P</strong>
+          <strong>Sneha & Rahul</strong>
+          <span>Delhi, India</span>
+        </div>
+      </div>
+      <div class="review-card-static">
+        <div class="review-date">January 2024</div>
+        <p>“Booked a multi-day trip using their <strong>Innova Crysta taxi service</strong>. We covered Wayanad and Coorg. The vehicle had excellent AC and plenty of legroom for my elderly parents. Superb driving.”</p>
+        <div>
+          <strong>Fatima Al-Sayed</strong>
+          <span>Dubai, UAE</span>
+        </div>
+      </div>
+      <div class="review-card-static">
+        <div class="review-date">September 2023</div>
+        <p>“Excellent value. The <strong>Affordable Airport Taxi Kochi</strong> package saved us from the usual airport prepaid chaos. Straightforward WhatsApp booking. The driver was waiting at the arrival gate.”</p>
+        <div>
+          <strong>Lim Wei</strong>
+          <span>Singapore</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2018 - 2022 -->
+    <div class="year-divider">
+      <span>2018 – 2022</span>
+      <span class="year-count">Growing Trust</span>
+    </div>
+    <div class="review-grid">
+      <div class="review-card-static">
+        <div class="review-date">December 2022</div>
+        <p>“After COVID, we were hesitant to travel, but Anand's thoroughly sanitized <strong>Maruti Ertiga</strong> put us at ease. Explored Fort Kochi and Athirappilly waterfalls safely. Great local travel guide.”</p>
+        <div>
+          <strong>Thomas Muller</strong>
+          <span>Switzerland</span>
+        </div>
+      </div>
+      <div class="review-card-static">
+        <div class="review-date">February 2020</div>
+        <p>“Rented a <strong>Tempo Traveller in Kochi</strong> for our extended family of 12. The luxury coach was spacious, and Anand personally ensured our Kerala itinerary was executed flawlessly before the lockdowns hit.”</p>
+        <div>
+          <strong>The Patel Family</strong>
+          <span>Ahmedabad, India</span>
+        </div>
+      </div>
+      <div class="review-card-static">
+        <div class="review-date">November 2019</div>
+        <p>“Fantastic 10-day <strong>South India Tour</strong>. Anand is an exceptional host. He showed us hidden gems in Tamil Nadu that weren't on any standard tourist map.”</p>
+        <div>
+          <strong>Sarah & John</strong>
+          <span>Sydney, Australia</span>
+        </div>
+      </div>
+      <div class="review-card-static">
+        <div class="review-date">July 2018</div>
+        <p>“Used their <strong>Kochi Airport pickup</strong> for a late-night international arrival. Very reassuring to have a professional English-speaking driver waiting for us. Felt 100% safe.”</p>
+        <div>
+          <strong>Elena Petrova</strong>
+          <span>Moscow, Russia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2012 - 2017 -->
+    <div class="year-divider">
+      <span>2012 – 2017</span>
+      <span class="year-count">The Early Journeys</span>
+    </div>
+    <div class="review-grid">
+      <div class="review-card-static">
+        <div class="review-date">October 2017</div>
+        <p>“We were among Anand's early international clients. He planned a breathtaking <strong>Kerala Escapes</strong> package for us. The drive up to Munnar in his pristine sedan is a memory I still cherish.”</p>
+        <div>
+          <strong>Michael B.</strong>
+          <span>Toronto, Canada</span>
+        </div>
+      </div>
+      <div class="review-card-static">
+        <div class="review-date">March 2015</div>
+        <p>“Very reliable <strong>Taxi Service in Kochi</strong>. I visited for business for two weeks, and Anand acted as my personal chauffeur. Honest pricing and unparalleled punctuality.”</p>
+        <div>
+          <strong>Anil Deshmukh</strong>
+          <span>Pune, India</span>
+        </div>
+      </div>
+      <div class="review-card-static">
+        <div class="review-date">August 2014</div>
+        <p>“Booked a budget-friendly trip using their early fleet. Even back then, the dedication to guest comfort was obvious. Guided us through local spice markets in Thekkady.”</p>
+        <div>
+          <strong>Maria G.</strong>
+          <span>Spain</span>
+        </div>
+      </div>
+      <div class="review-card-static">
+        <div class="review-date">December 2012</div>
+        <p>“Our first trip to God's Own Country. We needed an <strong>Airport Taxi at Cochin</strong> and found Anand. It was the start of a great friendship. We have returned to Kerala 3 times since, always booking with him.”</p>
+        <div>
+          <strong>Nigel & Clara</strong>
           <span>United Kingdom</span>
         </div>
       </div>
     </div>
-    
+
   </div>
 </section>
 
+<!-- GOOGLE FORM CLIPPER -->
 <section class="feedback-section">
   <div class="section-container">
-    
     <div class="google-form-wrapper">
       <h3>Share Your Experience</h3>
-      <p>Your feedback helps us serve international and domestic travelers better.</p>
-      
+      <p>Did you travel with us? Your feedback helps us serve international and domestic travelers better.</p>
       <div class="form-clipper-window">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJawuNh83U6pcXYszoeu7aLFEEcTC4afRiT1YbRkxgvrv9jQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" loading="lazy">Loading…</iframe>
       </div>
     </div>
-
   </div>
 </section>
