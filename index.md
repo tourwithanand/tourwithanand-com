@@ -28,12 +28,27 @@ title: Home
   .video-text-overlay {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 90%;
+    right: 8%; /* Positioned on the right side with some padding from the edge */
+    transform: translateY(-50%);
+    text-align: right; /* Aligns text lines to the right */
+    width: 80%;
     z-index: 2;
     pointer-events: none; /* Prevents the text layer from intercepting screen taps/clicks */
+    
+    /* 2-Second Delay Animation */
+    opacity: 0;
+    animation: appearanceDelay 0.6s ease-in-out forwards;
+    animation-delay: 2s;
+  }
+
+  /* Keyframe to cleanly fade in the text after the delay */
+  @keyframes appearanceDelay {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .maxx-intro {
