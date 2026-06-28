@@ -1,0 +1,232 @@
+---
+layout: default
+title: Guest Reviews
+---
+
+<style>
+  /* --- INNER PAGE HERO --- */
+  .inner-hero {
+    padding: 180px 20px 100px;
+    text-align: center;
+    background: linear-gradient(rgba(10,11,14,0.85), rgba(10,11,14,0.95)), url('Guest%20Tour%20With%20Anand%20With%20Guest%20at%20COK%20Airport.jpeg') center/cover no-repeat;
+    border-bottom: 1px solid rgba(255, 204, 0, 0.1);
+  }
+  .inner-hero h1 {
+    font-size: 52px;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .inner-hero p {
+    font-size: 18px;
+    color: #a0a4ab;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* --- REVIEWS GRID --- */
+  .reviews-page-section {
+    padding: 100px 0;
+    background: #0a0b0e;
+  }
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  .review-card-static {
+    background: #15181e;
+    padding: 40px 30px;
+    border-radius: 14px;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .review-card-static:hover {
+    border-color: rgba(255,204,0,0.3);
+    transform: translateY(-5px);
+  }
+  .review-card-static::before {
+    content: '“';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 60px;
+    font-family: 'Playfair Display', serif;
+    color: rgba(255,204,0,0.15);
+    line-height: 1;
+  }
+  .review-card-static p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #dcdcdc;
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+  }
+  .review-card-static strong {
+    color: #ffcc00;
+    display: block;
+    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+  }
+  .review-card-static span {
+    font-size: 13px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* --- GOOGLE FORM CLIPPER (Integrated User CSS) --- */
+  .feedback-section {
+    padding: 80px 0 120px;
+    background: #0e1015;
+    border-top: 1px solid rgba(255, 204, 0, 0.1);
+  }
+  
+  /* 1. The Premium Outer Box */
+  .google-form-wrapper {
+    background-color: #15181e; /* Matched to site card background */
+    border: 1px solid #ffcc00; /* Matched to site gold */
+    border-radius: 12px; 
+    padding: 40px 20px 10px 20px;
+    max-width: 680px; 
+    margin: 0 auto; 
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5); 
+  }
+
+  .google-form-wrapper h3 {
+    color: #ffcc00; /* Matched to site gold */
+    text-align: center;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .google-form-wrapper p {
+    color: #a0a4ab;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  /* 2. The Clipping Window (PC View) */
+  .form-clipper-window {
+    width: 100%;
+    height: 500px; 
+    overflow: hidden; 
+    position: relative;
+    border-radius: 8px;
+  }
+
+  /* 3. The Shifted Google Form (PC View) */
+  .form-clipper-window iframe {
+    position: absolute;
+    top: -200px; 
+    left: 0;
+    width: 100%;
+    height: 800px; 
+  }
+
+  /* 4. Mobile Responsiveness Fix */
+  @media (max-width: 768px) {
+    .inner-hero { padding: 140px 15px 60px; }
+    .inner-hero h1 { font-size: 36px; }
+    .reviews-page-section { padding: 60px 0; }
+    
+    .form-clipper-window {
+      height: 600px; /* Taller clipping window for stacked mobile fields */
+    }
+    .form-clipper-window iframe {
+      height: 950px; /* Taller iframe so the Submit button stays visible */
+    }
+    .google-form-wrapper {
+      padding: 30px 15px 10px;
+    }
+  }
+</style>
+
+<section class="inner-hero">
+  <div class="section-container">
+    <h1>Guest Experiences</h1>
+    <p>Read firsthand stories from international and domestic travelers who have explored the beauty of South India with our dedicated chauffeurs.</p>
+  </div>
+</section>
+
+<section class="reviews-page-section">
+  <div class="section-container">
+    
+    <div class="review-grid">
+      <div class="review-card-static">
+        <p>“Our Kerala trip with Anand was absolutely smooth and stress-free. From airport pickup to hotel check-ins, everything was handled perfectly.”</p>
+        <div>
+          <strong>Daniel R</strong>
+          <span>Germany</span>
+        </div>
+      </div>
+      
+      <div class="review-card-static">
+        <p>“We booked a 7-day Kerala tour with Tour With Anand and it exceeded our expectations. Clean vehicle and excellent guidance throughout the hill stations.”</p>
+        <div>
+          <strong>Nur Aisyah</strong>
+          <span>Malaysia</span>
+        </div>
+      </div>
+      
+      <div class="review-card-static">
+        <p>“Anand is not just a driver, he is a true travel guide. He helped us explore hidden viewpoints and local culture safely.”</p>
+        <div>
+          <strong>Thomas & Eva</strong>
+          <span>France</span>
+        </div>
+      </div>
+      
+      <div class="review-card-static">
+        <p>“Traveling with elders felt completely safe. Anand was polite, professional, and very supportive throughout. No hidden charges and very honest service.”</p>
+        <div>
+          <strong>Ravi K</strong>
+          <span>Bangalore</span>
+        </div>
+      </div>
+      
+      <div class="review-card-static">
+        <p>“Even though our flight was delayed, Anand waited patiently at Kochi Airport. Very reliable service. The vehicle was perfectly air-conditioned and spotless.”</p>
+        <div>
+          <strong>Fatima A</strong>
+          <span>Dubai</span>
+        </div>
+      </div>
+      
+      <div class="review-card-static">
+        <p>“The Alleppey houseboat arranged by Anand was excellent and well maintained. Very safe driving even in the steep Munnar hill areas. We felt comfortable throughout.”</p>
+        <div>
+          <strong>Michael P</strong>
+          <span>United Kingdom</span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="feedback-section">
+  <div class="section-container">
+    
+    <div class="google-form-wrapper">
+      <h3>Share Your Experience</h3>
+      <p>Your feedback helps us serve international and domestic travelers better.</p>
+      
+      <div class="form-clipper-window">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJawuNh83U6pcXYszoeu7aLFEEcTC4afRiT1YbRkxgvrv9jQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" loading="lazy">Loading…</iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
