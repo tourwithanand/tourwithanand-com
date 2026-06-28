@@ -1,0 +1,181 @@
+---
+layout: default
+title: Travel Blog & Guides
+---
+
+<style>
+  /* --- INNER PAGE HERO --- */
+  .inner-hero {
+    padding: 180px 20px 100px;
+    text-align: center;
+    background: linear-gradient(rgba(10,11,14,0.85), rgba(10,11,14,0.95)), url('Kerala-Places%20To%20Visit.jpg') center/cover no-repeat;
+    border-bottom: 1px solid rgba(255, 204, 0, 0.1);
+  }
+  .inner-hero h1 {
+    font-size: 52px;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .inner-hero p {
+    font-size: 18px;
+    color: #a0a4ab;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* --- BLOG GRID --- */
+  .blog-index-section {
+    padding: 100px 0;
+    background: #0a0b0e;
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+  .blog-post-card {
+    background: #15181e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    text-decoration: none; /* Make entire card clickable cleanly */
+  }
+  .blog-post-card:hover {
+    border-color: rgba(255, 204, 0, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  }
+  .blog-card-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .blog-post-card:hover .blog-card-img {
+    transform: scale(1.05);
+  }
+  .img-overflow-hidden {
+    overflow: hidden;
+    width: 100%;
+    height: 220px;
+  }
+  .blog-card-content {
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .blog-meta {
+    font-size: 12px;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .blog-card-title {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 0 15px;
+    font-family: 'Playfair Display', serif;
+    transition: color 0.3s ease;
+  }
+  .blog-post-card:hover .blog-card-title {
+    color: #ffcc00;
+  }
+  .blog-card-excerpt {
+    color: #a0a4ab;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    flex-grow: 1;
+  }
+  .read-more-link {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    border-bottom: 1px solid #ffcc00;
+    padding-bottom: 3px;
+    align-self: flex-start;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .inner-hero { padding: 140px 15px 60px; }
+    .inner-hero h1 { font-size: 36px; }
+    .blog-index-section { padding: 60px 0; }
+  }
+</style>
+
+<section class="inner-hero">
+  <div class="section-container">
+    <h1>Travel Journal & Guides</h1>
+    <p>Expert local advice on navigating South India, planning taxi routes, and discovering hidden heritage gems.</p>
+  </div>
+</section>
+
+<section class="blog-index-section">
+  <div class="section-container">
+    <div class="blog-grid">
+      
+      <!-- Article 1 -->
+      <a href="https://tourwithanand.in/tourwithanand-com/tempo-traveller-rentals-kochi-kerala.html" class="blog-post-card">
+        <div class="img-overflow-hidden">
+          <img src="Kochi%20Airport%20Tempo%20Traveller.png" alt="Tempo Traveller Kochi" class="blog-card-img" loading="lazy">
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span>Travel Guide</span>
+            <span>Feb 12, 2026</span>
+          </div>
+          <h2 class="blog-card-title">Tempo Traveller from Kochi Airport to Pamba</h2>
+          <p class="blog-card-excerpt">Planning a group pilgrimage to Sabarimala? Discover why booking a premium Tempo Traveller from Kochi Airport is the safest and most comfortable choice.</p>
+          <span class="read-more-link">Read Article</span>
+        </div>
+      </a>
+
+      <!-- Article 2 -->
+      <a href="https://tourwithanand.in/tourwithanand-com/kochi-airport-taxi.html" class="blog-post-card">
+        <div class="img-overflow-hidden">
+          <img src="Hero%20Banner%203.jpg" alt="Kochi Airport Taxi" class="blog-card-img" loading="lazy">
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span>Taxi Tips</span>
+            <span>Jan 28, 2026</span>
+          </div>
+          <h2 class="blog-card-title">Kochi to Alleppey Taxi Service Guide</h2>
+          <p class="blog-card-excerpt">A complete guide to navigating from Cochin International Airport to the backwaters of Alleppey, including distance, timing, and vehicle selection.</p>
+          <span class="read-more-link">Read Article</span>
+        </div>
+      </a>
+
+      <!-- Article 3 -->
+      <a href="#" class="blog-post-card">
+        <div class="img-overflow-hidden">
+          <img src="TamilNadu-Places%20To%20Visit.jpg" alt="South India Heritage" class="blog-card-img" loading="lazy">
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span>Destinations</span>
+            <span>Dec 15, 2025</span>
+          </div>
+          <h2 class="blog-card-title">Top 5 Heritage Spots in Tamil Nadu</h2>
+          <p class="blog-card-excerpt">Explore the architectural marvels of the Chola Empire. From Madurai to Rameswaram, plan your bespoke heritage route with our premium tour cabs.</p>
+          <span class="read-more-link">Read Article</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
