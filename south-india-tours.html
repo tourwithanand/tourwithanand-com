@@ -1,1 +1,287 @@
+---
+layout: default
+title: South India Tours & Packages
+---
 
+<style>
+  /* --- INNER PAGE HERO --- */
+  .inner-hero {
+    padding: 180px 20px 100px;
+    text-align: center;
+    background: linear-gradient(rgba(10,11,14,0.85), rgba(10,11,14,0.95)), url('South%20India%20Tours%20Hero.jpg') center/cover no-repeat;
+    border-bottom: 1px solid rgba(255, 204, 0, 0.1);
+  }
+  .inner-hero h1 {
+    font-size: 52px;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .inner-hero p {
+    font-size: 18px;
+    color: #a0a4ab;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* --- PACKAGE GRID --- */
+  .packages-section {
+    padding: 100px 0;
+    background: #0a0b0e;
+  }
+  .package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+  }
+  .package-card {
+    background: #15181e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+  }
+  .package-card:hover {
+    border-color: rgba(255, 204, 0, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  }
+  .package-img {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .package-content {
+    padding: 35px 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .package-title {
+    color: #ffcc00;
+    font-size: 24px;
+    margin: 0 0 15px;
+    font-family: 'Playfair Display', serif;
+  }
+  .package-desc {
+    color: #dcdcdc;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+  
+  /* Minimal Itinerary List */
+  .itinerary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    border-left: 1px solid rgba(255, 204, 0, 0.3);
+    margin-left: 5px;
+  }
+  .itinerary-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    color: #a0a4ab;
+    font-size: 14px;
+  }
+  .itinerary-list li::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 6px;
+    width: 7px;
+    height: 7px;
+    background: #ffcc00;
+    border-radius: 50%;
+  }
+
+  .package-footer {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
+  }
+  .package-footer .luxury-btn {
+    flex: 1;
+    text-align: center;
+    padding: 14px 20px;
+  }
+  .package-footer .luxury-btn-outline {
+    flex: 1;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  /* --- WHY CHOOSE US (MINIMALIST) --- */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-top: 40px;
+  }
+  .feature-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: #0e1015;
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 12px;
+  }
+  .feature-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .feature-item h4 {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 0 10px;
+    font-family: 'Playfair Display', serif;
+  }
+  .feature-item p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 992px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .inner-hero { padding: 140px 15px 60px; }
+    .inner-hero h1 { font-size: 36px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .package-footer { flex-direction: column; }
+    .packages-section { padding: 60px 0; }
+  }
+</style>
+
+<section class="inner-hero">
+  <div class="section-container">
+    <h1>Bespoke South India Tours</h1>
+    <p>Experience the heritage, nature, and culture of Kerala, Tamil Nadu, and Karnataka with our premium, chauffeur-driven private journeys.</p>
+  </div>
+</section>
+
+<section class="packages-section">
+  <div class="section-container">
+    <h2 class="section-title">Signature Itineraries</h2>
+    <p class="section-subtitle">Fully customizable travel experiences starting from Kochi International Airport. Travel at your own pace in our pristine luxury vehicles.</p>
+    
+    <div class="package-grid">
+      
+      <!-- Package 1: Kerala -->
+      <div class="package-card">
+        <img src="Kerala-Places%20To%20Visit.jpg" alt="Classic Kerala Tour" class="package-img" loading="lazy">
+        <div class="package-content">
+          <h3 class="package-title">Classic Kerala Escapes</h3>
+          <p class="package-desc">A perfect blend of misty hill stations, wildlife, and tranquil backwaters. Ideal for honeymooners and families.</p>
+          <ul class="itinerary-list">
+            <li>Kochi (Arrival & Sightseeing)</li>
+            <li>Munnar (Tea Gardens & Waterfalls)</li>
+            <li>Thekkady (Spice Plantations & Wildlife)</li>
+            <li>Alleppey (Premium Houseboat Stay)</li>
+          </ul>
+          <div class="package-footer">
+            <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20am%20interested%20in%20the%20Classic%20Kerala%20Escapes%20package." class="luxury-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 2: Tamil Nadu Heritage -->
+      <div class="package-card">
+        <img src="TamilNadu-Places%20To%20Visit.jpg" alt="Tamil Nadu Heritage Tour" class="package-img" loading="lazy">
+        <div class="package-content">
+          <h3 class="package-title">Tamil Nadu Heritage Trail</h3>
+          <p class="package-desc">Step back in time to explore magnificent Dravidian architecture, ancient temples, and the southern tip of India.</p>
+          <ul class="itinerary-list">
+            <li>Madurai (Meenakshi Amman Temple)</li>
+            <li>Rameswaram (Sacred Corridors & Beaches)</li>
+            <li>Kanyakumari (Sunset at Triveni Sangam)</li>
+            <li>Trivandrum (Padmanabhaswamy Temple)</li>
+          </ul>
+          <div class="package-footer">
+            <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20am%20interested%20in%20the%20Tamil%20Nadu%20Heritage%20Trail%20package." class="luxury-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 3: Best of Karnataka -->
+      <div class="package-card">
+        <img src="Karnataka-Places%20to%20Visit.png" alt="Karnataka Tour" class="package-img" loading="lazy">
+        <div class="package-content">
+          <h3 class="package-title">Wonders of Karnataka</h3>
+          <p class="package-desc">Explore royal palaces, ancient ruins, and lush coffee estates in this comprehensive Karnataka journey.</p>
+          <ul class="itinerary-list">
+            <li>Mysore (Royal Palace & Heritage)</li>
+            <li>Coorg (Coffee Estates & Abbey Falls)</li>
+            <li>Ooty (Nilgiri Mountain Railway)</li>
+            <li>Wayanad (Caves & Forest Reserves)</li>
+          </ul>
+          <div class="package-footer">
+            <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20am%20interested%20in%20the%20Wonders%20of%20Karnataka%20package." class="luxury-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="packages-section" style="background: #0e1015;">
+  <div class="section-container">
+    <h2 class="section-title">The Tour With Anand Difference</h2>
+    <p class="section-subtitle">Why international and domestic guests trust us for their South Indian journeys.</p>
+    
+    <div class="features-grid">
+      <div class="feature-item">
+        <span class="feature-icon">🛡️</span>
+        <h4>Complete Transparency</h4>
+        <p>No hidden costs, no mandatory shopping stops, and upfront pricing on all our tour packages.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🗣️</span>
+        <h4>Expert Guidance</h4>
+        <p>English-speaking chauffeurs who act as your local guide, ensuring you don't miss hidden viewpoints.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🚘</span>
+        <h4>Premium Fleet</h4>
+        <p>Travel in immaculate Toyota Innovas, Ertigas, or Tempo Travellers, regularly sanitized for your safety.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">✈️</span>
+        <h4>Seamless Transfers</h4>
+        <p>24/7 Kochi Airport pickup and drop-off included, with active flight tracking to handle delays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lead-form-section">
+  <div class="section-container lead-form-container">
+    <h2 class="section-title">Customize Your Tour</h2>
+    <p class="section-subtitle" style="margin-bottom: 20px;">Have a specific route in mind? Tell us your dates and interests, and we will craft a personalized itinerary for you.</p>
+
+    <p class="contact-email">
+      📧 Email: <a href="mailto:infostarkholidays@gmail.com">infostarkholidays@gmail.com</a>
+    </p>
+
+    <form onsubmit="sendWhatsApp(); return false;" class="lead-form">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <textarea id="message" rows="5" placeholder="Which destinations would you like to visit? Share your travel dates and passenger count..." required></textarea>
+      
+      <div class="form-buttons">
+        <button type="submit" class="whatsapp-submit-btn">Send Enquiry via WhatsApp</button>
+        <a href="tel:+919400620615" class="call-submit-btn">📞 Call Anand Now</a>
+      </div>
+    </form>
+  </div>
+</section>
