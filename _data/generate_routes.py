@@ -1,39 +1,34 @@
 import csv
 import os
+from datetime import date
 
-# 1. Create the folder for the generated markdown files
-output_dir = "taxi-routes"
+# 1. Look "up" one level from _data and save directly into the _posts folder
+output_dir = "../_posts"
 os.makedirs(output_dir, exist_ok=True)
 
-# 2. Open your routes.csv file
+# 2. Get today's date for Jekyll's required naming format
+today_date = date.today().strftime("%Y-%m-%d")
+
+# 3. Open your routes.csv file
 with open("routes.csv", mode='r', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     
-    # 3. Loop through each row to create a dedicated Markdown file
     for row in reader:
-        # Create a clean filename for the Markdown file
-        filename = f"{output_dir}/{row['from_slug']}-to-{row['to_slug']}-taxi.md"
+        # 4. Add the date prefix to the filename so Jekyll processes it!
+        filename = f"{output_dir}/{today_date}-{row['from_slug']}-to-{row['to_slug']}-taxi.md"
         
         with open(filename, "w", encoding="utf-8") as out:
-            # Start the YAML Front Matter
             out.write("---\n")
-            
-            # Point to your middle-layer template (taxi_page.html)
             out.write("layout: taxi_page\n") 
             
-            # Dynamically write all variables from the CSV
             for key, value in row.items():
                 out.write(f"{key}: \"{value}\"\n")
             
-            # SEO Metadata
             out.write(f"title: \"{row['from_location']} to {row['to_location']} Taxi Service | Tour With Anand\"\n")
             out.write(f"description: \"{row['unique_desc']}\"\n")
             
-            # Nested permalink structure for topic authority
-            # All generated pages will live under the /24x7-kochi-airport-taxi-service/ subpage
+            # The permalink overrides the _posts folder, putting the live URL exactly where you want it
             out.write(f"permalink: /24x7-kochi-airport-taxi-service/{row['from_slug']}-to-{row['to_slug']}-taxi/\n")
-            
-            # End the YAML Front Matter
             out.write("---\n")
             
-print("✅ Successfully generated all route files using routes.csv!")
+print("✅ Successfully generated Jekyll files in the _posts folder with date prefixes!")
