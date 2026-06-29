@@ -8,7 +8,7 @@ title: Travel Blog & Guides
   .inner-hero {
     padding: 180px 20px 100px;
     text-align: center;
-    background: linear-gradient(rgba(10,11,14,0.85), rgba(10,11,14,0.95)), url('Kerala-Places%20To%20Visit.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(10,11,14,0.85), rgba(10,11,14,0.95)), url('/Kerala-Places%20To%20Visit.jpg') center/cover no-repeat;
     border-bottom: 1px solid rgba(255, 204, 0, 0.1);
   }
   .inner-hero h1 {
@@ -79,6 +79,12 @@ title: Travel Blog & Guides
     margin-bottom: 12px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  .blog-date {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 0.5px;
   }
   .blog-card-title {
     color: #fff;
@@ -129,122 +135,28 @@ title: Travel Blog & Guides
   <div class="section-container">
     <div class="blog-grid">
       
-      <!-- Article 1 -->
-      <a href="https://tourwithanand.in/tourwithanand-com/tour-with-anand-is-the-best-taxi-service-in-kochi.html" class="blog-post-card">
+      <!-- AUTOMATIC JEKYLL LOOP: Pulls all posts from _posts folder -->
+      {% for post in site.posts %}
+      <a href="{{ site.baseurl }}{{ post.url }}" class="blog-post-card">
         <div class="img-overflow-hidden">
-          <img src="Kochi%20Airport%20Innova%20Taxi%20Service.png" alt="Best Taxi Service Kochi" class="blog-card-img" loading="lazy">
+          <!-- Uses the image defined in the post's front matter, or falls back to a default logo -->
+          {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="blog-card-img" loading="lazy">
+          {% else %}
+            <img src="/Tour%20With%20Anand%20Logo%20Home.png" alt="{{ post.title }}" class="blog-card-img" loading="lazy" style="object-fit: contain; padding: 20px; background: #0a0b0e;">
+          {% endif %}
         </div>
         <div class="blog-card-content">
-          <div class="blog-meta"><span>Taxi Tips</span></div>
-          <h2 class="blog-card-title">Why Tour With Anand is the Best Taxi Service in Kochi</h2>
-          <p class="blog-card-excerpt">If you are looking for reliable, safe, and premium transportation in Kerala, you need a service that understands the nuances of local travel.</p>
+          <div class="blog-meta">
+            <span>{{ post.category | default: "Travel Guide" }}</span>
+            <span class="blog-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          </div>
+          <h2 class="blog-card-title">{{ post.title }}</h2>
+          <p class="blog-card-excerpt">{{ post.description | truncate: 110 }}</p>
           <span class="read-more-link">Read Article</span>
         </div>
       </a>
-
-      <!-- Article 2 -->
-      <a href="https://tourwithanand.in/tourwithanand-com/affordable-airport-taxi-kochi.html" class="blog-post-card">
-        <div class="img-overflow-hidden">
-          <img src="Kochi%20Airport%20Swift%20Dezire%20Taxi%20Service.png" alt="Affordable Airport Taxi" class="blog-card-img" loading="lazy">
-        </div>
-        <div class="blog-card-content">
-          <div class="blog-meta"><span>Taxi Tips</span></div>
-          <h2 class="blog-card-title">Affordable Airport Taxi Kochi: Premium Service on a Budget</h2>
-          <p class="blog-card-excerpt">Navigating airport transfers shouldn't break your travel budget. Learn how to secure an affordable airport taxi in Kochi.</p>
-          <span class="read-more-link">Read Article</span>
-        </div>
-      </a>
-
-      <!-- Article 3 -->
-      <a href="https://tourwithanand.in/tourwithanand-com/best-cab-service-kochi.html" class="blog-post-card">
-        <div class="img-overflow-hidden">
-          <img src="Kochi%20Airport%20Ertiga%20Taxi%20Service.png" alt="Best Cab Service Kochi" class="blog-card-img" loading="lazy">
-        </div>
-        <div class="blog-card-content">
-          <div class="blog-meta"><span>Travel Guide</span></div>
-          <h2 class="blog-card-title">The Best Cab Service in Kochi for Local & Outstation Travel</h2>
-          <p class="blog-card-excerpt">Whether you are navigating the bustling streets of Ernakulam or heading out to the tranquil backwaters, choosing the right cab makes all the difference.</p>
-          <span class="read-more-link">Read Article</span>
-        </div>
-      </a>
-
-      <!-- Article 4 -->
-      <a href="https://tourwithanand.in/tourwithanand-com/kochi-to-munnar-premium-taxi.html" class="blog-post-card">
-        <div class="img-overflow-hidden">
-          <img src="Guest%20Tour%20With%20Anand%20at%20Munnar%20Hill%20Station.png" alt="Kochi to Munnar Taxi" class="blog-card-img" loading="lazy">
-        </div>
-        <div class="blog-card-content">
-          <div class="blog-meta"><span>Route Guide</span></div>
-          <h2 class="blog-card-title">Kochi to Munnar Premium Taxi: Travel the Hills in Comfort</h2>
-          <p class="blog-card-excerpt">The winding drive from Kochi Airport to Munnar requires an experienced driver and a vehicle with excellent suspension.</p>
-          <span class="read-more-link">Read Article</span>
-        </div>
-      </a>
-
-      <!-- Article 5 -->
-      <a href="https://tourwithanand.in/tourwithanand-com/taxi-service-in-kochi-tours-with-anand.html" class="blog-post-card">
-        <div class="img-overflow-hidden">
-          <img src="Tour%20With%20Anand%20Logo%20Home.png" alt="Tour With Anand Taxi Service" class="blog-card-img" loading="lazy">
-        </div>
-        <div class="blog-card-content">
-          <div class="blog-meta"><span>Travel Guide</span></div>
-          <h2 class="blog-card-title">Taxi Service in Kochi: Travel Safely with Tour With Anand</h2>
-          <p class="blog-card-excerpt">From corporate pickups to bespoke heritage trails, discover a taxi service in Kochi that prioritizes your schedule and comfort.</p>
-          <span class="read-more-link">Read Article</span>
-        </div>
-      </a>
-
-      <!-- Article 6 -->
-      <a href="https://tourwithanand.in/tourwithanand-com/premium-taxi-service-in-kochi-with-tour-with-anand.html" class="blog-post-card">
-        <div class="img-overflow-hidden">
-          <img src="Owner%20of%20Tour%20With%20Anand%20Sitting.png" alt="Premium Taxi Kochi" class="blog-card-img" loading="lazy">
-        </div>
-        <div class="blog-card-content">
-          <div class="blog-meta"><span>Taxi Tips</span></div>
-          <h2 class="blog-card-title">Experience the Premium Taxi Service in Kochi</h2>
-          <p class="blog-card-excerpt">Step into a world of executive comfort designed for international guests, corporate travelers, and families who demand the best.</p>
-          <span class="read-more-link">Read Article</span>
-        </div>
-      </a>
-
-      <!-- Article 7 -->
-      <a href="https://tourwithanand.in/tourwithanand-com/book-your-sabarimala-taxi-from-kochi-airport-to-pamba.html" class="blog-post-card">
-        <div class="img-overflow-hidden">
-          <img src="Kochi%20Airport%20Bus%20Service.png" alt="Sabarimala Taxi" class="blog-card-img" loading="lazy">
-        </div>
-        <div class="blog-card-content">
-          <div class="blog-meta"><span>Route Guide</span></div>
-          <h2 class="blog-card-title">Book Your Sabarimala Taxi from Kochi Airport to Pamba</h2>
-          <p class="blog-card-excerpt">Planning your holy pilgrimage to Sabarimala? Ensure your group travels safely and arrives rested for the trek.</p>
-          <span class="read-more-link">Read Article</span>
-        </div>
-      </a>
-
-      <!-- Article 8 -->
-      <a href="https://tourwithanand.in/tourwithanand-com/kochi-airport-to-alleppey-taxi-service.html" class="blog-post-card">
-        <div class="img-overflow-hidden">
-          <img src="Kerala-Places%20To%20Visit.jpg" alt="Kochi to Alleppey Taxi" class="blog-card-img" loading="lazy">
-        </div>
-        <div class="blog-card-content">
-          <div class="blog-meta"><span>Route Guide</span></div>
-          <h2 class="blog-card-title">Seamless Kochi Airport to Alleppey Taxi Service</h2>
-          <p class="blog-card-excerpt">Transition directly from your flight to your houseboat. Our Kochi Airport to Alleppey taxi service provides a smooth drive down the coast.</p>
-          <span class="read-more-link">Read Article</span>
-        </div>
-      </a>
-
-      <!-- Article 9 -->
-      <a href="https://tourwithanand.in/tourwithanand-com/tempo-traveller-from-kochi-airport-to-pamba.html" class="blog-post-card">
-        <div class="img-overflow-hidden">
-          <img src="Kochi%20Airport%20Tempo%20Traveller.png" alt="Tempo Traveller Kochi to Pamba" class="blog-card-img" loading="lazy">
-        </div>
-        <div class="blog-card-content">
-          <div class="blog-meta"><span>Route Guide</span></div>
-          <h2 class="blog-card-title">Tempo Traveller from Kochi Airport to Pamba: Group Guide</h2>
-          <p class="blog-card-excerpt">When traveling to Sabarimala with a large group of devotees, a Tempo Traveller is the most economical and comfortable choice.</p>
-          <span class="read-more-link">Read Article</span>
-        </div>
-      </a>
+      {% endfor %}
 
     </div>
   </div>
