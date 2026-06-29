@@ -1,12 +1,12 @@
 import csv
 import os
 
-# 1. Ensure the taxi-routes folder exists for the .md files
+# 1. Create the folder for the generated markdown files
 output_dir = "taxi-routes"
 os.makedirs(output_dir, exist_ok=True)
 
-# 2. Open your updated D2DPSEO.csv file
-with open("D2DPSEO.csv", mode='r', encoding='utf-8') as f:
+# 2. Open your routes.csv file
+with open("routes.csv", mode='r', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     
     # 3. Loop through each row to create a dedicated Markdown file
@@ -36,4 +36,4 @@ with open("D2DPSEO.csv", mode='r', encoding='utf-8') as f:
             # End the YAML Front Matter
             out.write("---\n")
             
-print("✅ Successfully generated all route files with nested URL structure!")
+print("✅ Successfully generated all route files using routes.csv!")
