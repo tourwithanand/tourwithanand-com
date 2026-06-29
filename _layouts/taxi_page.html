@@ -2,7 +2,8 @@
 layout: default
 ---
 
-<!-- 1. DYNAMIC SEO SCHEMA (CRITICAL FOR #1 RANKING) -->
+<meta name="keywords" content="{{ page.seo_keywords }}">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -21,8 +22,7 @@ layout: default
         "@type": "LocalBusiness",
         "name": "Tour With Anand",
         "image": "{{ site.url }}/Hero%20Image.png",
-        "telephone": "+919400620615",
-        "priceRange": "{{ page.starting_price }}"
+        "telephone": "+919400620615"
       },
       "areaServed": "Kerala"
     },
@@ -41,11 +41,6 @@ layout: default
         },
         {
           "@type": "Question",
-          "name": "What is the starting taxi fare from {{ page.from_location }} to {{ page.to_location }}?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Our premium, private cab fares for this route start at approximately {{ page.starting_price }}. Please contact us via WhatsApp for an exact quote based on your exact pickup and drop locations." }
-        },
-        {
-          "@type": "Question",
           "name": "Are there any good places to stop between {{ page.from_location }} and {{ page.to_location }}?",
           "acceptedAnswer": { "@type": "Answer", "text": "Yes! We highly encourage you to ask your chauffeur to pause at scenic spots along the way, such as {{ page.waypoints }}." }
         },
@@ -53,21 +48,6 @@ layout: default
           "@type": "Question",
           "name": "Can I get dropped directly at my hotel in {{ page.to_location }}?",
           "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We provide a true door-to-door service. Whether you need to be dropped at {{ page.popular_drop_point }} or directly at your resort lobby, our drivers will ensure you arrive safely." }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the best time of day to travel from {{ page.from_location }} to {{ page.to_location }}?",
-          "acceptedAnswer": { "@type": "Answer", "text": "For the best experience, we recommend starting this journey {{ page.best_time_to_start }}. However, our taxis are available 24x7 to match your flight schedule." }
-        },
-        {
-          "@type": "Question",
-          "name": "Are the taxi drivers experienced with this specific route?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes, our local chauffeurs are thoroughly vetted and highly experienced in navigating the {{ page.route_terrain }} safely and smoothly." }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I book a taxi from {{ page.from_location }} to {{ page.to_location }}?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Booking is incredibly easy. Simply click the WhatsApp button on this page to message Anand directly with your dates, or call +91 94006 20615 for an instant confirmation." }
         }
       ]
     }
@@ -77,141 +57,48 @@ layout: default
 
 <style>
   /* --- LUXURY ROUTE PAGE STYLING --- */
-  .route-hero {
-    position: relative;
-    padding: 160px 20px 100px;
-    background: #0a0b0e;
-    overflow: hidden;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 204, 0, 0.1);
-  }
-  .route-hero-bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0.25;
-    z-index: 0;
-  }
-  .route-hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .route-meta {
-    color: #ffcc00;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 14px;
-    margin-bottom: 15px;
-    display: block;
-    font-weight: 600;
-  }
-  .route-hero h1 {
-    font-size: 48px;
-    color: #fff;
-    margin-bottom: 20px;
-    line-height: 1.2;
-  }
-  .route-hero p {
-    font-size: 18px;
-    color: #a0a4ab;
-    margin-bottom: 40px;
-    line-height: 1.7;
-  }
+  .route-hero { position: relative; padding: 160px 20px 100px; background: #0a0b0e; overflow: hidden; text-align: center; border-bottom: 1px solid rgba(255, 204, 0, 0.1); }
+  .route-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.25; z-index: 0; }
+  .route-hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+  .route-meta { color: #ffcc00; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 15px; display: block; font-weight: 600; }
+  .route-hero h1 { font-size: 48px; color: #fff; margin-bottom: 20px; line-height: 1.2; font-family: 'Playfair Display', serif;}
+  .route-hero p { font-size: 18px; color: #a0a4ab; margin-bottom: 40px; line-height: 1.7; }
   
-  /* Quick Facts */
-  .quick-facts {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-  }
-  .fact-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 204, 0, 0.2);
-    padding: 20px 30px;
-    border-radius: 12px;
-    text-align: center;
-    min-width: 150px;
-    backdrop-filter: blur(5px);
-  }
+  .quick-facts { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; flex-wrap: wrap; }
+  .fact-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 204, 0, 0.2); padding: 20px 30px; border-radius: 12px; text-align: center; min-width: 150px; backdrop-filter: blur(5px); }
   .fact-box span { display: block; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
   .fact-box strong { color: #fff; font-size: 20px; font-family: 'Playfair Display', serif; }
 
-  /* Anand Collaboration Section */
-  .anand-collab {
-    background: #15181e;
-    padding: 80px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .anand-collab-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-  }
-  .anand-img-box {
-    flex: 0 0 350px;
-    position: relative;
-  }
-  .anand-img-box img {
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 204, 0, 0.3);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-  }
-  .anand-text h2 { color: #fff; font-size: 32px; margin-bottom: 20px; }
-  .anand-text p { color: #a0a4ab; font-size: 17px; line-height: 1.8; margin-bottom: 20px; }
+  .content-section { padding: 80px 20px; background: #0a0b0e; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .content-section.alt { background: #15181e; }
+  .content-inner { max-width: 900px; margin: 0 auto; }
+  .content-inner h2 { color: #fff; font-size: 32px; margin-bottom: 25px; font-family: 'Playfair Display', serif;}
+  .content-inner h3 { color: #ffcc00; font-size: 24px; margin-top: 40px; margin-bottom: 15px; font-family: 'Playfair Display', serif;}
+  .content-inner p { color: #a0a4ab; font-size: 17px; line-height: 1.9; margin-bottom: 20px; }
+  
+  .internal-link-box { margin-top: 40px; padding: 25px; background: rgba(255,204,0,0.05); border-left: 4px solid #ffcc00; border-radius: 0 8px 8px 0; }
+  .internal-link-box p { margin: 0; color: #dcdcdc; font-size: 18px; }
+  .internal-link-box a { color: #ffcc00; font-weight: 600; text-decoration: none; transition: 0.3s; }
+  .internal-link-box a:hover { text-decoration: underline; color: #fff; }
+
+  .anand-collab-inner { display: flex; align-items: center; gap: 60px; }
+  .anand-img-box { flex: 0 0 350px; }
+  .anand-img-box img { width: 100%; border-radius: 12px; border: 1px solid rgba(255, 204, 0, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
   .anand-text strong { color: #ffcc00; }
 
-  /* 8 FAQs Section */
-  .route-faqs { padding: 80px 20px; background: #0a0b0e; }
-  .faq-wrapper { max-width: 800px; margin: 0 auto; }
-  .route-faqs h2 { text-align: center; color: #fff; font-size: 36px; margin-bottom: 40px; }
-  .route-faqs details {
-    background: #15181e;
-    border: 1px solid rgba(255,255,255,0.05);
-    margin-bottom: 15px;
-    padding: 25px;
-    border-radius: 8px;
-    transition: border-color 0.3s;
-  }
-  .route-faqs details:hover { border-color: rgba(255, 204, 0, 0.3); }
-  .route-faqs summary {
-    color: #ffcc00;
-    font-weight: 600;
-    font-size: 18px;
-    cursor: pointer;
-    list-style: none;
-    position: relative;
-    padding-right: 30px;
-  }
-  .route-faqs summary::-webkit-details-marker { display: none; }
-  .route-faqs summary::after {
-    content: '+';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    color: #888;
-  }
-  .route-faqs details[open] summary::after { content: '-'; color: #ffcc00; }
-  .route-faqs details p { margin-top: 15px; margin-bottom: 0; line-height: 1.8; color: #a0a4ab; font-size: 16px; }
-
+  .faq-wrapper details { background: #15181e; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 15px; padding: 25px; border-radius: 8px; cursor: pointer; }
+  .faq-wrapper summary { color: #ffcc00; font-weight: 600; font-size: 18px; list-style: none; outline: none;}
+  .faq-wrapper summary::-webkit-details-marker { display: none; }
+  
   @media (max-width: 768px) {
-    .route-hero h1 { font-size: 36px; }
+    .route-hero h1 { font-size: 32px; }
     .anand-collab-inner { flex-direction: column; text-align: center; gap: 30px; }
-    .anand-img-box { flex: 0 0 auto; width: 100%; max-width: 350px; }
+    .anand-img-box { width: 100%; max-width: 350px; }
     .quick-facts { gap: 15px; }
     .fact-box { width: 45%; min-width: auto; padding: 15px; }
   }
 </style>
 
-<!-- HERO SECTION (Using your 24x7 Airport Taxi Image) -->
 <section class="route-hero">
   <img src="/24X7-Kochi-Airport-Taxi-Service-By-Tour-With-Anand.png" alt="{{ page.from_location }} to {{ page.to_location }} Taxi" class="route-hero-bg">
   <div class="route-hero-content">
@@ -220,22 +107,10 @@ layout: default
     <p>{{ page.unique_desc }}</p>
     
     <div class="quick-facts">
-      <div class="fact-box">
-        <span>Distance</span>
-        <strong>{{ page.distance_km }} km</strong>
-      </div>
-      <div class="fact-box">
-        <span>Travel Time</span>
-        <strong>{{ page.travel_time }}</strong>
-      </div>
-      <div class="fact-box">
-        <span>Starting Fare</span>
-        <strong>{{ page.starting_price }}</strong>
-      </div>
-      <div class="fact-box">
-        <span>Best Vehicle</span>
-        <strong>{{ page.suggested_car | truncatewords: 2, "" }}</strong>
-      </div>
+      <div class="fact-box"><span>Distance</span><strong>{{ page.distance_km }} km</strong></div>
+      <div class="fact-box"><span>Travel Time</span><strong>{{ page.travel_time }}</strong></div>
+      <div class="fact-box"><span>Best Vehicle</span><strong>{{ page.suggested_car | truncatewords: 2, "" }}</strong></div>
+      <div class="fact-box"><span>Best Start Time</span><strong>{{ page.best_time_to_start | truncatewords: 2, "" }}</strong></div>
     </div>
 
     <div class="blog-cta-buttons" style="margin-top: 0;">
@@ -244,9 +119,22 @@ layout: default
   </div>
 </section>
 
-<!-- ANAND'S COLLABORATION SECTION (Using Hero Image.png) -->
-<section class="anand-collab">
-  <div class="anand-collab-inner">
+<section class="content-section">
+  <div class="content-inner">
+    <h2>Discover {{ page.to_location }}: The Jewel of Kerala</h2>
+    <p>{{ page.destination_about }}</p>
+    
+    <h3>Top Attractions & Sightseeing</h3>
+    <p>{{ page.top_attractions }}</p>
+
+    <div class="internal-link-box">
+      <p>Planning to explore multiple destinations? Many of our guests who visit {{ page.to_location }} also book our <a href="{{ page.internal_link_url }}">{{ page.internal_link_text }}</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section alt">
+  <div class="content-inner anand-collab-inner">
     <div class="anand-img-box">
       <img src="/Hero%20Image.png" alt="Anand - Your Kerala Travel Expert" loading="lazy">
     </div>
@@ -260,50 +148,15 @@ layout: default
   </div>
 </section>
 
-<!-- 8 TARGETED FAQS FOR SEO -->
-<section class="route-faqs">
-  <div class="faq-wrapper">
-    <h2>Frequently Asked Questions</h2>
+<section class="content-section">
+  <div class="content-inner faq-wrapper">
+    <h2 style="text-align:center;">Frequently Asked Questions</h2>
     
-    <details>
-      <summary>How far is {{ page.to_location }} from {{ page.from_location }} by taxi?</summary>
-      <p>The total distance is approximately <strong>{{ page.distance_km }} km</strong>. By private taxi, the journey takes around <strong>{{ page.travel_time }}</strong>, depending on traffic and weather conditions.</p>
-    </details>
-
-    <details>
-      <summary>Which cab is best suited for the {{ page.from_location }} to {{ page.to_location }} route?</summary>
-      <p>Because this route features {{ page.route_terrain }}, we highly recommend booking a <strong>{{ page.suggested_car }}</strong> for the safest and most comfortable ride.</p>
-    </details>
-
-    <details>
-      <summary>What is the starting taxi fare from {{ page.from_location }} to {{ page.to_location }}?</summary>
-      <p>Our premium, private cab fares for this route start at approximately <strong>{{ page.starting_price }}</strong>. Please contact us via WhatsApp for an exact quote based on your exact pickup and drop locations.</p>
-    </details>
-
-    <details>
-      <summary>Are there any good places to stop between {{ page.from_location }} and {{ page.to_location }}?</summary>
-      <p>Yes! We highly encourage you to ask your chauffeur to pause at scenic spots along the way, such as <strong>{{ page.waypoints }}</strong>.</p>
-    </details>
-
-    <details>
-      <summary>Can I get dropped directly at my hotel in {{ page.to_location }}?</summary>
-      <p>Absolutely. We provide a true door-to-door service. Whether you need to be dropped at <strong>{{ page.popular_drop_point }}</strong> or directly at your resort lobby, our drivers will ensure you arrive safely.</p>
-    </details>
-
-    <details>
-      <summary>What is the best time of day to travel from {{ page.from_location }} to {{ page.to_location }}?</summary>
-      <p>For the best experience, we recommend starting this journey <strong>{{ page.best_time_to_start }}</strong>. However, our taxis are available 24x7 to match your flight schedule.</p>
-    </details>
-
-    <details>
-      <summary>Are the taxi drivers experienced with this specific route?</summary>
-      <p>Yes, our local chauffeurs are thoroughly vetted and highly experienced in navigating the {{ page.route_terrain }} safely and smoothly.</p>
-    </details>
-
-    <details>
-      <summary>How do I book a taxi from {{ page.from_location }} to {{ page.to_location }}?</summary>
-      <p>Booking is incredibly easy. Simply click the WhatsApp button on this page to message Anand directly with your dates, or call <strong>+91 94006 20615</strong> for an instant confirmation.</p>
-    </details>
-
+    <details><summary>How far is {{ page.to_location }} from {{ page.from_location }} by taxi?</summary><p>The total distance is approximately <strong>{{ page.distance_km }} km</strong>. By private taxi, the journey takes around <strong>{{ page.travel_time }}</strong>.</p></details>
+    <details><summary>Which cab is best suited for the {{ page.from_location }} to {{ page.to_location }} route?</summary><p>Because this route features {{ page.route_terrain }}, we highly recommend booking a <strong>{{ page.suggested_car }}</strong> for the safest ride.</p></details>
+    <details><summary>Are there any good places to stop between {{ page.from_location }} and {{ page.to_location }}?</summary><p>Yes! We highly encourage you to ask your chauffeur to pause at scenic spots along the way, such as <strong>{{ page.waypoints }}</strong>.</p></details>
+    <details><summary>Can I get dropped directly at my hotel in {{ page.to_location }}?</summary><p>Absolutely. We provide a true door-to-door service directly to <strong>{{ page.popular_drop_point }}</strong> or your resort lobby.</p></details>
+    <details><summary>What is the best time of day to travel from {{ page.from_location }} to {{ page.to_location }}?</summary><p>For the best experience, we recommend starting this journey <strong>{{ page.best_time_to_start }}</strong>. However, our taxis are available 24x7.</p></details>
+    <details><summary>How do I book a taxi from {{ page.from_location }} to {{ page.to_location }}?</summary><p>Booking is easy. Simply click the WhatsApp button on this page to message Anand directly, or call <strong>+91 94006 20615</strong> for an instant confirmation.</p></details>
   </div>
 </section>
