@@ -98,6 +98,12 @@ keywords: "kerala travel guide for foreigners, private driver kochi airport, lux
     border: 1px solid rgba(255, 204, 0, 0.2);
     box-shadow: 0 15px 30px rgba(0,0,0,0.6);
   }
+  
+  /* OVERRIDE: Forces content to left-align regardless of site template */
+  .blog-content {
+    text-align: left; 
+  }
+  
   .blog-content h2 {
     font-size: 28px;
     color: #fff;
@@ -144,7 +150,7 @@ keywords: "kerala travel guide for foreigners, private driver kochi airport, lux
     border: 1px solid rgba(255, 204, 0, 0.3);
     border-radius: 12px;
     padding: 40px;
-    text-align: center;
+    text-align: center; /* CTA remains centered */
     margin-top: 60px;
   }
   .blog-cta-box h3 {
