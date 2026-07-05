@@ -4,6 +4,10 @@ layout: default
 
 <meta name="keywords" content="{{ page.seo_keywords }}">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,11 +60,20 @@ layout: default
 </script>
 
 <style>
+  /* --- GLOBAL RESET TO PREVENT OFF-CENTER OVERFLOW --- */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   /* --- RESPONSIVE & FUTURISTIC PAGE STYLING --- */
   :root {
     --gold: #ffcc00;
     --dark-bg: #0a0b0e;
     --card-bg: rgba(20, 23, 29, 0.7);
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
   }
 
   .route-hero { position: relative; padding: 180px 20px 100px; background: var(--dark-bg); overflow: hidden; text-align: center; border-bottom: 1px solid rgba(255, 204, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; }
@@ -69,16 +82,16 @@ layout: default
   .route-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
   .route-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,11,14,0.6) 0%, rgba(10,11,14,0.9) 80%, rgba(10,11,14,1) 100%); z-index: 2; }
   
-  .route-hero-content { position: relative; z-index: 3; max-width: 900px; width: 100%; margin: 0 auto; }
-  .route-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 14px; margin-bottom: 15px; display: block; font-weight: 700; text-shadow: 0 0 10px rgba(255,204,0,0.3); }
-  .route-hero h1 { font-size: clamp(36px, 5vw, 56px); color: #fff; margin-bottom: 25px; line-height: 1.2; font-family: 'Playfair Display', serif; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
-  .route-hero p { font-size: clamp(16px, 2vw, 20px); color: #e0e4eb; margin-bottom: 45px; line-height: 1.7; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
+  .route-hero-content { position: relative; z-index: 3; max-width: 900px; width: 100%; margin: 0 auto; padding: 0 15px; }
+  .route-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 14px; margin-bottom: 15px; display: block; font-weight: 600; text-shadow: 0 0 10px rgba(255,204,0,0.3); font-family: 'Inter', sans-serif; }
+  .route-hero h1 { font-size: clamp(32px, 5vw, 56px); color: #fff; margin-bottom: 25px; line-height: 1.25; font-family: 'Playfair Display', serif; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
+  .route-hero p { font-size: clamp(16px, 2vw, 18px); color: #e0e4eb; margin-bottom: 45px; line-height: 1.7; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 5px rgba(0,0,0,0.8); font-family: 'Inter', sans-serif; font-weight: 300; }
   
   /* Glassmorphism Quick Facts */
   .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-bottom: 50px; width: 100%; }
   .fact-box { background: var(--card-bg); border: 1px solid rgba(255, 204, 0, 0.15); padding: 25px 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); transition: transform 0.3s ease; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
   .fact-box:hover { transform: translateY(-5px); border-color: rgba(255, 204, 0, 0.4); }
-  .fact-box span { display: block; font-size: 13px; color: #a0a4ab; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .fact-box span { display: block; font-size: 13px; color: #a0a4ab; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
   .fact-box strong { color: #fff; font-size: clamp(18px, 2vw, 22px); font-family: 'Playfair Display', serif; }
 
   /* Content Sections */
@@ -88,11 +101,11 @@ layout: default
   
   .content-inner h2 { color: #fff; font-size: clamp(28px, 3vw, 36px); margin-bottom: 25px; font-family: 'Playfair Display', serif; border-bottom: 1px solid rgba(255,204,0,0.2); padding-bottom: 10px;}
   .content-inner h3 { color: var(--gold); font-size: 22px; margin-top: 40px; margin-bottom: 15px; font-family: 'Playfair Display', serif;}
-  .content-inner p { color: #a0a4ab; font-size: 17px; line-height: 1.9; margin-bottom: 25px; }
+  .content-inner p { color: #a0a4ab; font-size: 17px; line-height: 1.9; margin-bottom: 25px; font-weight: 300;}
 
   /* Dynamic Internal Linking Card (SEO Boost) */
   .dynamic-seo-link-card { margin-top: 50px; padding: 35px; background: linear-gradient(145deg, #15181e, #0e1015); border: 1px solid rgba(255, 204, 0, 0.3); border-radius: 16px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 20px rgba(255,204,0,0.05); }
-  .dynamic-seo-link-card h3 { margin-top: 0; color: #fff; font-size: 22px; margin-bottom: 15px; }
+  .dynamic-seo-link-card h3 { margin-top: 0; color: #fff; font-size: 24px; margin-bottom: 15px; font-family: 'Playfair Display', serif;}
   .dynamic-seo-link-card p { color: #dcdcdc; font-size: 16px; margin-bottom: 25px; }
   .dynamic-seo-link-card a { display: inline-block; color: #0a0b0e; background: var(--gold); padding: 12px 25px; border-radius: 6px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 0 15px rgba(255,204,0,0.3); }
   .dynamic-seo-link-card a:hover { background: transparent; color: var(--gold); border: 2px solid var(--gold); box-shadow: 0 0 25px rgba(255,204,0,0.5); }
@@ -107,26 +120,25 @@ layout: default
   /* FAQ Accordion */
   .faq-wrapper details { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.05); margin-bottom: 15px; padding: 25px; border-radius: 10px; cursor: pointer; transition: 0.3s; }
   .faq-wrapper details:hover { border-color: rgba(255, 204, 0, 0.3); }
-  .faq-wrapper summary { color: var(--gold); font-weight: 600; font-size: 18px; list-style: none; outline: none; display: flex; justify-content: space-between; align-items: center;}
+  .faq-wrapper summary { color: var(--gold); font-weight: 600; font-size: 18px; list-style: none; outline: none; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif;}
   .faq-wrapper summary::-webkit-details-marker { display: none; }
   .faq-wrapper details p { margin-top: 15px; margin-bottom: 0; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); }
   
   /* Futuristic Button */
-  .futuristic-btn { display: inline-block; background: linear-gradient(135deg, #ffcc00, #e6b800); color: #0a0b0e; padding: 18px 40px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 8px; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 0 20px rgba(255,204,0,0.4); border: 2px solid transparent; }
+  .futuristic-btn { display: inline-block; background: linear-gradient(135deg, #ffcc00, #e6b800); color: #0a0b0e; padding: 18px 40px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 8px; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 0 20px rgba(255,204,0,0.4); border: 2px solid transparent; font-family: 'Inter', sans-serif;}
   .futuristic-btn:hover { background: transparent; color: #ffcc00; border: 2px solid #ffcc00; box-shadow: 0 0 30px rgba(255,204,0,0.6); transform: translateY(-2px); }
 
-  /* --- BRAND NEW MOBILE FIX: SHOW FULL UNCROPPED IMAGE --- */
+  /* --- BRAND NEW MOBILE FIX: PERFECT ALIGNMENT & FONT STYLING --- */
   @media (max-width: 768px) {
-    /* Change layout to stack the image on top and content underneath */
     .route-hero { 
-      padding: 80px 0 0 0; /* Add padding to push below your navbar */
+      padding: 70px 0 0 0; /* Clears your navbar perfectly */
       min-height: auto; 
       display: flex; 
       flex-direction: column; 
       justify-content: flex-start;
+      background: var(--dark-bg);
     }
     
-    /* Release the image from the background so it shows the full uncropped frame */
     .route-hero-bg { 
       position: relative; 
       width: 100%; 
@@ -136,30 +148,30 @@ layout: default
       z-index: 1; 
     }
     
-    /* Hide the dark gradient since text now sits below the bright image */
     .route-hero-overlay { 
       display: none; 
     }
 
-    /* Position the text perfectly beneath the image */
+    /* Fixed Box-Sizing and Padding to ensure text stays perfectly centered */
     .route-hero-content { 
       position: relative; 
-      padding: 25px 20px 40px; 
+      padding: 30px 20px 50px; 
       z-index: 3; 
       background: var(--dark-bg);
       width: 100%;
+      text-align: center;
     }
 
-    /* Adjust font sizing to fit mobile perfectly */
-    .route-hero h1 { font-size: 28px; margin-bottom: 15px; }
-    .route-hero p { font-size: 15px; margin-bottom: 25px; }
+    /* Polished Mobile Typography */
+    .route-meta { font-size: 12px; margin-bottom: 12px; }
+    .route-hero h1 { font-size: 32px; line-height: 1.3; margin-bottom: 18px; }
+    .route-hero p { font-size: 15px; line-height: 1.7; margin-bottom: 30px; }
     
-    /* Other mobile section adjustments */
     .anand-collab-inner { flex-direction: column; text-align: center; gap: 35px; }
     .anand-img-box { width: 100%; max-width: 100%; }
-    .quick-facts { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .quick-facts { grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 40px; }
     .content-section { padding: 50px 20px; }
-    .dynamic-seo-link-card { padding: 25px 15px; }
+    .dynamic-seo-link-card { padding: 30px 20px; }
   }
 </style>
 
@@ -179,7 +191,7 @@ layout: default
       <div class="fact-box"><span>Start Time</span><strong>{{ page.best_time_to_start | truncatewords: 2, "" }}</strong></div>
     </div>
 
-    <div style="margin-top: 20px;">
+    <div style="margin-top: 10px;">
       <a href="https://wa.me/919400620615?text=*{{ page.from_location }} to {{ page.to_location }} Taxi Booking*%0AHi Anand, please share availability and exact quote." class="futuristic-btn">Check Availability on WhatsApp</a>
     </div>
   </div>
