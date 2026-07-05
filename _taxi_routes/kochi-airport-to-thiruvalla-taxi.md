@@ -15,7 +15,7 @@ best_time_to_start: "Anytime, though early morning or late night helps avoid hea
 destination_about: "Thiruvalla is a bustling, affluent town in the Pathanamthitta district, widely known as the 'NRI capital' of Kerala due to its large expatriate population. It perfectly blends urban development with serene, traditional Kerala backwater landscapes on its western borders."
 top_attractions: "The town is famous for the ancient Sree Vallabha Temple, one of the 108 Divya Desams, and the massive Paliakkara Church. Visitors also enjoy the tranquil, agricultural beauty of the Kuttanad region bordering the town."
 internal_link_text: "Kochi Airport to Kottayam taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-kottayam-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-kottayam/"
 seo_keywords: "kochi to thiruvalla taxi, kochi airport to thiruvalla cab, pathanamthitta district taxi, nri drop cab thiruvalla"
 title: "Kochi Airport to Thiruvalla Taxi Service | Tour With Anand"
 description: "A comfortable and direct cab service from the terminal to the heart of Pathanamthitta district. Ideal for NRI arrivals and family visits to central Kerala."

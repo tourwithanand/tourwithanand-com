@@ -15,7 +15,7 @@ best_time_to_start: "Very early morning to avoid daytime highway traffic along N
 destination_about: "Located in the heart of Thiruvananthapuram, the Sree Padmanabhaswamy Temple is an architectural marvel blending Kerala and Dravidian styles. It gained global fame as the wealthiest place of worship in the world, dedicated to Lord Vishnu."
 top_attractions: "The temple's intricate stone carvings and the towering Gopuram are must-sees. Nearby attractions include the Napier Museum and the Kuthira Malika Palace."
 internal_link_text: "Kochi Airport to Varkala Beach taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-varkala-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-varkala/"
 seo_keywords: "kochi to trivandrum taxi, padmanabhaswamy temple cab, kochi airport to thiruvananthapuram drop, intercity taxi kochi to trivandrum"
 title: "Kochi Airport to Padmanabhaswamy Temple (Trivandrum) Taxi Service | Tour With Anand"
 description: "A premium intercity transfer from Kochi to the richest temple in the world. Enjoy a spacious, air-conditioned ride down the Kerala coast."

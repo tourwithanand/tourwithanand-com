@@ -15,7 +15,7 @@ best_time_to_start: "Very early morning or late night to bypass heavy daytime hi
 destination_about: "The Raviz Ashtamudi is a spectacular 5-star luxury resort situated on the banks of the serene Ashtamudi Lake in Kollam. Its architecture elegantly blends traditional Kerala timber work with modern luxury."
 top_attractions: "The resort offers incredible houseboat dining experiences, a massive infinity pool overlooking the lake, and authentic Ayurvedic wellness therapies at their renowned spa."
 internal_link_text: "Kochi Airport to Leela Kovalam taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-leela-kovalam-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-leela-kovalam/"
 seo_keywords: "kochi airport to raviz ashtamudi taxi, kollam resort cab, luxury transfer to ashtamudi lake, premium taxi for raviz hotel"
 title: "Kochi Airport to The Raviz Ashtamudi Kollam Taxi Service | Tour With Anand"
 description: "A seamless, luxurious journey down the coast to the majestic Raviz Ashtamudi. Let our professional chauffeurs navigate the highway while you relax."

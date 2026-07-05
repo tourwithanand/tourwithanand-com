@@ -15,7 +15,7 @@ best_time_to_start: "Very early morning to cover maximum distance during non-pea
 destination_about: "Bekal is a small, incredibly scenic town in the Kasaragod district of northernmost Kerala. It has gained international fame for its massive, beautifully preserved laterite fort and pristine, uncrowded luxury beach resorts."
 top_attractions: "The iconic, keyhole-shaped Bekal Fort overlooking the Arabian Sea is the star attraction. Visitors also enjoy the tranquil Bekal beach and local backwater cruises."
 internal_link_text: "Kochi Airport to Kannur taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-kannur-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-kannur/"
 seo_keywords: "kochi to bekal taxi, kochi airport to bekal fort cab, taj bekal taxi service, luxury cab cross state kerala"
 title: "Kochi Airport to Bekal Taxi Service | Tour With Anand"
 description: "The ultimate cross-state premium transfer. Travel from central Kerala to the far north in complete air-conditioned luxury with our most experienced highway chauffeurs."

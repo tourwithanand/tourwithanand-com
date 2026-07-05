@@ -15,7 +15,7 @@ best_time_to_start: "Very early morning to cross city limits before peak traffic
 destination_about: "Wayanad is a lush, forested district in northern Kerala, famous for its spice plantations, wildlife, and indigenous tribal heritage. It sits high on the Western Ghats, offering breathtaking scenery and a cooler climate."
 top_attractions: "Top sights include the Edakkal Caves with ancient petroglyphs, the serene Pookode Lake, the massive Banasura Sagar Dam, and the Wayanad Wildlife Sanctuary."
 internal_link_text: "Kochi Airport to Kozhikode city transfer"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-kozhikode-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-kozhikode/"
 seo_keywords: "kochi to wayanad taxi, kochi airport to wayanad cab, innova kochi to wayanad, wayanad tour packages from kochi, kalpetta taxi drop"
 title: "Kochi Airport to Wayanad Taxi Service | Tour With Anand"
 description: "Enjoy a premium, long-distance transfer to the pristine hills of Wayanad. Our experienced drivers easily handle the challenging mountain passes."

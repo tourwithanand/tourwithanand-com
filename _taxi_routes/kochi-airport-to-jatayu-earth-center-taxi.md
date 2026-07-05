@@ -15,7 +15,7 @@ best_time_to_start: "Early morning to reach the center before the intense aftern
 destination_about: "Jatayu Earth's Center is a sprawling nature park and tourism center in Chadayamangalam. It holds the Guinness World Record for the largest bird sculpture in the world, depicting the mythical bird Jatayu from the Ramayana, perched dramatically on a massive rocky peak."
 top_attractions: "Visitors can take a state-of-the-art Swiss cable car to the top, explore the massive sculpture which houses a multi-level museum, and partake in various adventure activities like rock climbing and ziplining."
 internal_link_text: "Kochi Airport to Trivandrum cab service"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-trivandrum-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-trivandrum/"
 seo_keywords: "kochi airport to jatayu earth center taxi, jatayu nature park cab, kochi to chadayamangalam drop, world largest bird sculpture taxi"
 title: "Kochi Airport to Jatayu Earth Center Taxi Service | Tour With Anand"
 description: "A premium intercity transfer from Kochi to the world's largest bird sculpture. Enjoy a spacious, air-conditioned ride to this incredible mountaintop destination."

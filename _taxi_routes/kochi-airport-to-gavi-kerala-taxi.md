@@ -15,7 +15,7 @@ best_time_to_start: "Very early morning to align with the strict forest entry ti
 destination_about: "Gavi is a pristine, highly protected eco-tourism destination nestled deep within the Periyar Tiger Reserve. It gained immense popularity for its untouched wilderness, rolling grasslands, and abundant wildlife sightings including elephants and Nilgiri Tahrs."
 top_attractions: "Visitors can enjoy guided jungle safaris, boating on the serene Gavi Lake, trekking to Sabarimala viewpoints, and staying in the exclusive forest tents managed by the KFDC."
 internal_link_text: "Kochi Airport to Thekkady taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-thekkady-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-thekkady/"
 seo_keywords: "kochi airport to gavi taxi, gavi forest cab, pathanamthitta eco tourism taxi, innova for gavi trip, kerala forest safari cab"
 title: "Kochi Airport to Gavi (Pathanamthitta) Taxi Service | Tour With Anand"
 description: "Embark on a beautiful, rugged journey into the heart of Kerala's most famous eco-tourism spot. Relax in air-conditioned comfort while our expert drivers navigate the Western Ghats."

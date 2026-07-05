@@ -15,7 +15,7 @@ best_time_to_start: "Very early morning or late night to ensure the patient reac
 destination_about: "KIMS Health in Trivandrum is a leading healthcare destination in South India, renowned for its advanced medical facilities, highly experienced doctors, and multi-disciplinary treatments. It attracts a large number of medical tourists from across the globe."
 top_attractions: "While primarily a medical facility, the hospital is well-equipped with patient-friendly amenities. Relatives often visit nearby Trivandrum city attractions like the Napier Museum during extended stays."
 internal_link_text: "Kochi Airport to Aster Medcity taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-aster-medcity-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-aster-medcity/"
 seo_keywords: "kochi airport to kims trivandrum taxi, kims health cab, medical transfer kochi to trivandrum, patient taxi to kims hospital"
 title: "Kochi Airport to KIMS Health Trivandrum Taxi Service | Tour With Anand"
 description: "A stress-free and smooth transfer to one of Kerala's most renowned multi-specialty hospitals. We prioritize careful driving for all medical transfers."

@@ -15,7 +15,7 @@ best_time_to_start: "Anytime (24x7 service), though late evening offers the fast
 destination_about: "Fort Kochi is a charming seaside heritage town known for its unique blend of Dutch, Portuguese, and British colonial architecture. It is the cultural heart of Kochi, famous for its vibrant art scene and laid-back cafes."
 top_attractions: "The iconic Chinese Fishing Nets are a must-see, along with the historic St. Francis Church, the Santa Cruz Basilica, and the bustling antique shops of Jew Town in Mattancherry."
 internal_link_text: "Kochi Airport to Cherai Beach taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-cherai-beach-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-cherai-beach/"
 seo_keywords: "kochi airport to fort kochi taxi, cab to fort kochi beach, heritage tour taxi kochi, kochi airport to mattancherry drop"
 title: "Kochi Airport to Fort Kochi Taxi Service | Tour With Anand"
 description: "Skip the confusing city traffic and head straight to the heritage zone. A perfect, quick transfer to kick off your cultural Kerala itinerary."

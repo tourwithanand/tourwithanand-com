@@ -15,7 +15,7 @@ best_time_to_start: "Very early morning or late night to bypass heavy daytime tr
 destination_about: "The Leela Kovalam (now The Raviz Kovalam) is India’s only cliff-top beach resort, offering breathtaking panoramic views of the Arabian Sea. It is the epitome of luxury, famous for its private beaches and world-class infinity pools."
 top_attractions: "Guests can step directly onto the pristine Kovalam Beach, visit the iconic Vizhinjam Lighthouse, and experience authentic, high-end Ayurvedic therapies."
 internal_link_text: "Kochi Airport to Varkala Cliff taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-varkala-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-varkala/"
 seo_keywords: "kochi airport to leela kovalam taxi, kovalam resort cab, luxury taxi to trivandrum resorts, innova kochi to kovalam"
 title: "Kochi Airport to The Leela Kovalam Taxi Service | Tour With Anand"
 description: "A long, luxurious coastal drive from Kochi straight to India's finest cliffside beach resort. Sit back, relax, and enjoy the premium VIP service."

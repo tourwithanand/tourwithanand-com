@@ -15,7 +15,7 @@ best_time_to_start: "Daylight hours only (before 4 PM) as heavy mist reduces vis
 destination_about: "Vagamon is an offbeat, tranquil hill station known for its rolling green pine forests, sprawling meadows, and mist-covered valleys. It remains much less commercialized than Munnar, offering a pristine escape into nature."
 top_attractions: "Adventure seekers love paragliding over the Vagamon Meadows. The Pine Valley, Kurisumala Ashram, and the sheer drop at suicide point (Mooppan Para) are highly popular."
 internal_link_text: "Kochi Airport to Thekkady taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-thekkady-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-thekkady/"
 seo_keywords: "kochi airport to vagamon taxi, cab to vagamon hills, innova for vagamon trip, offbeat kerala hill station taxi"
 title: "Kochi Airport to Vagamon Taxi Service | Tour With Anand"
 description: "Travel safely into Kerala's untouched, misty meadows. This route requires skilled driving, and our verified chauffeurs are trained for these exact hills."

@@ -115,13 +115,25 @@ layout: default
   .futuristic-btn { display: inline-block; background: linear-gradient(135deg, #ffcc00, #e6b800); color: #0a0b0e; padding: 18px 40px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 8px; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 0 20px rgba(255,204,0,0.4); border: 2px solid transparent; }
   .futuristic-btn:hover { background: transparent; color: #ffcc00; border: 2px solid #ffcc00; box-shadow: 0 0 30px rgba(255,204,0,0.6); transform: translateY(-2px); }
 
-  /* Mobile Adjustments */
+  /* --- UPDATED MOBILE ADJUSTMENTS --- */
   @media (max-width: 768px) {
-    .route-hero { padding: 140px 20px 70px; min-height: 60vh; }
+    /* 1. Remove the forced height so the image stops zooming in aggressively */
+    .route-hero { padding: 120px 15px 50px; min-height: auto; }
+    
+    /* 2. Anchor the image to the top so the Airport and Car are always in frame */
+    .route-hero-bg { object-position: center top; }
+    
+    /* 3. Significantly lighten the dark overlay on mobile so the image shines through */
+    .route-hero-overlay { background: linear-gradient(to bottom, rgba(10,11,14,0.1) 0%, rgba(10,11,14,0.6) 65%, rgba(10,11,14,1) 100%); }
+
+    /* Fix font scaling to prevent text from pushing the image down */
+    .route-hero h1 { font-size: 32px; margin-bottom: 15px; }
+    .route-hero p { font-size: 16px; margin-bottom: 25px; }
+    
     .anand-collab-inner { flex-direction: column; text-align: center; gap: 35px; }
     .anand-img-box { width: 100%; max-width: 100%; }
     .quick-facts { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    .content-section { padding: 60px 20px; }
+    .content-section { padding: 50px 20px; }
     .dynamic-seo-link-card { padding: 25px 15px; }
   }
 </style>

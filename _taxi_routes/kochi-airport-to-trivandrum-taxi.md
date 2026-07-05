@@ -15,7 +15,7 @@ best_time_to_start: "Very early morning or late night to bypass heavy daytime tr
 destination_about: "Thiruvananthapuram, or Trivandrum, is the capital city of Kerala. It is a major academic, political, and IT hub, beautifully balancing its rich royal heritage with rapid modern development."
 top_attractions: "The city is famous for the Padmanabhaswamy Temple, the Napier Museum, the adjacent Zoo, and the magnificent Kuthira Malika Palace built by the Travancore kings."
 internal_link_text: "Kochi Airport to Varkala taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-varkala-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-varkala/"
 seo_keywords: "kochi to trivandrum taxi, kochi airport to thiruvananthapuram cab, intercity taxi kerala, innova to trivandrum"
 title: "Kochi Airport to Thiruvananthapuram (Trivandrum) Taxi Service | Tour With Anand"
 description: "A reliable, intercity premium cab service connecting Kerala's commercial hub to its capital city. Perfect for corporate travel, political visits, or southern tours."

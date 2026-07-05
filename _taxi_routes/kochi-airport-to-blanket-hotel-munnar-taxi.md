@@ -15,7 +15,7 @@ best_time_to_start: "Early morning (6 AM - 9 AM) to avoid city traffic and enjoy
 destination_about: "Blanket Hotel & Spa is a premium 5-star luxury property situated near the spectacular Attukad Waterfalls in Pallivasal, Munnar. It is renowned for its eco-friendly practices, luxurious amenities, and breathtaking views of the surrounding tea plantations."
 top_attractions: "Guests can enjoy world-class spa treatments, infinity pools overlooking the valley, guided tea plantation walks, and easy access to the majestic Attukad Waterfalls right next to the property."
 internal_link_text: "Kochi Airport to Munnar hill station taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-munnar-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-munnar/"
 seo_keywords: "kochi airport to blanket hotel taxi, luxury cab for munnar resorts, innova to blanket hotel, kochi airport munnar resort transfer, pallivasal taxi drop"
 title: "Kochi Airport to Blanket Hotel & Spa Munnar Taxi Service | Tour With Anand"
 description: "Experience the ultimate scenic drive from the tropical coast directly to one of Munnar's finest luxury eco-hotels. Our expert hill-station drivers ensure a smooth, safe ascent."

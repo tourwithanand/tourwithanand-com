@@ -15,7 +15,7 @@ best_time_to_start: "Anytime (24x7 service available for emergencies or schedule
 destination_about: "Amrita Institute of Medical Sciences (AIMS) is a premier super-specialty hospital in Kochi, renowned for its charitable foundations, advanced transplants, and massive healthcare infrastructure serving thousands daily."
 top_attractions: "Located in Edappally, the hospital is heavily focused on healthcare, but family members often visit the nearby Oberon Mall or Lulu Mall for necessities and relaxation."
 internal_link_text: "Kochi Airport to Rajagiri Hospital taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-rajagiri-hospital-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-rajagiri-hospital/"
 seo_keywords: "kochi airport to amrita hospital taxi, aims hospital cab kochi, kochi medical transfer, edappally hospital taxi"
 title: "Kochi Airport to Amrita Hospital (AIMS) Taxi Service | Tour With Anand"
 description: "Reliable and fast transportation from the terminal directly to Amrita Hospital. We prioritize smooth driving for the comfort of our medical guests."

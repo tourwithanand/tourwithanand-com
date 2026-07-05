@@ -15,7 +15,7 @@ best_time_to_start: "Early morning to reach before the afternoon wildlife boatin
 destination_about: "Thekkady is the gateway to the Periyar National Park, one of India's most fascinating wildlife sanctuaries. Immersed in dense evergreen forests and savanna grasslands, it is a haven for nature lovers and wildlife enthusiasts seeking to spot elephants in their natural habitat."
 top_attractions: "The primary attraction is the Periyar Lake boat safari. Additionally, visitors love the spice plantation tours, elephant bathing experiences, and the traditional Kalaripayattu martial arts shows in Kumily."
 internal_link_text: "scenic Kochi Airport to Munnar hill station taxi"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-munnar-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-munnar/"
 seo_keywords: "kochi airport to thekkady cab, periyar national park taxi, kochi to kumily drop, innova for thekkady trip, kochi airport to thekkady taxi, kerala wildlife tour cab"
 title: "Kochi Airport to Thekkady Taxi Service | Tour With Anand"
 description: "Embark on a beautiful journey into the heart of Kerala's wildlife sanctuary. Relax in air-conditioned comfort while navigating the lush Western Ghats."

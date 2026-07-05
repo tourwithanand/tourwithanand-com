@@ -15,7 +15,7 @@ best_time_to_start: "Late night to reach Pamba by early morning to begin the hil
 destination_about: "Pamba is the vital base camp on the banks of the sacred Pamba River, serving as the starting point for the trek to the Sabarimala Ayyappa Temple. It is surrounded by the dense forests of the Periyar Tiger Reserve."
 top_attractions: "The primary activity is taking a holy dip in the Pamba River before beginning the arduous trek to the Sabarimala Sree Dharma Sastha Temple."
 internal_link_text: "Kochi Airport to Trivandrum cab service"
-internal_link_url: "/24x7-kochi-airport-taxi-service/kochi-airport-to-trivandrum-taxi/"
+internal_link_url: "/taxi/kochi-airport-to-trivandrum/"
 seo_keywords: "kochi airport to pamba taxi, sabarimala base camp cab, kochi to nilakkal drop, innova for sabarimala trip, sabarimala season taxi, kochi to pamba fare"
 title: "Kochi Airport to Pamba (Sabarimala) Taxi Service | Tour With Anand"
 description: "Safe and reliable drops to the Pamba base camp for Sabarimala pilgrims. Our drivers are highly experienced with the busy pilgrimage season traffic."
