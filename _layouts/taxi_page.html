@@ -65,7 +65,7 @@ layout: default
 
   .route-hero { position: relative; padding: 180px 20px 100px; background: var(--dark-bg); overflow: hidden; text-align: center; border-bottom: 1px solid rgba(255, 204, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; }
   
-  /* Hero Image - Perfect Mobile & PC Scaling */
+  /* Hero Image - Perfect Desktop Scaling */
   .route-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
   .route-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,11,14,0.6) 0%, rgba(10,11,14,0.9) 80%, rgba(10,11,14,1) 100%); z-index: 2; }
   
@@ -115,21 +115,46 @@ layout: default
   .futuristic-btn { display: inline-block; background: linear-gradient(135deg, #ffcc00, #e6b800); color: #0a0b0e; padding: 18px 40px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 8px; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 0 20px rgba(255,204,0,0.4); border: 2px solid transparent; }
   .futuristic-btn:hover { background: transparent; color: #ffcc00; border: 2px solid #ffcc00; box-shadow: 0 0 30px rgba(255,204,0,0.6); transform: translateY(-2px); }
 
-  /* --- UPDATED MOBILE ADJUSTMENTS --- */
+  /* --- BRAND NEW MOBILE FIX: SHOW FULL UNCROPPED IMAGE --- */
   @media (max-width: 768px) {
-    /* 1. Remove the forced height so the image stops zooming in aggressively */
-    .route-hero { padding: 120px 15px 50px; min-height: auto; }
+    /* Change layout to stack the image on top and content underneath */
+    .route-hero { 
+      padding: 80px 0 0 0; /* Add padding to push below your navbar */
+      min-height: auto; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: flex-start;
+    }
     
-    /* 2. Anchor the image to the top so the Airport and Car are always in frame */
-    .route-hero-bg { object-position: center top; }
+    /* Release the image from the background so it shows the full uncropped frame */
+    .route-hero-bg { 
+      position: relative; 
+      width: 100%; 
+      height: auto; 
+      object-fit: contain; 
+      display: block;
+      z-index: 1; 
+    }
     
-    /* 3. Significantly lighten the dark overlay on mobile so the image shines through */
-    .route-hero-overlay { background: linear-gradient(to bottom, rgba(10,11,14,0.1) 0%, rgba(10,11,14,0.6) 65%, rgba(10,11,14,1) 100%); }
+    /* Hide the dark gradient since text now sits below the bright image */
+    .route-hero-overlay { 
+      display: none; 
+    }
 
-    /* Fix font scaling to prevent text from pushing the image down */
-    .route-hero h1 { font-size: 32px; margin-bottom: 15px; }
-    .route-hero p { font-size: 16px; margin-bottom: 25px; }
+    /* Position the text perfectly beneath the image */
+    .route-hero-content { 
+      position: relative; 
+      padding: 25px 20px 40px; 
+      z-index: 3; 
+      background: var(--dark-bg);
+      width: 100%;
+    }
+
+    /* Adjust font sizing to fit mobile perfectly */
+    .route-hero h1 { font-size: 28px; margin-bottom: 15px; }
+    .route-hero p { font-size: 15px; margin-bottom: 25px; }
     
+    /* Other mobile section adjustments */
     .anand-collab-inner { flex-direction: column; text-align: center; gap: 35px; }
     .anand-img-box { width: 100%; max-width: 100%; }
     .quick-facts { grid-template-columns: repeat(2, 1fr); gap: 15px; }
