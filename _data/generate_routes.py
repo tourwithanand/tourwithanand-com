@@ -1,7 +1,7 @@
 import csv
 import os
 
-# Save directly into the new collection folder
+# Save directly into the collection folder
 output_dir = "_taxi_routes"
 os.makedirs(output_dir, exist_ok=True)
 
@@ -10,7 +10,6 @@ with open("_data/routes.csv", mode='r', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     
     for row in reader:
-        # No date prefix needed for Collections!
         filename = f"{output_dir}/{row['from_slug']}-to-{row['to_slug']}-taxi.md"
         
         with open(filename, "w", encoding="utf-8") as out:
@@ -25,8 +24,9 @@ with open("_data/routes.csv", mode='r', encoding='utf-8') as f:
             out.write(f"title: \"{row['from_location']} to {row['to_location']} Taxi Service | Tour With Anand\"\n")
             out.write(f"description: \"{row['unique_desc']}\"\n")
             
-            # The permalink pushes the final live URL exactly where you want it
-            out.write(f"permalink: /24x7-kochi-airport-taxi-service/{row['from_slug']}-to-{row['to_slug']}-taxi/\n")
+            # === THE NEW FUTURISTIC PERMALINK ===
+            # This creates clean URLs like: /taxi/kochi-airport-to-munnar/
+            out.write(f"permalink: /taxi/{row['from_slug']}-to-{row['to_slug']}/\n")
             out.write("---\n")
             
 print(f"✅ Successfully generated new SEO landing pages inside {output_dir}/")
