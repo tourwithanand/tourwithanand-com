@@ -3,72 +3,7 @@ layout: default
 title: Home
 ---
 
-<style>
-  /* Mobile Hero & Video Overlay Fixes */
-  .mobile-hero {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .m-video-wrapper {
-    position: relative;
-    width: 100%;
-    background-color: #000; /* Prevents white flash during initial page load */
-    overflow: hidden;
-  }
-
-  #mobileHeroVideo {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-
-  .video-text-overlay {
-    position: absolute;
-    top: 50%;
-    right: 8%; /* Positioned on the right side with some padding from the edge */
-    transform: translateY(-50%);
-    text-align: right; /* Aligns text lines to the right */
-    width: 80%;
-    z-index: 2;
-    pointer-events: none; /* Prevents the text layer from intercepting screen taps/clicks */
-    
-    /* 2-Second Delay Animation */
-    opacity: 0;
-    animation: appearanceDelay 0.6s ease-in-out forwards;
-    animation-delay: 2s;
-  }
-
-  /* Keyframe to cleanly fade in the text after the delay */
-  @keyframes appearanceDelay {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  .maxx-intro {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-    display: inline-block;
-    margin-bottom: 5px;
-  }
-
-  .maxx-sub {
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: #ffffff;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-  }
-</style>
-
-<section class="desktop-hero">
+<section class="desktop-hero desktop-only">
   <div class="hero-slide active">
     <div class="hero-bg"><img src="Hero%20Banner%202.png" alt="South India Tours"></div>
     <div class="hero-overlay">
@@ -103,27 +38,14 @@ title: Home
   </div>
 </section>
 
-<section class="mobile-hero">
+<section class="mobile-video-hero mobile-only">
   <div class="m-video-wrapper">
-    <video id="mobileHeroVideo" 
-           src="TWA Cat Video - Hero Banner.mp4" 
-           poster="Mobile-Hero-Poster.jpg" 
-           autoplay 
-           loop 
-           muted 
-           playsinline 
-           preload="auto">
-    </video>
-    <div id="videoTextOverlay" class="video-text-overlay">
-      <span class="maxx-intro">Hi, I'm Maxx!</span><br>
-      <span class="maxx-sub">Connect With My Friend Anand</span>
+    <video id="catVideo" src="TWA%20Cat%20Video%20-%20Hero%20Banner.mp4" poster="Mobile-Hero-Poster.jpg" autoplay muted playsinline preload="auto"></video>
+    
+    <div class="maxx-overlay">
+      <h3>Hi, I'm Maxx! 🐾</h3>
+      <p>Connect with my friend Anand for the best trip.</p>
     </div>
-  </div>
-  
-  <div class="m-hero-cta">
-    <h1>South India Tours & Beyond</h1>
-    <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
-    <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
   </div>
 </section>
 
@@ -401,3 +323,50 @@ title: Home
     </form>
   </div>
 </section>
+
+<style>
+/* --- MOBILE VIDEO BANNER & OPTIMIZED MAXX OVERLAY --- */
+.mobile-video-hero { position: relative; width: 100vw; background: #0a0b0e; overflow: hidden; }
+.m-video-wrapper { position: relative; width: 100%; display: block; background: #000; }
+.m-video-wrapper video { width: 100%; height: auto; display: block; object-fit: contain; }
+
+.maxx-overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: rgba(10, 11, 14, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 204, 0, 0.35);
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  z-index: 5;
+  
+  /* 4-Second Delay Fade-In Animation */
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeMaxxIn 0.8s ease forwards;
+  animation-delay: 4s;
+}
+
+@keyframes fadeMaxxIn {
+  0% { opacity: 0; visibility: hidden; transform: translate(-50%, 20px); }
+  100% { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+}
+
+.maxx-overlay h3 { color: #ffcc00; font-size: 16px; margin: 0 0 2px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-family: 'Playfair Display', serif; }
+.maxx-overlay p { color: #fff; font-size: 12px; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-weight: 300; font-family: 'Inter', sans-serif; }
+
+/* Desktop / Mobile Toggle Handling */
+.mobile-only { display: none; }
+
+@media (max-width: 768px) {
+  .desktop-only { display: none !important; }
+  .mobile-only { display: block; }
+  .mobile-video-hero { display: block; margin-top: 60px; /* Aligns smoothly under your navbar */ }
+}
+</style>
