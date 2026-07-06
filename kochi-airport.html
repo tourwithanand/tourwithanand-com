@@ -49,6 +49,17 @@ seo_keywords: "kochi airport taxi, cochin airport cabs, premium cab cochin inter
   </div>
 </section>
 
+<section class="mobile-hero-banner mobile-only">
+  <img src="/Mobile%20Hero%20Airprot.jpg" class="m-hero-bg" alt="Premium private taxi from Kochi Airport">
+  <div class="m-hero-overlay"></div>
+  
+  <div class="m-hero-content">
+    <span class="route-meta">Kerala Intercity Transfers</span>
+    <h1>Premium Kochi Airport Taxi Service</h1>
+    <p>Seamless, reliable, and private chauffeurs across Kerala.</p>
+  </div>
+</section>
+
 <section class="mobile-video-hero mobile-only">
   <div class="m-video-wrapper">
     <video id="catVideo" autoplay muted playsinline loop>
@@ -57,7 +68,7 @@ seo_keywords: "kochi airport taxi, cochin airport cabs, premium cab cochin inter
     
     <div class="maxx-overlay">
       <h3>Hi, I'm Maxx! 🐾</h3>
-      <p>Need a stress-free ride? Connect with my friend Anand!</p>
+      <p>Need a stress-free ride? Connect with my friend Anand below!</p>
     </div>
   </div>
 </section>
@@ -72,8 +83,8 @@ seo_keywords: "kochi airport taxi, cochin airport cabs, premium cab cochin inter
 
     <div class="booking-widget-box neon-border">
       <div class="widget-header">
-        <h3>Calculate Quote via WhatsApp</h3>
-        <p>Fill out your trip details below to get an instant quote directly from Anand.</p>
+        <h3>Request Your Premium Transfer</h3>
+        <p>Submit your trip details below, and Anand will reply instantly on WhatsApp to confirm availability and pricing.</p>
       </div>
       <form class="whatsapp-booking-form" onsubmit="sendWhatsAppQuote(event)">
         <div class="form-grid">
@@ -279,9 +290,21 @@ function sendWhatsAppQuote(event) {
 </script>
 
 <style>
+/* --- GLOBAL RESET TO PREVENT OFF-CENTER OVERFLOW --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* --- TYPOGRAPHY PAIRING & BASICS --- */
 body, input, select, button { font-family: 'Inter', sans-serif !important; }
 h1, h2, h3 { font-family: 'Playfair Display', serif !important; }
+
+/* --- RESPONSIVE & FUTURISTIC PAGE STYLING --- */
+:root {
+  --gold: #ffcc00;
+  --dark-bg: #0a0b0e;
+  --card-bg: rgba(20, 23, 29, 0.7);
+}
 
 /* --- DESKTOP HERO BANNER --- */
 .desktop-hero-banner { position: relative; width: 100vw; height: 50vh; min-height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-top: 60px; }
@@ -313,7 +336,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif !important; }
 .futuristic-btn:hover { background: transparent; color: #ffcc00; border: 2px solid #ffcc00; box-shadow: 0 0 30px rgba(255,204,0,0.6); transform: translateY(-2px); }
 
 /* --- MOBILE VIDEO BANNER & OPTIMIZED MAXX OVERLAY --- */
-.mobile-video-hero { position: relative; width: 100vw; background: #0a0b0e; margin-top: 60px; display: none; overflow: hidden; }
+.mobile-video-hero { position: relative; width: 100vw; background: #0a0b0e; display: none; overflow: hidden; }
 .m-video-wrapper { position: relative; width: 100%; display: block; }
 .m-video-wrapper video { width: 100%; height: auto; display: block; object-fit: contain; }
 
@@ -398,13 +421,69 @@ h1, h2, h3 { font-family: 'Playfair Display', serif !important; }
   .desktop-hero-content h1 { font-size: 48px; }
 }
 
+/* --- BRAND NEW MOBILE FIX: PERFECT ALIGNMENT & FONT STYLING --- */
 @media (max-width: 768px) {
   .desktop-only { display: none !important; }
   .mobile-only { display: block; }
   .mobile-video-hero { display: block; }
   
+  /* --- NEW: MOBILE HERO BACKGROUND IMAGE STYLING --- */
+  .mobile-hero-banner { 
+    position: relative; 
+    width: 100vw; 
+    height: 60vh; /* Adjust height as needed */
+    min-height: 400px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+    margin-top: 60px; /* Clears your navbar */
+  }
+  
+  .m-hero-bg { 
+    position: absolute; 
+    inset: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Ensures the image covers the background area */
+    object-position: center; /* Centers the image */
+    z-index: 1; 
+  }
+  
+  /* Dark overlay to make text readable */
+  .m-hero-overlay { 
+    position: absolute; 
+    inset: 0; 
+    background: rgba(10, 11, 14, 0.6); /* Adjust opacity for brightness */
+    z-index: 2; 
+  }
+  
+  .m-hero-content { 
+    position: relative; 
+    z-index: 3; 
+    width: 100%;
+    padding: 20px; 
+    text-align: center;
+  }
+  
+  .m-hero-content .route-meta { font-size: 12px; margin-bottom: 10px; }
+  .m-hero-content h1 { font-size: 32px; line-height: 1.3; margin-bottom: 15px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+  .m-hero-content p { font-size: 16px; line-height: 1.5; color: #e0e4eb; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+
+  /* --- EXISTING MOBILE FIXES --- */
   .document-content-section { padding: 30px 0 60px 0; }
-  .booking-widget-box { margin: 20px auto 40px auto; padding: 25px 20px; width: 100%; border-radius: 12px; }
+  
+  /* Fixed Booking Widget alignment */
+  .booking-widget-box { 
+    margin: 20px auto 40px auto; 
+    padding: 25px 15px; /* Reduced side padding so it fits */
+    width: 100%; 
+    max-width: 100%; /* Ensures it never breaks the screen edge */
+    box-sizing: border-box; /* Forces padding to stay inside the width */
+    border-radius: 12px; 
+  }
+  
   .form-grid { grid-template-columns: 1fr; gap: 15px; }
   .full-width-field { grid-column: span 1; }
   .form-submit-btn { grid-column: span 1; padding: 14px; font-size: 15px; }
