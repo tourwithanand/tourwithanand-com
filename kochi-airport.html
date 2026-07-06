@@ -322,9 +322,11 @@ h1, h2, h3 { font-family: 'Playfair Display', serif !important; }
 .widget-header h3 { color: #ffcc00; font-size: 26px; margin: 0 0 5px 0; }
 .widget-header p { color: #a0a4ab; margin: 0; font-size: 14px; font-weight: 300; }
 .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; width: 100%; }
 .form-group label { color: #fff; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-.form-group input, .form-group select { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 14px; color: #fff; font-size: 15px; transition: 0.3s; outline: none; }
+
+/* THE FIX: ADDED WIDTH: 100% AND BOX-SIZING TO CONTAIN INPUTS */
+.form-group input, .form-group select { width: 100%; box-sizing: border-box; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 14px; color: #fff; font-size: 15px; transition: 0.3s; outline: none; }
 .form-group input:focus, .form-group select:focus { border-color: #ffcc00; background: rgba(255,254,0,0.03); box-shadow: 0 0 10px rgba(255,204,0,0.1); }
 .form-group select option { background: #13161c; color: #fff; }
 .full-width-field { grid-column: span 2; }
@@ -477,7 +479,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif !important; }
   /* Fixed Booking Widget alignment */
   .booking-widget-box { 
     margin: 20px auto 40px auto; 
-    padding: 25px 15px; /* Reduced side padding so it fits */
+    padding: 25px 15px; 
     width: 100%; 
     max-width: 100%; /* Ensures it never breaks the screen edge */
     box-sizing: border-box; /* Forces padding to stay inside the width */
