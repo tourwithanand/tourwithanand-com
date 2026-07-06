@@ -47,6 +47,12 @@ title: Home
       <p>Connect with my friend Anand for the best trip.</p>
     </div>
   </div>
+  
+  <div class="m-hero-cta">
+    <h1>South India Tours & Beyond</h1>
+    <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
+    <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
+  </div>
 </section>
 
 <section class="fleet-section">
@@ -326,7 +332,7 @@ title: Home
 
 <style>
 /* --- MOBILE VIDEO BANNER & OPTIMIZED MAXX OVERLAY --- */
-.mobile-video-hero { position: relative; width: 100vw; background: #0a0b0e; overflow: hidden; }
+.mobile-video-hero { position: relative; width: 100vw; background: #0a0b0e; overflow: hidden; display: none; }
 .m-video-wrapper { position: relative; width: 100%; display: block; background: #000; }
 .m-video-wrapper video { width: 100%; height: auto; display: block; object-fit: contain; }
 
@@ -360,6 +366,11 @@ title: Home
 
 .maxx-overlay h3 { color: #ffcc00; font-size: 16px; margin: 0 0 2px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-family: 'Playfair Display', serif; }
 .maxx-overlay p { color: #fff; font-size: 12px; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-weight: 300; font-family: 'Inter', sans-serif; }
+
+/* Mobile CTA Below Video */
+.m-hero-cta { padding: 40px 20px; text-align: center; background: #0a0b0e; }
+.m-hero-cta h1 { font-size: 32px; color: #fff; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
+.m-hero-cta p { font-size: 16px; color: #e0e4eb; margin-bottom: 25px; line-height: 1.6; }
 
 /* Desktop / Mobile Toggle Handling */
 .mobile-only { display: none; }
