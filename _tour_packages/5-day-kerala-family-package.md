@@ -16,3 +16,7 @@ day_5_plan: "Transfer to Thekkady. Enjoy the Periyar Wildlife Safari and local s
 day_6_plan: "Transfer to Alleppey. Check into a private premium houseboat for a cruise and overnight stay."
 day_7_plan: "Morning checkout from the houseboat and safe transfer back to Kochi Airport for departure."
 inclusions: ""
+title: "5-Day Premium Kerala Family Holiday | Tour With Anand"
+description: "Experience the best of Kerala with our 5-day premium family tour covering Munnar"
+permalink: /south-india-tours/5-day-kerala-family-package/
+---

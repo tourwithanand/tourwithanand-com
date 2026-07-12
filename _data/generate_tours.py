@@ -1,7 +1,7 @@
 import csv
 import os
 
-# Create a new collection directory for tour packages to keep them separate from taxis and blogs
+# Create a new collection directory for tour packages
 output_dir = "_tour_packages"
 os.makedirs(output_dir, exist_ok=True)
 
@@ -17,15 +17,25 @@ try:
             
             with open(filename, "w", encoding="utf-8") as out:
                 out.write("---\n")
-                
-                # This will link to the new layout we build next
                 out.write("layout: tour_page\n")
                 
                 # Dynamically write all CSV columns into the Front Matter
                 for key, value in row.items():
+                    # --- THE FIX ---
+                    # If unquoted commas force the value into a list, join it back into a string
+                    if isinstance(value, list):
+                        value = ", ".join(value)
+                    
+                    # Ensure empty values are treated as blank strings
+                    if value is None:
+                        value = ""
+                        
                     # Escape quotes inside text to prevent YAML build errors
-                    safe_value = value.replace('"', '\\"')
-                    out.write(f"{key}: \"{safe_value}\"\n")
+                    safe_value = str(value).replace('"', '\\"')
+                    
+                    # Only write valid keys to the Front Matter
+                    if key is not None:
+                        out.write(f"{key}: \"{safe_value}\"\n")
                 
                 # Set SEO title, description, and the critical Hub-and-Spoke permalink
                 out.write(f"title: \"{row['package_name']} | Tour With Anand\"\n")
