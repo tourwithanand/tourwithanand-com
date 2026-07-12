@@ -102,6 +102,12 @@ layout: default
    * NAMESPACED CSS TO PREVENT CONFLICTS WITH DEFAULT.HTML
    * Using prefix "tp-" (Taxi Page) for isolated styling.
   */
+  
+  /* CRITICAL FIX: Forces all elements to include padding in width calculations to prevent overflow */
+  .tp-wrapper, .tp-wrapper *, .tp-wrapper *::before, .tp-wrapper *::after {
+    box-sizing: border-box !important;
+  }
+
   :root {
     --tp-gold: #ffcc00;
     --tp-gold-hover: #e6b800;
@@ -118,6 +124,9 @@ layout: default
     background-color: var(--tp-bg-dark);
     color: var(--tp-text-light);
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* CRITICAL FIX: Stops horizontal scrolling globally */
+    width: 100%;
+    max-width: 100vw;
   }
 
   .tp-container-inner {
@@ -137,7 +146,6 @@ layout: default
     overflow: hidden;
   }
 
-  /* Full-width responsive image for both Mobile and PC */
   .tp-hero-bg {
     position: absolute;
     top: 0;
@@ -196,6 +204,7 @@ layout: default
   .tp-hero-buttons {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap; /* Allows buttons to wrap safely */
   }
 
   .tp-btn {
@@ -325,6 +334,7 @@ layout: default
     line-height: 1.8;
     color: var(--tp-text-muted);
     margin-bottom: 20px;
+    overflow-wrap: break-word; /* CRITICAL FIX: Breaks long text so it doesn't push edges */
   }
 
   .tp-glass-card {
@@ -519,15 +529,15 @@ layout: default
     .tp-stats-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
-  /* --- MOBILE SPECIFIC FIXES --- */
+  /* --- CRITICAL MOBILE FIXES APPLIED --- */
   @media (max-width: 768px) {
     .tp-hero { 
       min-height: auto; 
-      padding-top: 120px; /* Clears mobile header */
-      padding-bottom: 100px; 
+      padding-top: 130px; /* Safely clears mobile header */
+      padding-bottom: 80px; 
     }
     .tp-hero-content {
-      text-align: center; /* Centers all text on mobile */
+      text-align: center; /* Perfectly centers title and description */
     }
     .tp-title { 
       font-size: 32px; 
@@ -537,11 +547,16 @@ layout: default
       text-align: center;
     }
     .tp-hero-buttons {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: column; /* Stacks buttons properly */
+      align-items: stretch; /* Forces full width safely inside container */
+      gap: 15px; /* Adds space between stacked buttons */
     }
     .tp-btn { 
       width: 100%; 
+      margin: 0 !important; /* Strips bad margins, relies on gap */
+    }
+    .tp-btn-outline {
+      margin-left: 0 !important;
     }
     .tp-stats-grid { 
       grid-template-columns: 1fr 1fr; 
@@ -561,7 +576,6 @@ layout: default
   
   <!-- Hero Section -->
   <section class="tp-hero">
-    <!-- Uses single image perfectly scaled for PC & Mobile -->
     <img src="/Mobile%20Hero%20Airprot.jpg" alt="Premium private taxi from {{ page.from_location }} to {{ page.to_location }}" class="tp-hero-bg" loading="eager">
     <div class="tp-hero-overlay"></div>
     
