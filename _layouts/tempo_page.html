@@ -15,38 +15,38 @@ layout: default
     {
       "@type": "WebPage",
       "@id": "{{ site.url }}{{ page.url }}",
-      "name": "Premium {{ page.suggested_car }} from {{ page.from_location }} to {{ page.to_location }}",
+      "name": "Tempo Traveller & Force Urbania Rentals: Kochi to {{ page.destination_name }}",
       "description": "{{ page.unique_desc | escape }}",
       "url": "{{ site.url }}{{ page.url }}"
     },
     {
       "@type": "AutoRental",
-      "name": "{{ page.suggested_car }} Rentals Kochi",
+      "name": "Group Travel from Kochi, Ernakulam & Airport to {{ page.destination_name }}",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Tour With Anand - Group Travel",
         "image": "{{ site.url }}/Tempo-Traveller-Rentals-In-Kochi-by-tour-with-anand.jpg",
         "telephone": "+919400620615"
       },
-      "areaServed": "{{ page.to_location }}, Kerala"
+      "areaServed": ["Kochi", "Ernakulam", "Aluva", "Cochin International Airport", "{{ page.destination_name }}"]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is a {{ page.suggested_car }} comfortable for the {{ page.from_location }} to {{ page.to_location }} route?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes! Because this route features {{ page.route_terrain }}, booking a {{ page.suggested_car }} ensures your entire group travels together safely with push-back seats and ample AC cooling." }
+          "name": "Do you pick up from Ernakulam Railway Station or Kochi Airport for trips to {{ page.destination_name }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes! We provide flexible, door-to-door group pickups. Whether your group is arriving at Cochin International Airport (COK), Ernakulam Junction, Aluva, or staying at a Kochi city hotel, our drivers will meet you there." }
         },
         {
           "@type": "Question",
-          "name": "How far is {{ page.to_location }} from {{ page.from_location }} in a large vehicle?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The total distance is approximately {{ page.distance_km }} km. Our experienced chauffeurs take about {{ page.travel_time }} to safely navigate a large group vehicle to your destination." }
+          "name": "Should we book a Tempo Traveller or a Force Urbania for the trip to {{ page.destination_name }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For standard large family groups, our 12-17 Seater Tempo Travellers are perfect. If you want VIP luxury with airline-style captain seats and premium legroom, we highly recommend upgrading to our Force Urbania." }
         },
         {
           "@type": "Question",
-          "name": "Is there enough luggage space for our group?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Our premium group vehicles are equipped with dedicated rooftop luggage carriers and spacious rear boots, ensuring your cabin remains clutter-free." }
+          "name": "How far is {{ page.destination_name }} from Kochi and Ernakulam?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The total distance is approximately {{ page.distance_km }} km. In a large group vehicle, the journey takes around {{ page.travel_time }}, depending on your exact pickup location in the city or airport." }
         }
       ]
     }
@@ -55,174 +55,198 @@ layout: default
 </script>
 
 <style>
-  /* --- GLOBAL RESET --- */
   *, *::before, *::after { box-sizing: border-box; }
-
-  /* --- RESPONSIVE & FUTURISTIC PAGE STYLING --- */
-  :root {
-    --gold: #ffcc00;
-    --dark-bg: #0a0b0e;
-    --card-bg: rgba(20, 23, 29, 0.7);
-  }
-
+  :root { --gold: #ffcc00; --dark-bg: #0a0b0e; --card-bg: rgba(20, 23, 29, 0.7); }
   body { font-family: 'Inter', sans-serif; }
 
+  /* Mobile-Optimized Hero */
   .route-hero { position: relative; padding: 180px 20px 100px; background: var(--dark-bg); overflow: hidden; text-align: center; border-bottom: 1px solid rgba(255, 204, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; }
-  
-  /* Hero Image - Perfect Desktop Scaling */
   .route-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
   .route-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,11,14,0.6) 0%, rgba(10,11,14,0.9) 80%, rgba(10,11,14,1) 100%); z-index: 2; }
-  
   .route-hero-content { position: relative; z-index: 3; max-width: 900px; width: 100%; margin: 0 auto; padding: 0 15px; }
-  .route-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 14px; margin-bottom: 15px; display: block; font-weight: 600; text-shadow: 0 0 10px rgba(255,204,0,0.3); font-family: 'Inter', sans-serif; }
-  .route-hero h1 { font-size: clamp(32px, 5vw, 56px); color: #fff; margin-bottom: 25px; line-height: 1.25; font-family: 'Playfair Display', serif; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
-  .route-hero p { font-size: clamp(16px, 2vw, 18px); color: #e0e4eb; margin-bottom: 45px; line-height: 1.7; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 5px rgba(0,0,0,0.8); font-weight: 300; }
   
-  /* Glassmorphism Quick Facts */
-  .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-bottom: 50px; width: 100%; }
-  .fact-box { background: var(--card-bg); border: 1px solid rgba(255, 204, 0, 0.15); padding: 25px 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); transition: transform 0.3s ease; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+  .route-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 14px; margin-bottom: 15px; display: block; font-weight: 600; text-shadow: 0 0 10px rgba(255,204,0,0.3); }
+  .route-hero h1 { font-size: clamp(28px, 5vw, 52px); color: #fff; margin-bottom: 25px; line-height: 1.25; font-family: 'Playfair Display', serif; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
+  .route-hero p { font-size: clamp(16px, 2vw, 18px); color: #e0e4eb; margin-bottom: 45px; line-height: 1.7; font-weight: 300; }
+  
+  .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 50px; width: 100%; }
+  .fact-box { background: var(--card-bg); border: 1px solid rgba(255, 204, 0, 0.15); padding: 25px 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); transition: transform 0.3s ease; }
   .fact-box:hover { transform: translateY(-5px); border-color: rgba(255, 204, 0, 0.4); }
   .fact-box span { display: block; font-size: 13px; color: #a0a4ab; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
-  .fact-box strong { color: #fff; font-size: clamp(18px, 2vw, 22px); font-family: 'Playfair Display', serif; }
+  .fact-box strong { color: #fff; font-size: 18px; font-family: 'Playfair Display', serif; }
+
+  /* Booking Widget */
+  .booking-widget-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 204, 0, 0.3); border-radius: 16px; padding: 30px; max-width: 600px; margin: 0 auto; backdrop-filter: blur(15px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); text-align: left; box-sizing: border-box; width: 100%; }
+  .booking-widget-box h3 { color: #fff; font-size: 22px; font-family: 'Playfair Display', serif; margin-top: 0; margin-bottom: 20px; text-align: center; }
+  .form-group { margin-bottom: 15px; }
+  .form-group label { display: block; color: #a0a4ab; font-size: 13px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+  .form-group select, .form-group input { width: 100%; padding: 12px 15px; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #fff; font-size: 16px; font-family: 'Inter', sans-serif; box-sizing: border-box; }
+  .form-group select:focus, .form-group input:focus { outline: none; border-color: var(--gold); }
+  .futuristic-btn { display: block; width: 100%; text-align: center; background: linear-gradient(135deg, #ffcc00, #e6b800); color: #0a0b0e; padding: 16px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s ease; margin-top: 20px; }
+  .futuristic-btn:hover { background: transparent; color: #ffcc00; border: 2px solid #ffcc00; }
 
   /* Content Sections */
   .content-section { padding: 90px 20px; background: var(--dark-bg); border-bottom: 1px solid rgba(255,255,255,0.05); }
   .content-section.alt { background: linear-gradient(to bottom, #111317, #0a0b0e); }
   .content-inner { max-width: 900px; margin: 0 auto; width: 100%; }
-  
   .content-inner h2 { color: #fff; font-size: clamp(28px, 3vw, 36px); margin-bottom: 25px; font-family: 'Playfair Display', serif; border-bottom: 1px solid rgba(255,204,0,0.2); padding-bottom: 10px;}
   .content-inner h3 { color: var(--gold); font-size: 22px; margin-top: 40px; margin-bottom: 15px; font-family: 'Playfair Display', serif;}
   .content-inner p { color: #a0a4ab; font-size: 17px; line-height: 1.9; margin-bottom: 25px; font-weight: 300;}
 
-  /* Dynamic Internal Linking Card */
-  .dynamic-seo-link-card { margin-top: 50px; padding: 35px; background: linear-gradient(145deg, #15181e, #0e1015); border: 1px solid rgba(255, 204, 0, 0.3); border-radius: 16px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 20px rgba(255,204,0,0.05); }
-  .dynamic-seo-link-card h3 { margin-top: 0; color: #fff; font-size: 24px; margin-bottom: 15px; font-family: 'Playfair Display', serif;}
-  .dynamic-seo-link-card p { color: #dcdcdc; font-size: 16px; margin-bottom: 25px; }
-  .dynamic-seo-link-card a { display: inline-block; color: #0a0b0e; background: var(--gold); padding: 12px 25px; border-radius: 6px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 0 15px rgba(255,204,0,0.3); }
-  .dynamic-seo-link-card a:hover { background: transparent; color: var(--gold); border: 2px solid var(--gold); box-shadow: 0 0 25px rgba(255,204,0,0.5); }
-
-  /* Anand Trust Section */
-  .anand-collab-inner { display: flex; align-items: center; gap: 50px; }
-  .anand-img-box { flex: 0 0 40%; max-width: 400px; }
-  .anand-img-box img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255, 204, 0, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.6); object-fit: cover; }
-  .anand-text { flex: 1; }
-  .anand-text strong { color: var(--gold); }
+  /* Fleet Comparison */
+  .fleet-compare { display: flex; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
+  .fleet-card { flex: 1; min-width: 280px; background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+  .fleet-card h4 { color: #fff; font-size: 20px; font-family: 'Playfair Display', serif; margin-top: 0; color: var(--gold); }
+  .fleet-card ul { color: #a0a4ab; padding-left: 20px; line-height: 1.8; }
 
   /* FAQ Accordion */
   .faq-wrapper details { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.05); margin-bottom: 15px; padding: 25px; border-radius: 10px; cursor: pointer; transition: 0.3s; }
   .faq-wrapper details:hover { border-color: rgba(255, 204, 0, 0.3); }
-  .faq-wrapper summary { color: var(--gold); font-weight: 600; font-size: 18px; list-style: none; outline: none; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif;}
+  .faq-wrapper summary { color: var(--gold); font-weight: 600; font-size: 18px; list-style: none; outline: none; display: flex; justify-content: space-between; align-items: center; }
   .faq-wrapper summary::-webkit-details-marker { display: none; }
   .faq-wrapper details p { margin-top: 15px; margin-bottom: 0; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); }
-  
-  /* Futuristic Button */
-  .futuristic-btn { display: inline-block; background: linear-gradient(135deg, #ffcc00, #e6b800); color: #0a0b0e; padding: 18px 40px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 8px; text-decoration: none; transition: all 0.4s ease; box-shadow: 0 0 20px rgba(255,204,0,0.4); border: 2px solid transparent; font-family: 'Inter', sans-serif;}
-  .futuristic-btn:hover { background: transparent; color: #ffcc00; border: 2px solid #ffcc00; box-shadow: 0 0 30px rgba(255,204,0,0.6); transform: translateY(-2px); }
 
-  /* --- MOBILE FIX: PERFECT ALIGNMENT & FONT STYLING --- */
+  /* Dynamic Internal Linking Card */
+  .dynamic-seo-link-card { margin-top: 50px; padding: 35px; background: linear-gradient(145deg, #15181e, #0e1015); border: 1px solid rgba(255, 204, 0, 0.3); border-radius: 16px; text-align: center; }
+  .dynamic-seo-link-card h3 { margin-top: 0; color: #fff; font-size: 24px; font-family: 'Playfair Display', serif;}
+  .dynamic-seo-link-card p { color: #dcdcdc; font-size: 16px; margin-bottom: 25px; }
+  .dynamic-seo-link-card a { display: inline-block; color: #0a0b0e; background: var(--gold); padding: 12px 25px; border-radius: 6px; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+
+  /* Mobile Adjustments */
   @media (max-width: 768px) {
-    .route-hero { padding: 70px 0 0 0; min-height: auto; display: flex; flex-direction: column; justify-content: flex-start; background: var(--dark-bg); }
-    .route-hero-bg { position: relative; width: 100%; height: auto; object-fit: contain; display: block; z-index: 1; }
+    .route-hero { padding: 0; background: var(--dark-bg); justify-content: flex-start; }
+    .route-hero-bg { position: relative; height: auto; display: block; object-fit: contain; }
     .route-hero-overlay { display: none; }
-    .route-hero-content { position: relative; padding: 30px 20px 50px; z-index: 3; background: var(--dark-bg); width: 100%; text-align: center; }
-    .route-meta { font-size: 12px; margin-bottom: 12px; }
-    .route-hero h1 { font-size: 32px; line-height: 1.3; margin-bottom: 18px; }
-    .route-hero p { font-size: 15px; line-height: 1.7; margin-bottom: 30px; }
-    .anand-collab-inner { flex-direction: column; text-align: center; gap: 35px; }
-    .anand-img-box { width: 100%; max-width: 100%; }
-    .quick-facts { grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 40px; }
-    .content-section { padding: 50px 20px; }
-    .dynamic-seo-link-card { padding: 30px 20px; }
+    .route-hero-content { padding: 30px 20px 50px; }
+    .route-hero h1 { font-size: 30px; }
+    .quick-facts { grid-template-columns: 1fr; }
+    .fleet-compare { flex-direction: column; }
   }
 </style>
 
 <section class="route-hero">
-  <img src="/Tempo%20Traveller%20Rentals%20In%20Kochi.jpg" alt="Premium {{ page.suggested_car }} from {{ page.from_location }} to {{ page.to_location }}" class="route-hero-bg" loading="eager">
+  <img src="/Tempo%20Traveller%20Rentals%20In%20Kochi.jpg" alt="Tempo Traveller and Force Urbania rental from Kochi, Ernakulam, and Cochin Airport to {{ page.destination_name }}" class="route-hero-bg" loading="eager">
   <div class="route-hero-overlay"></div>
   
   <div class="route-hero-content">
     <span class="route-meta">Luxury Group Transfers</span>
-    <h1>{{ page.from_location }} to {{ page.to_location }} {{ page.suggested_car }}</h1>
+    <h1>Kochi, Ernakulam & Airport to {{ page.destination_name }}</h1>
     <p>{{ page.unique_desc }}</p>
     
     <div class="quick-facts">
-      <div class="fact-box"><span>Seating</span><strong>{{ page.seating_capacity }}</strong></div>
+      <div class="fact-box"><span>Pickup Coverage</span><strong>{{ page.pickup_locations | truncatewords: 6, "" }}</strong></div>
+      <div class="fact-box"><span>Vehicles</span><strong>Tempo & Urbania</strong></div>
       <div class="fact-box"><span>Distance</span><strong>{{ page.distance_km }} km</strong></div>
-      <div class="fact-box"><span>Travel Time</span><strong>{{ page.travel_time }}</strong></div>
-      <div class="fact-box"><span>Vehicle Class</span><strong>{{ page.suggested_car | truncatewords: 3, "" }}</strong></div>
     </div>
 
-    <div style="margin-top: 10px;">
-      <a href="https://wa.me/919400620615?text=*{{ page.from_location }} to {{ page.to_location }} {{ page.suggested_car }} Enquiry*%0AHi Anand, please share availability for my group." class="futuristic-btn">Check Availability on WhatsApp</a>
-    </div>
-  </div>
-</section>
-
-<section class="content-section">
-  <div class="content-inner">
-    <h2>Group Travel Guide to {{ page.to_location }}</h2>
-    <p>{{ page.destination_about }}</p>
-    
-    <h3>Top Attractions & Sightseeing</h3>
-    <p>{{ page.top_attractions }}</p>
-
-    <div class="dynamic-seo-link-card">
-      <h3>Extend Your Kerala Group Tour</h3>
-      <p>Planning a multi-day itinerary? Many large families and corporate groups traveling to {{ page.to_location }} also book our premium onward group transfer.</p>
-      <a href="{{ page.internal_link_url }}" title="Book {{ page.internal_link_text }}">{{ page.internal_link_text }} &rarr;</a>
+    <div class="booking-widget-box">
+      <h3>Request a Group Quote</h3>
+      <div class="form-group">
+        <label>Select Your Pickup Location</label>
+        <select id="pickup-select">
+          <option value="Kochi Airport (COK)">Cochin Airport (COK)</option>
+          <option value="Ernakulam Railway Station">Ernakulam Railway Station</option>
+          <option value="Aluva">Aluva</option>
+          <option value="Kochi City Hotel">Kochi / Ernakulam Hotel</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Select Vehicle Type</label>
+        <select id="vehicle-select">
+          <option value="12-Seater Tempo Traveller">12-Seater Tempo Traveller</option>
+          <option value="17-Seater Tempo Traveller">17-Seater Tempo Traveller</option>
+          <option value="Premium Force Urbania">VIP Force Urbania Coach</option>
+        </select>
+      </div>
+      <button class="futuristic-btn" onclick="sendWhatsApp()">Check Availability</button>
     </div>
   </div>
 </section>
 
 <section class="content-section alt">
-  <div class="content-inner anand-collab-inner">
-    <div class="anand-img-box">
-      <img src="/Hero%20Image.png" alt="Anand, expert professional chauffeur for the {{ page.from_location }} to {{ page.to_location }} group route" loading="lazy">
-    </div>
-    <div class="anand-text">
-      <h2>Premium Comfort For Your Group</h2>
-      <p>Hello! I am Anand. When you book a <strong>{{ page.suggested_car }}</strong> from <strong>{{ page.from_location }} to {{ page.to_location }}</strong> with us, your group is guaranteed a VIP experience.</p>
-      <p>Group travel across Kerala requires specialized vehicles. Because this route features <strong>{{ page.route_terrain }}</strong>, our fleet is equipped with push-back captain seats, dual-AC vents for the rear passengers, and massive dedicated luggage carriers so your cabin remains spacious and comfortable.</p>
-      <p>Don't rush the journey! Feel free to ask your chauffeur to stop at <strong>{{ page.waypoints }}</strong> to experience the true beauty of Kerala together.</p>
-      <div style="margin-top: 25px;">
-        <a href="tel:+919400620615" class="futuristic-btn" style="background: transparent; border: 2px solid #ffcc00; color: #ffcc00; padding: 14px 30px;">Call Me Directly: +91 94006 20615</a>
+  <div class="content-inner">
+    <h2 style="text-align: center;">Choose Your Premium Group Vehicle</h2>
+    <p style="text-align: center;">Whether you are departing from Ernakulam Junction or landing at Cochin International Airport, we have the perfect vehicle to keep your large group together in absolute comfort.</p>
+    
+    <div class="fleet-compare">
+      <div class="fleet-card">
+        <h4>Tempo Traveller (12 to 17 Seats)</h4>
+        <p>The industry standard for large family holidays and pilgrimage trips across Kerala.</p>
+        <ul>
+          <li>Push-back comfortable seating</li>
+          <li>Dedicated rooftop luggage carrier</li>
+          <li>Dual A/C vents for rear passengers</li>
+          <li>Cost-effective for large families</li>
+        </ul>
+      </div>
+      <div class="fleet-card">
+        <h4>Force Urbania (VIP Luxury)</h4>
+        <p>The ultimate premium upgrade. Perfect for corporate teams, NRIs, and luxury tours.</p>
+        <ul>
+          <li>Airline-style reclining captain seats</li>
+          <li>Massive panoramic windows</li>
+          <li>Stand-up cabin height & extreme legroom</li>
+          <li>Advanced independent suspension</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <section class="content-section">
+  <div class="content-inner">
+    <h2>Group Travel Guide to {{ page.destination_name }}</h2>
+    <p>{{ page.destination_about }}</p>
+    
+    <h3>Top Attractions for Large Groups</h3>
+    <p>{{ page.top_attractions }}</p>
+
+    <div class="dynamic-seo-link-card">
+      <h3>Extend Your Group Tour</h3>
+      <p>Planning a multi-day itinerary? Many groups traveling to {{ page.destination_name }} also book our premium onward group transfer.</p>
+      <a href="{{ page.internal_link_url }}">{{ page.internal_link_text }} &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="content-section alt">
   <div class="content-inner faq-wrapper">
     <h2 style="text-align:center;">Frequently Asked Questions</h2>
     
     <details>
-      <summary>Is a {{ page.suggested_car }} comfortable for the {{ page.from_location }} to {{ page.to_location }} route? <span style="font-size: 24px;">+</span></summary>
-      <p>Yes! Because this route features {{ page.route_terrain }}, booking a <strong>{{ page.suggested_car }}</strong> ensures your entire group travels together safely with push-back seats and ample AC cooling.</p>
+      <summary>Do you pick up from Ernakulam Railway Station or Kochi Airport for trips to {{ page.destination_name }}? <span style="font-size: 24px;">+</span></summary>
+      <p>Yes! We provide flexible, door-to-door group pickups. Whether your group is arriving at <strong>Cochin International Airport (COK)</strong>, <strong>Ernakulam Junction</strong>, <strong>Aluva</strong>, or staying at a Kochi city hotel, our drivers will meet you exactly where you are.</p>
+    </details>
+    
+    <details>
+      <summary>Should we book a Tempo Traveller or a Force Urbania? <span style="font-size: 24px;">+</span></summary>
+      <p>For standard large family groups, our <strong>12-17 Seater Tempo Travellers</strong> are perfect. If you want VIP luxury with airline-style captain seats, extreme legroom, and premium suspension for the {{ page.route_terrain }}, we highly recommend upgrading to our <strong>Force Urbania</strong>.</p>
+    </details>
+    
+    <details>
+      <summary>How far is {{ page.destination_name }} from Kochi and Ernakulam? <span style="font-size: 24px;">+</span></summary>
+      <p>The total distance is approximately <strong>{{ page.distance_km }} km</strong>. In a large group vehicle, the journey takes around <strong>{{ page.travel_time }}</strong>, depending on whether we pick you up from the airport or deep inside Ernakulam city.</p>
     </details>
     
     <details>
       <summary>Is there enough luggage space for our group? <span style="font-size: 24px;">+</span></summary>
-      <p>Absolutely. Our premium group vehicles are equipped with dedicated rooftop luggage carriers and spacious rear boots, ensuring your cabin remains clutter-free for the entire {{ page.travel_time }} journey.</p>
-    </details>
-    
-    <details>
-      <summary>Can the {{ page.suggested_car }} stop at sightseeing spots along the way? <span style="font-size: 24px;">+</span></summary>
-      <p>Yes! We highly encourage our groups to ask the chauffeur to pause at scenic spots along the way, such as <strong>{{ page.waypoints }}</strong>, for photos and refreshments.</p>
-    </details>
-    
-    <details>
-      <summary>Can we get dropped directly at our hotel in {{ page.to_location }}? <span style="font-size: 24px;">+</span></summary>
-      <p>Yes. We provide a premium door-to-door service. Our large vehicles can drive your group directly to <strong>{{ page.popular_drop_point }}</strong> or right into your resort lobby.</p>
-    </details>
-    
-    <details>
-      <summary>What is the best time of day for our group to depart? <span style="font-size: 24px;">+</span></summary>
-      <p>For the best views and least traffic for a large vehicle, we recommend starting this journey <strong>{{ page.best_time_to_start }}</strong>. However, our premium coaches are available 24x7 for airport meet-and-greets.</p>
-    </details>
-    
-    <details>
-      <summary>How do I secure a {{ page.suggested_car }} for my dates? <span style="font-size: 24px;">+</span></summary>
-      <p>Booking is incredibly easy. Simply click the WhatsApp button on this page to message Anand directly, or call <strong>+91 94006 20615</strong> for an instant quote and confirmation.</p>
+      <p>Absolutely. Both our Tempo Travellers and Urbanias are equipped with dedicated luggage areas and robust rooftop carriers, ensuring the passenger cabin remains spacious and clutter-free.</p>
     </details>
   </div>
 </section>
+
+<script>
+  function sendWhatsApp() {
+    var pickup = document.getElementById("pickup-select").value;
+    var vehicle = document.getElementById("vehicle-select").value;
+    var destination = "{{ page.destination_name }}";
+    
+    var message = "*Group Travel Inquiry*%0A" + 
+                  "Pickup: " + pickup + "%0A" +
+                  "Drop: " + destination + "%0A" +
+                  "Vehicle: " + vehicle + "%0A" +
+                  "Hi Anand, please share the quote and availability.";
+                  
+    window.location.href = "https://wa.me/919400620615?text=" + message;
+  }
+</script>
