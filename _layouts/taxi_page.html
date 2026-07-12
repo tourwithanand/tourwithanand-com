@@ -129,20 +129,23 @@ layout: default
 
   .tp-hero {
     position: relative;
-    width: 100vw;
+    width: 100%;
     min-height: 85vh;
     display: flex;
     align-items: center;
-    padding-top: 100px; /* Accounts for fixed luxury-header from default.html */
+    padding-top: 100px;
     overflow: hidden;
   }
 
+  /* Full-width responsive image for both Mobile and PC */
   .tp-hero-bg {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     z-index: 1;
     opacity: 0.5;
   }
@@ -190,6 +193,11 @@ layout: default
     margin-bottom: 40px;
   }
 
+  .tp-hero-buttons {
+    display: flex;
+    gap: 15px;
+  }
+
   .tp-btn {
     display: inline-flex;
     align-items: center;
@@ -222,7 +230,6 @@ layout: default
     background: transparent;
     color: var(--tp-gold);
     border: 1px solid var(--tp-gold);
-    margin-left: 15px;
   }
 
   .tp-btn-outline:hover {
@@ -370,7 +377,7 @@ layout: default
     line-height: 1.5;
   }
 
-  /* Fleet Grid */
+  /* Fleet Grid with Car Images */
   .tp-fleet-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -391,6 +398,18 @@ layout: default
     transform: translateY(-5px);
     background: var(--tp-bg-elevated);
     border-color: var(--tp-gold);
+  }
+
+  .tp-car-img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .tp-car-card:hover .tp-car-img {
+    transform: scale(1.1);
   }
 
   .tp-car-card h4 {
@@ -500,14 +519,41 @@ layout: default
     .tp-stats-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
+  /* --- MOBILE SPECIFIC FIXES --- */
   @media (max-width: 768px) {
-    .tp-hero { min-height: auto; padding-top: 80px; padding-bottom: 120px; }
-    .tp-title { font-size: 32px; }
-    .tp-btn { width: 100%; margin: 0 0 15px 0; }
-    .tp-btn-outline { margin-left: 0; }
-    .tp-stats-grid { grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
-    .tp-stat-value { font-size: 18px; }
-    .tp-section { padding: 50px 0; }
+    .tp-hero { 
+      min-height: auto; 
+      padding-top: 120px; /* Clears mobile header */
+      padding-bottom: 100px; 
+    }
+    .tp-hero-content {
+      text-align: center; /* Centers all text on mobile */
+    }
+    .tp-title { 
+      font-size: 32px; 
+      text-align: center;
+    }
+    .tp-desc {
+      text-align: center;
+    }
+    .tp-hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    .tp-btn { 
+      width: 100%; 
+    }
+    .tp-stats-grid { 
+      grid-template-columns: 1fr 1fr; 
+      gap: 15px; 
+      padding: 20px; 
+    }
+    .tp-stat-value { 
+      font-size: 18px; 
+    }
+    .tp-section { 
+      padding: 50px 0; 
+    }
   }
 </style>
 
@@ -515,10 +561,8 @@ layout: default
   
   <!-- Hero Section -->
   <section class="tp-hero">
-    <picture>
-      <source media="(max-width: 768px)" srcset="/Mobile%20Hero%20Airprot.jpg">
-      <img src="/Hero%20Image.png" alt="Premium private taxi from {{ page.from_location }} to {{ page.to_location }}" class="tp-hero-bg" loading="eager">
-    </picture>
+    <!-- Uses single image perfectly scaled for PC & Mobile -->
+    <img src="/Mobile%20Hero%20Airprot.jpg" alt="Premium private taxi from {{ page.from_location }} to {{ page.to_location }}" class="tp-hero-bg" loading="eager">
     <div class="tp-hero-overlay"></div>
     
     <div class="tp-container-inner tp-hero-content">
@@ -526,7 +570,7 @@ layout: default
       <h1 class="tp-title">{{ page.from_location }} to {{ page.to_location }} Taxi</h1>
       <p class="tp-desc">{{ page.unique_desc }} Experience a safe, seamless, and luxurious journey across Kerala with our verified professional chauffeurs.</p>
       
-      <div>
+      <div class="tp-hero-buttons">
         <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20want%20to%20book%20a%20taxi%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.to_location | url_encode }}.%20Please%20share%20the%20quote." class="tp-btn tp-btn-primary" target="_blank">Book via WhatsApp</a>
         <a href="tel:+919400620615" class="tp-btn tp-btn-outline">Call Now</a>
       </div>
@@ -641,6 +685,7 @@ layout: default
 
       <div class="tp-fleet-grid">
         <div class="tp-car-card">
+          <img src="/Swift%20Dzire.png" alt="Swift Dzire Cab" class="tp-car-img" onerror="this.style.display='none'">
           <h4>Swift Dzire / Etios</h4>
           <span class="tp-car-type">Premium Sedan</span>
           <ul class="tp-car-features">
@@ -651,6 +696,7 @@ layout: default
         </div>
         
         <div class="tp-car-card">
+          <img src="/Maruti%20Ertiga.png" alt="Maruti Ertiga Cab" class="tp-car-img" onerror="this.style.display='none'">
           <h4>Maruti Ertiga</h4>
           <span class="tp-car-type">Family MUV</span>
           <ul class="tp-car-features">
@@ -661,6 +707,7 @@ layout: default
         </div>
         
         <div class="tp-car-card" style="border-color: var(--tp-gold); background: var(--tp-bg-elevated);">
+          <img src="/Toyota%20Innova%20Crysta.png" alt="Toyota Innova Crysta Cab" class="tp-car-img" onerror="this.style.display='none'">
           <h4>Innova Crysta</h4>
           <span class="tp-car-type">Luxury SUV (Recommended)</span>
           <ul class="tp-car-features">
@@ -671,6 +718,7 @@ layout: default
         </div>
         
         <div class="tp-car-card">
+          <img src="/Force%20Urbania.png" alt="Force Urbania Luxury Coach" class="tp-car-img" onerror="this.style.display='none'">
           <h4>Force Urbania</h4>
           <span class="tp-car-type">VIP Luxury Coach</span>
           <ul class="tp-car-features">
