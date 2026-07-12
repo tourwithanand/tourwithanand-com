@@ -1,3 +1,5 @@
 collections:
   taxi_routes:
     output: true
+  tempo_routes:
+    output: true
