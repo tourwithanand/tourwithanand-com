@@ -1,903 +1,799 @@
 ---
-layout: null
+layout: default
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>Premium Taxi from {{ page.from_location }} to {{ page.to_location }} | Tour With Anand</title>
-    <meta name="description" content="{{ page.unique_desc | escape }} Reliable, safe, and premium chauffeur service for international tourists, families, and business travelers.">
-    <meta name="keywords" content="{{ page.seo_keywords | escape }}">
-    <meta name="author" content="Tour With Anand">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <link rel="canonical" href="{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/">
-    
-    <!-- OpenGraph -->
-    <meta property="og:locale" content="en_IN">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Premium Taxi from {{ page.from_location }} to {{ page.to_location }} | Tour With Anand">
-    <meta property="og:description" content="{{ page.unique_desc | escape }}">
-    <meta property="og:url" content="{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/">
-    <meta property="og:site_name" content="Tour With Anand">
-    <meta property="og:image" content="{{ site.url }}/Hero%20Image.png">
-    
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Premium Taxi from {{ page.from_location }} to {{ page.to_location }}">
-    <meta name="twitter:description" content="{{ page.unique_desc | escape }}">
-    <meta name="twitter:image" content="{{ site.url }}/Hero%20Image.png">
-    
-    <!-- Resource Hints & Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </noscript>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png">
 
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
+<!-- SEO & Meta Tags (Injected into the page) -->
+<meta name="description" content="{{ page.unique_desc | escape }} Premium, safe, and comfortable chauffeur service for international tourists and families.">
+<meta name="keywords" content="{{ page.seo_keywords | escape }}">
+<link rel="canonical" href="{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/">
+
+<!-- Google Rich Results / JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "TaxiService",
+      "@id": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/#service",
+      "name": "{{ page.from_location }} to {{ page.to_location }} Premium Taxi",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Tour With Anand",
+        "image": "{{ site.url }}/Tour%20With%20Anand%20Logo%20Home.png",
+        "telephone": "+91-9400620615"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "{{ page.from_location }}" },
+        { "@type": "Place", "name": "{{ page.to_location }}" }
+      ],
+      "description": "{{ page.unique_desc | escape }}"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "Kochi Airport Taxi", "item": "{{ site.url }}/taxi/kochi-airport/" },
+        { "@type": "ListItem", "position": 3, "name": "{{ page.from_location }} to {{ page.to_location }}", "item": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/#faq",
+      "mainEntity": [
         {
-          "@type": "Organization",
-          "@id": "{{ site.url }}#organization",
-          "name": "Tour With Anand",
-          "url": "{{ site.url }}",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "{{ site.url }}/logo.png"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+91-9400620615",
-            "contactType": "Customer Service",
-            "areaServed": "IN",
-            "availableLanguage": ["English", "Malayalam", "Hindi"]
-          }
+          "@type": "Question",
+          "name": "What is the driving distance from {{ page.from_location }} to {{ page.to_location }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The total driving distance is approximately {{ page.distance_km }} kilometers. Traveling in our premium chauffeur-driven cab ensures a relaxing experience." }
         },
         {
-          "@type": "LocalBusiness",
-          "@id": "{{ site.url }}#localbusiness",
-          "name": "Tour With Anand Premium Taxis",
-          "image": "{{ site.url }}/Hero%20Image.png",
-          "telephone": "+91-9400620615",
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Kochi",
-            "addressRegion": "Kerala",
-            "addressCountry": "IN"
-          }
+          "@type": "Question",
+          "name": "How long does it take to travel to {{ page.to_location }} by taxi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Under normal traffic conditions, the journey takes around {{ page.travel_time }}. Our experienced drivers monitor local traffic patterns to ensure you arrive safely and on time." }
         },
         {
-          "@type": "TaxiService",
-          "@id": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/#service",
-          "name": "{{ page.from_location }} to {{ page.to_location }} Premium Taxi",
-          "provider": { "@id": "{{ site.url }}#localbusiness" },
-          "areaServed": [
-            { "@type": "Place", "name": "{{ page.from_location }}" },
-            { "@type": "Place", "name": "{{ page.to_location }}" }
-          ],
-          "description": "{{ page.unique_desc | escape }}"
+          "@type": "Question",
+          "name": "Which car is recommended for the route to {{ page.to_location }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Due to the route terrain consisting of {{ page.route_terrain }}, we highly recommend booking a {{ page.suggested_car }}. It provides the perfect balance of safety and comfort." }
         },
         {
-          "@type": "BreadcrumbList",
-          "@id": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/#breadcrumb",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
-            { "@type": "ListItem", "position": 2, "name": "Routes", "item": "{{ site.url }}/routes/" },
-            { "@type": "ListItem", "position": 3, "name": "{{ page.from_location }} to {{ page.to_location }}", "item": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/" }
-          ]
+          "@type": "Question",
+          "name": "Can we stop for sightseeing or breaks along the way?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. This is a private premium transfer. We highly suggest stopping at beautiful locations such as {{ page.waypoints }} to make your trip memorable." }
         },
         {
-          "@type": "FAQPage",
-          "@id": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is the driving distance from {{ page.from_location }} to {{ page.to_location }}?",
-              "acceptedAnswer": { "@type": "Answer", "text": "The total driving distance is approximately {{ page.distance_km }} kilometers. Traveling in a premium chauffeur-driven cab ensures a relaxing experience for the entire journey." }
-            },
-            {
-              "@type": "Question",
-              "name": "How long does it take to travel to {{ page.to_location }} by taxi?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Under normal traffic conditions, the journey takes around {{ page.travel_time }}. Our experienced drivers monitor local traffic patterns to ensure you arrive safely and on time." }
-            },
-            {
-              "@type": "Question",
-              "name": "Which car is recommended for the route to {{ page.to_location }}?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Due to the route terrain consisting of {{ page.route_terrain }}, we highly recommend booking a {{ page.suggested_car }}. It provides the perfect balance of safety, suspension, and luggage capacity." }
-            },
-            {
-              "@type": "Question",
-              "name": "Can we stop for sightseeing or breaks along the way?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. This is a private premium transfer. We highly suggest stopping at beautiful locations such as {{ page.waypoints }} to make your trip memorable." }
-            },
-            {
-              "@type": "Question",
-              "name": "What are the road conditions like from {{ page.from_location }}?",
-              "acceptedAnswer": { "@type": "Answer", "text": "The route is characterized by {{ page.route_terrain }}. Our verified drivers are specifically trained to navigate these Kerala roads smoothly, ensuring maximum passenger comfort." }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the best time to start the journey to {{ page.to_location }}?",
-              "acceptedAnswer": { "@type": "Answer", "text": "For the best experience, we suggest starting at {{ page.best_time_to_start }}. This helps avoid peak city traffic and provides the best lighting for scenic views." }
-            },
-            {
-              "@type": "Question",
-              "name": "Where can you drop us in {{ page.to_location }}?",
-              "acceptedAnswer": { "@type": "Answer", "text": "We offer complete door-to-door service. We can drop you at {{ page.popular_drop_point }}, specific hotels, hospitals, or private residences within the destination." }
-            },
-            {
-              "@type": "Question",
-              "name": "What are the top things to do in {{ page.to_location }}?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Once you arrive, we highly recommend exploring: {{ page.top_attractions }}. It is a wonderful destination with plenty to offer." }
-            },
-            {
-              "@type": "Question",
-              "name": "Is Tour With Anand safe for international tourists and families?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Yes. We specialize in catering to international tourists, NRIs, and medical tourists. We provide English-speaking drivers, immaculately clean vehicles, transparent fixed pricing, and 24/7 WhatsApp support." }
-            },
-            {
-              "@type": "Question",
-              "name": "How do I book a return taxi to {{ page.from_location }}?",
-              "acceptedAnswer": { "@type": "Answer", "text": "You can easily book your return journey from {{ page.to_location }} to {{ page.from_location }} by clicking our WhatsApp booking button or visiting our dedicated return route page." }
-            }
-          ]
+          "@type": "Question",
+          "name": "What are the road conditions like from {{ page.from_location }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The route is characterized by {{ page.route_terrain }}. Our verified drivers are specifically trained to navigate these Kerala roads smoothly, ensuring maximum passenger comfort." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best time to start the journey to {{ page.to_location }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For the best experience, we suggest starting at {{ page.best_time_to_start }}. This helps avoid peak city traffic and provides the best lighting for scenic views." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can you drop us in {{ page.to_location }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We offer complete door-to-door service. We can drop you at {{ page.popular_drop_point }}, specific hotels, hospitals, or private residences within the destination." }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the top things to do in {{ page.to_location }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Once you arrive, we highly recommend exploring: {{ page.top_attractions }}." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Tour With Anand safe for international tourists and families?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We specialize in catering to international tourists, NRIs, and medical tourists. We provide English-speaking drivers, clean vehicles, fixed pricing, and 24/7 support." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book a return taxi to {{ page.from_location }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You can easily book your return journey from {{ page.to_location }} to {{ page.from_location }} by clicking our WhatsApp booking button or visiting our dedicated return route page." }
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
 
-    <style>
-        /* CSS Variables for Luxury Theme */
-        :root {
-            --color-bg-base: #050505;
-            --color-bg-surface: #121212;
-            --color-bg-elevated: #1e1e1e;
-            --color-gold-primary: #D4AF37;
-            --color-gold-light: #F3E5AB;
-            --color-gold-dark: #AA8C2C;
-            --color-text-main: #EAEAEA;
-            --color-text-muted: #A0A0A0;
-            --color-white: #FFFFFF;
-            
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
-            
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 4rem;
-            --spacing-xl: 6rem;
-            
-            --border-radius-sm: 4px;
-            --border-radius-md: 12px;
-            --border-radius-lg: 24px;
-            
-            --transition-speed: 0.3s;
-        }
+<style>
+  /* 
+   * NAMESPACED CSS TO PREVENT CONFLICTS WITH DEFAULT.HTML
+   * Using prefix "tp-" (Taxi Page) for isolated styling.
+  */
+  :root {
+    --tp-gold: #ffcc00;
+    --tp-gold-hover: #e6b800;
+    --tp-bg-dark: #0a0b0e;
+    --tp-bg-surface: #15181e;
+    --tp-bg-elevated: #1a1d24;
+    --tp-text-light: #e0e4eb;
+    --tp-text-muted: #a0a4ab;
+    --tp-border: rgba(255, 204, 0, 0.15);
+    --tp-radius: 12px;
+  }
 
-        /* Reset & Base Styles */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body {
-            font-family: var(--font-body);
-            background-color: var(--color-bg-base);
-            color: var(--color-text-main);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
-        }
+  .tp-wrapper {
+    background-color: var(--tp-bg-dark);
+    color: var(--tp-text-light);
+    font-family: 'Inter', sans-serif;
+  }
 
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            color: var(--color-white);
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: var(--spacing-sm);
-        }
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: var(--spacing-md); }
-        h3 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--color-gold-light); }
-        p { margin-bottom: var(--spacing-sm); font-size: 1.125rem; font-weight: 300; }
-        a { color: var(--color-gold-primary); text-decoration: none; transition: color var(--transition-speed); }
-        a:hover { color: var(--color-gold-light); }
-        strong { font-weight: 600; color: var(--color-white); }
+  .tp-container-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-        /* Layout & Containers */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-sm);
-        }
-        .section-padding { padding: var(--spacing-xl) 0; }
-        .grid-2 { display: grid; grid-template-columns: 1fr; gap: var(--spacing-md); }
-        @media(min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
-        
-        /* Glassmorphism Utilities */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius-md);
-            padding: var(--spacing-md);
-            transition: transform var(--transition-speed), border-color var(--transition-speed);
-        }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
+  .tp-hero {
+    position: relative;
+    width: 100vw;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px; /* Accounts for fixed luxury-header from default.html */
+    overflow: hidden;
+  }
 
-        /* Header */
-        header {
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            padding: var(--spacing-md) 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-        }
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--color-gold-primary);
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .header-contact {
-            display: none;
-        }
-        @media(min-width: 768px) {
-            .header-contact { display: block; font-weight: 500; font-size: 1rem; color: var(--color-white); }
-        }
+  .tp-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.5;
+  }
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding-top: var(--spacing-xl);
-            overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            opacity: 0.6;
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to right, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.7) 50%, rgba(5,5,5,0.2) 100%);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        .badge {
-            display: inline-block;
-            padding: 6px 12px;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--color-gold-primary);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 50px;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2.5rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: var(--border-radius-sm);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border: none;
-            transition: all var(--transition-speed);
-            text-align: center;
-        }
-        .btn-primary {
-            background: var(--color-gold-primary);
-            color: var(--color-bg-base);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-        }
-        .btn-primary:hover {
-            background: var(--color-white);
-            color: var(--color-bg-base);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--color-gold-primary);
-            border: 1px solid var(--color-gold-primary);
-        }
-        .btn-outline:hover {
-            background: var(--color-gold-primary);
-            color: var(--color-bg-base);
-        }
-        .hero-buttons {
-            display: flex;
-            gap: var(--spacing-sm);
-            flex-wrap: wrap;
-            margin-top: var(--spacing-md);
-        }
+  .tp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,11,14,0.3) 0%, rgba(10,11,14,0.8) 70%, rgba(10,11,14,1) 100%);
+    z-index: 2;
+  }
 
-        /* Route Summary Cards */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--spacing-sm);
-            margin-top: -4rem;
-            position: relative;
-            z-index: 10;
-        }
-        @media(min-width: 768px) {
-            .stats-grid { grid-template-columns: repeat(4, 1fr); margin-top: -5rem; }
-        }
-        .stat-item {
-            background: var(--color-bg-surface);
-            padding: var(--spacing-md) var(--spacing-sm);
-            text-align: center;
-            border-radius: var(--border-radius-md);
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .stat-icon {
-            font-size: 2rem;
-            margin-bottom: var(--spacing-xs);
-            display: block;
-        }
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--color-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .stat-value {
-            font-size: 1.25rem;
-            font-family: var(--font-heading);
-            color: var(--color-white);
-        }
+  .tp-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+  }
 
-        /* Main Content Sections */
-        .content-block { margin-bottom: var(--spacing-lg); }
-        .text-accent { color: var(--color-gold-light); }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-lg);
-        }
-        @media(min-width: 992px) {
-            .info-grid { grid-template-columns: 1.5fr 1fr; }
-        }
+  .tp-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(255, 204, 0, 0.1);
+    color: var(--tp-gold);
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    border-radius: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
 
-        /* Fleet Section */
-        .fleet-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-md);
-        }
-        .car-card {
-            text-align: center;
-            padding: var(--spacing-md);
-        }
-        .car-card h4 { color: var(--color-gold-primary); margin-bottom: 5px; font-size: 1.5rem; }
-        .car-card .car-category { font-size: 0.875rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 15px; }
-        .car-card ul { list-style: none; text-align: left; margin-top: 15px; }
-        .car-card ul li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; display: flex; align-items: center; }
-        .car-card ul li::before { content: "✦"; color: var(--color-gold-primary); margin-right: 10px; font-size: 0.8rem; }
+  .tp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
 
-        /* EEAT / Trust Section */
-        .trust-section {
-            background: linear-gradient(145deg, var(--color-bg-elevated) 0%, var(--color-bg-base) 100%);
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-        }
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-        .trust-item h4 { font-family: var(--font-body); font-size: 1.125rem; color: var(--color-white); }
-        .trust-item p { font-size: 1rem; color: var(--color-text-muted); }
+  .tp-desc {
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--tp-text-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
 
-        /* FAQs */
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item {
-            background: var(--color-bg-surface);
-            border: 1px solid rgba(255,255,255,0.05);
-            margin-bottom: var(--spacing-sm);
-            border-radius: var(--border-radius-sm);
-            overflow: hidden;
-        }
-        .faq-item summary {
-            padding: 1.25rem;
-            font-size: 1.125rem;
-            font-weight: 500;
-            color: var(--color-white);
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary::after {
-            content: '+';
-            color: var(--color-gold-primary);
-            font-size: 1.5rem;
-            font-weight: 300;
-            transition: transform 0.3s ease;
-        }
-        .faq-item[open] summary::after { transform: rotate(45deg); }
-        .faq-item p {
-            padding: 0 1.25rem 1.25rem;
-            margin: 0;
-            color: var(--color-text-muted);
-            border-top: 1px solid rgba(255,255,255,0.02);
-            padding-top: 1rem;
-        }
+  .tp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
 
-        /* Return Route CTA */
-        .return-route-box {
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, var(--color-bg-surface) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            text-align: center;
-            padding: var(--spacing-lg) var(--spacing-sm);
-            border-radius: var(--border-radius-lg);
-            margin: var(--spacing-xl) 0;
-        }
+  .tp-btn-primary {
+    background: linear-gradient(135deg, var(--tp-gold), var(--tp-gold-hover));
+    color: #000;
+    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.2);
+  }
 
-        /* Footer */
-        footer {
-            background-color: #000;
-            padding: var(--spacing-xl) 0 var(--spacing-md);
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-lg); }
-        .footer-col h4 { font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--color-white); }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 0.75rem; }
-        .footer-col ul li a { color: var(--color-text-muted); font-size: 1rem; }
-        .footer-col ul li a:hover { color: var(--color-gold-primary); }
-        .copyright { text-align: center; color: var(--color-text-muted); font-size: 0.875rem; padding-top: var(--spacing-md); border-top: 1px solid rgba(255,255,255,0.05); }
+  .tp-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255, 204, 0, 0.4);
+    color: #000;
+  }
 
-        /* Floating Actions */
-        .fab-container {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            z-index: 1000;
-        }
-        .fab {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none;
-        }
-        .fab:hover { transform: scale(1.1); }
-        .fab-whatsapp {
-            background-color: #25D366;
-            color: white;
-            font-size: 28px;
-        }
-        .fab-call {
-            background-color: var(--color-gold-primary);
-            color: var(--color-bg-base);
-            font-size: 24px;
-        }
+  .tp-btn-outline {
+    background: transparent;
+    color: var(--tp-gold);
+    border: 1px solid var(--tp-gold);
+    margin-left: 15px;
+  }
 
-        /* Mobile Bottom Bar (replaces FABs on very small screens) */
-        .mobile-booking-bar {
-            display: none;
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: var(--color-bg-elevated);
-            padding: 10px 15px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            z-index: 999;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
-        }
-        @media(max-width: 576px) {
-            .fab-container { display: none; }
-            .mobile-booking-bar { display: flex; gap: 10px; }
-            .mobile-booking-bar .btn { flex: 1; padding: 0.875rem; font-size: 0.9rem; }
-            body { padding-bottom: 70px; }
-        }
-    </style>
-</head>
-<body>
+  .tp-btn-outline:hover {
+    background: rgba(255, 204, 0, 0.1);
+  }
 
-    <!-- Accessible Navigation -->
-    <header role="banner">
-        <div class="container nav-inner">
-            <a href="{{ site.url }}/" class="logo" aria-label="Tour With Anand Home">Tour With Anand</a>
-            <div class="header-contact">
-                <a href="tel:+919400620615" aria-label="Call Customer Service">✆ +91 94006 20615</a>
-            </div>
-        </div>
-    </header>
+  /* Stats Grid */
+  .tp-stats-wrapper {
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
+    padding-bottom: 80px;
+  }
 
-    <!-- Main Content -->
-    <main role="main">
-        
-        <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <picture class="hero-bg">
-                <source media="(max-width: 768px)" srcset="{{ site.url }}/Mobile%20Hero%20Airprot.jpg">
-                <img src="{{ site.url }}/Hero%20Image.png" alt="Luxury premium taxi from {{ page.from_location }} to {{ page.to_location }}" fetchpriority="high" loading="eager" width="1920" height="1080" style="width:100%; height:100%; object-fit:cover;">
-            </picture>
-            <div class="hero-overlay"></div>
-            
-            <div class="container hero-content">
-                <span class="badge">Premium Private Transfer</span>
-                <h1 id="hero-title">{{ page.from_location }} to {{ page.to_location }} Taxi</h1>
-                <p>{{ page.unique_desc }} Experience a safe, seamless, and luxurious journey across Kerala with our verified professional chauffeurs.</p>
-                
-                <div class="hero-buttons">
-                    <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20want%20to%20book%20a%20taxi%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.to_location | url_encode }}.%20Please%20share%20the%20quote." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book via WhatsApp</a>
-                    <a href="tel:+919400620615" class="btn btn-outline">Call Now</a>
-                </div>
-            </div>
-        </section>
+  .tp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background: var(--tp-bg-surface);
+    padding: 30px;
+    border-radius: var(--tp-radius);
+    border: 1px solid var(--tp-border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+  }
 
-        <!-- Quick Summary Stats -->
-        <section class="container" aria-label="Route Statistics">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-icon">🛣️</span>
-                    <span class="stat-label">Total Distance</span>
-                    <span class="stat-value">{{ page.distance_km }} km</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-icon">⏱️</span>
-                    <span class="stat-label">Travel Time</span>
-                    <span class="stat-value">{{ page.travel_time }}</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-icon">🚘</span>
-                    <span class="stat-label">Recommended Car</span>
-                    <span class="stat-value">{{ page.suggested_car | truncatewords: 2, "" }}</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-icon">🌅</span>
-                    <span class="stat-label">Best Start Time</span>
-                    <span class="stat-value">{{ page.best_time_to_start | truncatewords: 3, "" }}</span>
-                </div>
-            </div>
-        </section>
+  .tp-stat-item {
+    text-align: center;
+  }
 
-        <!-- Route Deep Dive -->
-        <section class="section-padding">
-            <div class="container info-grid">
-                
-                <!-- Left Column: Narrative Content -->
-                <article>
-                    <div class="content-block">
-                        <h2>Route Overview & Road Conditions</h2>
-                        <p>Traveling from <strong>{{ page.from_location }}</strong> to <strong>{{ page.to_location }}</strong> is one of the most requested routes for our guests exploring Kerala. Covering a total driving distance of approximately <strong class="text-accent">{{ page.distance_km }} kilometers</strong>, the journey typically takes around <strong class="text-accent">{{ page.travel_time }}</strong> depending on traffic and weather conditions.</p>
-                        <p>When planning this trip, understanding the topography is essential. The route primarily consists of <strong>{{ page.route_terrain }}</strong>. Our verified, experienced chauffeurs are deeply familiar with these specific road conditions, ensuring that your ride is not only swift but incredibly safe and comfortable.</p>
-                        <p>For the optimal travel experience, we highly recommend departing around <strong>{{ page.best_time_to_start }}</strong>. Traveling during this window helps bypass peak city congestion and offers the most pleasant scenic views along the way.</p>
-                    </div>
+  .tp-stat-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+  }
 
-                    <div class="content-block glass-card">
-                        <h3>Recommended Vehicle for this Route</h3>
-                        <p>Based on the distance and specific road conditions ({{ page.route_terrain }}), we strongly advise booking a <strong>{{ page.suggested_car }}</strong>. This vehicle class provides the perfect balance of advanced suspension for Kerala's terrain, ample legroom for passengers, and dedicated space for your luggage. Whether you are traveling as a couple, a family, or an international tourist with heavy bags, selecting the right vehicle guarantees a fatigue-free arrival.</p>
-                    </div>
+  .tp-stat-label {
+    display: block;
+    font-size: 12px;
+    color: var(--tp-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
 
-                    <div class="content-block">
-                        <h2>Discovering {{ page.to_location }}</h2>
-                        <p>{{ page.destination_about }}</p>
-                        <p>Upon arrival, there is no shortage of incredible experiences waiting for you. Top attractions highly recommended by locals and global tourists include <strong>{{ page.top_attractions }}</strong>. To make your trip truly seamless, our chauffeurs will drop you directly at your specified location, whether that is a premium resort, a hospital, or the famous <strong>{{ page.popular_drop_point }}</strong>.</p>
-                    </div>
+  .tp-stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+  }
 
-                    <div class="content-block">
-                        <h2>Scenic Stops & Waypoints</h2>
-                        <p>A private chauffeur-driven cab offers the luxury of flexibility. Unlike standard point-to-point transfers or public transport, you command the itinerary. Along the way from {{ page.from_location }} to {{ page.to_location }}, we highly recommend asking your driver to pause at stunning locations such as <strong>{{ page.waypoints }}</strong>.</p>
-                        <p>Taking short breaks not only makes the {{ page.travel_time }} journey more relaxing but allows you to capture photographs, enjoy authentic Kerala tea, and stretch your legs in beautiful surroundings.</p>
-                    </div>
-                </article>
+  /* Main Layout */
+  .tp-section {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
 
-                <!-- Right Column: Contextual Sidebar -->
-                <aside>
-                    <div class="glass-card" style="position: sticky; top: 120px;">
-                        <h3>Why Book This Transfer With Us?</h3>
-                        <ul style="list-style: none; margin-top: 1.5rem;">
-                            <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
-                                <span style="color: var(--color-gold-primary); margin-right: 10px; font-size: 1.2rem;">✓</span>
-                                <div>
-                                    <strong>Fixed, Transparent Pricing</strong>
-                                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0;">No hidden fees, no surge pricing, no toll surprises.</p>
-                                </div>
-                            </li>
-                            <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
-                                <span style="color: var(--color-gold-primary); margin-right: 10px; font-size: 1.2rem;">✓</span>
-                                <div>
-                                    <strong>International Tourist Friendly</strong>
-                                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0;">English-speaking chauffeurs trained in global hospitality standards.</p>
-                                </div>
-                            </li>
-                            <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
-                                <span style="color: var(--color-gold-primary); margin-right: 10px; font-size: 1.2rem;">✓</span>
-                                <div>
-                                    <strong>Immaculate Fleet</strong>
-                                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0;">Deep-cleaned, air-conditioned premium vehicles.</p>
-                                </div>
-                            </li>
-                            <li style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
-                                <span style="color: var(--color-gold-primary); margin-right: 10px; font-size: 1.2rem;">✓</span>
-                                <div>
-                                    <strong>Door-to-Door Service</strong>
-                                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0;">Direct drops to {{ page.popular_drop_point }} or your resort.</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <div style="margin-top: 2rem; text-align: center;">
-                            <a href="https://wa.me/919400620615" class="btn btn-primary" style="width: 100%;">Request Quote</a>
-                        </div>
-                    </div>
-                </aside>
+  .tp-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
 
-            </div>
-        </section>
+  @media(min-width: 992px) {
+    .tp-layout-grid { grid-template-columns: 2fr 1fr; }
+  }
 
-        <!-- Premium Fleet Section -->
-        <section class="section-padding" style="background-color: var(--color-bg-surface);">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: var(--spacing-lg); max-width: 700px; margin-inline: auto;">
-                    <h2>Our Premium Fleet</h2>
-                    <p>Select the perfect vehicle for your {{ page.from_location }} to {{ page.to_location }} journey. From executive sedans for solo travelers to luxury coaches for large families.</p>
-                </div>
-                
-                <div class="fleet-grid">
-                    <!-- Sedan -->
-                    <div class="glass-card car-card">
-                        <h4>Swift Dzire / Etios</h4>
-                        <span class="car-category">Premium Sedan</span>
-                        <p>Perfect for solo travelers, couples, or business executives needing a swift and comfortable airport transfer.</p>
-                        <ul>
-                            <li>Seats up to 3 Passengers</li>
-                            <li>Boot space for 2 standard bags</li>
-                            <li>Powerful dual A/C</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- MUV -->
-                    <div class="glass-card car-card">
-                        <h4>Maruti Ertiga</h4>
-                        <span class="car-category">Family MUV</span>
-                        <p>The ideal, cost-effective choice for small families with light luggage looking for extra cabin space.</p>
-                        <ul>
-                            <li>Seats up to 5 Passengers</li>
-                            <li>Flexible rear seating</li>
-                            <li>Comfortable city & highway ride</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- SUV -->
-                    <div class="glass-card car-card" style="border-color: rgba(212, 175, 55, 0.5); box-shadow: 0 0 20px rgba(212,175,55,0.1);">
-                        <h4>Toyota Innova Crysta</h4>
-                        <span class="car-category">Luxury SUV (Recommended)</span>
-                        <p>The undisputed king of Kerala highways. Maximum legroom, advanced suspension, and unparalleled safety for long drives.</p>
-                        <ul>
-                            <li>Seats 6-7 Passengers</li>
-                            <li>Captain seat configurations</li>
-                            <li>Superior hill climbing stability</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Group -->
-                    <div class="glass-card car-card">
-                        <h4>Force Urbania & Tempo</h4>
-                        <span class="car-category">VIP Luxury Coach</span>
-                        <p>Traveling with an extended family or corporate group? Experience airline-style luxury on the road.</p>
-                        <ul>
-                            <li>Seats 10 to 17 Passengers</li>
-                            <li>Reclining VIP captain seats</li>
-                            <li>Massive dedicated luggage bays</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+  .tp-content-block {
+    margin-bottom: 50px;
+  }
 
-        <!-- EEAT Trust Section -->
-        <section class="section-padding trust-section">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: var(--spacing-lg);">
-                    <h2>The Tour With Anand Difference</h2>
-                    <p style="max-width: 800px; margin: 0 auto;">With over 15 years of excellence in Kerala tourism and transport, we do not just provide rides; we deliver peace of mind. We are the preferred transport partner for medical tourists, NRIs, and global travelers.</p>
-                </div>
-                
-                <div class="trust-grid">
-                    <div class="trust-item">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 1rem;">🛡️</span>
-                        <h4>Verified Chauffeurs</h4>
-                        <p>Every driver undergoes strict background checks, defensive driving tests, and hospitality training. Your safety is our highest absolute priority.</p>
-                    </div>
-                    <div class="trust-item">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 1rem;">🌐</span>
-                        <h4>Foreign Tourist Friendly</h4>
-                        <p>Navigating a new country can be daunting. Our English-speaking chauffeurs act as your personal local guides, ensuring a smooth, culturally enriching journey.</p>
-                    </div>
-                    <div class="trust-item">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 1rem;">🏥</span>
-                        <h4>Medical & Airport Specialists</h4>
-                        <p>We understand the anxiety of flight schedules and medical appointments. We track your flights in real-time and ensure punctual, stress-free hospital and airport transfers.</p>
-                    </div>
-                    <div class="trust-item">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 1rem;">🕒</span>
-                        <h4>24×7 Ground Support</h4>
-                        <p>From the moment you book until you reach your destination, our backend support team is available on WhatsApp and phone around the clock.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  .tp-content-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--tp-border);
+  }
 
-        <!-- Return Route & Internal Linking -->
-        <section class="container">
-            <div class="return-route-box">
-                <h2 style="margin-bottom: 1rem;">Need a Return Transfer?</h2>
-                <p style="font-size: 1.125rem; margin-bottom: 2rem; max-width: 600px; margin-inline: auto;">Complete your itinerary by booking your reverse journey in advance. Secure a premium cab from <strong>{{ page.to_location }} back to {{ page.from_location }}</strong> with guaranteed availability.</p>
-                <a href="{{ site.url }}/taxi/{{ page.to_slug }}-to-{{ page.from_slug }}-taxi/" class="btn btn-primary">Book Return Journey</a>
-            </div>
+  .tp-content-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--tp-gold);
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
 
-            <div style="text-align: center; margin-bottom: var(--spacing-xl);">
-                <h3>Extend Your Kerala Experience</h3>
-                <p>Many travelers booking this route also explore our highly-rated onward destinations.</p>
-                <a href="{{ page.internal_link_url }}" class="btn btn-outline" style="margin-top: 1rem;">Explore: {{ page.internal_link_text }}</a>
-            </div>
-        </section>
+  .tp-content-block p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--tp-text-muted);
+    margin-bottom: 20px;
+  }
 
-        <!-- Dynamic 10 FAQs -->
-        <section class="section-padding" style="background-color: var(--color-bg-surface);">
-            <div class="container faq-container">
-                <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Frequently Asked Questions</h2>
-                
-                <details class="faq-item">
-                    <summary>What is the driving distance from {{ page.from_location }} to {{ page.to_location }}?</summary>
-                    <p>The total driving distance is approximately <strong>{{ page.distance_km }} kilometers</strong>. Traveling in a premium chauffeur-driven cab ensures a relaxing experience for the entire journey.</p>
-                </details>
-                
-                <details class="faq-item">
-                    <summary>How long does it take to travel to {{ page.to_location }} by taxi?</summary>
-                    <p>Under normal traffic conditions, the journey takes around <strong>{{ page.travel_time }}</strong>. Our experienced drivers monitor local traffic patterns to ensure you arrive safely and on time.</p>
-                </details>
+  .tp-glass-card {
+    background: var(--tp-bg-surface);
+    border: 1px solid var(--tp-border);
+    border-radius: var(--tp-radius);
+    padding: 30px;
+  }
 
-                <details class="faq-item">
-                    <summary>Which car is recommended for the route to {{ page.to_location }}?</summary>
-                    <p>Due to the route terrain consisting of {{ page.route_terrain }}, we highly recommend booking a <strong>{{ page.suggested_car }}</strong>. It provides the perfect balance of safety, suspension, and luggage capacity for this specific drive.</p>
-                </details>
+  /* Sidebar */
+  .tp-sidebar {
+    position: sticky;
+    top: 120px;
+  }
 
-                <details class="faq-item">
-                    <summary>Can we stop for sightseeing or breaks along the way?</summary>
-                    <p>Absolutely. Because this is a private premium transfer, you dictate the pace. We highly suggest stopping at beautiful locations such as <strong>{{ page.waypoints }}</strong> to stretch your legs and take photos.</p>
-                </details>
+  .tp-sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+  }
 
-                <details class="faq-item">
-                    <summary>What are the road conditions like from {{ page.from_location }}?</summary>
-                    <p>The route is characterized by {{ page.route_terrain }}. Our verified drivers are specifically trained to navigate these Kerala roads smoothly, ensuring maximum passenger comfort.</p>
-                </details>
+  .tp-sidebar-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
 
-                <details class="faq-item">
-                    <summary>What is the best time to start the journey to {{ page.to_location }}?</summary>
-                    <p>For the best experience, we suggest starting at <strong>{{ page.best_time_to_start }}</strong>. This helps avoid peak city traffic and provides the best natural lighting for scenic views.</p>
-                </details>
+  .tp-sidebar-list svg {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: var(--tp-gold);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-right: 15px;
+  }
 
-                <details class="faq-item">
-                    <summary>Where exactly can you drop us in {{ page.to_location }}?</summary>
-                    <p>We offer complete, hassle-free door-to-door service. We can drop you at <strong>{{ page.popular_drop_point }}</strong>, specific resort lobbies, hospitals, or private residences anywhere within the destination limits.</p>
-                </details>
+  .tp-sidebar-list strong {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
 
-                <details class="faq-item">
-                    <summary>What are the top things to do once we reach {{ page.to_location }}?</summary>
-                    <p>Once you arrive, we highly recommend exploring: <strong>{{ page.top_attractions }}</strong>. It is a wonderful destination with plenty of cultural and natural beauty to offer.</p>
-                </details>
+  .tp-sidebar-list span {
+    font-size: 14px;
+    color: var(--tp-text-muted);
+    line-height: 1.5;
+  }
 
-                <details class="faq-item">
-                    <summary>Is Tour With Anand safe for international tourists and families?</summary>
-                    <p>Yes, absolutely. We specialize in catering to international tourists, NRIs, and medical tourists. We provide English-speaking drivers, immaculately clean vehicles, transparent fixed pricing, and 24/7 WhatsApp support to ensure total peace of mind.</p>
-                </details>
+  /* Fleet Grid */
+  .tp-fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
 
-                <details class="faq-item">
-                    <summary>How do I book a return taxi to {{ page.from_location }}?</summary>
-                    <p>You can easily book your return journey from {{ page.to_location }} to {{ page.from_location }} by clicking our WhatsApp booking button, calling our 24/7 hotline, or visiting our dedicated return route link provided above.</p>
-                </details>
+  .tp-car-card {
+    background: var(--tp-bg-surface);
+    border: 1px solid var(--tp-border);
+    border-radius: var(--tp-radius);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
 
-            </div>
-        </section>
+  .tp-car-card:hover {
+    transform: translateY(-5px);
+    background: var(--tp-bg-elevated);
+    border-color: var(--tp-gold);
+  }
 
-    </main>
+  .tp-car-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--tp-gold);
+    margin: 0 0 5px 0;
+  }
 
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4 style="color: var(--color-gold-primary); font-family: var(--font-heading); text-transform: uppercase;">Tour With Anand</h4>
-                    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Kerala's premier private taxi, chauffeur, and group travel operator. Delivering luxury, safety, and reliability for over 15 years.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="{{ site.url }}/">Home</a></li>
-                        <li><a href="{{ site.url }}/taxi/kochi-airport-taxi/">Airport Transfers</a></li>
-                        <li><a href="{{ site.url }}/tempo-traveller/">Tempo Traveller Rentals</a></li>
-                        <li><a href="{{ site.url }}/south-india-tours/">Tour Packages</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><a href="tel:+919400620615">📞 +91 94006 20615</a></li>
-                        <li><a href="https://wa.me/919400620615">💬 WhatsApp 24/7</a></li>
-                        <li><span style="color: var(--color-text-muted);">📍 Kochi, Kerala, India</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> Tour With Anand. All rights reserved. Designed for Premium Kerala Tourism.</p>
-            </div>
-        </div>
-    </footer>
+  .tp-car-type {
+    display: block;
+    font-size: 12px;
+    color: var(--tp-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
 
-    <!-- Floating Action Buttons (Desktop) -->
-    <div class="fab-container">
-        <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20want%20to%20book%20a%20taxi%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.to_location | url_encode }}." class="fab fab-whatsapp" aria-label="Book on WhatsApp" target="_blank" rel="noopener noreferrer">
-            <!-- Simple SVG icon for WhatsApp to avoid external requests -->
-            <svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 2a13 13 0 0 0-11 20.3L3 29l6.9-1.8A12.9 12.9 0 0 0 16 28c7.2 0 13-5.8 13-13S23.2 2 16 2zm0 24c-2.3 0-4.5-.6-6.4-1.7l-.5-.3-4.8 1.3 1.3-4.6-.3-.5A11 11 0 0 1 5 15c0-6 4.9-11 11-11s11 4.9 11 11-4.9 11-11 11zm6-7.8c-.3-.2-2-.9-2.3-1s-.6-.2-.8.2-.9 1.1-1.1 1.3-.4.3-.7.1-1.4-.5-2.7-1.6c-1-1-1.6-2.1-1.8-2.5s-.1-.6.1-.8c.2-.2.4-.4.6-.7s.3-.4.4-.7c.1-.3 0-.6-.1-.8s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1.1.5s-1.5 1.5-1.5 3.6 1.5 4.1 1.7 4.4c.2.3 3 4.6 7.3 6.4 1 .4 1.8.7 2.5.8.9.3 1.8.2 2.5.1.7-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4z"/></svg>
-        </a>
+  .tp-car-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .tp-car-features li {
+    font-size: 14px;
+    color: var(--tp-text-light);
+    padding: 8px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* Trust Grid */
+  .tp-trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .tp-trust-item h4 {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    font-size: 18px;
+    margin: 15px 0 10px 0;
+  }
+
+  .tp-trust-item p {
+    font-size: 14px;
+    color: var(--tp-text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Return Box */
+  .tp-return-box {
+    background: radial-gradient(circle at center, rgba(255, 204, 0, 0.08) 0%, var(--tp-bg-surface) 100%);
+    border: 1px solid var(--tp-border);
+    border-radius: var(--tp-radius);
+    padding: 60px 30px;
+    text-align: center;
+  }
+
+  /* FAQ */
+  .tp-faq-item {
+    background: var(--tp-bg-surface);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+
+  .tp-faq-item summary {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tp-faq-item summary::-webkit-details-marker { display: none; }
+  
+  .tp-faq-item summary::after {
+    content: '+';
+    color: var(--tp-gold);
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  .tp-faq-item[open] summary::after { content: '−'; }
+
+  .tp-faq-item p {
+    padding: 0 20px 20px;
+    margin: 0;
+    color: var(--tp-text-muted);
+    font-size: 15px;
+    line-height: 1.7;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 15px;
+  }
+
+  @media (max-width: 992px) {
+    .tp-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .tp-hero { min-height: auto; padding-top: 80px; padding-bottom: 120px; }
+    .tp-title { font-size: 32px; }
+    .tp-btn { width: 100%; margin: 0 0 15px 0; }
+    .tp-btn-outline { margin-left: 0; }
+    .tp-stats-grid { grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
+    .tp-stat-value { font-size: 18px; }
+    .tp-section { padding: 50px 0; }
+  }
+</style>
+
+<div class="tp-wrapper">
+  
+  <!-- Hero Section -->
+  <section class="tp-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="/Mobile%20Hero%20Airprot.jpg">
+      <img src="/Hero%20Image.png" alt="Premium private taxi from {{ page.from_location }} to {{ page.to_location }}" class="tp-hero-bg" loading="eager">
+    </picture>
+    <div class="tp-hero-overlay"></div>
+    
+    <div class="tp-container-inner tp-hero-content">
+      <span class="tp-badge">Premium Private Transfer</span>
+      <h1 class="tp-title">{{ page.from_location }} to {{ page.to_location }} Taxi</h1>
+      <p class="tp-desc">{{ page.unique_desc }} Experience a safe, seamless, and luxurious journey across Kerala with our verified professional chauffeurs.</p>
+      
+      <div>
+        <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20want%20to%20book%20a%20taxi%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.to_location | url_encode }}.%20Please%20share%20the%20quote." class="tp-btn tp-btn-primary" target="_blank">Book via WhatsApp</a>
+        <a href="tel:+919400620615" class="tp-btn tp-btn-outline">Call Now</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Sticky Bottom Bar (Mobile Only) -->
-    <div class="mobile-booking-bar">
-        <a href="tel:+919400620615" class="btn btn-outline" style="border-color: var(--color-gold-primary); color: var(--color-white);">Call</a>
-        <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20want%20to%20book%20a%20taxi%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.to_location | url_encode }}." class="btn btn-primary" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <!-- Quick Stats -->
+  <div class="tp-container-inner tp-stats-wrapper">
+    <div class="tp-stats-grid">
+      <div class="tp-stat-item">
+        <span class="tp-stat-icon">🛣️</span>
+        <span class="tp-stat-label">Total Distance</span>
+        <span class="tp-stat-value">{{ page.distance_km }} km</span>
+      </div>
+      <div class="tp-stat-item">
+        <span class="tp-stat-icon">⏱️</span>
+        <span class="tp-stat-label">Travel Time</span>
+        <span class="tp-stat-value">{{ page.travel_time }}</span>
+      </div>
+      <div class="tp-stat-item">
+        <span class="tp-stat-icon">🚘</span>
+        <span class="tp-stat-label">Recommended Car</span>
+        <span class="tp-stat-value">{{ page.suggested_car | truncatewords: 2, "" }}</span>
+      </div>
+      <div class="tp-stat-item">
+        <span class="tp-stat-icon">🌅</span>
+        <span class="tp-stat-label">Best Start Time</span>
+        <span class="tp-stat-value">{{ page.best_time_to_start | truncatewords: 2, "" }}</span>
+      </div>
     </div>
+  </div>
 
-</body>
-</html>
+  <!-- Route Details & Sidebar -->
+  <section class="tp-section" style="padding-top: 20px;">
+    <div class="tp-container-inner tp-layout-grid">
+      
+      <!-- Content Column -->
+      <article>
+        <div class="tp-content-block">
+          <h2>Route Overview & Road Conditions</h2>
+          <p>Traveling from <strong>{{ page.from_location }}</strong> to <strong>{{ page.to_location }}</strong> is one of the most requested routes for our guests exploring Kerala. Covering a total driving distance of approximately <strong style="color:var(--tp-gold);">{{ page.distance_km }} kilometers</strong>, the journey typically takes around <strong style="color:var(--tp-gold);">{{ page.travel_time }}</strong> depending on traffic and weather conditions.</p>
+          <p>When planning this trip, understanding the topography is essential. The route primarily consists of <strong>{{ page.route_terrain }}</strong>. Our verified, experienced chauffeurs are deeply familiar with these specific road conditions, ensuring that your ride is not only swift but incredibly safe and comfortable.</p>
+          <p>For the optimal travel experience, we highly recommend departing around <strong>{{ page.best_time_to_start }}</strong>. Traveling during this window helps bypass peak city congestion and offers the most pleasant scenic views along the way.</p>
+        </div>
+
+        <div class="tp-content-block tp-glass-card">
+          <h3 style="margin-top:0;">Suggested Vehicle</h3>
+          <p style="margin-bottom:0;">Based on the specific road conditions ({{ page.route_terrain }}), we strongly advise booking a <strong>{{ page.suggested_car }}</strong>. This vehicle class provides the perfect balance of advanced suspension for Kerala's terrain, ample legroom for passengers, and dedicated space for your luggage.</p>
+        </div>
+
+        <div class="tp-content-block">
+          <h2>Discovering {{ page.to_location }}</h2>
+          <p>{{ page.destination_about }}</p>
+          <p>Upon arrival, there is no shortage of incredible experiences waiting for you. Top attractions highly recommended by locals and global tourists include <strong>{{ page.top_attractions }}</strong>. To make your trip truly seamless, our chauffeurs will drop you directly at your specified location, whether that is a premium resort, a hospital, or the famous <strong>{{ page.popular_drop_point }}</strong>.</p>
+        </div>
+
+        <div class="tp-content-block">
+          <h2>Scenic Stops & Waypoints</h2>
+          <p>A private chauffeur-driven cab offers the luxury of flexibility. Unlike standard point-to-point transfers or public transport, you command the itinerary. Along the way from {{ page.from_location }} to {{ page.to_location }}, we highly recommend asking your driver to pause at stunning locations such as <strong>{{ page.waypoints }}</strong>.</p>
+          <p>Taking short breaks not only makes the {{ page.travel_time }} journey more relaxing but allows you to capture photographs, enjoy authentic Kerala tea, and stretch your legs in beautiful surroundings.</p>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="tp-glass-card tp-sidebar">
+          <h3 style="margin-top:0; border-bottom: 1px solid var(--tp-border); padding-bottom: 15px;">Why Book With Us?</h3>
+          <ul class="tp-sidebar-list">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <div>
+                <strong>Fixed, Transparent Pricing</strong>
+                <span>No hidden fees, no surge pricing, no toll surprises.</span>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <div>
+                <strong>International Tourist Friendly</strong>
+                <span>English-speaking chauffeurs trained in global hospitality.</span>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <div>
+                <strong>Immaculate Fleet</strong>
+                <span>Deep-cleaned, air-conditioned premium vehicles.</span>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <strong>Door-to-Door Service</strong>
+                <span>Direct drops to {{ page.popular_drop_point | truncatewords: 3, "" }} or your resort lobby.</span>
+              </div>
+            </li>
+          </ul>
+          <a href="https://wa.me/919400620615" class="tp-btn tp-btn-primary" style="width: 100%; margin-top: 10px;">Request Instant Quote</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- Fleet Showcase -->
+  <section class="tp-section">
+    <div class="tp-container-inner">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: #fff; margin-top: 0; margin-bottom: 15px;">Our Premium Fleet</h2>
+        <p style="color: var(--tp-text-muted); font-size: 16px;">Select the perfect vehicle for your {{ page.from_location }} to {{ page.to_location }} journey. From executive sedans for solo travelers to luxury VIP coaches for large families.</p>
+      </div>
+
+      <div class="tp-fleet-grid">
+        <div class="tp-car-card">
+          <h4>Swift Dzire / Etios</h4>
+          <span class="tp-car-type">Premium Sedan</span>
+          <ul class="tp-car-features">
+            <li>✓ Seats up to 3 Passengers</li>
+            <li>✓ Boot space for 2 bags</li>
+            <li>✓ Perfect for couples</li>
+          </ul>
+        </div>
+        
+        <div class="tp-car-card">
+          <h4>Maruti Ertiga</h4>
+          <span class="tp-car-type">Family MUV</span>
+          <ul class="tp-car-features">
+            <li>✓ Seats up to 5 Passengers</li>
+            <li>✓ Flexible rear seating</li>
+            <li>✓ Cost-effective for families</li>
+          </ul>
+        </div>
+        
+        <div class="tp-car-card" style="border-color: var(--tp-gold); background: var(--tp-bg-elevated);">
+          <h4>Innova Crysta</h4>
+          <span class="tp-car-type">Luxury SUV (Recommended)</span>
+          <ul class="tp-car-features">
+            <li>✓ Seats 6-7 Passengers</li>
+            <li>✓ Superior suspension</li>
+            <li>✓ Ultimate highway comfort</li>
+          </ul>
+        </div>
+        
+        <div class="tp-car-card">
+          <h4>Force Urbania</h4>
+          <span class="tp-car-type">VIP Luxury Coach</span>
+          <ul class="tp-car-features">
+            <li>✓ Seats 10-17 Passengers</li>
+            <li>✓ Reclining captain seats</li>
+            <li>✓ Massive luggage bays</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EEAT & Trust -->
+  <section class="tp-section" style="background: linear-gradient(to bottom, var(--tp-bg-dark), var(--tp-bg-surface)); border-top: 1px solid var(--tp-border);">
+    <div class="tp-container-inner">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #fff; margin-top: 0; margin-bottom: 15px;">The Tour With Anand Difference</h2>
+        <p style="color: var(--tp-text-muted); font-size: 16px;">With over 15 years of excellence in Kerala tourism and transport, we do not just provide rides; we deliver peace of mind. We are the preferred transport partner for international travelers.</p>
+      </div>
+      
+      <div class="tp-trust-grid">
+        <div class="tp-trust-item">
+          <span style="font-size: 32px; display: block; margin-bottom: 10px;">🛡️</span>
+          <h4>Verified Chauffeurs</h4>
+          <p>Every driver undergoes strict background checks and hospitality training. Your safety is our highest priority.</p>
+        </div>
+        <div class="tp-trust-item">
+          <span style="font-size: 32px; display: block; margin-bottom: 10px;">🌐</span>
+          <h4>Foreign Tourist Friendly</h4>
+          <p>Our English-speaking chauffeurs act as your personal local guides, ensuring a culturally enriching journey.</p>
+        </div>
+        <div class="tp-trust-item">
+          <span style="font-size: 32px; display: block; margin-bottom: 10px;">🏥</span>
+          <h4>Medical Specialists</h4>
+          <p>We understand the anxiety of medical appointments. We ensure punctual, stress-free hospital transfers.</p>
+        </div>
+        <div class="tp-trust-item">
+          <span style="font-size: 32px; display: block; margin-bottom: 10px;">🕒</span>
+          <h4>24×7 Ground Support</h4>
+          <p>From the moment you book until you reach your destination, our backend support team is available on WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Return Journey & Linking -->
+  <section class="tp-section">
+    <div class="tp-container-inner">
+      
+      <div class="tp-return-box">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #fff; margin-top: 0; margin-bottom: 15px;">Need a Return Transfer?</h2>
+        <p style="font-size: 16px; color: var(--tp-text-light); margin-bottom: 30px; max-width: 600px; margin-inline: auto;">Complete your itinerary by booking your reverse journey in advance. Secure a premium cab from <strong>{{ page.to_location }} back to {{ page.from_location }}</strong>.</p>
+        <a href="{{ site.url }}/taxi/{{ page.to_slug }}-to-{{ page.from_slug }}-taxi/" class="tp-btn tp-btn-primary">Book Return Journey</a>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin-top: 0; margin-bottom: 10px;">Extend Your Kerala Experience</h3>
+        <p style="color: var(--tp-text-muted); margin-bottom: 20px;">Many travelers booking this route also explore our highly-rated onward destinations.</p>
+        <a href="{{ page.internal_link_url }}" class="tp-btn tp-btn-outline">Explore: {{ page.internal_link_text }}</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="tp-section" style="padding-bottom: 120px; border-bottom: none;">
+    <div class="tp-container-inner">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: #fff; text-align: center; margin-top: 0; margin-bottom: 40px;">Frequently Asked Questions</h2>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        
+        <details class="tp-faq-item">
+          <summary>What is the driving distance from {{ page.from_location }} to {{ page.to_location }}?</summary>
+          <p>The total driving distance is approximately <strong>{{ page.distance_km }} kilometers</strong>. Traveling in a premium chauffeur-driven cab ensures a relaxing experience for the entire journey.</p>
+        </details>
+        
+        <details class="tp-faq-item">
+          <summary>How long does it take to travel to {{ page.to_location }} by taxi?</summary>
+          <p>Under normal traffic conditions, the journey takes around <strong>{{ page.travel_time }}</strong>. Our experienced drivers monitor local traffic patterns to ensure you arrive safely and on time.</p>
+        </details>
+
+        <details class="tp-faq-item">
+          <summary>Which car is recommended for the route to {{ page.to_location }}?</summary>
+          <p>Due to the route terrain consisting of {{ page.route_terrain }}, we highly recommend booking a <strong>{{ page.suggested_car }}</strong>. It provides the perfect balance of safety, suspension, and luggage capacity for this specific drive.</p>
+        </details>
+
+        <details class="tp-faq-item">
+          <summary>Can we stop for sightseeing or breaks along the way?</summary>
+          <p>Absolutely. Because this is a private premium transfer, you dictate the pace. We highly suggest stopping at beautiful locations such as <strong>{{ page.waypoints }}</strong> to stretch your legs and take photos.</p>
+        </details>
+
+        <details class="tp-faq-item">
+          <summary>What are the road conditions like from {{ page.from_location }}?</summary>
+          <p>The route is characterized by {{ page.route_terrain }}. Our verified drivers are specifically trained to navigate these Kerala roads smoothly, ensuring maximum passenger comfort.</p>
+        </details>
+
+        <details class="tp-faq-item">
+          <summary>What is the best time to start the journey to {{ page.to_location }}?</summary>
+          <p>For the best experience, we suggest starting at <strong>{{ page.best_time_to_start }}</strong>. This helps avoid peak city traffic and provides the best natural lighting for scenic views.</p>
+        </details>
+
+        <details class="tp-faq-item">
+          <summary>Where exactly can you drop us in {{ page.to_location }}?</summary>
+          <p>We offer complete, hassle-free door-to-door service. We can drop you at <strong>{{ page.popular_drop_point }}</strong>, specific resort lobbies, hospitals, or private residences anywhere within the destination limits.</p>
+        </details>
+
+        <details class="tp-faq-item">
+          <summary>What are the top things to do once we reach {{ page.to_location }}?</summary>
+          <p>Once you arrive, we highly recommend exploring: <strong>{{ page.top_attractions }}</strong>. It is a wonderful destination with plenty of cultural and natural beauty to offer.</p>
+        </details>
+
+        <details class="tp-faq-item">
+          <summary>Is Tour With Anand safe for international tourists and families?</summary>
+          <p>Yes, absolutely. We specialize in catering to international tourists, NRIs, and medical tourists. We provide English-speaking drivers, immaculately clean vehicles, transparent fixed pricing, and 24/7 WhatsApp support to ensure total peace of mind.</p>
+        </details>
+
+        <details class="tp-faq-item">
+          <summary>How do I book a return taxi to {{ page.from_location }}?</summary>
+          <p>You can easily book your return journey from {{ page.to_location }} to {{ page.from_location }} by clicking our WhatsApp booking button, calling our 24/7 hotline, or visiting our dedicated return route link provided above.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+</div>
