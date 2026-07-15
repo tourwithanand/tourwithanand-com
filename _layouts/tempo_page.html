@@ -1,252 +1,322 @@
----
-layout: default
----
-
-<meta name="keywords" content="{{ page.seo_keywords }}">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "{{ site.url }}{{ page.url }}",
-      "name": "Tempo Traveller & Force Urbania Rentals: Kochi to {{ page.destination_name }}",
-      "description": "{{ page.unique_desc | escape }}",
-      "url": "{{ site.url }}{{ page.url }}"
-    },
-    {
-      "@type": "AutoRental",
-      "name": "Group Travel from Kochi, Ernakulam & Airport to {{ page.destination_name }}",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Tour With Anand - Group Travel",
-        "image": "{{ site.url }}/Tempo-Traveller-Rentals-In-Kochi-by-tour-with-anand.jpg",
-        "telephone": "+919400620615"
-      },
-      "areaServed": ["Kochi", "Ernakulam", "Aluva", "Cochin International Airport", "{{ page.destination_name }}"]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do you pick up from Ernakulam Railway Station or Kochi Airport for trips to {{ page.destination_name }}?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes! We provide flexible, door-to-door group pickups. Whether your group is arriving at Cochin International Airport (COK), Ernakulam Junction, Aluva, or staying at a Kochi city hotel, our drivers will meet you there." }
-        },
-        {
-          "@type": "Question",
-          "name": "Should we book a Tempo Traveller or a Force Urbania for the trip to {{ page.destination_name }}?",
-          "acceptedAnswer": { "@type": "Answer", "text": "For standard large family groups, our 12-17 Seater Tempo Travellers are perfect. If you want VIP luxury with airline-style captain seats and premium legroom, we highly recommend upgrading to our Force Urbania." }
-        },
-        {
-          "@type": "Question",
-          "name": "How far is {{ page.destination_name }} from Kochi and Ernakulam?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The total distance is approximately {{ page.distance_km }} km. In a large group vehicle, the journey takes around {{ page.travel_time }}, depending on your exact pickup location in the city or airport." }
-        }
-      ]
-    }
-  ]
-}
-</script>
-
-<style>
-  *, *::before, *::after { box-sizing: border-box; }
-  :root { --gold: #ffcc00; --dark-bg: #0a0b0e; --card-bg: rgba(20, 23, 29, 0.7); }
-  body { font-family: 'Inter', sans-serif; }
-
-  /* Mobile-Optimized Hero */
-  .route-hero { position: relative; padding: 180px 20px 100px; background: var(--dark-bg); overflow: hidden; text-align: center; border-bottom: 1px solid rgba(255, 204, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; }
-  .route-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-  .route-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,11,14,0.6) 0%, rgba(10,11,14,0.9) 80%, rgba(10,11,14,1) 100%); z-index: 2; }
-  .route-hero-content { position: relative; z-index: 3; max-width: 900px; width: 100%; margin: 0 auto; padding: 0 15px; }
+<div class="hero-content">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>/</span>
+    <a href="/tempo-traveller-rentals-kochi-kerala/">Tempo Traveller</a> <span>/</span>
+    {{ page.from_location }} to {{ page.destination_name }}
+  </nav>
   
-  .route-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 14px; margin-bottom: 15px; display: block; font-weight: 600; text-shadow: 0 0 10px rgba(255,204,0,0.3); }
-  .route-hero h1 { font-size: clamp(28px, 5vw, 52px); color: #fff; margin-bottom: 25px; line-height: 1.25; font-family: 'Playfair Display', serif; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
-  .route-hero p { font-size: clamp(16px, 2vw, 18px); color: #e0e4eb; margin-bottom: 45px; line-height: 1.7; font-weight: 300; }
+  <h1 class="hero-title">{{ page.page_title }}</h1>
+  <p class="hero-subtitle">Premium Force Urbania & Tempo Traveller Group Transport</p>
   
-  .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 50px; width: 100%; }
-  .fact-box { background: var(--card-bg); border: 1px solid rgba(255, 204, 0, 0.15); padding: 25px 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); transition: transform 0.3s ease; }
-  .fact-box:hover { transform: translateY(-5px); border-color: rgba(255, 204, 0, 0.4); }
-  .fact-box span { display: block; font-size: 13px; color: #a0a4ab; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
-  .fact-box strong { color: #fff; font-size: 18px; font-family: 'Playfair Display', serif; }
-
-  /* Booking Widget */
-  .booking-widget-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 204, 0, 0.3); border-radius: 16px; padding: 30px; max-width: 600px; margin: 0 auto; backdrop-filter: blur(15px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); text-align: left; box-sizing: border-box; width: 100%; }
-  .booking-widget-box h3 { color: #fff; font-size: 22px; font-family: 'Playfair Display', serif; margin-top: 0; margin-bottom: 20px; text-align: center; }
-  .form-group { margin-bottom: 15px; }
-  .form-group label { display: block; color: #a0a4ab; font-size: 13px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-  .form-group select, .form-group input { width: 100%; padding: 12px 15px; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #fff; font-size: 16px; font-family: 'Inter', sans-serif; box-sizing: border-box; }
-  .form-group select:focus, .form-group input:focus { outline: none; border-color: var(--gold); }
-  .futuristic-btn { display: block; width: 100%; text-align: center; background: linear-gradient(135deg, #ffcc00, #e6b800); color: #0a0b0e; padding: 16px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s ease; margin-top: 20px; }
-  .futuristic-btn:hover { background: transparent; color: #ffcc00; border: 2px solid #ffcc00; }
-
-  /* Content Sections */
-  .content-section { padding: 90px 20px; background: var(--dark-bg); border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .content-section.alt { background: linear-gradient(to bottom, #111317, #0a0b0e); }
-  .content-inner { max-width: 900px; margin: 0 auto; width: 100%; }
-  .content-inner h2 { color: #fff; font-size: clamp(28px, 3vw, 36px); margin-bottom: 25px; font-family: 'Playfair Display', serif; border-bottom: 1px solid rgba(255,204,0,0.2); padding-bottom: 10px;}
-  .content-inner h3 { color: var(--gold); font-size: 22px; margin-top: 40px; margin-bottom: 15px; font-family: 'Playfair Display', serif;}
-  .content-inner p { color: #a0a4ab; font-size: 17px; line-height: 1.9; margin-bottom: 25px; font-weight: 300;}
-
-  /* Fleet Comparison */
-  .fleet-compare { display: flex; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
-  .fleet-card { flex: 1; min-width: 280px; background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
-  .fleet-card h4 { color: #fff; font-size: 20px; font-family: 'Playfair Display', serif; margin-top: 0; color: var(--gold); }
-  .fleet-card ul { color: #a0a4ab; padding-left: 20px; line-height: 1.8; }
-
-  /* FAQ Accordion */
-  .faq-wrapper details { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.05); margin-bottom: 15px; padding: 25px; border-radius: 10px; cursor: pointer; transition: 0.3s; }
-  .faq-wrapper details:hover { border-color: rgba(255, 204, 0, 0.3); }
-  .faq-wrapper summary { color: var(--gold); font-weight: 600; font-size: 18px; list-style: none; outline: none; display: flex; justify-content: space-between; align-items: center; }
-  .faq-wrapper summary::-webkit-details-marker { display: none; }
-  .faq-wrapper details p { margin-top: 15px; margin-bottom: 0; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); }
-
-  /* Dynamic Internal Linking Card */
-  .dynamic-seo-link-card { margin-top: 50px; padding: 35px; background: linear-gradient(145deg, #15181e, #0e1015); border: 1px solid rgba(255, 204, 0, 0.3); border-radius: 16px; text-align: center; }
-  .dynamic-seo-link-card h3 { margin-top: 0; color: #fff; font-size: 24px; font-family: 'Playfair Display', serif;}
-  .dynamic-seo-link-card p { color: #dcdcdc; font-size: 16px; margin-bottom: 25px; }
-  .dynamic-seo-link-card a { display: inline-block; color: #0a0b0e; background: var(--gold); padding: 12px 25px; border-radius: 6px; font-weight: 700; text-decoration: none; text-transform: uppercase; }
-
-  /* Mobile Adjustments */
-  @media (max-width: 768px) {
-    .route-hero { padding: 0; background: var(--dark-bg); justify-content: flex-start; }
-    .route-hero-bg { position: relative; height: auto; display: block; object-fit: contain; }
-    .route-hero-overlay { display: none; }
-    .route-hero-content { padding: 30px 20px 50px; }
-    .route-hero h1 { font-size: 30px; }
-    .quick-facts { grid-template-columns: 1fr; }
-    .fleet-compare { flex-direction: column; }
-  }
-</style>
-
-<section class="route-hero">
-  <img src="/Tempo%20Traveller%20Rentals%20In%20Kochi.jpg" alt="Tempo Traveller and Force Urbania rental from Kochi, Ernakulam, and Cochin Airport to {{ page.destination_name }}" class="route-hero-bg" loading="eager">
-  <div class="route-hero-overlay"></div>
-  
-  <div class="route-hero-content">
-    <span class="route-meta">Luxury Group Transfers</span>
-    <h1>Kochi, Ernakulam & Airport to {{ page.destination_name }}</h1>
-    <p>{{ page.unique_desc }}</p>
-    
-    <div class="quick-facts">
-      <div class="fact-box"><span>Pickup Coverage</span><strong>{{ page.pickup_locations | truncatewords: 6, "" }}</strong></div>
-      <div class="fact-box"><span>Vehicles</span><strong>Tempo & Urbania</strong></div>
-      <div class="fact-box"><span>Distance</span><strong>{{ page.distance_km }} km</strong></div>
+  <div class="route-quick-facts">
+    <div class="fact-badge">
+      Distance
+      <strong>{{ page.distance_km }} KM</strong>
     </div>
-
-    <div class="booking-widget-box">
-      <h3>Request a Group Quote</h3>
-      <div class="form-group">
-        <label>Select Your Pickup Location</label>
-        <select id="pickup-select">
-          <option value="Kochi Airport (COK)">Cochin Airport (COK)</option>
-          <option value="Ernakulam Railway Station">Ernakulam Railway Station</option>
-          <option value="Aluva">Aluva</option>
-          <option value="Kochi City Hotel">Kochi / Ernakulam Hotel</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Select Vehicle Type</label>
-        <select id="vehicle-select">
-          <option value="12-Seater Tempo Traveller">12-Seater Tempo Traveller</option>
-          <option value="17-Seater Tempo Traveller">17-Seater Tempo Traveller</option>
-          <option value="Premium Force Urbania">VIP Force Urbania Coach</option>
-        </select>
-      </div>
-      <button class="futuristic-btn" onclick="sendWhatsApp()">Check Availability</button>
+    <div class="fact-badge">
+      Est. Travel Time
+      <strong>{{ page.travel_time }}</strong>
+    </div>
+    <div class="fact-badge">
+      Terrain
+      <strong>{{ page.route_terrain }}</strong>
+    </div>
+    <div class="fact-badge">
+      Best Vehicle
+      <strong>{{ page.recommended_vehicle }}</strong>
     </div>
   </div>
-</section>
-
-<section class="content-section alt">
-  <div class="content-inner">
-    <h2 style="text-align: center;">Choose Your Premium Group Vehicle</h2>
-    <p style="text-align: center;">Whether you are departing from Ernakulam Junction or landing at Cochin International Airport, we have the perfect vehicle to keep your large group together in absolute comfort.</p>
+  
+  <div class="cta-group">
+    <a href="[https://wa.me/919400620615?text=Hello](https://wa.me/919400620615?text=Hello) Tour With Anand, I need a quote for a group transfer from {{ page.from_location }} to {{ page.destination_name }}." target="_blank" rel="noopener" class="btn btn-whatsapp">Get Quote on WhatsApp</a>
+    <a href="tel:+919400620615" class="btn btn-primary">Call 24/7 Support</a>
+  </div>
+</div>
+    <p>Our expansive fleet of premium <strong>Tempo Travellers</strong> and state-of-the-art <strong>Force Urbania</strong> luxury coaches are meticulously maintained to ensure your entire group travels together in absolute style. We eliminate the immense hassle of coordinating multiple small sedans, wrestling with severe luggage space constraints, or compromising on passenger legroom during long drives. Our spacious, high-capacity group vehicles are engineered specifically to cater to grand family trips, high-profile corporate executive excursions, massive wedding groups requiring synchronized arrivals, and deeply spiritual pilgrimage tours where comfort translates to peace of mind.</p>
     
-    <div class="fleet-compare">
-      <div class="fleet-card">
-        <h4>Tempo Traveller (12 to 17 Seats)</h4>
-        <p>The industry standard for large family holidays and pilgrimage trips across Kerala.</p>
+    <p>The route spanning from {{ page.from_location }} to {{ page.destination_name }} covers approximately {{ page.distance_km }} kilometers. Depending on the exact pickup point, traffic variations, and prevailing weather conditions, this journey typically encompasses around {{ page.travel_time }}. As you transition smoothly from the coastal plains and urban highways into the unique {{ page.route_terrain }}, the journey itself transforms into an integral, enjoyable part of your vacation rather than a stressful prerequisite. You are not just paying for a ride; you are securing a curated travel experience.</p>
+    
+    <p>At Tour With Anand, we proudly differentiate ourselves through our elite personnel. Our highly trained, verified, English-speaking chauffeurs possess profound local knowledge of the highways, intricate mountain passes, and hidden scenic waypoints. They serve not just as drivers, but as courteous concierges on wheels, ensuring you experience a ride that is visually stunning, impeccably smooth, and deeply safe. With our guaranteed on-time airport pickups and round-the-clock 24x7 support, luxury group travel to {{ page.destination_name }} is elevated to an art form.</p>
+  </div>
+</div>
+  <div class="grid-2">
+    <article class="luxury-card">
+      <figure class="card-img-wrapper">
+        <img src="{{ page.urbania_image }}" alt="Luxury Force Urbania Rental for {{ page.destination_name }}" title="Force Urbania Interior" loading="lazy" decoding="async" width="800" height="600">
+      </figure>
+      <div class="card-content">
+        <h3>Force Urbania Luxury Coach</h3>
+        <p style="color: var(--gold-light); font-weight: 300; font-size: 1.1rem; margin-bottom: 20px;">The pinnacle of VIP road travel.</p>
         <ul>
-          <li>Push-back comfortable seating</li>
-          <li>Dedicated rooftop luggage carrier</li>
-          <li>Dual A/C vents for rear passengers</li>
-          <li>Cost-effective for large families</li>
+          <li><strong>Ideal Group Size:</strong> 9, 10, 13, and 17 Guests</li>
+          <li><strong>Comfort:</strong> Airline-style reclining captain seats</li>
+          <li><strong>Legroom:</strong> Unmatched standing height and wide aisle space</li>
+          <li><strong>Luggage:</strong> Massive dedicated internal boot space</li>
+          <li><strong>Best For:</strong> Corporate executives, foreign tourists, and luxury family tours</li>
         </ul>
+        <a href="[https://wa.me/919400620615?text=I](https://wa.me/919400620615?text=I) want to book a Force Urbania from {{ page.from_location }} to {{ page.destination_name }}." class="btn btn-outline" style="margin-top: 20px; text-align: center;">Book Urbania Coach</a>
       </div>
-      <div class="fleet-card">
-        <h4>Force Urbania (VIP Luxury)</h4>
-        <p>The ultimate premium upgrade. Perfect for corporate teams, NRIs, and luxury tours.</p>
+    </article>
+
+    <article class="luxury-card">
+      <figure class="card-img-wrapper">
+        <img src="{{ page.tempo_image }}" alt="Premium Tempo Traveller Rental to {{ page.destination_name }}" title="Tempo Traveller Exterior" loading="lazy" decoding="async" width="800" height="600">
+      </figure>
+      <div class="card-content">
+        <h3>Premium Tempo Traveller</h3>
+        <p style="color: var(--gold-light); font-weight: 300; font-size: 1.1rem; margin-bottom: 20px;">The undisputed king of group tourism.</p>
         <ul>
-          <li>Airline-style reclining captain seats</li>
-          <li>Massive panoramic windows</li>
-          <li>Stand-up cabin height & extreme legroom</li>
-          <li>Advanced independent suspension</li>
+          <li><strong>Ideal Group Size:</strong> 9, 12, 17, 20, and 26 Guests</li>
+          <li><strong>Comfort:</strong> Deep push-back seating with individual armrests</li>
+          <li><strong>Legroom:</strong> Generous spacing designed for long journeys</li>
+          <li><strong>Luggage:</strong> Secure rooftop carrier & spacious rear storage</li>
+          <li><strong>Best For:</strong> Weddings, college trips, pilgrimage, and large family vacations</li>
         </ul>
+        <a href="[https://wa.me/919400620615?text=I](https://wa.me/919400620615?text=I) want to book a Tempo Traveller from {{ page.from_location }} to {{ page.destination_name }}." class="btn btn-outline" style="margin-top: 20px; text-align: center;">Book Tempo Traveller</a>
       </div>
+    </article>
+  </div>
+</div>
+    <div class="info-block">
+      <h3>Why the Tempo Traveller Reigns Supreme</h3>
+      <p>For decades, the Tempo Traveller has been the heavy-duty backbone of group travel in South India. It offers an incredible, time-tested balance of affordability, rugged reliability, and immense spatial capacity, making it perfect for navigating the exact route to {{ page.destination_name }}.</p>
+      <ul class="feature-list">
+        <li>
+          <div>
+            <strong>Unmatched Affordability</strong>
+            <span style="color: var(--text-muted); font-size: 0.95rem;">Transporting up to 26 people in a single, unified vehicle drastically reduces the per-head cost compared to booking multiple small sedans.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Massive Luggage Capacity</strong>
+            <span style="color: var(--text-muted); font-size: 0.95rem;">Equipped with dedicated rear compartments and heavy-duty rooftop carriers, it easily accommodates the heavy baggage of long-term tourists and pilgrims.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Rugged Reliability</strong>
+            <span style="color: var(--text-muted); font-size: 0.95rem;">Engineered to conquer the steepest inclines and winding roads effortlessly, ensuring your family or tour group reaches the destination safely.</span>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
-</section>
-
-<section class="content-section">
-  <div class="content-inner">
-    <h2>Group Travel Guide to {{ page.destination_name }}</h2>
-    <p>{{ page.destination_about }}</p>
+</div>
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Feature Comparison</th>
+          <th scope="col">Premium Tempo Traveller</th>
+          <th scope="col">Force Urbania (Luxury VIP)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight: 600; color: #fff;">Available Seats</td>
+          <td>9, 12, 17, 20, 26 Seater options</td>
+          <td>9, 10, 13, 17 Seater options</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: #fff;">Seat Comfort</td>
+          <td>Push-back seats with standard armrests</td>
+          <td>Airline-style reclining captain seats</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: #fff;">Air Conditioning</td>
+          <td>Standard Dual A/C with vents</td>
+          <td>Advanced Climate Control with individual vents</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: #fff;">Suspension & Ride</td>
+          <td>Leaf spring (Highly sturdy for rough terrain)</td>
+          <td>Independent suspension (Ultra-smooth, car-like ride)</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: #fff;">Boot Space</td>
+          <td>Rooftop carrier & moderate rear space</td>
+          <td>Massive dedicated internal boot space (No rooftop needed)</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: #fff;">Charging & Tech</td>
+          <td>Central charging points, surround sound</td>
+          <td>Individual USB ports, premium audio, ambient LED</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 600; color: #fff;">Ideal Use Case</td>
+          <td>Budget family trips, college tours, weddings, pilgrimage</td>
+          <td>Corporate travel, VIP guests, foreign tourists, luxury vacations</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  <div class="grid-3">
+    <div class="info-block" style="padding: 30px;">
+      <h4 style="color: var(--gold); font-size: 1.3rem;">Journey Overview</h4>
+      <p style="font-size: 1rem; color: var(--text-muted);">Covering a total distance of <strong>{{ page.distance_km }} kilometers</strong>, this drive requires expert handling. The journey takes approximately <strong>{{ page.travel_time }}</strong> depending on traffic. We highly recommend scheduling your start time between <strong>{{ page.best_time_to_start }}</strong> to avoid peak urban congestion and experience the absolute best daylight views.</p>
+    </div>
     
-    <h3>Top Attractions for Large Groups</h3>
-    <p>{{ page.top_attractions }}</p>
-
-    <div class="dynamic-seo-link-card">
-      <h3>Extend Your Group Tour</h3>
-      <p>Planning a multi-day itinerary? Many groups traveling to {{ page.destination_name }} also book our premium onward group transfer.</p>
-      <a href="{{ page.internal_link_url }}">{{ page.internal_link_text }} &rarr;</a>
+    <div class="info-block" style="padding: 30px;">
+      <h4 style="color: var(--gold); font-size: 1.3rem;">Road Conditions & Terrain</h4>
+      <p style="font-size: 1rem; color: var(--text-muted);">The primary path utilized for this transfer is the <strong>{{ page.best_route }}</strong>. The route is characterized by <strong>{{ page.route_terrain }}</strong>. Whether crossing rapid state highways, traversing coastal roads, or navigating complex mountain hairpin bends, our vehicles handle the specific demands of this terrain flawlessly.</p>
+    </div>
+    
+    <div class="info-block" style="padding: 30px;">
+      <h4 style="color: var(--gold); font-size: 1.3rem;">Suggested Waypoints</h4>
+      <p style="font-size: 1rem; color: var(--text-muted);">A group journey should be about the shared experience, not just the destination. En route to {{ page.destination_name }}, we highly recommend taking short breaks at beautiful scenic spots. Popular waypoints along this corridor include <strong>{{ page.waypoints }}</strong>, providing perfect opportunities for photography, dining, and relaxation.</p>
     </div>
   </div>
-</section>
-
-<section class="content-section alt">
-  <div class="content-inner faq-wrapper">
-    <h2 style="text-align:center;">Frequently Asked Questions</h2>
-    
-    <details>
-      <summary>Do you pick up from Ernakulam Railway Station or Kochi Airport for trips to {{ page.destination_name }}? <span style="font-size: 24px;">+</span></summary>
-      <p>Yes! We provide flexible, door-to-door group pickups. Whether your group is arriving at <strong>Cochin International Airport (COK)</strong>, <strong>Ernakulam Junction</strong>, <strong>Aluva</strong>, or staying at a Kochi city hotel, our drivers will meet you exactly where you are.</p>
-    </details>
-    
-    <details>
-      <summary>Should we book a Tempo Traveller or a Force Urbania? <span style="font-size: 24px;">+</span></summary>
-      <p>For standard large family groups, our <strong>12-17 Seater Tempo Travellers</strong> are perfect. If you want VIP luxury with airline-style captain seats, extreme legroom, and premium suspension for the {{ page.route_terrain }}, we highly recommend upgrading to our <strong>Force Urbania</strong>.</p>
-    </details>
-    
-    <details>
-      <summary>How far is {{ page.destination_name }} from Kochi and Ernakulam? <span style="font-size: 24px;">+</span></summary>
-      <p>The total distance is approximately <strong>{{ page.distance_km }} km</strong>. In a large group vehicle, the journey takes around <strong>{{ page.travel_time }}</strong>, depending on whether we pick you up from the airport or deep inside Ernakulam city.</p>
-    </details>
-    
-    <details>
-      <summary>Is there enough luggage space for our group? <span style="font-size: 24px;">+</span></summary>
-      <p>Absolutely. Both our Tempo Travellers and Urbanias are equipped with dedicated luggage areas and robust rooftop carriers, ensuring the passenger cabin remains spacious and clutter-free.</p>
-    </details>
+  
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="[https://wa.me/919400620615?text=Please](https://wa.me/919400620615?text=Please) share the route details and pricing for a trip to {{ page.destination_name }}." class="btn btn-primary">Check Vehicle Availability</a>
   </div>
-</section>
-
-<script>
-  function sendWhatsApp() {
-    var pickup = document.getElementById("pickup-select").value;
-    var vehicle = document.getElementById("vehicle-select").value;
-    var destination = "{{ page.destination_name }}";
+</div>
+  <div class="grid-2" style="margin-top: 40px;">
+    <div>
+      <h4 style="color: var(--gold); border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Top Attractions & Hidden Gems</h4>
+      <p style="color: var(--text-muted);">When you arrive in {{ page.destination_name }}, the experiences are boundless. The top attractions drawing global visitors include <strong>{{ page.top_attraction1 }}</strong>, the majestic <strong>{{ page.top_attraction2 }}</strong>, the culturally rich <strong>{{ page.top_attraction3 }}</strong>, and the breathtaking <strong>{{ page.top_attraction4 }}</strong>. For photography enthusiasts and those seeking hidden gems, these spots provide the perfect backdrop for unforgettable memories.</p>
+    </div>
     
-    var message = "*Group Travel Inquiry*%0A" + 
-                  "Pickup: " + pickup + "%0A" +
-                  "Drop: " + destination + "%0A" +
-                  "Vehicle: " + vehicle + "%0A" +
-                  "Hi Anand, please share the quote and availability.";
-                  
-    window.location.href = "https://wa.me/919400620615?text=" + message;
-  }
-</script>
+    <div>
+      <h4 style="color: var(--gold); border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Travel Planning Insights</h4>
+      <p style="color: var(--text-muted);">The most favorable weather conditions for touring this region occur during <strong>{{ page.best_time_to_visit }}</strong>, when the climate is ideal for sightseeing, outdoor activities, and shopping in local markets. This destination is highly recommended and perfect for <strong>{{ page.ideal_for }}</strong>. Whether you are booking a luxury hotel or dining at the finest local restaurants, our chauffeurs will ensure you reach every spot comfortably.</p>
+    </div>
+  </div>
+</div>
+  <div class="grid-4">
+    <div class="info-block" style="padding: 25px;">
+      <h4 style="font-size: 1.1rem; color: #fff;">Airport Pickup & Drop</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Stress-free, punctual VIP meet-and-greets at Cochin International Airport (COK). We track your flight to ensure our chauffeur is waiting for you.</p>
+    </div>
+    <div class="info-block" style="padding: 25px;">
+      <h4 style="font-size: 1.1rem; color: #fff;">Railway & Hotel Pickup</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Seamless transfers starting from Ernakulam Junction or any premium city hotel directly to your destination.</p>
+    </div>
+    <div class="info-block" style="padding: 25px;">
+      <h4 style="font-size: 1.1rem; color: #fff;">One Way & Return Rental</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Need a simple drop-off? Book a One Way Rental. Planning to come back? Opt for our discounted Return Rental packages.</p>
+    </div>
+    <div class="info-block" style="padding: 25px;">
+      <h4 style="font-size: 1.1rem; color: #fff;">Round Trip & Same Day</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Keep the vehicle with you for a multi-day Round Trip, or book a quick Same Day Return for rapid business meetings.</p>
+    </div>
+    <div class="info-block" style="padding: 25px;">
+      <h4 style="font-size: 1.1rem; color: #fff;">Wedding & Corporate</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Impress delegates with a corporate Urbania, or deploy multiple 26-seater Tempos to move your entire wedding guest list together.</p>
+    </div>
+    <div class="info-block" style="padding: 25px;">
+      <h4 style="font-size: 1.1rem; color: #fff;">Pilgrimage & Education</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Embark on deeply spiritual temple tours with knowledgeable drivers, or book massive coaches for safe college educational trips.</p>
+    </div>
+    <div class="info-block" style="padding: 25px;">
+      <h4 style="font-size: 1.1rem; color: #fff;">Friends & Family Trip</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Create lasting memories on your family vacation or friends' getaway with our surround-sound equipped vehicles.</p>
+    </div>
+    <div class="info-block" style="padding: 25px;">
+      <h4 style="font-size: 1.1rem; color: #fff;">NRI & Cruise Transfers</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Elite white-glove service tailored for NRI groups and international cruise ship passengers docking at Kochi port.</p>
+    </div>
+  </div>
+</div>
+  <details>
+    <summary>What is the total distance and travel time from {{ page.from_location }} to {{ page.destination_name }}?</summary>
+    <p>The total distance from {{ page.from_location }} to {{ page.destination_name }} is approximately <strong>{{ page.distance_km }} km</strong>. Under normal traffic conditions, the journey by Tempo Traveller or Force Urbania takes around <strong>{{ page.travel_time }}</strong>.</p>
+  </details>
+  
+  <details>
+    <summary>What is the best vehicle for a family trip to {{ page.destination_name }}?</summary>
+    <p>For family trips, we highly recommend our <strong>{{ page.recommended_vehicle }}</strong>. It offers perfect comfort for the {{ page.route_terrain }} and provides ample luggage space for extended vacations.</p>
+  </details>
+  
+  <details>
+    <summary>Do you provide Kochi Airport pickups for {{ page.destination_name }}?</summary>
+    <p>Yes, we provide 24/7 VIP meet-and-greet airport pickups. We track your flight status, and our driver will be waiting at Cochin International Airport (COK) to take you directly to {{ page.destination_name }}.</p>
+  </details>
+  
+  <details>
+    <summary>Can we book a Force Urbania for corporate trips to {{ page.destination_name }}?</summary>
+    <p>Absolutely. The Force Urbania is our flagship luxury coach, perfect for corporate executives and VIPs traveling to {{ page.destination_name }}, featuring airline-style captain seats, individual AC vents, and premium interiors.</p>
+  </details>
+  
+  <details>
+    <summary>Is the Tempo Traveller suitable for pilgrimage groups?</summary>
+    <p>Yes, our standard and premium Tempo Travellers are the most popular choice for pilgrimage groups. They are spacious, reliable on rough terrain, and our drivers are well-versed with all major South Indian temple routes and ritual timings.</p>
+  </details>
+  
+  <details>
+    <summary>What is the price of a Tempo Traveller to {{ page.destination_name }}?</summary>
+    <p>Our pricing is highly competitive and fully transparent, with absolutely zero hidden fees. Rates vary based on the exact vehicle seating capacity (9 to 26 seater) and whether you need a one-way drop or a multi-day package. Please hit the WhatsApp button for an instant, fixed quote.</p>
+  </details>
+  
+  <details>
+    <summary>Do you offer One Way drops to {{ page.destination_name }}?</summary>
+    <p>Yes, we specialize in dedicated one-way drop services from {{ page.from_location }}, Kochi, Ernakulam, and the Airport directly to your specific hotel, resort, or houseboat in {{ page.destination_name }}.</p>
+  </details>
+  
+  <details>
+    <summary>Can we hire a vehicle for a return trip from {{ page.destination_name }}?</summary>
+    <p>Yes, we offer extremely flexible return trip packages. You can book a round trip where the vehicle and driver stay with your group for the entire itinerary, or schedule a separate, specific pickup for your return to {{ page.from_location }}.</p>
+  </details>
+  
+  <details>
+    <summary>Do you provide wedding transportation in {{ page.destination_name }}?</summary>
+    <p>Yes, we manage comprehensive, massive wedding transportation logistics. We can deploy multiple 17-seater and 26-seater Tempo Travellers simultaneously to move your entire guest list safely and punctually between venues.</p>
+  </details>
+  
+  <details>
+    <summary>How much advance payment is required for booking?</summary>
+    <p>We typically require a very nominal advance payment via bank transfer or UPI to securely block your chosen vehicle and driver for your specific travel dates. The remaining balance can be easily paid during the trip.</p>
+  </details>
+  
+  <details>
+    <summary>What is your cancellation policy?</summary>
+    <p>We offer a highly customer-friendly cancellation policy. Detailed terms regarding advance refunds are provided explicitly at the time of your booking inquiry, allowing peace of mind if your travel plans suddenly change.</p>
+  </details>
+  
+  <details>
+    <summary>Is there enough luggage space in the 17-seater Tempo Traveller?</summary>
+    <p>Yes. Our Tempo Travellers feature dedicated rear boot space inside the cabin and secure, heavy-duty rooftop carriers to easily accommodate large international suitcases for big groups.</p>
+  </details>
+  
+  <details>
+    <summary>Is it safe to travel at night to {{ page.destination_name }}?</summary>
+    <p>Safety is our absolute utmost priority. Our verified, professional chauffeurs are highly experienced in navigating the {{ page.route_terrain }} at night. However, depending on local forest or mountain regulations, daytime travel may be strictly recommended.</p>
+  </details>
+  
+  <details>
+    <summary>Are your drivers fluent in English?</summary>
+    <p>Yes, Tour With Anand caters extensively to international tourists, corporate clients, and NRIs. We provide courteous, English-speaking chauffeurs who also act as excellent, knowledgeable local guides.</p>
+  </details>
+  
+  <details>
+    <summary>Can we make sightseeing stops along the route?</summary>
+    <p>Absolutely! When you book a private vehicle with us, the journey is yours to design. You can request leisurely stops at scenic spots, restaurants, or major attractions along the {{ page.best_route }}.</p>
+  </details>
+  
+  <details>
+    <summary>Are tolls and parking fees included in the rental?</summary>
+    <p>We offer fully transparent, all-inclusive pricing options where all highway tolls, state permit taxes, parking fees, and driver allowances are included upfront, ensuring you don't face any unexpected charges.</p>
+  </details>
+  
+  <details>
+    <summary>Do you have captain seats in your vehicles?</summary>
+    <p>Yes, our luxury Force Urbania fleet features premium, airline-style reclining captain seats equipped with calf support, offering maximum VIP comfort for long journeys.</p>
+  </details>
+  
+  <details>
+    <summary>What time should we start our journey to {{ page.destination_name }}?</summary>
+    <p>For the absolute best travel experience, we highly recommend starting your journey between <strong>{{ page.best_time_to_start }}</strong> to avoid heavy urban traffic and fully enjoy the beautiful daylight scenery.</p>
+  </details>
+  
+  <details>
+    <summary>{{ page.faq1 }}</summary>
+    <p>{{ page.faq1_answer }}</p>
+  </details>
+  
+  <details>
+    <summary>{{ page.faq2 }}</summary>
+    <p>{{ page.faq2_answer }}</p>
+  </details>
+</div>
