@@ -1,49 +1,46 @@
 import csv
 import os
 
-# Create a new collection directory for tour packages
-output_dir = "_tour_packages"
+# 1. Create the dedicated folder for the generated tour pages
+output_dir = "_tours"
 os.makedirs(output_dir, exist_ok=True)
 
-# Read the tours data CSV
-csv_file_path = "_data/tours_data.csv"
+# 2. Path to your new CSV file
+csv_path = "_data/kerala_tours.csv"
 
 try:
-    with open(csv_file_path, mode='r', encoding='utf-8') as f:
+    with open(csv_path, mode='r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         
         for row in reader:
+            # 3. Create the markdown filename using the package_slug
             filename = f"{output_dir}/{row['package_slug']}.md"
             
             with open(filename, "w", encoding="utf-8") as out:
                 out.write("---\n")
-                out.write("layout: tour_page\n")
+                # Ensure this matches whatever you named your HTML file in the _layouts folder
+                out.write("layout: kerala_tours_layout\n")
                 
-                # Dynamically write all CSV columns into the Front Matter
+                # 4. Dynamically write all CSV variables safely into the Front Matter
                 for key, value in row.items():
-                    # --- THE FIX ---
-                    # If unquoted commas force the value into a list, join it back into a string
-                    if isinstance(value, list):
-                        value = ", ".join(value)
-                    
-                    # Ensure empty values are treated as blank strings
                     if value is None:
                         value = ""
+                    
+                    if isinstance(value, list):
+                        value = ", ".join(value)
                         
-                    # Escape quotes inside text to prevent YAML build errors
+                    # Safely escape any double quotes inside your text so it doesn't break Jekyll
                     safe_value = str(value).replace('"', '\\"')
                     
-                    # Only write valid keys to the Front Matter
-                    if key is not None:
-                        out.write(f"{key}: \"{safe_value}\"\n")
+                    out.write(f'{key}: "{safe_value}"\n')
                 
-                # Set SEO title, description, and the critical Hub-and-Spoke permalink
-                out.write(f"title: \"{row['package_name']} | Tour With Anand\"\n")
-                out.write(f"description: \"{row['meta_desc']}\"\n")
-                out.write(f"permalink: /south-india-tours/{row['package_slug']}/\n")
-                
+                # 5. Write the SEO permalink requested for foreign tourists
+                out.write(f'permalink: /south-india-tours/{row["package_slug"]}/\n')
                 out.write("---\n")
                 
-    print(f"✅ Successfully generated Tour Package landing pages inside {output_dir}/")
+            print(f"✅ Generated: {filename}")
+
+    print(f"\n🎉 SUCCESS: All Kerala Tour PSEO pages generated in {output_dir}/")
+
 except FileNotFoundError:
-    print(f"❌ Error: Could not find {csv_file_path}. Please ensure your CSV is saved in the _data folder.")
+    print(f"❌ ERROR: Could not find the CSV file at {csv_path}. Please check the filename.")
