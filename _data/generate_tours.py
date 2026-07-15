@@ -5,8 +5,8 @@ import os
 output_dir = "_tours"
 os.makedirs(output_dir, exist_ok=True)
 
-# 2. Path to your new CSV file
-csv_path = "_data/kerala_tours.csv"
+# 2. Path to your correct CSV file
+csv_path = "_data/tours_data.csv"
 
 try:
     with open(csv_path, mode='r', encoding='utf-8') as f:
