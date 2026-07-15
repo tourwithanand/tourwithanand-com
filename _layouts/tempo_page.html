@@ -1,155 +1,104 @@
+---
+layout: default
+---
+
+<meta name="description" content="{{ page.meta_description | escape }}">
+<meta name="keywords" content="{{ page.primary_keyword | escape }}, {{ page.secondary_keywords | escape }}">
+<link rel="canonical" href="{{ site.url }}/tempo-traveller/{{ page.from_slug }}-to-{{ page.destination_slug }}/">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://tourwithanand.com/#organization",
-      "name": "Tour With Anand",
-      "url": "https://tourwithanand.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://tourwithanand.com/assets/images/logo.png"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+919400620615",
-        "contactType": "customer service",
-        "areaServed": "IN",
-        "availableLanguage": ["en", "ml", "hi"]
-      }
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://tourwithanand.com/#localbusiness",
-      "name": "Tour With Anand - Premium Group Travel",
-      "image": "{{ page.hero_image }}",
-      "telephone": "+919400620615",
-      "url": "https://tourwithanand.com",
-      "priceRange": "$$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kochi",
-        "addressRegion": "Kerala",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "10.1518",
-        "longitude": "76.3930"
-      }
-    },
-    {
-      "@type": "TaxiService",
-      "name": "Premium Transport from {{ page.from_location }} to {{ page.destination_name }}",
-      "provider": { "@id": "https://tourwithanand.com/#localbusiness" },
-      "areaServed": [
-        { "@type": "City", "name": "{{ page.from_location }}" },
-        { "@type": "City", "name": "{{ page.destination_name }}" },
-        { "@type": "City", "name": "Ernakulam" },
-        { "@type": "Airport", "name": "Kochi Airport" }
-      ]
-    },
-    {
       "@type": "AutoRental",
+      "@id": "{{ site.url }}/tempo-traveller/{{ page.from_slug }}-to-{{ page.destination_slug }}/#service",
       "name": "Luxury Tempo Traveller & Force Urbania Rental: {{ page.from_location }} to {{ page.destination_name }}",
-      "url": "https://tourwithanand.com{{ page.url }}",
-      "image": "{{ page.urbania_image }}",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Tour With Anand",
+        "image": "{{ site.url }}/Tour%20With%20Anand%20Logo%20Home.png",
+        "telephone": "+91-9400620615"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "{{ page.from_location }}" },
+        { "@type": "Place", "name": "{{ page.destination_name }}" }
+      ],
       "description": "{{ page.meta_description | escape }}"
     },
     {
-      "@type": "WebPage",
-      "@id": "https://tourwithanand.com{{ page.url }}",
-      "url": "https://tourwithanand.com{{ page.url }}",
-      "name": "{{ page.meta_title | escape }}",
-      "description": "{{ page.meta_description | escape }}",
-      "isPartOf": { "@id": "https://tourwithanand.com/#website" }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://tourwithanand.com/#website",
-      "url": "https://tourwithanand.com",
-      "name": "Tour With Anand",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://tourwithanand.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
       "@type": "BreadcrumbList",
+      "@id": "{{ site.url }}/tempo-traveller/{{ page.from_slug }}-to-{{ page.destination_slug }}/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://tourwithanand.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Tempo Traveller Rentals",
-          "item": "https://tourwithanand.com/tempo-traveller-rentals-kochi-kerala/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "{{ page.from_location }} to {{ page.destination_name }}",
-          "item": "https://tourwithanand.com{{ page.url }}"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "Tempo Traveller Rentals", "item": "{{ site.url }}/tempo-traveller-rentals-kochi-kerala/" },
+        { "@type": "ListItem", "position": 3, "name": "{{ page.from_location }} to {{ page.destination_name }}", "item": "{{ site.url }}/tempo-traveller/{{ page.from_slug }}-to-{{ page.destination_slug }}/" }
       ]
-    },
-    {
-      "@type": "OfferCatalog",
-      "name": "Premium Group Transport Fleet",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "9 Seater Tempo Traveller" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "10 Seater Force Urbania" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "12 Seater Tempo Traveller" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "13 Seater Force Urbania" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "17 Seater Tempo Traveller" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "20 Seater Tempo Traveller" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "26 Seater Tempo Traveller" } }
-      ]
-    },
-    {
-      "@type": "SpeakableSpecification",
-      "cssSelector": [".seo-intro-content", ".route-quick-facts"]
-    },
-    {
-      "@type": "ImageObject",
-      "url": "{{ page.hero_image }}",
-      "caption": "{{ page.hero_caption | escape }}",
-      "name": "{{ page.hero_alt | escape }}"
-    },
-    {
-      "@type": "Place",
-      "name": "{{ page.destination_name }}",
-      "description": "{{ page.destination_about | escape }}"
     },
     {
       "@type": "FAQPage",
+      "@id": "{{ site.url }}/tempo-traveller/{{ page.from_slug }}-to-{{ page.destination_slug }}/#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "What is the total distance and travel time from {{ page.from_location }} to {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "The total distance from {{ page.from_location }} to {{ page.destination_name }} is approximately {{ page.distance_km }} km. Under normal traffic conditions, the journey takes around {{ page.travel_time }}." } },
-        { "@type": "Question", "name": "What is the best vehicle for a family trip to {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "For family trips, we highly recommend our {{ page.recommended_vehicle }}. It offers perfect comfort for the {{ page.route_terrain }} and provides ample luggage space." } },
-        { "@type": "Question", "name": "Do you provide Kochi Airport pickups for {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we provide 24/7 VIP meet-and-greet airport pickups from Cochin International Airport (COK) directly to {{ page.destination_name }}." } },
-        { "@type": "Question", "name": "Can we book a Force Urbania for corporate trips to {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. The Force Urbania is our flagship luxury coach, perfect for corporate executives and VIPs traveling to {{ page.destination_name }}, featuring airline-style captain seats." } },
-        { "@type": "Question", "name": "Is the Tempo Traveller suitable for pilgrimage groups?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, our Tempo Travellers are the most popular choice for pilgrimage groups. They are spacious, reliable, and our drivers are well-versed with all major temple routes and timings." } },
-        { "@type": "Question", "name": "What is the price of a Tempo Traveller to {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "Our pricing is highly competitive and transparent, with no hidden fees. Rates vary based on the vehicle seating capacity (9 to 26 seater) and the duration of your trip. Please contact our 24/7 WhatsApp support for an instant quote." } },
-        { "@type": "Question", "name": "Do you offer One Way drops to {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we specialize in dedicated one-way drop services from {{ page.from_location }}, Kochi, and Ernakulam directly to your hotel or resort in {{ page.destination_name }}." } },
-        { "@type": "Question", "name": "Can we hire a vehicle for a return trip from {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer flexible return trip packages. You can book a round trip where the vehicle stays with you, or schedule a separate pickup for your return to {{ page.from_location }}." } },
-        { "@type": "Question", "name": "Do you provide wedding transportation in {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we manage comprehensive wedding transportation logistics. We can deploy multiple 17-seater and 26-seater Tempo Travellers to move your entire guest list safely and on time." } },
-        { "@type": "Question", "name": "How much advance payment is required for booking?", "acceptedAnswer": { "@type": "Answer", "text": "We typically require a nominal advance payment to block your chosen vehicle and driver for your specific travel dates. The remaining balance can be paid during the trip." } },
-        { "@type": "Question", "name": "What is your cancellation policy?", "acceptedAnswer": { "@type": "Answer", "text": "We offer a customer-friendly cancellation policy. Detailed terms are provided at the time of booking, allowing flexibility in case your travel plans change." } },
-        { "@type": "Question", "name": "Is there enough luggage space in the 17-seater Tempo Traveller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, our Tempo Travellers feature dedicated rear boot space and secure, heavy-duty rooftop carriers to easily accommodate large suitcases for groups." } },
-        { "@type": "Question", "name": "Is it safe to travel at night to {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "Safety is our utmost priority. Our verified, professional chauffeurs are highly experienced in navigating the {{ page.route_terrain }} at night. However, depending on local forest or mountain regulations, daytime travel may be recommended." } },
-        { "@type": "Question", "name": "Are your drivers fluent in English?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Tour With Anand caters extensively to international tourists and NRIs. We provide courteous, English-speaking chauffeurs who also act as excellent local guides." } },
-        { "@type": "Question", "name": "Can we make sightseeing stops along the route?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely! When you book a private vehicle, the journey is yours. You can request stops at scenic spots, restaurants, or attractions along the {{ page.best_route }}." } },
-        { "@type": "Question", "name": "Are tolls and parking fees included in the rental?", "acceptedAnswer": { "@type": "Answer", "text": "We offer fully transparent, all-inclusive pricing options where tolls, parking, and driver allowances are included, ensuring you don't face unexpected charges during the trip." } },
-        { "@type": "Question", "name": "Do you have captain seats in your vehicles?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, our luxury Force Urbania fleet features premium, airline-style reclining captain seats for maximum VIP comfort." } },
-        { "@type": "Question", "name": "What time should we start our journey to {{ page.destination_name }}?", "acceptedAnswer": { "@type": "Answer", "text": "For the best experience, we recommend starting your journey between {{ page.best_time_to_start }} to avoid traffic and enjoy the beautiful scenery." } },
-        { "@type": "Question", "name": "{{ page.faq1 | escape }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq1_answer | escape }}" } },
-        { "@type": "Question", "name": "{{ page.faq2 | escape }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq2_answer | escape }}" } }
+        {
+          "@type": "Question",
+          "name": "What is the price of a Tempo Traveller from {{ page.from_location }} to {{ page.destination_name }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pricing is fully transparent and depends on the seating capacity (9 to 26 seater) and your trip duration. Contact us on WhatsApp for an instant, fixed quote." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Force Urbania rental available for trips to {{ page.destination_name }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, our flagship luxury Force Urbania is available. It features airline-style captain seats and premium interiors, perfect for VIPs and corporate groups." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide airport pickups from Cochin International Airport?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we provide 24/7 VIP meet-and-greet airport pickups. Our drivers will track your flight and wait for your group at the arrivals gate." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we book a one-way drop to {{ page.destination_name }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We specialize in dedicated one-way drops directly to your hotel, resort, or houseboat in {{ page.destination_name }}." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are return trips or round trips available from {{ page.destination_name }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer flexible return and round-trip packages where the vehicle and driver stay with your group for the entire itinerary." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you cater to large corporate and wedding groups?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we manage massive logistics for weddings and corporate events. We can deploy multiple 17-seater and 26-seater coaches simultaneously." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I secure my booking and is advance payment required?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Booking is easy via WhatsApp. A nominal advance payment secures your premium vehicle for your specific travel dates. The balance is paid during the trip." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there enough luggage space for international travelers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our Tempo Travellers and Urbanias feature deep rear boot spaces and heavy-duty rooftop carriers, easily accommodating large international suitcases." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to travel at night to {{ page.destination_name }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Safety is our priority. Our professional chauffeurs are highly experienced in navigating the {{ page.route_terrain }} at night, adhering to all local regulations." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your cancellation policy?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We offer a flexible, customer-friendly cancellation policy. Full terms and advance refund windows are provided transparently during booking." }
+        },
+        {
+          "@type": "Question",
+          "name": "{{ page.faq1 | escape }}",
+          "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq1_answer | escape }}" }
+        },
+        {
+          "@type": "Question",
+          "name": "{{ page.faq2 | escape }}",
+          "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq2_answer | escape }}" }
+        }
       ]
     }
   ]
@@ -157,572 +106,795 @@
 </script>
 
 <style>
-  :root {
-    --gold: #d4af37;
-    --gold-light: #f9df9f;
-    --dark-bg: #0a0a0a;
-    --card-bg: rgba(20, 20, 20, 0.8);
-    --border-color: rgba(212, 175, 55, 0.2);
-    --text-main: #e0e0e0;
-    --text-muted: #a0a0a0;
+  /* * NAMESPACED CSS FOR TEMPO TRAVELLER DESTINATION PAGE
+   * Prefix "tt-" ensures no conflicts with default.html
+  */
+  .tt-wrapper, .tt-wrapper *, .tt-wrapper *::before, .tt-wrapper *::after {
+    box-sizing: border-box !important;
   }
-  
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-  h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: #fff; margin-bottom: 1rem; font-weight: 600; }
-  a { color: var(--gold); text-decoration: none; transition: all 0.3s ease; }
-  a:hover { color: var(--gold-light); }
-  p { margin-bottom: 1.5rem; font-size: 1.1rem; }
-  
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
-  .section-padding { padding: 80px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .alt-bg { background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); }
-  
-  .hero-wrapper { position: relative; display: flex; align-items: center; justify-content: center; min-height: 85vh; padding-top: 100px; text-align: center; }
-  .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: brightness(0.6); }
-  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, var(--dark-bg) 100%); z-index: 1; }
-  .hero-content { position: relative; z-index: 2; width: 100%; max-width: 900px; padding: 20px; }
-  
-  .breadcrumb { display: flex; justify-content: center; gap: 10px; font-size: 0.9rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; flex-wrap: wrap; }
-  .breadcrumb span { color: var(--text-muted); }
-  .hero-title { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.2; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
-  .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--gold-light); margin-bottom: 40px; font-weight: 300; }
-  
-  .route-quick-facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 40px; }
-  .fact-badge { background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); padding: 12px 25px; border-radius: 50px; backdrop-filter: blur(10px); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; }
-  .fact-badge strong { color: var(--gold); display: block; font-size: 1.2rem; font-family: 'Playfair Display', serif; text-transform: none; letter-spacing: 0; }
-  
-  .cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 35px; border-radius: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; border: none; font-size: 1rem; }
-  .btn-primary { background: linear-gradient(135deg, var(--gold), #b8860b); color: #000; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5); }
-  .btn-whatsapp { background: #25D366; color: #fff; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3); }
-  .btn-whatsapp:hover { background: #1ebd5a; transform: translateY(-3px); }
-  .btn-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
-  .btn-outline:hover { background: var(--gold); color: #000; }
-  
-  .seo-intro-content { column-count: 2; column-gap: 40px; text-align: justify; }
-  .seo-intro-content p { break-inside: avoid; }
-  @media(max-width: 900px) { .seo-intro-content { column-count: 1; text-align: left; } }
-  
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-  @media(max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
-  
-  .luxury-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease; display: flex; flex-direction: column; }
-  .luxury-card:hover { transform: translateY(-10px); border-color: var(--gold); }
-  .card-img-wrapper { position: relative; padding-top: 60%; overflow: hidden; }
-  .card-img-wrapper img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-  .luxury-card:hover .card-img-wrapper img { transform: scale(1.05); }
-  .card-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
-  .card-content h3 { color: var(--gold); font-size: 1.8rem; margin-bottom: 5px; }
-  .card-content ul { flex-grow: 1; color: var(--text-muted); list-style-type: none; padding: 0; margin-top: 15px; }
-  .card-content li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-  .card-content li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); }
-  
-  .feature-list { list-style: none; padding: 0; }
-  .feature-list li { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: flex-start; gap: 15px; }
-  .feature-list li strong { color: var(--gold); display: block; margin-bottom: 5px; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
-  
-  .table-responsive { overflow-x: auto; width: 100%; margin: 40px 0; border-radius: 12px; border: 1px solid var(--border-color); }
-  table { width: 100%; border-collapse: collapse; background: var(--card-bg); }
-  th, td { padding: 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  th { background: rgba(212, 175, 55, 0.1); color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td { background: rgba(255,255,255,0.02); }
-  
-  .info-block { background: linear-gradient(145deg, #151515, #0a0a0a); padding: 40px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); height: 100%; }
-  .info-block h3 { color: var(--gold); border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; }
-  
-  .seating-card { text-align: center; padding: 30px 20px; background: var(--card-bg); border-radius: 12px; border: 1px solid rgba(255,255,255,0.02); }
-  .seating-card h4 { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
-  .seating-card span { display: block; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-  
-  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-  .gallery-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; }
-  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-  .gallery-item:hover img { transform: scale(1.1); }
-  .gallery-caption { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); color: #fff; font-size: 0.9rem; font-weight: 600; transform: translateY(100%); transition: transform 0.3s ease; }
-  .gallery-item:hover .gallery-caption { transform: translateY(0); }
-  
-  .faq-container { max-width: 900px; margin: 0 auto; }
-  details { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 15px; padding: 20px; transition: all 0.3s ease; }
-  details:hover { border-color: rgba(212, 175, 55, 0.3); background: rgba(30, 30, 30, 0.8); }
-  summary { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: #fff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; outline: none; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: '+'; color: var(--gold); font-size: 1.5rem; transition: transform 0.3s ease; }
-  details[open] summary::after { transform: rotate(45deg); }
-  details p { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); margin-bottom: 0; }
-  
-  .return-banner { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0,0,0,0.9)); border: 1px solid var(--gold); border-radius: 16px; padding: 50px 30px; text-align: center; margin: 60px 0; }
-  .return-banner h2 { font-size: 2.5rem; margin-bottom: 15px; }
-  
-  .related-links { background: #111; padding: 40px; border-radius: 12px; border-left: 4px solid var(--gold); }
-  .related-links ul { list-style: none; display: flex; flex-wrap: wrap; gap: 15px; padding: 0; }
-  .related-links li a { background: #1a1a1a; padding: 12px 24px; border-radius: 50px; display: inline-block; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.05); }
-  .related-links li a:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.1); }
+
+  :root {
+    --tt-gold: #d4af37;
+    --tt-gold-hover: #f9df9f;
+    --tt-bg-dark: #0a0a0c;
+    --tt-bg-surface: #121418;
+    --tt-bg-elevated: #1a1c23;
+    --tt-text-light: #e2e8f0;
+    --tt-text-muted: #94a3b8;
+    --tt-border: rgba(212, 175, 55, 0.2);
+    --tt-radius: 12px;
+  }
+
+  .tt-wrapper {
+    background-color: var(--tt-bg-dark);
+    color: var(--tt-text-light);
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    line-height: 1.7;
+  }
+
+  .tt-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .tt-section {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .tt-bg-alt {
+    background: linear-gradient(180deg, var(--tt-bg-dark) 0%, var(--tt-bg-surface) 100%);
+  }
+
+  /* Typography */
+  .tt-wrapper h1, .tt-wrapper h2, .tt-wrapper h3, .tt-wrapper h4 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    margin-top: 0;
+    font-weight: 600;
+  }
+
+  .tt-h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    text-align: center;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #fff, var(--tt-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tt-subtitle {
+    text-align: center;
+    color: var(--tt-text-muted);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 50px;
+  }
+
+  /* Hero Section */
+  .tt-hero {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 60px;
+    overflow: hidden;
+  }
+
+  .tt-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    opacity: 0.6;
+  }
+
+  .tt-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,12,0.4) 0%, rgba(10,10,12,0.9) 80%, var(--tt-bg-dark) 100%);
+    z-index: 2;
+  }
+
+  .tt-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  .tt-breadcrumb {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--tt-gold);
+    border: 1px solid var(--tt-border);
+    border-radius: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+
+  .tt-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+  }
+
+  .tt-hero p {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--tt-text-light);
+    margin-bottom: 40px;
+  }
+
+  /* Buttons */
+  .tt-btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .tt-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .tt-btn-primary {
+    background: linear-gradient(135deg, var(--tt-gold), #b8860b);
+    color: #000;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+  }
+
+  .tt-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+  }
+
+  .tt-btn-outline {
+    background: transparent;
+    color: var(--tt-gold);
+    border: 2px solid var(--tt-gold);
+  }
+
+  .tt-btn-outline:hover {
+    background: rgba(212, 175, 55, 0.1);
+  }
+
+  /* Quick Facts */
+  .tt-facts-wrapper {
+    position: relative;
+    z-index: 10;
+    margin-top: -50px;
+    padding-bottom: 60px;
+  }
+
+  .tt-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background: var(--tt-bg-surface);
+    padding: 30px;
+    border-radius: var(--tt-radius);
+    border: 1px solid var(--tt-border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    backdrop-filter: blur(15px);
+  }
+
+  .tt-fact-item {
+    text-align: center;
+  }
+
+  .tt-fact-label {
+    display: block;
+    font-size: 12px;
+    color: var(--tt-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .tt-fact-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* Intro Text */
+  .tt-intro-text {
+    column-count: 2;
+    column-gap: 50px;
+    text-align: justify;
+    font-size: 1.1rem;
+    color: var(--tt-text-light);
+  }
+  .tt-intro-text p { margin-bottom: 1.5rem; break-inside: avoid; }
+
+  /* Grids */
+  .tt-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .tt-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+  .tt-grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+
+  /* Cards */
+  .tt-glass-card {
+    background: var(--tt-bg-surface);
+    border: 1px solid var(--tt-border);
+    border-radius: var(--tt-radius);
+    padding: 35px;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+  .tt-glass-card:hover { transform: translateY(-5px); border-color: var(--tt-gold); }
+
+  .tt-card-title {
+    color: var(--tt-gold);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 15px;
+  }
+
+  /* Lists */
+  .tt-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+  }
+  .tt-feature-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+  }
+  .tt-feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--tt-gold);
+    font-weight: bold;
+  }
+
+  /* Images & Showcase */
+  .tt-showcase-img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  /* Table */
+  .tt-table-container { overflow-x: auto; border-radius: 12px; border: 1px solid var(--tt-border); margin: 40px 0; }
+  .tt-table { width: 100%; border-collapse: collapse; background: var(--tt-bg-surface); }
+  .tt-table th, .tt-table td { padding: 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .tt-table th { background: rgba(212,175,55,0.1); color: var(--tt-gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+  .tt-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* Gallery */
+  .tt-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .tt-gallery figure {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 4/3;
+  }
+  .tt-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .tt-gallery figure:hover img { transform: scale(1.1); }
+  .tt-gallery figcaption {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: #fff;
+    font-weight: 600;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .tt-gallery figure:hover figcaption { transform: translateY(0); }
+
+  /* FAQ Accordion */
+  .tt-faq details {
+    background: var(--tt-bg-surface);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 20px 25px;
+    transition: all 0.3s ease;
+  }
+  .tt-faq details:hover { border-color: var(--tt-border); }
+  .tt-faq summary {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+  }
+  .tt-faq summary::-webkit-details-marker { display: none; }
+  .tt-faq summary::after { content: '+'; color: var(--tt-gold); font-size: 1.5rem; }
+  .tt-faq details[open] summary::after { content: '−'; }
+  .tt-faq p { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--tt-text-muted); margin-bottom: 0; }
+
+  /* Banners */
+  .tt-banner {
+    background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(10,10,12,0.95)), url('{{ page.interior_image }}') center/cover;
+    background-blend-mode: overlay;
+    border: 1px solid var(--tt-gold);
+    border-radius: 20px;
+    padding: 60px 30px;
+    text-align: center;
+    margin: 60px 0;
+  }
+
+  /* Internal Links */
+  .tt-related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .tt-related-links a {
+    padding: 12px 24px;
+    border-radius: 50px;
+    background: var(--tt-bg-elevated);
+    color: var(--tt-text-light);
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+  }
+  .tt-related-links a:hover {
+    border-color: var(--tt-gold);
+    color: var(--tt-gold);
+  }
+
+  /* Responsive Fixes */
+  @media (max-width: 992px) {
+    .tt-intro-text { column-count: 1; }
+    .tt-facts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .tt-hero { min-height: auto; padding-top: 140px; padding-bottom: 80px; }
+    .tt-hero-content { text-align: center; }
+    .tt-btn-group { flex-direction: column; align-items: stretch; }
+    .tt-btn { width: 100%; margin: 0; }
+    .tt-facts-grid { grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
+    .tt-fact-value { font-size: 16px; }
+    .tt-section { padding: 60px 0; }
+    .tt-grid-2 { grid-template-columns: 1fr; }
+  }
 </style>
 
-<main id="main-content">
+<div class="tt-wrapper">
 
-  <header class="hero-wrapper" aria-label="Premium Transport from {{ page.from_location }} to {{ page.destination_name }}">
-    <picture>
-      <source media="(min-width: 768px)" srcset="{{ page.hero_image }}">
-      <img src="{{ page.hero_image }}" alt="{{ page.hero_alt }}" title="{{ page.hero_caption }}" class="hero-bg" loading="eager" decoding="async" width="1920" height="1080">
-    </picture>
-    <div class="hero-overlay"></div>
+  <section class="tt-hero" aria-label="Group Transport Hero">
+    <img src="{{ page.hero_image }}" alt="{{ page.hero_alt | escape }}" title="{{ page.hero_caption | escape }}" class="tt-hero-bg" width="1920" height="1080" loading="eager" decoding="async">
+    <div class="tt-hero-overlay"></div>
     
-    <div class="hero-content container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span>/</span>
-        <a href="/tempo-traveller-rentals-kochi-kerala/">Tempo Traveller & Urbania</a> <span>/</span>
-        <span aria-current="page">{{ page.from_location }} to {{ page.destination_name }}</span>
-      </nav>
+    <div class="tt-container tt-hero-content">
+      <span class="tt-breadcrumb">Home / Group Travel / {{ page.from_location }} to {{ page.destination_name }}</span>
+      <h1>{{ page.page_title }}</h1>
+      <p>{{ page.meta_description }}</p>
       
-      <h1 class="hero-title">{{ page.meta_title }}</h1>
-      <p class="hero-subtitle">Premium Force Urbania & Tempo Traveller Group Transport</p>
-      
-      <div class="route-quick-facts">
-        <div class="fact-badge">Distance <strong>{{ page.distance_km }} KM</strong></div>
-        <div class="fact-badge">Travel Time <strong>{{ page.travel_time }}</strong></div>
-        <div class="fact-badge">Terrain <strong>{{ page.route_terrain | truncatewords: 4, "" }}</strong></div>
-        <div class="fact-badge">Recommended <strong>{{ page.recommended_vehicle }}</strong></div>
-      </div>
-      
-      <div class="cta-group">
-        <a href="https://wa.me/919400620615?text=Hello Tour With Anand, I need a quote for a luxury group transfer from {{ page.from_location }} to {{ page.destination_name }}." target="_blank" rel="noopener" class="btn btn-whatsapp" aria-label="Get instant quote on WhatsApp">Get Quote on WhatsApp</a>
-        <a href="tel:+919400620615" class="btn btn-primary" aria-label="Call 24/7 Support">Call 24/7 Support</a>
-      </div>
-    </div>
-  </header>
-
-  <section class="section-padding">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 40px; font-size: clamp(2rem, 4vw, 3rem); color: var(--gold-light);">Experience Unparalleled Luxury Group Travel to {{ page.destination_name }}</h2>
-      <div class="seo-intro-content">
-        <p>Embarking on a journey from {{ page.from_location }} to the breathtaking destination of {{ page.destination_name }} is an experience that demands flawless logistics, uncompromising comfort, and absolute reliability. When organizing transportation for large groups, navigating the dynamic and often complex terrains of South India requires far more than a standard cab service. It requires deep regional expertise, immaculately maintained premium vehicles, and a profound understanding of VIP hospitality. Whether your party is touching down at Cochin International Airport (COK), departing from the bustling commercial centers of Ernakulam, or setting out from a luxury hotel in the city, Tour With Anand provides the definitive ground transportation solution tailored precisely to your itinerary.</p>
-        
-        <p>Our expansive and exclusive fleet of premium <strong>Tempo Travellers</strong> and state-of-the-art <strong>Force Urbania</strong> luxury coaches are meticulously maintained to ensure your entire group travels together in absolute style and harmony. We eliminate the immense hassle of coordinating multiple small sedans, wrestling with severe luggage space constraints, or compromising on passenger legroom during long, scenic drives. Our spacious, high-capacity group vehicles are engineered specifically to cater to grand family trips, high-profile corporate executive excursions, massive wedding groups requiring synchronized arrivals, and deeply spiritual pilgrimage tours where comfort directly translates to peace of mind.</p>
-        
-        <p>The route spanning from {{ page.from_location }} to {{ page.destination_name }} covers approximately {{ page.distance_km }} kilometers. Depending on your exact pickup point, real-time traffic variations, and prevailing weather conditions, this journey typically encompasses around {{ page.travel_time }}. As you transition smoothly from the coastal plains and urban highways into the unique environment characterized by {{ page.route_terrain }}, the journey itself transforms into an integral, highly enjoyable part of your vacation rather than a stressful prerequisite. You are not just paying for a ride; you are securing a curated travel experience defined by spacious interiors, panoramic views, and serene climate control.</p>
-        
-        <p>At Tour With Anand, we proudly differentiate ourselves through our elite personnel. Our highly trained, background-verified, English-speaking chauffeurs possess profound local knowledge of the expansive highways, intricate mountain passes, and hidden scenic waypoints along the route to {{ page.destination_name }}. They serve not merely as drivers, but as courteous concierges on wheels, ensuring you experience a ride that is visually stunning, impeccably smooth, and deeply safe. With our guaranteed on-time airport pickups, 24/7 dedicated support, and transparent fixed pricing, luxury group travel to {{ page.destination_name }} is elevated to an art form.</p>
+      <div class="tt-btn-group">
+        <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20want%20to%20book%20a%20Tempo%20Traveller/Urbania%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.destination_name | url_encode }}.%20Please%20share%20the%20quote." class="tt-btn tt-btn-primary" target="_blank" rel="noopener" aria-label="Book Group Travel via WhatsApp">Book via WhatsApp</a>
+        <a href="tel:+919400620615" class="tt-btn tt-btn-outline" aria-label="Call 24/7 Support">Call 24/7 Support</a>
       </div>
     </div>
   </section>
 
-  <section class="section-padding alt-bg">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 50px;">
-        <h2 style="font-size: 2.5rem;">Explore Our Premium Fleet for {{ page.destination_name }}</h2>
-        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Select the perfect vehicle tailored to your group size, luggage requirements, and luxury preferences. We offer the finest group carriers in Kerala.</p>
+  <div class="tt-container tt-facts-wrapper">
+    <div class="tt-facts-grid">
+      <div class="tt-fact-item">
+        <span class="tt-fact-label">Total Distance</span>
+        <span class="tt-fact-value">{{ page.distance_km }} km</span>
       </div>
-      
-      <div class="grid-2">
-        <article class="luxury-card" aria-label="Force Urbania Luxury Coach Details">
-          <figure class="card-img-wrapper">
-            <img src="{{ page.urbania_image }}" alt="Luxury Force Urbania Rental for {{ page.destination_name }}" title="Force Urbania Interior" loading="lazy" decoding="async" width="800" height="600">
-          </figure>
-          <div class="card-content">
-            <h3>Force Urbania Luxury Coach</h3>
-            <p style="color: var(--gold-light); font-weight: 300; font-style: italic;">The pinnacle of VIP road travel.</p>
-            <ul>
-              <li><strong>Ideal Group Size:</strong> 9, 10, 13, and 17 VIP Guests</li>
-              <li><strong>Comfort:</strong> Airline-style reclining captain seats</li>
-              <li><strong>Legroom:</strong> Unmatched standing height and wide aisle space</li>
-              <li><strong>Luggage:</strong> Massive dedicated internal boot space</li>
-              <li><strong>Best For:</strong> Corporate executives, foreign tourists, and luxury family tours</li>
-            </ul>
-            <a href="https://wa.me/919400620615?text=I want to book a Force Urbania from {{ page.from_location }} to {{ page.destination_name }}." class="btn btn-outline" style="margin-top: 20px; text-align: center;">Book Urbania Coach</a>
-          </div>
-        </article>
+      <div class="tt-fact-item">
+        <span class="tt-fact-label">Travel Time</span>
+        <span class="tt-fact-value">{{ page.travel_time }}</span>
+      </div>
+      <div class="tt-fact-item">
+        <span class="tt-fact-label">Route Terrain</span>
+        <span class="tt-fact-value">{{ page.route_terrain | truncatewords: 3, "" }}</span>
+      </div>
+      <div class="tt-fact-item">
+        <span class="tt-fact-label">Recommended</span>
+        <span class="tt-fact-value">{{ page.recommended_vehicle }}</span>
+      </div>
+    </div>
+  </div>
 
-        <article class="luxury-card" aria-label="Premium Tempo Traveller Details">
-          <figure class="card-img-wrapper">
-            <img src="{{ page.tempo_image }}" alt="Premium Tempo Traveller Rental to {{ page.destination_name }}" title="Tempo Traveller Exterior" loading="lazy" decoding="async" width="800" height="600">
-          </figure>
-          <div class="card-content">
-            <h3>Premium Tempo Traveller</h3>
-            <p style="color: var(--gold-light); font-weight: 300; font-style: italic;">The undisputed king of group tourism.</p>
-            <ul>
-              <li><strong>Ideal Group Size:</strong> 9, 12, 17, 20, and 26 Guests</li>
-              <li><strong>Comfort:</strong> Deep push-back seating with individual armrests</li>
-              <li><strong>Legroom:</strong> Generous spacing designed for long journeys</li>
-              <li><strong>Luggage:</strong> Secure rooftop carrier & spacious rear storage</li>
-              <li><strong>Best For:</strong> Weddings, college trips, pilgrimage, and large family vacations</li>
-            </ul>
-            <a href="https://wa.me/919400620615?text=I want to book a Tempo Traveller from {{ page.from_location }} to {{ page.destination_name }}." class="btn btn-outline" style="margin-top: 20px; text-align: center;">Book Tempo Traveller</a>
-          </div>
-        </article>
+  <section class="tt-section">
+    <div class="tt-container">
+      <h2 class="tt-h2">Experience Luxury Group Travel to {{ page.destination_name }}</h2>
+      <div class="tt-intro-text">
+        <p>Planning a trip from <strong>{{ page.from_location }}</strong> to the beautiful destination of <strong>{{ page.destination_name }}</strong> requires flawless logistics, especially when coordinating large groups. Whether you are arriving at Kochi Airport (COK), departing from the bustling center of Ernakulam, or gathering family for a grand event, Tour With Anand provides the definitive ground transportation solution. We eliminate the immense hassle of booking multiple small cars, wrestling with severe luggage constraints, and compromising on passenger comfort.</p>
+        
+        <p>Our expansive fleet of premium <strong>Tempo Travellers</strong> and state-of-the-art <strong>Force Urbania</strong> luxury coaches are meticulously maintained to ensure your group travels together in absolute style. The route spanning approximately {{ page.distance_km }} kilometers encompasses {{ page.route_terrain }}. Depending on your exact pickup point, this journey takes around {{ page.travel_time }}. Rather than treating this transit as a stressful prerequisite, we transform the drive itself into an integral, enjoyable part of your vacation.</p>
+        
+        <p>We cater heavily to international tourists, medical tourists, wedding groups, and corporate excursions. Our highly trained, English-speaking chauffeurs possess profound local knowledge of the highways, intricate mountain passes, and hidden scenic waypoints. With guaranteed on-time airport pickups, 24/7 dedicated support, and immaculately clean vehicles, luxury group travel from {{ page.from_location }} to {{ page.destination_name }} is elevated to a world-class standard.</p>
       </div>
     </div>
   </section>
 
-  <section class="section-padding">
-    <div class="container">
-      <div class="grid-2">
-        <div class="info-block">
-          <h3>Why Choose the Force Urbania?</h3>
-          <p>The Force Urbania is not just a vehicle; it is a revolution in the Indian group transport sector. Designed with sleek European styling and unparalleled passenger comfort, it is the ultimate choice for luxury tourists, foreign guests, and corporate executives traveling from {{ page.from_location }}.</p>
-          <ul class="feature-list" style="margin-top: 20px;">
-            <li><div><strong>Airline-Grade Captain Seats</strong><span style="color: var(--text-muted); font-size: 0.95rem;">Experience zero fatigue with ergonomically designed, fully reclining seats featuring premium upholstery and calf support.</span></div></li>
-            <li><div><strong>Panoramic Windows</strong><span style="color: var(--text-muted); font-size: 0.95rem;">Enjoy breathtaking, unobstructed views of the route through massive, un-tinted panoramic glass that brings the outside world in.</span></div></li>
-            <li><div><strong>Advanced Independent Suspension</strong><span style="color: var(--text-muted); font-size: 0.95rem;">The Urbania glides over uneven terrain, ensuring that both mountain roads and highway stretches are completely vibration-free.</span></div></li>
-            <li><div><strong>Premium Interiors</strong><span style="color: var(--text-muted); font-size: 0.95rem;">Stand-up cabin height, ambient LED lighting, personal reading lamps, and individual AC vents.</span></div></li>
+  <section class="tt-section tt-bg-alt">
+    <div class="tt-container">
+      <h2 class="tt-h2">Explore Our Premium Fleet</h2>
+      <p class="tt-subtitle">Select the perfect vehicle tailored to your group size, luggage requirements, and luxury preferences.</p>
+      
+      <div class="tt-grid-2">
+        <div class="tt-glass-card">
+          <img src="{{ page.urbania_image }}" alt="Force Urbania Rental {{ page.destination_name }}" class="tt-showcase-img" width="800" height="500" loading="lazy" decoding="async">
+          <h3 class="tt-card-title">Force Urbania Luxury Coach</h3>
+          <p style="color: var(--tt-text-muted); margin-bottom: 20px;">The pinnacle of VIP road travel, perfect for corporate executives and foreign tourists.</p>
+          <ul class="tt-feature-list">
+            <li><strong>Ideal Group Size:</strong> 9, 10, 13, and 17 VIP Guests</li>
+            <li><strong>Comfort:</strong> Airline-style reclining captain seats</li>
+            <li><strong>Legroom:</strong> Unmatched standing height and wide aisle space</li>
+            <li><strong>Luggage:</strong> Massive dedicated internal boot space</li>
           </ul>
+          <a href="https://wa.me/919400620615?text=I%20want%20to%20book%20a%20Force%20Urbania%20to%20{{ page.destination_name | url_encode }}." class="tt-btn tt-btn-outline" style="width: 100%; margin-top: 15px;">Book Urbania Coach</a>
         </div>
 
-        <div class="info-block">
-          <h3>Why the Tempo Traveller Reigns Supreme</h3>
-          <p>For decades, the Tempo Traveller has been the heavy-duty backbone of group travel in South India. It offers an incredible, time-tested balance of affordability, rugged reliability, and immense spatial capacity, making it perfect for navigating the exact route to {{ page.destination_name }}.</p>
-          <ul class="feature-list" style="margin-top: 20px;">
-            <li><div><strong>Unmatched Affordability</strong><span style="color: var(--text-muted); font-size: 0.95rem;">Transporting up to 26 people in a single, unified vehicle drastically reduces the per-head cost compared to booking multiple small sedans.</span></div></li>
-            <li><div><strong>Massive Luggage Capacity</strong><span style="color: var(--text-muted); font-size: 0.95rem;">Equipped with dedicated rear compartments and heavy-duty rooftop carriers, it easily accommodates the heavy baggage of long-term tourists and pilgrims.</span></div></li>
-            <li><div><strong>Rugged Reliability</strong><span style="color: var(--text-muted); font-size: 0.95rem;">Engineered to conquer the steepest inclines and winding roads effortlessly, ensuring your family or tour group reaches the destination safely.</span></div></li>
-            <li><div><strong>Versatile Configurations</strong><span style="color: var(--text-muted); font-size: 0.95rem;">Available in 9, 12, 17, 20, and 26-seater variants to perfectly match your group size without paying for empty seats.</span></div></li>
+        <div class="tt-glass-card">
+          <img src="{{ page.tempo_image }}" alt="Tempo Traveller Rental {{ page.destination_name }}" class="tt-showcase-img" width="800" height="500" loading="lazy" decoding="async">
+          <h3 class="tt-card-title">Premium Tempo Traveller</h3>
+          <p style="color: var(--tt-text-muted); margin-bottom: 20px;">The undisputed king of group tourism for weddings, pilgrimages, and family vacations.</p>
+          <ul class="tt-feature-list">
+            <li><strong>Ideal Group Size:</strong> 9, 12, 17, 20, and 26 Guests</li>
+            <li><strong>Comfort:</strong> Deep push-back seating with individual armrests</li>
+            <li><strong>Legroom:</strong> Generous spacing designed for long journeys</li>
+            <li><strong>Luggage:</strong> Secure rooftop carrier & spacious rear storage</li>
           </ul>
+          <a href="https://wa.me/919400620615?text=I%20want%20to%20book%20a%20Tempo%20Traveller%20to%20{{ page.destination_name | url_encode }}." class="tt-btn tt-btn-outline" style="width: 100%; margin-top: 15px;">Book Tempo Traveller</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-padding alt-bg">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Tempo Traveller vs. Force Urbania</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">A detailed technical comparison to help your group make an informed booking decision for the journey to {{ page.destination_name }}.</p>
+  <section class="tt-section">
+    <div class="tt-container tt-grid-2">
+      <div class="tt-glass-card">
+        <h3 class="tt-card-title">Why Choose Force Urbania?</h3>
+        <p>The Force Urbania is a revolution in the Indian group transport sector. Designed with sleek European styling and unparalleled passenger comfort, it is the ultimate choice for luxury tourists, foreign guests, and corporate executives.</p>
+        <ul class="tt-feature-list" style="margin-top: 20px;">
+          <li><strong>Airline-Grade Captain Seats:</strong> Experience zero fatigue with fully reclining seats featuring premium upholstery and calf support.</li>
+          <li><strong>Panoramic Windows:</strong> Enjoy unobstructed views of the route through massive, un-tinted glass.</li>
+          <li><strong>Advanced Independent Suspension:</strong> Glides over uneven terrain, ensuring vibration-free mountain and highway stretches.</li>
+          <li><strong>Premium Interiors:</strong> Stand-up cabin height, ambient LED lighting, and individual AC vents.</li>
+        </ul>
+      </div>
+
+      <div class="tt-glass-card">
+        <h3 class="tt-card-title">Why Choose Tempo Traveller?</h3>
+        <p>For decades, the Tempo Traveller has been the heavy-duty backbone of group travel in South India. It offers an incredible balance of affordability, rugged reliability, and immense spatial capacity for large groups.</p>
+        <ul class="tt-feature-list" style="margin-top: 20px;">
+          <li><strong>Unmatched Affordability:</strong> Transporting up to 26 people in a single vehicle drastically reduces the per-head cost.</li>
+          <li><strong>Massive Luggage Capacity:</strong> Equipped with dedicated rear compartments and heavy-duty rooftop carriers.</li>
+          <li><strong>Rugged Reliability:</strong> Engineered to conquer the steepest inclines and winding roads effortlessly.</li>
+          <li><strong>Versatile Configurations:</strong> Ideal for college tours, massive wedding parties, and extended family holidays.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="tt-section tt-bg-alt">
+    <div class="tt-container">
+      <h2 class="tt-h2">Vehicle Comparison Guide</h2>
+      <p class="tt-subtitle">Make an informed decision for your group's journey to {{ page.destination_name }}.</p>
       
-      <div class="table-responsive">
-        <table>
+      <div class="tt-table-container">
+        <table class="tt-table">
           <thead>
             <tr>
-              <th scope="col">Feature Comparison</th>
-              <th scope="col">Premium Tempo Traveller</th>
-              <th scope="col">Force Urbania (Luxury VIP)</th>
+              <th>Feature Comparison</th>
+              <th>Premium Tempo Traveller</th>
+              <th>Force Urbania (Luxury VIP)</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td style="font-weight: 600; color: #fff;">Available Seats</td><td>9, 12, 17, 20, 26 Seater options</td><td>9, 10, 13, 17 Seater options</td></tr>
-            <tr><td style="font-weight: 600; color: #fff;">Seat Comfort</td><td>Push-back seats with standard armrests</td><td>Airline-style reclining captain seats</td></tr>
-            <tr><td style="font-weight: 600; color: #fff;">Air Conditioning</td><td>Standard Dual A/C with vents</td><td>Advanced Climate Control with individual vents</td></tr>
-            <tr><td style="font-weight: 600; color: #fff;">Suspension & Ride</td><td>Leaf spring (Highly sturdy for rough terrain)</td><td>Independent suspension (Ultra-smooth, car-like ride)</td></tr>
-            <tr><td style="font-weight: 600; color: #fff;">Boot Space</td><td>Rooftop carrier & moderate rear space</td><td>Massive dedicated internal boot space (No rooftop needed)</td></tr>
-            <tr><td style="font-weight: 600; color: #fff;">Charging & Tech</td><td>Central charging points, surround sound</td><td>Individual USB ports, premium audio, ambient LED</td></tr>
-            <tr><td style="font-weight: 600; color: #fff;">Ideal Use Case</td><td>Budget family trips, college tours, weddings, pilgrimage</td><td>Corporate travel, VIP guests, foreign tourists, luxury vacations</td></tr>
+            <tr><td><strong>Available Seats</strong></td><td>9, 12, 17, 20, 26 Seater options</td><td>9, 10, 13, 17 Seater options</td></tr>
+            <tr><td><strong>Seat Comfort</strong></td><td>Push-back seats with standard armrests</td><td>Airline-style reclining captain seats</td></tr>
+            <tr><td><strong>Air Conditioning</strong></td><td>Standard Dual A/C with vents</td><td>Advanced Climate Control with individual vents</td></tr>
+            <tr><td><strong>Suspension & Ride</strong></td><td>Leaf spring (Sturdy for rough terrain)</td><td>Independent suspension (Ultra-smooth ride)</td></tr>
+            <tr><td><strong>Boot Space</strong></td><td>Rooftop carrier & moderate rear space</td><td>Massive dedicated internal boot space</td></tr>
+            <tr><td><strong>Charging & Tech</strong></td><td>Central charging points, surround sound</td><td>Individual USB ports, premium audio, LED</td></tr>
+            <tr><td><strong>Ideal Use Case</strong></td><td>Budget family trips, college tours, weddings</td><td>Corporate travel, VIP guests, foreign tourists</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <section class="section-padding">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Detailed Route Guide: {{ page.from_location }} to {{ page.destination_name }}</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Everything you need to know about the drive ahead.</p>
+  <section class="tt-section">
+    <div class="tt-container">
+      <h2 class="tt-h2">Route & Destination Guide: {{ page.destination_name }}</h2>
       
-      <div class="grid-3">
-        <div class="info-block" style="padding: 30px;">
-          <h4 style="color: var(--gold); font-size: 1.3rem;">Journey Overview</h4>
-          <p style="font-size: 1rem; color: var(--text-muted);">Covering a total distance of <strong>{{ page.distance_km }} kilometers</strong>, this drive requires expert handling. The journey takes approximately <strong>{{ page.travel_time }}</strong> depending on traffic. We highly recommend scheduling your start time between <strong>{{ page.best_time_to_start }}</strong> to avoid peak urban congestion and experience the absolute best daylight views.</p>
+      <div class="tt-grid-3">
+        <div class="tt-glass-card">
+          <h4 class="tt-card-title">Journey Overview</h4>
+          <p>Covering a total distance of <strong>{{ page.distance_km }} km</strong>, this drive requires expert handling. The journey takes approximately <strong>{{ page.travel_time }}</strong> depending on traffic. We recommend starting between <strong>{{ page.best_time_to_start }}</strong> for the best experience.</p>
         </div>
+        <div class="tt-glass-card">
+          <h4 class="tt-card-title">Road Conditions</h4>
+          <p>The primary route is characterized by <strong>{{ page.route_terrain }}</strong>. Whether crossing rapid state highways or navigating complex mountain hairpin bends, our vehicles handle the specific demands of this terrain flawlessly.</p>
+        </div>
+        <div class="tt-glass-card">
+          <h4 class="tt-card-title">Suggested Waypoints</h4>
+          <p>En route to {{ page.destination_name }}, we highly recommend taking short breaks at beautiful scenic spots. Popular waypoints include <strong>{{ page.waypoints | default: "local scenic restaurants and viewpoints" }}</strong> for photography and dining.</p>
+        </div>
+      </div>
+
+      <div class="tt-glass-card" style="margin-top: 40px;">
+        <h3 class="tt-card-title">Discovering {{ page.destination_name }}</h3>
+        <p style="font-size: 1.1rem; margin-bottom: 30px;">{{ page.destination_about }}</p>
         
-        <div class="info-block" style="padding: 30px;">
-          <h4 style="color: var(--gold); font-size: 1.3rem;">Road Conditions & Terrain</h4>
-          <p style="font-size: 1rem; color: var(--text-muted);">The primary route is characterized by <strong>{{ page.route_terrain }}</strong>. Whether crossing rapid state highways, traversing coastal roads, or navigating complex mountain hairpin bends, our vehicles handle the specific demands of this terrain flawlessly, ensuring passenger comfort at all times.</p>
+        <div class="tt-grid-2">
+          <div>
+            <h4 style="color: var(--tt-gold); margin-bottom: 10px;">Top Attractions</h4>
+            <ul class="tt-feature-list">
+              <li>{{ page.top_attraction1 }}</li>
+              <li>{{ page.top_attraction2 }}</li>
+              <li>{{ page.top_attraction3 }}</li>
+              <li>{{ page.top_attraction4 }}</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: var(--tt-gold); margin-bottom: 10px;">Travel Planning</h4>
+            <p style="color: var(--tt-text-muted);">The best time to visit is during <strong>{{ page.best_time_to_visit }}</strong>. This destination is highly recommended and perfect for <strong>{{ page.ideal_for }}</strong>. Our chauffeurs will ensure you reach every hotel, restaurant, and hidden gem comfortably.</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tt-section tt-bg-alt">
+    <div class="tt-container">
+      <h2 class="tt-h2">Transport Solutions for Every Occasion</h2>
+      <p class="tt-subtitle">Comprehensive group travel services to {{ page.destination_name }}.</p>
+      
+      <div class="tt-grid-4">
+        <div class="tt-glass-card" style="padding: 25px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Airport & Railway Pickup</h4>
+          <p style="font-size: 0.9rem; color: var(--tt-text-muted); margin:0;">Punctual VIP meet-and-greets at Cochin International Airport and Ernakulam Junction. We track your arrivals.</p>
+        </div>
+        <div class="tt-glass-card" style="padding: 25px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px;">One Way & Return Rental</h4>
+          <p style="font-size: 0.9rem; color: var(--tt-text-muted); margin:0;">Need a simple drop-off? Book a One Way Rental. Planning to come back? Opt for our Return Rental packages.</p>
+        </div>
+        <div class="tt-glass-card" style="padding: 25px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Round Trip & Same Day</h4>
+          <p style="font-size: 0.9rem; color: var(--tt-text-muted); margin:0;">Keep the vehicle with you for a multi-day Round Trip, or book a Same Day Return for rapid visits.</p>
+        </div>
+        <div class="tt-glass-card" style="padding: 25px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Wedding & Corporate</h4>
+          <p style="font-size: 0.9rem; color: var(--tt-text-muted); margin:0;">Impress delegates with an Urbania, or deploy multiple 26-seater Tempos to move your entire wedding guest list.</p>
+        </div>
+        <div class="tt-glass-card" style="padding: 25px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Pilgrimage Tours</h4>
+          <p style="font-size: 0.9rem; color: var(--tt-text-muted); margin:0;">Embark on deeply spiritual temple tours with knowledgeable drivers who understand ritual timings.</p>
+        </div>
+        <div class="tt-glass-card" style="padding: 25px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Educational & College</h4>
+          <p style="font-size: 0.9rem; color: var(--tt-text-muted); margin:0;">Book massive, safe, and reliable 26-seater coaches for educational trips and college excursions.</p>
+        </div>
+        <div class="tt-glass-card" style="padding: 25px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Friends & Family</h4>
+          <p style="font-size: 0.9rem; color: var(--tt-text-muted); margin:0;">Create lasting memories on your family vacation or friends' getaway with our surround-sound equipped vehicles.</p>
+        </div>
+        <div class="tt-glass-card" style="padding: 25px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px;">NRI & Foreign Tourists</h4>
+          <p style="font-size: 0.9rem; color: var(--tt-text-muted); margin:0;">Elite white-glove service tailored for NRI groups and international cruise ship passengers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tt-section">
+    <div class="tt-container">
+      <h2 class="tt-h2">Available Seating Configurations</h2>
+      <p class="tt-subtitle">We maintain a diverse fleet to ensure you only pay for the capacity you actually need.</p>
+      
+      <div class="tt-grid-4">
+        <div class="tt-glass-card" style="text-align: center;">
+          <h4 style="font-size: 2rem; margin-bottom: 5px;">9 Seater</h4>
+          <span style="color: var(--tt-gold); display: block; margin-bottom: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem;">Urbania / Tempo</span>
+          <p style="font-size: 0.95rem; color: var(--tt-text-muted);">Ideal for extended families. Ample boot space for luxury travel.</p>
+        </div>
+        <div class="tt-glass-card" style="text-align: center;">
+          <h4 style="font-size: 2rem; margin-bottom: 5px;">10-13 Seater</h4>
+          <span style="color: var(--tt-gold); display: block; margin-bottom: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem;">Urbania / Tempo</span>
+          <p style="font-size: 0.95rem; color: var(--tt-text-muted);">Perfect for corporate retreats and small NRI tour groups.</p>
+        </div>
+        <div class="tt-glass-card" style="text-align: center;">
+          <h4 style="font-size: 2rem; margin-bottom: 5px;">17 Seater</h4>
+          <span style="color: var(--tt-gold); display: block; margin-bottom: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem;">Urbania / Tempo</span>
+          <p style="font-size: 0.95rem; color: var(--tt-text-muted);">The industry standard for massive family trips and weddings.</p>
+        </div>
+        <div class="tt-glass-card" style="text-align: center;">
+          <h4 style="font-size: 2rem; margin-bottom: 5px;">20-26 Seater</h4>
+          <span style="color: var(--tt-gold); display: block; margin-bottom: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem;">Large Coach Tempo</span>
+          <p style="font-size: 0.95rem; color: var(--tt-text-muted);">Maximum capacity for grand pilgrimages and college tours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tt-section tt-bg-alt">
+    <div class="tt-container">
+      <h2 class="tt-h2">Fleet Gallery</h2>
+      
+      <div class="tt-gallery">
+        <figure>
+          <img src="{{ page.hero_image }}" alt="Scenic journey to {{ page.destination_name }}" width="600" height="400" loading="lazy" decoding="async">
+          <figcaption>The scenic journey to {{ page.destination_name }}</figcaption>
+        </figure>
+        <figure>
+          <img src="{{ page.urbania_image }}" alt="Force Urbania Luxury Coach Exterior" width="600" height="400" loading="lazy" decoding="async">
+          <figcaption>Force Urbania Premium Exterior</figcaption>
+        </figure>
+        <figure>
+          <img src="{{ page.tempo_image }}" alt="Luxury Tempo Traveller Exterior" width="600" height="400" loading="lazy" decoding="async">
+          <figcaption>Spacious Tempo Traveller Coaches</figcaption>
+        </figure>
+        <figure>
+          <img src="{{ page.interior_image }}" alt="Luxury push-back interior seats" width="600" height="400" loading="lazy" decoding="async">
+          <figcaption>Uncompromising Interior Comfort</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="tt-section">
+    <div class="tt-container">
+      <div class="tt-glass-card" style="text-align: center; max-width: 900px; margin: 0 auto;">
+        <h2 class="tt-h2">The Tour With Anand Promise</h2>
+        <p style="color: var(--tt-text-light); font-size: 1.15rem; text-align: left; margin-bottom: 20px;">At Tour With Anand, we do not merely rent out vehicles; we curate high-end, flawless travel experiences. Our commitment to operational excellence begins long before you step into the vehicle. Every single Tempo Traveller and Force Urbania in our fleet undergoes rigorous <strong>vehicle cleaning</strong> and strict mechanical diagnostic checks prior to dispatch, ensuring a pristine, sanitized, and exceptionally safe environment.</p>
+        <p style="color: var(--tt-text-light); font-size: 1.15rem; text-align: left;">We pride ourselves on an unwavering <strong>on-time pickup</strong> guarantee. Whether it is a 3:00 AM airport arrival requiring immediate transit or a tightly synchronized wedding schedule, our <strong>professional drivers</strong> will be waiting. Understanding the nuances of serving international tourists and corporate clients, we provide highly courteous, <strong>English-speaking chauffeurs</strong> backed by our dedicated <strong>24x7 support team</strong> and a strict policy of fixed pricing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tt-container">
+    <div class="tt-banner">
+      <h2 style="font-size: 2.5rem; margin-bottom: 15px; text-shadow: 0 4px 10px #000;">Need a Return Transfer?</h2>
+      <p style="font-size: 1.2rem; color: #ddd; margin-bottom: 30px; text-shadow: 0 4px 10px #000;">Completing your trip in {{ page.destination_name }}? We offer seamless return transfers back to {{ page.from_location }}.</p>
+      <a href="{{ site.url }}/tempo-traveller/{{ page.destination_slug }}-to-{{ page.from_slug }}/" class="tt-btn tt-btn-primary" style="font-size: 1.1rem;">Book {{ page.destination_name }} to {{ page.from_location }}</a>
+    </div>
+  </section>
+
+  <section class="tt-section tt-bg-alt">
+    <div class="tt-container">
+      <h2 class="tt-h2">Frequently Asked Questions</h2>
+      <p class="tt-subtitle" style="margin-bottom: 40px;">Everything you need to know about renting a Tempo Traveller or Urbania for this route.</p>
+      
+      <div class="tt-faq" style="max-width: 900px; margin: 0 auto;">
         
-        <div class="info-block" style="padding: 30px;">
-          <h4 style="color: var(--gold); font-size: 1.3rem;">Suggested Waypoints</h4>
-          <p style="font-size: 1rem; color: var(--text-muted);">A group journey should be about the shared experience, not just the destination. En route to {{ page.destination_name }}, we highly recommend taking short breaks at beautiful scenic spots. Popular waypoints along this corridor include <strong>{{ page.waypoints }}</strong>, providing perfect opportunities for photography, dining, and relaxation.</p>
-        </div>
-      </div>
-      
-      <div style="text-align: center; margin-top: 40px;">
-        <a href="https://wa.me/919400620615?text=Please share the route details and availability for a trip to {{ page.destination_name }}." class="btn btn-primary">Check Vehicle Availability</a>
-      </div>
-    </div>
-  </section>
+        <details>
+          <summary>What is the price of a Tempo Traveller from {{ page.from_location }} to {{ page.destination_name }}?</summary>
+          <p>Pricing is fully transparent and depends on the seating capacity (9 to 26 seater) and whether you need a one-way drop or a multi-day package. Contact us on WhatsApp for an instant, fixed quote.</p>
+        </details>
 
-  <section class="section-padding alt-bg">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
-        <article>
-          <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Discover {{ page.destination_name }}: The Ultimate Travel Guide</h2>
-          <p style="font-size: 1.15rem; color: #ccc; margin-bottom: 30px;"><strong>{{ page.destination_name }}</strong> stands as a jewel in the crown of South Indian tourism. {{ page.destination_about }}</p>
-          
-          <h4 style="color: var(--gold); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px;">Top Attractions & Hidden Gems</h4>
-          <p style="color: var(--text-muted); margin-bottom: 30px;">When you arrive, the experiences are boundless. The top attractions drawing global visitors include <strong>{{ page.top_attraction1 }}, {{ page.top_attraction2 }}, {{ page.top_attraction3 }}, and {{ page.top_attraction4 }}</strong>. For photography enthusiasts and those seeking hidden gems, these spots provide the perfect backdrop for unforgettable memories.</p>
-          
-          <h4 style="color: var(--gold); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px;">Travel Planning Insights</h4>
-          <p style="color: var(--text-muted);">This destination is highly recommended and perfect for families, corporate retreats, and international tourists. Whether you are booking a luxury hotel or dining at the finest local restaurants, our chauffeurs will ensure you reach every spot comfortably.</p>
-        </article>
-        
-        <aside class="info-block" style="padding: 30px;">
-          <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Popular Drop Points</h3>
-          <p style="color: var(--text-muted); margin-bottom: 15px;">Our chauffeurs provide direct door-to-door service to:</p>
-          <ul class="feature-list" style="margin-top: 0;">
-            <li><div><strong style="font-size: 1rem; color: #fff;">{{ page.destination_name }} City Center</strong></div></li>
-            <li><div><strong style="font-size: 1rem; color: #fff;">Premium Hotels & Resorts</strong></div></li>
-            <li><div><strong style="font-size: 1rem; color: #fff;">Heritage Homestays</strong></div></li>
-            <li><div><strong style="font-size: 1rem; color: #fff;">Corporate Venues & Conference Halls</strong></div></li>
-          </ul>
-        </aside>
-      </div>
-    </div>
-  </section>
+        <details>
+          <summary>Is the Force Urbania rental available for trips to {{ page.destination_name }}?</summary>
+          <p>Yes, our flagship luxury Force Urbania is available. It features airline-style captain seats and premium interiors, perfect for corporate executives and VIPs traveling to {{ page.destination_name }}.</p>
+        </details>
 
-  <section class="section-padding">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Comprehensive Transport Solutions for Every Occasion</h2>
-      <p style="text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 50px;">No matter the purpose of your visit to {{ page.destination_name }}, Tour With Anand provides a tailored, professional itinerary spanning 16 unique travel use cases.</p>
-      
-      <div class="grid-4">
-        <div class="info-block" style="padding: 25px;">
-          <h4 style="font-size: 1.1rem; color: #fff;">Airport Pickup & Drop</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Stress-free, punctual VIP meet-and-greets at Cochin International Airport (COK). We track your flight to ensure our chauffeur is waiting for you.</p>
-        </div>
-        <div class="info-block" style="padding: 25px;">
-          <h4 style="font-size: 1.1rem; color: #fff;">Railway & Hotel Pickup</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Seamless transfers starting from Ernakulam Junction or any premium city hotel directly to your destination.</p>
-        </div>
-        <div class="info-block" style="padding: 25px;">
-          <h4 style="font-size: 1.1rem; color: #fff;">One Way & Return Rental</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Need a simple drop-off? Book a One Way Rental. Planning to come back? Opt for our discounted Return Rental packages.</p>
-        </div>
-        <div class="info-block" style="padding: 25px;">
-          <h4 style="font-size: 1.1rem; color: #fff;">Round Trip & Same Day</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Keep the vehicle with you for a multi-day Round Trip, or book a quick Same Day Return for rapid business meetings.</p>
-        </div>
-        <div class="info-block" style="padding: 25px;">
-          <h4 style="font-size: 1.1rem; color: #fff;">Wedding & Corporate</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Impress delegates with a corporate Urbania, or deploy multiple 26-seater Tempos to move your entire wedding guest list together.</p>
-        </div>
-        <div class="info-block" style="padding: 25px;">
-          <h4 style="font-size: 1.1rem; color: #fff;">Pilgrimage & Education</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Embark on deeply spiritual temple tours with knowledgeable drivers, or book massive coaches for safe college educational trips.</p>
-        </div>
-        <div class="info-block" style="padding: 25px;">
-          <h4 style="font-size: 1.1rem; color: #fff;">Friends & Family Trip</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Create lasting memories on your family vacation or friends' getaway with our surround-sound equipped vehicles.</p>
-        </div>
-        <div class="info-block" style="padding: 25px;">
-          <h4 style="font-size: 1.1rem; color: #fff;">NRI & Cruise Transfers</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Elite white-glove service tailored for NRI groups and international cruise ship passengers docking at Kochi port.</p>
-        </div>
+        <details>
+          <summary>Do you provide airport pickups from Cochin International Airport?</summary>
+          <p>Yes, we provide 24/7 VIP meet-and-greet airport pickups. We track your flight status, and our driver will be waiting at Cochin International Airport (COK) to take your group directly to {{ page.destination_name }}.</p>
+        </details>
+
+        <details>
+          <summary>Can we book a one-way drop to {{ page.destination_name }}?</summary>
+          <p>Absolutely. We specialize in dedicated one-way drop services from {{ page.from_location }}, Kochi, Ernakulam, and the Airport directly to your hotel, resort, or destination in {{ page.destination_name }}.</p>
+        </details>
+
+        <details>
+          <summary>Are return trips or round trips available from {{ page.destination_name }}?</summary>
+          <p>Yes, we offer flexible return and round-trip packages. You can book a round trip where the vehicle and driver stay with your group for the entire itinerary, or schedule a separate pickup for your return.</p>
+        </details>
+
+        <details>
+          <summary>Do you cater to large corporate and wedding groups?</summary>
+          <p>Yes, we manage massive logistics for weddings and corporate events. We can deploy multiple 17-seater and 26-seater Tempo Travellers simultaneously to move your entire guest list safely and punctually.</p>
+        </details>
+
+        <details>
+          <summary>How do I secure my booking and is advance payment required?</summary>
+          <p>Booking is simple via our WhatsApp link. We typically require a nominal advance payment via bank transfer or UPI to securely block your chosen vehicle and driver. The remaining balance can be paid during the trip.</p>
+        </details>
+
+        <details>
+          <summary>Is there enough luggage space for international travelers?</summary>
+          <p>Yes. Our Tempo Travellers and Urbanias feature deep rear boot spaces and secure, heavy-duty rooftop carriers to easily accommodate large international suitcases for big groups.</p>
+        </details>
+
+        <details>
+          <summary>Is it safe to travel at night to {{ page.destination_name }}?</summary>
+          <p>Safety is our absolute priority. Our verified, professional chauffeurs are highly experienced in navigating the {{ page.route_terrain }} at night. However, depending on local regulations, daytime travel may be recommended.</p>
+        </details>
+
+        <details>
+          <summary>What is your cancellation policy?</summary>
+          <p>We offer a highly customer-friendly and flexible cancellation policy. Detailed terms regarding advance refunds are provided transparently at the time of your booking inquiry.</p>
+        </details>
+
+        <details>
+          <summary>{{ page.faq1 | escape }}</summary>
+          <p>{{ page.faq1_answer | escape }}</p>
+        </details>
+
+        <details>
+          <summary>{{ page.faq2 | escape }}</summary>
+          <p>{{ page.faq2_answer | escape }}</p>
+        </details>
+
       </div>
     </div>
   </section>
 
-  <section class="section-padding alt-bg">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Available Seating Configurations</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 50px;">We maintain a diverse fleet to ensure you only pay for the capacity you actually need.</p>
+  <section class="tt-section">
+    <div class="tt-container">
+      <h2 class="tt-h2">Explore More Routes & Services</h2>
       
-      <div class="grid-4">
-        <div class="seating-card">
-          <h4>9 Seater</h4>
-          <span style="color: var(--gold-light); font-weight: 600; font-size: 1rem; margin-bottom: 10px;">Urbania / Tempo</span>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Ideal for extended families. Ample boot space for luxury travel.</p>
-        </div>
-        <div class="seating-card">
-          <h4>10-12 Seater</h4>
-          <span style="color: var(--gold-light); font-weight: 600; font-size: 1rem; margin-bottom: 10px;">Urbania / Tempo</span>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Perfect for corporate retreats and small NRI tour groups.</p>
-        </div>
-        <div class="seating-card">
-          <h4>13-17 Seater</h4>
-          <span style="color: var(--gold-light); font-weight: 600; font-size: 1rem; margin-bottom: 10px;">Urbania / Tempo</span>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">The industry standard for massive family trips and weddings.</p>
-        </div>
-        <div class="seating-card">
-          <h4>20-26 Seater</h4>
-          <span style="color: var(--gold-light); font-weight: 600; font-size: 1rem; margin-bottom: 10px;">Large Coach Tempo</span>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Maximum capacity for grand pilgrimages and college tours.</p>
-        </div>
+      <div class="tt-related-links">
+        <a href="/">Home</a>
+        <a href="/tempo-traveller-rentals-kochi-kerala/">Tempo Traveller Rentals</a>
+        <a href="/urbania-rental/">Force Urbania Rentals</a>
+        <a href="/taxi/kochi-airport/">Kochi Airport Taxi</a>
+        <a href="{{ page.internal_link_url | default: '/south-india-tours/' }}">{{ page.internal_link_text | default: 'South India Tour Packages' }}</a>
+        <a href="/blog/">Travel Blogs & Guides</a>
       </div>
     </div>
   </section>
 
-  <section class="section-padding">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Fleet & Journey Gallery</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Visual proof of our uncompromising standards.</p>
-      
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <img src="{{ page.hero_image }}" alt="Scenic journey to {{ page.destination_name }}" loading="lazy" decoding="async" width="600" height="400">
-          <figcaption class="gallery-caption">The scenic journey to {{ page.destination_name }}</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="{{ page.urbania_image }}" alt="Premium Force Urbania Exterior" loading="lazy" decoding="async" width="600" height="400">
-          <figcaption class="gallery-caption">Our Premium Force Urbania Fleet</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="{{ page.tempo_image }}" alt="Luxury Tempo Traveller Exterior" loading="lazy" decoding="async" width="600" height="400">
-          <figcaption class="gallery-caption">Spacious Tempo Traveller Coaches</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="{{ page.interior_image }}" alt="Luxury push-back interior seats" loading="lazy" decoding="async" width="600" height="400">
-          <figcaption class="gallery-caption">Uncompromising Interior Comfort</figcaption>
-        </figure>
+  <section class="tt-section tt-bg-alt" style="text-align: center; padding-bottom: 120px;">
+    <div class="tt-container">
+      <h2 class="tt-h2" style="font-size: clamp(2rem, 5vw, 3.5rem);">Your Journey to {{ page.destination_name }} Begins Here</h2>
+      <p style="font-size: 1.2rem; color: var(--tt-text-muted); max-width: 800px; margin: 0 auto 40px;">Join thousands of satisfied international tourists, NRIs, and corporate clients who trust Tour With Anand for their luxury group travel logistics.</p>
+      <div class="tt-btn-group">
+        <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20need%20a%20quote%20for%20a%20group%20transfer%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.destination_name | url_encode }}." class="tt-btn tt-btn-primary" style="padding: 20px 50px; font-size: 1.2rem;">Secure Your Booking Now</a>
       </div>
     </div>
   </section>
 
-  <section class="section-padding alt-bg">
-    <div class="container">
-      <div class="info-block" style="max-width: 900px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 2.2rem; margin-bottom: 20px;">The Tour With Anand Promise: Unmatched Customer Experience</h2>
-        <p style="color: var(--text-muted); text-align: left; font-size: 1.1rem; margin-bottom: 20px;">At Tour With Anand, we do not merely rent out vehicles; we curate high-end, flawless travel experiences. Our commitment to operational excellence begins long before you even step into the vehicle. Every single Tempo Traveller and Force Urbania in our fleet undergoes rigorous <strong>vehicle cleaning</strong> and strict mechanical diagnostic checks prior to dispatch, ensuring a pristine, sanitized, and exceptionally safe environment for your group.</p>
-        <p style="color: var(--text-muted); text-align: left; font-size: 1.1rem;">We pride ourselves on an unwavering <strong>on-time pickup</strong> guarantee. Whether it is a 3:00 AM airport arrival requiring immediate transit or a tightly synchronized wedding schedule, our <strong>verified, professional drivers</strong> will be waiting for you. Furthermore, deeply understanding the nuances of serving international tourists, NRIs, and corporate clients, we provide highly courteous, <strong>English-speaking chauffeurs</strong> who double as knowledgeable local guides. Backed by our dedicated <strong>24x7 support team</strong> and a strict policy of transparent, fixed pricing, you are assured a completely hassle-free, premium journey.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="container">
-    <div class="return-banner">
-      <h2 style="text-shadow: 0 5px 15px #000;">Need a Return Transfer?</h2>
-      <p style="font-size: 1.2rem; color: #ddd; margin-bottom: 30px; text-shadow: 0 5px 15px #000;">Completing your trip in {{ page.destination_name }}? We offer seamless, heavily discounted return transfers back to {{ page.from_location }}.</p>
-      <a href="https://wa.me/919400620615?text=I need a return drop from {{ page.destination_name }} back to {{ page.from_location }}." class="btn btn-primary" style="font-size: 1.1rem; padding: 18px 40px;">Book {{ page.destination_name }} to {{ page.from_location }}</a>
-    </div>
-  </section>
-
-  <section class="section-padding">
-    <div class="container faq-container">
-      <h2 style="text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Frequently Asked Questions</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Everything you need to know about renting a Tempo Traveller or Urbania for this specific route.</p>
-      
-      <details>
-        <summary>What is the total distance and travel time from {{ page.from_location }} to {{ page.destination_name }}?</summary>
-        <p>The total distance from {{ page.from_location }} to {{ page.destination_name }} is approximately <strong>{{ page.distance_km }} km</strong>. Under normal traffic conditions, the journey by Tempo Traveller or Force Urbania takes around <strong>{{ page.travel_time }}</strong>.</p>
-      </details>
-      
-      <details>
-        <summary>What is the best vehicle for a family trip to {{ page.destination_name }}?</summary>
-        <p>For family trips, we highly recommend our <strong>{{ page.recommended_vehicle }}</strong>. It offers perfect comfort for the {{ page.route_terrain }} and provides ample luggage space for extended vacations.</p>
-      </details>
-      
-      <details>
-        <summary>Do you provide Kochi Airport pickups for {{ page.destination_name }}?</summary>
-        <p>Yes, we provide 24/7 VIP meet-and-greet airport pickups. We track your flight status in real-time, and our driver will be waiting at Cochin International Airport (COK) to take you directly to {{ page.destination_name }}.</p>
-      </details>
-      
-      <details>
-        <summary>Can we book a Force Urbania for corporate trips to {{ page.destination_name }}?</summary>
-        <p>Absolutely. The Force Urbania is our flagship luxury coach, perfect for corporate executives and VIPs traveling to {{ page.destination_name }}, featuring airline-style captain seats, individual AC vents, and premium interiors.</p>
-      </details>
-      
-      <details>
-        <summary>Is the Tempo Traveller suitable for pilgrimage groups?</summary>
-        <p>Yes, our standard and premium Tempo Travellers are the most popular choice for pilgrimage groups. They are spacious, reliable on rough terrain, and our drivers are well-versed with all major South Indian temple routes and ritual timings.</p>
-      </details>
-      
-      <details>
-        <summary>What is the price of a Tempo Traveller to {{ page.destination_name }}?</summary>
-        <p>Our pricing is highly competitive and fully transparent, with absolutely zero hidden fees. Rates vary based on the exact vehicle seating capacity (9 to 26 seater) and whether you need a one-way drop or a multi-day package. Please hit the WhatsApp button for an instant, fixed quote.</p>
-      </details>
-      
-      <details>
-        <summary>Do you offer One Way drops to {{ page.destination_name }}?</summary>
-        <p>Yes, we specialize in dedicated one-way drop services from {{ page.from_location }}, Kochi, Ernakulam, and the Airport directly to your specific hotel, resort, or destination in {{ page.destination_name }}.</p>
-      </details>
-      
-      <details>
-        <summary>Can we hire a vehicle for a return trip from {{ page.destination_name }}?</summary>
-        <p>Yes, we offer extremely flexible return trip packages. You can book a round trip where the vehicle and driver stay with your group for the entire itinerary, or schedule a separate, specific pickup for your return to {{ page.from_location }}.</p>
-      </details>
-      
-      <details>
-        <summary>Do you provide wedding transportation in {{ page.destination_name }}?</summary>
-        <p>Yes, we manage comprehensive, massive wedding transportation logistics. We can deploy multiple 17-seater and 26-seater Tempo Travellers simultaneously to move your entire guest list safely and punctually between venues.</p>
-      </details>
-      
-      <details>
-        <summary>How much advance payment is required for booking?</summary>
-        <p>We typically require a very nominal advance payment via bank transfer or UPI to securely block your chosen vehicle and driver for your specific travel dates. The remaining balance can be easily paid during the trip.</p>
-      </details>
-      
-      <details>
-        <summary>What is your cancellation policy?</summary>
-        <p>We offer a highly customer-friendly cancellation policy. Detailed terms regarding advance refunds are provided explicitly at the time of your booking inquiry, allowing peace of mind if your travel plans suddenly change.</p>
-      </details>
-      
-      <details>
-        <summary>Is there enough luggage space in the 17-seater Tempo Traveller?</summary>
-        <p>Yes. Our Tempo Travellers feature dedicated rear boot space inside the cabin and secure, heavy-duty rooftop carriers to easily accommodate large international suitcases for big groups.</p>
-      </details>
-      
-      <details>
-        <summary>Is it safe to travel at night to {{ page.destination_name }}?</summary>
-        <p>Safety is our absolute utmost priority. Our verified, professional chauffeurs are highly experienced in navigating the {{ page.route_terrain }} at night. However, depending on local forest or mountain regulations, daytime travel may be strictly recommended.</p>
-      </details>
-      
-      <details>
-        <summary>Are your drivers fluent in English?</summary>
-        <p>Yes, Tour With Anand caters extensively to international tourists, corporate clients, and NRIs. We provide courteous, English-speaking chauffeurs who also act as excellent, knowledgeable local guides.</p>
-      </details>
-      
-      <details>
-        <summary>Can we make sightseeing stops along the route?</summary>
-        <p>Absolutely! When you book a private vehicle with us, the journey is yours to design. You can request leisurely stops at scenic spots, restaurants, or major attractions like {{ page.waypoints }} along the way.</p>
-      </details>
-      
-      <details>
-        <summary>Are tolls and parking fees included in the rental?</summary>
-        <p>We offer fully transparent, all-inclusive pricing options where all highway tolls, state permit taxes, parking fees, and driver allowances are included upfront, ensuring you don't face any unexpected charges.</p>
-      </details>
-      
-      <details>
-        <summary>Do you have captain seats in your vehicles?</summary>
-        <p>Yes, our luxury Force Urbania fleet features premium, airline-style reclining captain seats equipped with calf support, offering maximum VIP comfort for long journeys.</p>
-      </details>
-      
-      <details>
-        <summary>What time should we start our journey to {{ page.destination_name }}?</summary>
-        <p>For the absolute best travel experience, we highly recommend starting your journey between <strong>{{ page.best_time_to_start }}</strong> to avoid heavy urban traffic and fully enjoy the beautiful daylight scenery.</p>
-      </details>
-
-      <details>
-        <summary>{{ page.faq1 | escape }}</summary>
-        <p>{{ page.faq1_answer | escape }}</p>
-      </details>
-      
-      <details>
-        <summary>{{ page.faq2 | escape }}</summary>
-        <p>{{ page.faq2_answer | escape }}</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="section-padding alt-bg">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Extend Your Journey & Explore More</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Discover our other premium services and popular routes across South India.</p>
-      
-      <div class="related-links">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/tempo-traveller-rentals-kochi-kerala/">Tempo Traveller Rentals Kochi</a></li>
-          <li><a href="/urbania-rental/">Force Urbania Rentals</a></li>
-          <li><a href="/taxi/kochi-airport/">Kochi Airport Taxi</a></li>
-          <li><a href="{{ page.internal_link_url }}">{{ page.internal_link_text }}</a></li>
-          <li><a href="/south-india-tours/">Popular Kerala Tour Packages</a></li>
-          <li><a href="/customer-reviews/">Customer Reviews</a></li>
-          <li><a href="/blog/">Travel Blogs & Guides</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-padding" style="text-align: center;">
-    <div class="container">
-      <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 15px;">Your Premium Journey to {{ page.destination_name }} Begins Here</h2>
-      <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; max-width: 800px; margin-inline: auto;">Join thousands of satisfied international tourists, NRIs, and corporate clients who trust Tour With Anand for their group travel logistics.</p>
-      
-      <div class="cta-group">
-        <a href="https://wa.me/919400620615?text=Hello Tour With Anand, I need a quote for a group transfer from {{ page.from_location }} to {{ page.destination_name }}." class="btn btn-primary" style="padding: 20px 50px; font-size: 1.2rem;">Secure Your Booking Now</a>
-      </div>
-    </div>
-  </section>
-
-</main>
+</div>
