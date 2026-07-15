@@ -1,8 +1,8 @@
 import csv
 import os
 
-# 1. Create the dedicated folder for the generated tour pages
-output_dir = "_tours"
+# 1. Target the exact folder from your screenshot
+output_dir = "_tour_packages"
 os.makedirs(output_dir, exist_ok=True)
 
 # 2. Path to your correct CSV file
@@ -18,8 +18,8 @@ try:
             
             with open(filename, "w", encoding="utf-8") as out:
                 out.write("---\n")
-                # Ensure this matches whatever you named your HTML file in the _layouts folder
-                out.write("layout: kerala_tours_layout\n")
+                # Matches the tour_page.html layout in your _layouts folder
+                out.write("layout: tour_page\n")
                 
                 # 4. Dynamically write all CSV variables safely into the Front Matter
                 for key, value in row.items():
