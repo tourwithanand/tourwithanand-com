@@ -1,33 +1,50 @@
 import csv
 import os
 
-# Save directly into the group travel collection folder
+# 1. Create the dedicated collection folder
 output_dir = "_tempo_routes"
 os.makedirs(output_dir, exist_ok=True)
 
-# Open the tempo_routes.csv from the _data folder
-with open("_data/tempo_routes.csv", mode='r', encoding='utf-8') as f:
-    reader = csv.DictReader(f)
-    
-    for row in reader:
-        filename = f"{output_dir}/kochi-to-{row['destination_slug']}-tempo.md"
+# 2. Open your CSV data file
+csv_path = "_data/tempo_routes.csv"
+
+# Fallback just in case you named it routes.csv
+if not os.path.exists(csv_path):
+    csv_path = "_data/routes.csv"
+
+try:
+    with open(csv_path, mode='r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
         
-        with open(filename, "w", encoding="utf-8") as out:
-            out.write("---\n")
-            out.write("layout: tempo_page\n")
+        for row in reader:
+            # 3. Create the markdown filename
+            filename = f"{output_dir}/kochi-to-{row['to_slug']}-tempo.md"
             
-            # Dynamically write all CSV variables into the Front Matter
-            for key, value in row.items():
-                safe_value = value.replace('"', '\\"')
-                out.write(f"{key}: \"{safe_value}\"\n")
-            
-            # The Title Tag explicitly mentions Ernakulam & Airport
-            out.write(f"title: \"Tempo & Urbania Rentals: Kochi, Ernakulam & Airport to {row['destination_name']} | Tour With Anand\"\n")
-            
-            # === THE NEW CONSOLIDATED PERMALINK ===
-            # This creates clean URLs like: /tempo-traveller/kochi-to-munnar/
-            out.write(f"permalink: /tempo-traveller/kochi-to-{row['destination_slug']}/\n")
-            
-            out.write("---\n")
-            
-print(f"✅ Successfully generated Consolidated Group Travel pages inside {output_dir}/")
+            with open(filename, "w", encoding="utf-8") as out:
+                out.write("---\n")
+                out.write("layout: tempo_page\n")
+                
+                # 4. Dynamically write all CSV variables safely into the Front Matter
+                for key, value in row.items():
+                    if value is None:
+                        value = ""
+                    
+                    # Bulletproof fix: If Python accidentally reads a list due to extra commas, join it back into a string
+                    if isinstance(value, list):
+                        value = ", ".join(value)
+                        
+                    # Safely escape any double quotes inside your text so it doesn't break Jekyll
+                    safe_value = str(value).replace('"', '\\"')
+                    
+                    out.write(f'{key}: "{safe_value}"\n')
+                
+                # 5. Write the consolidated, clean SEO permalink
+                out.write(f'permalink: /tempo-traveller/kochi-to-{row["to_slug"]}/\n')
+                out.write("---\n")
+                
+            print(f"✅ Generated: {filename}")
+
+    print(f"\n🎉 SUCCESS: All Tempo Traveller & Urbania PSEO pages generated in {output_dir}/")
+
+except FileNotFoundError:
+    print(f"❌ ERROR: Could not find the CSV file at {csv_path}. Please make sure your data file is uploaded.")
