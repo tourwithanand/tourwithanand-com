@@ -3,8 +3,8 @@ layout: default
 ---
 
 <!-- SEO & Meta Tags -->
-<meta name="description" content="{{ page.meta_description | escape }}">
-<meta name="keywords" content="{{ page.primary_keyword | escape }}, {{ page.secondary_keywords | escape }}">
+<meta name="description" content="{{ page.meta_description | default: 'Premium, safe, and comfortable chauffeur service for groups.' | escape }}">
+<meta name="keywords" content="{{ page.primary_keyword | escape }}, tempo traveller, force urbania, kerala group travel">
 <link rel="canonical" href="{{ site.url }}/tempo-traveller/{{ page.from_slug }}-to-{{ page.destination_slug }}/">
 
 <!-- Google Rich Results / JSON-LD Schema -->
@@ -15,7 +15,7 @@ layout: default
     {
       "@type": "AutoRental",
       "@id": "{{ site.url }}/tempo-traveller/{{ page.from_slug }}-to-{{ page.destination_slug }}/#service",
-      "name": "Luxury Tempo Traveller & Force Urbania Rental: {{ page.from_location }} to {{ page.destination_name }}",
+      "name": "Luxury Tempo Traveller & Force Urbania Rental: {{ page.from_location | default: 'Kochi' }} to {{ page.destination_name }}",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Tour With Anand",
@@ -23,10 +23,10 @@ layout: default
         "telephone": "+91-9400620615"
       },
       "areaServed": [
-        { "@type": "Place", "name": "{{ page.from_location }}" },
+        { "@type": "Place", "name": "{{ page.from_location | default: 'Kochi' }}" },
         { "@type": "Place", "name": "{{ page.destination_name }}" }
       ],
-      "description": "{{ page.meta_description | escape }}"
+      "description": "{{ page.meta_description | default: 'Premium group transport.' | escape }}"
     },
     {
       "@type": "BreadcrumbList",
@@ -34,7 +34,7 @@ layout: default
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
         { "@type": "ListItem", "position": 2, "name": "Tempo Traveller Rentals", "item": "{{ site.url }}/tempo-traveller-rentals-kochi-kerala/" },
-        { "@type": "ListItem", "position": 3, "name": "{{ page.from_location }} to {{ page.destination_name }}", "item": "{{ site.url }}/tempo-traveller/{{ page.from_slug }}-to-{{ page.destination_slug }}/" }
+        { "@type": "ListItem", "position": 3, "name": "{{ page.from_location | default: 'Kochi' }} to {{ page.destination_name }}", "item": "{{ site.url }}/tempo-traveller/{{ page.from_slug }}-to-{{ page.destination_slug }}/" }
       ]
     },
     {
@@ -43,23 +43,13 @@ layout: default
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the price of a Tempo Traveller from {{ page.from_location }} to {{ page.destination_name }}?",
+          "name": "What is the price of a Tempo Traveller from {{ page.from_location | default: 'Kochi' }} to {{ page.destination_name }}?",
           "acceptedAnswer": { "@type": "Answer", "text": "Pricing is fully transparent and depends on the seating capacity (9 to 26 seater) and your trip duration. Contact us on WhatsApp for an instant, fixed quote." }
-        },
-        {
-          "@type": "Question",
-          "name": "Is the Force Urbania rental available for trips to {{ page.destination_name }}?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes, our flagship luxury Force Urbania is available. It features airline-style captain seats and premium interiors, perfect for VIPs and corporate groups." }
         },
         {
           "@type": "Question",
           "name": "Do you provide airport pickups from Cochin International Airport?",
           "acceptedAnswer": { "@type": "Answer", "text": "Yes, we provide 24/7 VIP meet-and-greet airport pickups. Our drivers will track your flight and wait for your group at the arrivals gate." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can we book a one-way drop to {{ page.destination_name }}?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We specialize in dedicated one-way drops directly to your hotel, resort, or houseboat in {{ page.destination_name }}." }
         }
       ]
     }
@@ -70,7 +60,7 @@ layout: default
 <style>
   /* 
    * NAMESPACED CSS FOR TEMPO TRAVELLER PAGE 
-   * Uses flat, professional layout focusing on readability
+   * Protects styling to ensure it works perfectly on PC and Mobile
   */
   .tt-wrapper, .tt-wrapper *, .tt-wrapper *::before, .tt-wrapper *::after {
     box-sizing: border-box !important;
@@ -83,8 +73,8 @@ layout: default
     --tt-bg-card: #121418;
     --tt-text-main: #e2e8f0;
     --tt-text-muted: #94a3b8;
-    --tt-border: #333333;
-    --tt-radius: 4px;
+    --tt-border: #2a2a2a;
+    --tt-radius: 6px;
   }
 
   .tt-wrapper {
@@ -109,7 +99,7 @@ layout: default
   }
 
   .tt-bg-alt {
-    background-color: #0f1115;
+    background-color: #0d0f12;
   }
 
   /* Typography */
@@ -135,25 +125,24 @@ layout: default
     margin: 0 auto 40px;
   }
 
-  /* Full-Width Responsive Banner */
+  /* Full-Width Responsive Banner Image */
   .tt-banner-wrapper {
     width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* Fixes bottom gap issue */
     background-color: #000;
-    text-align: center;
   }
 
   .tt-banner-img {
     width: 100%;
     height: auto;
-    max-height: 600px;
-    object-fit: contain; /* Ensures the entire image is visible on all devices */
-    display: block;
-    margin: 0 auto;
+    display: block; /* Ensures natural scaling on PC & Mobile */
   }
 
   /* Hero Content Area */
   .tt-hero-text-area {
-    padding: 40px 20px;
+    padding: 50px 20px;
     text-align: center;
     background-color: var(--tt-bg-card);
     border-bottom: 1px solid var(--tt-border);
@@ -164,21 +153,23 @@ layout: default
     color: var(--tt-gold);
     font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     margin-bottom: 20px;
+    font-weight: 600;
   }
 
   .tt-hero-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
     line-height: 1.2;
     margin-bottom: 20px;
+    color: #fff;
   }
 
   .tt-hero-desc {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--tt-text-muted);
     max-width: 800px;
-    margin: 0 auto 30px;
+    margin: 0 auto 35px;
   }
 
   /* Buttons */
@@ -193,14 +184,14 @@ layout: default
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 30px;
+    padding: 16px 32px;
     border-radius: var(--tt-radius);
     font-weight: 600;
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     border: 1px solid transparent;
     cursor: pointer;
   }
@@ -234,7 +225,7 @@ layout: default
 
   .tt-fact-item {
     text-align: center;
-    padding: 20px;
+    padding: 25px 20px;
     background-color: var(--tt-bg-card);
     border: 1px solid var(--tt-border);
     border-radius: var(--tt-radius);
@@ -251,7 +242,7 @@ layout: default
 
   .tt-fact-value {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 22px;
     color: #fff;
   }
 
@@ -295,35 +286,25 @@ layout: default
   .tt-list li {
     padding-left: 20px;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: var(--tt-text-main);
   }
   .tt-list li::before {
     content: '■';
     position: absolute;
     left: 0;
-    top: -2px;
+    top: 6px;
     color: var(--tt-gold);
-    font-size: 12px;
-  }
-
-  /* Images */
-  .tt-card-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-bottom: 1px solid var(--tt-border);
-    margin-bottom: 20px;
-    background-color: #000;
+    font-size: 10px;
   }
 
   /* Table */
-  .tt-table-wrapper { overflow-x: auto; border: 1px solid var(--tt-border); margin: 30px 0; }
+  .tt-table-wrapper { overflow-x: auto; border: 1px solid var(--tt-border); margin: 30px 0; border-radius: var(--tt-radius); }
   .tt-table { width: 100%; border-collapse: collapse; background-color: var(--tt-bg-card); }
-  .tt-table th, .tt-table td { padding: 15px; text-align: left; border-bottom: 1px solid var(--tt-border); }
+  .tt-table th, .tt-table td { padding: 18px; text-align: left; border-bottom: 1px solid var(--tt-border); }
   .tt-table th { color: var(--tt-gold); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
 
-  /* Gallery Grid (Specific for vehicles) */
+  /* Gallery Grid */
   .tt-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -334,30 +315,34 @@ layout: default
     background-color: var(--tt-bg-card);
     border: 1px solid var(--tt-border);
     padding: 10px;
+    border-radius: var(--tt-radius);
   }
   .tt-gallery img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
     display: block;
+    border-radius: 4px;
   }
   .tt-gallery figcaption {
-    padding: 10px 0 0 0;
+    padding: 12px 0 5px 0;
     color: var(--tt-text-main);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     text-align: center;
+    font-weight: 600;
   }
 
   /* FAQ */
   .tt-faq details {
     background-color: var(--tt-bg-card);
     border: 1px solid var(--tt-border);
-    margin-bottom: 10px;
-    padding: 15px 20px;
+    margin-bottom: 12px;
+    padding: 18px 22px;
+    border-radius: var(--tt-radius);
   }
   .tt-faq summary {
     font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 600;
     cursor: pointer;
     list-style: none;
@@ -365,9 +350,10 @@ layout: default
     justify-content: space-between;
     align-items: center;
     color: #fff;
+    outline: none;
   }
   .tt-faq summary::-webkit-details-marker { display: none; }
-  .tt-faq summary::after { content: '+'; color: var(--tt-gold); font-size: 1.5rem; }
+  .tt-faq summary::after { content: '+'; color: var(--tt-gold); font-size: 1.6rem; font-weight: 300; }
   .tt-faq details[open] summary::after { content: '−'; }
   .tt-faq p { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--tt-border); color: var(--tt-text-muted); }
 
@@ -375,17 +361,18 @@ layout: default
   .tt-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 25px;
   }
   .tt-links a {
-    padding: 8px 16px;
+    padding: 10px 20px;
     background-color: var(--tt-bg-card);
     color: var(--tt-text-main);
     text-decoration: none;
     border: 1px solid var(--tt-border);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 30px;
   }
   .tt-links a:hover {
     border-color: var(--tt-gold);
@@ -394,14 +381,11 @@ layout: default
 
   /* Mobile Adjustments */
   @media (max-width: 768px) {
-    .tt-facts-grid { grid-template-columns: 1fr 1fr; }
+    .tt-facts-grid { grid-template-columns: 1fr 1fr; padding: 20px 0; }
     .tt-grid-2 { grid-template-columns: 1fr; }
     .tt-btn-group { flex-direction: column; }
-    .tt-btn { width: 100%; }
-    .tt-banner-img {
-      height: auto;
-      object-fit: contain; /* Prevents cropping on mobile */
-    }
+    .tt-btn { width: 100%; margin: 0; }
+    .tt-hero-text-area { padding: 40px 15px; }
   }
 </style>
 
@@ -409,19 +393,23 @@ layout: default
 
   <!-- Full-Width Responsive Banner Image -->
   <div class="tt-banner-wrapper">
-    <!-- Specific Banner Requested by User: Pic_Cochin Airport Force Tempo Traveller Rentals.jpeg -->
-    <img src="/Pic_Cochin%20Airport%20Force%20Tempo%20Traveller%20Rentals.jpeg" alt="Force Tempo Traveller at Cochin Airport" class="tt-banner-img" loading="eager" width="1920" height="1080">
+    <img src="/Pic_Cochin%20Airport%20Force%20Tempo%20Traveller%20Rentals.jpeg" alt="Force Tempo Traveller at Cochin Airport" class="tt-banner-img" fetchpriority="high">
   </div>
 
   <!-- Hero Content Area -->
   <div class="tt-hero-text-area">
     <div class="tt-container">
-      <span class="tt-breadcrumb">Home / Group Travel / {{ page.from_location }} to {{ page.destination_name }}</span>
-      <h1 class="tt-hero-title">{{ page.page_title }}</h1>
-      <p class="tt-hero-desc">{{ page.meta_description }} Book safe, spacious, and professional group transport across Kerala.</p>
+      <!-- Breadcrumb with safe fallback -->
+      <span class="tt-breadcrumb">Home / Group Travel / To {{ page.destination_name | default: "Destination" }}</span>
+      
+      <!-- Title with safe fallback -->
+      <h1 class="tt-hero-title">{{ page.page_title | default: "Premium Force Urbania & Tempo Traveller Group Transport" }}</h1>
+      
+      <!-- Description with safe fallback -->
+      <p class="tt-hero-desc">{{ page.meta_description | default: "Book safe, spacious, and professional group transport across Kerala." }}</p>
       
       <div class="tt-btn-group">
-        <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20want%20to%20book%20a%20vehicle%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.destination_name | url_encode }}." class="tt-btn tt-btn-primary" target="_blank" rel="noopener">Book via WhatsApp</a>
+        <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20want%20to%20book%20a%20vehicle%20to%20{{ page.destination_name | url_encode }}." class="tt-btn tt-btn-primary" target="_blank" rel="noopener">Book Via WhatsApp</a>
         <a href="tel:+919400620615" class="tt-btn tt-btn-outline">Call 24/7 Support</a>
       </div>
     </div>
@@ -432,19 +420,19 @@ layout: default
     <div class="tt-facts-grid">
       <div class="tt-fact-item">
         <span class="tt-fact-label">Total Distance</span>
-        <span class="tt-fact-value">{{ page.distance_km }} km</span>
+        <span class="tt-fact-value">{{ page.distance_km | default: "Custom" }} {% if page.distance_km %}km{% endif %}</span>
       </div>
       <div class="tt-fact-item">
         <span class="tt-fact-label">Travel Time</span>
-        <span class="tt-fact-value">{{ page.travel_time }}</span>
+        <span class="tt-fact-value">{{ page.travel_time | default: "Varies" }}</span>
       </div>
       <div class="tt-fact-item">
         <span class="tt-fact-label">Route Terrain</span>
-        <span class="tt-fact-value">{{ page.route_terrain | truncatewords: 3, "" }}</span>
+        <span class="tt-fact-value">{{ page.route_terrain | default: "Mixed Highways" | truncatewords: 3, "" }}</span>
       </div>
       <div class="tt-fact-item">
         <span class="tt-fact-label">Recommended Vehicle</span>
-        <span class="tt-fact-value">{{ page.recommended_vehicle }}</span>
+        <span class="tt-fact-value">{{ page.recommended_vehicle | default: "Tempo Traveller" }}</span>
       </div>
     </div>
   </div>
@@ -454,23 +442,22 @@ layout: default
     <div class="tt-container">
       <h2 class="tt-h2">Professional Group Travel to {{ page.destination_name }}</h2>
       <div class="tt-text-block">
-        <p>Planning a group journey from <strong>{{ page.from_location }}</strong> to <strong>{{ page.destination_name }}</strong> requires reliable logistics and spacious transportation. Whether your group is arriving at Cochin International Airport (COK), departing from Ernakulam, or gathering for a corporate event, Tour With Anand provides a highly professional, flat-rate ground transportation solution.</p>
+        <p>Planning a group journey from <strong>{{ page.from_location | default: "Kochi" }}</strong> to <strong>{{ page.destination_name }}</strong> requires reliable logistics and spacious transportation. Whether your group is arriving at Cochin International Airport (COK), departing from Ernakulam, or gathering for a corporate event, Tour With Anand provides a highly professional, flat-rate ground transportation solution.</p>
         
-        <p>Our dedicated fleet consists strictly of premium <strong>Tempo Travellers</strong> and <strong>Force Urbania</strong> luxury coaches. By choosing a unified group vehicle, you eliminate the hassle of coordinating multiple small taxis, prevent luggage space constraints, and ensure your entire party travels together comfortably. The route spans approximately {{ page.distance_km }} kilometers, taking around {{ page.travel_time }} through {{ page.route_terrain }}.</p>
+        <p>Our dedicated fleet consists strictly of premium <strong>Tempo Travellers</strong> and <strong>Force Urbania</strong> luxury coaches. By choosing a unified group vehicle, you eliminate the hassle of coordinating multiple small taxis, prevent luggage space constraints, and ensure your entire party travels together comfortably. The route spans approximately {{ page.distance_km | default: "varying" }} kilometers, taking around {{ page.travel_time | default: "optimal time" }} through {{ page.route_terrain | default: "local highways" }}.</p>
         
-        <p>We are the preferred transport partner for international tourists, corporate delegations, and large families. Our verified, English-speaking chauffeurs have profound local knowledge, ensuring your journey from {{ page.from_location }} to {{ page.destination_name }} is safe, punctual, and highly organized.</p>
+        <p>We are the preferred transport partner for international tourists, corporate delegations, and large families. Our verified, English-speaking chauffeurs have profound local knowledge, ensuring your journey from {{ page.from_location | default: "Kochi" }} to {{ page.destination_name }} is safe, punctual, and highly organized.</p>
       </div>
     </div>
   </section>
 
-  <!-- Vehicle Showcase (Tempo & Urbania ONLY) -->
+  <!-- Vehicle Showcase -->
   <section class="tt-section">
     <div class="tt-container">
       <h2 class="tt-h2">Our Fleet: Tempo Traveller & Force Urbania</h2>
       <p class="tt-subtitle">We strictly deploy high-capacity coaches designed for maximum group comfort.</p>
       
       <div class="tt-grid-2">
-        <!-- Force Urbania -->
         <div class="tt-card">
           <img src="/Pic_Best%20Urbania%20Rentals%20In%20Kochi.jpeg" alt="Force Urbania Rental" class="tt-card-img" loading="lazy">
           <h3 class="tt-card-title">Force Urbania Luxury Coach</h3>
@@ -483,7 +470,6 @@ layout: default
           </ul>
         </div>
 
-        <!-- Tempo Traveller -->
         <div class="tt-card">
           <img src="/Pic_Kochi%20Tempo%20Traveller%2012%20seater.jpeg" alt="Tempo Traveller Rental" class="tt-card-img" loading="lazy">
           <h3 class="tt-card-title">Premium Tempo Traveller</h3>
@@ -532,23 +518,31 @@ layout: default
       <div class="tt-grid-3">
         <div class="tt-card">
           <h4 class="tt-card-title">Road Conditions</h4>
-          <p class="tt-text-muted">The journey features {{ page.route_terrain }}. Our heavy-duty vehicles are perfectly suited to navigate these specific Kerala roads safely.</p>
+          <p class="tt-text-muted">The journey features {{ page.route_terrain | default: "mixed local highways" }}. Our heavy-duty vehicles are perfectly suited to navigate these specific Kerala roads safely.</p>
         </div>
         <div class="tt-card">
           <h4 class="tt-card-title">Travel Timing</h4>
-          <p class="tt-text-muted">We advise starting your trip around <strong>{{ page.best_time_to_start }}</strong> to avoid heavy traffic and experience optimal travel conditions.</p>
+          <p class="tt-text-muted">We advise starting your trip around <strong>{{ page.best_time_to_start | default: "Morning or early afternoon" }}</strong> to avoid heavy traffic and experience optimal travel conditions.</p>
         </div>
         <div class="tt-card">
           <h4 class="tt-card-title">Sightseeing Stops</h4>
-          <p class="tt-text-muted">You dictate the itinerary. Request your driver to stop at <strong>{{ page.waypoints | default: "local viewpoints and restaurants" }}</strong> along the route.</p>
+          <p class="tt-text-muted">You dictate the itinerary. Request your driver to stop at <strong>{{ page.waypoints | default: "scenic local viewpoints and rest stops" }}</strong> along the route.</p>
         </div>
       </div>
 
       <div class="tt-card" style="margin-top: 30px;">
         <h3 class="tt-card-title">About {{ page.destination_name }}</h3>
-        <p>{{ page.destination_about }}</p>
-        <p><strong>Top Attractions:</strong> {{ page.top_attraction1 }}, {{ page.top_attraction2 }}, {{ page.top_attraction3 }}, and {{ page.top_attraction4 }}.</p>
-        <p><strong>Drop Locations:</strong> We provide door-to-door service to {{ page.popular_drop_point | default: "hotels and resorts" }} within the destination area.</p>
+        <p>{{ page.destination_about | default: "Experience the unique beauty and culture of this incredible destination in Kerala with our premium transport services." }}</p>
+        
+        <p style="margin-bottom: 5px;"><strong>Top Attractions:</strong></p>
+        <ul class="tt-list">
+          {% if page.top_attraction1 and page.top_attraction1 != "" %}<li>{{ page.top_attraction1 }}</li>{% else %}<li>Local Sightseeing & Viewpoints</li>{% endif %}
+          {% if page.top_attraction2 and page.top_attraction2 != "" %}<li>{{ page.top_attraction2 }}</li>{% endif %}
+          {% if page.top_attraction3 and page.top_attraction3 != "" %}<li>{{ page.top_attraction3 }}</li>{% endif %}
+          {% if page.top_attraction4 and page.top_attraction4 != "" %}<li>{{ page.top_attraction4 }}</li>{% endif %}
+        </ul>
+        
+        <p style="margin-top: 20px;"><strong>Drop Locations:</strong> We provide door-to-door service to {{ page.popular_drop_point | default: "hotels and resorts" }} within the destination area.</p>
       </div>
     </div>
   </section>
@@ -559,27 +553,27 @@ layout: default
       <h2 class="tt-h2">Group Travel Solutions</h2>
       
       <div class="tt-grid-4">
-        <div class="tt-card">
-          <h4 class="tt-card-title" style="font-size: 1.1rem;">Airport Pickups</h4>
-          <p style="font-size: 0.9rem;">Punctual VIP meet-and-greets at Cochin Airport (COK) directly to your destination.</p>
+        <div class="tt-card" style="padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px; color: #fff;">Airport Pickups</h4>
+          <p style="font-size: 0.95rem; color: var(--tt-text-muted); margin:0;">Punctual VIP meet-and-greets at Cochin Airport (COK) directly to your destination.</p>
         </div>
-        <div class="tt-card">
-          <h4 class="tt-card-title" style="font-size: 1.1rem;">One-Way & Return</h4>
-          <p style="font-size: 0.9rem;">Book a simple drop-off, or secure the vehicle for a multi-day round trip itinerary.</p>
+        <div class="tt-card" style="padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px; color: #fff;">One-Way & Return</h4>
+          <p style="font-size: 0.95rem; color: var(--tt-text-muted); margin:0;">Book a simple drop-off, or secure the vehicle for a multi-day round trip itinerary.</p>
         </div>
-        <div class="tt-card">
-          <h4 class="tt-card-title" style="font-size: 1.1rem;">Weddings & Events</h4>
-          <p style="font-size: 0.9rem;">Deploy multiple 26-seater Tempos to transport your entire guest list safely.</p>
+        <div class="tt-card" style="padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px; color: #fff;">Weddings & Events</h4>
+          <p style="font-size: 0.95rem; color: var(--tt-text-muted); margin:0;">Deploy multiple 26-seater Tempos to transport your entire guest list safely.</p>
         </div>
-        <div class="tt-card">
-          <h4 class="tt-card-title" style="font-size: 1.1rem;">Pilgrimage Tours</h4>
-          <p style="font-size: 0.9rem;">Spiritual temple tours managed by drivers with deep knowledge of route logistics.</p>
+        <div class="tt-card" style="padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 10px; color: #fff;">Pilgrimage Tours</h4>
+          <p style="font-size: 0.95rem; color: var(--tt-text-muted); margin:0;">Spiritual temple tours managed by drivers with deep knowledge of route logistics.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Fleet Image Gallery (Only Tempo & Urbania as requested) -->
+  <!-- Fleet Image Gallery -->
   <section class="tt-section">
     <div class="tt-container">
       <h2 class="tt-h2">Fleet Gallery</h2>
@@ -603,7 +597,7 @@ layout: default
           <figcaption>Spacious 26-Seater Coach Interior</figcaption>
         </figure>
         <figure>
-          <img src="/Pic_Force%20Tempo%20Traveller%20Rentals%20Kochi%20to%20Munnar.jpeg" alt="Tempo Traveller on Highway" loading="lazy">
+          <img src="/Pic_Force%20Tempo%20Traveller%20Rentals%20Kochi%20to%20Munnar.jpg" alt="Tempo Traveller on Highway" loading="lazy">
           <figcaption>Tempo Traveller - Highway Ready</figcaption>
         </figure>
         <figure>
@@ -614,46 +608,53 @@ layout: default
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ Section (Bulletproofed with Liquid Default rules) -->
   <section class="tt-section tt-bg-alt">
     <div class="tt-container">
       <h2 class="tt-h2">Frequently Asked Questions</h2>
+      <p class="tt-subtitle" style="margin-bottom: 40px;">Everything you need to know about renting a Tempo Traveller or Urbania for this route.</p>
+      
       <div class="tt-faq" style="max-width: 800px; margin: 0 auto;">
         
         <details>
-          <summary>What is the travel distance from {{ page.from_location }} to {{ page.destination_name }}?</summary>
-          <p>The total driving distance is approximately <strong>{{ page.distance_km }} km</strong>. The journey takes around <strong>{{ page.travel_time }}</strong>.</p>
+          <summary>What is the travel distance from {{ page.from_location | default: "Kochi" }} to {{ page.destination_name | default: "your destination" }}?</summary>
+          <p>The total driving distance is approximately <strong>{{ page.distance_km | default: "variable" }} km</strong>. The journey takes around <strong>{{ page.travel_time | default: "standard time" }}</strong> depending on traffic.</p>
         </details>
 
         <details>
           <summary>Which vehicle is best for large groups?</summary>
-          <p>We recommend the <strong>{{ page.recommended_vehicle }}</strong>. Both the Tempo Traveller and Urbania provide excellent luggage space and air-conditioning.</p>
+          <p>We recommend the <strong>{{ page.recommended_vehicle | default: "Tempo Traveller" }}</strong>. Both our Tempo Travellers and Urbanias provide excellent luggage space, comfortable seating, and powerful air-conditioning.</p>
         </details>
 
         <details>
           <summary>Do you provide Kochi Airport (COK) pickups?</summary>
-          <p>Yes, we offer 24/7 VIP airport pickups. Our English-speaking chauffeurs will track your flight and assist with luggage.</p>
+          <p>Yes, we offer 24/7 VIP airport pickups. Our English-speaking chauffeurs will track your flight and assist with luggage directly at the arrivals gate.</p>
         </details>
 
         <details>
-          <summary>Can we book a return trip from {{ page.destination_name }}?</summary>
-          <p>Yes, return and round-trip bookings are highly popular. The vehicle stays with your group for the entire duration of your trip.</p>
+          <summary>Can we book a return trip from {{ page.destination_name | default: "the destination" }}?</summary>
+          <p>Yes, return and round-trip bookings are highly popular. The vehicle stays with your group for the entire duration of your trip, ensuring seamless transit back.</p>
         </details>
 
         <details>
           <summary>Are your vehicles safe for night travel?</summary>
-          <p>Safety is our top priority. Our drivers are trained for night driving, though we adhere to local mountain/forest road restrictions if applicable.</p>
+          <p>Safety is our top priority. Our drivers are thoroughly trained for night driving, though we always adhere strictly to local mountain and forest road night restrictions if applicable to your route.</p>
         </details>
 
+        <!-- Safe rendering for dynamic FAQs from CSV -->
+        {% if page.faq1 and page.faq1 != "" %}
         <details>
           <summary>{{ page.faq1 | escape }}</summary>
           <p>{{ page.faq1_answer | escape }}</p>
         </details>
+        {% endif %}
 
+        {% if page.faq2 and page.faq2 != "" %}
         <details>
           <summary>{{ page.faq2 | escape }}</summary>
           <p>{{ page.faq2_answer | escape }}</p>
         </details>
+        {% endif %}
 
       </div>
     </div>
@@ -662,16 +663,16 @@ layout: default
   <!-- Related Links & Final CTA -->
   <section class="tt-section" style="text-align: center;">
     <div class="tt-container">
-      <h2 class="tt-h2" style="font-size: 2rem;">Secure Your Vehicle Today</h2>
+      <h2 class="tt-h2" style="font-size: 2.2rem; color: #fff;">Secure Your Vehicle Today</h2>
       <p style="margin-bottom: 30px; color: var(--tt-text-muted);">Transparent pricing, clean vehicles, and professional drivers.</p>
       
-      <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20want%20to%20book%20a%20vehicle%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.destination_name | url_encode }}." class="tt-btn tt-btn-primary" style="padding: 18px 40px; font-size: 1.1rem;">Get Fixed Quote</a>
+      <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20want%20to%20book%20a%20vehicle%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.destination_name | url_encode }}." class="tt-btn tt-btn-primary" style="padding: 18px 40px; font-size: 1.1rem;">GET FIXED QUOTE</a>
       
       <div class="tt-links">
         <a href="/">Home</a>
         <a href="/tempo-traveller-rentals-kochi-kerala/">Tempo Traveller Rentals</a>
         <a href="/urbania-rental/">Force Urbania Rentals</a>
-        <a href="{{ page.internal_link_url | default: '/south-india-tours/' }}">{{ page.internal_link_text | default: 'South India Tours' }}</a>
+        <a href="{{ page.internal_link_url | default: '/south-india-tours/' }}">{{ page.internal_link_text | default: 'South India Tour Packages' }}</a>
       </div>
     </div>
   </section>
