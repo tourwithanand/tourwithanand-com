@@ -17,6 +17,16 @@ day_5_plan: "Drive to Alleppey. Board a massive multi-bedroom private houseboat 
 day_6_plan: "Disembark houseboat. Drive to Kochi for a final day of shopping and cultural immersion."
 day_7_plan: "Drop-off at Kochi International Airport."
 inclusions: "Private Group Coach"
-None: " English-Speaking Driver,  Tolls & Parking,  Fuel,  Driver Allowance"
+route_keywords: " English-Speaking Driver"
+vehicle_keywords: " Tolls & Parking"
+internal_link_text: " Fuel"
+internal_link_url: " Driver Allowance"
+faq1_q: "Kochi to Munnar group travel route, Munnar to Thekkady coach route, Alleppey group houseboat transit"
+faq1_a: "Force Urbania rental Kochi, 26 seater Tempo Traveller Kerala, luxury coach for NRI tours"
+faq2_q: "Learn more about our Force Urbania luxury rentals."
+faq2_a: "/urbania-rental/"
+faq3_q: "Does the Force Urbania have enough luggage space for international travelers?"
+faq3_a: "Yes the Force Urbania features massive dedicated internal boot space designed specifically for heavy international luggage."
+None: "Can the large vehicles navigate the Munnar hills safely?, Absolutely. Our Tempo Travellers and Urbanias are heavy-duty hill-certified vehicles driven by expert mountain chauffeurs., Do we stay on one houseboat or multiple?, For large groups we arrange massive 4 to 6-bedroom premium houseboats so the entire family stays together."
 permalink: /south-india-tours/7-day-nri-group-tour/
 ---

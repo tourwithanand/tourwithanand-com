@@ -17,6 +17,16 @@ day_5_plan: "Kochi Airport pickup. Transfer to Fort Kochi to explore colonial Du
 day_6_plan: "Drive to Thrissur"
 day_7_plan: " the cultural capital. Visit ancient temples and local artisan markets."
 inclusions: "Transfer to Cheruthuruthy to visit the Kerala Kalamandalam (Academy of Performing Arts)."
-None: "Drive south to the backwater village of Kumarakom. Experience traditional pottery and weaving., Full day experiencing authentic village life and local Kerala culinary tours., Board a houseboat to see how locals live along the vast canal networks., Disembark and transfer to Kochi Airport., Private AC Vehicle,  English-Speaking Driver,  Tolls & Parking,  Fuel,  Driver Allowance"
+route_keywords: "Drive south to the backwater village of Kumarakom. Experience traditional pottery and weaving."
+vehicle_keywords: "Full day experiencing authentic village life and local Kerala culinary tours."
+internal_link_text: "Board a houseboat to see how locals live along the vast canal networks."
+internal_link_url: "Disembark and transfer to Kochi Airport."
+faq1_q: "Private AC Vehicle"
+faq1_a: " English-Speaking Driver"
+faq2_q: " Tolls & Parking"
+faq2_a: " Fuel"
+faq3_q: " Driver Allowance"
+faq3_a: "Kochi to Thrissur cultural route, Thrissur to Cheruthuruthy drive, Kumarakom village backroads"
+None: "Innova Crysta heritage tour, Tempo Traveller for cultural trips, English speaking driver Kerala, Need a tempo traveller for your cultural group? Click here., /tempo-traveller-rentals-kochi-kerala/, Can the driver act as a cultural guide?, While our chauffeurs are highly knowledgeable locals with excellent English they are not licensed historians. We can arrange specialized guides at monuments if required., What is the best time for this cultural tour?, The winter months from October to March offer the best weather for walking tours and visiting ancient heritage sites., Are temple dress codes strict?, Yes most traditional Kerala temples require men to wear dhotis and women to wear sarees or long skirts. Your driver will brief you beforehand."
 permalink: /south-india-tours/7-day-kerala-culture-heritage/
 ---

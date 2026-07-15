@@ -17,6 +17,16 @@ day_5_plan: "Full day Wayanad: Visit the prehistoric Edakkal Caves and Soochipar
 day_6_plan: "Wayanad wildlife tracking at Muthanga Wildlife Sanctuary and tea estate walks."
 day_7_plan: "Descend the hills and drive to the historic forts of North Kerala or relax at a resort."
 inclusions: "Leisurely drive back down the coast toward Ernakulam/Kochi."
-None: "Final shopping in Kochi and transfer to the Airport., Private AC Vehicle,  English-Speaking Driver,  Tolls & Parking,  Fuel,  Driver Allowance"
+route_keywords: "Final shopping in Kochi and transfer to the Airport."
+vehicle_keywords: "Private AC Vehicle"
+internal_link_text: " English-Speaking Driver"
+internal_link_url: " Tolls & Parking"
+faq1_q: " Fuel"
+faq1_a: " Driver Allowance"
+faq2_q: "Kochi to Calicut coastal highway, Calicut to Wayanad Thamarassery Churam, North Kerala tourist route"
+faq2_a: "Innova Crysta North Kerala tour, Force Urbania Wayanad trip, robust hill station cab"
+faq3_q: "See our Force Urbania rentals for hill station luxury."
+faq3_a: "/urbania-rental/"
+None: "Is the drive to Wayanad steep?, Yes the route involves the famous Thamarassery Churam with numerous hairpin bends. Our expert drivers and robust vehicles ensure a safe and smooth ascent., What is the weather like in Wayanad?, Wayanad is a high-altitude district so the climate remains cool and misty year-round making it a perfect retreat., Are the Edakkal Caves difficult to climb?, The hike to the caves is moderately steep and involves uneven rocks. We advise wearing comfortable trekking shoes and checking your fitness level."
 permalink: /south-india-tours/7-day-north-kerala-wayanad/
 ---

@@ -4,47 +4,76 @@ layout: default
 
 <!-- SEO & Meta Tags -->
 <meta name="description" content="{{ page.meta_desc | default: 'Premium Kerala tour packages with professional English-speaking drivers and luxury vehicles.' | escape }}">
-<meta name="keywords" content="Kerala tour package from Kochi airport, luxury Kerala tours, {{ page.package_slug | replace: '-', ' ' }}">
+<meta name="keywords" content="{{ page.route_keywords | escape }}, {{ page.vehicle_keywords | escape }}, luxury Kerala tours, Kerala tour package from Kochi airport">
 <link rel="canonical" href="{{ site.url }}/south-india-tours/{{ page.package_slug }}/">
 
 <!-- Google Rich Results / JSON-LD Schema -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TouristTrip",
-  "name": "{{ page.package_name }}",
-  "description": "{{ page.package_overview | escape }}",
-  "touristType": [
-    "International Tourists",
-    "NRIs",
-    "Families",
-    "Luxury Travelers"
-  ],
-  "itinerary": {
-    "@type": "ItemList",
-    "itemListElement": [
-      {% if page.day_1_plan %}{ "@type": "ListItem", "position": 1, "name": "Day 1", "description": "{{ page.day_1_plan | escape }}" }{% endif %}
-      {% if page.day_2_plan %},{ "@type": "ListItem", "position": 2, "name": "Day 2", "description": "{{ page.day_2_plan | escape }}" }{% endif %}
-      {% if page.day_3_plan %},{ "@type": "ListItem", "position": 3, "name": "Day 3", "description": "{{ page.day_3_plan | escape }}" }{% endif %}
-      {% if page.day_4_plan %},{ "@type": "ListItem", "position": 4, "name": "Day 4", "description": "{{ page.day_4_plan | escape }}" }{% endif %}
-      {% if page.day_5_plan %},{ "@type": "ListItem", "position": 5, "name": "Day 5", "description": "{{ page.day_5_plan | escape }}" }{% endif %}
-      {% if page.day_6_plan %},{ "@type": "ListItem", "position": 6, "name": "Day 6", "description": "{{ page.day_6_plan | escape }}" }{% endif %}
-      {% if page.day_7_plan %},{ "@type": "ListItem", "position": 7, "name": "Day 7", "description": "{{ page.day_7_plan | escape }}" }{% endif %}
-    ]
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "{{ page.package_name }}",
+    "description": "{{ page.package_overview | escape }}",
+    "touristType": [
+      "International Tourists",
+      "NRIs",
+      "Families",
+      "Luxury Travelers"
+    ],
+    "itinerary": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {% if page.day_1_plan %}{ "@type": "ListItem", "position": 1, "name": "Day 1", "description": "{{ page.day_1_plan | escape }}" }{% endif %}
+        {% if page.day_2_plan %},{ "@type": "ListItem", "position": 2, "name": "Day 2", "description": "{{ page.day_2_plan | escape }}" }{% endif %}
+        {% if page.day_3_plan %},{ "@type": "ListItem", "position": 3, "name": "Day 3", "description": "{{ page.day_3_plan | escape }}" }{% endif %}
+        {% if page.day_4_plan %},{ "@type": "ListItem", "position": 4, "name": "Day 4", "description": "{{ page.day_4_plan | escape }}" }{% endif %}
+        {% if page.day_5_plan %},{ "@type": "ListItem", "position": 5, "name": "Day 5", "description": "{{ page.day_5_plan | escape }}" }{% endif %}
+        {% if page.day_6_plan %},{ "@type": "ListItem", "position": 6, "name": "Day 6", "description": "{{ page.day_6_plan | escape }}" }{% endif %}
+        {% if page.day_7_plan %},{ "@type": "ListItem", "position": 7, "name": "Day 7", "description": "{{ page.day_7_plan | escape }}" }{% endif %}
+      ]
+    },
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Tour With Anand",
+      "telephone": "+919400620615",
+      "image": "{{ site.url }}/Kerala%20Tour%20Package%20from%20Kochi%20airport.png"
+    }
   },
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Tour With Anand",
-    "telephone": "+919400620615",
-    "image": "{{ site.url }}/Kerala%20Tour%20Package%20from%20Kochi%20airport.png"
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% if page.faq1_q and page.faq1_q != "" %}
+      {
+        "@type": "Question",
+        "name": "{{ page.faq1_q | escape }}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq1_a | escape }}" }
+      }
+      {% endif %}
+      {% if page.faq2_q and page.faq2_q != "" %}
+      ,{
+        "@type": "Question",
+        "name": "{{ page.faq2_q | escape }}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq2_a | escape }}" }
+      }
+      {% endif %}
+      {% if page.faq3_q and page.faq3_q != "" %}
+      ,{
+        "@type": "Question",
+        "name": "{{ page.faq3_q | escape }}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq3_a | escape }}" }
+      }
+      {% endif %}
+    ]
   }
-}
+]
 </script>
 
 <style>
   /* 
    * NAMESPACED CSS FOR KERALA TOURS PAGE
-   * Prefix "kt-" ensures zero conflict with default.html
+   * Flat, professional, and readable layout
   */
   .kt-wrapper, .kt-wrapper *, .kt-wrapper *::before, .kt-wrapper *::after {
     box-sizing: border-box !important;
@@ -201,7 +230,7 @@ layout: default
     padding: 20px 0 60px 0;
   }
 
-  .kt-content h2 {
+  .kt-content h2, .kt-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     color: #fff;
@@ -402,6 +431,62 @@ layout: default
     font-weight: bold;
   }
 
+  /* FAQ Accordion */
+  .kt-faq details {
+    background-color: var(--kt-bg-card);
+    border: 1px solid var(--kt-border);
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: var(--kt-radius);
+    transition: all 0.3s ease;
+  }
+
+  .kt-faq details:hover {
+    border-color: var(--kt-gold);
+  }
+
+  .kt-faq summary {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    outline: none;
+  }
+
+  .kt-faq summary::-webkit-details-marker { display: none; }
+  .kt-faq summary::after { content: '+'; color: var(--kt-gold); font-size: 1.6rem; font-weight: 300; }
+  .kt-faq details[open] summary::after { content: '−'; }
+  .kt-faq p { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--kt-text-muted); line-height: 1.7; }
+
+  /* Internal Links Section */
+  .kt-internal-links {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .kt-link-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: transparent;
+    border: 1px solid var(--kt-gold);
+    color: var(--kt-gold);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .kt-link-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+  }
+
   /* Mobile Adjustments */
   @media (max-width: 992px) {
     .kt-main-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -421,7 +506,6 @@ layout: default
 
   <!-- 1. Hero Section -->
   <section class="kt-hero" aria-label="Tour Package Hero">
-    <!-- Using the specific image requested by the user -->
     <img src="{{ page.hero_image | default: '/Kerala%20Tour%20Package%20from%20Kochi%20airport.png' }}" alt="{{ page.package_name }}" class="kt-hero-bg" loading="eager" width="1920" height="1080">
     <div class="kt-hero-overlay"></div>
     
@@ -551,10 +635,10 @@ layout: default
 
   </div>
 
-  <!-- 4. Premium Fleet Section (Added for SEO and conversion) -->
+  <!-- 4. Premium Fleet Section -->
   <section class="kt-section kt-bg-alt">
     <div class="kt-container">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #fff; text-align: center; margin-top: 0; margin-bottom: 10px;">Our Premium Tour Fleet</h2>
+      <h2 style="text-align: center; border: none; padding-bottom: 0;">Our Premium Tour Fleet</h2>
       <p style="text-align: center; color: var(--kt-text-muted); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">Select the perfect vehicle for your Kerala itinerary. All our cars are meticulously cleaned, fully air-conditioned, and driven by verified English-speaking professionals.</p>
       
       <div class="kt-fleet-grid">
@@ -612,5 +696,46 @@ layout: default
       </div>
     </div>
   </section>
+
+  <!-- 5. Dynamic FAQ Section -->
+  {% if page.faq1_q and page.faq1_q != "" %}
+  <section class="kt-section">
+    <div class="kt-container">
+      <h2 style="text-align: center; border: none; padding-bottom: 0;">Frequently Asked Questions</h2>
+      <div class="kt-faq" style="max-width: 850px; margin: 30px auto 0;">
+        
+        <details>
+          <summary>{{ page.faq1_q }}</summary>
+          <p>{{ page.faq1_a }}</p>
+        </details>
+        
+        {% if page.faq2_q and page.faq2_q != "" %}
+        <details>
+          <summary>{{ page.faq2_q }}</summary>
+          <p>{{ page.faq2_a }}</p>
+        </details>
+        {% endif %}
+        
+        {% if page.faq3_q and page.faq3_q != "" %}
+        <details>
+          <summary>{{ page.faq3_q }}</summary>
+          <p>{{ page.faq3_a }}</p>
+        </details>
+        {% endif %}
+        
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- 6. Internal Linking (SEO Optimization) -->
+  {% if page.internal_link_url and page.internal_link_url != "" %}
+  <section class="kt-section kt-bg-alt" style="padding: 40px 0;">
+    <div class="kt-container kt-internal-links">
+      <p style="color: var(--kt-text-muted); font-size: 1rem; margin-bottom: 15px;">Looking for other services?</p>
+      <a href="{{ page.internal_link_url }}" class="kt-link-btn">{{ page.internal_link_text }}</a>
+    </div>
+  </section>
+  {% endif %}
 
 </div>

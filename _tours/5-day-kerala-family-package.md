@@ -17,6 +17,16 @@ day_5_plan: "Transfer to Thekkady. Enjoy the Periyar Wildlife Safari and local s
 day_6_plan: "Transfer to Alleppey. Check into a private premium houseboat for a cruise and overnight stay."
 day_7_plan: "Morning checkout from the houseboat and safe transfer back to Kochi Airport for departure."
 inclusions: ""
-None: ", Private AC Vehicle,  English-Speaking Driver,  Tolls & Parking,  Fuel,  Driver Allowance"
+route_keywords: ""
+vehicle_keywords: "Private AC Vehicle"
+internal_link_text: " English-Speaking Driver"
+internal_link_url: " Tolls & Parking"
+faq1_q: " Fuel"
+faq1_a: " Driver Allowance"
+faq2_q: "Kochi to Munnar family trip, Munnar to Thekkady route, Alleppey houseboat from Kochi"
+faq2_a: "Innova Crysta rental Kochi, Force Urbania family tour, Kerala tourist taxi"
+faq3_q: "Need an airport transfer only? Book our Kochi Airport Taxi."
+faq3_a: "/taxi/kochi-airport/"
+None: "Is this 5-day tour suitable for children and seniors?, Yes. The pacing is relaxed and our Innova Crysta and Force Urbania vehicles provide superior suspension for comfortable travel on hill roads., Are houseboat meals included?, Yes all meals (lunch dinner and breakfast) are traditionally included during your overnight houseboat stay in Alleppey., Can we customize the pickup time from Kochi Airport?, Absolutely. We operate 24/7 and will adjust the itinerary based on your exact flight arrival time."
 permalink: /south-india-tours/5-day-kerala-family-package/
 ---

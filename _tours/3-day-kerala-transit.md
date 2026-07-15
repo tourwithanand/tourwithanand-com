@@ -17,6 +17,16 @@ day_5_plan: "Morning souvenir shopping in Kochi followed by a timely drop-off at
 day_6_plan: ""
 day_7_plan: ""
 inclusions: ""
-None: ", Private AC Vehicle,  English-Speaking Driver,  Tolls & Parking,  Fuel,  Driver Allowance"
+route_keywords: ""
+vehicle_keywords: "Private AC Vehicle"
+internal_link_text: " English-Speaking Driver"
+internal_link_url: " Tolls & Parking"
+faq1_q: " Fuel"
+faq1_a: " Driver Allowance"
+faq2_q: "Kochi Airport to Alleppey direct route, Alleppey to Fort Kochi transit, rapid Kerala travel"
+faq2_a: "Kochi airport taxi service, Innova Crysta short trip, fast transit cab Kerala"
+faq3_q: "Book a direct Kochi Airport Taxi here."
+faq3_a: "/taxi/kochi-airport/"
+None: "What if my flight arrives late at night?, Our airport pickup service operates 24/7. We will safely transfer you to a hotel in Kochi for the night and begin the backwater tour the next morning., Is a 3-day trip worth it?, Absolutely. We optimize the logistics to ensure you experience the houseboat and heritage sites without feeling rushed., Can I upgrade the vehicle?, Yes you can upgrade from a sedan to an Innova Crysta or Urbania depending on your comfort preferences and luggage size."
 permalink: /south-india-tours/3-day-kerala-transit/
 ---

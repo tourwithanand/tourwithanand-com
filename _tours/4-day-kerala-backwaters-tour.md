@@ -17,6 +17,16 @@ day_5_plan: "Transfer to Alleppey. Check into a premium private houseboat for an
 day_6_plan: "Morning checkout and smooth transfer back to Kochi Airport."
 day_7_plan: ""
 inclusions: ""
-None: ", Private AC Vehicle,  English-Speaking Driver,  Tolls & Parking,  Fuel,  Driver Allowance"
+route_keywords: ""
+vehicle_keywords: "Private AC Vehicle"
+internal_link_text: " English-Speaking Driver"
+internal_link_url: " Tolls & Parking"
+faq1_q: " Fuel"
+faq1_a: " Driver Allowance"
+faq2_q: "Fort Kochi heritage walk route, Kochi to Alleppey backwater drive, Ernakulam coastal transit"
+faq2_a: "Innova Crysta Kochi to Alleppey, Kerala short tour taxi, premium cab for backwaters"
+faq3_q: "Need a larger vehicle? Check our Tempo Traveller rentals."
+faq3_a: "/tempo-traveller-rentals-kochi-kerala/"
+None: "Can we skip Fort Kochi and go straight to Alleppey?, Yes our itineraries are fully customizable. If your flight lands late we can take you directly to your Alleppey resort., Are entrance fees to heritage sites included?, We cover all transport tolls and parking. Entrance fees to specific monuments are usually paid directly at the counter., Is the driver fluent in English?, Yes we specifically assign verified English-speaking chauffeurs for our international and NRI guests."
 permalink: /south-india-tours/4-day-kerala-backwaters-tour/
 ---

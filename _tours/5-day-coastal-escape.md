@@ -17,6 +17,16 @@ day_5_plan: "Short drive to Alleppey. Board your luxury houseboat for an afterno
 day_6_plan: "Disembark and drive to Fort Kochi. Enjoy an evening sunset harbor cruise."
 day_7_plan: "Morning heritage walk in Fort Kochi followed by an airport drop-off."
 inclusions: ""
-None: ", Private AC Vehicle,  English-Speaking Driver,  Tolls & Parking,  Fuel,  Driver Allowance"
+route_keywords: ""
+vehicle_keywords: "Private AC Vehicle"
+internal_link_text: " English-Speaking Driver"
+internal_link_url: " Tolls & Parking"
+faq1_q: " Fuel"
+faq1_a: " Driver Allowance"
+faq2_q: "Kochi to Marari beach route, Marari coastal highway drive, Alleppey backwater roads"
+faq2_a: "Innova Crysta coastal tour, premium sedan for beach resorts, luxury cab Kerala"
+faq3_q: "See our Force Urbania options for luxury groups."
+faq3_a: "/urbania-rental/"
+None: "Is Marari Beach safe for swimming?, Yes Marari is one of the cleanest and safest beaches in Kerala for swimming though we advise checking local tidal warnings with your resort., How far is Marari from Kochi Airport?, Marari Beach is approximately 75 kilometers from Kochi Airport taking about 2 hours via the coastal highway in our premium cabs., Can we add a visit to Varkala to this tour?, Yes we can customize this itinerary to include Varkala Beach for an additional cost depending on your flight schedule."
 permalink: /south-india-tours/5-day-coastal-escape/
 ---
