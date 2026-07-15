@@ -2,12 +2,11 @@
 layout: default
 ---
 
+<!-- SEO & Meta Tags -->
 <meta name="description" content="{{ page.meta_desc | escape }}">
+<link rel="canonical" href="{{ site.url }}/south-india-tours/{{ page.package_slug }}/">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
+<!-- Google Rich Results / JSON-LD Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -15,7 +14,10 @@ layout: default
   "name": "{{ page.package_name }}",
   "description": "{{ page.package_overview | escape }}",
   "touristType": [
-    "{{ page.ideal_for }}"
+    "International Tourists",
+    "NRIs",
+    "Families",
+    "Luxury Travelers"
   ],
   "itinerary": {
     "@type": "ItemList",
@@ -32,135 +34,445 @@ layout: default
   "provider": {
     "@type": "LocalBusiness",
     "name": "Tour With Anand",
-    "telephone": "+919400620615"
+    "telephone": "+919400620615",
+    "image": "{{ site.url }}/Tour%20With%20Anand%20Logo%20Home.png"
   }
 }
 </script>
 
 <style>
-  *, *::before, *::after { box-sizing: border-box; }
-  :root { --gold: #ffcc00; --dark-bg: #0a0b0e; --card-bg: rgba(20, 23, 29, 0.7); }
-  body { font-family: 'Inter', sans-serif; background: var(--dark-bg); color: #e0e4eb; }
+  /* 
+   * NAMESPACED CSS FOR KERALA TOURS PAGE
+   * Prefix "kt-" ensures zero conflict with default.html
+  */
+  .kt-wrapper, .kt-wrapper *, .kt-wrapper *::before, .kt-wrapper *::after {
+    box-sizing: border-box !important;
+  }
 
-  /* Premium Hero Section */
-  .tour-hero { position: relative; padding: 160px 20px 80px; text-align: center; border-bottom: 1px solid rgba(255, 204, 0, 0.2); }
-  .tour-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.4; }
-  .tour-hero-content { position: relative; z-index: 3; max-width: 900px; margin: 0 auto; }
-  .tour-meta { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 14px; font-weight: 600; margin-bottom: 15px; display: block; }
-  .tour-hero h1 { font-size: clamp(32px, 5vw, 52px); color: #fff; font-family: 'Playfair Display', serif; line-height: 1.2; margin-bottom: 20px; }
-  .tour-hero p { font-size: 18px; font-weight: 300; line-height: 1.7; color: #dcdcdc; }
+  :root {
+    --kt-gold: #d4af37;
+    --kt-gold-hover: #f9df9f;
+    --kt-bg-main: #0a0b0e;
+    --kt-bg-card: #15181e;
+    --kt-bg-elevated: #1a1d24;
+    --kt-text-main: #e0e4eb;
+    --kt-text-muted: #a0a4ab;
+    --kt-border: rgba(212, 175, 55, 0.2);
+    --kt-radius: 12px;
+  }
 
-  /* Quick Facts Glassmorphism */
-  .tour-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 40px auto; max-width: 1000px; padding: 0 20px; position: relative; z-index: 3; }
-  .fact-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,204,0,0.2); padding: 25px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); }
-  .fact-box span { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #a0a4ab; margin-bottom: 8px; }
-  .fact-box strong { font-size: 18px; color: var(--gold); font-family: 'Playfair Display', serif; }
+  .kt-wrapper {
+    background-color: var(--kt-bg-main);
+    color: var(--kt-text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    line-height: 1.8;
+  }
 
-  /* Content Layout */
-  .tour-container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 50px; }
-  
-  /* Itinerary Timeline */
-  .timeline { border-left: 2px solid rgba(255,204,0,0.3); padding-left: 30px; margin-top: 40px; }
-  .timeline-item { position: relative; margin-bottom: 40px; }
-  .timeline-dot { position: absolute; left: -39px; top: 5px; width: 16px; height: 16px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 10px rgba(255,204,0,0.5); }
-  .timeline-item h4 { color: #fff; font-family: 'Playfair Display', serif; font-size: 22px; margin: 0 0 10px 0; }
-  .timeline-item p { color: #a0a4ab; line-height: 1.8; margin: 0; }
+  .kt-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-  /* Sticky Booking Widget */
-  .booking-sidebar { position: sticky; top: 100px; background: linear-gradient(145deg, #15181e, #0e1015); border: 1px solid rgba(255,204,0,0.3); border-radius: 16px; padding: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); height: fit-content; }
-  .booking-sidebar h3 { color: #fff; font-family: 'Playfair Display', serif; margin-top: 0; margin-bottom: 20px; font-size: 24px; text-align: center; }
-  .inclusions-list { margin-bottom: 30px; padding-left: 20px; color: #dcdcdc; line-height: 1.8; }
-  .inclusions-list li { margin-bottom: 10px; }
-  
-  .futuristic-btn { display: block; width: 100%; text-align: center; background: linear-gradient(135deg, #ffcc00, #e6b800); color: #0a0b0e; padding: 16px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s ease; }
-  .futuristic-btn:hover { background: transparent; color: #ffcc00; border: 2px solid #ffcc00; box-shadow: 0 0 20px rgba(255,204,0,0.4); }
+  /* Hero Section */
+  .kt-hero {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 60px;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid var(--kt-border);
+  }
+
+  .kt-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  .kt-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,11,14,0.4) 0%, rgba(10,11,14,0.9) 80%, var(--kt-bg-main) 100%);
+    z-index: 2;
+  }
+
+  .kt-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+  }
+
+  .kt-breadcrumb {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--kt-gold);
+    border: 1px solid var(--kt-border);
+    border-radius: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+
+  .kt-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+  }
+
+  .kt-hero p {
+    font-size: 1.15rem;
+    color: var(--kt-text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Quick Facts */
+  .kt-facts-grid {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: -50px;
+    padding-bottom: 60px;
+  }
+
+  .kt-fact-item {
+    background: var(--kt-bg-card);
+    border: 1px solid var(--kt-border);
+    padding: 25px;
+    border-radius: var(--kt-radius);
+    text-align: center;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+
+  .kt-fact-label {
+    display: block;
+    font-size: 12px;
+    color: var(--kt-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .kt-fact-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--kt-gold);
+    font-weight: 600;
+  }
+
+  /* Main Layout */
+  .kt-main-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    padding: 20px 0 80px 0;
+  }
+
+  .kt-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #fff;
+    border-bottom: 1px solid var(--kt-border);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    margin-top: 0;
+  }
+
+  .kt-overview {
+    font-size: 1.1rem;
+    color: var(--kt-text-main);
+    margin-bottom: 50px;
+    background: var(--kt-bg-card);
+    padding: 30px;
+    border-radius: var(--kt-radius);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* Vertical Timeline Itinerary */
+  .kt-timeline {
+    border-left: 2px solid var(--kt-border);
+    padding-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  .kt-timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .kt-timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .kt-timeline-dot {
+    position: absolute;
+    left: -39px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background: var(--kt-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+
+  .kt-timeline-item h4 {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+  }
+
+  .kt-timeline-item p {
+    color: var(--kt-text-muted);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  /* Sticky Sidebar */
+  .kt-sidebar {
+    position: sticky;
+    top: 100px;
+    background: var(--kt-bg-elevated);
+    border: 1px solid var(--kt-border);
+    border-radius: var(--kt-radius);
+    padding: 35px 30px;
+    height: fit-content;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+
+  .kt-sidebar h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .kt-inclusions {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+
+  .kt-inclusions li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: var(--kt-text-main);
+    font-size: 0.95rem;
+  }
+
+  .kt-inclusions li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #25D366;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .kt-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, var(--kt-gold), #b8860b);
+    color: #000;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .kt-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+  }
+
+  .kt-trust-badge {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--kt-text-muted);
+    font-size: 0.85rem;
+  }
 
   /* Mobile Adjustments */
+  @media (max-width: 992px) {
+    .kt-main-layout { grid-template-columns: 1fr; gap: 40px; }
+    .kt-sidebar { position: relative; top: 0; }
+  }
+
   @media (max-width: 768px) {
-    .tour-container { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px; }
-    .booking-sidebar { position: static; }
-    .tour-hero { padding: 120px 20px 60px; }
+    .kt-hero { min-height: auto; padding-top: 140px; padding-bottom: 80px; }
+    .kt-facts-grid { grid-template-columns: 1fr 1fr; padding: 0 20px; }
+    .kt-timeline { padding-left: 20px; }
+    .kt-timeline-dot { left: -29px; }
   }
 </style>
 
-<section class="tour-hero">
-  <img src="/Mobile%20View%20Kerala-clean.jpg" alt="{{ page.package_name }}" class="tour-hero-bg">
-  <div class="tour-hero-content">
-    <span class="tour-meta">Luxury Kerala Itineraries</span>
-    <h1>{{ page.package_name }}</h1>
-    <p>{{ page.package_overview }}</p>
-  </div>
-</section>
+<div class="kt-wrapper">
 
-<div class="tour-facts">
-  <div class="fact-box"><span>Duration</span><strong>{{ page.duration }}</strong></div>
-  <div class="fact-box"><span>Destinations</span><strong>{{ page.destinations }}</strong></div>
-  <div class="fact-box"><span>Premium Vehicle</span><strong>{{ page.premium_vehicle }}</strong></div>
-</div>
-
-<div class="tour-container">
-  
-  <div class="itinerary-content">
-    <h2 style="color: #fff; font-family: 'Playfair Display', serif; font-size: 32px; border-bottom: 1px solid rgba(255,204,0,0.2); padding-bottom: 10px;">Day-by-Day Itinerary</h2>
+  <!-- 1. Hero Section -->
+  <section class="kt-hero" aria-label="Tour Package Hero">
+    <img src="{{ page.hero_image | default: '/Mobile%20View%20Kerala-clean.jpg' }}" alt="{{ page.package_name }}" class="kt-hero-bg" loading="eager">
+    <div class="kt-hero-overlay"></div>
     
-    <div class="timeline">
-      {% if page.day_1_plan %}
-      <div class="timeline-item"><div class="timeline-dot"></div><h4>Day 1</h4><p>{{ page.day_1_plan }}</p></div>
-      {% endif %}
-      
-      {% if page.day_2_plan %}
-      <div class="timeline-item"><div class="timeline-dot"></div><h4>Day 2</h4><p>{{ page.day_2_plan }}</p></div>
-      {% endif %}
-      
-      {% if page.day_3_plan %}
-      <div class="timeline-item"><div class="timeline-dot"></div><h4>Day 3</h4><p>{{ page.day_3_plan }}</p></div>
-      {% endif %}
-      
-      {% if page.day_4_plan %}
-      <div class="timeline-item"><div class="timeline-dot"></div><h4>Day 4</h4><p>{{ page.day_4_plan }}</p></div>
-      {% endif %}
-      
-      {% if page.day_5_plan %}
-      <div class="timeline-item"><div class="timeline-dot"></div><h4>Day 5</h4><p>{{ page.day_5_plan }}</p></div>
-      {% endif %}
-      
-      {% if page.day_6_plan %}
-      <div class="timeline-item"><div class="timeline-dot"></div><h4>Day 6</h4><p>{{ page.day_6_plan }}</p></div>
-      {% endif %}
-      
-      {% if page.day_7_plan %}
-      <div class="timeline-item"><div class="timeline-dot"></div><h4>Day 7</h4><p>{{ page.day_7_plan }}</p></div>
-      {% endif %}
+    <div class="kt-container kt-hero-content">
+      <span class="kt-breadcrumb">South India Tours / Kerala Packages</span>
+      <h1>{{ page.package_name }}</h1>
+      <p>{{ page.meta_desc }}</p>
+    </div>
+  </section>
+
+  <!-- Quick Facts -->
+  <div class="kt-container">
+    <div class="kt-facts-grid">
+      <div class="kt-fact-item">
+        <span class="kt-fact-label">Duration</span>
+        <span class="kt-fact-value">{{ page.duration }}</span>
+      </div>
+      <div class="tt-fact-item kt-fact-item">
+        <span class="kt-fact-label">Route</span>
+        <span class="kt-fact-value" style="font-size: 16px;">{{ page.destinations }}</span>
+      </div>
+      <div class="kt-fact-item">
+        <span class="kt-fact-label">Ideal For</span>
+        <span class="kt-fact-value" style="font-size: 16px;">{{ page.ideal_for }}</span>
+      </div>
+      <div class="kt-fact-item">
+        <span class="kt-fact-label">Premium Vehicle</span>
+        <span class="kt-fact-value" style="font-size: 16px;">{{ page.premium_vehicle }}</span>
+      </div>
     </div>
   </div>
 
-  <div class="booking-sidebar">
-    <h3>Package Inclusions</h3>
-    <ul class="inclusions-list">
-      {% assign inclusions_array = page.inclusions | split: ", " %}
-      {% for item in inclusions_array %}
-        <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
+  <!-- Main Content & Sidebar -->
+  <div class="kt-container kt-main-layout">
     
-    <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px; padding-top: 20px;">
-      <h4 style="color: #a0a4ab; font-size: 14px; text-transform: uppercase; margin-bottom: 15px; text-align: center;">Ideal For: {{ page.ideal_for }}</h4>
-      <button class="futuristic-btn" onclick="sendPackageWhatsApp()">Request Custom Quote</button>
+    <!-- Left Column: Itinerary -->
+    <div class="kt-content">
+      
+      <h2>Tour Overview</h2>
+      <div class="kt-overview">
+        <p style="margin:0;">{{ page.package_overview }} Our specialized packages ensure international tourists and NRIs experience a completely hassle-free, secure, and luxurious journey across Kerala with dedicated English-speaking chauffeurs.</p>
+      </div>
+
+      <h2>Day-by-Day Itinerary</h2>
+      <div class="kt-timeline">
+        
+        {% if page.day_1_plan and page.day_1_plan != "" %}
+        <div class="kt-timeline-item">
+          <div class="kt-timeline-dot"></div>
+          <h4>Day 1</h4>
+          <p>{{ page.day_1_plan }}</p>
+        </div>
+        {% endif %}
+        
+        {% if page.day_2_plan and page.day_2_plan != "" %}
+        <div class="kt-timeline-item">
+          <div class="kt-timeline-dot"></div>
+          <h4>Day 2</h4>
+          <p>{{ page.day_2_plan }}</p>
+        </div>
+        {% endif %}
+        
+        {% if page.day_3_plan and page.day_3_plan != "" %}
+        <div class="kt-timeline-item">
+          <div class="kt-timeline-dot"></div>
+          <h4>Day 3</h4>
+          <p>{{ page.day_3_plan }}</p>
+        </div>
+        {% endif %}
+        
+        {% if page.day_4_plan and page.day_4_plan != "" %}
+        <div class="kt-timeline-item">
+          <div class="kt-timeline-dot"></div>
+          <h4>Day 4</h4>
+          <p>{{ page.day_4_plan }}</p>
+        </div>
+        {% endif %}
+        
+        {% if page.day_5_plan and page.day_5_plan != "" %}
+        <div class="kt-timeline-item">
+          <div class="kt-timeline-dot"></div>
+          <h4>Day 5</h4>
+          <p>{{ page.day_5_plan }}</p>
+        </div>
+        {% endif %}
+        
+        {% if page.day_6_plan and page.day_6_plan != "" %}
+        <div class="kt-timeline-item">
+          <div class="kt-timeline-dot"></div>
+          <h4>Day 6</h4>
+          <p>{{ page.day_6_plan }}</p>
+        </div>
+        {% endif %}
+        
+        {% if page.day_7_plan and page.day_7_plan != "" %}
+        <div class="kt-timeline-item">
+          <div class="kt-timeline-dot"></div>
+          <h4>Day 7</h4>
+          <p>{{ page.day_7_plan }}</p>
+        </div>
+        {% endif %}
+
+      </div>
     </div>
+
+    <!-- Right Column: Sticky Sidebar -->
+    <aside>
+      <div class="kt-sidebar">
+        <h3>Package Inclusions</h3>
+        
+        <ul class="kt-inclusions">
+          {% assign inclusions_array = page.inclusions | split: ", " %}
+          {% for item in inclusions_array %}
+            <li>{{ item }}</li>
+          {% endfor %}
+          <li>24/7 WhatsApp Ground Support</li>
+          <li>VIP Airport Meet & Greet</li>
+        </ul>
+        
+        <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20am%20interested%20in%20the%20{{ page.package_name | url_encode }}.%20Please%20share%20the%20detailed%20quote." class="kt-btn" target="_blank" rel="noopener">Request Custom Quote</a>
+        
+        <div class="kt-trust-badge">
+          No hidden fees. Safe & reliable transport dedicated to international tourists and families.
+        </div>
+      </div>
+    </aside>
+
   </div>
 
 </div>
-
-<script>
-  function sendPackageWhatsApp() {
-    var packageName = "{{ page.package_name }}";
-    var duration = "{{ page.duration }}";
-    
-    var message = "*Luxury Tour Inquiry*%0A" + 
-                  "Package: " + packageName + "%0A" +
-                  "Duration: " + duration + "%0A" +
-                  "Hi Anand, please share the detailed pricing and availability for this itinerary.";
-                  
-    window.location.href = "https://wa.me/919400620615?text=" + message;
-  }
-</script>
