@@ -60,7 +60,6 @@ layout: default
 <style>
   /* 
    * NAMESPACED CSS FOR TEMPO TRAVELLER PAGE 
-   * Protects styling to ensure it works perfectly on PC and Mobile
   */
   .tt-wrapper, .tt-wrapper *, .tt-wrapper *::before, .tt-wrapper *::after {
     box-sizing: border-box !important;
@@ -130,14 +129,14 @@ layout: default
     width: 100%;
     margin: 0;
     padding: 0;
-    line-height: 0; /* Fixes bottom gap issue */
+    line-height: 0;
     background-color: #000;
   }
 
   .tt-banner-img {
     width: 100%;
     height: auto;
-    display: block; /* Ensures natural scaling on PC & Mobile */
+    display: block; 
   }
 
   /* Hero Content Area */
@@ -267,6 +266,8 @@ layout: default
     border: 1px solid var(--tt-border);
     border-radius: var(--tt-radius);
     padding: 30px;
+    display: flex;
+    flex-direction: column;
   }
 
   .tt-card-title {
@@ -277,11 +278,28 @@ layout: default
     border-bottom: 1px solid var(--tt-border);
   }
 
+  /* Image Uniformity - Fixed Aspect Ratios */
+  .tt-card-img-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--tt-border);
+  }
+
+  .tt-card-img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+  }
+
   /* Lists */
   .tt-list {
     list-style: none;
     padding: 0;
     margin: 0 0 20px 0;
+    flex-grow: 1;
   }
   .tt-list li {
     padding-left: 20px;
@@ -304,7 +322,7 @@ layout: default
   .tt-table th, .tt-table td { padding: 18px; text-align: left; border-bottom: 1px solid var(--tt-border); }
   .tt-table th { color: var(--tt-gold); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
 
-  /* Gallery Grid */
+  /* Gallery Grid - Uniform Images */
   .tt-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -316,10 +334,12 @@ layout: default
     border: 1px solid var(--tt-border);
     padding: 10px;
     border-radius: var(--tt-radius);
+    display: flex;
+    flex-direction: column;
   }
   .tt-gallery img {
     width: 100%;
-    height: 220px;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     display: block;
     border-radius: 4px;
@@ -399,13 +419,8 @@ layout: default
   <!-- Hero Content Area -->
   <div class="tt-hero-text-area">
     <div class="tt-container">
-      <!-- Breadcrumb with safe fallback -->
       <span class="tt-breadcrumb">Home / Group Travel / To {{ page.destination_name | default: "Destination" }}</span>
-      
-      <!-- Title with safe fallback -->
       <h1 class="tt-hero-title">{{ page.page_title | default: "Premium Force Urbania & Tempo Traveller Group Transport" }}</h1>
-      
-      <!-- Description with safe fallback -->
       <p class="tt-hero-desc">{{ page.meta_description | default: "Book safe, spacious, and professional group transport across Kerala." }}</p>
       
       <div class="tt-btn-group">
@@ -459,7 +474,9 @@ layout: default
       
       <div class="tt-grid-2">
         <div class="tt-card">
-          <img src="/Pic_Best%20Urbania%20Rentals%20In%20Kochi.jpeg" alt="Force Urbania Rental" class="tt-card-img" loading="lazy">
+          <div class="tt-card-img-wrapper">
+            <img src="{{ page.urbania_image | default: '/Pic_Best%20Urbania%20Rentals%20In%20Kochi.jpeg' }}" alt="Force Urbania Rental" class="tt-card-img" loading="lazy">
+          </div>
           <h3 class="tt-card-title">Force Urbania Luxury Coach</h3>
           <ul class="tt-list">
             <li>Available in 9, 10, 13, and 17 Seater VIP configurations.</li>
@@ -471,7 +488,9 @@ layout: default
         </div>
 
         <div class="tt-card">
-          <img src="/Pic_Kochi%20Tempo%20Traveller%2012%20seater.jpeg" alt="Tempo Traveller Rental" class="tt-card-img" loading="lazy">
+          <div class="tt-card-img-wrapper">
+            <img src="{{ page.tempo_image | default: '/Pic_Kochi%20Tempo%20Traveller%2012%20seater.jpeg' }}" alt="Tempo Traveller Rental" class="tt-card-img" loading="lazy">
+          </div>
           <h3 class="tt-card-title">Premium Tempo Traveller</h3>
           <ul class="tt-list">
             <li>Available in 9, 12, 17, 20, and 26 Seater layouts.</li>
@@ -581,34 +600,34 @@ layout: default
       
       <div class="tt-gallery">
         <figure>
-          <img src="/Pic_Best%20Urbania%20Rentals%20In%20Kochi.jpeg" alt="Force Urbania Exterior Kochi" loading="lazy">
+          <img src="{{ page.hero_image | default: '/Pic_Cochin%20Airport%20Urbania%20Rentals.jpeg' }}" alt="Scenic journey to {{ page.destination_name }}" loading="lazy">
+          <figcaption>The scenic journey to {{ page.destination_name }}</figcaption>
+        </figure>
+        <figure>
+          <img src="{{ page.urbania_image | default: '/Pic_Best%20Urbania%20Rentals%20In%20Kochi.jpeg' }}" alt="Force Urbania Luxury Coach Exterior" loading="lazy">
           <figcaption>Force Urbania - Premium Exterior</figcaption>
         </figure>
         <figure>
-          <img src="/Pic_Cochin%20Airport%20Urbania%20Rentals.jpeg" alt="Urbania at Cochin Airport" loading="lazy">
-          <figcaption>Urbania - Airport Transfers</figcaption>
+          <img src="{{ page.tempo_image | default: '/Pic_Kochi%20Tempo%20Traveller%2012%20seater.jpeg' }}" alt="Luxury Tempo Traveller Exterior" loading="lazy">
+          <figcaption>Spacious Tempo Traveller Coaches</figcaption>
         </figure>
         <figure>
-          <img src="/Pic_Maharaja%20seat%20tempo%20traveller%20kochi.jpg" alt="Maharaja Seats Interior" loading="lazy">
-          <figcaption>Luxury Push-Back Captain Seats</figcaption>
+          <img src="{{ page.interior_image | default: '/Pic_Maharaja%20seat%20tempo%20traveller%20kochi.jpg' }}" alt="Luxury push-back interior seats" loading="lazy">
+          <figcaption>Uncompromising Interior Comfort</figcaption>
         </figure>
         <figure>
           <img src="/Pic_26%20seater%20tempo%20traveller%20kochi.jpg" alt="26 Seater Tempo Traveller Interior" loading="lazy">
           <figcaption>Spacious 26-Seater Coach Interior</figcaption>
         </figure>
         <figure>
-          <img src="/Pic_Force%20Tempo%20Traveller%20Rentals%20Kochi%20to%20Munnar.jpg" alt="Tempo Traveller on Highway" loading="lazy">
-          <figcaption>Tempo Traveller - Highway Ready</figcaption>
-        </figure>
-        <figure>
-          <img src="/Pic_Force%20Urbania%20In%20Kochi%20airport.jpeg" alt="Force Urbania Kochi Airport" loading="lazy">
-          <figcaption>Force Urbania Fleet</figcaption>
+          <img src="/Pic_Cochin%20Airport%20Urbania%20Rentals.jpeg" alt="Urbania at Cochin Airport" loading="lazy">
+          <figcaption>VIP Airport Transfers</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section (Bulletproofed with Liquid Default rules) -->
+  <!-- FAQ Section -->
   <section class="tt-section tt-bg-alt">
     <div class="tt-container">
       <h2 class="tt-h2">Frequently Asked Questions</h2>
@@ -641,7 +660,6 @@ layout: default
           <p>Safety is our top priority. Our drivers are thoroughly trained for night driving, though we always adhere strictly to local mountain and forest road night restrictions if applicable to your route.</p>
         </details>
 
-        <!-- Safe rendering for dynamic FAQs from CSV -->
         {% if page.faq1 and page.faq1 != "" %}
         <details>
           <summary>{{ page.faq1 | escape }}</summary>
@@ -671,7 +689,6 @@ layout: default
       <div class="tt-links">
         <a href="/">Home</a>
         <a href="/tempo-traveller-rentals-kochi-kerala/">Tempo Traveller Rentals</a>
-        <a href="/urbania-rental/">Force Urbania Rentals</a>
         <a href="{{ page.internal_link_url | default: '/south-india-tours/' }}">{{ page.internal_link_text | default: 'South India Tour Packages' }}</a>
       </div>
     </div>
