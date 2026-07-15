@@ -73,7 +73,6 @@ layout: default
 <style>
   /* 
    * NAMESPACED CSS FOR KERALA TOURS PAGE
-   * Flat, professional, and readable layout
   */
   .kt-wrapper, .kt-wrapper *, .kt-wrapper *::before, .kt-wrapper *::after {
     box-sizing: border-box !important;
@@ -81,7 +80,6 @@ layout: default
 
   :root {
     --kt-gold: #d4af37;
-    --kt-gold-hover: #f9df9f;
     --kt-bg-main: #0a0b0e;
     --kt-bg-card: #15181e;
     --kt-bg-elevated: #1a1d24;
@@ -321,7 +319,7 @@ layout: default
   .kt-inclusions li {
     position: relative;
     padding-left: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     color: var(--kt-text-main);
     font-size: 0.95rem;
   }
@@ -334,6 +332,17 @@ layout: default
     color: #25D366;
     font-weight: bold;
     font-size: 14px;
+  }
+
+  /* Special style for the About Us Link in the sidebar */
+  .kt-about-driver-link {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--kt-gold);
+    transition: color 0.3s ease;
+  }
+  .kt-about-driver-link:hover {
+    color: var(--kt-gold);
   }
 
   .kt-btn {
@@ -463,21 +472,22 @@ layout: default
   .kt-faq details[open] summary::after { content: '−'; }
   .kt-faq p { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--kt-text-muted); line-height: 1.7; }
 
-  /* Internal Links Section */
+  /* Internal Links / About Us Section */
   .kt-internal-links {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   
   .kt-link-btn {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 16px 35px;
     background: transparent;
     border: 1px solid var(--kt-gold);
     color: var(--kt-gold);
     border-radius: 30px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
@@ -621,6 +631,7 @@ layout: default
           {% for item in inclusions_array %}
             <li>{{ item }}</li>
           {% endfor %}
+          <li><a href="https://tourwithanand.com/about-us/" class="kt-about-driver-link" target="_blank" rel="noopener">Verified English-Speaking Driver (About Anand)</a></li>
           <li>24/7 WhatsApp Ground Support</li>
           <li>VIP Airport Meet & Greet</li>
         </ul>
@@ -697,7 +708,7 @@ layout: default
     </div>
   </section>
 
-  <!-- 5. Dynamic FAQ Section -->
+  <!-- 5. Dynamic FAQ Section (Fixed format) -->
   {% if page.faq1_q and page.faq1_q != "" %}
   <section class="kt-section">
     <div class="kt-container">
@@ -728,14 +739,12 @@ layout: default
   </section>
   {% endif %}
 
-  <!-- 6. Internal Linking (SEO Optimization) -->
-  {% if page.internal_link_url and page.internal_link_url != "" %}
-  <section class="kt-section kt-bg-alt" style="padding: 40px 0;">
+  <!-- 6. About Anand / English Speaking Driver Section -->
+  <section class="kt-section kt-bg-alt" style="padding: 50px 0;">
     <div class="kt-container kt-internal-links">
-      <p style="color: var(--kt-text-muted); font-size: 1rem; margin-bottom: 15px;">Looking for other services?</p>
-      <a href="{{ page.internal_link_url }}" class="kt-link-btn">{{ page.internal_link_text }}</a>
+      <p style="color: var(--kt-text-muted); font-size: 1.1rem; margin-bottom: 20px;">Want to know who will be driving you safely across Kerala?</p>
+      <a href="https://tourwithanand.com/about-us/" class="kt-link-btn" target="_blank" rel="noopener">Learn About Anand - Your English-Speaking Driver</a>
     </div>
   </section>
-  {% endif %}
 
 </div>
