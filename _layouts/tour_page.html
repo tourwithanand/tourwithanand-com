@@ -3,7 +3,8 @@ layout: default
 ---
 
 <!-- SEO & Meta Tags -->
-<meta name="description" content="{{ page.meta_desc | escape }}">
+<meta name="description" content="{{ page.meta_desc | default: 'Premium Kerala tour packages with professional English-speaking drivers and luxury vehicles.' | escape }}">
+<meta name="keywords" content="Kerala tour package from Kochi airport, luxury Kerala tours, {{ page.package_slug | replace: '-', ' ' }}">
 <link rel="canonical" href="{{ site.url }}/south-india-tours/{{ page.package_slug }}/">
 
 <!-- Google Rich Results / JSON-LD Schema -->
@@ -35,7 +36,7 @@ layout: default
     "@type": "LocalBusiness",
     "name": "Tour With Anand",
     "telephone": "+919400620615",
-    "image": "{{ site.url }}/Tour%20With%20Anand%20Logo%20Home.png"
+    "image": "{{ site.url }}/Kerala%20Tour%20Package%20from%20Kochi%20airport.png"
   }
 }
 </script>
@@ -72,16 +73,25 @@ layout: default
 
   .kt-container {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 0 auto;
     padding: 0 20px;
+  }
+
+  .kt-section {
+    padding: 70px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .kt-bg-alt {
+    background: linear-gradient(180deg, #0f1115 0%, var(--kt-bg-main) 100%);
   }
 
   /* Hero Section */
   .kt-hero {
     position: relative;
     width: 100%;
-    min-height: 70vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,13 +109,13 @@ layout: default
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    opacity: 0.5;
+    opacity: 0.6;
   }
 
   .kt-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(10,11,14,0.4) 0%, rgba(10,11,14,0.9) 80%, var(--kt-bg-main) 100%);
+    background: linear-gradient(to bottom, rgba(10,11,14,0.3) 0%, rgba(10,11,14,0.95) 80%, var(--kt-bg-main) 100%);
     z-index: 2;
   }
 
@@ -131,11 +141,12 @@ layout: default
 
   .kt-hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-size: clamp(2.5rem, 4.5vw, 4.2rem);
     line-height: 1.2;
     margin-bottom: 20px;
     color: #fff;
     text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    margin-top: 0;
   }
 
   .kt-hero p {
@@ -150,7 +161,7 @@ layout: default
     position: relative;
     z-index: 10;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     margin-top: -50px;
     padding-bottom: 60px;
@@ -177,7 +188,7 @@ layout: default
 
   .kt-fact-value {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 19px;
     color: var(--kt-gold);
     font-weight: 600;
   }
@@ -187,7 +198,7 @@ layout: default
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 50px;
-    padding: 20px 0 80px 0;
+    padding: 20px 0 60px 0;
   }
 
   .kt-content h2 {
@@ -215,7 +226,7 @@ layout: default
     border-left: 2px solid var(--kt-border);
     padding-left: 30px;
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   .kt-timeline-item {
@@ -328,6 +339,69 @@ layout: default
     font-size: 0.85rem;
   }
 
+  /* Fleet Grid Styles */
+  .kt-fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .kt-fleet-card {
+    background: var(--kt-bg-card);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--kt-radius);
+    padding: 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .kt-fleet-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--kt-gold);
+  }
+
+  .kt-fleet-card h4 {
+    color: var(--kt-gold);
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .kt-fleet-cap {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--kt-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .kt-fleet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .kt-fleet-list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: var(--kt-text-main);
+  }
+
+  .kt-fleet-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #25D366;
+    font-weight: bold;
+  }
+
   /* Mobile Adjustments */
   @media (max-width: 992px) {
     .kt-main-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -339,6 +413,7 @@ layout: default
     .kt-facts-grid { grid-template-columns: 1fr 1fr; padding: 0 20px; }
     .kt-timeline { padding-left: 20px; }
     .kt-timeline-dot { left: -29px; }
+    .kt-fleet-grid { grid-template-columns: 1fr; }
   }
 </style>
 
@@ -346,39 +421,40 @@ layout: default
 
   <!-- 1. Hero Section -->
   <section class="kt-hero" aria-label="Tour Package Hero">
-    <img src="{{ page.hero_image | default: '/Mobile%20View%20Kerala-clean.jpg' }}" alt="{{ page.package_name }}" class="kt-hero-bg" loading="eager">
+    <!-- Using the specific image requested by the user -->
+    <img src="{{ page.hero_image | default: '/Kerala%20Tour%20Package%20from%20Kochi%20airport.png' }}" alt="{{ page.package_name }}" class="kt-hero-bg" loading="eager" width="1920" height="1080">
     <div class="kt-hero-overlay"></div>
     
     <div class="kt-container kt-hero-content">
       <span class="kt-breadcrumb">South India Tours / Kerala Packages</span>
-      <h1>{{ page.package_name }}</h1>
+      <h1>{{ page.package_name | default: "Premium Kerala Tour Package" }}</h1>
       <p>{{ page.meta_desc }}</p>
     </div>
   </section>
 
-  <!-- Quick Facts -->
+  <!-- 2. Quick Facts -->
   <div class="kt-container">
     <div class="kt-facts-grid">
       <div class="kt-fact-item">
         <span class="kt-fact-label">Duration</span>
-        <span class="kt-fact-value">{{ page.duration }}</span>
+        <span class="kt-fact-value">{{ page.duration | default: "Custom" }}</span>
       </div>
-      <div class="tt-fact-item kt-fact-item">
+      <div class="kt-fact-item">
         <span class="kt-fact-label">Route</span>
-        <span class="kt-fact-value" style="font-size: 16px;">{{ page.destinations }}</span>
+        <span class="kt-fact-value" style="font-size: 16px;">{{ page.destinations | default: "Kochi & Beyond" }}</span>
       </div>
       <div class="kt-fact-item">
         <span class="kt-fact-label">Ideal For</span>
-        <span class="kt-fact-value" style="font-size: 16px;">{{ page.ideal_for }}</span>
+        <span class="kt-fact-value" style="font-size: 16px;">{{ page.ideal_for | default: "Families & Groups" }}</span>
       </div>
       <div class="kt-fact-item">
         <span class="kt-fact-label">Premium Vehicle</span>
-        <span class="kt-fact-value" style="font-size: 16px;">{{ page.premium_vehicle }}</span>
+        <span class="kt-fact-value" style="font-size: 16px;">{{ page.premium_vehicle | default: "Chauffeur Driven" }}</span>
       </div>
     </div>
   </div>
 
-  <!-- Main Content & Sidebar -->
+  <!-- 3. Main Content & Sidebar -->
   <div class="kt-container kt-main-layout">
     
     <!-- Left Column: Itinerary -->
@@ -386,7 +462,7 @@ layout: default
       
       <h2>Tour Overview</h2>
       <div class="kt-overview">
-        <p style="margin:0;">{{ page.package_overview }} Our specialized packages ensure international tourists and NRIs experience a completely hassle-free, secure, and luxurious journey across Kerala with dedicated English-speaking chauffeurs.</p>
+        <p style="margin:0;">{{ page.package_overview }} Our specialized packages ensure international tourists and NRIs experience a completely hassle-free, secure, and luxurious journey across Kerala with dedicated English-speaking chauffeurs and VIP Kochi Airport pickup.</p>
       </div>
 
       <h2>Day-by-Day Itinerary</h2>
@@ -474,5 +550,67 @@ layout: default
     </aside>
 
   </div>
+
+  <!-- 4. Premium Fleet Section (Added for SEO and conversion) -->
+  <section class="kt-section kt-bg-alt">
+    <div class="kt-container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #fff; text-align: center; margin-top: 0; margin-bottom: 10px;">Our Premium Tour Fleet</h2>
+      <p style="text-align: center; color: var(--kt-text-muted); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">Select the perfect vehicle for your Kerala itinerary. All our cars are meticulously cleaned, fully air-conditioned, and driven by verified English-speaking professionals.</p>
+      
+      <div class="kt-fleet-grid">
+        
+        <div class="kt-fleet-card">
+          <h4>Sedan (Etios / Dzire)</h4>
+          <span class="kt-fleet-cap">Ideal for 1-3 Passengers</span>
+          <ul class="kt-fleet-list">
+            <li>Perfect for couples or solo travelers</li>
+            <li>Cost-effective and highly comfortable</li>
+            <li>Boot space for standard luggage</li>
+          </ul>
+        </div>
+
+        <div class="kt-fleet-card">
+          <h4>Maruti Ertiga</h4>
+          <span class="kt-fleet-cap">Ideal for 4-5 Passengers</span>
+          <ul class="kt-fleet-list">
+            <li>Spacious MUV for small families</li>
+            <li>Flexible rear seating for luggage</li>
+            <li>Excellent AC cooling</li>
+          </ul>
+        </div>
+
+        <div class="kt-fleet-card" style="border-color: var(--kt-gold);">
+          <h4>Innova Crysta</h4>
+          <span class="kt-fleet-cap">Ideal for 6-7 Passengers</span>
+          <ul class="kt-fleet-list">
+            <li>The gold standard for family comfort</li>
+            <li>Premium suspension for ghat roads</li>
+            <li>Dedicated rear AC controls</li>
+          </ul>
+        </div>
+
+        <div class="kt-fleet-card">
+          <h4>Tempo Traveller</h4>
+          <span class="kt-fleet-cap">Ideal for 9-26 Passengers</span>
+          <ul class="kt-fleet-list">
+            <li>Best choice for large extended families</li>
+            <li>Deep push-back seats with armrests</li>
+            <li>Heavy-duty rooftop luggage carrier</li>
+          </ul>
+        </div>
+
+        <div class="kt-fleet-card">
+          <h4>Force Urbania VIP</h4>
+          <span class="kt-fleet-cap">Ideal for 9-17 Passengers</span>
+          <ul class="kt-fleet-list">
+            <li>Unmatched luxury for NRIs & executives</li>
+            <li>Airline-style reclining captain seats</li>
+            <li>Stand-up cabin height & wide windows</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 </div>
