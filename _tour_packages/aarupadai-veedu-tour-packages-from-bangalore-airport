@@ -1,0 +1,581 @@
+---
+layout: default
+title: "Aarupadai Veedu Tour Package from Bangalore | 6 Days Pilgrimage"
+meta_title: "Aarupadai Veedu Tour Package from Bangalore Airport | Tour With Anand"
+meta_description: "Book the ultimate Aarupadai Veedu tour package starting from Bangalore Airport (BLR). Choose from Sedans, Innova Crysta, Tempo Travellers, and Force Urbania."
+primary_keyword: "Aarupadai Veedu tour package from Bangalore"
+secondary_keywords: "Six abodes of Murugan tour from Bangalore airport, Bangalore to Aarupadai Veedu taxi fare, Innova Crysta rental for Aarupadai Veedu from Bangalore, Tempo Traveller Bangalore to Aarupadai Veedu"
+permalink: /south-india-tours/aarupadai-veedu-tour-packages-from-bangalore-airport/
+---
+
+<!-- Google Rich Results / JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TouristTrip",
+      "name": "Aarupadai Veedu Pilgrimage Tour from Bangalore",
+      "description": "A complete 5 to 6-day pilgrimage tour covering the Six Abodes of Lord Murugan in Tamil Nadu, featuring exclusive VIP pickup from Kempegowda International Airport Bengaluru (BLR).",
+      "touristType": [
+        "Domestic Tourists",
+        "International Tourists",
+        "NRIs",
+        "Pilgrims"
+      ],
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Tour With Anand",
+        "telephone": "+91-9400620615",
+        "image": "{{ site.url }}/Tour%20With%20Anand%20Logo%20Home.png"
+      },
+      "itinerary": {
+        "@type": "ItemList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Pickup from Bangalore Airport & Palani Murugan Temple" },
+          { "@type": "ListItem", "position": 2, "name": "Pazhamudircholai Murugan Temple" },
+          { "@type": "ListItem", "position": 3, "name": "Thirupparankundram Murugan Temple" },
+          { "@type": "ListItem", "position": 4, "name": "Thiruchendur Murugan Temple" },
+          { "@type": "ListItem", "position": 5, "name": "Swamimalai Murugan Temple" },
+          { "@type": "ListItem", "position": 6, "name": "Thiruthani Murugan Temple" }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "South India Tours", "item": "{{ site.url }}/south-india-tours/" },
+        { "@type": "ListItem", "position": 3, "name": "Aarupadai Veedu from Bangalore", "item": "{{ site.url }}{{ page.url }}" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where does the Aarupadai Veedu tour start?",
+          "acceptedAnswer": { "@type": "Answer", "text": "This specific package starts with a direct VIP pickup from Kempegowda International Airport Bengaluru (BLR) or Bangalore City, heading first to Palani." }
+        },
+        {
+          "@type": "Question",
+          "name": "What vehicle options are available for this tour?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We offer a complete fleet to match any group size. Options include 4-seater Sedans (Etios/Dzire), 6-seater Maruti Ertiga, 7-seater Toyota Innova Crysta, 9 to 26-seater Tempo Travellers, and luxury Force Urbania coaches." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many days are required for the Aarupadai Veedu tour from Bangalore?",
+          "acceptedAnswer": { "@type": "Answer", "text": "To comfortably visit all six abodes starting from Bangalore without rushing the Darshans, we highly recommend a 5-night, 6-day itinerary." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this package suitable for NRIs and elderly pilgrims?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We specialize in NRI and senior citizen travel, providing English-speaking drivers, highly comfortable vehicles like the Innova Crysta or Urbania, and flexible pacing." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  /* 
+   * NAMESPACED CSS FOR AARUPADAI VEEDU BANGALORE PAGE 
+   * Clean, flat, minimalist document layout for optimal readability
+  */
+  .av-wrapper, .av-wrapper *, .av-wrapper *::before, .av-wrapper *::after {
+    box-sizing: border-box !important;
+  }
+
+  :root {
+    --av-gold: #d4af37;
+    --av-gold-light: #f9df9f;
+    --av-bg-main: #0a0a0c;
+    --av-bg-card: #121418;
+    --av-text-main: #e2e8f0;
+    --av-text-muted: #94a3b8;
+    --av-border: #2a2a2a;
+    --av-radius: 4px;
+  }
+
+  .av-wrapper {
+    background-color: var(--av-bg-main);
+    color: var(--av-text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    line-height: 1.8;
+  }
+
+  .av-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .av-section {
+    padding: 70px 0;
+    border-bottom: 1px solid var(--av-border);
+  }
+
+  .av-bg-alt {
+    background-color: #0f1115;
+  }
+
+  /* Typography */
+  .av-wrapper h1, .av-wrapper h2, .av-wrapper h3, .av-wrapper h4 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    margin-top: 0;
+    font-weight: 600;
+  }
+
+  .av-h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--av-gold);
+  }
+
+  .av-subtitle {
+    text-align: center;
+    color: var(--av-text-muted);
+    font-size: 1.1rem;
+    margin: 0 auto 50px;
+    max-width: 800px;
+  }
+
+  /* Full-Width Responsive Banner */
+  .av-banner-wrapper {
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+    border-bottom: 1px solid var(--av-border);
+    line-height: 0;
+  }
+
+  .av-banner-img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Hero Content Area */
+  .av-hero-text-area {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--av-bg-card);
+    border-bottom: 1px solid var(--av-border);
+  }
+
+  .av-breadcrumb {
+    display: inline-block;
+    color: var(--av-gold);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .av-hero-title {
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .av-hero-desc {
+    font-size: 1.15rem;
+    color: var(--av-text-muted);
+    margin: 0 auto 35px;
+    max-width: 900px;
+  }
+
+  /* Buttons */
+  .av-btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .av-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 35px;
+    border-radius: var(--av-radius);
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  .av-btn-primary {
+    background-color: var(--av-gold);
+    color: #000;
+  }
+
+  .av-btn-primary:hover {
+    background-color: var(--av-gold-light);
+  }
+
+  .av-btn-outline {
+    background-color: transparent;
+    color: var(--av-gold);
+    border-color: var(--av-gold);
+  }
+
+  .av-btn-outline:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+  }
+
+  /* Text Blocks */
+  .av-text-block {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    color: var(--av-text-main);
+  }
+  .av-text-block p {
+    margin-bottom: 20px;
+  }
+
+  /* Grids */
+  .av-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .av-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+
+  /* Flat Cards */
+  .av-card {
+    background-color: var(--av-bg-card);
+    border: 1px solid var(--av-border);
+    border-radius: var(--av-radius);
+    padding: 35px;
+    margin-bottom: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .av-card-title {
+    color: var(--av-gold);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--av-border);
+  }
+
+  /* Fleet Grid */
+  .av-fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .av-fleet-card {
+    background-color: var(--av-bg-card);
+    border: 1px solid var(--av-border);
+    border-radius: var(--av-radius);
+    padding: 25px;
+    text-align: left;
+  }
+
+  .av-fleet-card h4 {
+    color: var(--av-gold);
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+
+  .av-fleet-cap {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--av-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--av-border);
+  }
+
+  /* Itinerary Styles */
+  .av-itinerary-day {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 25px;
+    border-left: 2px solid var(--av-gold);
+  }
+  .av-itinerary-day::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--av-gold);
+    border-radius: 50%;
+  }
+  .av-itinerary-day h4 {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  .av-itinerary-day p {
+    color: var(--av-text-muted);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  /* Lists */
+  .av-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  .av-list li {
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 12px;
+    color: var(--av-text-main);
+    text-align: left;
+  }
+  .av-list li::before {
+    content: '■';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: var(--av-gold);
+    font-size: 10px;
+  }
+
+  /* FAQ */
+  .av-faq details {
+    background-color: var(--av-bg-card);
+    border: 1px solid var(--av-border);
+    margin-bottom: 12px;
+    padding: 18px 22px;
+    border-radius: var(--av-radius);
+  }
+  .av-faq summary {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    outline: none;
+  }
+  .av-faq summary::-webkit-details-marker { display: none; }
+  .av-faq summary::after { content: '+'; color: var(--av-gold); font-size: 1.6rem; font-weight: 300; }
+  .av-faq details[open] summary::after { content: '−'; }
+  .av-faq p { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--av-border); color: var(--av-text-muted); }
+
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .av-grid-2 { grid-template-columns: 1fr; }
+    .av-btn-group { flex-direction: column; }
+    .av-btn { width: 100%; }
+    .av-hero-text-area { padding: 40px 15px; }
+  }
+</style>
+
+<div class="av-wrapper">
+
+  <!-- Full-Width Responsive Banner Image -->
+  <div class="av-banner-wrapper">
+    <img src="/Aarupadi%20veedu%20tour%20packages%20from%20chennai%20airport.jpg" alt="Aarupadai Veedu Pilgrimage Tour Package from Bangalore" class="av-banner-img" loading="eager" width="1200" height="800">
+  </div>
+
+  <!-- Hero Content Area -->
+  <div class="av-hero-text-area">
+    <div class="av-container">
+      <span class="av-breadcrumb">Home / South India Tours / Aarupadai Veedu from Bangalore</span>
+      <h1 class="av-hero-title">Aarupadai Veedu Tour Package from Bangalore Airport</h1>
+      <p class="av-hero-desc">Experience a deeply spiritual and luxurious 6-day pilgrimage to the Six Holy Abodes of Lord Murugan. Begin your divine journey with a seamless, VIP pickup directly from Kempegowda International Airport (BLR) or Bangalore City.</p>
+      
+      <div class="av-btn-group">
+        <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20am%20interested%20in%20the%20Aarupadai%20Veedu%20Tour%20Package%20from%20Bangalore%20Airport.%20Please%20share%20details." class="av-btn av-btn-primary" target="_blank" rel="noopener">Get Custom Quote</a>
+        <a href="tel:+919400620615" class="av-btn av-btn-outline">Call 24/7 Support</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Introduction -->
+  <section class="av-section">
+    <div class="av-container">
+      <h2 class="av-h2">Start Your Pilgrimage from Bangalore</h2>
+      <div class="av-text-block">
+        <p>The <strong>Aarupadai Veedu</strong> (Six Abodes of Lord Murugan) is one of the most revered pilgrimage circuits in South India. For devotees residing in Karnataka, NRIs, and international tourists arriving via Kempegowda International Airport (BLR), starting the tour from Bangalore offers a smooth and highly scenic highway transition directly into Tamil Nadu. By routing the itinerary logically—beginning with the majestic hill temple of <strong>Palani</strong>—we optimize travel time and minimize road fatigue.</p>
+        
+        <p>At Tour With Anand, we provide a meticulously crafted, highly professional Aarupadai Veedu Tour Package. We understand that a pilgrimage of this magnitude requires serene comfort, reliable logistics, and punctual schedules. We completely eliminate the stress of navigating interstate borders and temple routes by deploying a complete fleet of premium vehicles—from comfortable Sedans and spacious Innova Crystas for families, to massive Tempo Travellers and Force Urbanias for large spiritual groups.</p>
+        
+        <p>Our verified, English-speaking chauffeurs are highly experienced with the South Indian temple circuit. They ensure you travel safely, comfortably, and arrive on time for all essential temple rituals and darshans.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Fleet Options -->
+  <section class="av-section av-bg-alt">
+    <div class="av-container">
+      <h2 class="av-h2">Vehicles for Every Group Size</h2>
+      <p class="av-subtitle">From solo devotees to large extended families, choose the perfect premium vehicle for your 6-day journey from Bangalore to Tamil Nadu.</p>
+      
+      <div class="av-fleet-grid">
+        
+        <div class="av-fleet-card">
+          <h4>Sedan (Etios / Dzire)</h4>
+          <span class="av-fleet-cap">Ideal for 1-3 Passengers</span>
+          <ul class="av-list">
+            <li>Perfect for couples or solo pilgrims.</li>
+            <li>Cost-effective and highly comfortable.</li>
+            <li>Smooth AC and boot space for standard luggage.</li>
+          </ul>
+        </div>
+
+        <div class="av-fleet-card">
+          <h4>Maruti Ertiga</h4>
+          <span class="av-fleet-cap">Ideal for 4-5 Passengers</span>
+          <ul class="av-list">
+            <li>Spacious MUV for small families.</li>
+            <li>Flexible rear seating for added luggage.</li>
+            <li>Excellent AC cooling for interstate travel.</li>
+          </ul>
+        </div>
+
+        <div class="av-fleet-card">
+          <h4>Toyota Innova & Crysta</h4>
+          <span class="av-fleet-cap">Ideal for 6-7 Passengers</span>
+          <ul class="av-list">
+            <li>The ultimate choice for family comfort.</li>
+            <li>Premium suspension for fatigue-free highway travel.</li>
+            <li>Spacious seating with dedicated rear AC vents.</li>
+          </ul>
+        </div>
+
+        <div class="av-fleet-card">
+          <h4>Premium Tempo Traveller</h4>
+          <span class="av-fleet-cap">Ideal for 9-26 Passengers</span>
+          <ul class="av-list">
+            <li>The best choice for large extended families.</li>
+            <li>Deep push-back seats with individual armrests.</li>
+            <li>Heavy-duty rooftop carrier for massive luggage.</li>
+          </ul>
+        </div>
+
+        <div class="av-fleet-card">
+          <h4>Force Urbania VIP Coach</h4>
+          <span class="av-fleet-cap">Ideal for 9-17 Passengers</span>
+          <ul class="av-list">
+            <li>Unmatched luxury for NRIs and corporate groups.</li>
+            <li>Airline-style reclining captain seats.</li>
+            <li>Stand-up cabin height and independent suspension.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Suggested Itinerary (Bangalore Start) -->
+  <section class="av-section">
+    <div class="av-container">
+      <h2 class="av-h2">Recommended 6-Day Itinerary</h2>
+      <p class="av-subtitle">A carefully structured travel plan customized for a Bangalore departure, ensuring ample time for Darshan, rest, and comfortable transit.</p>
+      
+      <div class="av-card">
+        <div class="av-itinerary-day">
+          <h4>Day 1: Bangalore Airport Pickup & Drive to Palani</h4>
+          <p>Our chauffeur will greet you directly at Kempegowda International Airport (BLR) or your Bangalore residence. Enjoy a smooth highway drive into Tamil Nadu to visit the first stop on our route: <strong>Palani Murugan Temple</strong>. Ascend the hill via the winch/ropeway to seek blessings from Lord Dhandayuthapani. Overnight stay in Palani or nearby Madurai.</p>
+        </div>
+        
+        <div class="av-itinerary-day">
+          <h4>Day 2: Pazhamudircholai & Thirupparankundram</h4>
+          <p>A day dedicated to Madurai. First, visit <strong>Pazhamudircholai</strong>, beautifully situated amidst dense, serene forests. Later, visit <strong>Thirupparankundram</strong>, a stunning ancient rock-cut temple where Lord Murugan married Deivanai. Overnight stay in Madurai.</p>
+        </div>
+        
+        <div class="av-itinerary-day">
+          <h4>Day 3: Thiruchendur Coastal Temple</h4>
+          <p>Early morning drive to the coastal town of Thiruchendur. Visit the majestic <strong>Thiruchendur Murugan Temple</strong>, uniquely located right on the shores of the Bay of Bengal. Experience the divine sea breeze and unique rituals. Overnight stay in Thiruchendur or nearby Tirunelveli.</p>
+        </div>
+        
+        <div class="av-itinerary-day">
+          <h4>Day 4: Swamimalai</h4>
+          <p>Morning departure to Kumbakonam. Visit <strong>Swamimalai Murugan Temple</strong>, revered as the sacred site where Lord Murugan imparted the meaning of the Pranava Mantra to Lord Shiva. Check into your hotel in Kumbakonam and rest overnight.</p>
+        </div>
+        
+        <div class="av-itinerary-day">
+          <h4>Day 5: Thiruthani</h4>
+          <p>Travel toward Chennai to visit the final temple on this circuit: <strong>Thiruthani Murugan Temple</strong>. Known for its 365 steps representing the days of the year, it is the abode of divine peace. Seek your final blessings before relaxing for the evening.</p>
+        </div>
+
+        <div class="av-itinerary-day">
+          <h4>Day 6: Safe Departure</h4>
+          <p>Depending on your onward travel plans, our chauffeur will safely drop you off at Bangalore Airport (for a return trip), Chennai Airport, or Tirupati Airport, concluding your blessed and memorable spiritual journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="av-section av-bg-alt">
+    <div class="av-container">
+      <h2 class="av-h2">Frequently Asked Questions</h2>
+      
+      <div class="av-faq" style="max-width: 800px; margin: 0 auto;">
+        
+        <details>
+          <summary>Where does the Aarupadai Veedu tour start?</summary>
+          <p>This specific package starts with a direct VIP pickup from <strong>Kempegowda International Airport Bengaluru (BLR)</strong> or any residence in Bangalore City. From there, we logically route the tour starting at Palani.</p>
+        </details>
+
+        <details>
+          <summary>What vehicle options are available for this tour?</summary>
+          <p>We offer a complete fleet to match any group size and budget. Options include 4-seater Sedans (Etios/Dzire), 6-seater Maruti Ertiga, 7-seater Toyota Innova Crysta, 9 to 26-seater Tempo Travellers, and luxury Force Urbania VIP coaches.</p>
+        </details>
+
+        <details>
+          <summary>How many days are required for the Aarupadai Veedu tour from Bangalore?</summary>
+          <p>To comfortably cover the interstate distances and visit all six abodes without rushing the Darshans or enduring exhausting daily drives, we highly recommend a <strong>5-night, 6-day itinerary</strong>.</p>
+        </details>
+
+        <details>
+          <summary>Are accommodation and darshan tickets included in the price?</summary>
+          <p>We strictly provide <strong>premium ground transportation and logistics</strong>. You will pay for the dedicated vehicle, fuel, interstate permit taxes, tolls, and driver allowances. While we do not book hotels or darshan tickets, our experienced drivers will guide you to the best local accommodations and assist with temple timings.</p>
+        </details>
+
+        <details>
+          <summary>Is this package suitable for NRIs and elderly pilgrims?</summary>
+          <p>Absolutely. We specialize in NRI and senior citizen travel. We provide English-speaking drivers, highly comfortable vehicles (we highly recommend the Innova Crysta or Force Urbania for the elderly due to superior suspension), and flexible pacing to accommodate rest stops.</p>
+        </details>
+
+        <details>
+          <summary>Can we drop off at a different airport instead of returning to Bangalore?</summary>
+          <p>Yes! We offer flexible routing. While the tour starts in Bangalore, you can choose to be dropped off at Chennai Airport (MAA) or Trichy Airport (TRZ) after visiting the final temple to save travel time.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="av-section" style="text-align: center; padding-bottom: 80px;">
+    <div class="av-container">
+      <h2 class="av-h2" style="font-size: 2.2rem; color: #fff;">Begin Your Spiritual Journey Today</h2>
+      <p style="margin-bottom: 30px; color: var(--av-text-muted);">Transparent pricing, clean vehicles, and professional drivers for your ultimate pilgrimage.</p>
+      
+      <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20want%20to%20book%20the%20Aarupadai%20Veedu%20Tour%20Package%20from%20Bangalore%20Airport.%20My%20group%20size%20is%20___." class="av-btn av-btn-primary" style="padding: 18px 40px; font-size: 1.1rem;">GET FIXED QUOTE VIA WHATSAPP</a>
+      
+    </div>
+  </section>
+
+</div>
