@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NV2JP38B');</script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | Tour With Anand</title>
@@ -15,6 +23,10 @@
   </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV2JP38B"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <header class="luxury-header">
   <div class="header-container">
@@ -448,41 +460,10 @@ h1, h2, h3, .anand-name { font-family: 'Playfair Display', Georgia, serif; font-
   .float-wa { background: #1da851; }
 }
 
-/* --- MOBILE VIDEO BANNER & OPTIMIZED MAXX OVERLAY --- */
+/* --- MOBILE VIDEO BANNER --- */
 .mobile-video-hero { position: relative; width: 100vw; background: #0a0b0e; overflow: hidden; display: none; }
 .m-video-wrapper { position: relative; width: 100%; display: block; background: #000; }
 .m-video-wrapper video { width: 100%; height: auto; display: block; object-fit: contain; }
-
-.maxx-overlay {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  background: rgba(10, 11, 14, 0.45);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 204, 0, 0.35);
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  z-index: 5;
-  
-  /* 4-Second Delay Fade-In Animation */
-  opacity: 0;
-  visibility: hidden;
-  animation: fadeMaxxIn 0.8s ease forwards;
-  animation-delay: 4s;
-}
-
-@keyframes fadeMaxxIn {
-  0% { opacity: 0; visibility: hidden; transform: translate(-50%, 20px); }
-  100% { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
-}
-
-.maxx-overlay h3 { color: #ffcc00; font-size: 16px; margin: 0 0 2px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-family: 'Playfair Display', serif; }
-.maxx-overlay p { color: #fff; font-size: 12px; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-weight: 300; font-family: 'Inter', sans-serif; }
 
 /* Mobile CTA Below Video */
 .m-hero-cta { padding: 40px 20px; text-align: center; background: #0a0b0e; }
