@@ -5,7 +5,7 @@ title: Home
 
 <section class="desktop-hero desktop-only">
   <div class="hero-slide active">
-    <div class="hero-bg"><img src="Hero%20Banner%202.png" alt="South India Tours"></div>
+    <div class="hero-bg"><img src="images/banner-anand-tour-with-anand.png" alt="South India Tours"></div>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>South India Tours & Beyond</h1>
@@ -16,7 +16,7 @@ title: Home
   </div>
 
   <div class="hero-slide">
-    <div class="hero-bg"><img src="Hero%20Banner%201.png" alt="Kerala Escapes"></div>
+    <div class="hero-bg"><img src="images/banner-anand-white-tour-with-anand.png" alt="Kerala Escapes"></div>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Kerala & Tamil Nadu Escapes</h1>
@@ -27,7 +27,7 @@ title: Home
   </div>
 
   <div class="hero-slide">
-    <div class="hero-bg"><img src="Hero%20Banner%203.jpg" alt="Kochi Airport Taxi"></div>
+    <div class="hero-bg"><img src="images/banner-crysta-tour-with-anand.png" alt="Kochi Airport Taxi"></div>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Kochi Airport Transfers</h1>
@@ -62,27 +62,27 @@ title: Home
 
     <div class="fleet-slider">
       <div class="fleet-card">
-        <div class="img-box"><img src="Kochi%20Airport%20Innova%20Taxi%20Service.png" alt="Innova"></div>
+        <div class="img-box"><img src="images/vehilces-kochi-airport-innova-crysta-taxi.png" alt="Innova"></div>
         <h3>Innova Crysta</h3>
         <span>Executive comfort for families and long journeys.</span>
       </div>
       <div class="fleet-card">
-        <div class="img-box"><img src="Kochi%20Airport%20Ertiga%20Taxi%20Service.png" alt="Ertiga"></div>
+        <div class="img-box"><img src="images/vehilces-kochi-airport-ertiga-taxi.png" alt="Ertiga"></div>
         <h3>Maruti Ertiga</h3>
         <span>Spacious and affordable for up to 5 passengers.</span>
       </div>
       <div class="fleet-card">
-        <div class="img-box"><img src="Kochi%20Airport%20Swift%20Dezire%20Taxi%20Service.png" alt="Sedan"></div>
+        <div class="img-box"><img src="images/vehilces-kochi-airport-swift-taxi.png" alt="Sedan"></div>
         <h3>Premium Sedan</h3>
         <span>Perfect for swift city travel and airport transfers.</span>
       </div>
       <div class="fleet-card">
-        <div class="img-box"><img src="Kochi%20Airport%20Tempo%20Traveller.png" alt="Tempo"></div>
+        <div class="img-box"><img src="images/vehilces-kochi-airport-tempo-traveller.png" alt="Tempo"></div>
         <h3>Tempo Traveller</h3>
         <span>Ideal for group tours and extended family trips.</span>
       </div>
       <div class="fleet-card">
-        <div class="img-box"><img src="Kochi%20Airport%20Bus%20Service.png" alt="Bus"></div>
+        <div class="img-box"><img src="images/vehilces-kochi-airport-bus-service.png" alt="Bus"></div>
         <h3>Luxury Coach</h3>
         <span>Premium transportation for large corporate groups.</span>
       </div>
@@ -98,20 +98,20 @@ title: Home
     <div class="destinations-grid">
       <div class="destination-card">
         <picture>
-          <source media="(max-width: 768px)" srcset="Mobile%20View%20Kerala-clean.jpg">
-          <img src="Kerala-Places%20To%20Visit.jpg" alt="Top Places to Visit in Kerala" loading="lazy">
+          <source media="(max-width: 768px)" srcset="images/places-to-visit-kerala-mobile.png">
+          <img src="images/places-to-visit-kerala-mobile.png" alt="Top Places to Visit in Kerala" loading="lazy">
         </picture>
       </div>
       <div class="destination-card">
         <picture>
-          <source media="(max-width: 768px)" srcset="Mobile%20View%20Tamilnadu-clean.jpg">
-          <img src="TamilNadu-Places%20To%20Visit.jpg" alt="Top Places to Visit in Tamil Nadu" loading="lazy">
+          <source media="(max-width: 768px)" srcset="images/places-to-visit-tamilnadu-mobile.png">
+          <img src="images/places-to-visit-tamilnadu-mobile.png" alt="Top Places to Visit in Tamil Nadu" loading="lazy">
         </picture>
       </div>
       <div class="destination-card">
         <picture>
-          <source media="(max-width: 768px)" srcset="Mobile%20View%20Karnataka-clean.jpg">
-          <img src="Karnataka-Places%20to%20Visit.png" alt="Top Places to Visit in Karnataka" loading="lazy">
+          <source media="(max-width: 768px)" srcset="images/places-to-visit-karnataka-mobile.png">
+          <img src="images/places-to-visit-karnataka.png" alt="Top Places to Visit in Karnataka" loading="lazy">
         </picture>
       </div>
     </div>
@@ -123,8 +123,8 @@ title: Home
     <h2 class="section-title">World Heritage Trails</h2>
     <div class="unesco-image-wrapper">
       <picture>
-        <source media="(max-width: 768px)" srcset="Mobile%20View%20UNESCO-clean.jpg">
-        <img src="UNESCO%20Heritage%20Places.jpg" alt="UNESCO World Heritage Sites South India" loading="lazy">
+        <source media="(max-width: 768px)" srcset="images/places-to-visit-unesco-heritage-places-in-south-india.png">
+        <img src="images/places-to-visit-unesco-heritage-places-in-south-india.png" alt="UNESCO World Heritage Sites South India" loading="lazy">
       </picture>
     </div>
     <div class="unesco-text">
@@ -137,7 +137,7 @@ title: Home
 <section class="message-section">
   <div class="message-wrap">
     <div class="message-img">
-      <img src="Owner%20of%20Tour%20With%20Anand%20Sitting.png" alt="Anand" loading="lazy" />
+      <img src="images/anand-tour-witha-ananad.png" alt="Anand" loading="lazy" />
     </div>
     <div class="message-content">
       <h2 class="section-title" style="text-align:left;">A Personal Welcome</h2>
@@ -159,22 +159,22 @@ title: Home
     <p class="section-subtitle">Real memories captured by our guests on their journeys through South India.</p>
 
     <div class="gallery-slider">
-      <div class="gallery-card"><img src="Guest%20Happy%20Customers%20at%20Tour%20with%20anand.png" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Kochi%20Airport%20Taxi%20Service%20-%20Tour%20With%20Anand%20guest.png" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Kochi%20Airport%20Taxi%20Service%20at%20Tour%20With%20Anand%20guest.png" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20South%20African%20Guest%20at%20Kochi%20Airport.png" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20Guest%20at%20Munnar%20Taxi%20Service.png" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20With%20Guest%20at%20COK%20Airport.jpeg" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20With%20Guest%20at%20Munnar.jpeg" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20With%20Guest.png" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20at%20Kochi%20airport%20with%20Guest.jpeg" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20at%20Munnar%20Hill%20Station.png" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20with%20Elephant%20ride.jpeg" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20with%20Family%20Guest.jpeg" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Tour%20With%20Anand%20with%20guest%20at%20Hill%20Station.jpeg" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20US.png" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest%20Varughese-from-US-Tour-With-Anand.jpeg" loading="lazy"></div>
-      <div class="gallery-card"><img src="Guest.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-1.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-2.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-3.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-4.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-5.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-6.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-7.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-8.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-9.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-10.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-11.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-12.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-13.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-14.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-15.png" loading="lazy"></div>
+      <div class="gallery-card"><img src="images/guest-tour-with-anand-16.png" loading="lazy"></div>
     </div>
   </div>
 </section>
