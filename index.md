@@ -62,27 +62,27 @@ title: Home
 
     <div class="fleet-slider">
       <div class="fleet-card">
-        <div class="img-box"><img src="images/vehilces-kochi-airport-innova-crysta-taxi.png" alt="Innova"></div>
+        <div class="img-box"><img src="images/vehicles-kochi-airport-innova-crysta-taxi.png" alt="Innova"></div>
         <h3>Innova Crysta</h3>
         <span>Executive comfort for families and long journeys.</span>
       </div>
       <div class="fleet-card">
-        <div class="img-box"><img src="images/vehilces-kochi-airport-ertiga-taxi.png" alt="Ertiga"></div>
+        <div class="img-box"><img src="images/vehicles-kochi-airport-ertiga-taxi.png" alt="Ertiga"></div>
         <h3>Maruti Ertiga</h3>
         <span>Spacious and affordable for up to 5 passengers.</span>
       </div>
       <div class="fleet-card">
-        <div class="img-box"><img src="images/vehilces-kochi-airport-swift-taxi.png" alt="Sedan"></div>
+        <div class="img-box"><img src="images/vehicles-kochi-airport-swift-taxi.png" alt="Sedan"></div>
         <h3>Premium Sedan</h3>
         <span>Perfect for swift city travel and airport transfers.</span>
       </div>
       <div class="fleet-card">
-        <div class="img-box"><img src="images/vehilces-kochi-airport-tempo-traveller.png" alt="Tempo"></div>
+        <div class="img-box"><img src="images/vehicles-kochi-airport-tempo-traveller.png" alt="Tempo"></div>
         <h3>Tempo Traveller</h3>
         <span>Ideal for group tours and extended family trips.</span>
       </div>
       <div class="fleet-card">
-        <div class="img-box"><img src="images/vehilces-kochi-airport-bus-service.png" alt="Bus"></div>
+        <div class="img-box"><img src="images/vehicle-kochi-airport-bus-service,png" alt="Bus"></div>
         <h3>Luxury Coach</h3>
         <span>Premium transportation for large corporate groups.</span>
       </div>
@@ -111,7 +111,7 @@ title: Home
       <div class="destination-card">
         <picture>
           <source media="(max-width: 768px)" srcset="images/places-to-visit-karnataka-mobile.png">
-          <img src="images/places-to-visit-karnataka.png" alt="Top Places to Visit in Karnataka" loading="lazy">
+          <img src="images/places-to-visit-karnataka-mobile.png" alt="Top Places to Visit in Karnataka" loading="lazy">
         </picture>
       </div>
     </div>
@@ -123,8 +123,8 @@ title: Home
     <h2 class="section-title">World Heritage Trails</h2>
     <div class="unesco-image-wrapper">
       <picture>
-        <source media="(max-width: 768px)" srcset="images/places-to-visit-unesco-heritage-places-in-south-india.png">
-        <img src="images/places-to-visit-unesco-heritage-places-in-south-india.png" alt="UNESCO World Heritage Sites South India" loading="lazy">
+        <source media="(max-width: 768px)" srcset="images/places-to-visit-unesco-hertiage-places-in-south-india.png">
+        <img src="images/places-to-visit-unesco-hertiage-places-in-south-india.png" alt="UNESCO World Heritage Sites South India" loading="lazy">
       </picture>
     </div>
     <div class="unesco-text">
@@ -137,7 +137,7 @@ title: Home
 <section class="message-section">
   <div class="message-wrap">
     <div class="message-img">
-      <img src="images/anand-tour-witha-ananad.png" alt="Anand" loading="lazy" />
+      <img src="images/anand-tour-with-anand.png" alt="Anand" loading="lazy" />
     </div>
     <div class="message-content">
       <h2 class="section-title" style="text-align:left;">A Personal Welcome</h2>
