@@ -1,50 +1,70 @@
 import csv
 import os
+import re
 
-# 1. Create the dedicated collection folder
+# Output folder
 output_dir = "_tempo_routes"
 os.makedirs(output_dir, exist_ok=True)
 
-# 2. Open your CSV data file
+# CSV file
 csv_path = "_data/tempo_routes.csv"
-
-# Fallback just in case you named it routes.csv
 if not os.path.exists(csv_path):
     csv_path = "_data/routes.csv"
 
+
+def make_slug(text):
+    """Convert text to SEO-friendly slug."""
+    if not text:
+        return "unknown"
+    text = text.lower().strip()
+    text = text.replace("&", "and")
+    text = re.sub(r"[^a-z0-9\s-]", "", text)
+    text = re.sub(r"\s+", "-", text)
+    text = re.sub(r"-+", "-", text)
+    return text
+
+
 try:
-    with open(csv_path, mode='r', encoding='utf-8') as f:
+    with open(csv_path, "r", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
-        
+
         for row in reader:
-            # 3. Create the markdown filename
-            filename = f"{output_dir}/kochi-to-{row['to_slug']}-tempo.md"
-            
+
+            # Use existing to_slug if available; otherwise create one
+            slug = row.get("to_slug", "").strip()
+
+            if not slug:
+                slug = make_slug(
+                    row.get("to_location")
+                    or row.get("destination")
+                    or row.get("place")
+                    or row.get("to")
+                    or ""
+                )
+
+            filename = os.path.join(
+                output_dir,
+                f"kochi-to-{slug}-tempo.md"
+            )
+
             with open(filename, "w", encoding="utf-8") as out:
+
                 out.write("---\n")
                 out.write("layout: tempo_page\n")
-                
-                # 4. Dynamically write all CSV variables safely into the Front Matter
+
                 for key, value in row.items():
                     if value is None:
                         value = ""
-                    
-                    # Bulletproof fix: If Python accidentally reads a list due to extra commas, join it back into a string
-                    if isinstance(value, list):
-                        value = ", ".join(value)
-                        
-                    # Safely escape any double quotes inside your text so it doesn't break Jekyll
-                    safe_value = str(value).replace('"', '\\"')
-                    
-                    out.write(f'{key}: "{safe_value}"\n')
-                
-                # 5. Write the consolidated, clean SEO permalink
-                out.write(f'permalink: /tempo-traveller/kochi-to-{row["to_slug"]}/\n')
+                    value = str(value).replace('"', '\\"')
+                    out.write(f'{key}: "{value}"\n')
+
+                out.write(f'to_slug: "{slug}"\n')
+                out.write(f'permalink: /tempo-traveller/kochi-to-{slug}/\n')
                 out.write("---\n")
-                
+
             print(f"✅ Generated: {filename}")
 
-    print(f"\n🎉 SUCCESS: All Tempo Traveller & Urbania PSEO pages generated in {output_dir}/")
+    print(f"\n🎉 Successfully generated all Tempo Traveller pages in {output_dir}")
 
 except FileNotFoundError:
-    print(f"❌ ERROR: Could not find the CSV file at {csv_path}. Please make sure your data file is uploaded.")
+    print(f"❌ CSV not found: {csv_path}")
