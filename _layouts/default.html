@@ -13,6 +13,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | Tour With Anand</title>
 
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon-48.png">
+
+    <!-- Open Graph / WhatsApp / Facebook sharing preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page.title }} | Tour With Anand">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:image" content="{{ site.url }}/images/tour-with-anand-logo.png">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:site_name" content="Tour With Anand">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }} | Tour With Anand">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:image" content="{{ site.url }}/images/tour-with-anand-logo.png">
+
+    <!-- Fonts: preconnect for faster load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Structured data for local search -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "TaxiService",
+        "name": "Tour With Anand",
+        "image": "{{ site.url }}/images/tour-with-anand-logo.png",
+        "telephone": "+91-94006-20615",
+        "email": "infostarkholidays@gmail.com",
+        "areaServed": "Kochi, Kerala, Tamil Nadu, South India",
+        "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kochi",
+        "addressRegion": "Kerala",
+        "addressCountry": "IN"
+        },
+        "url": "{{ site.url }}{{ page.url }}"
+        }
+    </script>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S31X6KYCXQ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
