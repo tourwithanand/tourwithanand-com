@@ -59,32 +59,38 @@ title: Home
   <div class="section-container">
     <h2 class="section-title">Our Premium Fleet</h2>
     <p class="section-subtitle">Travel in pristine comfort. From executive sedans to luxury coaches, select the perfect vehicle for your South Indian journey.</p>
+        <p class="section-note">All rates include toll, parking, entry fees, and driver allowance — no hidden charges. Rates cover 100km / 10hrs (extendable by 2hrs) and apply to advance bookings. Contact us on WhatsApp for an exact quote.</p>
 
     <div class="fleet-slider">
       <div class="fleet-card">
         <div class="img-box"><img src="images/vehicles-kochi-airport-innova-crysta-taxi.png" alt="Innova"></div>
         <h3>Innova Crysta</h3>
         <span>Executive comfort for families and long journeys.</span>
+                <p class="price-tag">₹4200/day (100km / 10hrs) · +₹22/km extra</p>
       </div>
       <div class="fleet-card">
         <div class="img-box"><img src="images/vehicles-kochi-airport-ertiga-taxi.png" alt="Ertiga"></div>
         <h3>Maruti Ertiga</h3>
         <span>Spacious and affordable for up to 5 passengers.</span>
+                <p class="price-tag">₹3500/day (100km / 10hrs) · +₹20/km extra</p>
       </div>
       <div class="fleet-card">
         <div class="img-box"><img src="images/vehicles-kochi-airport-swift-taxi.png" alt="Sedan"></div>
         <h3>Premium Sedan</h3>
         <span>Perfect for swift city travel and airport transfers.</span>
+                <p class="price-tag">₹3000/day (100km / 10hrs) · +₹18/km extra</p>
       </div>
       <div class="fleet-card">
         <div class="img-box"><img src="images/vehicles-kochi-airport-tempo-traveller.png" alt="Tempo"></div>
         <h3>Tempo Traveller</h3>
         <span>Ideal for group tours and extended family trips.</span>
+                <p class="price-tag">₹5500/day (100km / 10hrs) · +₹25/km extra</p>
       </div>
       <div class="fleet-card">
-        <div class="img-box"><img src="images/vehicle-kochi-airport-bus-service,png" alt="Bus"></div>
+        <div class="img-box"><img src="Pic_Force%20Urbania%20In%20Kochi%20airport.jpeg" alt="Force Urbania"></div>
         <h3>Luxury Coach</h3>
         <span>Premium transportation for large corporate groups.</span>
+                <p class="price-tag">₹8000/day (100km / 10hrs) · +₹35/km extra</p>
       </div>
     </div>
   </div>
