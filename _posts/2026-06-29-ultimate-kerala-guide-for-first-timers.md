@@ -4,7 +4,7 @@ title: "The Ultimate First-Timer's Guide to Kerala: Luxury Travel & Itinerary Ti
 date: 2026-06-29 10:00:00 +0530
 description: "Planning your first trip to Kerala? Discover essential travel tips, the best destinations, and why booking a private English-speaking chauffeur from Kochi Airport is a must."
 permalink: /blog/ultimate-kerala-guide-first-timers/
-image: "/Mobile%20Munnar%20Scenery%20Hero%20Section.jpg"
+image: "/images/places-to-visit-unesco-hertiage-places-in-south-india.png"
 category: "Travel Guide"
 keywords: "kerala travel guide for foreigners, private driver kochi airport, luxury taxi kerala, munnar itinerary, tour with anand, innova crysta hire kochi, cok airport taxi"
 ---
