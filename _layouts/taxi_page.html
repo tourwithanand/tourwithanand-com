@@ -5,7 +5,7 @@ layout: default
 <!-- SEO & Meta Tags (Injected into the page) -->
 <meta name="description" content="{{ page.unique_desc | escape }} Premium, safe, and comfortable chauffeur service for international tourists and families.">
 <meta name="keywords" content="{{ page.seo_keywords | escape }}">
-<link rel="canonical" href="{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/">
+<!-- canonical handled by default.html layout -->
 
 <!-- Google Rich Results / JSON-LD Schema -->
 <script type="application/ld+json">
@@ -576,7 +576,7 @@ layout: default
   
   <!-- Hero Section -->
   <section class="tp-hero">
-    <img src="/images/banner-kochi-airport-taxi-service" alt="Premium private taxi from {{ page.from_location }} to {{ page.to_location }}" class="tp-hero-bg" loading="eager">
+    <img src="/images/banner-kochi-airport-taxi-service.png" alt="Premium private taxi from {{ page.from_location }} to {{ page.to_location }}" class="tp-hero-bg" loading="eager">
     <div class="tp-hero-overlay"></div>
     
     <div class="tp-container-inner tp-hero-content">
@@ -785,7 +785,7 @@ layout: default
       <div class="tp-return-box">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #fff; margin-top: 0; margin-bottom: 15px;">Need a Return Transfer?</h2>
         <p style="font-size: 16px; color: var(--tp-text-light); margin-bottom: 30px; max-width: 600px; margin-inline: auto;">Complete your itinerary by booking your reverse journey in advance. Secure a premium cab from <strong>{{ page.to_location }} back to {{ page.from_location }}</strong>.</p>
-        <a href="{{ site.url }}/taxi/{{ page.to_slug }}-to-{{ page.from_slug }}-taxi/" class="tp-btn tp-btn-primary">Book Return Journey</a>
+        <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20want%20to%20book%20a%20return%20taxi%20from%20{{ page.to_location | url_encode }}%20to%20{{ page.from_location | url_encode }}.%20Please%20share%20the%20quote." class="tp-btn tp-btn-primary">Book Return Journey</a>
       </div>
 
       <div style="text-align: center; margin-top: 60px;">
