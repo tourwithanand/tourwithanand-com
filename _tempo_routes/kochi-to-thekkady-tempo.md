@@ -1,4 +1,4 @@
----
+.---
 layout: tempo_page
 destination_slug: "thekkady"
 destination_name: "Thekkady"
