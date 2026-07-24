@@ -12,7 +12,7 @@ unique_desc: "Safe, spacious, and highly reliable group drops to the Pamba base 
 best_time_to_start: "Late night to reach Pamba by early morning to begin the hill trek"
 destination_about: "Pamba is the vital base camp on the banks of the sacred Pamba River, serving as the starting point for the trek to the Sabarimala Ayyappa Temple. It is an essential gathering point for large groups of devotees."
 top_attractions: "The primary activity for groups is taking a holy dip in the Pamba River together before beginning the arduous spiritual trek to the Sabarimala Sree Dharma Sastha Temple."
-internal_link_text: "Group pilgrimage taxi to Guruvayur"
+internal_link_text: "Group transfer to Thekkady wildlife"
 internal_link_url: "/tempo-traveller/kochi-to-guruvayur/"
 seo_keywords: "kochi to pamba tempo traveller, cochin airport to sabarimala urbania, ernakulam to pamba group taxi, aluva to nilakkal tempo, sabarimala season urbania rental, 17 seater pilgrimage cab kerala"
 title: "Tempo & Urbania Rentals: Kochi, Ernakulam & Airport to Pamba (Sabarimala) | Tour With Anand"

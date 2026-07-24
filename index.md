@@ -251,30 +251,14 @@ title: Home
     <p class="section-subtitle">Helpful travel guides, taxi tips and destination insights to plan your South India journey with confidence.</p>
 
     <div class="blog-slider">
-      <a href="https://tourwithanand.com/tempo-traveller-from-kochi-airport-to-pamba/" class="blog-card">
-        <h3>Tempo Traveller to Pamba</h3>
-        <span>Group pilgrimage travel guide</span>
-      </a>
-      <a href="https://tourwithanand.com/kochi-airport-to-alleppey-taxi-service/" class="blog-card">
-        <h3>Kochi to Alleppey Taxi</h3>
-        <span>Backwater travel planning tips</span>
-      </a>
-      <a href="https://tourwithanand.com/taxi-service-in-kochi-tours-with-anand/" class="blog-card">
-        <h3>Taxi Service in Kochi</h3>
-        <span>Reliable local taxi booking guide</span>
-      </a>
-      <a href="https://tourwithanand.com/kochi-to-munnar-premium-taxi/" class="blog-card">
-        <h3>Kochi to Munnar Premium</h3>
-        <span>Comfortable hill station travel</span>
-      </a>
-      <a href="https://tourwithanand.com/affordable-airport-taxi-kochi/" class="blog-card">
-        <h3>Affordable Airport Taxi</h3>
-        <span>Save money with trusted service</span>
-      </a>
-      <a href="https://tourwithanand.com/tour-with-anand-is-the-best-taxi-service-in-kochi/" class="blog-card">
-        <h3>Best Taxi Service in Kochi</h3>
-        <span>Why travelers trust Tour With Anand</span>
-      </a>
+          <a href="https://tourwithanand.com/blog/kerala-travel-tips-international-travelers/" class="blog-card">
+          <h3>Kerala Travel Tips for International Travelers</h3>
+          <span>What every foreign visitor should know before visiting Kerala</span>
+          </a>
+          <a href="https://tourwithanand.com/blog/ultimate-kerala-guide-first-timers/" class="blog-card">
+          <h3>The Ultimate First-Timer's Guide to Kerala</h3>
+          <span>Luxury travel tips and itinerary planning for Kerala</span>
+          </a>
     </div>
   </div>
 </section>
