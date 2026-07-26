@@ -1,163 +1,164 @@
 ---
 layout: default
 title: Travel Blog & Guides
+description: "Practical travel guides for international visitors to Kerala, Tamil Nadu and South India — safety tips, taxi fares, itineraries, and local advice from Tour With Anand."
 ---
 
 <style>
-  /* --- INNER PAGE HERO --- */
-  .inner-hero {
-    padding: 180px 20px 100px;
-    text-align: center;
-    background: linear-gradient(rgba(10,11,14,0.85), rgba(10,11,14,0.95)), url('/images/places-to-visit-kerala-mobile.png') center/cover no-repeat;
-    border-bottom: 1px solid rgba(255, 204, 0, 0.1);
-  }
-  .inner-hero h1 {
-    font-size: 52px;
-    color: #fff;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-  }
-  .inner-hero p {
-    font-size: 18px;
-    color: #a0a4ab;
-    max-width: 750px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
+/* --- INNER PAGE HERO --- */
+.inner-hero {
+padding: 180px 20px 100px;
+text-align: center;
+background: linear-gradient(rgba(10,11,14,0.85), rgba(10,11,14,0.95)), url('/images/places-to-visit-kerala-mobile.png') center/cover no-repeat;
+border-bottom: 1px solid rgba(255, 204, 0, 0.1);
+}
+.inner-hero h1 {
+font-size: 52px;
+color: #fff;
+margin-bottom: 20px;
+letter-spacing: 1px;
+}
+.inner-hero p {
+font-size: 18px;
+color: #a0a4ab;
+max-width: 750px;
+margin: 0 auto;
+line-height: 1.6;
+}
 
-  /* --- BLOG GRID --- */
-  .blog-index-section {
-    padding: 100px 0;
-    background: #0a0b0e;
-  }
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-  }
-  .blog-post-card {
-    background: #15181e;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.4s ease;
-    text-decoration: none;
-  }
-  .blog-post-card:hover {
-    border-color: rgba(255, 204, 0, 0.4);
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-  }
-  .blog-card-img {
-    height: 220px;
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-  .blog-post-card:hover .blog-card-img {
-    transform: scale(1.05);
-  }
-  .img-overflow-hidden {
-    overflow: hidden;
-    width: 100%;
-    height: 220px;
-  }
-  .blog-card-content {
-    padding: 30px 25px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-  .blog-meta {
-    font-size: 12px;
-    color: #ffcc00;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .blog-date {
-    color: #888;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-  }
-  .blog-card-title {
-    color: #fff;
-    font-size: 22px;
-    margin: 0 0 15px;
-    font-family: 'Playfair Display', serif;
-    transition: color 0.3s ease;
-    line-height: 1.3;
-  }
-  .blog-post-card:hover .blog-card-title {
-    color: #ffcc00;
-  }
-  .blog-card-excerpt {
-    color: #a0a4ab;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    flex-grow: 1;
-  }
-  .read-more-link {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: inline-block;
-    border-bottom: 1px solid #ffcc00;
-    padding-bottom: 3px;
-    align-self: flex-start;
-  }
+/* --- BLOG GRID --- */
+.blog-index-section {
+padding: 100px 0;
+background: #0a0b0e;
+}
+.blog-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 40px;
+}
+.blog-post-card {
+background: #15181e;
+border: 1px solid rgba(255, 255, 255, 0.05);
+border-radius: 12px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+transition: all 0.4s ease;
+text-decoration: none;
+}
+.blog-post-card:hover {
+border-color: rgba(255, 204, 0, 0.4);
+transform: translateY(-8px);
+box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+.blog-card-img {
+height: 220px;
+width: 100%;
+object-fit: cover;
+display: block;
+transition: transform 0.5s ease;
+}
+.blog-post-card:hover .blog-card-img {
+transform: scale(1.05);
+}
+.img-overflow-hidden {
+overflow: hidden;
+width: 100%;
+height: 220px;
+}
+.blog-card-content {
+padding: 30px 25px;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+}
+.blog-meta {
+font-size: 12px;
+color: #ffcc00;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 12px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.blog-date {
+color: #888;
+font-size: 11px;
+letter-spacing: 0.5px;
+}
+.blog-card-title {
+color: #fff;
+font-size: 22px;
+margin: 0 0 15px;
+font-family: 'Playfair Display', serif;
+transition: color 0.3s ease;
+line-height: 1.3;
+}
+.blog-post-card:hover .blog-card-title {
+color: #ffcc00;
+}
+.blog-card-excerpt {
+color: #a0a4ab;
+font-size: 15px;
+line-height: 1.7;
+margin-bottom: 25px;
+flex-grow: 1;
+}
+.read-more-link {
+color: #fff;
+font-size: 14px;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 1px;
+display: inline-block;
+border-bottom: 1px solid #ffcc00;
+padding-bottom: 3px;
+align-self: flex-start;
+}
 
-  /* --- RESPONSIVE --- */
-  @media (max-width: 768px) {
-    .inner-hero { padding: 140px 15px 60px; }
-    .inner-hero h1 { font-size: 36px; }
-    .blog-index-section { padding: 60px 0; }
-  }
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+.inner-hero { padding: 140px 15px 60px; }
+.inner-hero h1 { font-size: 36px; }
+.blog-index-section { padding: 60px 0; }
+}
 </style>
 
 <section class="inner-hero">
-  <div class="section-container">
-    <h1>Travel Journal & Guides</h1>
-    <p>Expert local advice on navigating South India, planning taxi routes, and discovering hidden heritage gems.</p>
-  </div>
+<div class="section-container">
+<h1>Travel Journal & Guides</h1>
+<p>Expert local advice on navigating South India, planning taxi routes, and discovering hidden heritage gems.</p>
+</div>
 </section>
 
 <section class="blog-index-section">
-  <div class="section-container">
-    <div class="blog-grid">
-      
-      <!-- AUTOMATIC JEKYLL LOOP: Pulls all posts from _posts folder -->
-      {% for post in site.posts %}
-      <a href="{{ site.baseurl }}{{ post.url }}" class="blog-post-card">
-        <div class="img-overflow-hidden">
-          <!-- Uses the image defined in the post's front matter, or falls back to a default logo -->
-          {% if post.image %}
-            <img src="{{ post.image }}" alt="{{ post.title }}" class="blog-card-img" loading="lazy">
-          {% else %}
-            <img src="/images/tour-with-anand-logo.png" alt="{{ post.title }}" class="blog-card-img" loading="lazy" style="object-fit: contain; padding: 20px; background: #0a0b0e;">
-          {% endif %}
-        </div>
-        <div class="blog-card-content">
-          <div class="blog-meta">
-            <span>{{ post.category | default: "Travel Guide" }}</span>
-            <span class="blog-date">{{ post.date | date: "%b %d, %Y" }}</span>
-          </div>
-          <h2 class="blog-card-title">{{ post.title }}</h2>
-          <p class="blog-card-excerpt">{{ post.description | truncate: 110 }}</p>
-          <span class="read-more-link">Read Article</span>
-        </div>
-      </a>
-      {% endfor %}
+<div class="section-container">
+<div class="blog-grid">
 
-    </div>
-  </div>
+<!-- AUTOMATIC JEKYLL LOOP: Pulls all posts from _posts folder -->
+{% for post in site.posts %}
+<a href="{{ site.baseurl }}{{ post.url }}" class="blog-post-card">
+<div class="img-overflow-hidden">
+<!-- Uses the image defined in the post's front matter, or falls back to a default logo -->
+{% if post.image %}
+<img src="{{ post.image }}" alt="{{ post.title }}" class="blog-card-img" loading="lazy">
+{% else %}
+<img src="/images/tour-with-anand-logo.png" alt="{{ post.title }}" class="blog-card-img" loading="lazy" style="object-fit: contain; padding: 20px; background: #0a0b0e;">
+{% endif %}
+</div>
+<div class="blog-card-content">
+<div class="blog-meta">
+<span>{{ post.category | default: "Travel Guide" }}</span>
+<span class="blog-date">{{ post.date | date: "%b %d, %Y" }}</span>
+</div>
+<h2 class="blog-card-title">{{ post.title }}</h2>
+<p class="blog-card-excerpt">{{ post.description | truncate: 110 }}</p>
+<span class="read-more-link">Read Article</span>
+</div>
+</a>
+{% endfor %}
+
+</div>
+</div>
 </section>
