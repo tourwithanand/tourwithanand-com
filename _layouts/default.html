@@ -596,5 +596,29 @@ gtag('event', 'call_click', {'event_category': 'Engagement', 'event_label': 'Cal
 });
 });
 </script>
+  <script>
+    (function () {
+      var WORKER_URL = "https://rapid-surf-225c.holidays-stark.workers.dev/log";
+      try {
+        var params = new URLSearchParams(location.search);
+        fetch(WORKER_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            page: location.href,
+            referrer: document.referrer,
+            language: navigator.language,
+            screen: screen.width + "x" + screen.height,
+            utmSource: params.get("utm_source") || "",
+            utmMedium: params.get("utm_medium") || "",
+            utmCampaign: params.get("utm_campaign") || "",
+            utmTerm: params.get("utm_term") || "",
+            gclid: params.get("gclid") || ""
+          }),
+        }).catch(function () {});
+      } catch (e) {}
+    })();
+    
+  </script>
 </body>
 </html>
