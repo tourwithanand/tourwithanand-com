@@ -1,68 +1,16 @@
 ---
 layout: default
-title: Tempo Traveller from Trivandrum Airport | 12, 17, 26 Seater
-description: Tempo Traveller from Trivandrum Airport for groups. 12, 17 and 26 seater hire to Kovalam, Varkala, Kanyakumari and Sabarimala. No hidden charges.
+title: "Tempo Traveller from Trivandrum Airport | 12, 17, 26 Seater"
+description: "Tempo Traveller from Trivandrum Airport for groups. 12, 17 and 26 seater hire to Kovalam, Varkala, Kanyakumari and Sabarimala. No hidden charges."
 permalink: /tempo-traveller-trivandrum-airport/
-banner: "/Trivandrum%20Airport%20Taxi%20Welcome.png"
-
-sizes:
-  - name: "12 Seater Tempo Traveller"
-    short: "12 seater Tempo Traveller"
-    img: "/images/vehicles-kochi-airport-tempo-traveller.png"
-    alt: "12 seater Tempo Traveller from Trivandrum Airport"
-    desc: "For families and small groups of up to 12 with luggage."
-  - name: "17 Seater Tempo Traveller"
-    short: "17 seater Tempo Traveller"
-    img: "/images/vehicles-kochi-airport-tempo-traveller.png"
-    alt: "17 seater Tempo Traveller hire in Thiruvananthapuram"
-    desc: "For tour groups, wedding guests and office teams of up to 17."
-  - name: "26 Seater Tempo Traveller"
-    short: "26 seater Tempo Traveller"
-    img: "/images/vehicles-kochi-airport-tempo-traveller.png"
-    alt: "26 seater Tempo Traveller minibus from Trivandrum Airport"
-    desc: "For large groups, pilgrim parties and school or college trips."
-  - name: "Luxury Coach (Force Urbania)"
-    short: "Force Urbania luxury coach"
-    img: "/Pic_Force%20Urbania%20In%20Kochi%20airport.jpeg"
-    alt: "Force Urbania luxury coach for group travel from Trivandrum"
-    desc: "Premium transportation for corporate groups and VIP guests."
-
-routes:
-  - { to: "Kovalam",              km: 15,  time: "30 min" }
-  - { to: "Poovar",               km: 30,  time: "1 hour" }
-  - { to: "Varkala",              km: 45,  time: "1 hr 15 min" }
-  - { to: "Ponmudi",              km: 60,  time: "2 hours" }
-  - { to: "Kollam",               km: 65,  time: "1 hr 45 min" }
-  - { to: "Kanyakumari",          km: 95,  time: "2 hr 30 min" }
-  - { to: "Alleppey (Alappuzha)", km: 150, time: "3 hr 30 min" }
-  - { to: "Sabarimala (Nilakkal)", km: 150, time: "4 hours" }
-  - { to: "Thekkady",             km: 200, time: "5 hr 30 min" }
-  - { to: "Kochi",                km: 205, time: "5 hours" }
-  - { to: "Munnar",               km: 280, time: "7 hr 30 min" }
-
-faqs:
-  - q: "How do I book a Tempo Traveller from Trivandrum Airport?"
-    a: "Send your group size, flight time, destination and number of days on WhatsApp or call +91 94006 20615. We confirm the vehicle and the full fare before you travel."
-  - q: "Which Tempo Traveller sizes are available in Trivandrum?"
-    a: "We offer 12 seater, 17 seater and 26 seater Tempo Travellers, plus a Force Urbania luxury coach for premium group travel."
-  - q: "Which size should I choose for my group?"
-    a: "Count every passenger, including children, and tell us how many bags you carry. If your group fills every seat and has heavy luggage, choose the next size up."
-  - q: "How is the Tempo Traveller fare calculated?"
-    a: "The fare depends on the seat size, the distance and the number of days. We give you one clear price before you confirm. Tolls, parking and driver allowance are included, with no hidden charges."
-  - q: "Can I hire a Tempo Traveller for a multi-day Kerala tour?"
-    a: "Yes. The same vehicle and driver stay with your group for the whole tour, from Trivandrum to Kovalam, Alleppey, Thekkady, Munnar, Kochi or Kanyakumari."
-  - q: "Can a Tempo Traveller go to Sabarimala from Trivandrum?"
-    a: "Yes. The 12 seater drops pilgrims at Pamba and picks up from Nilakkal. The 17 and 26 seaters stop at Nilakkal, where KSRTC buses run to Pamba."
-  - q: "Will the driver wait if our flight is delayed?"
-    a: "Yes. Share your flight number when you book. We track the flight and the driver waits for your actual landing time."
-  - q: "Do you provide a Tempo Traveller for weddings and corporate events in Thiruvananthapuram?"
-    a: "Yes. We arrange one or several vehicles for wedding guests, Technopark team outings, conferences and airport group transfers."
 ---
 
 <div class="tt-page">
 
   <!-- HERO -->
   <section class="tt-hero">
+    <img class="tt-hero-img" src="/Trivandrum%20Airport%20Taxi%20Welcome.png" alt="Tempo Traveller hire from Trivandrum Airport by Tour With Anand" fetchpriority="high" decoding="async">
+
     <div class="section-container">
       <nav class="tt-crumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span aria-hidden="true">›</span>
@@ -89,6 +37,58 @@ faqs:
     </div>
   </section>
 
+  <!-- QUICK LEAD FORM -->
+  <section class="tt-quote" id="quote">
+    <div class="section-container">
+      <form class="tt-quote-card" onsubmit="ttLead(event)" aria-label="Quick Tempo Traveller quote">
+        <div class="tt-quote-head">
+          <p class="tt-card-title">Get a quick group quote</p>
+          <p class="tt-card-sub">Send your group details. We reply on WhatsApp with the fare.</p>
+        </div>
+
+        <div class="tt-quote-fields">
+          <div class="tt-field">
+            <label for="ttl-name">Your name</label>
+            <input id="ttl-name" type="text" autocomplete="name" required>
+          </div>
+          <div class="tt-field">
+            <label for="ttl-mobile">Mobile number</label>
+            <input id="ttl-mobile" type="tel" autocomplete="tel" inputmode="tel" minlength="8" maxlength="16" required>
+          </div>
+          <div class="tt-field">
+            <label for="ttl-pax">Passengers</label>
+            <input id="ttl-pax" type="number" min="1" max="100" inputmode="numeric" required>
+          </div>
+          <div class="tt-field">
+            <label for="ttl-place">Destination</label>
+            <input id="ttl-place" type="text" list="tt-places" required>
+          </div>
+          <div class="tt-field">
+            <label for="ttl-date">Start date</label>
+            <input id="ttl-date" type="date" required>
+          </div>
+          <button type="submit" class="whatsapp-submit-btn tt-quote-btn">Get quote</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Destination suggestions used by both forms -->
+  <datalist id="tt-places">
+    <option value="Kovalam">
+    <option value="Poovar">
+    <option value="Varkala">
+    <option value="Ponmudi">
+    <option value="Kollam">
+    <option value="Kanyakumari">
+    <option value="Alleppey">
+    <option value="Sabarimala">
+    <option value="Thekkady">
+    <option value="Kochi">
+    <option value="Munnar">
+    <option value="Kerala tour">
+  </datalist>
+
   <!-- SIZES (home page fleet markup) -->
   <section class="fleet-section" id="sizes">
     <div class="section-container">
@@ -96,15 +96,30 @@ faqs:
       <p class="section-subtitle">Pick the seat size that fits your group and luggage. Message us for an exact quote.</p>
 
       <div class="fleet-slider">
-        {% for s in page.sizes %}
-        {% capture msg %}Hi, I want a quote for a {{ s.short }} from Trivandrum Airport.{% endcapture %}
         <div class="fleet-card">
-          <div class="img-box"><img src="{{ s.img }}" alt="{{ s.alt }}" loading="lazy"></div>
-          <h3>{{ s.name }}</h3>
-          <span>{{ s.desc }}</span>
-          <p><a class="tt-book" href="https://wa.me/919400620615?text={{ msg | url_encode | replace: '+', '%20' }}">Get quote</a></p>
+          <div class="img-box"><img src="/images/vehicles-kochi-airport-tempo-traveller.png" alt="12 seater Tempo Traveller from Trivandrum Airport" loading="lazy"></div>
+          <h3>12 Seater Tempo Traveller</h3>
+          <span>For families and small groups of up to 12 with luggage.</span>
+          <p><a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%2012%20seater%20Tempo%20Traveller%20from%20Trivandrum%20Airport.">Get quote</a></p>
         </div>
-        {% endfor %}
+        <div class="fleet-card">
+          <div class="img-box"><img src="/images/vehicles-kochi-airport-tempo-traveller.png" alt="17 seater Tempo Traveller hire in Thiruvananthapuram" loading="lazy"></div>
+          <h3>17 Seater Tempo Traveller</h3>
+          <span>For tour groups, wedding guests and office teams of up to 17.</span>
+          <p><a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%2017%20seater%20Tempo%20Traveller%20from%20Trivandrum%20Airport.">Get quote</a></p>
+        </div>
+        <div class="fleet-card">
+          <div class="img-box"><img src="/images/vehicles-kochi-airport-tempo-traveller.png" alt="26 seater Tempo Traveller minibus from Trivandrum Airport" loading="lazy"></div>
+          <h3>26 Seater Tempo Traveller</h3>
+          <span>For large groups, pilgrim parties and school or college trips.</span>
+          <p><a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%2026%20seater%20Tempo%20Traveller%20from%20Trivandrum%20Airport.">Get quote</a></p>
+        </div>
+        <div class="fleet-card">
+          <div class="img-box"><img src="/Pic_Force%20Urbania%20In%20Kochi%20airport.jpeg" alt="Force Urbania luxury coach for group travel from Trivandrum" loading="lazy"></div>
+          <h3>Luxury Coach (Force Urbania)</h3>
+          <span>Premium transportation for corporate groups and VIP guests.</span>
+          <p><a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Force%20Urbania%20luxury%20coach%20from%20Trivandrum%20Airport.">Get quote</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -116,14 +131,73 @@ faqs:
       <p class="section-subtitle">Popular group trips from Thiruvananthapuram. Distances and drive times are approximate.</p>
 
       <div class="tt-rates">
-        {% for r in page.routes %}
-        {% capture msg %}Hi, I want a quote for a Tempo Traveller from Trivandrum Airport to {{ r.to }}.{% endcapture %}
+
         <div class="tt-rate">
-          <div class="tt-name"><h3>Trivandrum Airport to {{ r.to }}</h3></div>
-          <div class="tt-route">About {{ r.km }} km · {{ r.time }}</div>
-          <a class="tt-book" href="https://wa.me/919400620615?text={{ msg | url_encode | replace: '+', '%20' }}">Get quote</a>
+          <div class="tt-name"><h3>Trivandrum Airport to Kovalam</h3></div>
+          <div class="tt-route">About 15 km · 30 min</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Kovalam.">Get quote</a>
         </div>
-        {% endfor %}
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Poovar</h3></div>
+          <div class="tt-route">About 30 km · 1 hour</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Poovar.">Get quote</a>
+        </div>
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Varkala</h3></div>
+          <div class="tt-route">About 45 km · 1 hr 15 min</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Varkala.">Get quote</a>
+        </div>
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Ponmudi</h3></div>
+          <div class="tt-route">About 60 km · 2 hours</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Ponmudi.">Get quote</a>
+        </div>
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Kollam</h3></div>
+          <div class="tt-route">About 65 km · 1 hr 45 min</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Kollam.">Get quote</a>
+        </div>
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Kanyakumari</h3></div>
+          <div class="tt-route">About 95 km · 2 hr 30 min</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Kanyakumari.">Get quote</a>
+        </div>
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Alleppey (Alappuzha)</h3></div>
+          <div class="tt-route">About 150 km · 3 hr 30 min</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Alleppey.">Get quote</a>
+        </div>
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Sabarimala (Nilakkal)</h3></div>
+          <div class="tt-route">About 150 km · 4 hours</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Sabarimala.">Get quote</a>
+        </div>
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Thekkady</h3></div>
+          <div class="tt-route">About 200 km · 5 hr 30 min</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Thekkady.">Get quote</a>
+        </div>
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Kochi</h3></div>
+          <div class="tt-route">About 205 km · 5 hours</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Kochi.">Get quote</a>
+        </div>
+
+        <div class="tt-rate">
+          <div class="tt-name"><h3>Trivandrum Airport to Munnar</h3></div>
+          <div class="tt-route">About 280 km · 7 hr 30 min</div>
+          <a class="tt-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20a%20quote%20for%20a%20Tempo%20Traveller%20from%20Trivandrum%20Airport%20to%20Munnar.">Get quote</a>
+        </div>
+
       </div>
 
       <p class="tt-fineprint">Planning a longer trip? We also run group tours to Kumarakom, Wayanad, Madurai, Rameswaram and across Kerala and Tamil Nadu.</p>
@@ -210,17 +284,43 @@ faqs:
       <p class="section-subtitle">Not answered here? Message us on WhatsApp.</p>
 
       <div class="faq-list">
-        {% for f in page.faqs %}
         <div class="faq-item">
-          <h3>{{ f.q }}</h3>
-          <p>{{ f.a }}</p>
+          <h3>How do I book a Tempo Traveller from Trivandrum Airport?</h3>
+          <p>Send your group size, flight time, destination and number of days on WhatsApp or call +91 94006 20615. We confirm the vehicle and the full fare before you travel.</p>
         </div>
-        {% endfor %}
+        <div class="faq-item">
+          <h3>Which Tempo Traveller sizes are available in Trivandrum?</h3>
+          <p>We offer 12 seater, 17 seater and 26 seater Tempo Travellers, plus a Force Urbania luxury coach for premium group travel.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Which size should I choose for my group?</h3>
+          <p>Count every passenger, including children, and tell us how many bags you carry. If your group fills every seat and has heavy luggage, choose the next size up.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How is the Tempo Traveller fare calculated?</h3>
+          <p>The fare depends on the seat size, the distance and the number of days. We give you one clear price before you confirm. Tolls, parking and driver allowance are included, with no hidden charges.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I hire a Tempo Traveller for a multi-day Kerala tour?</h3>
+          <p>Yes. The same vehicle and driver stay with your group for the whole tour, from Trivandrum to Kovalam, Alleppey, Thekkady, Munnar, Kochi or Kanyakumari.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can a Tempo Traveller go to Sabarimala from Trivandrum?</h3>
+          <p>Yes. The 12 seater drops pilgrims at Pamba and picks up from Nilakkal. The 17 and 26 seaters stop at Nilakkal, where KSRTC buses run to Pamba.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Will the driver wait if our flight is delayed?</h3>
+          <p>Yes. Share your flight number when you book. We track the flight and the driver waits for your actual landing time.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you provide a Tempo Traveller for weddings and corporate events in Thiruvananthapuram?</h3>
+          <p>Yes. We arrange one or several vehicles for wedding guests, Technopark team outings, conferences and airport group transfers.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- BOOKING FORM -->
+  <!-- FULL ENQUIRY FORM -->
   <section class="tt-section" id="book">
     <div class="section-container">
       <h2 class="section-title">Book your Tempo Traveller in Trivandrum</h2>
@@ -232,13 +332,20 @@ faqs:
           <input id="tt-name" type="text" autocomplete="name" required>
         </div>
         <div class="tt-field">
+          <label for="tt-mobile">Mobile number</label>
+          <input id="tt-mobile" type="tel" autocomplete="tel" inputmode="tel" minlength="8" maxlength="16" required>
+        </div>
+        <div class="tt-field">
           <label for="tt-pax">Number of passengers</label>
           <input id="tt-pax" type="number" min="1" max="100" inputmode="numeric" required>
         </div>
         <div class="tt-field">
           <label for="tt-size">Vehicle</label>
           <select id="tt-size" required>
-            {% for s in page.sizes %}<option>{{ s.name }}</option>{% endfor %}
+            <option>12 Seater Tempo Traveller</option>
+            <option>17 Seater Tempo Traveller</option>
+            <option>26 Seater Tempo Traveller</option>
+            <option>Luxury Coach (Force Urbania)</option>
             <option>Not sure, please suggest</option>
           </select>
         </div>
@@ -255,20 +362,17 @@ faqs:
         <div class="tt-field">
           <label for="tt-place">Destination or places to visit</label>
           <input id="tt-place" type="text" list="tt-places" required>
-          <datalist id="tt-places">
-            {% for r in page.routes %}<option value="{{ r.to }}">{% endfor %}
-          </datalist>
-        </div>
-        <div class="tt-field">
-          <label for="tt-days">Number of days</label>
-          <input id="tt-days" type="number" min="1" max="30" inputmode="numeric" value="1">
         </div>
         <div class="tt-field">
           <label for="tt-date">Start date</label>
           <input id="tt-date" type="date" required>
         </div>
         <div class="tt-field">
-          <label for="tt-time">Flight arrival or pickup time</label>
+          <label for="tt-days">Number of days</label>
+          <input id="tt-days" type="number" min="1" max="30" inputmode="numeric" value="1">
+        </div>
+        <div class="tt-field tt-wide">
+          <label for="tt-time">Flight arrival or pickup time (optional)</label>
           <input id="tt-time" type="time">
         </div>
         <div class="tt-field tt-wide">
@@ -292,14 +396,13 @@ faqs:
       "@type": "TaxiService",
       "name": "Tempo Traveller from Trivandrum Airport",
       "serviceType": "Tempo Traveller and minibus hire for groups",
-      "url": {{ page.url | absolute_url | jsonify }},
-      "image": {{ "/images/vehicles-kochi-airport-tempo-traveller.png" | absolute_url | jsonify }},
-      "description": {{ page.description | jsonify }},
+      "url": "https://tourwithanand.com/tempo-traveller-trivandrum-airport/",
+      "image": "https://tourwithanand.com/images/vehicles-kochi-airport-tempo-traveller.png",
+      "description": "Tempo Traveller from Trivandrum Airport for groups. 12, 17 and 26 seater hire to Kovalam, Varkala, Kanyakumari and Sabarimala. No hidden charges.",
       "provider": {
-        "@type": "LocalBusiness",
+        "@type": "Organization",
         "name": "Tour With Anand",
-        "url": {{ "/" | absolute_url | jsonify }},
-        "image": {{ "/images/vehicles-kochi-airport-tempo-traveller.png" | absolute_url | jsonify }},
+        "url": "https://tourwithanand.com/",
         "telephone": "+919400620615",
         "email": "infostarkholidays@gmail.com"
       },
@@ -314,21 +417,54 @@ faqs:
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ "/" | absolute_url | jsonify }} },
-        { "@type": "ListItem", "position": 2, "name": "Trivandrum Airport Taxi", "item": {{ "/trivandrum-airport-taxi/" | absolute_url | jsonify }} },
-        { "@type": "ListItem", "position": 3, "name": "Tempo Traveller", "item": {{ page.url | absolute_url | jsonify }} }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tourwithanand.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Trivandrum Airport Taxi", "item": "https://tourwithanand.com/trivandrum-airport-taxi/" },
+        { "@type": "ListItem", "position": 3, "name": "Tempo Traveller", "item": "https://tourwithanand.com/tempo-traveller-trivandrum-airport/" }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {% for f in page.faqs %}
         {
           "@type": "Question",
-          "name": {{ f.q | jsonify }},
-          "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | jsonify }} }
-        }{% unless forloop.last %},{% endunless %}
-        {% endfor %}
+          "name": "How do I book a Tempo Traveller from Trivandrum Airport?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Send your group size, flight time, destination and number of days on WhatsApp or call +91 94006 20615. We confirm the vehicle and the full fare before you travel." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Tempo Traveller sizes are available in Trivandrum?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We offer 12 seater, 17 seater and 26 seater Tempo Travellers, plus a Force Urbania luxury coach for premium group travel." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which size should I choose for my group?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Count every passenger, including children, and tell us how many bags you carry. If your group fills every seat and has heavy luggage, choose the next size up." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the Tempo Traveller fare calculated?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The fare depends on the seat size, the distance and the number of days. We give you one clear price before you confirm. Tolls, parking and driver allowance are included, with no hidden charges." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I hire a Tempo Traveller for a multi-day Kerala tour?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The same vehicle and driver stay with your group for the whole tour, from Trivandrum to Kovalam, Alleppey, Thekkady, Munnar, Kochi or Kanyakumari." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a Tempo Traveller go to Sabarimala from Trivandrum?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The 12 seater drops pilgrims at Pamba and picks up from Nilakkal. The 17 and 26 seaters stop at Nilakkal, where KSRTC buses run to Pamba." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the driver wait if our flight is delayed?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Share your flight number when you book. We track the flight and the driver waits for your actual landing time." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide a Tempo Traveller for weddings and corporate events in Thiruvananthapuram?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We arrange one or several vehicles for wedding guests, Technopark team outings, conferences and airport group transfers." }
+        }
       ]
     }
   ]
@@ -338,20 +474,11 @@ faqs:
 <style>
 .tt-page { background: #0a0b0e; }
 
-/* Hero with banner image (desktop). Image path comes from "banner" in the front matter. */
-.tt-hero {
-  min-height: 80vh;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  padding: 150px 0 90px;
-  border-bottom: 1px solid rgba(255,204,0,0.1);
-  background:
-    linear-gradient(to right, rgba(10,11,14,0.95) 0%, rgba(10,11,14,0.65) 45%, rgba(10,11,14,0.1) 100%),
-    url("{{ page.banner }}") right center / cover no-repeat,
-    #0a0b0e;
-}
-.tt-hero .section-container { width: 100%; box-sizing: border-box; }
+/* HERO (desktop): banner fills the section, dark gradient keeps text readable */
+.tt-hero { position: relative; overflow: hidden; min-height: 80vh; box-sizing: border-box; display: flex; align-items: center; padding: 150px 0 90px; border-bottom: 1px solid rgba(255,204,0,0.1); background: #0a0b0e; }
+.tt-hero-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; display: block; }
+.tt-hero::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(10,11,14,0.95) 0%, rgba(10,11,14,0.65) 45%, rgba(10,11,14,0.1) 100%); }
+.tt-hero .section-container { position: relative; z-index: 2; width: 100%; box-sizing: border-box; }
 .tt-crumb { font-size: 13px; color: #a0a4ab; margin-bottom: 22px; }
 .tt-crumb a { color: #c9cdd4; text-decoration: none; }
 .tt-crumb a:hover { color: #ffcc00; }
@@ -362,6 +489,17 @@ faqs:
 .tt-points { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; }
 .tt-points li { border: 1px solid rgba(255,204,0,0.3); border-radius: 999px; padding: 8px 16px; font-size: 13px; color: #e0e0e0; background: rgba(10,11,14,0.5); }
 
+/* QUICK LEAD FORM */
+.tt-quote { background: #0e1015; padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.tt-quote-card { background: #15181e; border: 1px solid rgba(255,204,0,0.25); border-radius: 16px; padding: 28px; }
+.tt-quote-head { margin-bottom: 20px; }
+.tt-card-title { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; color: #ffcc00; margin: 0 0 6px; }
+.tt-card-sub { font-size: 14px; color: #a0a4ab; line-height: 1.6; margin: 0; }
+.tt-quote-fields { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)) auto; gap: 14px; align-items: end; }
+.tt-quote-card .tt-field input, .tt-quote-card .tt-field select { padding: 13px 12px; background: #0e1015; }
+.tt-quote-btn { white-space: nowrap; }
+
+/* SECTIONS */
 .tt-section { padding: 100px 0; }
 .tt-alt { background: #0e1015; }
 
@@ -390,68 +528,94 @@ faqs:
 .tt-copy p { color: #a0a4ab; font-size: 16px; line-height: 1.85; margin: 0; }
 .tt-copy a { color: #ffcc00; }
 
+/* FORM FIELDS (both forms) */
 .tt-form { max-width: 720px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .tt-wide { grid-column: 1 / -1; }
 .tt-field label { display: block; font-size: 13px; color: #a0a4ab; margin-bottom: 8px; }
-.tt-form input, .tt-form select, .tt-form textarea { width: 100%; box-sizing: border-box; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: #15181e; color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; color-scheme: dark; }
-.tt-form input:focus, .tt-form select:focus, .tt-form textarea:focus { border-color: #ffcc00; outline: none; box-shadow: 0 0 15px rgba(255,204,0,0.1); }
-.tt-page a:focus-visible, .tt-form button:focus-visible { outline: 2px solid #ffcc00; outline-offset: 3px; }
+.tt-field input, .tt-field select, .tt-field textarea { width: 100%; box-sizing: border-box; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: #15181e; color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; color-scheme: dark; }
+.tt-field input:focus, .tt-field select:focus, .tt-field textarea:focus { border-color: #ffcc00; outline: none; box-shadow: 0 0 15px rgba(255,204,0,0.1); }
+.tt-page a:focus-visible, .tt-page button:focus-visible { outline: 2px solid #ffcc00; outline-offset: 3px; }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
+  .tt-quote-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tt-quote-btn { grid-column: 1 / -1; }
   .tt-steps { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  /* Hero on mobile: full image on top, text below */
-  .tt-hero {
-    min-height: 0;
-    display: block;
-    padding: calc(60px + 52vw) 0 50px;
-    background:
-      linear-gradient(to bottom, transparent calc(60px + 34vw), #0a0b0e calc(60px + 54vw)),
-      url("{{ page.banner }}") center 60px / 100% auto no-repeat,
-      #0a0b0e;
-  }
+  /* HERO (mobile): full banner on top, text below. Works with any image shape. */
+  .tt-hero { display: block; min-height: 0; padding: 60px 0 40px; }
+  .tt-hero-img { position: static; width: 100%; height: auto; }
+  .tt-hero::after { display: none; }
+  .tt-hero .section-container { padding-top: 26px; }
   .tt-crumb { margin-bottom: 14px; }
   .tt-hero h1 { font-size: 32px; }
   .tt-lead { font-size: 16px; }
+  .tt-cta { margin: 26px 0 28px; }
   .tt-cta a { width: 100%; text-align: center; box-sizing: border-box; }
+
+  .tt-quote { padding: 30px 0; }
+  .tt-quote-card { padding: 22px; }
+  .tt-quote-fields { grid-template-columns: 1fr; }
+
   .tt-section { padding: 50px 0; }
-  .tt-rate { grid-template-columns: 1fr; grid-template-areas: "name" "route" "book"; gap: 10px; padding: 20px 4px; }
-  .tt-name { grid-area: name; }
+  .tt-rate { grid-template-columns: 1fr; gap: 10px; padding: 20px 4px; }
   .tt-rate h3 { font-size: 17px; }
-  .tt-route { grid-area: route; }
-  .tt-rate .tt-book { grid-area: book; padding: 13px; }
+  .tt-rate .tt-book { padding: 13px; }
   .tt-steps, .tt-notes, .tt-form { grid-template-columns: 1fr; }
 }
 </style>
 
 <script>
-// Stop past dates being picked
+// Stop past dates being picked in both forms
 (function () {
-  var d = document.getElementById('tt-date');
-  if (d) { d.min = new Date().toISOString().split('T')[0]; }
+  var today = new Date().toISOString().split('T')[0];
+  ['ttl-date', 'tt-date'].forEach(function (id) {
+    var d = document.getElementById(id);
+    if (d) { d.min = today; }
+  });
 })();
 
-// Send the enquiry form to WhatsApp
-function ttBook(e) {
-  e.preventDefault();
-  var val = function (id) { return document.getElementById(id).value.trim(); };
-  var lines = [
-    'Tempo Traveller enquiry - Trivandrum Airport',
-    'Name: ' + val('tt-name'),
-    'Passengers: ' + val('tt-pax'),
-    'Vehicle: ' + val('tt-size'),
-    'Trip: ' + val('tt-type'),
-    'Places: ' + val('tt-place'),
-    'Days: ' + (val('tt-days') || '1'),
-    'Start date: ' + val('tt-date'),
-    'Time: ' + (val('tt-time') || 'Not given'),
-    'Details: ' + (val('tt-notes') || 'None')
-  ];
+function ttVal(id) {
+  var el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+
+function ttSend(lines, label) {
   if (typeof gtag === 'function') {
-    gtag('event', 'trivandrum_tempo_lead', { event_category: 'Engagement', event_label: val('tt-size') });
+    gtag('event', 'trivandrum_tempo_lead', { event_category: 'Engagement', event_label: label });
   }
   window.open('https://wa.me/919400620615?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+}
+
+// Quick lead form under the hero
+function ttLead(e) {
+  e.preventDefault();
+  ttSend([
+    'Tempo Traveller enquiry - Trivandrum Airport',
+    'Name: ' + ttVal('ttl-name'),
+    'Mobile: ' + ttVal('ttl-mobile'),
+    'Passengers: ' + ttVal('ttl-pax'),
+    'Destination: ' + ttVal('ttl-place'),
+    'Start date: ' + ttVal('ttl-date')
+  ], 'Quick quote form');
+}
+
+// Full enquiry form at the bottom
+function ttBook(e) {
+  e.preventDefault();
+  ttSend([
+    'Tempo Traveller booking - Trivandrum Airport',
+    'Name: ' + ttVal('tt-name'),
+    'Mobile: ' + ttVal('tt-mobile'),
+    'Passengers: ' + ttVal('tt-pax'),
+    'Vehicle: ' + ttVal('tt-size'),
+    'Trip: ' + ttVal('tt-type'),
+    'Places: ' + ttVal('tt-place'),
+    'Start date: ' + ttVal('tt-date'),
+    'Days: ' + (ttVal('tt-days') || '1'),
+    'Time: ' + (ttVal('tt-time') || 'Not given'),
+    'Details: ' + (ttVal('tt-notes') || 'None')
+  ], 'Full enquiry form');
 }
 </script>
