@@ -213,8 +213,8 @@ margin-top: 25px;
 <h3>Travel With One Transparent, Accountable Operator</h3>
 <p>If you'd like a transparent quote for your Kerala or Tamil Nadu trip, message us on WhatsApp.</p>
 <div class="blog-cta-buttons">
-<a href="https://wa.me/919400620615" class="luxury-btn" onclick="gtag('event', 'whatsapp_click', {'event_category': 'Engagement', 'event_label': 'Blog CTA'});">Book via WhatsApp</a>
-<a href="tel:+919400620615" class="luxury-btn-outline" onclick="gtag('event', 'call_click', {'event_category': 'Engagement', 'event_label': 'Blog CTA'});">Call Anand Now</a>
+<a href="https://wa.me/919400620615" class="luxury-btn">Book via WhatsApp</a>
+<a href="tel:+919400620615" class="luxury-btn-outline">Call Anand Now</a>
 </div>
 </div>
 

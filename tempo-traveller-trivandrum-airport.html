@@ -582,9 +582,7 @@ function ttVal(id) {
 }
 
 function ttSend(lines, label) {
-  if (typeof gtag === 'function') {
-    gtag('event', 'trivandrum_tempo_lead', { event_category: 'Engagement', event_label: label });
-  }
+  if (typeof twaTrack === 'function') { twaTrack('whatsapp_click', /quick/i.test(label) ? 'quote_form' : 'booking_form', label); }
   window.open('https://wa.me/919400620615?text=' + encodeURIComponent(lines.join('\n')), '_blank');
 }
 

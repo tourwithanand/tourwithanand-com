@@ -208,8 +208,8 @@ margin-top: 25px;
 <h3>Start Your Kerala Trip With a Calm, Safe Arrival</h3>
 <p>If you're planning a Kerala trip and want a straightforward, safe start from the moment you land, message us on WhatsApp with your flight details and we'll take it from there.</p>
 <div class="blog-cta-buttons">
-<a href="https://wa.me/919400620615" class="luxury-btn" onclick="gtag('event', 'whatsapp_click', {'event_category': 'Engagement', 'event_label': 'Blog CTA'});">Book via WhatsApp</a>
-<a href="tel:+919400620615" class="luxury-btn-outline" onclick="gtag('event', 'call_click', {'event_category': 'Engagement', 'event_label': 'Blog CTA'});">Call Anand Now</a>
+<a href="https://wa.me/919400620615" class="luxury-btn">Book via WhatsApp</a>
+<a href="tel:+919400620615" class="luxury-btn-outline">Call Anand Now</a>
 </div>
 </div>
 

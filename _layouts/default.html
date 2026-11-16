@@ -60,14 +60,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S31X6KYCXQ"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-S31X6KYCXQ');
-</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -569,32 +561,39 @@ var text =
 "Travel Plan:%0A" + msg + "%0A%0A" +
 "Contact Email: infostarkholidays@gmail.com";
 
+twaTrack('whatsapp_click', 'enquiry_form', 'Send via WhatsApp');
 window.open(
 "https://wa.me/919400620615?text=" + text,
 "_blank"
 );
 }
 
-// --- ADDED FOR GOOGLE ANALYTICS EVENT TRACKING ---
-document.addEventListener('DOMContentLoaded', function() {
-// Track WhatsApp clicks
-document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
-el.addEventListener('click', function() {
-if(typeof gtag === 'function') {
-gtag('event', 'whatsapp_click', {'event_category': 'Engagement', 'event_label': 'WhatsApp Button'});
+// --- LEAD TRACKING ---
+// The only place lead events are sent from. Google Tag Manager listens for
+// "whatsapp_click" and "call_click" and forwards them to GA4 and Google Ads.
+// Do not add gtag() calls or onclick tracking anywhere else on the site.
+window.dataLayer = window.dataLayer || [];
+var twaLastLead = {};
+function twaTrack(eventName, source, text) {
+var now = Date.now();
+if (twaLastLead[eventName] && now - twaLastLead[eventName] < 3000) { return; }
+twaLastLead[eventName] = now;
+window.dataLayer.push({
+'event': eventName,
+'click_source': source || 'button',
+'click_text': (text || '').replace(/\s+/g, ' ').trim().slice(0, 60)
+});
 }
-});
-});
-
-// Track Phone clicks
-document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
-el.addEventListener('click', function() {
-if(typeof gtag === 'function') {
-gtag('event', 'call_click', {'event_category': 'Engagement', 'event_label': 'Call Button'});
+document.addEventListener('click', function(e) {
+var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+if (!a) { return; }
+var href = a.getAttribute('href') || '';
+if (/wa\.me\/|api\.whatsapp\.com|^whatsapp:/.test(href)) {
+twaTrack('whatsapp_click', 'button', a.textContent || a.title);
+} else if (href.indexOf('tel:') === 0) {
+twaTrack('call_click', 'button', a.textContent || a.title);
 }
-});
-});
-});
+}, true);
 </script>
   <script>
     (function () {

@@ -347,9 +347,7 @@ function sbBook(e) {
     'Arrival time: ' + (val('sb-time') || 'Not given'),
     'Details: ' + (val('sb-slot') || 'None')
   ];
-  if (typeof gtag === 'function') {
-    gtag('event', 'sabarimala_lead', { event_category: 'Engagement', event_label: val('sb-vehicle') });
-  }
+  if (typeof twaTrack === 'function') { twaTrack('whatsapp_click', 'booking_form', 'Sabarimala booking'); }
   window.open('https://wa.me/919400620615?text=' + encodeURIComponent(lines.join('\n')), '_blank');
 }
 </script>

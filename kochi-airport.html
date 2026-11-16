@@ -336,6 +336,7 @@ function sendWhatsAppQuote(event) {
                         `Hi Anand, please verify fleet availability and share your customized exact fare details.`;
                         
   const whatsappUrl = `https://wa.me/919400620615?text=${formattedText}`;
+  if (typeof twaTrack === 'function') { twaTrack('whatsapp_click', 'quote_form', 'Get Exact Fare on WhatsApp'); }
   window.open(whatsappUrl, '_blank');
 }
 </script>

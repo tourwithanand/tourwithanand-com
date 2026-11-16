@@ -560,19 +560,7 @@ permalink: /tempo-traveller-kochi-airport/
 </style>
 
 <script>
-/*
-  TRACKING NOTES
-  - The Google tag (GTM-5QM26MCQ) must be installed ONCE in your site layout <head>
-    (_layouts/default.html). Do NOT paste it into this page.
-  - This page only pushes ONE event, "generate_lead", to the dataLayer.
-  - In Google Tag Manager, create a Custom Event trigger "generate_lead" and attach
-    your Google Ads Conversion Tracking tag (and GA4 event tag) to it.
-*/
-window.dataLayer = window.dataLayer || [];
-if (typeof window.gtag !== 'function') {
-  // Safe fallback only: defines gtag() so events queue in dataLayer. Does NOT load a second tag.
-  window.gtag = function () { window.dataLayer.push(arguments); };
-}
+// Lead tracking lives in _layouts/default.html (twaTrack). Nothing is sent from this page directly.
 
 // Stop past dates being picked in both forms
 (function () {
@@ -583,39 +571,15 @@ if (typeof window.gtag !== 'function') {
   });
 })();
 
-// One lead action = one event. Anything within 3 seconds of the last one is ignored.
-var ttLastLead = 0;
-function ttTrackLead(method, label) {
-  var now = Date.now();
-  if (now - ttLastLead < 3000) { return; }
-  ttLastLead = now;
-  window.gtag('event', 'generate_lead', {
-    lead_method: method,        // whatsapp_form | whatsapp_click | phone_click
-    lead_source: label,         // which button or form
-    lead_page: 'tempo_traveller_kochi_airport',
-    currency: 'INR',
-    transport_type: 'beacon'
-  });
-}
-
 function ttVal(id) {
   var el = document.getElementById(id);
   return el ? el.value.trim() : '';
 }
 
 function ttSend(lines, label) {
-  ttTrackLead('whatsapp_form', label);
+  if (typeof twaTrack === 'function') { twaTrack('whatsapp_click', /quick/i.test(label) ? 'quote_form' : 'booking_form', label); }
   window.open('https://wa.me/919400620615?text=' + encodeURIComponent(lines.join('\n')), '_blank');
 }
-
-// Clicks on WhatsApp and call links inside this page only (forms are tracked in ttSend)
-document.addEventListener('click', function (e) {
-  var a = e.target.closest ? e.target.closest('.tt-page a[href^="https://wa.me/"], .tt-page a[href^="tel:"]') : null;
-  if (!a) { return; }
-  var isTel = a.getAttribute('href').indexOf('tel:') === 0;
-  var label = (a.textContent || '').trim().slice(0, 40) || 'link';
-  ttTrackLead(isTel ? 'phone_click' : 'whatsapp_click', label);
-});
 
 // Quick lead form under the hero
 function ttLead(e) {

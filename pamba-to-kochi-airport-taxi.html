@@ -363,9 +363,7 @@ function sbBook(e) {
   if ((pickup - new Date()) / 3600000 < 5) {
     lines.push('Note: pickup is in less than 5 hours. Please confirm if a car is available.');
   }
-  if (typeof gtag === 'function') {
-    gtag('event', 'nilakkal_return_lead', { event_category: 'Engagement', event_label: val('sb-vehicle') });
-  }
+  if (typeof twaTrack === 'function') { twaTrack('whatsapp_click', 'booking_form', 'Sabarimala return booking'); }
   window.open('https://wa.me/919400620615?text=' + encodeURIComponent(lines.join('\n')), '_blank');
 }
 </script>
