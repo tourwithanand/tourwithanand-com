@@ -1,0 +1,82 @@
+---
+layout: default
+title: "Kochi Airport Taxi Routes | All Destinations & Fixed Fares"
+description: "Every taxi route we serve from Kochi Airport (COK): hill stations, backwaters, pilgrim centres, hotels, hospitals and city drops. Fixed fares, 24x7 pickup."
+permalink: /kochi-airport-taxi-routes/
+---
+
+<div class="routes-hub">
+  <section class="document-content-section">
+    <div class="section-container">
+
+      <h1 class="seo-page-title">Kochi Airport Taxi Routes &amp; Destinations</h1>
+      <p class="centered-subtext">Fixed-fare, chauffeur-driven taxis from Cochin International Airport (COK) to every corner of Kerala and South India. Pick your destination below, or <a href="https://wa.me/919400620615?text=Hi%2C%20I%20need%20a%20taxi%20from%20Kochi%20Airport.">message us on WhatsApp</a> if you don't see it listed.</p>
+
+      <h2>Popular routes from Kochi Airport</h2>
+      <ul class="rh-popular">
+        <li><a href="/taxi/kochi-airport-to-munnar/">Munnar</a></li>
+        <li><a href="/taxi/kochi-airport-to-alleppey/">Alleppey</a></li>
+        <li><a href="/taxi/kochi-airport-to-thekkady/">Thekkady</a></li>
+        <li><a href="/taxi/kochi-airport-to-wayanad/">Wayanad</a></li>
+        <li><a href="/taxi/kochi-airport-to-trivandrum/">Trivandrum</a></li>
+        <li><a href="/taxi/kochi-airport-to-guruvayur/">Guruvayur</a></li>
+        <li><a href="/taxi/kochi-airport-to-varkala/">Varkala</a></li>
+        <li><a href="/taxi/kochi-airport-to-kottayam/">Kottayam</a></li>
+        <li><a href="/taxi/kochi-airport-to-thrissur/">Thrissur</a></li>
+        <li><a href="/sabarimala-taxi-kochi-airport/">Sabarimala (Pamba)</a></li>
+        <li><a href="/taxi/kochi-airport-to-ooty/">Ooty</a></li>
+        <li><a href="/taxi/kochi-airport-to-kodaikanal/">Kodaikanal</a></li>
+      </ul>
+
+      <h2>All taxi routes, A&ndash;Z</h2>
+      <p class="centered-subtext">Every route page includes the distance, travel time, suggested vehicle and a one-tap WhatsApp quote.</p>
+      <ul class="rh-list">
+        {% assign all_routes = site.taxi_routes | sort: "to_location" %}
+        {% for r in all_routes %}
+        <li><a href="{{ r.url }}">{{ r.from_location }} to {{ r.to_location }}</a><span class="rh-meta">{{ r.distance_km }} km &middot; {{ r.travel_time }}</span></li>
+        {% endfor %}
+      </ul>
+
+      <h2>Tempo Traveller group routes</h2>
+      <p class="centered-subtext">Travelling as a group of 9 to 26? See our <a href="/tempo-traveller-kochi-airport/">Tempo Traveller from Kochi Airport</a>, <a href="/tempo-traveller-ernakulam/">Tempo Traveller in Ernakulam</a> and <a href="/tempo-traveller-aluva/">Tempo Traveller in Aluva</a> pages, or pick a route:</p>
+      <ul class="rh-list rh-tempo">
+        {% assign t_routes = site.tempo_routes | sort: "destination_name" %}
+        {% for r in t_routes %}
+        <li><a href="{{ r.url }}">Kochi to {{ r.destination_name }} Tempo Traveller</a><span class="rh-meta">{{ r.distance_km }} km &middot; {{ r.travel_time }}</span></li>
+        {% endfor %}
+      </ul>
+
+      <p class="centered-subtext" style="margin-top:28px;">Can't find your destination? We cover all of Kerala and Tamil Nadu. <a href="https://wa.me/919400620615?text=Hi%2C%20I%20need%20a%20taxi%20from%20Kochi%20Airport.">WhatsApp us</a> or call <a href="tel:+919400620615">+91 94006 20615</a> for an instant quote.</p>
+
+    </div>
+  </section>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tourwithanand.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Kochi Airport Taxi", "item": "https://tourwithanand.com/taxi/kochi-airport/"},
+    {"@type": "ListItem", "position": 3, "name": "All Taxi Routes", "item": "https://tourwithanand.com/kochi-airport-taxi-routes/"}
+  ]
+}
+</script>
+
+<style>
+.routes-hub { background: #0d0f12; color: #e8e6e1; }
+.routes-hub .seo-page-title { text-align: center; }
+.routes-hub h2 { margin: 42px 0 10px; font-size: 24px; color: #f0c75e; text-align: center; }
+.routes-hub .centered-subtext { text-align: center; max-width: 760px; margin: 0 auto 18px; color: #b9bcc2; }
+.routes-hub a { color: #f0c75e; text-decoration: none; }
+.routes-hub a:hover { text-decoration: underline; }
+.rh-popular { list-style: none; padding: 0; margin: 18px auto 10px; max-width: 900px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.rh-popular li a { display: inline-block; padding: 9px 16px; border: 1px solid rgba(240,199,94,.45); border-radius: 999px; font-size: 14px; }
+.rh-list { list-style: none; padding: 0; margin: 20px auto 0; max-width: 1050px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 7px 22px; }
+.rh-list li { font-size: 14px; line-height: 1.5; padding: 6px 8px; border-bottom: 1px dashed rgba(255,255,255,.08); }
+.rh-list li a { color: #e8e6e1; }
+.rh-list li a:hover { color: #f0c75e; }
+.rh-meta { display: block; font-size: 12px; color: #8a8e95; }
+@media (max-width: 640px) { .rh-list { grid-template-columns: 1fr; } }
+</style>
