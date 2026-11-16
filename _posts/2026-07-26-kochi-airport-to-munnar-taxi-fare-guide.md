@@ -212,8 +212,8 @@ margin-top: 25px;
 <h3>Get an Exact Quote for Your Munnar Transfer</h3>
 <p>We run this route daily and can give you an exact, all-inclusive fare based on your travel date, group size, and preferred vehicle. Message us on WhatsApp with your flight details and we'll confirm pickup and pricing directly.</p>
 <div class="blog-cta-buttons">
-<a href="https://wa.me/919400620615" class="luxury-btn" onclick="gtag('event', 'whatsapp_click', {'event_category': 'Engagement', 'event_label': 'Blog CTA'});">Book via WhatsApp</a>
-<a href="tel:+919400620615" class="luxury-btn-outline" onclick="gtag('event', 'call_click', {'event_category': 'Engagement', 'event_label': 'Blog CTA'});">Call Anand Now</a>
+<a href="https://wa.me/919400620615" class="luxury-btn">Book via WhatsApp</a>
+<a href="tel:+919400620615" class="luxury-btn-outline">Call Anand Now</a>
 </div>
 </div>
 
