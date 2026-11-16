@@ -236,8 +236,8 @@ keywords: "kerala travel guide for foreigners, private driver kochi airport, lux
       <p><strong>Connect With My Friend Anand to plan your perfect itinerary.</strong></p>
       
       <div class="blog-cta-buttons">
-        <a href="https://wa.me/919400620615" class="luxury-btn" onclick="gtag('event', 'whatsapp_click', {'event_category': 'Engagement', 'event_label': 'Blog CTA'});">Book via WhatsApp</a>
-        <a href="tel:+919400620615" class="luxury-btn-outline" onclick="gtag('event', 'call_click', {'event_category': 'Engagement', 'event_label': 'Blog CTA'});">Call Anand Now</a>
+        <a href="https://wa.me/919400620615" class="luxury-btn">Book via WhatsApp</a>
+        <a href="tel:+919400620615" class="luxury-btn-outline">Call Anand Now</a>
       </div>
     </div>
 
