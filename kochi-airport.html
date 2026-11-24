@@ -382,6 +382,15 @@ function sendWhatsAppQuote(event) {
   if (typeof twaTrack === 'function') { twaTrack('whatsapp_click', 'quote_form', 'Get Exact Fare on WhatsApp'); }
   window.open(`https://wa.me/919400620615?text=${text}`, '_blank');
 }
+(function () {
+  var header = document.querySelector('.luxury-header'), hero = document.querySelector('.ap-hero');
+  if (!header || !hero) return;
+  function fit() { var h = header.getBoundingClientRect().height; if (h > 0) hero.style.marginTop = Math.round(h) + 'px'; }
+  fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+  if (window.ResizeObserver) { new ResizeObserver(fit).observe(header, { box: 'border-box' }); }
+  header.addEventListener('transitionend', fit); setTimeout(fit, 400); setTimeout(fit, 1200);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fit); }
+})();
 document.querySelectorAll('[data-track]').forEach(function (a) {
   a.addEventListener('click', function () {
     if (typeof twaTrack === 'function') { twaTrack(a.dataset.track, 'airport_page_' + a.dataset.src, a.textContent.trim()); }
@@ -392,7 +401,7 @@ document.querySelectorAll('[data-track]').forEach(function (a) {
 <style>
 /* ===== Kochi Airport landing page (scoped with ap- prefix) ===== */
 .ap-hero, .ap-hero *, .ap-promise, .ap-wrap, .ap-wrap * { box-sizing: border-box; }
-.ap-hero { position: relative; width: 100vw; min-height: 600px; margin-top: 60px; display: flex; align-items: center; overflow: hidden; background: #0a0b0e; }
+.ap-hero { position: relative; width: 100vw; min-height: 600px; margin-top: 74px; display: flex; align-items: center; overflow: hidden; background: #0a0b0e; }
 .ap-hero-img { position: absolute; top: 0; right: 0; height: 100%; width: auto; max-width: none; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 40%); mask-image: linear-gradient(90deg, transparent 0%, #000 40%); }
 .ap-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,11,14,.92) 0%, rgba(10,11,14,.72) 45%, rgba(10,11,14,0) 64%); }
 .ap-hero-content { position: relative; z-index: 2; max-width: 640px; padding: 60px 20px; margin-left: max(calc((100vw - 1200px) / 2), 20px); }
@@ -503,7 +512,7 @@ document.querySelectorAll('[data-track]').forEach(function (a) {
 .ap-final-ctas { justify-content: center; }
 
 @media (min-width: 769px) and (max-width: 1279px) {
-  .ap-hero { display: block; min-height: 0; }
+  .ap-hero { display: block; min-height: 0; margin-top: 60px; }
   .ap-hero-img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1680 / 936; -webkit-mask-image: none; mask-image: none; }
   .ap-hero-shade { display: none; }
   .ap-hero-content { margin: 0 auto; max-width: 760px; padding: 36px 24px 40px; text-align: center; }
@@ -516,8 +525,8 @@ document.querySelectorAll('[data-track]').forEach(function (a) {
 }
 @media (max-width: 768px) {
   /* Mobile: full image on top, content below */
-  .ap-hero { display: block; min-height: 0; }
-  .ap-hero-img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1680 / 936; -webkit-mask-image: none; mask-image: none; }
+  .ap-hero { display: block; min-height: 0; margin-top: 80px; }
+  .ap-hero-img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1680 / 936; object-fit: contain; -webkit-mask-image: none; mask-image: none; }
   .ap-hero-shade { display: none; }
   .ap-hero-content { margin: 0; padding: 24px 20px 30px; text-align: center; max-width: none; }
   .ap-hero h1 { font-size: 32px; }
