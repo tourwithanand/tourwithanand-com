@@ -56,6 +56,50 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
   </div>
 </section>
 
+<section class="why-section" id="why-anand">
+  <div class="section-container">
+    <h2 class="section-title">Why Travel With Anand</h2>
+    <p class="section-subtitle">A personal, premium welcome to Kerala, and a team that looks after every detail of your journey.</p>
+
+    <div class="why-featured">
+      <img src="/images/anand-tour-with-anand.webp" alt="Anand, founder of Tour With Anand, who welcomes guests at Kochi Airport" width="430" height="580" loading="lazy">
+      <div class="why-featured-text">
+        <span class="step-badge">Only with us</span>
+        <h3>Personally Welcomed by Anand at Kochi Airport</h3>
+        <p>Anand himself meets you at Kochi Airport arrivals to receive you and welcome you to Kerala, so every guest starts their trip with a personal, special welcome.</p>
+      </div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+        <h3>Educated, Experienced Team</h3>
+        <p>Our team members support you with every part of your travel, from planning to drop-off.</p>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10l-5 3.9L16.2 20 12 16.6 7.8 20 9 13.9 4 10l6.1-1.2z"/></svg>
+        <h3>Hygienic, Well-Kept Cabs</h3>
+        <p>Clean, hygienic and well-maintained vehicles on every trip.</p>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <h3>Video Call Our Team</h3>
+        <p>Talk face to face with our team on Google Meet or WhatsApp video whenever you like.</p>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Trust &amp; Quality First</h3>
+        <p>A trust-building, quality-driven service from your first message to the final drop-off.</p>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3>Transparent in Everything</h3>
+        <p>Clear plans, clear pricing and clear communication. No hidden charges.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="process-section" id="how-we-work">
   <div class="section-container">
     <span class="process-kicker">Premium service, start to finish</span>
@@ -496,6 +540,36 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 /* --- HOMEPAGE: desktop slide headings keep the original H1 look (single real H1 is in the mobile hero) --- */
 .hero-content .hero-heading { font-size: 58px; color: #fff; margin: 0 0 20px; line-height: 1.1; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; letter-spacing: 0; }
 
+/* --- HOMEPAGE: "Why Travel With Anand" USPs --- */
+.why-section { padding: 110px 0; background: #0e1015; width: 100vw; text-align: center; }
+.why-featured { display: flex; align-items: center; gap: 36px; text-align: left; margin: 0 auto 18px; background: linear-gradient(135deg, #1d1a10 0%, #15181e 65%); border: 1px solid rgba(255,204,0,0.5); border-radius: 16px; padding: 28px 32px; }
+.why-featured img { width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 50%; border: 3px solid #ffcc00; flex: 0 0 auto; background: #15181e; }
+.why-featured h3 { color: #fff; font-size: 26px; margin: 10px 0 10px; line-height: 1.25; }
+.why-featured p { color: #c4c8cf; font-size: 16px; line-height: 1.75; margin: 0; }
+.why-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; text-align: left; }
+.why-card { background: #15181e; border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 24px 20px; transition: border-color 0.3s ease; }
+.why-card:hover { border-color: rgba(255,204,0,0.4); }
+.why-icon { width: 34px; height: 34px; fill: none; stroke: #ffcc00; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 14px; }
+.why-card h3 { color: #fff; font-size: 17px; margin: 0 0 8px; line-height: 1.3; }
+.why-card p { color: #a0a4ab; font-size: 14px; line-height: 1.65; margin: 0; }
+
+@media (max-width: 1200px) { .why-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) {
+  .why-section { padding: 60px 0; }
+  .why-section .section-container { padding: 0 20px; }
+  .why-section .section-subtitle { margin-bottom: 30px; }
+  .why-featured { flex-direction: column; text-align: center; gap: 16px; padding: 24px 20px; margin-bottom: 14px; }
+  .why-featured img { width: 110px; height: 110px; }
+  .why-featured h3 { font-size: 21px; }
+  .why-featured p { font-size: 15px; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .why-card { padding: 18px 16px; }
+  .why-card:last-child { grid-column: 1 / -1; }
+  .why-icon { width: 28px; height: 28px; margin-bottom: 10px; }
+  .why-card h3 { font-size: 15.5px; }
+  .why-card p { font-size: 13px; }
+}
+
 /* --- HOMEPAGE: "How We Work" sales process --- */
 .process-section { padding: 110px 0; background: #0a0b0e; width: 100vw; text-align: center; }
 .process-kicker { display: inline-block; color: #ffcc00; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(255,204,0,0.35); border-radius: 30px; padding: 6px 14px; margin-bottom: 18px; }
@@ -512,7 +586,7 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 
 @media (max-width: 1024px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {
-  .process-section { padding: 20px 0 70px; }
+  .process-section { padding: 60px 0 70px; }
   .process-section .section-container { padding: 0 20px; }
   .process-section .section-subtitle { margin-bottom: 34px; }
   /* Vertical timeline on mobile */
