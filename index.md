@@ -56,6 +56,65 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
   </div>
 </section>
 
+<section class="process-section" id="how-we-work">
+  <div class="section-container">
+    <span class="process-kicker">Premium service, start to finish</span>
+    <h2 class="section-title">How We Work</h2>
+    <p class="section-subtitle">From your first message to the final drop-off, every step is personal, transparent and planned around you.</p>
+
+    <ol class="process-steps">
+      <li class="process-step">
+        <span class="step-num">1</span>
+        <div class="step-body">
+          <h3>Reach Us Your Way</h3>
+          <p>Call, WhatsApp, email, or come through a friend's referral. Anand's team replies personally.</p>
+        </div>
+      </li>
+      <li class="process-step">
+        <span class="step-num">2</span>
+        <div class="step-body">
+          <h3>Share Your Complete Plan</h3>
+          <p>Tell us your dates, travellers, hotels and the places you want to see. We listen to every detail.</p>
+        </div>
+      </li>
+      <li class="process-step">
+        <span class="step-num">3</span>
+        <div class="step-body">
+          <h3>Get Your Best Fixed Price</h3>
+          <p>We study your requirements and send one all-inclusive quote. No hidden charges, ever.</p>
+        </div>
+      </li>
+      <li class="process-step step-highlight">
+        <span class="step-num">4</span>
+        <div class="step-body">
+          <span class="step-badge">Before you book</span>
+          <h3>Meet Your Driver on Video</h3>
+          <p>Video call us on Google Meet or WhatsApp. See the car, talk to the driver, and choose who drives you.</p>
+        </div>
+      </li>
+      <li class="process-step">
+        <span class="step-num">5</span>
+        <div class="step-body">
+          <h3>Confirm &amp; Relax</h3>
+          <p>Once you confirm, a dedicated team looks after you, with one point of contact for your whole trip.</p>
+        </div>
+      </li>
+      <li class="process-step">
+        <span class="step-num">6</span>
+        <div class="step-body">
+          <h3>Journey Completed, Exactly as Promised</h3>
+          <p>We deliver everything we quoted and close every trip cleanly. No surprises at the end.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="process-cta">
+      <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20would%20like%20a%20video%20call%20to%20discuss%20my%20trip%20and%20meet%20the%20driver." class="luxury-btn">Book a Video Call</a>
+      <a href="tel:+919400620615" class="luxury-btn-outline">Call Anand</a>
+    </div>
+  </div>
+</section>
+
 <section class="fleet-section">
   <div class="section-container">
     <h2 class="section-title">Our Premium Fleet</h2>
@@ -436,6 +495,37 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 <style>
 /* --- HOMEPAGE: desktop slide headings keep the original H1 look (single real H1 is in the mobile hero) --- */
 .hero-content .hero-heading { font-size: 58px; color: #fff; margin: 0 0 20px; line-height: 1.1; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; letter-spacing: 0; }
+
+/* --- HOMEPAGE: "How We Work" sales process --- */
+.process-section { padding: 110px 0; background: #0a0b0e; width: 100vw; text-align: center; }
+.process-kicker { display: inline-block; color: #ffcc00; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(255,204,0,0.35); border-radius: 30px; padding: 6px 14px; margin-bottom: 18px; }
+.process-steps { list-style: none; margin: 0 auto; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; text-align: left; counter-reset: none; }
+.process-step { display: flex; gap: 18px; align-items: flex-start; background: #15181e; border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 26px 24px; transition: border-color 0.3s ease; }
+.process-step:hover { border-color: rgba(255,204,0,0.4); }
+.step-num { flex: 0 0 42px; height: 42px; border-radius: 50%; background: #ffcc00; color: #0a0b0e; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', Georgia, serif; }
+.step-body h3 { color: #fff; font-size: 19px; margin: 6px 0 8px; }
+.step-body p { color: #a0a4ab; font-size: 14.5px; line-height: 1.7; margin: 0; }
+.step-highlight { border-color: rgba(255,204,0,0.55); background: linear-gradient(160deg, #1d1a10 0%, #15181e 60%); }
+.step-badge { display: inline-block; background: rgba(255,204,0,0.15); color: #ffcc00; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; padding: 3px 8px; }
+.step-badge + h3 { margin-top: 8px; }
+.process-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+
+@media (max-width: 1024px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+  .process-section { padding: 20px 0 70px; }
+  .process-section .section-container { padding: 0 20px; }
+  .process-section .section-subtitle { margin-bottom: 34px; }
+  /* Vertical timeline on mobile */
+  .process-steps { grid-template-columns: 1fr; gap: 0; position: relative; }
+  .process-steps::before { content: ''; position: absolute; left: 20px; top: 24px; bottom: 24px; width: 2px; background: linear-gradient(#ffcc00, rgba(255,204,0,0.15)); }
+  .process-step { background: transparent; border: 0; border-radius: 0; padding: 0 0 26px; gap: 16px; position: relative; }
+  .process-step:last-child { padding-bottom: 0; }
+  .step-num { position: relative; z-index: 1; box-shadow: 0 0 0 5px #0a0b0e; }
+  .step-body h3 { font-size: 18px; margin-top: 9px; }
+  .step-highlight .step-body { background: linear-gradient(160deg, #1d1a10 0%, #15181e 70%); border: 1px solid rgba(255,204,0,0.5); border-radius: 12px; padding: 14px 16px; margin-top: -4px; }
+  .step-highlight .step-body h3 { margin-top: 8px; }
+  .process-cta .luxury-btn, .process-cta .luxury-btn-outline { width: 100%; text-align: center; }
+}
 
 /* --- HOMEPAGE: popular routes + tour packages link grids --- */
 .routes-section { padding: 120px 0; background: #0a0b0e; width: 100vw; }
