@@ -56,6 +56,14 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
   </div>
 </section>
 
+<section class="promise-section" id="our-promise">
+  <div class="promise-box">
+    <span class="promise-kicker">Our Promise</span>
+    <h2 class="promise-title">No blunders. No excuses.<br><span>Only premium service.</span></h2>
+    <p>We treat every guest in the most premium way, and every step we take is built to earn your trust.</p>
+  </div>
+</section>
+
 <section class="why-section" id="why-anand">
   <div class="section-container">
     <h2 class="section-title">Why Travel With Anand</h2>
@@ -539,6 +547,20 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 <style>
 /* --- HOMEPAGE: desktop slide headings keep the original H1 look (single real H1 is in the mobile hero) --- */
 .hero-content .hero-heading { font-size: 58px; color: #fff; margin: 0 0 20px; line-height: 1.1; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; letter-spacing: 0; }
+
+/* --- HOMEPAGE: promise strip directly under the banner --- */
+.promise-section { background: #0a0b0e; width: 100%; box-sizing: border-box; padding: 70px 20px; }
+.promise-box { max-width: 900px; margin: 0 auto; text-align: center; border-top: 1px solid rgba(255,204,0,0.45); border-bottom: 1px solid rgba(255,204,0,0.45); padding: 40px 20px; }
+.promise-kicker { display: inline-block; color: #ffcc00; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; }
+.promise-title { color: #fff; font-size: 44px; line-height: 1.2; margin: 0 0 16px; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; }
+.promise-title span { color: #ffcc00; }
+.promise-box p { color: #c4c8cf; font-size: 17px; line-height: 1.75; margin: 0 auto; max-width: 640px; }
+@media (max-width: 768px) {
+  .promise-section { padding: 10px 20px 30px; }
+  .promise-box { padding: 28px 4px; }
+  .promise-title { font-size: 28px; }
+  .promise-box p { font-size: 15px; }
+}
 
 /* --- HOMEPAGE: "Why Travel With Anand" USPs --- */
 .why-section { padding: 110px 0; background: #0e1015; width: 100vw; text-align: center; }
