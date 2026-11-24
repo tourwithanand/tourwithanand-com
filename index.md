@@ -9,7 +9,7 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
     <div class="hero-bg"><img src="/images/banner-anand-tour-with-anand.webp" alt="Anand with his premium taxi for South India tours" width="1920" height="958" fetchpriority="high"></div>
     <div class="hero-overlay">
       <div class="hero-content">
-        <h2 class="hero-heading">South India Tours & Beyond</h2>
+        <h1 class="hero-heading">South India Tours & Beyond</h1>
         <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
         <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
       </div>
@@ -49,11 +49,6 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
     </div>
   </div>
   
-  <div class="m-hero-cta">
-    <h1>Kochi Airport Taxi & South India Tours</h1>
-    <p>Personalized journeys across Kerala and Tamil Nadu with premium vehicles and unmatched hospitality.</p>
-    <a href="https://wa.me/919400620615" class="luxury-btn">Plan Your Journey</a>
-  </div>
 </section>
 
 <section class="promise-section" id="our-promise">
@@ -529,7 +524,7 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 </script>
 
 <style>
-/* --- HOMEPAGE: desktop slide headings keep the original H1 look (single real H1 is in the mobile hero) --- */
+/* --- HOMEPAGE: desktop slide headings share one style (slide 1 is the page's single H1) --- */
 .hero-content .hero-heading { font-size: 58px; color: #fff; margin: 0 0 20px; line-height: 1.1; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; letter-spacing: 0; }
 
 /* --- HOMEPAGE: promise strip directly under the banner --- */
@@ -540,7 +535,7 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 .promise-title span { color: #ffcc00; }
 .promise-box p { color: #c4c8cf; font-size: 17px; line-height: 1.75; margin: 0 auto; max-width: 640px; }
 @media (max-width: 768px) {
-  .promise-section { padding: 10px 20px 30px; }
+  .promise-section { padding: 30px 20px 30px; }
   .promise-box { padding: 28px 4px; }
   .promise-title { font-size: 28px; }
   .promise-box p { font-size: 15px; }
@@ -676,11 +671,6 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 
 .maxx-overlay h3 { color: #ffcc00; font-size: 16px; margin: 0 0 2px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-family: 'Playfair Display', serif; }
 .maxx-overlay p { color: #fff; font-size: 12px; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-weight: 300; font-family: 'Inter', sans-serif; }
-
-/* Mobile CTA Below Video */
-.m-hero-cta { padding: 40px 20px; text-align: center; background: #0a0b0e; }
-.m-hero-cta h1 { font-size: 32px; color: #fff; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
-.m-hero-cta p { font-size: 16px; color: #e0e4eb; margin-bottom: 25px; line-height: 1.6; }
 
 /* Desktop / Mobile Toggle Handling */
 .mobile-only { display: none; }
