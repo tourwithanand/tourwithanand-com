@@ -69,12 +69,20 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
     <h2 class="section-title">Why Travel With Anand</h2>
     <p class="section-subtitle">A personal, premium welcome to Kerala, and a team that looks after every detail of your journey.</p>
 
-    <div class="why-featured">
-      <img src="/images/anand-tour-with-anand.webp" alt="Anand, founder of Tour With Anand, who welcomes guests at Kochi Airport" width="430" height="580" loading="lazy">
-      <div class="why-featured-text">
-        <span class="step-badge">Only with us</span>
-        <h3>Personally Welcomed by Anand at Kochi Airport</h3>
-        <p>Anand himself meets you at Kochi Airport arrivals to receive you and welcome you to Kerala, so every guest starts their trip with a personal, special welcome.</p>
+    <div class="founder-card">
+      <div class="founder-photo">
+        <img src="/images/anand-tour-with-anand.webp" alt="Anand, founder of Tour With Anand, Kochi" width="430" height="580" loading="lazy">
+      </div>
+      <div class="founder-text">
+        <span class="founder-kicker">Meet Your Host</span>
+        <h3>Anand</h3>
+        <p class="founder-role">Founder, Tour With Anand &middot; Kochi, Kerala</p>
+        <blockquote>&ldquo;I personally receive my guests at Kochi Airport, so your journey in Kerala begins with a familiar face and a warm welcome.&rdquo;</blockquote>
+        <ul class="founder-points">
+          <li>Personal welcome at Kochi Airport</li>
+          <li>Video call before you book</li>
+          <li>One point of contact for your whole trip</li>
+        </ul>
       </div>
     </div>
 
@@ -204,30 +212,6 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
         <span>Premium transportation for large corporate groups.</span>
                 <p class="price-tag">Fare on request · <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20would%20like%20a%20quote%20for%20a%20Luxury%20Coach." class="price-link">Get a quote on WhatsApp</a></p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="routes-section">
-  <div class="section-container">
-    <h2 class="section-title">Popular Kochi Airport Taxi Routes</h2>
-    <p class="section-subtitle">24/7 private transfers from Cochin International Airport (COK) with English-speaking drivers, flight tracking and meet &amp; greet.</p>
-
-    <div class="link-grid">
-      <a href="/taxi/kochi-airport-to-munnar/" class="link-card"><h3>Kochi Airport to Munnar</h3><span>Tea hills &middot; approx. 3.5 hours</span></a>
-      <a href="/taxi/kochi-airport-to-alleppey/" class="link-card"><h3>Kochi Airport to Alleppey</h3><span>Houseboats &middot; approx. 2.5 hours</span></a>
-      <a href="/taxi/kochi-airport-to-thekkady/" class="link-card"><h3>Kochi Airport to Thekkady</h3><span>Periyar wildlife &amp; spice gardens</span></a>
-      <a href="/taxi/kochi-airport-to-fort-kochi/" class="link-card"><h3>Kochi Airport to Fort Kochi</h3><span>Heritage town &amp; Chinese fishing nets</span></a>
-      <a href="/taxi/kochi-airport-to-varkala/" class="link-card"><h3>Kochi Airport to Varkala</h3><span>Cliff beaches</span></a>
-      <a href="/taxi/kochi-airport-to-guruvayur/" class="link-card"><h3>Kochi Airport to Guruvayur</h3><span>Temple town</span></a>
-      <a href="/taxi/kochi-airport-to-trivandrum/" class="link-card"><h3>Kochi Airport to Trivandrum</h3><span>Kerala's capital</span></a>
-      <a href="/taxi/kochi-airport-to-wayanad/" class="link-card"><h3>Kochi Airport to Wayanad</h3><span>Forests &amp; hill country</span></a>
-      <a href="/taxi/kochi-airport-to-kanyakumari/" class="link-card"><h3>Kochi Airport to Kanyakumari</h3><span>India's southern tip</span></a>
-    </div>
-
-    <div class="link-actions">
-      <a href="/taxi/kochi-airport/" class="luxury-btn">Kochi Airport Taxi Service</a>
-      <a href="/kochi-airport-taxi-routes/" class="luxury-btn-outline">View All Routes &amp; Destinations</a>
     </div>
   </div>
 </section>
@@ -564,10 +548,18 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 
 /* --- HOMEPAGE: "Why Travel With Anand" USPs --- */
 .why-section { padding: 110px 0; background: #0e1015; width: 100vw; text-align: center; }
-.why-featured { display: flex; align-items: center; gap: 36px; text-align: left; margin: 0 auto 18px; background: linear-gradient(135deg, #1d1a10 0%, #15181e 65%); border: 1px solid rgba(255,204,0,0.5); border-radius: 16px; padding: 28px 32px; }
-.why-featured img { width: 150px; height: 150px; object-fit: cover; object-position: top; border-radius: 50%; border: 3px solid #ffcc00; flex: 0 0 auto; background: #15181e; }
-.why-featured h3 { color: #fff; font-size: 26px; margin: 10px 0 10px; line-height: 1.25; }
-.why-featured p { color: #c4c8cf; font-size: 16px; line-height: 1.75; margin: 0; }
+.founder-card { display: grid; grid-template-columns: 260px 1fr; gap: 44px; align-items: center; text-align: left; margin: 0 auto 18px; background: #15181e; border: 1px solid rgba(255,204,0,0.35); border-radius: 16px; padding: 36px 40px; }
+.founder-photo { position: relative; }
+.founder-photo::after { content: ''; position: absolute; inset: 12px -12px -12px 12px; border: 1px solid #ffcc00; border-radius: 12px; z-index: 0; }
+.founder-photo img { position: relative; z-index: 1; display: block; width: 100%; height: auto; aspect-ratio: 430 / 580; object-fit: cover; border-radius: 12px; background: #0e1015; }
+.founder-text { max-width: 760px; }
+.founder-kicker { color: #ffcc00; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; }
+.founder-text h3 { color: #fff; font-size: 38px; margin: 8px 0 4px; line-height: 1.1; }
+.founder-role { color: #8d929a; font-size: 14px; letter-spacing: 0.5px; margin: 0 0 22px; }
+.founder-text blockquote { margin: 0 0 24px; padding: 0 0 0 20px; border-left: 3px solid #ffcc00; color: #e3e6ea; font-family: 'Playfair Display', Georgia, serif; font-size: 22px; line-height: 1.5; font-style: italic; }
+.founder-points { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.founder-points li { color: #dcdfe4; font-size: 13.5px; border: 1px solid rgba(255,255,255,0.12); border-radius: 30px; padding: 7px 14px 7px 30px; position: relative; }
+.founder-points li::before { content: ''; position: absolute; left: 13px; top: 50%; width: 7px; height: 7px; margin-top: -3.5px; border-radius: 50%; background: #ffcc00; }
 .why-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; text-align: left; }
 .why-card { background: #15181e; border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 24px 20px; transition: border-color 0.3s ease; }
 .why-card:hover { border-color: rgba(255,204,0,0.4); }
@@ -580,10 +572,15 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
   .why-section { padding: 60px 0; }
   .why-section .section-container { padding: 0 20px; }
   .why-section .section-subtitle { margin-bottom: 30px; }
-  .why-featured { flex-direction: column; text-align: center; gap: 16px; padding: 24px 20px; margin-bottom: 14px; }
-  .why-featured img { width: 110px; height: 110px; }
-  .why-featured h3 { font-size: 21px; }
-  .why-featured p { font-size: 15px; }
+  .founder-card { grid-template-columns: 1fr; gap: 26px; padding: 26px 20px 24px; margin-bottom: 14px; }
+  .founder-photo { width: 62%; max-width: 230px; margin: 0 auto; }
+  .founder-photo::after { inset: 9px -9px -9px 9px; }
+  .founder-text { text-align: center; }
+  .founder-text h3 { font-size: 30px; }
+  .founder-role { margin-bottom: 18px; }
+  .founder-text blockquote { border-left: 0; padding: 0; font-size: 18px; margin-bottom: 20px; }
+  .founder-points { flex-direction: column; align-items: stretch; gap: 8px; }
+  .founder-points li { text-align: left; font-size: 13.5px; }
   .why-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .why-card { padding: 18px 16px; }
   .why-card:last-child { grid-column: 1 / -1; }
@@ -624,7 +621,6 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 }
 
 /* --- HOMEPAGE: popular routes + tour packages link grids --- */
-.routes-section { padding: 120px 0; background: #0a0b0e; width: 100vw; }
 .packages-section { padding: 120px 0; background: #0e1015; width: 100vw; }
 .link-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .link-card { background: #15181e; border-radius: 14px; padding: 24px 26px; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; display: block; transition: all 0.3s ease; }
@@ -637,7 +633,7 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 
 @media (max-width: 1024px) { .link-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {
-  .routes-section, .packages-section { padding: 70px 0; }
+  .packages-section { padding: 70px 0; }
   .link-grid { grid-template-columns: none; grid-template-rows: repeat(2, auto); grid-auto-flow: column; grid-auto-columns: 78%; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
   .link-grid::-webkit-scrollbar { display: none; }
   .link-card { scroll-snap-align: start; padding: 18px 20px; }
