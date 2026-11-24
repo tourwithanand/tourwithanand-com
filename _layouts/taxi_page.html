@@ -14,7 +14,7 @@ layout: default
   "@graph": [
     {
       "@type": "TaxiService",
-      "@id": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/#service",
+      "@id": "{{ site.url }}{{ page.url }}#service",
       "name": "{{ page.from_location }} to {{ page.to_location }} Premium Taxi",
       "provider": {
         "@type": "LocalBusiness",
@@ -30,16 +30,16 @@ layout: default
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/#breadcrumb",
+      "@id": "{{ site.url }}{{ page.url }}#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
         { "@type": "ListItem", "position": 2, "name": "Kochi Airport Taxi", "item": "{{ site.url }}/taxi/kochi-airport/" },
-        { "@type": "ListItem", "position": 3, "name": "{{ page.from_location }} to {{ page.to_location }}", "item": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/" }
+        { "@type": "ListItem", "position": 3, "name": "{{ page.from_location }} to {{ page.to_location }}", "item": "{{ site.url }}{{ page.url }}" }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "{{ site.url }}/taxi/{{ page.from_slug }}-to-{{ page.to_slug }}-taxi/#faq",
+      "@id": "{{ site.url }}{{ page.url }}#faq",
       "mainEntity": [
         {
           "@type": "Question",
