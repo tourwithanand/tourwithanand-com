@@ -42,7 +42,8 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 
 <section class="mobile-video-hero mobile-only">
   <div class="m-video-wrapper">
-    <video id="catVideo" src="/TWA%20Cat%20Video%20-%20Hero%20Banner.mp4" poster="/images/mobile-hero-poster.webp" width="1280" height="720" autoplay muted playsinline preload="auto"></video>
+    <video id="catVideo" src="/maxx-welcome-kochi-airport.mp4" poster="/images/maxx-welcome-kochi-airport-poster.webp" width="720" height="1280" autoplay muted playsinline preload="metadata" aria-label="Maxx the cat welcomes you to Kochi Airport with a Tour With Anand sign"></video>
+    <button type="button" class="m-sound-btn" id="catSoundBtn" aria-label="Play video with sound"><span class="m-sound-ico" aria-hidden="true">🔊</span><span class="m-sound-txt">Tap for sound</span></button>
     
     <div class="maxx-overlay">
       <h3>Hi, I'm Maxx! 🐾</h3>
@@ -645,6 +646,12 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 .mobile-video-hero { position: relative; width: 100vw; background: #0a0b0e; overflow: hidden; display: none; }
 .m-video-wrapper { position: relative; width: 100%; display: block; background: #000; }
 .m-video-wrapper video { width: 100%; height: auto; display: block; object-fit: contain; }
+/* Vertical Maxx welcome video: show a 3:4 window so it does not fill the whole phone screen */
+#catVideo { aspect-ratio: 3 / 4; height: auto; max-height: 72vh; object-fit: cover; object-position: center 55%; }
+.m-sound-btn { position: absolute; top: 12px; right: 12px; z-index: 6; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px 8px 11px; border-radius: 999px; border: 1px solid rgba(255,204,0,.6); background: rgba(10,11,14,.7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #fff; font: 600 13px/1 'Inter', sans-serif; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,.45); animation: soundPulse 2s ease-in-out 1s 3; }
+.m-sound-btn .m-sound-ico { font-size: 15px; }
+.m-sound-btn.is-on { border-color: rgba(255,255,255,.35); }
+@keyframes soundPulse { 0%,100% { box-shadow: 0 6px 16px rgba(0,0,0,.45), 0 0 0 0 rgba(255,204,0,.55); } 50% { box-shadow: 0 6px 16px rgba(0,0,0,.45), 0 0 0 9px rgba(255,204,0,0); } }
 
 .maxx-overlay {
   position: absolute;
@@ -666,7 +673,7 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
   opacity: 0;
   visibility: hidden;
   animation: fadeMaxxIn 0.8s ease forwards;
-  animation-delay: 4s;
+  animation-delay: 9s;
 }
 
 @keyframes fadeMaxxIn {
@@ -683,6 +690,6 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 @media (max-width: 768px) {
   .desktop-only { display: none !important; }
   .mobile-only { display: block; }
-  .mobile-video-hero { display: block; margin-top: 60px; /* Aligns smoothly under your navbar */ }
+  section.mobile-video-hero { display: block; margin-top: 80px; /* starts below the fixed header */ }
 }
 </style>
