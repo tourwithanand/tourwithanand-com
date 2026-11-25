@@ -17,7 +17,7 @@ seo_keywords: "kochi airport taxi, cochin airport taxi, kochi airport taxi servi
       "name": "Kochi Airport Taxi – 24/7 Cochin Airport Pickup & Drop",
       "serviceType": "Airport taxi and private transfers",
       "url": "https://tourwithanand.com/taxi/kochi-airport/",
-      "image": "https://tourwithanand.com/images/kochi-airport-taxi-anand-welcome-cat.jpg",
+      "image": "https://tourwithanand.com/images/kochi-airport-taxi-cial-welcome-banner.jpg",
       "description": "24/7 private taxi from and to Cochin International Airport (COK) with flight tracking, meet and greet, English-speaking drivers and fixed all-inclusive fares covering tolls and parking.",
       "provider": {
         "@type": "LocalBusiness",
@@ -68,10 +68,10 @@ seo_keywords: "kochi airport taxi, cochin airport taxi, kochi airport taxi servi
 <!-- HERO: one responsive banner for desktop and mobile -->
 <section class="ap-hero">
   <img class="ap-hero-img"
-       src="/images/kochi-airport-taxi-anand-welcome-cat.webp"
-       srcset="/images/kochi-airport-taxi-anand-welcome-cat-900.webp 900w, /images/kochi-airport-taxi-anand-welcome-cat.webp 1680w"
-       sizes="100vw" width="1680" height="936" fetchpriority="high"
-       alt="Anand with the Tour With Anand Innova Crysta taxi and Maxx the cat holding a welcome sign at Cochin International Airport">
+       src="/images/kochi-airport-taxi-cial-welcome-banner-1200.webp"
+       srcset="/images/kochi-airport-taxi-cial-welcome-banner-800.webp 800w, /images/kochi-airport-taxi-cial-welcome-banner-1200.webp 1200w, /images/kochi-airport-taxi-cial-welcome-banner.webp 2048w"
+       sizes="100vw" width="2048" height="768" fetchpriority="high"
+       alt="Kochi Airport taxi: Anand and the Tour With Anand Innova Crysta at Cochin International Airport arrivals, with Maxx the cat holding a Welcome to Kochi sign">
   <div class="ap-hero-shade"></div>
   <div class="ap-hero-content">
     <span class="ap-eyebrow">Cochin International Airport (COK) &middot; 24/7</span>
@@ -404,10 +404,11 @@ document.querySelectorAll('[data-track]').forEach(function (a) {
 <style>
 /* ===== Kochi Airport landing page (scoped with ap- prefix) ===== */
 .ap-hero, .ap-hero *, .ap-promise, .ap-wrap, .ap-wrap * { box-sizing: border-box; }
-.ap-hero { position: relative; width: 100vw; min-height: 600px; margin-top: 74px; display: flex; align-items: center; overflow: hidden; background: #0a0b0e; }
-.ap-hero-img { position: absolute; top: 0; right: 0; height: 100%; width: auto; max-width: none; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 40%); mask-image: linear-gradient(90deg, transparent 0%, #000 40%); }
-.ap-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,11,14,.92) 0%, rgba(10,11,14,.72) 45%, rgba(10,11,14,0) 64%); }
-.ap-hero-content { position: relative; z-index: 2; max-width: 640px; padding: 60px 20px; margin-left: max(calc((100vw - 1200px) / 2), 20px); }
+.ap-hero { position: relative; width: 100vw; margin-top: 74px; display: block; overflow: hidden; background: #0a0b0e; }
+.ap-hero-img { position: static; display: block; width: 100%; height: auto; max-width: none; aspect-ratio: 2048 / 768; object-fit: cover; }
+.ap-hero-shade { display: none; }
+.ap-hero-content { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; padding: 44px 24px 52px; text-align: center; }
+.ap-hero-content .ap-hero-ctas { justify-content: center; }
 .ap-eyebrow { display: inline-block; color: #ffcc00; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
 .ap-hero h1 { color: #fff; font-size: 54px; line-height: 1.08; margin: 0 0 16px; }
 .ap-hero-sub { color: #e0e4eb; font-size: 18px; line-height: 1.65; margin: 0 0 26px; font-weight: 300; }
@@ -516,7 +517,7 @@ document.querySelectorAll('[data-track]').forEach(function (a) {
 
 @media (min-width: 769px) and (max-width: 1279px) {
   .ap-hero { display: block; min-height: 0; margin-top: 60px; }
-  .ap-hero-img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1680 / 936; -webkit-mask-image: none; mask-image: none; }
+  .ap-hero-img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 2048 / 768; -webkit-mask-image: none; mask-image: none; }
   .ap-hero-shade { display: none; }
   .ap-hero-content { margin: 0 auto; max-width: 760px; padding: 36px 24px 40px; text-align: center; }
   .ap-hero-ctas { justify-content: center; }
@@ -529,7 +530,7 @@ document.querySelectorAll('[data-track]').forEach(function (a) {
 @media (max-width: 768px) {
   /* Mobile: full image on top, content below */
   .ap-hero { display: block; min-height: 0; margin-top: 80px; }
-  .ap-hero-img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1680 / 936; object-fit: contain; -webkit-mask-image: none; mask-image: none; }
+  .ap-hero-img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 2048 / 768; object-fit: cover; -webkit-mask-image: none; mask-image: none; }
   .ap-hero-shade { display: none; }
   .ap-hero-content { margin: 0; padding: 24px 20px 30px; text-align: center; max-width: none; }
   .ap-hero h1 { font-size: 32px; }
