@@ -310,11 +310,7 @@ seo_keywords: "kochi airport taxi, cochin airport taxi, kochi airport taxi servi
   <div class="ap-trustrow-inner">
     <img class="ap-trust-photo" src="/images/guest-tour-with-anand-16.webp" alt="Anand with guests and the Tour With Anand Innova Crysta" width="560" height="373" loading="lazy" decoding="async">
     <div class="ap-trust-text">
-      {%- if apf.google_rating != "" and apf.google_rating %}
-      <a class="ap-trust-rating" href="{{ apf.google_reviews_url }}" target="_blank" rel="noopener"><span class="ap-trust-stars" aria-hidden="true">★★★★★</span> <strong>{{ apf.google_rating }}</strong> on Google · {{ apf.google_review_count }} reviews</a>
-      {%- else %}
       <a class="ap-trust-rating" href="/customer-reviews/"><span class="ap-trust-stars" aria-hidden="true">★★★★★</span> Read our guest reviews</a>
-      {%- endif %}
       <p class="ap-trust-line">24/7 &middot; Flight tracking &middot; Fixed fare &middot; Licensed drivers</p>
     </div>
     <ul class="ap-trust">

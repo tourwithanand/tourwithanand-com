@@ -55,26 +55,27 @@ routes:
     innova: 4500
     pages: ["/taxi/kochi-airport-to-alleppey/"]
 
-# Line under the fare table. Keep it to what the owner has confirmed.
-# TODO (owner): confirm whether tolls / parking / night charges are included or extra,
-# then add that wording here.
-fare_note: "Fixed one-way fare · driver included"
+# Line under the fare table (owner confirmed 2026-11-25: the fare includes everything;
+# it only changes for a custom trip).
+fare_note: "Fixed one-way fare · driver, fuel, tolls and parking included"
 quote_note: "Your exact fare is confirmed on WhatsApp before you book. No payment needed to get a quote."
 
-# What the Standard fare includes. TODO (owner): set free waiting minutes (empty = not shown).
+# What the Standard fare includes. Optional: free waiting minutes (empty = not shown).
 standard_includes:
   - "Driver"
   - "Fuel"
+  - "Highway tolls and airport parking"
+  - "Flight-delay waiting"
   - "One-way drop to your address"
 standard_waiting_minutes: ""
 
-# TODO (owner): confirm this list.
+# Owner: the fare only changes when the trip is customised.
+fare_may_change_title: "Fare changes only for a custom trip"
 fare_may_change_for:
-  - "Night pickup (10 pm to 6 am)"
-  - "Extra waiting time"
-  - "Extra stops on the way"
-  - "Extra luggage or a bigger vehicle"
-  - "Festival and Sabarimala peak dates"
+  - "Extra stops or sightseeing on the way"
+  - "A different or extra drop point"
+  - "Extra waiting time you ask for (flight delays are free)"
+  - "A bigger vehicle for extra passengers or luggage"
 
 # Premium Airport Welcome: no fixed price on the site. TODO (owner): confirm the list.
 premium_price_label: "Price on WhatsApp"
@@ -86,12 +87,6 @@ premium_includes:
   - "Bottled water and wet towels"
   - "Child seat on request"
   - "One photo or sightseeing stop on the way"
-
-# Google reviews for the trust row. TODO (owner): fill these in.
-# While empty, the trust row links to /customer-reviews/ and shows no rating.
-google_rating: ""
-google_review_count: ""
-google_reviews_url: ""
 
 # Rows hidden from the long "all routes" table because they duplicate another row.
 # The pages themselves still exist.

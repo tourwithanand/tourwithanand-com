@@ -36,7 +36,7 @@ Params:
         </ul>
       </div>
       <div>
-        <h4>Fare may change for</h4>
+        <h4>{{ ft.fare_may_change_title | default: "Fare may change for" }}</h4>
         <ul class="ft-maybe">
           {%- for i in ft.fare_may_change_for %}<li>{{ i }}</li>{% endfor -%}
         </ul>
