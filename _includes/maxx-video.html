@@ -1,6 +1,6 @@
 {%- comment -%}
 Maxx welcome video card with tap-for-sound.
-Params: heading (H2 text), extra_class (e.g. "desktop-only"), src (tracking label), anchor (optional id)
+Params: heading (H2 text), extra_class (e.g. "desktop-only"), src (tracking label), anchor (optional id), cta_href, cta_text
 {%- endcomment -%}
 <section class="mv-section {{ include.extra_class }}"{% if include.anchor %} id="{{ include.anchor }}"{% endif %}>
   <div class="mv-card">
@@ -18,7 +18,7 @@ Params: heading (H2 text), extra_class (e.g. "desktop-only"), src (tracking labe
         <li>24/7 pickups, even for late-night flights</li>
         <li>Fixed price agreed on WhatsApp before you fly</li>
       </ul>
-      <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand%2C%20I%20need%20a%20Kochi%20Airport%20pickup." class="mv-btn" target="_blank" rel="noopener" data-track="whatsapp_click" data-src="{{ include.src | default: 'video' }}">Book Your Airport Welcome</a>
+      <a href="{{ include.cta_href | default: 'https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand%2C%20I%20need%20a%20Kochi%20Airport%20pickup.' }}" class="mv-btn" target="_blank" rel="noopener" data-track="whatsapp_click" data-src="{{ include.src | default: 'video' }}">{{ include.cta_text | default: "Book Your Airport Welcome" }}</a>
     </div>
   </div>
 </section>
