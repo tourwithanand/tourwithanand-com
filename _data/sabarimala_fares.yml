@@ -11,7 +11,8 @@ virtual_queue_url: "https://sabarimalaonline.org"
 
 # One fixed round-trip fare per vehicle, completed within 24 hours, drop back at the pickup point.
 # Same fare from Kochi Airport, Kochi city, Aluva and Ernakulam railway stations.
-# one_way: TODO (owner) one-way drop to Pamba/Nilakkal. Leave empty ("") and the column stays hidden.
+# one_way: one-way drop to Pamba/Nilakkal (owner 2026-11-25: Sedan 5,500 · Ertiga 6,500 · Innova 7,500; the same fare
+# applies Nilakkal -> airport, see /pamba-to-kochi-airport-taxi/). Empty ("") = not offered/shown.
 vehicles:
   - key: sedan
     route_note: "Round trip to Pamba"
@@ -19,21 +20,21 @@ vehicles:
     seats: "Up to 4 pilgrims"
     capacity: 4
     round_trip: 7000
-    one_way: ""
+    one_way: 5500
   - key: ertiga
     route_note: "Round trip to Pamba"
     name: Ertiga
     seats: "Up to 6 pilgrims"
     capacity: 6
     round_trip: 8500
-    one_way: ""
+    one_way: 6500
   - key: innova
     route_note: "Round trip to Pamba"
     name: Innova
     seats: "Up to 7 pilgrims"
     capacity: 7
     round_trip: 10000
-    one_way: ""
+    one_way: 7500
   - key: crysta
     route_note: "Round trip to Pamba"
     name: Innova Crysta
@@ -91,6 +92,9 @@ drop_rules:
     drop: "Nilakkal"
     pickup: "Nilakkal"
     note: "KSRTC buses run between Nilakkal and Pamba."
+
+# Owner: return trips must be booked at least 5 hours ahead.
+advance_note: "Return trips: please book at least 5 hours in advance so your car reaches Nilakkal on time."
 
 # Shown under the fare table.
 included: "Fuel, driver allowance, tolls, regular parking, waiting during darshan and the return drop are included."

@@ -66,6 +66,8 @@ sticky_wa_label: "WhatsApp fare"
 .sb-btn-wa { display: inline-block; background: #1da851; color: #fff !important; border-radius: 4px; padding: 16px 36px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; }
 .sb-btn-wa:hover { background: #179647; }
 .sb-oneway { display: block; color: #dcdfe4; font-size: 13px; margin-top: 4px; }
+.sb-advance { max-width: 1000px; margin: 8px auto 0; font-size: 14px; color: #ffe27a; text-align: center; }
+.sb-advance a { color: #ffcc00; }
 .sb-included { max-width: 1000px; margin: 14px auto 0; font-size: 14.5px; color: #dcdfe4; text-align: center; font-weight: 600; }
 .sb-trip { border: 0; padding: 0; margin: 0; }
 .sb-field.sb-trip legend { font-size: 13px; color: #a0a4ab; margin-bottom: 8px; padding: 0; }
@@ -172,7 +174,7 @@ sticky_wa_label: "WhatsApp fare"
   <!-- RATES -->
   <section class="sb-section sb-alt" id="rates">
     <div class="section-container">
-      <h2 class="section-title">Round-trip fares</h2>
+      <h2 class="section-title">Round-trip and one-way fares</h2>
       <p class="section-subtitle">One price per vehicle for the full 24-hour trip. The same fare applies from Kochi Airport, Kochi city, Aluva and Ernakulam railway stations.</p>
 
       <div class="sb-rates">
@@ -191,6 +193,7 @@ sticky_wa_label: "WhatsApp fare"
 
       <p class="sb-fineprint">Fares are for one round trip completed within 24 hours of pickup, with drop at the same pickup point.</p>
       <p class="sb-included">{{ sbf.included }}</p>
+      <p class="sb-advance">{{ sbf.advance_note }} Coming back only? <a href="/pamba-to-kochi-airport-taxi/">Nilakkal to Kochi from {% include inr.html n=sbf.vehicles[0].one_way %} one way &rarr;</a></p>
       {%- if sbf.extra_hour_car != "" and sbf.extra_hour_car %}
       <p class="sb-fineprint">After 24 hours: {% include inr.html n=sbf.extra_hour_car %}/hour (car){% if sbf.extra_hour_tempo != "" and sbf.extra_hour_tempo %}, {% include inr.html n=sbf.extra_hour_tempo %}/hour (tempo){% endif %}.</p>
       {%- endif %}
@@ -202,7 +205,7 @@ sticky_wa_label: "WhatsApp fare"
   <section class="sb-section" id="book">
     <div class="section-container">
       <h2 class="section-title">Book your Sabarimala taxi</h2>
-      <p class="section-subtitle">Fill in your trip details and send them to us on WhatsApp. We reply with your confirmation.</p>
+      <p class="section-subtitle">Fill in your trip details and send them to us on WhatsApp. We reply with your confirmation. Return trips: book at least 5 hours ahead.</p>
 
       <form class="sb-form" onsubmit="sbBook(event)">
         <div class="sb-field">
