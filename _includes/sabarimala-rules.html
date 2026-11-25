@@ -1,0 +1,40 @@
+{%- comment -%}
+Where each vehicle drops and picks up for Sabarimala. Data: _data/sabarimala_fares.yml (drop_rules).
+Used by /sabarimala-taxi-kochi-airport/ and /tempo-traveller/kochi-to-sabarimala-pamba/.
+{%- endcomment -%}
+{%- assign sr = site.data.sabarimala_fares -%}
+<div class="sr-wrap">
+  <table class="sr-table">
+    <thead><tr><th scope="col">Vehicle</th><th scope="col">Drops you at</th><th scope="col">Picks you up at</th><th scope="col">Good to know</th></tr></thead>
+    <tbody>
+      {%- for r in sr.drop_rules %}
+      <tr>
+        <th scope="row">{{ r.vehicles }}</th>
+        <td data-label="Drops you at">{{ r.drop }}</td>
+        <td data-label="Picks you up at">{{ r.pickup }}</td>
+        <td data-label="Good to know">{{ r.note }}</td>
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>
+{%- unless sr_css_done %}{% assign sr_css_done = true %}
+<style>
+.sr-wrap { max-width: 1000px; margin: 0 auto; }
+.sr-table { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; background: #15181e; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; overflow: hidden; }
+.sr-table th, .sr-table td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid rgba(255,255,255,.07); font-size: 15px; line-height: 1.55; }
+.sr-table thead th { background: #0e1015; color: #ffcc00; font-size: 12.5px; text-transform: uppercase; letter-spacing: .6px; }
+.sr-table tbody th { color: #fff; font-weight: 600; }
+.sr-table td { color: #c8ccd2; }
+.sr-table td:nth-child(2), .sr-table td:nth-child(3) { color: #fff; font-weight: 600; }
+@media (max-width: 700px) {
+  .sr-table, .sr-table tbody, .sr-table tr, .sr-table th, .sr-table td { display: block; width: 100%; box-sizing: border-box; }
+  .sr-table thead { display: none; }
+  .sr-table tr { border-bottom: 1px solid rgba(255,204,0,.25); padding: 6px 0; }
+  .sr-table tbody th { padding: 12px 14px 4px; font-size: 16px; color: #ffcc00; border: 0; }
+  .sr-table td { padding: 4px 14px; border: 0; font-size: 14.5px; }
+  .sr-table td::before { content: attr(data-label) ": "; color: #8d929a; font-weight: 400; }
+  .sr-table td:last-child { padding-bottom: 12px; }
+}
+</style>
+{%- endunless %}

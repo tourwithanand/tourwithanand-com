@@ -3,7 +3,143 @@ layout: default
 title: Sabarimala Taxi from Kochi Airport, Aluva & Ernakulam
 description: Sabarimala taxi from Kochi Airport, Kochi city, Aluva and Ernakulam railway stations. Fixed 24-hour round-trip fares from ₹7,000. Sedan, Ertiga, Innova, Crysta, Hycross and Tempo Traveller. No hidden charges.
 permalink: /sabarimala-taxi-kochi-airport/
+last_modified_at: 2026-11-25
+wa_text: "Hi Anand, I need a Sabarimala taxi. Pickup: Kochi Airport / Aluva / Ernakulam. Date: __ Pilgrims: __ Vehicle: __"
+sticky_wa_label: "WhatsApp fare"
 ---
+{%- assign sbf = site.data.sabarimala_fares -%}
+{%- assign sbf_from = sbf.vehicles[0].round_trip -%}
+{%- assign sb_wa_link = page.wa_text | uri_escape | prepend: "https://wa.me/919400620615?text=" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  "@id": "https://tourwithanand.com/sabarimala-taxi-kochi-airport/#service",
+  "name": "Kochi Airport to Pamba (Sabarimala) Taxi",
+  "serviceType": "Sabarimala round-trip taxi and tempo traveller",
+  "url": "https://tourwithanand.com/sabarimala-taxi-kochi-airport/",
+  "description": "24-hour round-trip taxi to Pamba (Sabarimala) from Kochi Airport, Kochi city, Aluva and Ernakulam railway stations. Fuel, driver allowance, tolls and regular parking included.",
+  "provider": { "@type": "LocalBusiness", "name": "Tour With Anand", "url": "https://tourwithanand.com/", "telephone": "+91-94006-20615" },
+  "areaServed": [ { "@type": "Airport", "name": "Cochin International Airport", "iataCode": "COK" }, { "@type": "Place", "name": "Pamba, Sabarimala" } ],
+  "offers": [
+    {%- for v in sbf.vehicles %}
+    { "@type": "Offer", "name": "Sabarimala round trip – {{ v.name }}", "description": "24-hour round trip from Kochi Airport, Kochi city, Aluva or Ernakulam to Pamba/Nilakkal and back. {{ v.seats }}.", "price": {{ v.round_trip }}, "priceCurrency": "{{ sbf.currency }}", "url": "https://tourwithanand.com/sabarimala-taxi-kochi-airport/#rates" }{% if v.one_way != "" and v.one_way %},
+    { "@type": "Offer", "name": "Sabarimala one-way drop – {{ v.name }}", "price": {{ v.one_way }}, "priceCurrency": "{{ sbf.currency }}", "url": "https://tourwithanand.com/sabarimala-taxi-kochi-airport/#rates" }{% endif %}{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>
+
+
+<!-- Hero image: WebP (was a 2.3 MB PNG); preload the size each screen uses -->
+<link rel="preload" as="image" href="/images/sabarimala-pilgrims-misty-sunrise-900.webp" media="(max-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" href="/images/sabarimala-pilgrims-misty-sunrise.webp" media="(min-width: 769px)" fetchpriority="high">
+<!-- Page styles first, so the page does not jump while it loads (was at the end of the page) -->
+<style>
+.sb-page { background: #0a0b0e; }
+
+/* Hero with banner image (desktop) */
+.sb-hero {
+  min-height: 80vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 150px 0 90px;
+  border-bottom: 1px solid rgba(255,204,0,0.1);
+  background:
+    linear-gradient(to right, rgba(10,11,14,0.95) 0%, rgba(10,11,14,0.65) 45%, rgba(10,11,14,0.1) 100%),
+    url("/images/sabarimala-pilgrims-misty-sunrise.webp") right center / cover no-repeat,
+    #0a0b0e;
+}
+.sb-hero .section-container { width: 100%; box-sizing: border-box; }
+.sb-eyebrow { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #ffcc00; }
+.sb-hero h1 { font-size: 54px; line-height: 1.1; color: #fff; max-width: 820px; margin: 16px 0 20px; }
+.sb-lead { font-size: 18px; color: #c9cdd4; max-width: 640px; line-height: 1.7; font-weight: 300; margin: 0; }
+.sb-cta { display: flex; flex-wrap: wrap; gap: 15px; margin: 32px 0 40px; }
+.sb-points { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; }
+.sb-points li { border: 1px solid rgba(255,204,0,0.3); border-radius: 999px; padding: 8px 16px; font-size: 13px; color: #e0e0e0; background: rgba(10,11,14,0.5); }
+.sb-dates { margin: 28px 0 0; font-size: 13px; color: #a0a4ab; }
+.sb-checked { margin: 6px 0 0; font-size: 12.5px; color: #8d929a; }
+.sb-checked a, .sb-fineprint a, .sb-terms a, .faq-item a { color: #ffcc00; }
+.sb-sub { font-size: 17px; font-weight: 600; color: #ffcc00; margin: 0 0 10px; line-height: 1.5; }
+.sb-intro { font-size: 15px; color: #dcdfe4; margin: 0 0 14px; }
+.sb-btn-wa { display: inline-block; background: #1da851; color: #fff !important; border-radius: 4px; padding: 16px 36px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; }
+.sb-btn-wa:hover { background: #179647; }
+.sb-oneway { display: block; color: #dcdfe4; font-size: 13px; margin-top: 4px; }
+.sb-included { max-width: 1000px; margin: 14px auto 0; font-size: 14.5px; color: #dcdfe4; text-align: center; font-weight: 600; }
+.sb-trip { border: 0; padding: 0; margin: 0; }
+.sb-field.sb-trip legend { font-size: 13px; color: #a0a4ab; margin-bottom: 8px; padding: 0; }
+.sb-field.sb-trip label { display: inline-flex; align-items: center; gap: 8px; margin: 4px 18px 4px 0; color: #fff; font-size: 15px; cursor: pointer; }
+.sb-trip input { width: auto !important; accent-color: #1da851; }
+.sb-hint { margin: 8px 0 0; padding: 10px 12px; border-radius: 8px; background: rgba(255,204,0,.1); border: 1px solid rgba(255,204,0,.4); color: #ffe27a; font-size: 13.5px; line-height: 1.5; }
+.sb-terms { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: start; }
+.sb-terms-list { list-style: none; margin: 0; padding: 0; }
+.sb-terms-list li { color: #c8ccd2; font-size: 15px; line-height: 1.7; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+.sb-terms-list strong { color: #fff; }
+.sb-quote { margin: 0; background: #15181e; border: 1px solid rgba(255,204,0,.3); border-radius: 14px; padding: 24px; }
+.sb-quote blockquote { margin: 0 0 12px; color: #dcdfe4; font-size: 15.5px; line-height: 1.75; font-style: italic; }
+.sb-quote figcaption { color: #ffcc00; font-size: 13.5px; font-weight: 600; }
+
+.sb-section { padding: 100px 0; }
+.sb-alt { background: #0e1015; }
+
+.sb-rates { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); }
+.sb-rate { display: grid; grid-template-columns: 1.2fr 1.6fr auto auto; gap: 24px; align-items: center; padding: 22px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.sb-rate h3 { margin: 0 0 4px; color: #fff; font-size: 22px; }
+.sb-seats { font-size: 13px; color: #888; }
+.sb-route { font-size: 14px; color: #a0a4ab; line-height: 1.6; }
+.sb-price { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 700; color: #ffcc00; white-space: nowrap; text-align: right; min-width: 110px; }
+.sb-book { border: 1px solid #25d366; color: #25d366; padding: 10px 22px; border-radius: 4px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; text-align: center; transition: background 0.2s ease, color 0.2s ease; }
+.sb-book:hover { background: #25d366; color: #06210f; }
+.sb-fineprint { max-width: 1000px; margin: 24px auto 0; font-size: 13px; color: #7a7e85; text-align: center; }
+
+.sb-steps { list-style: none; counter-reset: sb; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 0; margin: 0; }
+.sb-steps li { counter-increment: sb; border-top: 1px solid rgba(255,204,0,0.3); padding-top: 20px; }
+.sb-steps li::before { content: counter(sb, decimal-leading-zero); font-family: 'Playfair Display', Georgia, serif; font-size: 34px; color: #ffcc00; }
+.sb-steps h3 { color: #fff; font-size: 20px; margin: 10px 0; }
+.sb-steps p { color: #a0a4ab; font-size: 15px; line-height: 1.7; margin: 0; }
+
+.sb-notes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.sb-note { background: #15181e; border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 30px; }
+.sb-note h3 { color: #ffcc00; font-size: 20px; margin: 0 0 12px; }
+.sb-note p { color: #a0a4ab; font-size: 15px; line-height: 1.8; margin: 0; }
+
+.sb-form { max-width: 720px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.sb-wide { grid-column: 1 / -1; }
+.sb-field label { display: block; font-size: 13px; color: #a0a4ab; margin-bottom: 8px; }
+.sb-form input, .sb-form select, .sb-form textarea { width: 100%; box-sizing: border-box; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: #15181e; color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; color-scheme: dark; }
+.sb-form input:focus, .sb-form select:focus, .sb-form textarea:focus { border-color: #ffcc00; outline: none; box-shadow: 0 0 15px rgba(255,204,0,0.1); }
+.sb-page a:focus-visible, .sb-form button:focus-visible { outline: 2px solid #ffcc00; outline-offset: 3px; }
+
+@media (max-width: 992px) {
+  .sb-steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* Hero on mobile: full image on top, text below */
+  .sb-hero {
+    min-height: 0;
+    display: block;
+    padding: calc(80px + 52vw) 0 50px;
+    background:
+      linear-gradient(to bottom, transparent calc(80px + 34vw), #0a0b0e calc(80px + 54vw)),
+      url("/images/sabarimala-pilgrims-misty-sunrise-900.webp") center 80px / 100% auto no-repeat,
+      #0a0b0e;
+  }
+  .sb-hero h1 { font-size: 34px; }
+  .sb-lead { font-size: 16px; }
+  .sb-cta a { width: 100%; text-align: center; box-sizing: border-box; }
+  .sb-section { padding: 50px 0; }
+  .sb-rate { grid-template-columns: 1fr auto; grid-template-areas: "name price" "route route" "book book"; gap: 10px 16px; padding: 20px 4px; }
+  .sb-name { grid-area: name; }
+  .sb-price { grid-area: price; min-width: 0; font-size: 24px; }
+  .sb-route { grid-area: route; }
+  .sb-book { grid-area: book; padding: 13px; }
+  .sb-steps, .sb-notes, .sb-form, .sb-terms { grid-template-columns: 1fr; }
+  .sb-btn-wa { width: 100%; text-align: center; box-sizing: border-box; }
+  .sb-sub { font-size: 15.5px; }
+}
+</style>
 
 <div class="sb-page">
 
@@ -11,12 +147,14 @@ permalink: /sabarimala-taxi-kochi-airport/
   <section class="sb-hero">
     <div class="section-container">
       <span class="sb-eyebrow">Swamiye Saranam Ayyappa · Season 2026–27</span>
-      <h1>Sabarimala taxi from Kochi Airport, Aluva and Ernakulam</h1>
+      <h1>Kochi Airport to Pamba (Sabarimala) Taxi</h1>
+      <p class="sb-sub">Round trip from {% include inr.html n=sbf_from %} &middot; Pickup at Kochi Airport, Aluva or Ernakulam &middot; Driver waits during darshan</p>
+      <p class="sb-intro">Sabarimala taxi from Kochi Airport, Aluva and Ernakulam</p>
       <p class="sb-lead">Fixed round-trip fares from ₹7,000. We pick you up, take you for darshan and drop you back at the same point within 24 hours. No hidden charges.</p>
 
       <div class="sb-cta">
-        <a class="luxury-btn" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20to%20book%20a%20Sabarimala%20taxi.">Book on WhatsApp</a>
-        <a class="luxury-btn-outline" href="tel:+919400620615">Call +91 94006 20615</a>
+        <a class="sb-btn-wa" href="{{ sb_wa_link }}" target="_blank" rel="noopener" data-loc="hero" data-route="sabarimala">Book on WhatsApp</a>
+        <a class="luxury-btn-outline" href="tel:+919400620615" data-loc="hero" data-route="sabarimala">Call +91 94006 20615</a>
       </div>
 
       <ul class="sb-points" aria-label="Pickup points">
@@ -26,7 +164,8 @@ permalink: /sabarimala-taxi-kochi-airport/
         <li>Ernakulam railway station</li>
       </ul>
 
-      <p class="sb-dates">Temple opens 16 Nov 2026 · Mandala Pooja 27 Dec 2026 · Makaravilakku 14 Jan 2027</p>
+      <p class="sb-dates">{{ sbf.season_dates }}</p>
+      <p class="sb-checked">Season details checked on {{ sbf.season_checked | date: "%-d %b %Y" }} &middot; Book your darshan slot at <a href="{{ sbf.virtual_queue_url }}" target="_blank" rel="noopener">sabarimalaonline.org</a></p>
     </div>
   </section>
 
@@ -37,66 +176,90 @@ permalink: /sabarimala-taxi-kochi-airport/
       <p class="section-subtitle">One price per vehicle for the full 24-hour trip. The same fare applies from Kochi Airport, Kochi city, Aluva and Ernakulam railway stations.</p>
 
       <div class="sb-rates">
-
+        {%- for v in sbf.vehicles %}
+        {%- if v.tempo %}{% assign sb_route = "sabarimala_tempo" %}{% else %}{% assign sb_route = "sabarimala" %}{% endif %}
+        {%- capture sb_price %}{% include inr.html n=v.round_trip %}{% endcapture %}
+        {%- capture sb_msg %}Hi Anand, I need a Sabarimala {% if v.tempo %}tempo traveller, {{ v.short }}{% else %}taxi, {{ v.name }}{% endif %} ({{ sb_price }} round trip). Pickup: Kochi Airport / Aluva / Ernakulam. Date: __ Pilgrims: __{% endcapture %}
         <div class="sb-rate">
-          <div class="sb-name"><h3>Sedan</h3><span class="sb-seats">Up to 4 pilgrims</span></div>
-          <div class="sb-route">Round trip to Pamba</div>
-          <div class="sb-price">₹7,000</div>
-          <a class="sb-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20to%20book%20a%20Sedan%20for%20Sabarimala%20(Rs%207%2C000%20round%20trip).">Book</a>
+          <div class="sb-name"><h3>{{ v.name }}</h3><span class="sb-seats">{{ v.seats }}</span></div>
+          <div class="sb-route">{{ v.route_note }}{% if v.one_way != "" and v.one_way %}<span class="sb-oneway">One-way drop to Pamba/Nilakkal: {% include inr.html n=v.one_way %}</span>{% endif %}</div>
+          <div class="sb-price">{{ sb_price }}</div>
+          <a class="sb-book" href="https://wa.me/919400620615?text={{ sb_msg | uri_escape }}" target="_blank" rel="noopener" data-loc="fare_table" data-route="{{ sb_route }}" data-car="{{ v.name }}">Book</a>
         </div>
-
-        <div class="sb-rate">
-          <div class="sb-name"><h3>Ertiga</h3><span class="sb-seats">Up to 6 pilgrims</span></div>
-          <div class="sb-route">Round trip to Pamba</div>
-          <div class="sb-price">₹8,500</div>
-          <a class="sb-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20to%20book%20an%20Ertiga%20for%20Sabarimala%20(Rs%208%2C500%20round%20trip).">Book</a>
-        </div>
-
-        <div class="sb-rate">
-          <div class="sb-name"><h3>Innova</h3><span class="sb-seats">Up to 7 pilgrims</span></div>
-          <div class="sb-route">Round trip to Pamba</div>
-          <div class="sb-price">₹10,000</div>
-          <a class="sb-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20to%20book%20an%20Innova%20for%20Sabarimala%20(Rs%2010%2C000%20round%20trip).">Book</a>
-        </div>
-
-        <div class="sb-rate">
-          <div class="sb-name"><h3>Innova Crysta</h3><span class="sb-seats">Up to 7 pilgrims</span></div>
-          <div class="sb-route">Round trip to Pamba</div>
-          <div class="sb-price">₹12,500</div>
-          <a class="sb-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20to%20book%20an%20Innova%20Crysta%20for%20Sabarimala%20(Rs%2012%2C500%20round%20trip).">Book</a>
-        </div>
-
-        <div class="sb-rate">
-          <div class="sb-name"><h3>Innova Hycross</h3><span class="sb-seats">Up to 7 pilgrims</span></div>
-          <div class="sb-route">Round trip to Pamba</div>
-          <div class="sb-price">₹13,500</div>
-          <a class="sb-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20to%20book%20an%20Innova%20Hycross%20for%20Sabarimala%20(Rs%2013%2C500%20round%20trip).">Book</a>
-        </div>
-
-        <div class="sb-rate">
-          <div class="sb-name"><h3>Tempo Traveller 12</h3><span class="sb-seats">12 seats</span></div>
-          <div class="sb-route">Drop at Pamba, pickup from Nilakkal only</div>
-          <div class="sb-price">₹15,000</div>
-          <a class="sb-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20to%20book%20a%2012-seat%20Tempo%20Traveller%20for%20Sabarimala%20(Rs%2015%2C000%20round%20trip).">Book</a>
-        </div>
-
-        <div class="sb-rate">
-          <div class="sb-name"><h3>Tempo Traveller 17</h3><span class="sb-seats">17 seats</span></div>
-          <div class="sb-route">Pickup point to Nilakkal and back from Nilakkal</div>
-          <div class="sb-price">₹16,000</div>
-          <a class="sb-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20to%20book%20a%2017-seat%20Tempo%20Traveller%20for%20Sabarimala%20(Rs%2016%2C000%20round%20trip).">Book</a>
-        </div>
-
-        <div class="sb-rate">
-          <div class="sb-name"><h3>Tempo Traveller 26</h3><span class="sb-seats">26 seats</span></div>
-          <div class="sb-route">Pickup point to Nilakkal and back from Nilakkal</div>
-          <div class="sb-price">₹22,000</div>
-          <a class="sb-book" href="https://wa.me/919400620615?text=Hi%2C%20I%20want%20to%20book%20a%2026-seat%20Tempo%20Traveller%20for%20Sabarimala%20(Rs%2022%2C000%20round%20trip).">Book</a>
-        </div>
-
+        {%- endfor %}
       </div>
 
       <p class="sb-fineprint">Fares are for one round trip completed within 24 hours of pickup, with drop at the same pickup point.</p>
+      <p class="sb-included">{{ sbf.included }}</p>
+      {%- if sbf.extra_hour_car != "" and sbf.extra_hour_car %}
+      <p class="sb-fineprint">After 24 hours: {% include inr.html n=sbf.extra_hour_car %}/hour (car){% if sbf.extra_hour_tempo != "" and sbf.extra_hour_tempo %}, {% include inr.html n=sbf.extra_hour_tempo %}/hour (tempo){% endif %}.</p>
+      {%- endif %}
+      <p class="sb-fineprint"><a href="#tempo-rules">Where each vehicle drops and picks up &darr;</a> &middot; <a href="/tempo-traveller/kochi-to-sabarimala-pamba/">Tempo traveller for groups &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM (moved up: right under the fares) -->
+  <section class="sb-section" id="book">
+    <div class="section-container">
+      <h2 class="section-title">Book your Sabarimala taxi</h2>
+      <p class="section-subtitle">Fill in your trip details and send them to us on WhatsApp. We reply with your confirmation.</p>
+
+      <form class="sb-form" onsubmit="sbBook(event)">
+        <div class="sb-field">
+          <label for="sb-name">Your name</label>
+          <input id="sb-name" type="text" autocomplete="name" required>
+        </div>
+        <div class="sb-field">
+          <label for="sb-pilgrims">Number of pilgrims</label>
+          <input id="sb-pilgrims" type="number" min="1" max="60" inputmode="numeric" required oninput="sbCapHint()">
+        </div>
+        <div class="sb-field">
+          <label for="sb-pickup">Pickup point</label>
+          <select id="sb-pickup" required>
+            <option>Kochi Airport (COK)</option>
+            <option>Kochi city</option>
+            <option>Aluva railway station</option>
+            <option>Ernakulam railway station</option>
+          </select>
+        </div>
+        <div class="sb-field">
+          <label for="sb-vehicle">Vehicle</label>
+          <select id="sb-vehicle" required onchange="sbCapHint()">
+            {%- for v in sbf.vehicles %}
+            <option value="{{ v.name }}" data-capacity="{{ v.capacity }}" data-tempo="{% if v.tempo %}1{% endif %}">{{ v.name }} - {% include inr.html n=v.round_trip %} round trip</option>
+            {%- endfor %}
+          </select>
+          <p class="sb-hint" id="sb-cap-hint" aria-live="polite" hidden></p>
+        </div>
+        <fieldset class="sb-field sb-trip">
+          <legend>Trip type</legend>
+          <label><input type="radio" name="sb-trip" value="Round trip" checked> Round trip (24 hours)</label>
+          <label><input type="radio" name="sb-trip" value="One-way"> One-way drop</label>
+        </fieldset>
+        <div class="sb-field">
+          <label for="sb-date">Pickup date</label>
+          <input id="sb-date" type="date" required>
+        </div>
+        <div class="sb-field">
+          <label for="sb-time">Flight or train arrival time</label>
+          <input id="sb-time" type="time">
+        </div>
+        <div class="sb-field sb-wide">
+          <label for="sb-slot">Darshan slot or other details (optional)</label>
+          <textarea id="sb-slot" rows="3"></textarea>
+        </div>
+        <button type="submit" class="whatsapp-submit-btn sb-wide">Send booking on WhatsApp</button>
+        <a href="tel:+919400620615" class="call-submit-btn sb-wide" style="text-align:center;" data-loc="form" data-route="sabarimala">Or call +91 94006 20615</a>
+      </form>
+    </div>
+  </section>
+
+  <!-- WHERE EACH VEHICLE DROPS AND PICKS UP (one table instead of mixed notes) -->
+  <section class="sb-section sb-alt" id="tempo-rules">
+    <div class="section-container">
+      <h2 class="section-title">Where each vehicle drops and picks up</h2>
+      <p class="section-subtitle">Pamba has limited parking, so the drop and pickup point depends on the vehicle size.</p>
+      {% include sabarimala-rules.html %}
     </div>
   </section>
 
@@ -154,8 +317,29 @@ permalink: /sabarimala-taxi-kochi-airport/
     </div>
   </section>
 
+  <!-- TRUST & TERMS -->
+  <section class="sb-section" id="terms">
+    <div class="section-container">
+      <h2 class="section-title">Booking terms</h2>
+      <div class="sb-terms">
+        <ul class="sb-terms-list">
+          <li><strong>Payment:</strong> {{ sbf.payment }}</li>
+          {%- if sbf.cancellation != "" and sbf.cancellation %}
+          <li><strong>Cancellation:</strong> {{ sbf.cancellation }}</li>
+          {%- endif %}
+          <li><strong>Kochi city pickup:</strong> {{ sbf.kochi_city_areas }}. Same fare as the airport and stations.</li>
+          <li>{{ sbf.operator }}. <a href="/customer-reviews/">Read guest reviews &rarr;</a></li>
+        </ul>
+        <figure class="sb-quote">
+          <blockquote>&ldquo;Booked a Tempo Traveller from Kochi Airport to Pamba for our Sabarimala trip. Anand's team was exceptional. The vehicle was spotless, and the driver navigated the night hills safely. Highly recommended for group pilgrims.&rdquo;</blockquote>
+          <figcaption>Srinivasan K., Chennai &middot; April 2026</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
-  <section class="sb-section">
+  <section class="sb-section sb-alt">
     <div class="section-container faq-container">
       <h2 class="section-title">Questions pilgrims ask</h2>
       <p class="section-subtitle">Not answered here? Message us on WhatsApp.</p>
@@ -167,7 +351,7 @@ permalink: /sabarimala-taxi-kochi-airport/
         </div>
         <div class="faq-item">
           <h3>What if we need more than 24 hours?</h3>
-          <p>Tell us before you travel if you expect a longer stay, for example around Makaravilakku. We will give you the extra charge before you confirm, never after the trip.</p>
+          <p>Tell us before you travel if you expect a longer stay, for example around Makaravilakku. We will give you the extra charge before you confirm, never after the trip.{% if sbf.extra_hour_car != "" and sbf.extra_hour_car %} After 24 hours it is {% include inr.html n=sbf.extra_hour_car %} per hour for a car{% if sbf.extra_hour_tempo != "" and sbf.extra_hour_tempo %} and {% include inr.html n=sbf.extra_hour_tempo %} per hour for a tempo traveller{% endif %}.{% endif %}</p>
         </div>
         <div class="faq-item">
           <h3>Is the fare different from Aluva or Ernakulam railway station?</h3>
@@ -175,156 +359,25 @@ permalink: /sabarimala-taxi-kochi-airport/
         </div>
         <div class="faq-item">
           <h3>Can the vehicle wait for us at Pamba?</h3>
-          <p>Only if you have your own privilege parking pass for Pamba. Otherwise the vehicle waits at the permitted parking area and your driver will tell you the pickup point, which depends on the traffic rules that day.</p>
+          <p>Only if you have your own privilege parking pass for Pamba. Otherwise the vehicle waits at the permitted parking area at Nilakkal and your driver will tell you the pickup point, which depends on the traffic rules that day. The 17 and 26-seat tempo travellers drop and pick up at Nilakkal (see <a href="#tempo-rules">where each vehicle drops and picks up</a>).</p>
+        </div>
+        <div class="faq-item">
+          <h3>Which areas count as "Kochi city" pickup?</h3>
+          <p>{{ sbf.kochi_city_areas }}. The fare is the same as from Kochi Airport, Aluva and Ernakulam railway stations. For other places, send your location on WhatsApp.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can we take the traditional Erumeli route?</h3>
+          <p>Yes, many groups stop at Erumeli on the way. It adds time to the trip, so please ask on WhatsApp before you book and we will plan the route and timing with you.</p>
         </div>
         <div class="faq-item">
           <h3>Do you book the darshan slot for us?</h3>
-          <p>No. Please book your virtual queue slot yourself at sabarimalaonline.org and send us the slot time, so we can plan your pickup.</p>
+          <p>No. Please book your virtual queue slot yourself at <a href="{{ sbf.virtual_queue_url }}" target="_blank" rel="noopener">sabarimalaonline.org</a> and send us the slot time, so we can plan your pickup.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- BOOKING FORM -->
-  <section class="sb-section sb-alt" id="book">
-    <div class="section-container">
-      <h2 class="section-title">Book your Sabarimala taxi</h2>
-      <p class="section-subtitle">Fill in your trip details and send them to us on WhatsApp. We reply with your confirmation.</p>
-
-      <form class="sb-form" onsubmit="sbBook(event)">
-        <div class="sb-field">
-          <label for="sb-name">Your name</label>
-          <input id="sb-name" type="text" autocomplete="name" required>
-        </div>
-        <div class="sb-field">
-          <label for="sb-pilgrims">Number of pilgrims</label>
-          <input id="sb-pilgrims" type="number" min="1" max="60" inputmode="numeric" required>
-        </div>
-        <div class="sb-field">
-          <label for="sb-pickup">Pickup point</label>
-          <select id="sb-pickup" required>
-            <option>Kochi Airport (COK)</option>
-            <option>Kochi city</option>
-            <option>Aluva railway station</option>
-            <option>Ernakulam railway station</option>
-          </select>
-        </div>
-        <div class="sb-field">
-          <label for="sb-vehicle">Vehicle</label>
-          <select id="sb-vehicle" required>
-            <option>Sedan - Rs 7,000</option>
-            <option>Ertiga - Rs 8,500</option>
-            <option>Innova - Rs 10,000</option>
-            <option>Innova Crysta - Rs 12,500</option>
-            <option>Innova Hycross - Rs 13,500</option>
-            <option>Tempo Traveller 12 seat - Rs 15,000</option>
-            <option>Tempo Traveller 17 seat - Rs 16,000</option>
-            <option>Tempo Traveller 26 seat - Rs 22,000</option>
-          </select>
-        </div>
-        <div class="sb-field">
-          <label for="sb-date">Pickup date</label>
-          <input id="sb-date" type="date" required>
-        </div>
-        <div class="sb-field">
-          <label for="sb-time">Flight or train arrival time</label>
-          <input id="sb-time" type="time">
-        </div>
-        <div class="sb-field sb-wide">
-          <label for="sb-slot">Darshan slot or other details (optional)</label>
-          <textarea id="sb-slot" rows="3"></textarea>
-        </div>
-        <button type="submit" class="whatsapp-submit-btn sb-wide">Send booking on WhatsApp</button>
-        <a href="tel:+919400620615" class="call-submit-btn sb-wide" style="text-align:center;">Or call +91 94006 20615</a>
-      </form>
-    </div>
-  </section>
-
 </div>
 
-<style>
-.sb-page { background: #0a0b0e; }
-
-/* Hero with banner image (desktop) */
-.sb-hero {
-  min-height: 80vh;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  padding: 150px 0 90px;
-  border-bottom: 1px solid rgba(255,204,0,0.1);
-  background:
-    linear-gradient(to right, rgba(10,11,14,0.95) 0%, rgba(10,11,14,0.65) 45%, rgba(10,11,14,0.1) 100%),
-    url("/Pilgrims%20at%20a%20Misty%20Mountain%20Sunrise.png") right center / cover no-repeat,
-    #0a0b0e;
-}
-.sb-hero .section-container { width: 100%; box-sizing: border-box; }
-.sb-eyebrow { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #ffcc00; }
-.sb-hero h1 { font-size: 54px; line-height: 1.1; color: #fff; max-width: 820px; margin: 16px 0 20px; }
-.sb-lead { font-size: 18px; color: #c9cdd4; max-width: 640px; line-height: 1.7; font-weight: 300; margin: 0; }
-.sb-cta { display: flex; flex-wrap: wrap; gap: 15px; margin: 32px 0 40px; }
-.sb-points { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; }
-.sb-points li { border: 1px solid rgba(255,204,0,0.3); border-radius: 999px; padding: 8px 16px; font-size: 13px; color: #e0e0e0; background: rgba(10,11,14,0.5); }
-.sb-dates { margin: 28px 0 0; font-size: 13px; color: #a0a4ab; }
-
-.sb-section { padding: 100px 0; }
-.sb-alt { background: #0e1015; }
-
-.sb-rates { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); }
-.sb-rate { display: grid; grid-template-columns: 1.2fr 1.6fr auto auto; gap: 24px; align-items: center; padding: 22px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.sb-rate h3 { margin: 0 0 4px; color: #fff; font-size: 22px; }
-.sb-seats { font-size: 13px; color: #888; }
-.sb-route { font-size: 14px; color: #a0a4ab; line-height: 1.6; }
-.sb-price { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 700; color: #ffcc00; white-space: nowrap; text-align: right; min-width: 110px; }
-.sb-book { border: 1px solid #25d366; color: #25d366; padding: 10px 22px; border-radius: 4px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; text-align: center; transition: background 0.2s ease, color 0.2s ease; }
-.sb-book:hover { background: #25d366; color: #06210f; }
-.sb-fineprint { max-width: 1000px; margin: 24px auto 0; font-size: 13px; color: #7a7e85; text-align: center; }
-
-.sb-steps { list-style: none; counter-reset: sb; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 0; margin: 0; }
-.sb-steps li { counter-increment: sb; border-top: 1px solid rgba(255,204,0,0.3); padding-top: 20px; }
-.sb-steps li::before { content: counter(sb, decimal-leading-zero); font-family: 'Playfair Display', Georgia, serif; font-size: 34px; color: #ffcc00; }
-.sb-steps h3 { color: #fff; font-size: 20px; margin: 10px 0; }
-.sb-steps p { color: #a0a4ab; font-size: 15px; line-height: 1.7; margin: 0; }
-
-.sb-notes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
-.sb-note { background: #15181e; border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 30px; }
-.sb-note h3 { color: #ffcc00; font-size: 20px; margin: 0 0 12px; }
-.sb-note p { color: #a0a4ab; font-size: 15px; line-height: 1.8; margin: 0; }
-
-.sb-form { max-width: 720px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.sb-wide { grid-column: 1 / -1; }
-.sb-field label { display: block; font-size: 13px; color: #a0a4ab; margin-bottom: 8px; }
-.sb-form input, .sb-form select, .sb-form textarea { width: 100%; box-sizing: border-box; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: #15181e; color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; color-scheme: dark; }
-.sb-form input:focus, .sb-form select:focus, .sb-form textarea:focus { border-color: #ffcc00; outline: none; box-shadow: 0 0 15px rgba(255,204,0,0.1); }
-.sb-page a:focus-visible, .sb-form button:focus-visible { outline: 2px solid #ffcc00; outline-offset: 3px; }
-
-@media (max-width: 992px) {
-  .sb-steps { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-  /* Hero on mobile: full image on top, text below */
-  .sb-hero {
-    min-height: 0;
-    display: block;
-    padding: calc(60px + 52vw) 0 50px;
-    background:
-      linear-gradient(to bottom, transparent calc(60px + 34vw), #0a0b0e calc(60px + 54vw)),
-      url("/Pilgrims%20at%20a%20Misty%20Mountain%20Sunrise.png") center 60px / 100% auto no-repeat,
-      #0a0b0e;
-  }
-  .sb-hero h1 { font-size: 34px; }
-  .sb-lead { font-size: 16px; }
-  .sb-cta a { width: 100%; text-align: center; box-sizing: border-box; }
-  .sb-section { padding: 50px 0; }
-  .sb-rate { grid-template-columns: 1fr auto; grid-template-areas: "name price" "route route" "book book"; gap: 10px 16px; padding: 20px 4px; }
-  .sb-name { grid-area: name; }
-  .sb-price { grid-area: price; min-width: 0; font-size: 24px; }
-  .sb-route { grid-area: route; }
-  .sb-book { grid-area: book; padding: 13px; }
-  .sb-steps, .sb-notes, .sb-form { grid-template-columns: 1fr; }
-}
-</style>
 
 <script>
 // Stop past dates being picked
@@ -333,21 +386,38 @@ permalink: /sabarimala-taxi-kochi-airport/
   if (d) { d.min = new Date().toISOString().split('T')[0]; }
 })();
 
+// Hint (does not block) when there are more pilgrims than seats in the chosen vehicle
+function sbCapHint() {
+  var sel = document.getElementById('sb-vehicle'), n = parseInt(document.getElementById('sb-pilgrims').value, 10);
+  var hint = document.getElementById('sb-cap-hint');
+  if (!sel || !hint) { return; }
+  var opt = sel.options[sel.selectedIndex], cap = parseInt(opt.getAttribute('data-capacity'), 10);
+  if (n && cap && n > cap) {
+    hint.textContent = 'The ' + opt.value + ' seats up to ' + cap + '. For ' + n + ' pilgrims, choose a bigger vehicle or two vehicles. You can still send the request.';
+    hint.hidden = false;
+  } else { hint.hidden = true; hint.textContent = ''; }
+}
 // Send the booking form to WhatsApp
 function sbBook(e) {
   e.preventDefault();
   var val = function (id) { return document.getElementById(id).value.trim(); };
+  var trip = (document.querySelector('input[name="sb-trip"]:checked') || {}).value || 'Round trip';
+  var sel = document.getElementById('sb-vehicle'), opt = sel.options[sel.selectedIndex];
+  var isTempo = opt.getAttribute('data-tempo') === '1';
   var lines = [
-    'Sabarimala taxi booking',
+    'Hi Anand, I need a Sabarimala ' + (isTempo ? 'tempo traveller' : 'taxi') + '.',
+    'Trip: ' + trip,
     'Name: ' + val('sb-name'),
     'Pilgrims: ' + val('sb-pilgrims'),
     'Pickup: ' + val('sb-pickup'),
-    'Vehicle: ' + val('sb-vehicle'),
+    'Vehicle: ' + opt.text,
     'Date: ' + val('sb-date'),
     'Arrival time: ' + (val('sb-time') || 'Not given'),
     'Details: ' + (val('sb-slot') || 'None')
   ];
-  if (typeof twaTrack === 'function') { twaTrack('whatsapp_click', 'booking_form', 'Sabarimala booking'); }
+  if (typeof twaTrack === 'function') {
+    twaTrack('whatsapp_click', 'form', 'Sabarimala booking', { key: 'sabarimala_form', button_location: 'form', route: isTempo ? 'sabarimala_tempo' : 'sabarimala', car: opt.value });
+  }
   window.open('https://wa.me/919400620615?text=' + encodeURIComponent(lines.join('\n')), '_blank');
 }
 </script>

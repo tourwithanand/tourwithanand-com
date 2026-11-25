@@ -604,6 +604,9 @@ layout: default
       {%- if tp_fare %}
       {% include fare-strip.html route=tp_fare.key %}
       {%- endif %}
+      {%- if page.to_slug contains "sabarimala" %}
+      {% include sabarimala-callout.html src="route_page_callout" %}
+      {%- endif %}
       <div class="tp-hero-buttons">
         <a href="{{ tp_wa }}" class="tp-btn tp-btn-primary" target="_blank" rel="noopener" data-loc="hero" data-route="{{ page.to_location }}">Book via WhatsApp</a>
         <a href="tel:+919400620615" class="tp-btn tp-btn-outline" data-loc="hero">Call Now</a>

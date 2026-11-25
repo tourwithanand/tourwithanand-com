@@ -1,0 +1,15 @@
+{%- comment -%} Prominent link to the main Sabarimala page (used on overlapping pages). Param: src (tracking/location label) {%- endcomment -%}
+{%- assign sc = site.data.sabarimala_fares -%}
+<aside class="sc-box" aria-label="Sabarimala round-trip taxi fares">
+  <p class="sc-title">Sabarimala round-trip taxi from Kochi Airport, Aluva or Ernakulam</p>
+  <p class="sc-text">Sedan {% include inr.html n=sc.vehicles[0].round_trip %} &middot; Ertiga {% include inr.html n=sc.vehicles[1].round_trip %} &middot; Innova {% include inr.html n=sc.vehicles[2].round_trip %} &middot; driver waits during darshan &middot; tolls &amp; parking included</p>
+  <a class="sc-btn" href="/sabarimala-taxi-kochi-airport/" data-loc="{{ include.src | default: 'callout' }}">See all Sabarimala fares &rarr;</a>
+</aside>
+{%- unless sc_css_done %}{% assign sc_css_done = true %}
+<style>
+.sc-box { box-sizing: border-box; max-width: 900px; margin: 24px auto; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(255,204,0,.55); background: linear-gradient(160deg, #1d1a10, #15181e 65%); text-align: left; }
+.sc-title { margin: 0 0 6px; color: #fff; font: 700 17px/1.4 'Inter', sans-serif; }
+.sc-text { margin: 0 0 12px; color: #c8ccd2; font: 400 14.5px/1.6 'Inter', sans-serif; }
+.sc-btn { display: inline-block; padding: 11px 18px; border-radius: 8px; background: #ffcc00; color: #000 !important; font: 700 14px/1.2 'Inter', sans-serif; text-decoration: none; }
+</style>
+{%- endunless %}
