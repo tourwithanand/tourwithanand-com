@@ -29,5 +29,6 @@ faq2_q: "Is the driving fast-paced?"
 faq2_a: "No. This is a wellness package so our drivers are instructed to drive smoothly, slowly, and take as many breaks as you require."
 faq3_q: "Can the driver recommend authentic Ayurvedic centers?"
 faq3_a: "Yes, our local experts know the most certified and traditional Ayurvedic centers avoiding the commercial tourist traps."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/6-day-ayurveda-wellness/
 ---

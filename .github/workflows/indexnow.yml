@@ -1,0 +1,31 @@
+name: IndexNow ping
+# After each push to main, wait for GitHub Pages to publish, then send every URL
+# in the live sitemap to IndexNow (Bing, Yandex, Seznam, Naver). Google does not use IndexNow.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Pages deploy
+        run: sleep 150
+      - name: Submit sitemap URLs
+        env:
+          KEY: 651536a73c2b1cbc4451cef74ecfae76
+          HOST: tourwithanand.com
+        run: |
+          curl -sf "https://$HOST/$KEY.txt" | grep -q "$KEY" || { echo "key file not live yet"; exit 1; }
+          curl -sf "https://$HOST/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed 's#</\?loc>##g' | sort -u > urls.txt
+          echo "URLs: $(wc -l < urls.txt)"
+          python3 - <<'PY'
+          import json, os
+          urls = [u.strip() for u in open('urls.txt') if u.strip()][:10000]
+          body = {"host": os.environ["HOST"], "key": os.environ["KEY"],
+                  "keyLocation": f"https://{os.environ['HOST']}/{os.environ['KEY']}.txt", "urlList": urls}
+          json.dump(body, open('body.json', 'w'))
+          PY
+          code=$(curl -s -o resp.txt -w "%{http_code}" -X POST https://api.indexnow.org/indexnow -H "Content-Type: application/json; charset=utf-8" --data @body.json)
+          echo "IndexNow HTTP $code"; cat resp.txt
+          [ "$code" = "200" ] || [ "$code" = "202" ]

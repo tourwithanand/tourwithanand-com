@@ -29,5 +29,6 @@ faq2_q: "What is the weather like in Wayanad?"
 faq2_a: "Wayanad is a high-altitude district so the climate remains cool and misty year-round making it a perfect retreat."
 faq3_q: "Are the Edakkal Caves difficult to climb?"
 faq3_a: "The hike to the caves is moderately steep and involves uneven rocks. We advise wearing comfortable trekking shoes and checking your fitness level."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/7-day-north-kerala-wayanad/
 ---

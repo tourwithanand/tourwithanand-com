@@ -29,5 +29,6 @@ faq2_q: "Is a 3-day trip worth it?"
 faq2_a: "Absolutely. We optimize the logistics to ensure you experience the houseboat and heritage sites without feeling rushed."
 faq3_q: "Can I upgrade the vehicle?"
 faq3_a: "Yes, you can upgrade from a sedan to an Innova Crysta or Urbania depending on your comfort preferences and luggage size."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/3-day-kerala-transit/
 ---

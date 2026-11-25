@@ -29,5 +29,6 @@ faq2_q: "How far is Marari from Kochi Airport?"
 faq2_a: "Marari Beach is approximately 75 kilometers from Kochi Airport taking about 2 hours via the coastal highway in our premium cabs."
 faq3_q: "Can we add a visit to Varkala to this tour?"
 faq3_a: "Yes, we can customize this itinerary to include Varkala Beach for an additional cost depending on your flight schedule."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/5-day-coastal-escape/
 ---

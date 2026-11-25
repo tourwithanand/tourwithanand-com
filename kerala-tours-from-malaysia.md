@@ -1,4 +1,5 @@
 ---
+last_modified_at: 2026-11-25
 layout: country_page
 country: malaysia
 title: Kerala Tours from Malaysia | Temple Tours

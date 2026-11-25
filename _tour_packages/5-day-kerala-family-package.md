@@ -29,5 +29,6 @@ faq2_q: "Are houseboat meals included?"
 faq2_a: "Yes, all meals are traditionally included during your overnight houseboat stay in Alleppey."
 faq3_q: "Can we customize the pickup time from Kochi Airport?"
 faq3_a: "Absolutely. We operate 24/7 and will adjust the itinerary based on your exact flight arrival time."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/5-day-kerala-family-package/
 ---
