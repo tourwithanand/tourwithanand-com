@@ -1,0 +1,92 @@
+{%- comment -%}
+Maxx welcome video card with tap-for-sound.
+Params: heading (H2 text), extra_class (e.g. "desktop-only"), src (tracking label), anchor (optional id)
+{%- endcomment -%}
+<section class="mv-section {{ include.extra_class }}"{% if include.anchor %} id="{{ include.anchor }}"{% endif %}>
+  <div class="mv-card">
+    <div class="mv-media">
+      <video class="mv-video" src="/maxx-welcome-kochi-airport.mp4" poster="/images/maxx-welcome-kochi-airport-poster.webp" width="720" height="1280" muted playsinline preload="none" aria-label="Maxx the cat welcomes you to Kochi Airport with a Tour With Anand sign"></video>
+      <button type="button" class="mv-sound-btn" aria-label="Play video with sound" data-src="{{ include.src | default: 'video' }}"><span class="mv-ico" aria-hidden="true">🔊</span><span class="mv-txt">Tap for sound</span></button>
+    </div>
+    <div class="mv-text">
+      <span class="mv-eyebrow">Hi, I'm Maxx! 🐾</span>
+      <h2>{{ include.heading | default: "A Warm Welcome at Kochi Airport" }}</h2>
+      <p>Maxx, our travel mascot, says hello from the arrivals hall at Cochin International Airport. In real life it is Anand or your driver waiting for you, with your name on a board, the moment you walk out of the terminal.</p>
+      <ul class="mv-ticks">
+        <li>Name-board welcome at the arrivals exit</li>
+        <li>Flight tracking and no waiting fees for delays</li>
+        <li>24/7 pickups, even for late-night flights</li>
+        <li>Fixed price agreed on WhatsApp before you fly</li>
+      </ul>
+      <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand%2C%20I%20need%20a%20Kochi%20Airport%20pickup." class="mv-btn" target="_blank" rel="noopener" data-track="whatsapp_click" data-src="{{ include.src | default: 'video' }}">Book Your Airport Welcome</a>
+    </div>
+  </div>
+</section>
+{%- unless mv_assets_done %}{% assign mv_assets_done = true %}
+<style>
+.mv-section, .mv-section * { box-sizing: border-box; }
+.mv-section { width: 100%; padding: 80px 20px; background: radial-gradient(700px 400px at 25% 50%, rgba(255,204,0,.10), rgba(255,204,0,0) 65%), #0a0b0e; }
+.mv-card { max-width: 1050px; margin: 0 auto; display: grid; grid-template-columns: 320px 1fr; gap: 56px; align-items: center; }
+.mv-media { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,204,0,.35); box-shadow: 0 24px 50px rgba(0,0,0,.55); background: #000; }
+.mv-video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 55%; }
+.mv-sound-btn { position: absolute; top: 12px; right: 12px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px 8px 11px; border-radius: 999px; border: 1px solid rgba(255,204,0,.6); background: rgba(10,11,14,.72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #fff; font: 600 13px/1 'Inter', sans-serif; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,.45); }
+.mv-sound-btn.is-on { border-color: rgba(255,255,255,.35); }
+.mv-sound-btn .mv-ico { font-size: 15px; }
+.mv-sound-btn.pulse { animation: mvPulse 2s ease-in-out 3; }
+@keyframes mvPulse { 0%,100% { box-shadow: 0 6px 16px rgba(0,0,0,.45), 0 0 0 0 rgba(255,204,0,.55); } 50% { box-shadow: 0 6px 16px rgba(0,0,0,.45), 0 0 0 9px rgba(255,204,0,0); } }
+.mv-eyebrow { display: inline-block; color: #ffcc00; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; font-family: 'Inter', sans-serif; }
+.mv-text h2 { font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 38px; line-height: 1.2; margin: 0 0 16px; }
+.mv-text p { color: #b4b8bf; font-size: 17px; line-height: 1.8; margin: 0 0 18px; }
+.mv-ticks { list-style: none; padding: 0; margin: 0 0 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
+.mv-ticks li { position: relative; padding-left: 24px; color: #dcdfe4; font-size: 15px; line-height: 1.5; }
+.mv-ticks li::before { content: '✓'; position: absolute; left: 0; color: #ffcc00; font-weight: 700; }
+.mv-btn { display: inline-block; padding: 15px 28px; border-radius: 6px; background: linear-gradient(135deg, #ffcc00, #d4a500); color: #000; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: transform .25s, box-shadow .25s; }
+.mv-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,204,0,.3); }
+@media (max-width: 900px) {
+  .mv-section { padding: 56px 18px; }
+  .mv-card { grid-template-columns: 1fr; gap: 28px; }
+  .mv-media { width: 100%; max-width: 340px; margin: 0 auto; }
+  .mv-text { text-align: center; }
+  .mv-text h2 { font-size: 28px; }
+  .mv-text p { font-size: 16px; }
+  .mv-ticks { grid-template-columns: 1fr; text-align: left; max-width: 380px; margin: 0 auto 24px; }
+  .mv-btn { display: block; width: 100%; max-width: 380px; margin: 0 auto; text-align: center; }
+}
+</style>
+<script>
+(function () {
+  function initMaxxVideos() {
+    document.querySelectorAll('.mv-section').forEach(function (sec) {
+      if (sec.offsetParent === null) return; /* hidden (e.g. desktop-only on a phone): never load the video */
+      var v = sec.querySelector('.mv-video'), btn = sec.querySelector('.mv-sound-btn');
+      if (!v || !btn) return;
+      var setBtn = function (on) {
+        btn.classList.toggle('is-on', on);
+        btn.querySelector('.mv-ico').textContent = on ? '🔇' : '🔊';
+        btn.querySelector('.mv-txt').textContent = on ? 'Mute' : (v.ended ? 'Replay with sound' : 'Tap for sound');
+        btn.setAttribute('aria-label', on ? 'Mute video' : 'Play video with sound');
+      };
+      /* play muted only while on screen, so it does not cost data until seen */
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              if (v.preload !== 'auto') { v.preload = 'auto'; btn.classList.add('pulse'); }
+              if (!v.ended) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+            } else if (!v.paused) { v.pause(); }
+          });
+        }, { threshold: 0.4 }).observe(v);
+      }
+      btn.addEventListener('click', function () {
+        if (v.muted || v.ended || v.paused) {
+          v.muted = false; v.currentTime = 0; v.play(); setBtn(true);
+          if (typeof twaTrack === 'function') twaTrack('video_sound_on', btn.getAttribute('data-src'), 'Tap for sound');
+        } else { v.muted = true; setBtn(false); }
+      });
+      v.addEventListener('ended', function () { v.muted = true; setBtn(false); });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initMaxxVideos); else initMaxxVideos();
+})();
+</script>
+{%- endunless %}

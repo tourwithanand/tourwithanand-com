@@ -53,6 +53,8 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
   
 </section>
 
+{% include maxx-video.html extra_class="desktop-only" src="home_desktop_video" heading="A Warm Welcome at Kochi Airport" %}
+
 <section class="promise-section" id="our-promise">
   <div class="promise-box">
     <span class="promise-kicker">Our Promise</span>
