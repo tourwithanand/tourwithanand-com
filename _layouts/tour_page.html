@@ -5,7 +5,7 @@ layout: default
 {% assign h1 = d.h1 | default: page.package_name | default: "Premium Kerala Tour Package" %}
 {% assign page_url = site.url | append: page.url %}
 {% capture wa_text %}Hello Tour With Anand, I am interested in the {{ page.package_name }} ({{ page.duration }}). Please share a quote.{% endcapture %}
-{% assign wa_link = "https://wa.me/919400620615?text=" | append: wa_text | uri_escape %}
+{% assign wa_text = wa_text | replace: "&", "and" %}{% assign wa_link = "https://wa.me/919400620615?text=" | append: wa_text | uri_escape %}
 
 <!-- meta description and canonical are output by default.html -->
 <meta name="keywords" content="{{ page.route_keywords | escape }}, {{ page.vehicle_keywords | escape }}, Kerala tour package from Kochi airport">
@@ -175,6 +175,9 @@ layout: default
       </div>
     </aside>
   </div>
+
+  {% capture mv_src %}package_{{ page.package_slug }}_video{% endcapture %}
+  {% include maxx-video.html src=mv_src cta_href=wa_link cta_text="Plan This Tour with Anand" heading="Your Tour Starts with a Welcome at Kochi Airport" %}
 
   <!-- 4. Fleet -->
   <section class="kt-section kt-bg-alt">

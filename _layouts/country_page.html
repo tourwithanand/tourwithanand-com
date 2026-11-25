@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign c = site.data.countries[page.country] %}
 {% capture wa_text %}Hello Anand, I am planning a Kerala trip from {{ c.short }}. Please help me with a car, driver and itinerary.{% endcapture %}
-{% assign wa_link = "https://wa.me/919400620615?text=" | append: wa_text | uri_escape %}
+{% assign wa_text = wa_text | replace: "&", "and" %}{% assign wa_link = "https://wa.me/919400620615?text=" | append: wa_text | uri_escape %}
 
 <script type="application/ld+json">
 {
@@ -71,6 +71,10 @@ layout: default
     </div>
   </div>
 </section>
+
+{% capture mv_heading %}Arriving from {{ c.name }}? Maxx Is Waiting at Kochi Airport{% endcapture %}
+{% capture mv_src %}country_{{ page.country }}_video{% endcapture %}
+{% include maxx-video.html src=mv_src cta_href=wa_link cta_text="Plan My Kerala Trip" heading=mv_heading %}
 
 <div class="ct-wrap">
 
