@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Car with Driver in Kerala: 2026 Guide to Hiring a Taxi"
-date: 2026-11-25 07:30:00 +0530
+date: 2026-11-25 06:00:00 +0530
 description: "Planning a Kerala trip? How to hire a private car and driver: which vehicle to choose, how taxi fares work, sample routes with drive times, and booking tips."
 permalink: /blog/kerala-car-with-driver-taxi-guide/
 image: "/images/kochi-airport-taxi-anand-welcome-cat-900.webp"
