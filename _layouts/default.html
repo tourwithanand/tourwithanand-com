@@ -557,6 +557,29 @@ if (mHeroVideo) {
 mHeroVideo.addEventListener("ended", function() {
 mHeroVideo.pause();
 });
+// Tap-for-sound: browsers only allow sound after a tap, so the video autoplays muted
+const mSoundBtn = document.getElementById("catSoundBtn");
+if (mSoundBtn) {
+  const setBtn = function(on) {
+    mSoundBtn.classList.toggle("is-on", on);
+    mSoundBtn.querySelector(".m-sound-ico").textContent = on ? "🔇" : "🔊";
+    mSoundBtn.querySelector(".m-sound-txt").textContent = on ? "Mute" : (mHeroVideo.ended ? "Replay with sound" : "Tap for sound");
+    mSoundBtn.setAttribute("aria-label", on ? "Mute video" : "Play video with sound");
+  };
+  mSoundBtn.addEventListener("click", function() {
+    if (mHeroVideo.muted || mHeroVideo.ended) {
+      mHeroVideo.muted = false;
+      mHeroVideo.currentTime = 0;
+      mHeroVideo.play();
+      setBtn(true);
+      if (typeof twaTrack === "function") twaTrack("video_sound_on", "home_mobile_video", "Tap for sound");
+    } else {
+      mHeroVideo.muted = true;
+      setBtn(false);
+    }
+  });
+  mHeroVideo.addEventListener("ended", function() { mHeroVideo.muted = true; setBtn(false); });
+}
 }
 
 // WhatsApp Form Script
