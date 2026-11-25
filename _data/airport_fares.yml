@@ -1,0 +1,95 @@
+# Kochi Airport one-way transfer fares (owner-confirmed 2026-11-25).
+# ONE source for: the fare strip, the fare table, the route table price columns,
+# the route pages (/taxi/kochi-airport-to-.../) and the schema "offers".
+# Prices are whole rupees (numbers, no commas). Shown on the site as "from ₹1,500".
+# These are STANDARD transfer starting fares. Premium has no fixed price.
+
+currency: INR
+
+cars:
+  - key: sedan
+    name: Sedan
+    model: "Swift Dzire / Toyota Etios"
+    seats: "up to 3 passengers"
+  - key: ertiga
+    name: Ertiga
+    model: "Maruti Ertiga"
+    seats: "up to 5 passengers"
+  - key: innova
+    name: Innova
+    model: "Toyota Innova Crysta"
+    seats: "up to 6 passengers"
+
+routes:
+  - key: aluva
+    name: Aluva
+    sedan: 800
+    ertiga: 1200
+    innova: 1500
+    # route pages that show these fares
+    pages: ["/taxi/kochi-airport-to-aluva-railway-station/"]
+  - key: ernakulam
+    name: Ernakulam
+    sedan: 1500
+    ertiga: 2000
+    innova: 2500
+    pages: ["/taxi/kochi-airport-to-ernakulam-town/", "/taxi/kochi-airport-to-ernakulam-junction/"]
+  - key: fort-kochi
+    name: Fort Kochi
+    sedan: 1700
+    ertiga: 2300
+    innova: 2700
+    pages: ["/taxi/kochi-airport-to-fort-kochi/"]
+  - key: munnar
+    name: Munnar
+    name_long: "Munnar (town)"
+    sedan: 3500
+    ertiga: 4500
+    innova: 5000
+    pages: ["/taxi/kochi-airport-to-munnar/"]
+  - key: alappuzha
+    name: Alappuzha
+    name_long: "Alappuzha / Alleppey"
+    sedan: 3500
+    ertiga: 4000
+    innova: 4500
+    pages: ["/taxi/kochi-airport-to-alleppey/"]
+
+# Line under the fare table (owner confirmed 2026-11-25: the fare includes everything;
+# it only changes for a custom trip).
+fare_note: "Fixed one-way fare · driver, fuel, tolls and parking included"
+quote_note: "Your exact fare is confirmed on WhatsApp before you book. No payment needed to get a quote."
+
+# What the Standard fare includes. Optional: free waiting minutes (empty = not shown).
+standard_includes:
+  - "Driver"
+  - "Fuel"
+  - "Highway tolls and airport parking"
+  - "Flight-delay waiting"
+  - "One-way drop to your address"
+standard_waiting_minutes: ""
+
+# Owner: the fare only changes when the trip is customised.
+fare_may_change_title: "Fare changes only for a custom trip"
+fare_may_change_for:
+  - "Extra stops or sightseeing on the way"
+  - "A different or extra drop point"
+  - "Extra waiting time you ask for (flight delays are free)"
+  - "A bigger vehicle for extra passengers or luggage"
+
+# Premium Airport Welcome: no fixed price on the site. TODO (owner): confirm the list.
+premium_price_label: "Price on WhatsApp"
+premium_includes:
+  - "Newer Innova Crysta / Hycross or a luxury car"
+  - "Name-board meet & greet at arrivals"
+  - "English-speaking senior driver"
+  - "Free waiting up to 60 min after landing"
+  - "Bottled water and wet towels"
+  - "Child seat on request"
+  - "One photo or sightseeing stop on the way"
+
+# Rows hidden from the long "all routes" table because they duplicate another row.
+# The pages themselves still exist.
+route_table_hide:
+  - "/taxi/kochi-airport-to-lulu-mall/"          # duplicate of /taxi/kochi-airport-to-lulu-mall-kochi/ (Lulu Mall Edappally)
+  - "/taxi/kochi-airport-to-taj-malabar-resort/" # duplicate of /taxi/kochi-airport-to-taj-malabar/

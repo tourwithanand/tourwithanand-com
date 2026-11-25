@@ -1,12 +1,19 @@
 {%- comment -%}
 Maxx welcome video card with tap-for-sound.
-Params: heading (H2 text), extra_class (e.g. "desktop-only"), src (tracking label), anchor (optional id), cta_href, cta_text
+Params: heading (H2 text), extra_class (e.g. "desktop-only"), src (tracking label), anchor (optional id), cta_href, cta_text,
+        tap_to_play (true = no autoplay; video and poster load only when tapped/scrolled near)
 {%- endcomment -%}
-<section class="mv-section {{ include.extra_class }}"{% if include.anchor %} id="{{ include.anchor }}"{% endif %}>
+<section class="mv-section {{ include.extra_class }}"{% if include.anchor %} id="{{ include.anchor }}"{% endif %}{% if include.tap_to_play %} data-tap="1"{% endif %}>
   <div class="mv-card">
     <div class="mv-media">
+      {%- if include.tap_to_play %}
+      <video class="mv-video" data-src="/maxx-welcome-kochi-airport.mp4" width="720" height="1280" playsinline preload="none" aria-label="Maxx the cat welcomes you to Kochi Airport with a Tour With Anand sign"></video>
+      <img class="mv-poster" src="/images/maxx-welcome-kochi-airport-poster.webp" alt="" width="720" height="1280" loading="lazy" decoding="async">
+      <button type="button" class="mv-sound-btn mv-play-btn" aria-label="Play video with sound" data-src="{{ include.src | default: 'video' }}"><span class="mv-ico" aria-hidden="true">▶</span><span class="mv-txt">Tap to play</span></button>
+      {%- else %}
       <video class="mv-video" src="/maxx-welcome-kochi-airport.mp4" poster="/images/maxx-welcome-kochi-airport-poster.webp" width="720" height="1280" muted playsinline preload="none" aria-label="Maxx the cat welcomes you to Kochi Airport with a Tour With Anand sign"></video>
       <button type="button" class="mv-sound-btn" aria-label="Play video with sound" data-src="{{ include.src | default: 'video' }}"><span class="mv-ico" aria-hidden="true">🔊</span><span class="mv-txt">Tap for sound</span></button>
+      {%- endif %}
     </div>
     <div class="mv-text">
       <span class="mv-eyebrow">Hi, I'm Maxx! 🐾</span>
@@ -31,6 +38,10 @@ Params: heading (H2 text), extra_class (e.g. "desktop-only"), src (tracking labe
 .mv-video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 55%; }
 .mv-sound-btn { position: absolute; top: 12px; right: 12px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px 8px 11px; border-radius: 999px; border: 1px solid rgba(255,204,0,.6); background: rgba(10,11,14,.72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #fff; font: 600 13px/1 'Inter', sans-serif; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,.45); }
 .mv-sound-btn.is-on { border-color: rgba(255,255,255,.35); }
+.mv-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; z-index: 2; }
+.mv-section[data-tap] .mv-video { background: #000; }
+.mv-play-btn { top: 50%; right: auto; left: 50%; transform: translate(-50%, -50%); padding: 14px 22px 14px 18px; font-size: 15px; background: rgba(10,11,14,.78); }
+.mv-play-btn.is-on, .mv-play-btn.was-played { top: 12px; right: 12px; left: auto; transform: none; padding: 8px 14px 8px 11px; font-size: 13px; }
 .mv-sound-btn .mv-ico { font-size: 15px; }
 .mv-sound-btn.pulse { animation: mvPulse 2s ease-in-out 3; }
 @keyframes mvPulse { 0%,100% { box-shadow: 0 6px 16px rgba(0,0,0,.45), 0 0 0 0 rgba(255,204,0,.55); } 50% { box-shadow: 0 6px 16px rgba(0,0,0,.45), 0 0 0 9px rgba(255,204,0,0); } }
@@ -62,12 +73,14 @@ Params: heading (H2 text), extra_class (e.g. "desktop-only"), src (tracking labe
       if (!v || !btn) return;
       var setBtn = function (on) {
         btn.classList.toggle('is-on', on);
-        btn.querySelector('.mv-ico').textContent = on ? '🔇' : '🔊';
-        btn.querySelector('.mv-txt').textContent = on ? 'Mute' : (v.ended ? 'Replay with sound' : 'Tap for sound');
+        btn.querySelector('.mv-ico').textContent = on ? '🔇' : (tap && v.ended ? '▶' : '🔊');
+        btn.querySelector('.mv-txt').textContent = on ? 'Mute' : (v.ended ? 'Replay with sound' : (tap && !v.getAttribute('src') ? 'Tap to play' : 'Tap for sound'));
         btn.setAttribute('aria-label', on ? 'Mute video' : 'Play video with sound');
       };
-      /* play muted only while on screen, so it does not cost data until seen */
-      if ('IntersectionObserver' in window) {
+      var tap = sec.hasAttribute('data-tap');
+      var poster = sec.querySelector('.mv-poster');
+      /* play muted only while on screen, so it does not cost data until seen (not in tap-to-play mode) */
+      if (!tap && 'IntersectionObserver' in window) {
         new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
             if (e.isIntersecting) {
@@ -78,6 +91,9 @@ Params: heading (H2 text), extra_class (e.g. "desktop-only"), src (tracking labe
         }, { threshold: 0.4 }).observe(v);
       }
       btn.addEventListener('click', function () {
+        if (tap && !v.getAttribute('src')) { v.setAttribute('src', v.getAttribute('data-src')); v.preload = 'auto'; }
+        if (poster) { poster.style.display = 'none'; }
+        btn.classList.add('was-played');
         if (v.muted || v.ended || v.paused) {
           v.muted = false; v.currentTime = 0; v.play(); setBtn(true);
           if (typeof twaTrack === 'function') twaTrack('video_sound_on', btn.getAttribute('data-src'), 'Tap for sound');

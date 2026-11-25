@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
+{%- assign tp_fare = nil -%}
+{%- for r in site.data.airport_fares.routes -%}{%- if r.pages contains page.url -%}{%- assign tp_fare = r -%}{%- endif -%}{%- endfor -%}
+{%- capture tp_msg -%}Hi Anand, I need a {{ page.from_location }} → {{ page.to_location }} taxi. Date: __ Passengers: __{%- endcapture -%}
+{%- assign page_full_url = site.url | append: page.url | append: "#fares" -%}
+{%- assign tp_wa = tp_msg | uri_escape | prepend: "https://wa.me/919400620615?text=" -%}
+{%- capture tp_ret_msg -%}Hi Anand, I need a {{ page.to_location }} → {{ page.from_location }} taxi. Date: __ Passengers: __{%- endcapture -%}
+{%- assign tp_ret_wa = tp_ret_msg | uri_escape | prepend: "https://wa.me/919400620615?text=" -%}
 
 <!-- SEO & Meta Tags (Injected into the page) -->
 <!-- meta description handled by default.html layout -->
@@ -26,7 +33,8 @@ layout: default
         { "@type": "Place", "name": "{{ page.from_location }}" },
         { "@type": "Place", "name": "{{ page.to_location }}" }
       ],
-      "description": "{{ page.unique_desc | escape }}"
+      "description": "{{ page.unique_desc | escape }}"{% if tp_fare %},
+      "offers": {% include fare-offers.json route=tp_fare.key url=page_full_url %}{% endif %}
     },
     {
       "@type": "BreadcrumbList",
@@ -572,6 +580,15 @@ layout: default
   }
 </style>
 
+<style>
+.tp-hero-content .fs { margin: 18px 0 20px; }
+.tp-fares { padding-top: 30px !important; }
+.tp-fares-h { font-family: 'Playfair Display', serif; font-size: 32px; color: #fff; margin: 0 0 6px; }
+.tp-fares-more { color: var(--tp-text-muted, #a0a4ab); font-size: 15px; margin: 18px 0 0; }
+.tp-fares-more a { color: #ffcc00; }
+@media (max-width: 768px) { .tp-fares-h { font-size: 26px; } }
+</style>
+
 <div class="tp-wrapper">
   
   <!-- Hero Section -->
@@ -584,9 +601,12 @@ layout: default
       <h1 class="tp-title">{{ page.from_location }} to {{ page.to_location }} Taxi</h1>
       <p class="tp-desc">{{ page.unique_desc }} Experience a safe, seamless, and luxurious journey across Kerala with our verified professional chauffeurs.</p>
       
+      {%- if tp_fare %}
+      {% include fare-strip.html route=tp_fare.key %}
+      {%- endif %}
       <div class="tp-hero-buttons">
-        <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20want%20to%20book%20a%20taxi%20from%20{{ page.from_location | url_encode }}%20to%20{{ page.to_location | url_encode }}.%20Please%20share%20the%20quote." class="tp-btn tp-btn-primary" target="_blank">Book via WhatsApp</a>
-        <a href="tel:+919400620615" class="tp-btn tp-btn-outline">Call Now</a>
+        <a href="{{ tp_wa }}" class="tp-btn tp-btn-primary" target="_blank" rel="noopener" data-loc="hero" data-route="{{ page.to_location }}">Book via WhatsApp</a>
+        <a href="tel:+919400620615" class="tp-btn tp-btn-outline" data-loc="hero">Call Now</a>
       </div>
     </div>
   </section>
@@ -616,6 +636,17 @@ layout: default
       </div>
     </div>
   </div>
+
+  {%- if tp_fare %}
+  <!-- Fares for this route (data: _data/airport_fares.yml) -->
+  <section class="tp-section tp-fares" id="fares">
+    <div class="tp-container-inner">
+      <h2 class="tp-fares-h">{{ page.from_location }} to {{ tp_fare.name_long | default: tp_fare.name }} Taxi Fare</h2>
+      {% include fare-table.html route=tp_fare.key %}
+      <p class="tp-fares-more">Fares for other places from the airport: <a href="/taxi/kochi-airport/#fares">all Kochi Airport taxi fares</a>.</p>
+    </div>
+  </section>
+  {%- endif %}
 
   <!-- Route Details & Sidebar -->
   <section class="tp-section" style="padding-top: 20px;">
@@ -682,7 +713,7 @@ layout: default
               </div>
             </li>
           </ul>
-          <a href="https://wa.me/919400620615" class="tp-btn tp-btn-primary" style="width: 100%; margin-top: 10px;">Request Instant Quote</a>
+          <a href="{{ tp_wa }}" class="tp-btn tp-btn-primary" style="width: 100%; margin-top: 10px;" target="_blank" rel="noopener" data-loc="sidebar" data-route="{{ page.to_location }}">Request Instant Quote</a>
         </div>
       </aside>
 
@@ -785,7 +816,7 @@ layout: default
       <div class="tp-return-box">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #fff; margin-top: 0; margin-bottom: 15px;">Need a Return Transfer?</h2>
         <p style="font-size: 16px; color: var(--tp-text-light); margin-bottom: 30px; max-width: 600px; margin-inline: auto;">Complete your itinerary by booking your reverse journey in advance. Secure a premium cab from <strong>{{ page.to_location }} back to {{ page.from_location }}</strong>.</p>
-        <a href="https://wa.me/919400620615?text=Hello%20Anand,%20I%20want%20to%20book%20a%20return%20taxi%20from%20{{ page.to_location | url_encode }}%20to%20{{ page.from_location | url_encode }}.%20Please%20share%20the%20quote." class="tp-btn tp-btn-primary">Book Return Journey</a>
+        <a href="{{ tp_ret_wa }}" class="tp-btn tp-btn-primary" target="_blank" rel="noopener" data-loc="return_journey" data-route="{{ page.to_location }} return">Book Return Journey</a>
       </div>
 
       <div style="text-align: center; margin-top: 60px;">

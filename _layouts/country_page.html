@@ -164,13 +164,7 @@ layout: default
 
 </div>
 
-<script>
-document.querySelectorAll('[data-track]').forEach(function (a) {
-  a.addEventListener('click', function () {
-    if (typeof twaTrack === 'function') { twaTrack(a.dataset.track, a.dataset.src, a.textContent.trim()); }
-  });
-});
-</script>
+<!-- WhatsApp / call taps are tracked once per button by the global listener in default.html (data-src = button_location). -->
 
 <style>
 .ct-hero, .ct-hero *, .ct-wrap, .ct-wrap * { box-sizing: border-box; }

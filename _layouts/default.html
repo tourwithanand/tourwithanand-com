@@ -1,3 +1,9 @@
+{%- comment -%} WhatsApp prefill for the header and the sticky bar.
+  page.wa_text (front matter) wins; taxi route pages get a route message; otherwise a plain chat link. {%- endcomment -%}
+{%- assign twa_wa_msg = page.wa_text -%}
+{%- if twa_wa_msg == nil and page.layout == "taxi_page" -%}{%- capture twa_wa_msg -%}Hi Anand, I need a {{ page.from_location }} → {{ page.to_location }} taxi. Date: __ Passengers: __{%- endcapture -%}{%- endif -%}
+{%- if twa_wa_msg -%}{%- assign twa_wa_href = twa_wa_msg | uri_escape | prepend: "https://wa.me/919400620615?text=" -%}{%- else -%}{%- assign twa_wa_href = "https://wa.me/919400620615" -%}{%- endif -%}
+{%- if page.sticky_wa_label -%}{%- assign twa_wa_label = page.sticky_wa_label -%}{%- elsif page.layout == "taxi_page" -%}{%- assign twa_wa_label = "WhatsApp fare" -%}{%- else -%}{%- assign twa_wa_label = "Connect with Anand" -%}{%- endif -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +14,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NV2JP38B');</script>
 <!-- End Google Tag Manager -->
+{%- if site.clarity_id and site.clarity_id != "" %}
+<!-- Microsoft Clarity (on when clarity_id is set in _config.yml) -->
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","{{ site.clarity_id }}");</script>
+{%- endif %}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +46,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:image" content="{{ site.url }}/images/tour-with-anand-logo.png">
 
 <!-- Fonts: preconnect for faster load -->
+<style id="critical-css">
+/* Critical CSS: the same values as the main stylesheet at the end of <body>, repeated here so the
+   fixed header, sticky bar and page background are in place on the first paint (stops the page jumping). */
+body, html { margin: 0; padding: 0; background-color: #0a0b0e; color: #e0e0e0; font-family: 'Inter', -apple-system, sans-serif; overflow-x: hidden; }
+.luxury-header { width: 100vw; position: fixed; top: 0; left: 0; background: rgba(10, 11, 14, 0.85); border-bottom: 1px solid rgba(255, 204, 0, 0.1); padding: 12px 0; z-index: 1000; }
+.header-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: center; padding: 0 40px; gap: 50px; }
+.header-logo img { height: 55px; display: block; }
+.header-nav { margin-right: auto; }
+.header-nav ul { display: flex; gap: 35px; list-style: none; margin: 0; padding: 0; }
+.header-phone-section { display: flex; align-items: center; gap: 12px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; }
+.hamburger span { width: 26px; height: 2px; background: #ffcc00; }
+.header-wa-m { display: none; }
+.mobile-nav-overlay { position: fixed; top: 0; right: -100%; width: 100vw; height: 100vh; z-index: 9999; }
+.floating-widgets { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
+.float-btn { width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; }
+.float-btn svg { width: 30px; height: 30px; fill: #fff; }
+@media (max-width: 1100px) {
+  .header-nav, .header-phone-section { display: none; }
+  .header-container { justify-content: space-between; gap: 14px; }
+  .hamburger { display: flex; }
+  .header-wa-m { display: inline-flex; margin-left: auto; }
+}
+@media (max-width: 768px) {
+  .floating-widgets { bottom: 0; right: 0; left: 0; flex-direction: row; gap: 0; }
+  .float-btn { width: 36%; height: 55px; }
+  .float-btn svg { width: 20px; height: 20px; }
+  .float-wa { width: 64%; }
+}
+@media (max-width: 480px) {
+  .header-container { padding: 0 16px; gap: 12px; }
+  .header-logo img { max-width: 150px; object-fit: contain; }
+}
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -64,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV2JP38B"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager" aria-hidden="true" tabindex="-1"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <header class="luxury-header">
@@ -94,9 +138,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <div class="phone-text">
 <span class="phone-label">Book Now</span>
-<a href="tel:+919400620615" class="phone-number">+9194006 20615</a>
+<a href="tel:+919400620615" class="phone-number" data-loc="header">+91 94006 20615</a>
 </div>
+<a href="{{ twa_wa_href }}" class="header-wa" target="_blank" rel="noopener" data-loc="header">WhatsApp</a>
 </div>
+
+<a href="{{ twa_wa_href }}" class="header-wa header-wa-m" target="_blank" rel="noopener" data-loc="header" aria-label="Book on WhatsApp">WhatsApp</a>
 
 <div class="hamburger" onclick="toggleMobileMenu()">
 <span></span>
@@ -186,10 +233,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <div class="floating-widgets">
-<a href="tel:+919400620615" class="float-btn float-call" title="Call Anand">
+<a href="tel:+919400620615" class="float-btn float-call" title="Call Anand" data-loc="sticky_bar">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
 </a>
-<a href="https://wa.me/919400620615" class="float-btn float-wa" title="Connect with Anand">
+<a href="{{ twa_wa_href }}" class="float-btn float-wa" title="{{ twa_wa_label }}" target="_blank" rel="noopener" data-loc="sticky_bar">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
 </a>
 </div>
@@ -410,6 +457,33 @@ line-height: 1.5;
 .footer-bottom { background: #020203; padding: 25px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
 .footer-bottom p { color: #555; font-size: 13px; margin: 0; }
 
+/* --- HEADER WHATSAPP (main action) --- */
+.header-wa { display: inline-flex; align-items: center; gap: 7px; margin-left: 16px; padding: 10px 16px; border-radius: 999px; background: #1da851; color: #fff !important; font: 700 13px/1 'Inter', sans-serif; letter-spacing: .3px; text-decoration: none; white-space: nowrap; transition: background .25s; }
+.header-wa:hover { background: #179647; }
+.header-wa::before { content: ''; width: 15px; height: 15px; background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6z'/%3E%3C/svg%3E"); }
+.header-wa-m { display: none; }
+/* desktop: keep the menu on one line now that the WhatsApp button sits in the header */
+.header-nav a { white-space: nowrap; }
+@media (min-width: 1101px) {
+.header-container { gap: 28px; padding: 0 28px; }
+.header-nav ul { gap: 24px; }
+.header-wa { margin-left: 4px; }
+}
+@media (min-width: 1101px) and (max-width: 1320px) {
+.header-nav ul { gap: 16px; }
+.header-nav a { font-size: 12px; letter-spacing: .5px; }
+.phone-label, .phone-icon-box { display: none; }
+}
+@media (min-width: 1101px) and (max-width: 1220px) {
+.phone-text { display: none; }
+}
+
+@media (max-width: 480px) {
+.header-container { padding: 0 16px !important; gap: 12px; }
+.header-logo img { height: 55px; width: auto; max-width: 150px; object-fit: contain; }
+.header-wa-m { padding: 8px 11px; font-size: 12px; }
+}
+
 /* --- STICKY FLOATING WIDGETS (DESKTOP DEFAULT) --- */
 .floating-widgets { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
 .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); transition: all 0.3s ease; text-decoration: none; }
@@ -424,6 +498,8 @@ line-height: 1.5;
 .header-phone-section { display: none; }
 .header-container { justify-content: space-between; }
 .hamburger { display: flex; }
+.header-wa-m { display: inline-flex; margin-left: auto; padding: 9px 13px; font-size: 12.5px; }
+.header-container { gap: 14px; }
 
 .message-wrap { flex-direction: column; text-align: center; }
 .message-img { margin-bottom: 40px; }
@@ -487,15 +563,17 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 .footer-contact-item { justify-content: center; }
 
 /* CONVERT FLOATING CORNER WIDGETS TO A CLEAN STICKY BOTTOM BAR */
-body { padding-bottom: 55px !important; }
+body { padding-bottom: calc(55px + env(safe-area-inset-bottom, 0px)) !important; }
+html { scroll-padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px)); }
 .floating-widgets {
 bottom: 0; right: 0; left: 0;
 flex-direction: row;
 gap: 0;
 background: #15181e;
+padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 .float-btn {
-width: 50%;
+width: 36%;
 height: 55px;
 border-radius: 0;
 box-shadow: none;
@@ -510,8 +588,9 @@ color: #fff;
 
 /* Inject text purely through CSS for the mobile sticky bar */
 .float-btn::after { content: attr(title); }
-.float-call { background: #1c66c9; border-right: 1px solid rgba(255,255,255,0.1); }
-.float-wa { background: #1da851; }
+.float-call { background: #15181e; color: #dcdfe4; border-top: 1px solid rgba(255,255,255,0.12); border-right: 1px solid rgba(255,255,255,0.1); font-size: 14px; }
+.float-call svg { fill: #dcdfe4; }
+.float-wa { width: 64%; background: #1da851; font-size: 16px; font-weight: 700; }
 }
 
 /* --- MOBILE VIDEO BANNER --- */
@@ -608,27 +687,49 @@ window.open(
 // The only place lead events are sent from. Google Tag Manager listens for
 // "whatsapp_click" and "call_click" and forwards them to GA4 and Google Ads.
 // Do not add gtag() calls or onclick tracking anywhere else on the site.
+// Each button fires at most once per page view. Extra parameters:
+//   button_location: header, hero, fare_strip, fare_table, route_table, form, sticky_bar, footer, ... (data-loc on the link)
+//   route, car: from data-route / data-car on the link (empty when not set)
 window.dataLayer = window.dataLayer || [];
-var twaLastLead = {};
-function twaTrack(eventName, source, text) {
-var now = Date.now();
-if (twaLastLead[eventName] && now - twaLastLead[eventName] < 3000) { return; }
-twaLastLead[eventName] = now;
+var twaFired = {};
+var twaSeq = 0;
+function twaTrack(eventName, source, text, extra) {
+extra = extra || {};
+var key = eventName + '|' + (extra.key || source || 'button');
+if (twaFired[key]) { return; }
+twaFired[key] = 1;
 window.dataLayer.push({
 'event': eventName,
 'click_source': source || 'button',
-'click_text': (text || '').replace(/\s+/g, ' ').trim().slice(0, 60)
+'click_text': (text || '').replace(/\s+/g, ' ').trim().slice(0, 60),
+'button_location': extra.button_location || source || 'button',
+'route': extra.route || '',
+'car': extra.car || ''
 });
+}
+function twaLocation(a) {
+if (a.getAttribute('data-loc')) { return a.getAttribute('data-loc'); }
+if (a.getAttribute('data-src')) { return a.getAttribute('data-src'); }
+if (a.closest('.floating-widgets')) { return 'sticky_bar'; }
+if (a.closest('header')) { return 'header'; }
+if (a.closest('footer')) { return 'footer'; }
+if (a.closest('.mobile-nav-overlay')) { return 'mobile_menu'; }
+return 'button';
 }
 document.addEventListener('click', function(e) {
 var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
 if (!a) { return; }
 var href = a.getAttribute('href') || '';
-if (/wa\.me\/|api\.whatsapp\.com|^whatsapp:/.test(href)) {
-twaTrack('whatsapp_click', 'button', a.textContent || a.title);
-} else if (href.indexOf('tel:') === 0) {
-twaTrack('call_click', 'button', a.textContent || a.title);
-}
+var ev = /wa\.me\/|api\.whatsapp\.com|^whatsapp:/.test(href) ? 'whatsapp_click' : (href.indexOf('tel:') === 0 ? 'call_click' : '');
+if (!ev) { return; }
+if (!a.twaId) { a.twaId = 'b' + (++twaSeq); }
+var loc = twaLocation(a);
+twaTrack(ev, loc, (a.textContent || '').trim() || a.title || '', {
+key: a.twaId,
+button_location: loc,
+route: a.getAttribute('data-route') || '',
+car: a.getAttribute('data-car') || ''
+});
 }, true);
 </script>
   <script>

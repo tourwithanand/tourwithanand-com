@@ -1,0 +1,23 @@
+{%- comment -%}
+JSON for the "offers" property of a TaxiService. Standard starting fares only (no Premium price).
+Params: route (optional) route key; url (page URL for the offers)
+Prices come from _data/airport_fares.yml, the same data as the visible fare table.
+{%- endcomment -%}
+{%- assign fo = site.data.airport_fares -%}
+{%- if include.route -%}{%- assign fo_routes = fo.routes | where: "key", include.route -%}{%- else -%}{%- assign fo_routes = fo.routes -%}{%- endif -%}
+{%- assign fo_low = 999999 -%}{%- assign fo_high = 0 -%}{%- assign fo_count = 0 -%}
+{%- for r in fo_routes -%}{%- for car in fo.cars -%}{%- assign fo_p = r[car.key] | plus: 0 -%}
+{%- if fo_p < fo_low %}{% assign fo_low = fo_p %}{% endif -%}{%- if fo_p > fo_high %}{% assign fo_high = fo_p %}{% endif -%}{%- assign fo_count = fo_count | plus: 1 -%}
+{%- endfor -%}{%- endfor -%}
+{
+        "@type": "AggregateOffer",
+        "priceCurrency": "{{ fo.currency }}",
+        "lowPrice": {{ fo_low }},
+        "highPrice": {{ fo_high }},
+        "offerCount": {{ fo_count }},
+        "offers": [
+          {%- for r in fo_routes -%}{%- assign fo_outer_last = forloop.last -%}{%- for car in fo.cars %}
+          { "@type": "Offer", "name": "Kochi Airport to {{ r.name_long | default: r.name }} taxi – {{ car.name }} ({{ car.model }})", "description": "Standard one-way transfer from Cochin International Airport, starting fare, driver included", "price": {{ r[car.key] | plus: 0 }}, "priceCurrency": "{{ fo.currency }}", "url": "{{ include.url }}" }{% unless fo_outer_last and forloop.last %},{% endunless %}
+          {%- endfor -%}{%- endfor %}
+        ]
+      }
