@@ -387,6 +387,10 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
     <p class="section-subtitle">Helpful travel guides, taxi tips and destination insights to plan your South India journey with confidence.</p>
 
     <div class="blog-slider">
+          <a href="/blog/kerala-car-with-driver-taxi-guide/" class="blog-card">
+          <h3>Car with Driver in Kerala: 2026 Guide</h3>
+          <span>Vehicles, how taxi fares work, routes and a 7-day loop by car</span>
+          </a>
           <a href="/blog/kerala-travel-tips-international-travelers/" class="blog-card">
           <h3>Kerala Travel Tips for International Travelers</h3>
           <span>What every foreign visitor should know before visiting Kerala</span>
