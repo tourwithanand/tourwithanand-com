@@ -1,12 +1,14 @@
 ---
 layout: tour_page
 package_slug: "7-day-kerala-wildlife"
+title: "7-Day Kerala Wildlife & Nature Tour"
+description: "7-day Kerala wildlife tour: Athirappilly falls, Eravikulam and Periyar Tiger Reserve by private car with photo stops. Kochi Airport pickup."
 package_name: "7-Day Kerala Nature & Wildlife Expedition"
 duration: "6 Nights / 7 Days"
 destinations: "Kochi - Athirapally - Munnar - Thekkady"
 ideal_for: "Nature Lovers & Photographers"
 premium_vehicle: "Innova Crysta or Urbania"
-hero_image: "/Pic_Force%20Tempo%20Traveller%20Rentals%20Kochi%20to%20Munnar.jpg"
+hero_image: "/Pic_Force%20Tempo%20Traveller%20Rentals%20Kochi%20to%20Munnar.jpeg"
 meta_desc: "Discover the untamed beauty of Kerala with this 7-day wildlife and waterfall expedition."
 package_overview: "Designed for international nature enthusiasts and photographers. Witness the majesty of Athirapally waterfalls and the deep jungles of Periyar with our expert local drivers navigating the terrain safely."
 day_1_plan: "Arrival at Kochi. Direct transfer to Athirapally. View the majestic Niagara of India."

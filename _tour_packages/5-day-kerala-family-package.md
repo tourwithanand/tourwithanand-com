@@ -1,6 +1,8 @@
 ---
 layout: tour_page
 package_slug: "5-day-kerala-family-package"
+title: "5-Day Kerala Family Tour Package from Kochi"
+description: "Private 5-day Kerala family tour: Munnar tea hills, Thekkady and an Alleppey houseboat. Kochi Airport pickup, English-speaking driver, fixed price."
 package_name: "5-Day Premium Kerala Family Holiday"
 duration: "4 Nights / 5 Days"
 destinations: "Kochi - Munnar - Thekkady - Alleppey"

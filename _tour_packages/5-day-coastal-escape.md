@@ -1,12 +1,14 @@
 ---
 layout: tour_page
 package_slug: "5-day-coastal-escape"
+title: "5-Day Kerala Beach & Backwater Tour"
+description: "5-day Kerala beach and backwater tour: Marari Beach, Alleppey houseboat and Fort Kochi. Flat coastal roads, private driver, Kochi Airport pickup."
 package_name: "5-Day South Kerala Coastal Escape"
 duration: "4 Nights / 5 Days"
 destinations: "Kochi - Marari - Alleppey - Kochi"
 ideal_for: "Beach Lovers & Relaxed Travelers"
 premium_vehicle: "Chauffeur-Driven Innova Crysta"
-hero_image: "/Mobile%20View%20Kerala-clean.jpg"
+hero_image: "/images/places-to-visit-kerala-tour-packages.png"
 meta_desc: "A relaxing 5-day coastal tour of Kerala featuring the pristine sands of Marari and the backwaters of Alleppey."
 package_overview: "Escape the busy tourist traps. This slow-paced itinerary is designed for maximum relaxation, focusing strictly on Kerala's world-renowned tropical coastline and luxury beach villas."
 day_1_plan: "Arrival in Kochi. Smooth transfer down the coastal highway to Marari Beach."

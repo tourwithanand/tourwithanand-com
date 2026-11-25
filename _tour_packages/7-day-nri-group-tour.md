@@ -1,6 +1,8 @@
 ---
 layout: tour_page
 package_slug: "7-day-nri-group-tour"
+title: "7-Day Kerala Group Tour for NRI Families"
+description: "7-day Kerala group tour for NRI families in a Tempo Traveller or Urbania: Munnar, Thekkady, Alleppey houseboat. One driver, airport pickup, fixed price."
 package_name: "7-Day NRI Large Family Group Tour"
 duration: "6 Nights / 7 Days"
 destinations: "Kochi - Munnar - Thekkady - Alleppey - Kochi"

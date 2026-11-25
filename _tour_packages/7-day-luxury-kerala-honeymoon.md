@@ -1,12 +1,14 @@
 ---
 layout: tour_page
 package_slug: "7-day-luxury-kerala-honeymoon"
+title: "7-Day Kerala Honeymoon Package from Kochi"
+description: "7-day Kerala honeymoon by private car: Munnar, Thekkady, Kumarakom lakeside and Marari Beach. Daylight driving, Kochi Airport pickup, fixed price."
 package_name: "7-Day Luxury Kerala Honeymoon"
 duration: "6 Nights / 7 Days"
 destinations: "Kochi - Munnar - Thekkady - Kumarakom - Marari"
 ideal_for: "Honeymooners & Couples"
 premium_vehicle: "Luxury Sedan or Innova Crysta"
-hero_image: "/Mobile%20View%20Kerala-clean.jpg"
+hero_image: "/images/places-to-visit-kerala-tour-packages.png"
 meta_desc: "A romantic 7-day luxury Kerala honeymoon package featuring private houseboats, premium hill resorts, and pristine beaches."
 package_overview: "Designed exclusively for couples seeking romance and privacy. This week-long journey takes you from the misty hills of Munnar to the world-class luxury resorts of Kumarakom and Marari beach."
 day_1_plan: "VIP Meet & Greet at Kochi Airport and transfer to a luxury resort in Munnar."

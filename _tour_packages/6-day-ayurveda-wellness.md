@@ -1,6 +1,8 @@
 ---
 layout: tour_page
 package_slug: "6-day-ayurveda-wellness"
+title: "6-Day Kerala Ayurveda & Wellness Tour"
+description: "6-day Kerala Ayurveda tour: Kumarakom backwaters and Marari Beach with short, gentle drives and a private car on call. Kochi Airport pickup."
 package_name: "6-Day Kerala Ayurveda & Wellness Retreat"
 duration: "5 Nights / 6 Days"
 destinations: "Kochi - Kumarakom - Marari"

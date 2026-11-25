@@ -1,6 +1,8 @@
 ---
 layout: tour_page
 package_slug: "3-day-kerala-transit"
+title: "3-Day Kochi & Alleppey Houseboat Tour"
+description: "3-day Kerala tour from Kochi Airport: private houseboat night in Alleppey and a half-day in Fort Kochi. Ideal for stopovers. Fixed price."
 package_name: "3-Day Quick Kerala Backwater Transit"
 duration: "2 Nights / 3 Days"
 destinations: "Kochi - Alleppey - Kochi"
