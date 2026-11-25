@@ -29,5 +29,6 @@ faq2_q: "Can the large vehicles navigate the Munnar hills safely?"
 faq2_a: "Absolutely. Our Tempo Travellers and Urbanias are heavy-duty hill-certified vehicles driven by expert mountain chauffeurs."
 faq3_q: "Do we stay on one houseboat or multiple?"
 faq3_a: "For large groups we arrange massive 4 to 6-bedroom premium houseboats so the entire family stays together."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/7-day-nri-group-tour/
 ---

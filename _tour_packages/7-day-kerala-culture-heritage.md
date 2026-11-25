@@ -29,5 +29,6 @@ faq2_q: "What is the best time for this cultural tour?"
 faq2_a: "The winter months from October to March offer the best weather for walking tours and visiting ancient heritage sites."
 faq3_q: "Are temple dress codes strict?"
 faq3_a: "Yes, most traditional Kerala temples require men to wear dhotis and women to wear sarees or long skirts. Your driver will brief you beforehand."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/7-day-kerala-culture-heritage/
 ---

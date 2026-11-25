@@ -29,5 +29,6 @@ faq2_q: "Is night driving involved in this itinerary?"
 faq2_a: "No, we schedule all transits during daylight hours to ensure your safety and allow you to enjoy the scenic views."
 faq3_q: "What type of vehicle is used for honeymoon packages?"
 faq3_a: "We typically deploy premium luxury sedans (like Etios/Dzire) or a spacious Toyota Innova Crysta for maximum comfort."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/7-day-luxury-kerala-honeymoon/
 ---

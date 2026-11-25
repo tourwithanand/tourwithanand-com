@@ -29,5 +29,6 @@ faq2_q: "Are the forest roads safe?"
 faq2_a: "We use premium vehicles with heavy-duty suspension and our drivers are highly experienced in navigating Kerala's forest ghat sections safely."
 faq3_q: "Do you arrange the jungle safari tickets?"
 faq3_a: "We provide the transportation to the Periyar tiger reserve gates. Safari tickets must be booked online by the guest in advance due to forest department rules."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/7-day-kerala-wildlife/
 ---

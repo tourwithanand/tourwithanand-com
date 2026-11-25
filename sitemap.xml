@@ -10,6 +10,7 @@ layout: null
     {% endif %}
     <url>
       <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
+      {% if page.last_modified_at %}<lastmod>{{ page.last_modified_at | date: '%Y-%m-%d' }}</lastmod>{% endif %}
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
@@ -43,6 +44,7 @@ layout: null
   {% for tour in site.tour_packages %}
     <url>
       <loc>{{ site.url }}{{ tour.url }}</loc>
+      {% if tour.last_modified_at %}<lastmod>{{ tour.last_modified_at | date: '%Y-%m-%d' }}</lastmod>{% endif %}
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
     </url>

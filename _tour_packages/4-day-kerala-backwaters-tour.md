@@ -29,5 +29,6 @@ faq2_q: "Are entrance fees to heritage sites included?"
 faq2_a: "We cover all transport tolls and parking. Entrance fees to specific monuments are usually paid directly at the counter."
 faq3_q: "Is the driver fluent in English?"
 faq3_a: "Yes, we specifically assign verified English-speaking chauffeurs for our international and NRI guests."
+last_modified_at: "2026-11-25"
 permalink: /south-india-tours/4-day-kerala-backwaters-tour/
 ---
