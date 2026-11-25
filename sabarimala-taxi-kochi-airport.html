@@ -193,7 +193,7 @@ sticky_wa_label: "WhatsApp fare"
 
       <p class="sb-fineprint">Fares are for one round trip completed within 24 hours of pickup, with drop at the same pickup point.</p>
       <p class="sb-included">{{ sbf.included }}</p>
-      <p class="sb-advance">{{ sbf.advance_note }} Coming back only? <a href="/pamba-to-kochi-airport-taxi/">Nilakkal to Kochi from {% include inr.html n=sbf.vehicles[0].one_way %} one way &rarr;</a></p>
+      <p class="sb-advance">{{ sbf.advance_note }} Coming back only? <a href="/pamba-to-kochi-airport-taxi/">{% assign sb_ow_from = sbf.vehicles[0].one_way %}Nilakkal to Kochi from {% include inr.html n=sb_ow_from %} one way &rarr;</a></p>
       {%- if sbf.extra_hour_car != "" and sbf.extra_hour_car %}
       <p class="sb-fineprint">After 24 hours: {% include inr.html n=sbf.extra_hour_car %}/hour (car){% if sbf.extra_hour_tempo != "" and sbf.extra_hour_tempo %}, {% include inr.html n=sbf.extra_hour_tempo %}/hour (tempo){% endif %}.</p>
       {%- endif %}

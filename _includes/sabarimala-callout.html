@@ -1,8 +1,9 @@
 {%- comment -%} Prominent link to the main Sabarimala page (used on overlapping pages). Param: src (tracking/location label) {%- endcomment -%}
 {%- assign sc = site.data.sabarimala_fares -%}
+{%- assign sc_p0 = sc.vehicles[0].round_trip -%}{%- assign sc_p1 = sc.vehicles[1].round_trip -%}{%- assign sc_p2 = sc.vehicles[2].round_trip -%}
 <aside class="sc-box" aria-label="Sabarimala round-trip taxi fares">
   <p class="sc-title">Sabarimala round-trip taxi from Kochi Airport, Aluva or Ernakulam</p>
-  <p class="sc-text">Sedan {% include inr.html n=sc.vehicles[0].round_trip %} &middot; Ertiga {% include inr.html n=sc.vehicles[1].round_trip %} &middot; Innova {% include inr.html n=sc.vehicles[2].round_trip %} &middot; driver waits during darshan &middot; tolls &amp; parking included</p>
+  <p class="sc-text">Sedan {% include inr.html n=sc_p0 %} &middot; Ertiga {% include inr.html n=sc_p1 %} &middot; Innova {% include inr.html n=sc_p2 %} &middot; driver waits during darshan &middot; tolls &amp; parking included</p>
   <a class="sc-btn" href="/sabarimala-taxi-kochi-airport/" data-loc="{{ include.src | default: 'callout' }}">See all Sabarimala fares &rarr;</a>
 </aside>
 {%- unless sc_css_done %}{% assign sc_css_done = true %}
