@@ -67,11 +67,16 @@ seo_keywords: "kochi airport taxi, cochin airport taxi, kochi airport taxi servi
 
 <!-- HERO: one responsive banner for desktop and mobile -->
 <section class="ap-hero">
+  <picture>
+  <source media="(max-width: 600px)" width="1024" height="1536"
+          srcset="/images/kochi-airport-taxi-cial-welcome-mobile-480.webp 480w, /images/kochi-airport-taxi-cial-welcome-mobile-720.webp 720w, /images/kochi-airport-taxi-cial-welcome-mobile-1024.webp 1024w"
+          sizes="100vw">
   <img class="ap-hero-img"
        src="/images/kochi-airport-taxi-cial-welcome-banner-1200.webp"
        srcset="/images/kochi-airport-taxi-cial-welcome-banner-800.webp 800w, /images/kochi-airport-taxi-cial-welcome-banner-1200.webp 1200w, /images/kochi-airport-taxi-cial-welcome-banner.webp 2048w"
        sizes="100vw" width="2048" height="768" fetchpriority="high"
        alt="Kochi Airport taxi: Anand and the Tour With Anand Innova Crysta at Cochin International Airport arrivals, with Maxx the cat holding a Welcome to Kochi sign">
+  </picture>
   <div class="ap-hero-shade"></div>
   <div class="ap-hero-content">
     <span class="ap-eyebrow">Cochin International Airport (COK) &middot; 24/7</span>
@@ -530,7 +535,7 @@ document.querySelectorAll('[data-track]').forEach(function (a) {
 @media (max-width: 768px) {
   /* Mobile: full image on top, content below */
   .ap-hero { display: block; min-height: 0; margin-top: 80px; }
-  .ap-hero-img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 2048 / 768; object-fit: cover; -webkit-mask-image: none; mask-image: none; }
+  .ap-hero-img { position: static; display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: cover; -webkit-mask-image: none; mask-image: none; }
   .ap-hero-shade { display: none; }
   .ap-hero-content { margin: 0; padding: 24px 20px 30px; text-align: center; max-width: none; }
   .ap-hero h1 { font-size: 32px; }
