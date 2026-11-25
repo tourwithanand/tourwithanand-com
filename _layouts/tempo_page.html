@@ -495,7 +495,7 @@ layout: default
       <p class="tt-fare-incl">{{ ttf.included }}</p>
       <h3 class="tt-h3">Where each vehicle drops and picks up</h3>
       {% include sabarimala-rules.html %}
-      <p class="tt-fare-cars">Travelling in a smaller group? <a href="/sabarimala-taxi-kochi-airport/">Sabarimala car fares: Sedan, Ertiga, Innova, Crysta and Hycross from {% include inr.html n=ttf.vehicles[0].round_trip %} round trip &rarr;</a></p>
+      <p class="tt-fare-cars">Travelling in a smaller group? <a href="/sabarimala-taxi-kochi-airport/">Sabarimala car fares: Sedan, Ertiga, Innova, Crysta and Hycross {% assign tt_car_from = ttf.vehicles[0].round_trip %}from {% include inr.html n=tt_car_from %} round trip &rarr;</a></p>
     </div>
   </section>
   {%- endif %}
