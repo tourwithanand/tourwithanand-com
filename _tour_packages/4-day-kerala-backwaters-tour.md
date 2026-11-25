@@ -1,6 +1,8 @@
 ---
 layout: tour_page
 package_slug: "4-day-kerala-backwaters-tour"
+title: "4-Day Kerala Backwaters & Fort Kochi Tour"
+description: "4-day Kerala tour with private driver: Fort Kochi heritage and an overnight Alleppey houseboat. Short drives, Kochi Airport pickup, fixed price."
 package_name: "4-Day Kerala Backwaters & Heritage Tour"
 duration: "3 Nights / 4 Days"
 destinations: "Kochi - Fort Kochi - Alleppey"

@@ -1,12 +1,14 @@
 ---
 layout: tour_page
 package_slug: "7-day-kerala-culture-heritage"
+title: "7-Day Kerala Culture & Heritage Tour"
+description: "7-day Kerala culture tour: Fort Kochi, Thrissur temples, Kathakali at Kalamandalam and Kumarakom village life. Private driver from Kochi Airport."
 package_name: "7-Day Complete Kerala Cultural Immersion"
 duration: "6 Nights / 7 Days"
 destinations: "Kochi - Thrissur - Cheruthuruthy - Kumarakom"
 ideal_for: "Culture Enthusiasts & Historians"
 premium_vehicle: "Innova Crysta or Tempo Traveller"
-hero_image: "/Pic_Maharaja%20seat%20tempo%20traveller%20kochi.jpg"
+hero_image: "/Pic_26%20seater%20tempo%20traveller%20kochi.jpg"
 meta_desc: "Immerse yourself in the deep history, arts, and traditions of Kerala with this 7-day cultural heritage tour."
 package_overview: "Go beyond the standard tourist trail. This package is specifically designed for foreign tourists eager to experience authentic Kathakali performances, ancient temple architecture, and traditional village life."
 day_1_plan: "Kochi Airport pickup. Transfer to Fort Kochi to explore colonial Dutch and Portuguese history."

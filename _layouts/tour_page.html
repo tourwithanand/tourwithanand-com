@@ -1,750 +1,376 @@
 ---
 layout: default
 ---
+{% assign d = site.data.package_details[page.package_slug] %}
+{% assign h1 = d.h1 | default: page.package_name | default: "Premium Kerala Tour Package" %}
+{% assign page_url = site.url | append: page.url %}
+{% capture wa_text %}Hello Tour With Anand, I am interested in the {{ page.package_name }} ({{ page.duration }}). Please share a quote.{% endcapture %}
+{% assign wa_link = "https://wa.me/919400620615?text=" | append: wa_text | uri_escape %}
 
-<!-- SEO & Meta Tags -->
-<!-- meta description handled by default.html layout -->
-<meta name="keywords" content="{{ page.route_keywords | escape }}, {{ page.vehicle_keywords | escape }}, luxury Kerala tours, Kerala tour package from Kochi airport">
-<link rel="canonical" href="{{ site.url }}/south-india-tours/{{ page.package_slug }}/">
+<!-- meta description and canonical are output by default.html -->
+<meta name="keywords" content="{{ page.route_keywords | escape }}, {{ page.vehicle_keywords | escape }}, Kerala tour package from Kochi airport">
 
-<!-- Google Rich Results / JSON-LD Schema -->
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "TouristTrip",
-    "name": "{{ page.package_name }}",
-    "description": "{{ page.package_overview | escape }}",
-    "touristType": [
-      "International Tourists",
-      "NRIs",
-      "Families",
-      "Luxury Travelers"
-    ],
-    "itinerary": {
-      "@type": "ItemList",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TouristTrip",
+      "@id": "{{ page_url }}#trip",
+      "name": {{ h1 | jsonify }},
+      "description": {{ page.description | default: page.package_overview | jsonify }},
+      "url": "{{ page_url }}",
+      "image": "{{ site.url }}{{ d.image | default: '/images/places-to-visit-kerala-tour-packages.png' }}",
+      "touristType": {{ page.ideal_for | jsonify }},
+      "itinerary": {
+        "@type": "ItemList",
+        "numberOfItems": {% if d.days %}{{ d.days | size }}{% else %}7{% endif %},
+        "itemListElement": [
+          {% if d.days %}{% for day in d.days %}{ "@type": "ListItem", "position": {{ forloop.index }}, "name": {{ day.title | prepend: ": " | prepend: forloop.index | prepend: "Day " | jsonify }}, "description": {{ day.text | strip | jsonify }} }{% unless forloop.last %},{% endunless %}
+          {% endfor %}{% else %}{% for i in (1..7) %}{% assign key = "day_" | append: i | append: "_plan" %}{% if page[key] and page[key] != "" %}{% if i > 1 %},{% endif %}{ "@type": "ListItem", "position": {{ i }}, "name": "Day {{ i }}", "description": {{ page[key] | jsonify }} }{% endif %}{% endfor %}{% endif %}
+        ]
+      },
+      "provider": {
+        "@type": "TravelAgency",
+        "@id": "{{ site.url }}/#business",
+        "name": "Tour With Anand",
+        "url": "{{ site.url }}/",
+        "telephone": "+919400620615",
+        "image": "{{ site.url }}/images/anand-tour-with-anand.webp",
+        "address": { "@type": "PostalAddress", "addressLocality": "Kochi", "addressRegion": "Kerala", "addressCountry": "IN" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
       "itemListElement": [
-        {% if page.day_1_plan %}{ "@type": "ListItem", "position": 1, "name": "Day 1", "description": "{{ page.day_1_plan | escape }}" }{% endif %}
-        {% if page.day_2_plan %},{ "@type": "ListItem", "position": 2, "name": "Day 2", "description": "{{ page.day_2_plan | escape }}" }{% endif %}
-        {% if page.day_3_plan %},{ "@type": "ListItem", "position": 3, "name": "Day 3", "description": "{{ page.day_3_plan | escape }}" }{% endif %}
-        {% if page.day_4_plan %},{ "@type": "ListItem", "position": 4, "name": "Day 4", "description": "{{ page.day_4_plan | escape }}" }{% endif %}
-        {% if page.day_5_plan %},{ "@type": "ListItem", "position": 5, "name": "Day 5", "description": "{{ page.day_5_plan | escape }}" }{% endif %}
-        {% if page.day_6_plan %},{ "@type": "ListItem", "position": 6, "name": "Day 6", "description": "{{ page.day_6_plan | escape }}" }{% endif %}
-        {% if page.day_7_plan %},{ "@type": "ListItem", "position": 7, "name": "Day 7", "description": "{{ page.day_7_plan | escape }}" }{% endif %}
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "South India Tours", "item": "{{ site.url }}/south-india-tours/" },
+        { "@type": "ListItem", "position": 3, "name": {{ page.package_name | jsonify }}, "item": "{{ page_url }}" }
       ]
     },
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Tour With Anand",
-      "telephone": "+919400620615",
-      "image": "{{ site.url }}/images/places-to-visit-kerala-tour-packages.png"
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {% assign faq_n = 0 %}{% for i in (1..3) %}{% assign qk = "faq" | append: i | append: "_q" %}{% assign ak = "faq" | append: i | append: "_a" %}{% if page[qk] and page[qk] != "" %}{% if faq_n > 0 %},{% endif %}{ "@type": "Question", "name": {{ page[qk] | strip | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ page[ak] | strip | jsonify }} } }{% assign faq_n = faq_n | plus: 1 %}{% endif %}{% endfor %}
+        {% for f in d.faqs %}{% if faq_n > 0 or forloop.index > 1 %},{% endif %}{ "@type": "Question", "name": {{ f.q | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | jsonify }} } }{% endfor %}
+      ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {% if page.faq1_q and page.faq1_q != "" %}
-      {
-        "@type": "Question",
-        "name": "{{ page.faq1_q | escape }}",
-        "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq1_a | escape }}" }
-      }
-      {% endif %}
-      {% if page.faq2_q and page.faq2_q != "" %}
-      ,{
-        "@type": "Question",
-        "name": "{{ page.faq2_q | escape }}",
-        "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq2_a | escape }}" }
-      }
-      {% endif %}
-      {% if page.faq3_q and page.faq3_q != "" %}
-      ,{
-        "@type": "Question",
-        "name": "{{ page.faq3_q | escape }}",
-        "acceptedAnswer": { "@type": "Answer", "text": "{{ page.faq3_a | escape }}" }
-      }
-      {% endif %}
-    ]
-  }
-]
+  ]
+}
 </script>
-
-<style>
-  /* 
-   * NAMESPACED CSS FOR KERALA TOURS PAGE
-  */
-  .kt-wrapper, .kt-wrapper *, .kt-wrapper *::before, .kt-wrapper *::after {
-    box-sizing: border-box !important;
-  }
-
-  :root {
-    --kt-gold: #d4af37;
-    --kt-bg-main: #0a0b0e;
-    --kt-bg-card: #15181e;
-    --kt-bg-elevated: #1a1d24;
-    --kt-text-main: #e0e4eb;
-    --kt-text-muted: #a0a4ab;
-    --kt-border: rgba(212, 175, 55, 0.2);
-    --kt-radius: 12px;
-  }
-
-  .kt-wrapper {
-    background-color: var(--kt-bg-main);
-    color: var(--kt-text-main);
-    font-family: 'Inter', system-ui, sans-serif;
-    overflow-x: hidden;
-    width: 100%;
-    line-height: 1.8;
-  }
-
-  .kt-container {
-    width: 100%;
-    max-width: 1150px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .kt-section {
-    padding: 70px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .kt-bg-alt {
-    background: linear-gradient(180deg, #0f1115 0%, var(--kt-bg-main) 100%);
-  }
-
-  /* Hero Section */
-  .kt-hero {
-    position: relative;
-    width: 100%;
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 120px 20px 60px;
-    overflow: hidden;
-    text-align: center;
-    border-bottom: 1px solid var(--kt-border);
-  }
-
-  .kt-hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    opacity: 0.6;
-  }
-
-  .kt-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(10,11,14,0.3) 0%, rgba(10,11,14,0.95) 80%, var(--kt-bg-main) 100%);
-    z-index: 2;
-  }
-
-  .kt-hero-content {
-    position: relative;
-    z-index: 3;
-    max-width: 900px;
-  }
-
-  .kt-breadcrumb {
-    display: inline-block;
-    padding: 6px 16px;
-    background: rgba(212, 175, 55, 0.1);
-    color: var(--kt-gold);
-    border: 1px solid var(--kt-border);
-    border-radius: 30px;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    font-weight: 700;
-  }
-
-  .kt-hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 4.5vw, 4.2rem);
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-    margin-top: 0;
-  }
-
-  .kt-hero p {
-    font-size: 1.15rem;
-    color: var(--kt-text-muted);
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  /* Quick Facts */
-  .kt-facts-grid {
-    position: relative;
-    z-index: 10;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: -50px;
-    padding-bottom: 60px;
-  }
-
-  .kt-fact-item {
-    background: var(--kt-bg-card);
-    border: 1px solid var(--kt-border);
-    padding: 25px;
-    border-radius: var(--kt-radius);
-    text-align: center;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  }
-
-  .kt-fact-label {
-    display: block;
-    font-size: 12px;
-    color: var(--kt-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-
-  .kt-fact-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 19px;
-    color: var(--kt-gold);
-    font-weight: 600;
-  }
-
-  /* Main Layout */
-  .kt-main-layout {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 50px;
-    padding: 20px 0 60px 0;
-  }
-
-  .kt-content h2, .kt-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: #fff;
-    border-bottom: 1px solid var(--kt-border);
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-    margin-top: 0;
-  }
-
-  .kt-overview {
-    font-size: 1.1rem;
-    color: var(--kt-text-main);
-    margin-bottom: 50px;
-    background: var(--kt-bg-card);
-    padding: 30px;
-    border-radius: var(--kt-radius);
-    border: 1px solid rgba(255,255,255,0.05);
-  }
-
-  /* Vertical Timeline Itinerary */
-  .kt-timeline {
-    border-left: 2px solid var(--kt-border);
-    padding-left: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .kt-timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-  }
-
-  .kt-timeline-item:last-child {
-    margin-bottom: 0;
-  }
-
-  .kt-timeline-dot {
-    position: absolute;
-    left: -39px;
-    top: 6px;
-    width: 16px;
-    height: 16px;
-    background: var(--kt-gold);
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-  }
-
-  .kt-timeline-item h4 {
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    margin: 0 0 10px 0;
-  }
-
-  .kt-timeline-item p {
-    color: var(--kt-text-muted);
-    font-size: 1.05rem;
-    margin: 0;
-  }
-
-  /* Sticky Sidebar */
-  .kt-sidebar {
-    position: sticky;
-    top: 100px;
-    background: var(--kt-bg-elevated);
-    border: 1px solid var(--kt-border);
-    border-radius: var(--kt-radius);
-    padding: 35px 30px;
-    height: fit-content;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  }
-
-  .kt-sidebar h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    color: #fff;
-    margin-top: 0;
-    margin-bottom: 25px;
-    text-align: center;
-  }
-
-  .kt-inclusions {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 30px 0;
-  }
-
-  .kt-inclusions li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 15px;
-    color: var(--kt-text-main);
-    font-size: 0.95rem;
-  }
-
-  .kt-inclusions li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #25D366;
-    font-weight: bold;
-    font-size: 14px;
-  }
-
-  /* Special style for the About Us Link in the sidebar */
-  .kt-about-driver-link {
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 1px dotted var(--kt-gold);
-    transition: color 0.3s ease;
-  }
-  .kt-about-driver-link:hover {
-    color: var(--kt-gold);
-  }
-
-  .kt-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background: linear-gradient(135deg, var(--kt-gold), #b8860b);
-    color: #000;
-    padding: 18px;
-    font-size: 16px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 8px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .kt-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-  }
-
-  .kt-trust-badge {
-    text-align: center;
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    color: var(--kt-text-muted);
-    font-size: 0.85rem;
-  }
-
-  /* Fleet Grid Styles */
-  .kt-fleet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-  }
-
-  .kt-fleet-card {
-    background: var(--kt-bg-card);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: var(--kt-radius);
-    padding: 25px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-  }
-
-  .kt-fleet-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--kt-gold);
-  }
-
-  .kt-fleet-card h4 {
-    color: var(--kt-gold);
-    font-size: 1.25rem;
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-family: 'Playfair Display', serif;
-  }
-
-  .kt-fleet-cap {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--kt-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .kt-fleet-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .kt-fleet-list li {
-    padding-left: 20px;
-    position: relative;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    color: var(--kt-text-main);
-  }
-
-  .kt-fleet-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #25D366;
-    font-weight: bold;
-  }
-
-  /* FAQ Accordion */
-  .kt-faq details {
-    background-color: var(--kt-bg-card);
-    border: 1px solid var(--kt-border);
-    margin-bottom: 15px;
-    padding: 20px;
-    border-radius: var(--kt-radius);
-    transition: all 0.3s ease;
-  }
-
-  .kt-faq details:hover {
-    border-color: var(--kt-gold);
-  }
-
-  .kt-faq summary {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    outline: none;
-  }
-
-  .kt-faq summary::-webkit-details-marker { display: none; }
-  .kt-faq summary::after { content: '+'; color: var(--kt-gold); font-size: 1.6rem; font-weight: 300; }
-  .kt-faq details[open] summary::after { content: '−'; }
-  .kt-faq p { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--kt-text-muted); line-height: 1.7; }
-
-  /* Internal Links / About Us Section */
-  .kt-internal-links {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .kt-link-btn {
-    display: inline-block;
-    padding: 16px 35px;
-    background: transparent;
-    border: 1px solid var(--kt-gold);
-    color: var(--kt-gold);
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-  }
-
-  .kt-link-btn:hover {
-    background: rgba(212, 175, 55, 0.1);
-  }
-
-  /* Mobile Adjustments */
-  @media (max-width: 992px) {
-    .kt-main-layout { grid-template-columns: 1fr; gap: 40px; }
-    .kt-sidebar { position: relative; top: 0; }
-  }
-
-  @media (max-width: 768px) {
-    .kt-hero { min-height: auto; padding-top: 140px; padding-bottom: 80px; }
-    .kt-facts-grid { grid-template-columns: 1fr 1fr; padding: 0 20px; }
-    .kt-timeline { padding-left: 20px; }
-    .kt-timeline-dot { left: -29px; }
-    .kt-fleet-grid { grid-template-columns: 1fr; }
-  }
-</style>
 
 <div class="kt-wrapper">
 
-  <!-- 1. Hero Section -->
-  <section class="kt-hero" aria-label="Tour Package Hero">
-    <img src="{{ page.hero_image | default: '/Kerala%20Tour%20Package%20from%20Kochi%20airport.png' }}" alt="{{ page.package_name }}" class="kt-hero-bg" loading="eager" width="1920" height="1080">
-    <div class="kt-hero-overlay"></div>
-    
-    <div class="kt-container kt-hero-content">
-      <span class="kt-breadcrumb">South India Tours / Kerala Packages</span>
-      <h1>{{ page.package_name | default: "Premium Kerala Tour Package" }}</h1>
-      <p>{{ page.meta_desc }}</p>
+  <!-- 1. Hero -->
+  <section class="kt-hero" aria-label="{{ page.package_name }}">
+    <div class="kt-hero-inner">
+      <div class="kt-hero-text">
+        <nav class="kt-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/south-india-tours/">South India Tours</a> › <span>{{ page.package_name }}</span></nav>
+        <span class="kt-eyebrow">Private tour · {{ page.duration }}</span>
+        <h1>{{ h1 }}</h1>
+        <p class="kt-lead">{{ d.lead | default: page.meta_desc }}</p>
+        <div class="kt-ctas">
+          <a href="{{ wa_link }}" class="kt-btn" target="_blank" rel="noopener" data-track="whatsapp_click" data-src="package_{{ page.package_slug }}_hero">Get a Quote on WhatsApp</a>
+          <a href="tel:+919400620615" class="kt-btn-outline" data-track="call_click" data-src="package_{{ page.package_slug }}_hero">Call +91 94006 20615</a>
+        </div>
+        <ul class="kt-ticks">
+          <li>Personal welcome at Kochi Airport</li>
+          <li>Fixed price: fuel, tolls &amp; parking included</li>
+          <li>English-speaking driver</li>
+          <li>Itinerary changed to suit you</li>
+        </ul>
+      </div>
+      <figure class="kt-hero-img">
+        <img src="{{ d.image | default: page.hero_image }}" alt="{{ d.image_alt | default: page.package_name }}" width="560" height="373" fetchpriority="high">
+        {% if d.image_caption %}<figcaption>{{ d.image_caption }}</figcaption>{% endif %}
+      </figure>
     </div>
   </section>
 
-  <!-- 2. Quick Facts -->
+  <!-- 2. Quick facts -->
   <div class="kt-container">
     <div class="kt-facts-grid">
-      <div class="kt-fact-item">
-        <span class="kt-fact-label">Duration</span>
-        <span class="kt-fact-value">{{ page.duration | default: "Custom" }}</span>
-      </div>
-      <div class="kt-fact-item">
-        <span class="kt-fact-label">Route</span>
-        <span class="kt-fact-value" style="font-size: 16px;">{{ page.destinations | default: "Kochi & Beyond" }}</span>
-      </div>
-      <div class="kt-fact-item">
-        <span class="kt-fact-label">Ideal For</span>
-        <span class="kt-fact-value" style="font-size: 16px;">{{ page.ideal_for | default: "Families & Groups" }}</span>
-      </div>
-      <div class="kt-fact-item">
-        <span class="kt-fact-label">Premium Vehicle</span>
-        <span class="kt-fact-value" style="font-size: 16px;">{{ page.premium_vehicle | default: "Chauffeur Driven" }}</span>
-      </div>
+      <div class="kt-fact-item"><span class="kt-fact-label">Duration</span><span class="kt-fact-value">{{ page.duration | default: "Custom" }}</span></div>
+      <div class="kt-fact-item"><span class="kt-fact-label">Route</span><span class="kt-fact-value">{{ page.destinations | default: "Kochi &amp; Beyond" }}</span></div>
+      <div class="kt-fact-item"><span class="kt-fact-label">Ideal for</span><span class="kt-fact-value">{{ page.ideal_for | default: "Families &amp; Groups" }}</span></div>
+      <div class="kt-fact-item"><span class="kt-fact-label">Vehicle</span><span class="kt-fact-value">{{ page.premium_vehicle | default: "Chauffeur Driven" }}</span></div>
     </div>
   </div>
 
-  <!-- 3. Main Content & Sidebar -->
+  <!-- 3. Main content + sidebar -->
   <div class="kt-container kt-main-layout">
-    
-    <!-- Left Column: Itinerary -->
     <div class="kt-content">
-      
-      <h2>Tour Overview</h2>
-      <div class="kt-overview">
-        <p style="margin:0;">{{ page.package_overview }} Our specialized packages ensure international tourists and NRIs experience a completely hassle-free, secure, and luxurious journey across Kerala with dedicated English-speaking chauffeurs and VIP Kochi Airport pickup.</p>
-      </div>
 
-      <h2>Day-by-Day Itinerary</h2>
-      <div class="kt-timeline">
-        
-        {% if page.day_1_plan and page.day_1_plan != "" %}
-        <div class="kt-timeline-item">
-          <div class="kt-timeline-dot"></div>
-          <h4>Day 1</h4>
-          <p>{{ page.day_1_plan }}</p>
-        </div>
-        {% endif %}
-        
-        {% if page.day_2_plan and page.day_2_plan != "" %}
-        <div class="kt-timeline-item">
-          <div class="kt-timeline-dot"></div>
-          <h4>Day 2</h4>
-          <p>{{ page.day_2_plan }}</p>
-        </div>
-        {% endif %}
-        
-        {% if page.day_3_plan and page.day_3_plan != "" %}
-        <div class="kt-timeline-item">
-          <div class="kt-timeline-dot"></div>
-          <h4>Day 3</h4>
-          <p>{{ page.day_3_plan }}</p>
-        </div>
-        {% endif %}
-        
-        {% if page.day_4_plan and page.day_4_plan != "" %}
-        <div class="kt-timeline-item">
-          <div class="kt-timeline-dot"></div>
-          <h4>Day 4</h4>
-          <p>{{ page.day_4_plan }}</p>
-        </div>
-        {% endif %}
-        
-        {% if page.day_5_plan and page.day_5_plan != "" %}
-        <div class="kt-timeline-item">
-          <div class="kt-timeline-dot"></div>
-          <h4>Day 5</h4>
-          <p>{{ page.day_5_plan }}</p>
-        </div>
-        {% endif %}
-        
-        {% if page.day_6_plan and page.day_6_plan != "" %}
-        <div class="kt-timeline-item">
-          <div class="kt-timeline-dot"></div>
-          <h4>Day 6</h4>
-          <p>{{ page.day_6_plan }}</p>
-        </div>
-        {% endif %}
-        
-        {% if page.day_7_plan and page.day_7_plan != "" %}
-        <div class="kt-timeline-item">
-          <div class="kt-timeline-dot"></div>
-          <h4>Day 7</h4>
-          <p>{{ page.day_7_plan }}</p>
-        </div>
-        {% endif %}
+      <section class="kt-block">
+        <h2>Tour overview</h2>
+        <p>{{ page.package_overview }}</p>
+        {% for para in d.overview %}<p>{{ para }}</p>{% endfor %}
+      </section>
 
-      </div>
+      {% if d.highlights %}
+      <section class="kt-block">
+        <h2>Tour highlights</h2>
+        <ul class="kt-highlights">
+          {% for h in d.highlights %}<li>{{ h }}</li>{% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      <section class="kt-block">
+        <h2>Day-by-day itinerary</h2>
+        <ol class="kt-timeline">
+          {% if d.days %}
+            {% for day in d.days %}
+            <li class="kt-timeline-item">
+              <span class="kt-day-num">Day {{ forloop.index }}</span>
+              <h3>{{ day.title }}</h3>
+              <p>{{ day.text }}</p>
+              {% if day.drive or day.stay %}
+              <div class="kt-day-meta">
+                {% if day.drive %}<span>🚗 {{ day.drive }}</span>{% endif %}
+                {% if day.stay %}<span>🛏 Overnight: {{ day.stay }}</span>{% endif %}
+                {% if day.link %}<a href="{{ day.link }}">Route details</a>{% endif %}
+              </div>
+              {% endif %}
+            </li>
+            {% endfor %}
+          {% else %}
+            {% for i in (1..7) %}{% assign key = "day_" | append: i | append: "_plan" %}
+            {% if page[key] and page[key] != "" %}
+            <li class="kt-timeline-item"><span class="kt-day-num">Day {{ i }}</span><p>{{ page[key] }}</p></li>
+            {% endif %}{% endfor %}
+          {% endif %}
+        </ol>
+        <p class="kt-note">Every day can be changed: add a night, skip a stop or reverse the route. Drive times are approximate and depend on traffic and stops.</p>
+      </section>
+
+      {% if d.best_time %}
+      <section class="kt-block">
+        <h2>Best time for this tour</h2>
+        <p>{{ d.best_time }}</p>
+      </section>
+      {% endif %}
+
     </div>
 
-    <!-- Right Column: Sticky Sidebar -->
-    <aside>
+    <!-- Sidebar -->
+    <aside class="kt-aside">
       <div class="kt-sidebar">
-        <h3>Package Inclusions</h3>
-        
+        <h2 class="kt-side-title">What's included</h2>
         <ul class="kt-inclusions">
           {% assign inclusions_array = page.inclusions | split: ", " %}
-          {% for item in inclusions_array %}
-            <li>{{ item }}</li>
-          {% endfor %}
-          <li><a href="https://tourwithanand.com/about-us/" class="kt-about-driver-link" target="_blank" rel="noopener">Verified English-Speaking Driver (About Anand)</a></li>
-          <li>24/7 WhatsApp Ground Support</li>
-          <li>VIP Airport Meet & Greet</li>
+          {% for item in inclusions_array %}<li>{{ item }}</li>{% endfor %}
+          <li><a href="/about-us/" class="kt-about-driver-link">Verified English-speaking driver (about Anand)</a></li>
+          <li>24/7 WhatsApp ground support</li>
+          <li>VIP airport meet &amp; greet</li>
         </ul>
-        
-        <a href="https://wa.me/919400620615?text=Hello%20Tour%20With%20Anand,%20I%20am%20interested%20in%20the%20{{ page.package_name | url_encode }}.%20Please%20share%20the%20detailed%20quote." class="kt-btn" target="_blank" rel="noopener">Request Custom Quote</a>
-        
-        <div class="kt-trust-badge">
-          No hidden fees. Safe & reliable transport dedicated to international tourists and families.
-        </div>
+        {% if d.not_included %}
+        <h3 class="kt-side-sub">Not included</h3>
+        <ul class="kt-exclusions">
+          {% for item in d.not_included %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        <a href="{{ wa_link }}" class="kt-btn kt-btn-block" target="_blank" rel="noopener" data-track="whatsapp_click" data-src="package_{{ page.package_slug }}_sidebar">Request a Custom Quote</a>
+        <div class="kt-trust-badge">No hidden fees. One price agreed on WhatsApp before you fly.</div>
       </div>
     </aside>
-
   </div>
 
-  <!-- 4. Premium Fleet Section -->
+  <!-- 4. Fleet -->
   <section class="kt-section kt-bg-alt">
     <div class="kt-container">
-      <h2 style="text-align: center; border: none; padding-bottom: 0;">Our Premium Tour Fleet</h2>
-      <p style="text-align: center; color: var(--kt-text-muted); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">Select the perfect vehicle for your Kerala itinerary. All our cars are meticulously cleaned, fully air-conditioned, and driven by verified English-speaking professionals.</p>
-      
+      <h2 class="kt-center">Choose your vehicle</h2>
+      <p class="kt-center kt-sub">All our cars are cleaned before every trip, fully air-conditioned and driven by verified English-speaking professionals.</p>
       <div class="kt-fleet-grid">
-        
-        <div class="kt-fleet-card">
-          <h4>Sedan (Etios / Dzire)</h4>
-          <span class="kt-fleet-cap">Ideal for 1-3 Passengers</span>
-          <ul class="kt-fleet-list">
-            <li>Perfect for couples or solo travelers</li>
-            <li>Cost-effective and highly comfortable</li>
-            <li>Boot space for standard luggage</li>
-          </ul>
-        </div>
-
-        <div class="kt-fleet-card">
-          <h4>Maruti Ertiga</h4>
-          <span class="kt-fleet-cap">Ideal for 4-5 Passengers</span>
-          <ul class="kt-fleet-list">
-            <li>Spacious MUV for small families</li>
-            <li>Flexible rear seating for luggage</li>
-            <li>Excellent AC cooling</li>
-          </ul>
-        </div>
-
-        <div class="kt-fleet-card" style="border-color: var(--kt-gold);">
-          <h4>Innova Crysta</h4>
-          <span class="kt-fleet-cap">Ideal for 6-7 Passengers</span>
-          <ul class="kt-fleet-list">
-            <li>The gold standard for family comfort</li>
-            <li>Premium suspension for ghat roads</li>
-            <li>Dedicated rear AC controls</li>
-          </ul>
-        </div>
-
-        <div class="kt-fleet-card">
-          <h4>Tempo Traveller</h4>
-          <span class="kt-fleet-cap">Ideal for 9-26 Passengers</span>
-          <ul class="kt-fleet-list">
-            <li>Best choice for large extended families</li>
-            <li>Deep push-back seats with armrests</li>
-            <li>Heavy-duty rooftop luggage carrier</li>
-          </ul>
-        </div>
-
-        <div class="kt-fleet-card">
-          <h4>Force Urbania VIP</h4>
-          <span class="kt-fleet-cap">Ideal for 9-17 Passengers</span>
-          <ul class="kt-fleet-list">
-            <li>Unmatched luxury for NRIs & executives</li>
-            <li>Airline-style reclining captain seats</li>
-            <li>Stand-up cabin height & wide windows</li>
-          </ul>
-        </div>
-
+        <div class="kt-fleet-card"><h3>Sedan (Etios / Dzire)</h3><span class="kt-fleet-cap">1–3 passengers</span><ul class="kt-fleet-list"><li>Couples and solo travellers</li><li>Most economical option</li><li>Boot space for standard luggage</li></ul></div>
+        <div class="kt-fleet-card"><h3>Maruti Ertiga</h3><span class="kt-fleet-cap">4–5 passengers</span><ul class="kt-fleet-list"><li>Spacious MUV for small families</li><li>Flexible rear seating for luggage</li><li>Good AC cooling</li></ul></div>
+        <div class="kt-fleet-card kt-fleet-top"><h3>Innova Crysta</h3><span class="kt-fleet-cap">6–7 passengers</span><ul class="kt-fleet-list"><li>Our most popular tour car</li><li>Smooth on hill roads</li><li>Rear AC controls</li></ul></div>
+        <div class="kt-fleet-card"><h3>Tempo Traveller</h3><span class="kt-fleet-cap">9–26 passengers</span><ul class="kt-fleet-list"><li>Large families and groups</li><li>Push-back seats</li><li>Roof carrier for luggage</li></ul></div>
+        <div class="kt-fleet-card"><h3>Force Urbania</h3><span class="kt-fleet-cap">9–17 passengers</span><ul class="kt-fleet-list"><li>Premium group travel</li><li>Reclining captain seats</li><li>Stand-up cabin height</li></ul></div>
       </div>
     </div>
   </section>
 
-  <!-- 5. Dynamic FAQ Section (Fixed format) -->
-  {% if page.faq1_q and page.faq1_q != "" %}
+  <!-- 5. FAQ -->
   <section class="kt-section">
-    <div class="kt-container">
-      <h2 style="text-align: center; border: none; padding-bottom: 0;">Frequently Asked Questions</h2>
-      <div class="kt-faq" style="max-width: 850px; margin: 30px auto 0;">
-        
-        <details>
-          <summary>{{ page.faq1_q }}</summary>
-          <p>{{ page.faq1_a }}</p>
-        </details>
-        
-        {% if page.faq2_q and page.faq2_q != "" %}
-        <details>
-          <summary>{{ page.faq2_q }}</summary>
-          <p>{{ page.faq2_a }}</p>
-        </details>
-        {% endif %}
-        
-        {% if page.faq3_q and page.faq3_q != "" %}
-        <details>
-          <summary>{{ page.faq3_q }}</summary>
-          <p>{{ page.faq3_a }}</p>
-        </details>
-        {% endif %}
-        
+    <div class="kt-container kt-narrow">
+      <h2 class="kt-center">Frequently asked questions</h2>
+      <div class="kt-faq">
+        {% for i in (1..3) %}{% assign qk = "faq" | append: i | append: "_q" %}{% assign ak = "faq" | append: i | append: "_a" %}
+        {% if page[qk] and page[qk] != "" %}<details><summary>{{ page[qk] }}</summary><p>{{ page[ak] }}</p></details>{% endif %}
+        {% endfor %}
+        {% for f in d.faqs %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}
       </div>
     </div>
   </section>
-  {% endif %}
 
-  <!-- 6. About Anand / English Speaking Driver Section -->
-  <section class="kt-section kt-bg-alt" style="padding: 50px 0;">
-    <div class="kt-container kt-internal-links">
-      <p style="color: var(--kt-text-muted); font-size: 1.1rem; margin-bottom: 20px;">Want to know who will be driving you safely across Kerala?</p>
-      <a href="https://tourwithanand.com/about-us/" class="kt-link-btn" target="_blank" rel="noopener">Learn About Anand - Your English-Speaking Driver</a>
+  <!-- 6. Related packages + useful links -->
+  <section class="kt-section kt-bg-alt">
+    <div class="kt-container">
+      {% if d.related %}
+      <h2 class="kt-center">Similar Kerala tour packages</h2>
+      <div class="kt-related">
+        {% for slug in d.related %}{% assign rp = site.tour_packages | where: "package_slug", slug | first %}
+        {% if rp %}<a class="kt-rel-card" href="{{ rp.url }}"><span class="kt-rel-dur">{{ rp.duration }}</span><strong>{{ rp.package_name }}</strong><span class="kt-rel-route">{{ rp.destinations }}</span><span class="kt-rel-more">View itinerary →</span></a>{% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="kt-links">
+        <p><strong>Just need a transfer?</strong> See our <a href="/taxi/kochi-airport/">24/7 Kochi Airport taxi</a> and <a href="/kochi-airport-tempo-traveller/">Tempo Traveller hire</a>, or browse <a href="/south-india-tours/">all South India tours</a>.</p>
+        <p><strong>Travelling from abroad?</strong> Kerala tours from the <a href="/kerala-tours-from-uk/">UK</a>, <a href="/kerala-tours-from-usa/">USA</a>, <a href="/kerala-tours-from-australia/">Australia</a>, <a href="/kerala-tours-from-canada/">Canada</a>, <a href="/kerala-tours-from-singapore/">Singapore</a>, <a href="/kerala-tours-from-malaysia/">Malaysia</a> and the <a href="/kerala-tours-from-uae/">UAE</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Final CTA / About Anand -->
+  <section class="kt-section kt-final">
+    <div class="kt-container kt-narrow kt-center">
+      <h2>Plan this tour with Anand</h2>
+      <p class="kt-sub">Send your dates and number of travellers on WhatsApp. Anand replies personally with a route and a fixed price, and can video call you before you book.</p>
+      <div class="kt-ctas kt-ctas-center">
+        <a href="{{ wa_link }}" class="kt-btn" target="_blank" rel="noopener" data-track="whatsapp_click" data-src="package_{{ page.package_slug }}_final">Get a Quote on WhatsApp</a>
+        <a href="/about-us/" class="kt-btn-outline">Meet Anand, your host</a>
+      </div>
     </div>
   </section>
 
 </div>
+
+<style>
+.kt-wrapper, .kt-wrapper *, .kt-wrapper *::before, .kt-wrapper *::after { box-sizing: border-box; }
+.kt-wrapper { background: #0a0b0e; color: #e0e4eb; font-family: 'Inter', system-ui, sans-serif; overflow-x: hidden; width: 100%; line-height: 1.75; }
+.kt-container { width: 100%; max-width: 1150px; margin: 0 auto; padding: 0 20px; }
+.kt-narrow { max-width: 860px; }
+.kt-center { text-align: center; }
+.kt-sub { color: #a0a4ab; font-size: 1.05rem; max-width: 760px; margin: 0 auto 10px; }
+
+/* Hero */
+.kt-hero { margin-top: 80px; padding: 50px 20px 90px; background: radial-gradient(900px 500px at 85% 40%, rgba(255,204,0,.12), rgba(255,204,0,0) 60%), #0a0b0e; border-bottom: 1px solid rgba(255,204,0,.15); }
+.kt-hero-inner { max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+.kt-crumbs { font-size: 13px; color: #7a7e85; margin-bottom: 16px; }
+.kt-crumbs a { color: #a0a4ab; text-decoration: none; }
+.kt-crumbs a:hover { color: #ffcc00; }
+.kt-crumbs span { color: #ffcc00; }
+.kt-eyebrow { display: inline-block; color: #ffcc00; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+.kt-hero h1 { font-family: 'Playfair Display', serif; color: #fff; font-size: clamp(2rem, 3.6vw, 3.1rem); line-height: 1.15; margin: 0 0 16px; }
+.kt-lead { color: #dcdfe4; font-size: 1.12rem; line-height: 1.7; margin: 0 0 26px; }
+.kt-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.kt-ctas-center { justify-content: center; margin-top: 22px; }
+.kt-btn, .kt-btn-outline { display: inline-block; padding: 15px 26px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; text-align: center; transition: transform .25s, box-shadow .25s, background .25s; }
+.kt-btn { background: linear-gradient(135deg, #ffcc00, #d4a500); color: #000; }
+.kt-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,204,0,.3); }
+.kt-btn-outline { border: 1px solid #ffcc00; color: #ffcc00; }
+.kt-btn-outline:hover { background: rgba(255,204,0,.1); }
+.kt-btn-block { display: block; width: 100%; }
+.kt-ticks { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+.kt-ticks li { color: #dcdfe4; font-size: 14px; padding-left: 22px; position: relative; line-height: 1.5; }
+.kt-ticks li::before { content: '✓'; position: absolute; left: 0; color: #ffcc00; font-weight: 700; }
+.kt-hero-img { margin: 0; }
+.kt-hero-img img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1px solid rgba(255,204,0,.3); box-shadow: 0 20px 40px rgba(0,0,0,.5); }
+.kt-hero-img figcaption { color: #8d929a; font-size: 13px; margin-top: 10px; text-align: center; }
+
+/* Facts */
+.kt-facts-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: -45px; }
+.kt-fact-item { background: #15181e; border: 1px solid rgba(255,204,0,.2); padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,.45); }
+.kt-fact-label { display: block; font-size: 11.5px; color: #a0a4ab; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.kt-fact-value { display: block; font-size: 15.5px; color: #ffcc00; font-weight: 600; line-height: 1.4; }
+
+/* Main */
+.kt-main-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 50px; padding-top: 50px; padding-bottom: 60px; align-items: start; }
+.kt-block { margin-bottom: 44px; }
+.kt-block h2, .kt-section h2 { font-family: 'Playfair Display', serif; font-size: 30px; line-height: 1.25; color: #fff; margin: 0 0 18px; }
+.kt-block p { color: #b4b8bf; font-size: 16.5px; line-height: 1.85; margin: 0 0 14px; }
+.kt-block a { color: #ffcc00; }
+.kt-highlights { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.kt-highlights li { background: #15181e; border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 14px 16px 14px 42px; position: relative; color: #dcdfe4; font-size: 15px; line-height: 1.5; }
+.kt-highlights li::before { content: '★'; position: absolute; left: 16px; top: 14px; color: #ffcc00; }
+
+.kt-timeline { list-style: none; margin: 0; padding: 0 0 0 28px; border-left: 2px solid rgba(255,204,0,.25); }
+.kt-timeline-item { position: relative; margin-bottom: 30px; }
+.kt-timeline-item:last-child { margin-bottom: 0; }
+.kt-timeline-item::before { content: ''; position: absolute; left: -37px; top: 6px; width: 16px; height: 16px; background: #ffcc00; border-radius: 50%; box-shadow: 0 0 10px rgba(255,204,0,.5); }
+.kt-day-num { display: block; color: #ffcc00; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 2px; }
+.kt-timeline-item h3 { font-family: 'Playfair Display', serif; color: #fff; font-size: 21px; margin: 0 0 8px; line-height: 1.3; }
+.kt-timeline-item p { margin: 0 0 10px; }
+.kt-day-meta { display: flex; flex-wrap: wrap; gap: 8px 10px; font-size: 13px; }
+.kt-day-meta span { background: #15181e; border: 1px solid rgba(255,255,255,.08); color: #c8ccd2; padding: 4px 10px; border-radius: 20px; }
+.kt-day-meta a { color: #ffcc00; padding: 4px 2px; }
+.kt-note { font-size: 14px !important; color: #8d929a !important; margin-top: 22px !important; }
+
+/* Sidebar */
+.kt-aside { position: sticky; top: 100px; }
+.kt-sidebar { background: #1a1d24; border: 1px solid rgba(255,204,0,.2); border-radius: 12px; padding: 30px 26px; box-shadow: 0 20px 40px rgba(0,0,0,.45); }
+.kt-side-title { font-family: 'Playfair Display', serif; font-size: 23px !important; color: #fff; margin: 0 0 18px !important; text-align: center; }
+.kt-side-sub { font-size: 15px; color: #fff; margin: 6px 0 12px; text-transform: uppercase; letter-spacing: 1px; }
+.kt-inclusions, .kt-exclusions { list-style: none; padding: 0; margin: 0 0 22px; }
+.kt-inclusions li, .kt-exclusions li { position: relative; padding-left: 24px; margin-bottom: 11px; font-size: 14.5px; line-height: 1.5; color: #dcdfe4; }
+.kt-inclusions li::before { content: '✓'; position: absolute; left: 0; color: #25D366; font-weight: 700; }
+.kt-exclusions li { color: #a0a4ab; }
+.kt-exclusions li::before { content: '–'; position: absolute; left: 4px; color: #a0a4ab; }
+.kt-about-driver-link { color: #fff; text-decoration: none; border-bottom: 1px dotted #ffcc00; }
+.kt-about-driver-link:hover { color: #ffcc00; }
+.kt-trust-badge { text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.06); color: #a0a4ab; font-size: 13.5px; line-height: 1.6; }
+
+/* Sections */
+.kt-section { padding: 64px 0; border-top: 1px solid rgba(255,255,255,.05); }
+.kt-bg-alt { background: linear-gradient(180deg, #0f1115 0%, #0a0b0e 100%); }
+.kt-fleet-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 32px; }
+.kt-fleet-card { background: #15181e; border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 22px; }
+.kt-fleet-top { border-color: #ffcc00; }
+.kt-fleet-card h3 { color: #ffcc00; font-size: 1.1rem; margin: 0 0 4px; font-family: 'Playfair Display', serif; }
+.kt-fleet-cap { display: block; font-size: .8rem; color: #a0a4ab; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.06); }
+.kt-fleet-list { list-style: none; padding: 0; margin: 0; }
+.kt-fleet-list li { padding-left: 18px; position: relative; margin-bottom: 8px; font-size: .9rem; line-height: 1.5; color: #dcdfe4; }
+.kt-fleet-list li::before { content: '✓'; position: absolute; left: 0; color: #25D366; font-weight: 700; }
+
+.kt-faq { margin-top: 28px; }
+.kt-faq details { background: #15181e; border: 1px solid rgba(255,204,0,.18); margin-bottom: 12px; padding: 18px 20px; border-radius: 12px; }
+.kt-faq details[open], .kt-faq details:hover { border-color: #ffcc00; }
+.kt-faq summary { font-size: 1.05rem; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 14px; color: #fff; }
+.kt-faq summary::-webkit-details-marker { display: none; }
+.kt-faq summary::after { content: '+'; color: #ffcc00; font-size: 1.5rem; font-weight: 300; flex-shrink: 0; }
+.kt-faq details[open] summary::after { content: '−'; }
+.kt-faq p { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.06); color: #b4b8bf; line-height: 1.75; }
+
+.kt-related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0 34px; }
+.kt-rel-card { display: flex; flex-direction: column; gap: 6px; text-decoration: none; background: #15181e; border: 1px solid rgba(255,255,255,.07); border-radius: 12px; padding: 20px 22px; transition: border-color .3s, transform .3s; }
+.kt-rel-card:hover { border-color: #ffcc00; transform: translateY(-3px); }
+.kt-rel-dur { color: #ffcc00; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
+.kt-rel-card strong { color: #fff; font-size: 17px; line-height: 1.35; }
+.kt-rel-route { color: #a0a4ab; font-size: 14px; }
+.kt-rel-more { color: #ffcc00; font-size: 14px; margin-top: 4px; }
+.kt-links p { color: #b4b8bf; font-size: 15.5px; line-height: 1.8; text-align: center; max-width: 860px; margin: 0 auto 10px; }
+.kt-links a { color: #ffcc00; }
+.kt-final h2 { margin-bottom: 12px; }
+
+@media (max-width: 1100px) {
+  .kt-fleet-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 992px) {
+  .kt-hero-inner { grid-template-columns: 1fr; gap: 28px; }
+  .kt-hero-img { max-width: 560px; }
+  .kt-main-layout { grid-template-columns: 1fr; gap: 10px; }
+  .kt-aside { position: static; }
+  .kt-facts-grid { grid-template-columns: 1fr 1fr; }
+  .kt-related { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .kt-hero { padding: 26px 18px 76px; }
+  .kt-lead { font-size: 1.02rem; }
+  .kt-ctas .kt-btn, .kt-ctas .kt-btn-outline { flex: 1 1 100%; }
+  .kt-ticks { grid-template-columns: 1fr; }
+  .kt-facts-grid { gap: 10px; }
+  .kt-fact-item { padding: 14px 10px; }
+  .kt-fact-value { font-size: 14px; }
+  .kt-main-layout { padding-top: 36px; }
+  .kt-block h2, .kt-section h2 { font-size: 25px; }
+  .kt-highlights { grid-template-columns: 1fr; }
+  .kt-timeline { padding-left: 22px; }
+  .kt-timeline-item::before { left: -31px; }
+  .kt-fleet-grid { grid-template-columns: 1fr 1fr; }
+  .kt-section { padding: 48px 0; }
+}
+@media (max-width: 480px) {
+  .kt-fleet-grid { grid-template-columns: 1fr; }
+}
+</style>

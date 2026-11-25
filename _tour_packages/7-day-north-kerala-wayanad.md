@@ -1,6 +1,8 @@
 ---
 layout: tour_page
 package_slug: "7-day-north-kerala-wayanad"
+title: "7-Day North Kerala & Wayanad Tour"
+description: "7-day North Kerala tour: Calicut, Wayanad, Edakkal Caves, Muthanga and Beypore by private car. Quiet routes, Kochi Airport pickup, fixed price."
 package_name: "7-Day Premium North Kerala & Wayanad Tour"
 duration: "6 Nights / 7 Days"
 destinations: "Kochi - Calicut - Wayanad - Kochi"

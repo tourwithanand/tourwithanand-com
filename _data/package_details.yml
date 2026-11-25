@@ -1,0 +1,643 @@
+# Rich content for the tour package pages (_tour_packages/*.md, layout tour_page).
+# Keyed by package_slug. The layout falls back to the old front-matter fields when a key is missing.
+
+5-day-kerala-family-package:
+  h1: "5-Day Kerala Family Tour Package: Munnar, Thekkady & Alleppey"
+  image: /images/guest-tour-with-anand-11.webp
+  image_alt: "Family with children on a private Kerala tour with Tour With Anand"
+  image_caption: "A family on tour with Anand"
+  lead: >-
+    Tea hills, a spice-country wildlife park and a night on a private houseboat, all in five unhurried days.
+    Anand meets you at Kochi Airport and the same English-speaking driver stays with your family for the whole trip.
+  overview:
+    - >-
+      This is our most-booked first-time Kerala itinerary for families. It covers the three places most visitors
+      come for: the tea estates of Munnar, the Periyar forest around Thekkady and the backwaters of Alleppey. Drives are
+      kept to three or four hours a day, with stops for waterfalls, tea and toilets, so it works for small children and grandparents alike.
+    - >-
+      You travel in a private, air-conditioned Innova Crysta, or a Force Urbania if you are a bigger group. Fuel, tolls, parking and the
+      driver's allowance are all in the price you agree before you fly, so there is nothing to haggle over on the road.
+  highlights:
+    - "Cheeyappara and Valara waterfalls on the drive up to Munnar"
+    - "Eravikulam National Park, home of the Nilgiri tahr"
+    - "Tea Museum and tea-estate viewpoints in Munnar"
+    - "Spice plantation walk and Periyar Lake in Thekkady"
+    - "Private houseboat night on the Alleppey backwaters"
+    - "Same driver from airport arrival to departure"
+  days:
+    - title: "Kochi Airport to Munnar"
+      text: >-
+        Anand or your driver meets you at the arrivals exit with a name board. On the climb into the hills you stop at the Cheeyappara and Valara
+        waterfalls and a spice garden, then check in to your Munnar hotel in time for a cool evening walk.
+      drive: "110 km · about 3.5 hrs"
+      link: /taxi/kochi-airport-to-munnar/
+      stay: Munnar
+    - title: "Munnar sightseeing"
+      text: >-
+        Morning at Eravikulam National Park to see the Nilgiri tahr and the Anamudi hills, then the Tea Museum, Mattupetty Dam and Echo Point.
+        Your driver plans the order around queues and the weather.
+      stay: Munnar
+    - title: "Munnar to Thekkady"
+      text: >-
+        A scenic drive through cardamom country to Thekkady. In the afternoon, a guided spice plantation walk; in the evening, an optional
+        Kathakali or Kalaripayattu show in Kumily.
+      drive: "90 km · about 3 hrs"
+      stay: Thekkady
+    - title: "Thekkady to Alleppey houseboat"
+      text: >-
+        Early boat ride on Periyar Lake (subject to availability), then down to the plains to board your private houseboat around noon.
+        Cruise the canals with lunch, dinner and breakfast cooked on board.
+      drive: "140 km · about 4 hrs"
+      link: /taxi/kochi-airport-to-alleppey/
+      stay: "Houseboat, Alleppey"
+    - title: "Alleppey to Kochi Airport"
+      text: >-
+        Breakfast on the water, check out around 9 am and drive back to Kochi Airport. With a late flight there is time for Fort Kochi or shopping on the way.
+      drive: "85 km · about 2.5 hrs"
+  best_time: >-
+    September to March is the most comfortable season: cool in Munnar, dry for the houseboat. April and May are hot on the plains but pleasant in the
+    hills. June to August is monsoon: green and quiet, with lower hotel rates and some rain every day.
+  not_included:
+    - "Hotels and houseboat (we can book them for you, or you book your own)"
+    - "Entry tickets, boat rides and shows"
+    - "Meals outside the houseboat"
+  faqs:
+    - q: "Can we do this tour with a baby or toddler?"
+      a: "Yes. Tell us the child's age when you book and we will fit a child seat on request, keep drives short and plan stops every 60 to 90 minutes."
+    - q: "Can we add Fort Kochi or a beach day?"
+      a: "Yes. Most families add one night in Fort Kochi or at Marari Beach to make it a 6-day trip. We adjust the route and quote before you confirm."
+    - q: "How do we pay?"
+      a: "You agree a fixed price with Anand on WhatsApp before you travel. There are no extra charges for fuel, tolls, parking or the driver's stay."
+  related: [7-day-nri-group-tour, 4-day-kerala-backwaters-tour, 7-day-kerala-wildlife]
+
+7-day-luxury-kerala-honeymoon:
+  h1: "7-Day Kerala Honeymoon Package: Munnar, Thekkady, Kumarakom & Marari"
+  image: /images/guest-tour-with-anand-7.webp
+  image_alt: "Couple at a Munnar viewpoint during a private Kerala honeymoon tour"
+  image_caption: "Honeymooners in the Munnar hills"
+  lead: >-
+    Misty tea hills, a lakeside resort and a quiet beach villa, with a private car and a discreet English-speaking driver for the whole week.
+    You set the pace; we handle every transfer from Kochi Airport and back.
+  overview:
+    - >-
+      Kerala is one of India's favourite honeymoon destinations because it packs mountains, backwaters and beach into one short loop. This seven-day
+      route gives you two nights in Munnar's hills, a night in Thekkady's spice country, then slows right down on Vembanad Lake at Kumarakom and on the
+      sand at Marari.
+    - >-
+      All driving is in daylight and the longest leg is about four hours. You can choose the hotels yourself or ask Anand to suggest romantic stays at
+      your budget; the car, fuel, tolls, parking and driver are covered in one fixed price.
+  highlights:
+    - "Two nights in the Munnar tea hills"
+    - "Private boat on Periyar Lake and couples' Ayurvedic massage in Thekkady"
+    - "Lakeside resort and sunset cruise on Vembanad Lake, Kumarakom"
+    - "Two slow days at Marari Beach"
+    - "Option of a private houseboat night"
+    - "Daylight driving only"
+  days:
+    - title: "Kochi Airport to Munnar"
+      text: >-
+        A personal welcome at arrivals, then a scenic drive up through waterfalls and spice gardens to your hill resort. The rest of the day is yours.
+      drive: "110 km · about 3.5 hrs"
+      link: /taxi/kochi-airport-to-munnar/
+      stay: Munnar
+    - title: "Munnar at your own pace"
+      text: >-
+        Tea tasting at an estate, a walk at Eravikulam National Park and sunset at a viewpoint your driver picks to avoid the crowds.
+      stay: Munnar
+    - title: "Munnar to Thekkady"
+      text: >-
+        Drive through cardamom plantations to Thekkady. Boat ride on Periyar Lake, then an evening couples' Ayurvedic massage at a recommended centre.
+      drive: "90 km · about 3 hrs"
+      stay: Thekkady
+    - title: "Thekkady to Kumarakom"
+      text: >-
+        Down to the backwaters and a lakeside resort on Vembanad Lake. Take a sunset cruise or upgrade to a private houseboat night with your own chef and crew.
+      drive: "115 km · about 3.5 hrs"
+      stay: Kumarakom
+    - title: "Kumarakom to Marari Beach"
+      text: >-
+        A short drive to a beach villa at Marari, one of Kerala's quietest stretches of sand. Afternoon by the Arabian Sea.
+      drive: "45 km · about 1.5 hrs"
+      link: /taxi/kochi-airport-to-marari/
+      stay: Marari
+    - title: "Leisure day at Marari"
+      text: >-
+        A free day for the beach, a village cycle ride or a fishing-village walk, ending with a private sunset dinner. The car is on call if you want it.
+      stay: Marari
+    - title: "Marari to Kochi Airport"
+      text: >-
+        Relaxed checkout and drive to Kochi Airport, with time for Fort Kochi if your flight is in the evening.
+      drive: "75 km · about 2 hrs"
+  best_time: >-
+    October to March is ideal for the beach and the hills. Many couples also like the monsoon (June to August) for the empty resorts, lower rates and green
+    scenery, though the sea is rough and not for swimming then.
+  not_included:
+    - "Hotels, resort and houseboat (we can book them, or you book your own)"
+    - "Spa treatments, boat rides and entry tickets"
+    - "Meals"
+  faqs:
+    - q: "Can you arrange flowers or a cake in the car on arrival?"
+      a: "Yes. Tell Anand on WhatsApp before you fly and we will arrange a simple welcome at Kochi Airport at cost."
+    - q: "Can we make it shorter or longer?"
+      a: "Yes. A 5-day version drops Thekkady and one Marari night; a 9-day version adds Fort Kochi and Varkala. We send a new route and fixed price."
+    - q: "Will the driver stay with us all day?"
+      a: "The driver stays at or near your hotel and is available when you need the car, but gives you privacy on leisure days."
+  related: [5-day-coastal-escape, 6-day-ayurveda-wellness, 5-day-kerala-family-package]
+
+4-day-kerala-backwaters-tour:
+  h1: "4-Day Kerala Backwaters & Fort Kochi Tour with Private Driver"
+  image: /images/guest-tour-with-anand-4.webp
+  image_alt: "Guests welcomed with a name board at Kochi Airport by Tour With Anand"
+  image_caption: "Welcome at Kochi Airport"
+  lead: >-
+    The best of Kerala in four days: two nights in historic Fort Kochi and a night on a private Alleppey houseboat.
+    Short drives, a personal airport welcome and one fixed price for car and driver.
+  overview:
+    - >-
+      Short on time? This tour is built for travellers with a long weekend or a few spare days at the start or end of a bigger India trip.
+      Fort Kochi gives you 500 years of Portuguese, Dutch and British history within walking distance; Alleppey gives you Kerala's famous backwaters
+      from the deck of your own houseboat.
+    - >-
+      No leg is longer than about 90 minutes, so you spend your time seeing Kerala, not sitting in traffic. The driver who collects you is the one who drops
+      you back at the airport.
+  highlights:
+    - "Chinese fishing nets at sunset in Fort Kochi"
+    - "Jew Town, Paradesi Synagogue and Mattancherry Palace"
+    - "St. Francis Church and the old Dutch quarter"
+    - "Overnight private houseboat cruise in Alleppey"
+    - "Short drives, no leg over 90 minutes"
+  days:
+    - title: "Kochi Airport to Fort Kochi"
+      text: >-
+        Personal welcome at arrivals and transfer to a heritage hotel in Fort Kochi. Evening walk along the beach to watch the Chinese fishing nets at sunset.
+      drive: "45 km · about 1.5 hrs"
+      link: /taxi/kochi-airport-to-fort-kochi/
+      stay: Fort Kochi
+    - title: "Fort Kochi and Mattancherry"
+      text: >-
+        St. Francis Church, Santa Cruz Basilica, Jew Town's antique shops, the Paradesi Synagogue and Mattancherry Palace (both closed on some days, so
+        we plan around them). Optional Kathakali show in the evening.
+      stay: Fort Kochi
+    - title: "Fort Kochi to Alleppey houseboat"
+      text: >-
+        Drive south to Alleppey and board your private houseboat around noon. Cruise through paddy fields and village canals with meals cooked on board.
+      drive: "55 km · about 1.5 hrs"
+      stay: "Houseboat, Alleppey"
+    - title: "Alleppey to Kochi Airport"
+      text: >-
+        Check out after breakfast and drive straight to the airport, or stop for shopping in Kochi if your flight is later.
+      drive: "85 km · about 2.5 hrs"
+      link: /taxi/kochi-airport-to-alleppey/
+  best_time: >-
+    October to March has dry, pleasant weather for walking in Fort Kochi and clear evenings on the houseboat. The monsoon (June to August) brings dramatic skies
+    and low prices; houseboats still run.
+  not_included:
+    - "Hotels and houseboat (we can book them, or you book your own)"
+    - "Monument entry fees and Kathakali tickets"
+    - "Meals outside the houseboat"
+  faqs:
+    - q: "Which days are the synagogue and palace closed?"
+      a: "The Paradesi Synagogue and Mattancherry Palace close on certain days of the week and on holidays. Your driver checks the current timings and plans the day around them."
+    - q: "Can we do this as a stopover before Goa or Sri Lanka?"
+      a: "Yes. Many guests add it to the start or end of a longer trip. Send your flight times and we will fit the route around them."
+  related: [3-day-kerala-transit, 5-day-coastal-escape, 5-day-kerala-family-package]
+
+7-day-nri-group-tour:
+  h1: "7-Day Kerala Group Tour for NRI Families: Munnar, Thekkady & Alleppey"
+  image: /images/guest-tour-with-anand-14.webp
+  image_alt: "Large family group at a Kerala hill viewpoint on a private Tour With Anand group tour"
+  image_caption: "A family group in the hills"
+  lead: >-
+    Bringing the whole family home to Kerala? One Tempo Traveller or Force Urbania, one experienced driver and one plan for everyone,
+    from the Kochi Airport pickup to the final drop.
+  overview:
+    - >-
+      Organising cars, hotels and timings for ten or twenty relatives from abroad is hard work. This seven-day group tour keeps everyone together in one large,
+      air-conditioned vehicle with room for international luggage, and follows a relaxed loop through Munnar, Thekkady and the Alleppey backwaters.
+    - >-
+      We plan around flights landing at different times, elderly travellers and children. Anand coordinates everything on one WhatsApp group so the family
+      abroad and the family in Kerala always know the plan.
+  highlights:
+    - "One vehicle for the whole group: 12 to 26 seats"
+    - "Two days in Munnar's tea hills"
+    - "Periyar Lake, spice gardens and a Kalaripayattu show in Thekkady"
+    - "Multi-bedroom private houseboat for the family"
+    - "Final day for shopping in Kochi"
+  days:
+    - title: "Kochi Airport to Munnar"
+      text: >-
+        Meet-and-greet at arrivals for the whole group, luggage loaded for you, and a scenic drive up to Munnar with waterfall and tea stops.
+      drive: "110 km · about 3.5 hrs"
+      link: /taxi/kochi-airport-to-munnar/
+      stay: Munnar
+    - title: "Munnar sightseeing"
+      text: >-
+        Tea-estate walks, the Tea Museum, Mattupetty Dam and Echo Point at a pace that suits grandparents and children.
+      stay: Munnar
+    - title: "Munnar to Thekkady"
+      text: >-
+        Drive through cardamom hills to Thekkady. Afternoon spice garden tour with tasting.
+      drive: "90 km · about 3 hrs"
+      stay: Thekkady
+    - title: "Thekkady"
+      text: >-
+        Morning boat ride on Periyar Lake, afternoon at leisure or shopping for spices in Kumily, and an evening Kalaripayattu martial-arts show.
+      stay: Thekkady
+    - title: "Thekkady to Alleppey houseboat"
+      text: >-
+        Board a 3 to 6-bedroom private houseboat so the whole family cruises and eats together.
+      drive: "140 km · about 4 hrs"
+      stay: "Houseboat, Alleppey"
+    - title: "Alleppey to Kochi"
+      text: >-
+        Disembark after breakfast and drive to Kochi for shopping at Lulu Mall or Broadway and an evening in Fort Kochi.
+      drive: "60 km · about 2 hrs"
+      stay: Kochi
+    - title: "Kochi Airport drop"
+      text: >-
+        Drop at Kochi Airport, timed to your flights. If the group flies out at different times, we split the drop at no fuss.
+      drive: "35 km · about 1 hr"
+  best_time: >-
+    December and January (school holidays abroad) are the busiest months, so book the vehicle and houseboat early. September to March is cool and dry;
+    the monsoon months are quieter and cheaper.
+  not_included:
+    - "Hotels and houseboat (we can book them, or you book your own)"
+    - "Entry tickets, boat rides and shows"
+    - "Meals outside the houseboat"
+  faqs:
+    - q: "How many people fit in one vehicle?"
+      a: "A Force Urbania seats up to 17 and our Tempo Travellers seat 12 to 26. For bigger groups we send two vehicles that travel together."
+    - q: "Family members land on different flights. Can you handle that?"
+      a: "Yes. We can do separate airport pickups with smaller cars and join everyone in the group vehicle the next morning."
+    - q: "Can relatives in Kerala join along the way?"
+      a: "Yes, as long as there is a free seat. Tell us where they will join and we will plan the pickup."
+  related: [5-day-kerala-family-package, 7-day-kerala-culture-heritage, 4-day-kerala-backwaters-tour]
+
+6-day-ayurveda-wellness:
+  h1: "6-Day Kerala Ayurveda & Wellness Tour: Kumarakom and Marari"
+  image: /images/guest-tour-with-anand-10.webp
+  image_alt: "Couple on a relaxed Kerala wellness holiday with Tour With Anand"
+  image_caption: "Slow travel in Kerala"
+  lead: >-
+    A slow, gentle trip built around Ayurveda: two calm bases on the backwaters and the beach, short smooth drives,
+    and a driver who knows the authentic treatment centres.
+  overview:
+    - >-
+      Kerala is the home of Ayurveda, and many visitors come for treatment, yoga and rest rather than sightseeing. This six-day plan keeps driving to a minimum:
+      about two hours on arrival, one short transfer mid-way and two hours back to the airport.
+    - >-
+      You choose and pay for your resort and treatments directly, so you are free to pick a certified centre at your budget. Anand can suggest places guests have
+      liked, and the car stays on call for doctor visits, temple trips or a quiet evening out.
+  highlights:
+    - "Minimal driving: three short transfers in six days"
+    - "Ayurveda and yoga by the Kumarakom backwaters"
+    - "Beachside wellness stay at Marari"
+    - "Gentle, slow driving with breaks whenever you want"
+    - "Car on call for consultations and outings"
+  days:
+    - title: "Kochi Airport to Kumarakom"
+      text: >-
+        Gentle pickup at arrivals and a direct drive to your Ayurvedic resort on Vembanad Lake. Rest, and your first consultation with the resort doctor.
+      drive: "80 km · about 2.5 hrs"
+      stay: Kumarakom
+    - title: "Wellness day in Kumarakom"
+      text: >-
+        A full day of treatments, yoga and lakeside rest. The car is available for a short canoe trip or the Kumarakom bird sanctuary if you feel like it.
+      stay: Kumarakom
+    - title: "Kumarakom to Marari"
+      text: >-
+        Morning meditation, then an easy afternoon transfer to a beachside wellness retreat at Marari.
+      drive: "45 km · about 1.5 hrs"
+      link: /taxi/kochi-airport-to-marari/
+      stay: Marari
+    - title: "Wellness day at Marari"
+      text: >-
+        Your treatments, then quiet time on one of Kerala's least crowded beaches.
+      stay: Marari
+    - title: "Leisure day"
+      text: >-
+        Mindful walks, organic meals and a final consultation. Optional visit to a nearby village or temple.
+      stay: Marari
+    - title: "Marari to Kochi Airport"
+      text: >-
+        Relaxed checkout and a smooth drive to Kochi Airport.
+      drive: "75 km · about 2 hrs"
+  best_time: >-
+    Ayurveda practitioners traditionally recommend the monsoon (June to August) for treatments, when the air is cool and moist. October to March is drier
+    and better for beach time. Most retreats run all year.
+  not_included:
+    - "Resort stay and Ayurvedic treatments (you book and pay directly)"
+    - "Meals"
+    - "Entry tickets and boat trips"
+  faqs:
+    - q: "Can the trip be longer for a full Panchakarma course?"
+      a: "Yes. Panchakarma usually needs 14 to 21 days at one centre. We do the airport transfers and keep a car on call for outings while you stay put."
+    - q: "Is this suitable for older travellers?"
+      a: "Yes. Drives are short, the Innova Crysta is easy to get in and out of, and the driver helps with luggage and steps."
+  related: [7-day-luxury-kerala-honeymoon, 5-day-coastal-escape, 3-day-kerala-transit]
+
+7-day-kerala-wildlife:
+  h1: "7-Day Kerala Wildlife & Nature Tour: Athirappilly, Munnar & Periyar"
+  image: /images/guest-tour-with-anand-1.webp
+  image_alt: "Guests by a lake in the Kerala hills on a private nature tour"
+  image_caption: "Nature stop in the hills"
+  lead: >-
+    Waterfalls, high-altitude grassland and tiger-reserve forest in one week. A private car means you can stop for every view,
+    bird or photo, with a driver who knows the ghat roads.
+  overview:
+    - >-
+      Built for nature lovers and photographers, this route links three very different landscapes: the Athirappilly waterfalls in lowland forest,
+      the shola grasslands of Eravikulam above Munnar, and the Periyar Tiger Reserve around Thekkady.
+    - >-
+      Your driver knows the early-morning start times, the photo stops and which forest activities need booking ahead. Safari and trek tickets are sold by the forest
+      department, so we tell you exactly what to book and when.
+  highlights:
+    - "Athirappilly and Vazhachal waterfalls"
+    - "Nilgiri tahr at Eravikulam National Park"
+    - "Bamboo rafting or a nature walk in Periyar Tiger Reserve"
+    - "Birding and spice farms around Kumily"
+    - "Unlimited photo stops on a private tour"
+  days:
+    - title: "Kochi Airport to Athirappilly"
+      text: >-
+        Short drive from the airport to Athirappilly, Kerala's largest waterfall, and the nearby Vazhachal falls. Evening at a riverside resort.
+      drive: "40 km · about 1.5 hrs"
+      link: /taxi/kochi-airport-to-athirappilly/
+      stay: Athirappilly
+    - title: "Athirappilly to Munnar"
+      text: >-
+        Early birding walk by the river, then a scenic drive up through forest and rubber country into the Munnar hills.
+      drive: "130 km · about 4 hrs"
+      stay: Munnar
+    - title: "Eravikulam National Park"
+      text: >-
+        Morning at Eravikulam to see the Nilgiri tahr and the shola grassland, then tea-estate viewpoints. The park usually closes for calving for several weeks
+        between February and April.
+      stay: Munnar
+    - title: "Munnar to Thekkady"
+      text: >-
+        Drive to Thekkady through cardamom country, then a guided nature walk on the edge of the reserve.
+      drive: "90 km · about 3 hrs"
+      link: /taxi/kochi-airport-to-thekkady/
+      stay: Thekkady
+    - title: "Periyar Tiger Reserve"
+      text: >-
+        Early start for bamboo rafting, a jungle trek or a boat ride on Periyar Lake. Sightings of gaur, deer, birds and wild elephants are common; tigers are rare.
+      stay: Thekkady
+    - title: "Kumily spice farms and birding"
+      text: >-
+        Organic spice farm visit, a village walk and an evening Kalaripayattu show. Free time for photography.
+      stay: Thekkady
+    - title: "Thekkady to Kochi Airport"
+      text: >-
+        Drive down from the hills to Kochi Airport, timed for your flight.
+      drive: "150 km · about 4.5 hrs"
+  best_time: >-
+    October to April is best for wildlife and dry trails. Waterfalls are at their fullest just after the monsoon (August to October). Eravikulam usually closes
+    for a few weeks in early spring.
+  not_included:
+    - "Hotels and resorts (we can book them, or you book your own)"
+    - "Park entry, safari, rafting and trek tickets"
+    - "Meals"
+  faqs:
+    - q: "Do you offer elephant rides?"
+      a: "No. We suggest seeing elephants in the wild at Periyar instead, which is a much better experience."
+    - q: "Is this tour good for birdwatching?"
+      a: "Yes. Athirappilly, Munnar and Thekkady all have good birding. Tell us and we will plan early starts and suggest local bird guides."
+  related: [7-day-north-kerala-wayanad, 5-day-kerala-family-package, 7-day-kerala-culture-heritage]
+
+5-day-coastal-escape:
+  h1: "5-Day Kerala Beach & Backwater Tour: Marari, Alleppey & Fort Kochi"
+  image: /images/guest-tour-with-anand-5.webp
+  image_alt: "Guests at a Kerala resort during a relaxed coastal tour with Tour With Anand"
+  image_caption: "Relaxed coastal touring"
+  lead: >-
+    Sand, backwaters and a heritage town, with no long drives and no early starts. A slow, flat coastal loop that begins and ends at Kochi Airport.
+  overview:
+    - >-
+      If you want Kerala without the hairpin bends, this is the trip. Every leg stays on the flat coast: two nights at Marari Beach, a night on a private
+      Alleppey houseboat and an evening in Fort Kochi before your flight.
+    - >-
+      It suits couples, older travellers and anyone finishing a busy India tour who needs a few easy days. The driver collects you at arrivals and stays with you until departure.
+  highlights:
+    - "Two nights at quiet Marari Beach"
+    - "Private houseboat cruise in Alleppey"
+    - "Sunset harbour cruise in Fort Kochi"
+    - "Heritage walk in Fort Kochi and Mattancherry"
+    - "No hill roads, short drives only"
+  days:
+    - title: "Kochi Airport to Marari Beach"
+      text: >-
+        Personal welcome and a smooth drive down the coastal highway to your beach resort.
+      drive: "75 km · about 2 hrs"
+      link: /taxi/kochi-airport-to-marari/
+      stay: Marari
+    - title: "Marari at leisure"
+      text: >-
+        A free day on the sand. Optional cycle ride through the fishing villages or a cookery class at your resort.
+      stay: Marari
+    - title: "Marari to Alleppey houseboat"
+      text: >-
+        A short hop to Alleppey to board your private houseboat around noon for an afternoon cruise and a night on the water.
+      drive: "15 km · about 30 min"
+      link: /taxi/kochi-airport-to-alleppey/
+      stay: "Houseboat, Alleppey"
+    - title: "Alleppey to Fort Kochi"
+      text: >-
+        Disembark after breakfast and drive to Fort Kochi. Evening sunset cruise on the harbour past the Chinese fishing nets.
+      drive: "55 km · about 1.5 hrs"
+      link: /taxi/kochi-airport-to-fort-kochi/
+      stay: Fort Kochi
+    - title: "Fort Kochi to Kochi Airport"
+      text: >-
+        Morning heritage walk through the old town and Jew Town, then the airport drop.
+      drive: "45 km · about 1.5 hrs"
+  best_time: >-
+    November to March is the beach season: calm seas, sunshine and low humidity. From June to August the sea is rough and swimming is not safe, though the
+    backwaters are beautiful.
+  not_included:
+    - "Hotels, resort and houseboat (we can book them, or you book your own)"
+    - "Harbour cruise and entry tickets"
+    - "Meals outside the houseboat"
+  faqs:
+    - q: "Can we add Varkala or Kovalam?"
+      a: "Yes. Varkala is about 3.5 hours south of Alleppey. Adding two nights there makes a 7-day coastal trip; we can end it at Trivandrum Airport instead."
+  related: [4-day-kerala-backwaters-tour, 7-day-luxury-kerala-honeymoon, 6-day-ayurveda-wellness]
+
+7-day-kerala-culture-heritage:
+  h1: "7-Day Kerala Culture & Heritage Tour: Fort Kochi, Thrissur & Kumarakom"
+  image: /images/guest-tour-with-anand-2.webp
+  image_alt: "Group of travellers on a Kerala culture and heritage tour with Tour With Anand"
+  image_caption: "Guests on a culture tour"
+  lead: >-
+    Kathakali, temple festivals, colonial Kochi and village crafts: a week for travellers who want to understand Kerala, not just photograph it.
+  overview:
+    - >-
+      This tour goes beyond the standard hill-and-houseboat circuit. You start in Fort Kochi's mix of Portuguese, Dutch, Jewish and British history, head north to
+      Thrissur, Kerala's cultural capital, and spend a morning at Kerala Kalamandalam, where students train in Kathakali and Mohiniyattam.
+    - >-
+      The second half slows down in Kumarakom's backwater villages, with craft workshops, a home-cooked meal and a houseboat night. Your driver explains local customs
+      and temple etiquette as you go; licensed guides can be booked for the main monuments.
+  highlights:
+    - "Fort Kochi, Jew Town and Mattancherry"
+    - "Thrissur's temples and artisan markets"
+    - "Morning classes at Kerala Kalamandalam"
+    - "Pottery, coir and weaving in Kumarakom villages"
+    - "Houseboat night on the backwaters"
+  days:
+    - title: "Kochi Airport to Fort Kochi"
+      text: >-
+        Welcome at arrivals and transfer to Fort Kochi. Afternoon walk through the colonial quarter; evening Kathakali performance with the make-up session beforehand.
+      drive: "45 km · about 1.5 hrs"
+      link: /taxi/kochi-airport-to-fort-kochi/
+      stay: Fort Kochi
+    - title: "Fort Kochi to Thrissur"
+      text: >-
+        Drive north to Thrissur. See the Vadakkunnathan temple complex from its grounds (non-Hindus may not enter the inner temple), and browse the bell-metal
+        and artisan shops.
+      drive: "85 km · about 2.5 hrs"
+      link: /taxi/kochi-airport-to-thrissur/
+      stay: Thrissur
+    - title: "Kerala Kalamandalam, Cheruthuruthy"
+      text: >-
+        Watch morning training in Kathakali, Mohiniyattam and percussion at the Kalamandalam campus. Classes run on working days, so we time the visit for a weekday.
+      drive: "30 km · about 1 hr"
+      stay: Thrissur
+    - title: "Thrissur to Kumarakom"
+      text: >-
+        Drive south to the backwater village of Kumarakom. Afternoon visit to a pottery or coir-making unit.
+      drive: "130 km · about 3.5 hrs"
+      stay: Kumarakom
+    - title: "Village life and food"
+      text: >-
+        Canoe through the village canals, see toddy tapping and fishing, and learn Kerala dishes in a home cookery session.
+      stay: Kumarakom
+    - title: "Houseboat night"
+      text: >-
+        Board a houseboat to see daily life along the canals, with meals cooked on board.
+      stay: Houseboat
+    - title: "Kumarakom to Kochi Airport"
+      text: >-
+        Disembark after breakfast and drive to Kochi Airport.
+      drive: "80 km · about 2.5 hrs"
+  best_time: >-
+    October to March has the best weather and most performances. Thrissur Pooram (April or May) is spectacular but very crowded; book months ahead if you want to see it.
+  not_included:
+    - "Hotels and houseboat (we can book them, or you book your own)"
+    - "Guides, performance tickets and entry fees"
+    - "Meals and cookery class"
+  faqs:
+    - q: "Can we see a temple festival?"
+      a: "Kerala has festivals most weeks between December and May. Tell us your dates and we will check which ones fall near your route."
+  related: [4-day-kerala-backwaters-tour, 7-day-nri-group-tour, 7-day-north-kerala-wayanad]
+
+3-day-kerala-transit:
+  h1: "3-Day Kochi & Alleppey Houseboat Tour from Kochi Airport"
+  image: /images/guest-tour-with-anand-16.webp
+  image_alt: "Guests with Anand and a Tour With Anand Innova Crysta at a Kerala hotel"
+  image_caption: "Pickup in an Innova Crysta"
+  lead: >-
+    Only three days in Kerala? Land at Kochi Airport, be on a private houseboat by lunchtime, see Fort Kochi the next day and fly out on day three.
+  overview:
+    - >-
+      This short tour is for stopovers, business trips with a spare weekend, or the first or last days of a longer India itinerary. It covers Kerala's two essential
+      experiences, a night on the backwaters and an afternoon in historic Fort Kochi, without wasting time in transit.
+    - >-
+      Your car and driver wait for you at arrivals, so there is no queue for a taxi. If your flight lands late at night, we take you to a Kochi hotel first and start the next morning.
+  highlights:
+    - "On a houseboat within about three hours of landing"
+    - "Night cruise and meals on the backwaters"
+    - "Half-day in Fort Kochi and Jew Town"
+    - "Souvenir and spice shopping before your flight"
+  days:
+    - title: "Kochi Airport to Alleppey houseboat"
+      text: >-
+        Meet at arrivals and drive directly to Alleppey to board your private houseboat around noon. Afternoon cruise, dinner and an overnight stay on the water.
+      drive: "85 km · about 2.5 hrs"
+      link: /taxi/kochi-airport-to-alleppey/
+      stay: "Houseboat, Alleppey"
+    - title: "Alleppey to Fort Kochi"
+      text: >-
+        Wake up on the backwaters, disembark after breakfast and drive to Fort Kochi for a half-day heritage tour and the fishing nets at sunset.
+      drive: "55 km · about 1.5 hrs"
+      link: /taxi/kochi-airport-to-fort-kochi/
+      stay: Fort Kochi
+    - title: "Kochi to Kochi Airport"
+      text: >-
+        Morning shopping for spices, tea and souvenirs, then the airport drop with time to spare.
+      drive: "45 km · about 1.5 hrs"
+  best_time: >-
+    The tour runs all year. October to March is driest; the monsoon months make the backwaters very green and houseboats are cheaper.
+  not_included:
+    - "Hotel and houseboat (we can book them, or you book your own)"
+    - "Entry fees"
+    - "Meals outside the houseboat"
+  faqs:
+    - q: "Can we do it in two days?"
+      a: "Yes. Airport to houseboat on day one and houseboat back to the airport on day two works well if your flight leaves in the afternoon."
+  related: [4-day-kerala-backwaters-tour, 5-day-coastal-escape, 6-day-ayurveda-wellness]
+
+7-day-north-kerala-wayanad:
+  h1: "7-Day North Kerala & Wayanad Tour: Calicut, Edakkal Caves & Beypore"
+  image: /images/guest-tour-with-anand-9.webp
+  image_alt: "Travellers at a misty hill viewpoint in Wayanad, North Kerala"
+  image_caption: "Hill country in North Kerala"
+  lead: >-
+    Already seen Munnar and Alleppey? North Kerala has quieter forests, prehistoric caves and the spice-trade history of Calicut, with far fewer crowds.
+  overview:
+    - >-
+      This tour is for returning visitors and travellers who prefer places without tour buses. It follows the coast north to Kozhikode (Calicut), climbs the famous
+      Thamarassery hairpin road into Wayanad's coffee and pepper hills, then returns via the dhow-building yards of Beypore.
+    - >-
+      It is a longer drive than our southern tours, so we use a comfortable Innova Crysta or Force Urbania and split the journey with good stops for lunch and sightseeing.
+  highlights:
+    - "Calicut's spice market and beach"
+    - "Thamarassery Ghat: nine hairpin bends into Wayanad"
+    - "Edakkal Caves rock carvings"
+    - "Soochipara waterfall and Muthanga wildlife sanctuary"
+    - "Wooden dhow-building at Beypore"
+  days:
+    - title: "Kochi Airport to Calicut"
+      text: >-
+        Meet at arrivals and drive north along the coast to Kozhikode. Evening on Calicut beach and the famous local halwa and biryani.
+      drive: "160 km · about 4.5 hrs"
+      link: /taxi/kochi-airport-to-calicut/
+      stay: Calicut
+    - title: "Calicut to Wayanad"
+      text: >-
+        Morning in the old spice market and Kuttichira's historic mosques, then up the Thamarassery Ghat to Wayanad.
+      drive: "75 km · about 2.5 hrs"
+      link: /taxi/kochi-airport-to-wayanad/
+      stay: Wayanad
+    - title: "Edakkal Caves and Soochipara"
+      text: >-
+        Climb to the Edakkal Caves to see rock carvings thousands of years old (closed on Mondays), then Soochipara waterfall.
+      stay: Wayanad
+    - title: "Muthanga and tea estates"
+      text: >-
+        Jeep safari in Muthanga Wildlife Sanctuary (subject to forest department slots), then walks through tea, coffee and pepper estates.
+      stay: Wayanad
+    - title: "Wayanad to Calicut coast"
+      text: >-
+        Descend to the coast and visit Beypore, where wooden dhows (uru) are still built by hand, and Kappad beach.
+      drive: "90 km · about 3 hrs"
+      stay: Calicut
+    - title: "Calicut to Kochi"
+      text: >-
+        Drive south with an optional stop at Guruvayur or Thrissur. Evening in Kochi.
+      drive: "190 km · about 5 hrs"
+      stay: Kochi
+    - title: "Kochi Airport drop"
+      text: >-
+        Final shopping in Kochi and transfer to the airport.
+      drive: "35 km · about 1 hr"
+  best_time: >-
+    October to May is best; Wayanad stays cool all year. The monsoon (June to September) brings heavy rain to the hills, and some forest activities close.
+  not_included:
+    - "Hotels and resorts (we can book them, or you book your own)"
+    - "Entry tickets and safari fees"
+    - "Meals"
+  faqs:
+    - q: "Can we fly out of Calicut instead?"
+      a: "Yes. Calicut (Kozhikode) International Airport is near the route. Ending there saves the long drive back to Kochi; we price it as a one-way tour."
+  related: [7-day-kerala-wildlife, 7-day-kerala-culture-heritage, 5-day-kerala-family-package]
