@@ -2,9 +2,10 @@
   Small WhatsApp chat card (owner request 2026-11-26).
   - Slides up beside the WhatsApp button; never covers the page (no full-screen popup: Google
     penalises intrusive popups on mobile pages that people land on from search).
-  - Shows once per visit, after 12 s or after the visitor scrolls 35% of the page.
-  - Closing it (x or Esc) hides it for 3 days. Not shown if the visitor already tapped a WhatsApp button,
-    or while they are typing in a form.
+  - Shows 2 seconds after EVERY page opens, on all pages (owner 2026-11-26: 12 s was too slow, and
+    once-per-visit meant it was missing on the next pages).
+  - Closing it (x or Esc) hides it for the rest of that visit (browser session) only.
+    Not shown if the visitor already tapped a WhatsApp button on the page, or while they are typing in a form.
   - Uses the same WhatsApp message as the header / sticky bar (twa_wa_href from the layout).
   - Tracking: the tap is a normal "whatsapp_click" with button_location "chat_popup";
     showing the card pushes "chat_popup_view" (ignored by the Ads conversions).
@@ -60,12 +61,11 @@ Chat on WhatsApp
 (function () {
   var card = document.getElementById('twa-chat');
   if (!card) { return; }
-  var SEEN = 'twaChatSeen', CLOSED = 'twaChatClosed', HIDE_DAYS = 3;
-  function get(store, k) { try { return window[store].getItem(k); } catch (e) { return null; } }
-  function put(store, k, v) { try { window[store].setItem(k, v); } catch (e) {} }
-  if (get('sessionStorage', SEEN)) { return; }
-  if (Date.now() - (+get('localStorage', CLOSED) || 0) < HIDE_DAYS * 864e5) { return; }
-  var shown = false, done = false, ready = false;
+  var CLOSED = 'twaChatClosed';
+  function get(k) { try { return window.sessionStorage.getItem(k); } catch (e) { return null; } }
+  function put(k, v) { try { window.sessionStorage.setItem(k, v); } catch (e) {} }
+  if (get(CLOSED)) { return; }
+  var shown = false, done = false;
   // Visitor already tapped a WhatsApp button on this page: don't interrupt.
   document.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
@@ -76,25 +76,16 @@ Chat on WhatsApp
     var ae = document.activeElement;
     if (ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) { setTimeout(show, 6000); return; }
     shown = true;
-    put('sessionStorage', SEEN, '1');
-    window.removeEventListener('scroll', onScroll);
     card.hidden = false;
     requestAnimationFrame(function () { requestAnimationFrame(function () { card.classList.add('is-open'); }); });
     if (typeof twaTrack === 'function') { twaTrack('chat_popup_view', 'chat_popup', ''); }
   }
   function hide() {
     card.classList.remove('is-open');
-    put('localStorage', CLOSED, String(Date.now()));
+    put(CLOSED, '1');
     setTimeout(function () { card.hidden = true; }, 260);
   }
-  function onScroll() {
-    if (!ready) { return; }
-    var h = document.documentElement, max = h.scrollHeight - window.innerHeight;
-    if (max > 0 && (window.pageYOffset || h.scrollTop) / max > 0.35) { show(); }
-  }
-  setTimeout(function () { ready = true; onScroll(); }, 4000);
-  setTimeout(show, 12000);
-  window.addEventListener('scroll', onScroll, { passive: true });
+  setTimeout(show, 2000);
   card.querySelector('.twa-chat-x').addEventListener('click', hide);
   card.querySelector('.twa-chat-btn').addEventListener('click', function () { setTimeout(hide, 150); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && shown && !card.hidden) { hide(); } });
