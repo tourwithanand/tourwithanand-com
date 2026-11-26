@@ -578,6 +578,10 @@ layout: default
       padding: 50px 0; 
     }
   }
+.tp-crumbs { margin: 0 0 12px; font: 500 13px/1.4 'Inter', sans-serif; color: rgba(255,255,255,.75); }
+.tp-crumbs a { color: #ffcc00; text-decoration: none; }
+.tp-crumbs a:hover { text-decoration: underline; }
+.tp-crumbs span[aria-hidden] { margin: 0 4px; opacity: .6; }
 </style>
 
 <style>
@@ -597,6 +601,9 @@ layout: default
     <div class="tp-hero-overlay"></div>
     
     <div class="tp-container-inner tp-hero-content">
+      {%- if page.url contains "/taxi/kochi-airport-to-" %}
+      <nav class="tp-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/taxi/kochi-airport/">Kochi Airport Taxi</a> <span aria-hidden="true">›</span> <span>{{ page.to_location }}</span></nav>
+      {%- endif %}
       <span class="tp-badge">Premium Private Transfer</span>
       <h1 class="tp-title">{{ page.from_location }} to {{ page.to_location }} Taxi</h1>
       <p class="tp-desc">{{ page.unique_desc }} Experience a safe, seamless, and luxurious journey across Kerala with our verified professional chauffeurs.</p>
