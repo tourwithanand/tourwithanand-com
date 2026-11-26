@@ -271,12 +271,16 @@ seo_keywords: "kochi airport taxi, cochin airport taxi, kochi airport taxi servi
   .ap-final-ctas { flex-direction: column; }
 }
 @media (max-width: 600px) {
-  /* Portrait banner on phones: trim only sky (top) and a strip of wet ground (bottom), keeping
-     Anand's head, the CIAL sign, the car and Maxx's sign, so the fare strip comes up sooner.
-     A fixed shape also stops the layout shift while the image loads. */
-  .ap-hero-img { aspect-ratio: 1024 / 1196; object-position: 50% 79%; }
+  /* Portrait banner on phones. Owner 2026-11-25: about half the screen, so the H1 and the first fares
+     show without scrolling. Fixed height (svh = smallest screen height) = no layout shift when the
+     image loads or the browser bar moves. Trims sky/ground; keeps Anand, the CIAL sign, the car and Maxx. */
+  .ap-hero-img { aspect-ratio: auto; height: 47vh; height: 47svh; min-height: 260px; max-height: 460px; object-fit: cover; object-position: 50% 80%; }
   .ap-hero .ap-eyebrow { display: none; }
   .ap-hero h1 { font-size: clamp(23px, 7vw, 30px); white-space: nowrap; }
+}
+@media (max-width: 600px) and (max-height: 720px) {
+  /* short phones: show less of the ground so Anand's face stays in the picture */
+  .ap-hero-img { object-position: 50% 58%; }
 }
 </style>
 

@@ -20,4 +20,7 @@ seo_keywords: "kochi airport to pamba taxi, sabarimala base camp cab, kochi to n
 title: "Kochi Airport to Pamba (Sabarimala) Taxi Service | Tour With Anand"
 description: "Safe and reliable drops to the Pamba base camp for Sabarimala pilgrims. Our drivers are highly experienced with the busy pilgrimage season traffic."
 permalink: /taxi/kochi-airport-to-sabarimala-pamba/
+# Owner decision 2026-11-25: this page stays live but points Google to the main Sabarimala page (and is left out of the sitemap).
+# _data/generate_routes.py does not know this field: re-add it if the route pages are regenerated.
+canonical_url: "https://tourwithanand.com/sabarimala-taxi-kochi-airport/"
 ---
