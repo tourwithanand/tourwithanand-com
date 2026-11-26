@@ -11,4 +11,4 @@ collections:
     output: true
 
 # Microsoft Clarity project ID (empty = Clarity off). Paste the ID to switch it on.
-clarity_id: ""
+clarity_id: "zjr7oleg5u"
