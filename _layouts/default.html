@@ -18,6 +18,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {%- if site.clarity_id and site.clarity_id != "" %}
 <!-- Microsoft Clarity (on when clarity_id is set in _config.yml) -->
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","{{ site.clarity_id }}");</script>
+<script>
+/* Clarity tags (2026-11-26): mark where the visit came from, so recordings and heatmaps can be filtered to Google Ads
+   visitors (Filters > Custom tags > traffic = google_ads). Ads clicks carry gclid/gbraid/wbraid (auto-tagging) or utm_medium=cpc. */
+(function () { try {
+  var q = location.search, ref = document.referrer || '', src;
+  if (/[?&](gclid|gbraid|wbraid)=/.test(q) || /[?&]utm_medium=(cpc|ppc|paid)/i.test(q)) { src = 'google_ads'; }
+  else if (/[?&]utm_source=/i.test(q)) { src = (q.match(/[?&]utm_source=([^&]+)/i) || [])[1] || 'campaign'; }
+  else if (/\.google\./.test(ref)) { src = 'google_organic'; }
+  else if (ref && ref.indexOf(location.hostname) === -1) { src = 'referral'; }
+  else { src = 'direct'; }
+  try { var kept = sessionStorage.getItem('twaSrc'); if (kept && src === 'direct') { src = kept; } else { sessionStorage.setItem('twaSrc', src); } } catch (e) {}
+  clarity('set', 'traffic', src);
+  var camp = q.match(/[?&]utm_campaign=([^&]+)/i); if (camp) { clarity('set', 'campaign', decodeURIComponent(camp[1])); }
+  clarity('set', 'page_type', '{{ page.layout | default: "page" }}');
+} catch (e) {} })();
+</script>
 {%- endif %}
 
 <meta charset="UTF-8">
@@ -228,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 
 <div class="footer-bottom">
 <div class="section-container">
-<p>&copy; 2026 Tour With Anand. All Rights Reserved. Managed by Stark Holidays.</p>
+<p>&copy; 2026 Tour With Anand. All Rights Reserved. Managed by Stark Holidays. · <a href="/privacy-policy/" style="color:#777;">Privacy Policy</a></p>
 </div>
 </div>
 </footer>
@@ -701,6 +717,8 @@ extra = extra || {};
 var key = eventName + '|' + (extra.key || source || 'button');
 if (twaFired[key]) { return; }
 twaFired[key] = 1;
+/* Clarity: mark the session with the lead action, and keep its recording (upgrade) */
+if (typeof window.clarity === 'function') { try { window.clarity('event', eventName); window.clarity('set', 'lead', eventName); if (eventName === 'whatsapp_click' || eventName === 'call_click' || eventName === 'form_submit') { window.clarity('upgrade', eventName); } } catch (e) {} }
 window.dataLayer.push({
 'event': eventName,
 'click_source': (eventName === 'whatsapp_click' || eventName === 'call_click') ? 'button' : (source || 'button'),
