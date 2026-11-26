@@ -1,5 +1,5 @@
 ---
-last_modified_at: 2026-11-25
+last_modified_at: 2026-11-26
 layout: default
 title: "Kochi Airport Taxi & Kerala Private Tours | Tour With Anand"
 description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India tours with English-speaking drivers. Fixed fares, no hidden charges. Book on WhatsApp."
@@ -51,6 +51,25 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
     </div>
   </div>
   
+</section>
+
+{%- comment -%} Phones (owner 2026-11-26): most visitors and all Google Ads clicks are on mobile, and the video
+  alone did not say what we do. This strip sits right under the video so the offer, fares and WhatsApp
+  are on the first screen. Fares come from _data/airport_fares.yml (Sedan, one way). {%- endcomment -%}
+{%- assign hq_wa = "Hi Anand, I need a Kochi Airport taxi." | uri_escape | prepend: "https://wa.me/919400620615?text=" -%}
+<section class="m-quick mobile-only" aria-label="Kochi Airport taxi fares">
+  <p class="m-quick-kicker">24/7 · Kochi (Cochin) Airport</p>
+  <h2 class="m-quick-title">Airport Taxi &amp; Kerala Tours</h2>
+  <ul class="m-quick-fares">
+    {%- for r in site.data.airport_fares.routes -%}{%- if r.key == "aluva" or r.key == "ernakulam" or r.key == "fort-kochi" or r.key == "munnar" -%}
+    <li><span>{{ r.name }}</span> <b>{% include inr.html n=r.sedan %}</b></li>
+    {%- endif -%}{%- endfor -%}
+  </ul>
+  <p class="m-quick-note">Sedan, one way · tolls, parking &amp; driver included</p>
+  <div class="m-quick-actions">
+    <a href="{{ hq_wa }}" class="m-quick-wa" target="_blank" rel="noopener" data-loc="home_mobile_hero">WhatsApp for a fare</a>
+    <a href="/taxi/kochi-airport/" class="m-quick-more">All fares</a>
+  </div>
 </section>
 
 {% include maxx-video.html extra_class="desktop-only" src="home_desktop_video" heading="A Warm Welcome at Kochi Airport" %}
@@ -644,12 +663,28 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
   .link-actions .luxury-btn, .link-actions .luxury-btn-outline { width: 100%; text-align: center; }
 }
 
+/* --- PHONE: offer + fares strip under the Maxx video --- */
+.m-quick { padding: 14px 16px 16px; background: #0f1116; border-bottom: 1px solid rgba(255,204,0,.25); font-family: 'Inter', sans-serif; }
+.m-quick-kicker { margin: 0; color: #ffcc00; font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; }
+.m-quick-title { margin: 3px 0 9px; color: #fff; font: 700 21px/1.2 'Playfair Display', Georgia, serif; }
+.m-quick-fares { display: flex; gap: 7px; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.m-quick-fares::-webkit-scrollbar { display: none; }
+.m-quick-fares li { flex: none; padding: 6px 10px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; background: rgba(255,255,255,.05); color: #c9ccd2; font-size: 13px; white-space: nowrap; }
+.m-quick-fares b { color: #fff; font-weight: 700; }
+.m-quick-note { margin: 7px 0 11px; color: #8b9099; font-size: 12px; }
+.m-quick-actions { display: flex; gap: 8px; }
+.m-quick-wa { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; height: 46px; border-radius: 10px; background: #1da851; color: #fff !important; font-size: 15.5px; font-weight: 700; text-decoration: none !important; }
+.m-quick-wa::before { content: ''; width: 18px; height: 18px; background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zM223.9 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6z'/%3E%3C/svg%3E"); }
+.m-quick-more { flex: none; display: flex; align-items: center; height: 46px; padding: 0 14px; border: 1px solid rgba(255,204,0,.55); border-radius: 10px; color: #ffcc00 !important; font-size: 14px; font-weight: 600; text-decoration: none !important; }
+
 /* --- MOBILE VIDEO BANNER & OPTIMIZED MAXX OVERLAY --- */
 .mobile-video-hero { position: relative; width: 100vw; background: #0a0b0e; overflow: hidden; display: none; }
 .m-video-wrapper { position: relative; width: 100%; display: block; background: #000; }
 .m-video-wrapper video { width: 100%; height: auto; display: block; object-fit: contain; }
 /* Vertical Maxx welcome video: show a 3:4 window so it does not fill the whole phone screen */
 #catVideo { aspect-ratio: 3 / 4; height: auto; max-height: 72vh; object-fit: cover; object-position: center 55%; }
+/* Leave room under the video for the offer strip, so its WhatsApp button is on the first screen (owner 2026-11-26) */
+@media (max-width: 768px) { #catVideo { max-height: min(72vh, calc(100vh - 340px)); max-height: min(72svh, calc(100svh - 340px)); min-height: 260px; } }
 .m-sound-btn { position: absolute; top: 12px; right: 12px; z-index: 6; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px 8px 11px; border-radius: 999px; border: 1px solid rgba(255,204,0,.6); background: rgba(10,11,14,.7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #fff; font: 600 13px/1 'Inter', sans-serif; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,.45); animation: soundPulse 2s ease-in-out 1s 3; }
 .m-sound-btn .m-sound-ico { font-size: 15px; }
 .m-sound-btn.is-on { border-color: rgba(255,255,255,.35); }
