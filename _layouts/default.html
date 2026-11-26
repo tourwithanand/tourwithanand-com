@@ -68,7 +68,7 @@ body, html { margin: 0; padding: 0; background-color: #0a0b0e; color: #e0e0e0; f
   .header-nav, .header-phone-section { display: none; }
   .header-container { justify-content: space-between; gap: 14px; }
   .hamburger { display: flex; }
-  .header-wa-m { display: inline-flex; margin-left: auto; }
+  .header-wa-m { display: none; } /* owner 2026-11-26: no WhatsApp in the phone header (sticky bar has it) */
 }
 @media (max-width: 768px) {
   .floating-widgets { bottom: 0; right: 0; left: 0; flex-direction: row; gap: 0; }
@@ -501,7 +501,7 @@ line-height: 1.5;
 .header-phone-section { display: none; }
 .header-container { justify-content: space-between; }
 .hamburger { display: flex; }
-.header-wa-m { display: inline-flex; margin-left: auto; padding: 9px 13px; font-size: 12.5px; }
+.header-wa-m { display: none; } /* owner 2026-11-26: removed from the phone/tablet header; the sticky bar has WhatsApp */
 .header-container { gap: 14px; }
 
 .message-wrap { flex-direction: column; text-align: center; }
