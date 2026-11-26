@@ -57,7 +57,7 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
   Owner asked for no fares and no WhatsApp button here (the sticky bar at the bottom has WhatsApp). {%- endcomment -%}
 <section class="m-quick mobile-only" aria-label="What we do">
   <p class="m-quick-kicker">24/7 · Kochi (Cochin) Airport</p>
-  <h2 class="m-quick-title">Airport Taxi &amp; Kerala Tours</h2>
+  <h2 class="m-quick-title"><a href="/taxi/kochi-airport/">Airport Taxi</a> &amp; Kerala Tours</h2>
   <p class="m-quick-line">Personally welcomed by Anand · Fixed, all-inclusive fares · English-speaking drivers</p>
 </section>
 
@@ -74,7 +74,7 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 <section class="why-section" id="why-anand">
   <div class="section-container">
     <h2 class="section-title">Why Travel With Anand</h2>
-    <p class="section-subtitle">A personal, premium welcome to Kerala, and a team that looks after every detail of your journey.</p>
+    <p class="section-subtitle">A personal, premium welcome to Kerala, and a team that looks after every detail of your journey. Landing soon? See our <a href="/taxi/kochi-airport/" style="color:#ffcc00;">Kochi Airport taxi fares</a>.</p>
 
     <div class="founder-card">
       <div class="founder-photo">
@@ -656,6 +656,7 @@ description: "24/7 Kochi (Cochin) Airport taxi and private Kerala & South India 
 .m-quick { padding: 14px 18px 16px; text-align: center; background: #0f1116; border-bottom: 1px solid rgba(255,204,0,.25); font-family: 'Inter', sans-serif; }
 .m-quick-kicker { margin: 0; color: #ffcc00; font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; }
 .m-quick-title { margin: 3px 0 9px; color: #fff; font: 700 21px/1.2 'Playfair Display', Georgia, serif; }
+.m-quick-title a { color: inherit; text-decoration: none; }
 .m-quick-line { margin: 0; color: #b9bdc5; font-size: 13.5px; line-height: 1.5; }
 
 /* --- MOBILE VIDEO BANNER & OPTIMIZED MAXX OVERLAY --- */
