@@ -483,7 +483,7 @@ layout: default
       <div class="tt-fares">
         {%- for v in ttf.vehicles %}{% if v.tempo %}
         {%- capture tt_p %}{% include inr.html n=v.round_trip %}{% endcapture %}
-        {%- capture tt_msg %}Hi Anand, I need a Sabarimala tempo traveller, {{ v.short }} ({{ tt_p }} round trip). Pickup: Kochi Airport / Aluva / Ernakulam. Date: __ Pilgrims: __{% endcapture %}
+        {%- capture tt_msg %}Hi Anand, I need a Sabarimala tempo traveller ({{ v.short }}).{% endcapture %}
         <div class="tt-fare">
           <h3>{{ v.short | capitalize }}</h3>
           <p class="tt-fare-price">{{ tt_p }} <span>round trip</span></p>

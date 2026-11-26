@@ -4,7 +4,7 @@ title: Sabarimala Taxi from Kochi Airport, Aluva & Ernakulam
 description: Sabarimala taxi from Kochi Airport, Kochi city, Aluva and Ernakulam railway stations. Fixed 24-hour round-trip fares from ₹7,000. Sedan, Ertiga, Innova, Crysta, Hycross and Tempo Traveller. No hidden charges.
 permalink: /sabarimala-taxi-kochi-airport/
 last_modified_at: 2026-11-25
-wa_text: "Hi Anand, I need a Sabarimala taxi. Pickup: Kochi Airport / Aluva / Ernakulam. Date: __ Pilgrims: __ Vehicle: __"
+wa_text: "Hi Anand, I need a Sabarimala taxi."
 sticky_wa_label: "WhatsApp fare"
 ---
 {%- assign sbf = site.data.sabarimala_fares -%}
@@ -181,7 +181,7 @@ sticky_wa_label: "WhatsApp fare"
         {%- for v in sbf.vehicles %}
         {%- if v.tempo %}{% assign sb_route = "sabarimala_tempo" %}{% else %}{% assign sb_route = "sabarimala" %}{% endif %}
         {%- capture sb_price %}{% include inr.html n=v.round_trip %}{% endcapture %}
-        {%- capture sb_msg %}Hi Anand, I need a Sabarimala {% if v.tempo %}tempo traveller, {{ v.short }}{% else %}taxi, {{ v.name }}{% endif %} ({{ sb_price }} round trip). Pickup: Kochi Airport / Aluva / Ernakulam. Date: __ Pilgrims: __{% endcapture %}
+        {%- capture sb_msg %}Hi Anand, I need a Sabarimala {% if v.tempo %}tempo traveller ({{ v.short }}){% else %}taxi ({{ v.name }}){% endif %}.{% endcapture %}
         <div class="sb-rate">
           <div class="sb-name"><h3>{{ v.name }}</h3><span class="sb-seats">{{ v.seats }}</span></div>
           <div class="sb-route">{{ v.route_note }}{% if v.one_way != "" and v.one_way %}<span class="sb-oneway">One-way drop to Pamba/Nilakkal: {% include inr.html n=v.one_way %}</span>{% endif %}</div>

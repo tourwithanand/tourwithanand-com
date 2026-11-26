@@ -12,7 +12,7 @@ Params:
   <ul class="fs-list">
     {%- for car in fs.cars -%}
     {%- assign fs_price = fs_r[car.key] -%}
-    {%- capture fs_msg %}Hi Anand, I need a Kochi Airport → {{ fs_r.name }} taxi ({{ car.name }}). Date: __ Passengers: __{% endcapture -%}
+    {%- capture fs_msg %}Hi Anand, I need a taxi from Kochi Airport to {{ fs_r.name }} ({{ car.name }}).{% endcapture -%}
     <li class="fs-row">
       <span class="fs-route">{{ car.name }} <small>{{ car.seats }}</small></span>
       <span class="fs-price">from <strong>{% include inr.html n=fs_price %}</strong></span>
@@ -25,7 +25,7 @@ Params:
   <p class="fs-title">Kochi Airport taxi fares <span>· Sedan, one way</span></p>
   <ul class="fs-list">
     {%- for r in fs.routes -%}
-    {%- capture fs_msg %}Hi Anand, I need a Kochi Airport → {{ r.name }} taxi (Sedan). Date: __ Passengers: __{% endcapture -%}
+    {%- capture fs_msg %}Hi Anand, I need a taxi from Kochi Airport to {{ r.name }} (Sedan).{% endcapture -%}
     <li class="fs-row">
       <span class="fs-route">{{ r.name }}</span>
       <span class="fs-price">from <strong>{% include inr.html n=r.sedan %}</strong></span>
