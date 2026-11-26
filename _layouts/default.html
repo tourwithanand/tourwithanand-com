@@ -1,8 +1,9 @@
 {%- comment -%} WhatsApp prefill for the header and the sticky bar.
-  page.wa_text (front matter) wins; taxi route pages get a route message; otherwise a plain chat link. {%- endcomment -%}
+  page.wa_text (front matter) wins; taxi route pages get a route message; otherwise "Hi Anand, I need a taxi service." {%- endcomment -%}
 {%- assign twa_wa_msg = page.wa_text -%}
-{%- if twa_wa_msg == nil and page.layout == "taxi_page" -%}{%- capture twa_wa_msg -%}Hi Anand, I need a {{ page.from_location }} → {{ page.to_location }} taxi. Date: __ Passengers: __{%- endcapture -%}{%- endif -%}
-{%- if twa_wa_msg -%}{%- assign twa_wa_href = twa_wa_msg | uri_escape | prepend: "https://wa.me/919400620615?text=" -%}{%- else -%}{%- assign twa_wa_href = "https://wa.me/919400620615" -%}{%- endif -%}
+{%- if twa_wa_msg == nil and page.layout == "taxi_page" -%}{%- capture twa_wa_msg -%}Hi Anand, I need a taxi from {{ page.from_location }} to {{ page.to_location }}.{%- endcapture -%}{%- endif -%}
+{%- if twa_wa_msg == nil -%}{%- assign twa_wa_msg = "Hi Anand, I need a taxi service." -%}{%- endif -%}
+{%- assign twa_wa_href = twa_wa_msg | uri_escape | prepend: "https://wa.me/919400620615?text=" -%}
 {%- if page.sticky_wa_label -%}{%- assign twa_wa_label = page.sticky_wa_label -%}{%- elsif page.layout == "taxi_page" -%}{%- assign twa_wa_label = "WhatsApp fare" -%}{%- else -%}{%- assign twa_wa_label = "Connect with Anand" -%}{%- endif -%}
 <!DOCTYPE html>
 <html lang="en">
@@ -669,7 +670,7 @@ var email = document.getElementById("email").value;
 var msg = document.getElementById("message").value;
 
 var text =
-"Hello Tour With Anand / Stark Holidays,%0A%0A" +
+"Hi Anand, I need a taxi service.%0A%0A" +
 "Name: " + name + "%0A" +
 "Mobile: " + mobile + "%0A" +
 "Email: " + email + "%0A%0A" +
@@ -700,7 +701,7 @@ if (twaFired[key]) { return; }
 twaFired[key] = 1;
 window.dataLayer.push({
 'event': eventName,
-'click_source': source || 'button',
+'click_source': (eventName === 'whatsapp_click' || eventName === 'call_click') ? 'button' : (source || 'button'),
 'click_text': (text || '').replace(/\s+/g, ' ').trim().slice(0, 60),
 'button_location': extra.button_location || source || 'button',
 'route': extra.route || '',
@@ -724,7 +725,9 @@ var ev = /wa\.me\/|api\.whatsapp\.com|^whatsapp:/.test(href) ? 'whatsapp_click' 
 if (!ev) { return; }
 if (!a.twaId) { a.twaId = 'b' + (++twaSeq); }
 var loc = twaLocation(a);
-twaTrack(ev, loc, (a.textContent || '').trim() || a.title || '', {
+// click_source stays "button" for every link tap: the GTM triggers that feed
+// GA4 and the Google Ads conversions match on it. The location goes in button_location.
+twaTrack(ev, 'button', (a.textContent || '').trim() || a.title || '', {
 key: a.twaId,
 button_location: loc,
 route: a.getAttribute('data-route') || '',

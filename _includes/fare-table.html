@@ -17,7 +17,7 @@ Params:
             <th scope="row">{{ r.name_long | default: r.name }}</th>
             {%- for car in ft.cars -%}
             {%- assign ft_price = r[car.key] -%}
-            {%- capture ft_msg %}Hi Anand, I need a Kochi Airport → {{ r.name }} taxi ({{ car.name }}). Date: __ Passengers: __{% endcapture %}
+            {%- capture ft_msg %}Hi Anand, I need a taxi from Kochi Airport to {{ r.name }} ({{ car.name }}).{% endcapture %}
             <td><a href="https://wa.me/919400620615?text={{ ft_msg | uri_escape }}" target="_blank" rel="noopener" data-loc="fare_table" data-route="{{ r.name }}" data-car="{{ car.name }}"><span>from</span> {% include inr.html n=ft_price %}</a></td>
             {%- endfor %}
           </tr>
@@ -52,7 +52,7 @@ Params:
     <ul class="ft-yes">
       {%- for i in ft.premium_includes %}<li>{{ i }}</li>{% endfor -%}
     </ul>
-    {%- capture ft_pmsg %}Hi Anand, I'd like the Premium Airport Welcome. Date: __ Flight: __ Drop: __ Passengers: __{% endcapture %}
+    {%- capture ft_pmsg %}Hi Anand, I'd like the Premium Airport Welcome.{% endcapture %}
     <a class="ft-prem-btn" href="https://wa.me/919400620615?text={{ ft_pmsg | uri_escape }}" target="_blank" rel="noopener" data-loc="fare_table" data-route="Premium" data-car="Premium">Ask for a Premium quote on WhatsApp</a>
   </div>
 </div>

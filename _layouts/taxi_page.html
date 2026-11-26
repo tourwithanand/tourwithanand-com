@@ -3,10 +3,10 @@ layout: default
 ---
 {%- assign tp_fare = nil -%}
 {%- for r in site.data.airport_fares.routes -%}{%- if r.pages contains page.url -%}{%- assign tp_fare = r -%}{%- endif -%}{%- endfor -%}
-{%- capture tp_msg -%}Hi Anand, I need a {{ page.from_location }} → {{ page.to_location }} taxi. Date: __ Passengers: __{%- endcapture -%}
+{%- capture tp_msg -%}Hi Anand, I need a taxi from {{ page.from_location }} to {{ page.to_location }}.{%- endcapture -%}
 {%- assign page_full_url = site.url | append: page.url | append: "#fares" -%}
 {%- assign tp_wa = tp_msg | uri_escape | prepend: "https://wa.me/919400620615?text=" -%}
-{%- capture tp_ret_msg -%}Hi Anand, I need a {{ page.to_location }} → {{ page.from_location }} taxi. Date: __ Passengers: __{%- endcapture -%}
+{%- capture tp_ret_msg -%}Hi Anand, I need a taxi from {{ page.to_location }} to {{ page.from_location }}.{%- endcapture -%}
 {%- assign tp_ret_wa = tp_ret_msg | uri_escape | prepend: "https://wa.me/919400620615?text=" -%}
 
 <!-- SEO & Meta Tags (Injected into the page) -->

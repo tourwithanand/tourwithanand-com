@@ -22,7 +22,7 @@ page_subtitle: "Premium Force Urbania & Tempo Traveller Group Transport"
 description: "Kochi to Sabarimala tempo traveller, round trip in 24 hours: 12-seater ₹15,000 (drops at Pamba), 17-seater ₹16,000 and 26-seater ₹22,000 (drop at Nilakkal)."
 sabarimala_fares: true
 track_route: "sabarimala_tempo"
-wa_text: "Hi Anand, I need a Sabarimala tempo traveller. Pickup: Kochi Airport / Aluva / Ernakulam. Date: __ Pilgrims: __ Seats: __"
+wa_text: "Hi Anand, I need a Sabarimala tempo traveller."
 sticky_wa_label: "WhatsApp fare"
 last_modified_at: 2026-11-25
 ---
