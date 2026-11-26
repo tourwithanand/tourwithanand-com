@@ -10,15 +10,25 @@
   - Tracking: the tap is a normal "whatsapp_click" with button_location "chat_popup";
     showing the card pushes "chat_popup_view" (ignored by the Ads conversions).
   - Turn it off on a page with front matter  chat_card: false
-  - Custom text on a page with front matter  chat_card_text: "..."
+  - Text: page front matter chat_card_text wins; otherwise chosen by page type below.
 {%- endcomment -%}
 {%- if page.chat_card != false -%}
+{%- comment -%} Card text per page type (owner 2026-11-26: each page should talk about its own trip). {%- endcomment -%}
 {%- if page.chat_card_text -%}
   {%- assign twa_cc_text = page.chat_card_text -%}
-{%- elsif page.layout == "taxi_page" and page.from_location and page.to_location -%}
-  {%- capture twa_cc_text -%}Need the fare from {{ page.from_location }} to {{ page.to_location }}? Send me a message on WhatsApp and I'll reply with the price.{%- endcapture -%}
+{%- elsif page.layout == "taxi_page" and page.to_location -%}
+  {%- capture twa_cc_text -%}Going to {{ page.to_location }}? Send me your travel date and pickup time on WhatsApp and I'll reply with the taxi fare.{%- endcapture -%}
+{%- elsif page.layout == "tempo_page" and page.destination_name -%}
+  {%- capture twa_cc_text -%}Group trip to {{ page.destination_name }}? Tell me how many people and your date on WhatsApp, and I'll send the Tempo Traveller fare.{%- endcapture -%}
+{%- elsif page.layout == "tour_page" and page.package_name -%}
+  {%- capture twa_cc_text -%}Interested in the {{ page.package_name }}? Send me your dates and number of travellers on WhatsApp and I'll send the price. I can change the plan to suit you.{%- endcapture -%}
+{%- elsif page.layout == "country_page" and page.country -%}
+  {%- assign twa_cc_country = site.data.countries[page.country] -%}
+  {%- capture twa_cc_text -%}Planning a Kerala trip from {{ twa_cc_country.name }}? Send me your dates on WhatsApp and I'll suggest a route and send a price.{%- endcapture -%}
+{%- elsif page.collection == "posts" -%}
+  {%- assign twa_cc_text = "Planning your Kerala trip? Ask me anything on WhatsApp. I reply personally." -%}
 {%- else -%}
-  {%- assign twa_cc_text = "Need a taxi or a Kerala tour? Send me a message on WhatsApp for a quick quote." -%}
+  {%- assign twa_cc_text = "Need a taxi, a Tempo Traveller or a Kerala tour? Tell me where and when on WhatsApp and I'll send a quote." -%}
 {%- endif -%}
 <div id="twa-chat" class="twa-chat" role="dialog" aria-label="Chat with Anand on WhatsApp" hidden>
 <div class="twa-chat-head">
