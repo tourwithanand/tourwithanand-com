@@ -23,6 +23,12 @@ jobs:
           GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
           GSC_SITE: ${{ vars.GSC_SITE }}
         run: python .github/scripts/gsc_export.py out
+      - name: Export Google Analytics (enquiries)
+        continue-on-error: true
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+          GA4_PROPERTY: ${{ vars.GA4_PROPERTY }}
+        run: python .github/scripts/ga4_export.py out
       - name: Save to seo-data branch
         run: |
           [ -d out/latest ] || { echo "Nothing exported."; exit 0; }
