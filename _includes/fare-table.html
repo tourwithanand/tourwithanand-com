@@ -1,0 +1,101 @@
+{%- comment -%}
+Standard fare table + Premium Airport Welcome card (pure HTML/CSS). Data: _data/airport_fares.yml
+Params:
+  route (optional) route key: show only that route's row (route pages)
+{%- endcomment -%}
+{%- assign ft = site.data.airport_fares -%}
+{%- if include.route -%}{%- assign ft_routes = ft.routes | where: "key", include.route -%}{%- else -%}{%- assign ft_routes = ft.routes -%}{%- endif -%}
+<div class="ft">
+  <div class="ft-std">
+    <h3 class="ft-h">Standard transfer: starting fares</h3>
+    <div class="ft-scroll">
+      <table class="ft-table">
+        <thead><tr><th scope="col">Kochi Airport to</th>{% for car in ft.cars %}<th scope="col">{{ car.name }}<small>{{ car.seats }}</small></th>{% endfor %}</tr></thead>
+        <tbody>
+          {%- for r in ft_routes %}
+          <tr>
+            <th scope="row">{{ r.name_long | default: r.name }}</th>
+            {%- for car in ft.cars -%}
+            {%- assign ft_price = r[car.key] -%}
+            {%- capture ft_msg %}Hi Anand, I need a taxi from Kochi Airport to {{ r.name }} ({{ car.name }}).{% endcapture %}
+            <td><a href="https://wa.me/919400620615?text={{ ft_msg | uri_escape }}" target="_blank" rel="noopener" data-loc="fare_table" data-route="{{ r.name }}" data-car="{{ car.name }}"><span>from</span> {% include inr.html n=ft_price %}</a></td>
+            {%- endfor %}
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="ft-note">{{ ft.fare_note }}</p>
+    <p class="ft-note ft-note-q">{{ ft.quote_note }}</p>
+    <div class="ft-lists">
+      <div>
+        <h4>What's included in Standard</h4>
+        <ul class="ft-yes">
+          {%- for i in ft.standard_includes %}<li>{{ i }}</li>{% endfor -%}
+          {%- if ft.standard_waiting_minutes != "" and ft.standard_waiting_minutes %}<li>Waiting up to {{ ft.standard_waiting_minutes }} min</li>{% endif -%}
+        </ul>
+      </div>
+      <div>
+        <h4>{{ ft.fare_may_change_title | default: "Fare may change for" }}</h4>
+        <ul class="ft-maybe">
+          {%- for i in ft.fare_may_change_for %}<li>{{ i }}</li>{% endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ft-prem">
+    <span class="ft-prem-tag">Premium</span>
+    <h3 class="ft-h">Premium Airport Welcome</h3>
+    <p class="ft-prem-price">{{ ft.premium_price_label }}</p>
+    <p class="ft-prem-why">For guests who want more than a ride: a newer car, a senior driver and extra time at arrivals. That is why Premium is quoted separately.</p>
+    <ul class="ft-yes">
+      {%- for i in ft.premium_includes %}<li>{{ i }}</li>{% endfor -%}
+    </ul>
+    {%- capture ft_pmsg %}Hi Anand, I'd like the Premium Airport Welcome.{% endcapture %}
+    <a class="ft-prem-btn" href="https://wa.me/919400620615?text={{ ft_pmsg | uri_escape }}" target="_blank" rel="noopener" data-loc="fare_table" data-route="Premium" data-car="Premium">Ask for a Premium quote on WhatsApp</a>
+  </div>
+</div>
+{%- unless ft_css_done %}{% assign ft_css_done = true %}
+<style>
+.ft, .ft * { box-sizing: border-box; }
+.ft { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 22px; align-items: start; margin-top: 22px; text-align: left; }
+.ft-h { margin: 0 0 12px; color: #fff; font: 700 20px/1.3 'Playfair Display', Georgia, serif; }
+.ft-std, .ft-prem { background: #15181e; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 20px; }
+.ft-prem { border-color: rgba(255,204,0,.55); background: linear-gradient(160deg, #1d1a10, #15181e 65%); position: relative; }
+.ft-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.ft-table { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; }
+.ft-table th, .ft-table td { padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,.07); text-align: left; vertical-align: middle; }
+.ft-table thead th { color: #ffcc00; font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+.ft-table thead th small { display: block; color: #8d929a; font-size: 11px; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.ft-table tbody th { color: #fff; font-size: 15px; font-weight: 600; }
+.ft-table td a { color: #fff; text-decoration: none; font-weight: 700; font-size: 15.5px; white-space: nowrap; border-bottom: 1px dotted rgba(37,211,102,.7); }
+.ft-table td a span { color: #a0a4ab; font-weight: 400; font-size: 12px; }
+.ft-table td a:hover { color: #25d366; }
+.ft-note { margin: 12px 0 0; color: #c8ccd2; font: 600 14px/1.5 'Inter', sans-serif; }
+.ft-note-q { margin-top: 4px; color: #a0a4ab; font-weight: 400; }
+.ft-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.ft-lists h4 { margin: 0 0 8px; color: #fff; font: 700 14px/1.4 'Inter', sans-serif; }
+.ft-yes, .ft-maybe { list-style: none; margin: 0; padding: 0; }
+.ft-yes li, .ft-maybe li { position: relative; padding-left: 22px; margin-bottom: 7px; color: #c8ccd2; font: 400 14px/1.5 'Inter', sans-serif; }
+.ft-yes li::before { content: '✓'; position: absolute; left: 0; color: #25d366; font-weight: 700; }
+.ft-maybe li::before { content: '•'; position: absolute; left: 6px; color: #ffcc00; font-weight: 700; }
+.ft-prem-tag { position: absolute; top: -11px; right: 16px; background: #ffcc00; color: #000; font: 700 11px/1 'Inter', sans-serif; letter-spacing: 1px; text-transform: uppercase; padding: 6px 10px; border-radius: 20px; }
+.ft-prem-price { margin: -4px 0 10px; color: #ffcc00; font: 700 17px/1.3 'Inter', sans-serif; }
+.ft-prem-why { margin: 0 0 12px; color: #a0a4ab; font: 400 14px/1.6 'Inter', sans-serif; }
+.ft-prem-btn { display: block; margin-top: 14px; padding: 13px 14px; border-radius: 8px; background: #1da851; color: #fff !important; text-align: center; text-decoration: none; font: 700 14px/1.3 'Inter', sans-serif; }
+.ft-prem-btn:hover { background: #179647; }
+@media (max-width: 860px) {
+  .ft { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .ft-std, .ft-prem { padding: 16px 12px; }
+  .ft-table th, .ft-table td { padding: 9px 5px; }
+  .ft-table tbody th { font-size: 14px; }
+  .ft-table td a { font-size: 14.5px; display: inline-block; line-height: 1.25; }
+  .ft-table td a span { display: block; font-size: 11px; }
+  .ft-table thead th small { display: none; }
+  .ft-lists { grid-template-columns: 1fr; }
+}
+</style>
+{%- endunless %}

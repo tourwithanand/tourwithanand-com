@@ -1,0 +1,111 @@
+# Sabarimala (Pamba) fares. ONE source for /sabarimala-taxi-kochi-airport/ and
+# /tempo-traveller/kochi-to-sabarimala-pamba/ (fare table, tempo rules, schema offers).
+# Prices are whole rupees. Round-trip prices MUST match the Google Ads (Sedan 7,000 · Ertiga 8,500 · Innova 10,000).
+
+currency: INR
+
+# Shown next to the season dates. Update when you re-check the dates / virtual-queue rules.
+season_checked: 2026-11-25
+season_dates: "Temple opens 16 Nov 2026 · Mandala Pooja 27 Dec 2026 · Reopens 30 Dec 2026 · Makaravilakku 14 Jan 2027"
+virtual_queue_url: "https://sabarimalaonline.org"
+
+# One fixed round-trip fare per vehicle, completed within 24 hours, drop back at the pickup point.
+# Same fare from Kochi Airport, Kochi city, Aluva and Ernakulam railway stations.
+# one_way: one-way drop to Pamba/Nilakkal (owner 2026-11-25: Sedan 5,500 · Ertiga 6,500 · Innova 7,500; the same fare
+# applies Nilakkal -> airport, see /pamba-to-kochi-airport-taxi/). Empty ("") = not offered/shown.
+vehicles:
+  - key: sedan
+    route_note: "Round trip to Pamba"
+    name: Sedan
+    seats: "Up to 4 pilgrims"
+    capacity: 4
+    round_trip: 7000
+    one_way: 5500
+  - key: ertiga
+    route_note: "Round trip to Pamba"
+    name: Ertiga
+    seats: "Up to 6 pilgrims"
+    capacity: 6
+    round_trip: 8500
+    one_way: 6500
+  - key: innova
+    route_note: "Round trip to Pamba"
+    name: Innova
+    seats: "Up to 7 pilgrims"
+    capacity: 7
+    round_trip: 10000
+    one_way: 7500
+  - key: crysta
+    route_note: "Round trip to Pamba"
+    name: Innova Crysta
+    seats: "Up to 7 pilgrims"
+    capacity: 7
+    round_trip: 12500
+    one_way: ""
+  - key: hycross
+    route_note: "Round trip to Pamba"
+    name: Innova Hycross
+    seats: "Up to 7 pilgrims"
+    capacity: 7
+    round_trip: 13500
+    one_way: ""
+  - key: tempo12
+    route_note: "Drop at Pamba, pickup from Nilakkal only"
+    name: Tempo Traveller 12
+    short: "12-seater"
+    seats: "12 seats"
+    capacity: 12
+    tempo: true
+    round_trip: 15000
+    one_way: ""
+  - key: tempo17
+    route_note: "Pickup point to Nilakkal and back from Nilakkal"
+    name: Tempo Traveller 17
+    short: "17-seater"
+    seats: "17 seats"
+    capacity: 17
+    tempo: true
+    round_trip: 16000
+    one_way: ""
+  - key: tempo26
+    route_note: "Pickup point to Nilakkal and back from Nilakkal"
+    name: Tempo Traveller 26
+    short: "26-seater"
+    seats: "26 seats"
+    capacity: 26
+    tempo: true
+    round_trip: 22000
+    one_way: ""
+
+# Where each vehicle drops and picks up. Written from the current page text.
+# TODO (owner): confirm the rule for each size.
+drop_rules:
+  - vehicles: "Cars (Sedan, Ertiga, Innova, Crysta, Hycross)"
+    drop: "Pamba"
+    pickup: "Nilakkal parking, or Pamba if you hold your own privilege parking pass"
+    note: "After the drop the car parks at the permitted parking area. Your driver tells you the exact pickup point, which can change with the traffic rules that day."
+  - vehicles: "Tempo Traveller 12-seater"
+    drop: "Pamba"
+    pickup: "Nilakkal only"
+    note: "Take the KSRTC bus from Pamba back to Nilakkal after darshan."
+  - vehicles: "Tempo Traveller 17 and 26-seater"
+    drop: "Nilakkal"
+    pickup: "Nilakkal"
+    note: "KSRTC buses run between Nilakkal and Pamba."
+
+# Owner: return trips must be booked at least 5 hours ahead.
+advance_note: "Return trips: please book at least 5 hours in advance so your car reaches Nilakkal on time."
+
+# Shown under the fare table.
+included: "Fuel, driver allowance, tolls, regular parking, waiting during darshan and the return drop are included."
+# TODO (owner): extra-hour rates (whole rupees per hour). Empty = line hidden.
+extra_hour_car: ""
+extra_hour_tempo: ""
+
+# TODO (owner): cancellation / refund terms. Empty = line hidden.
+cancellation: ""
+payment: "Pay by UPI / GPay, or in cash to your driver."
+operator: "Operated by Tour With Anand (Stark Holidays)"
+
+# Areas we treat as "Kochi city" pickup (same fare).
+kochi_city_areas: "Ernakulam city, Edappally, Kakkanad, Vyttila, Kaloor, Palarivattom, Fort Kochi and Mattancherry"

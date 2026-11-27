@@ -1,0 +1,14 @@
+title: "Tour With Anand | Kochi Airport Taxi & South India Tours"
+description: "Premium taxi and tour services from Kochi International Airport across Kerala, Tamil Nadu, and South India. Trusted by international travelers."
+url: "https://tourwithanand.com"
+
+collections:
+  taxi_routes:
+    output: true
+  tempo_routes:
+    output: true
+  tour_packages:
+    output: true
+
+# Microsoft Clarity project ID (empty = Clarity off). Paste the ID to switch it on.
+clarity_id: "zjr7oleg5u"

@@ -1,0 +1,233 @@
+---
+layout: default
+---
+{% assign c = site.data.countries[page.country] %}
+{% capture wa_text %}Hello Anand, I am planning a Kerala trip from {{ c.short }}. Please help me with a car, driver and itinerary.{% endcapture %}
+{% assign wa_text = wa_text | replace: "&", "and" %}{% assign wa_link = "https://wa.me/919400620615?text=" | append: wa_text | uri_escape %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TouristTrip",
+      "@id": "{{ site.url }}{{ page.url }}#trip",
+      "name": {{ c.h1 | jsonify }},
+      "description": {{ c.description | jsonify }},
+      "url": "{{ site.url }}{{ page.url }}",
+      "touristType": {{ c.people | jsonify }},
+      "image": "{{ site.url }}/images/kochi-airport-taxi-anand-welcome-cat.jpg",
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "Tour With Anand",
+        "url": "{{ site.url }}/",
+        "telephone": "+91-94006-20615",
+        "address": { "@type": "PostalAddress", "addressLocality": "Kochi", "addressRegion": "Kerala", "addressCountry": "IN" }
+      },
+      "itinerary": [
+        {% for p in c.packages %}{ "@type": "TouristTrip", "name": {{ p.name | jsonify }}, "url": "{{ site.url }}{{ p.url }}" }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "South India Tours", "item": "{{ site.url }}/south-india-tours/" },
+        { "@type": "ListItem", "position": 3, "name": {{ c.h1 | jsonify }}, "item": "{{ site.url }}{{ page.url }}" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {% for f in c.faqs %}{ "@type": "Question", "name": {{ f.q | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | jsonify }} } }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
+
+<section class="ct-hero">
+  <div class="ct-hero-inner">
+    <div class="ct-hero-text">
+      <nav class="ct-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/south-india-tours/">South India Tours</a> › <span>{{ c.short }}</span></nav>
+      <span class="ct-eyebrow">Private Kerala tours for {{ c.people }}</span>
+      <h1>{{ c.h1 }}</h1>
+      <p class="ct-intro">{{ c.intro }}</p>
+      <div class="ct-ctas">
+        <a href="{{ wa_link }}" class="luxury-btn" data-track="whatsapp_click" data-src="country_{{ c.slug }}_hero">Plan My Trip on WhatsApp</a>
+        <a href="tel:+919400620615" class="luxury-btn-outline" data-track="call_click" data-src="country_{{ c.slug }}_hero">Call +91 94006 20615</a>
+      </div>
+      <ul class="ct-ticks">
+        <li>Personal welcome at Kochi Airport</li>
+        <li>Fixed, all-inclusive price</li>
+        <li>English-speaking drivers</li>
+        <li>Video call before you book</li>
+      </ul>
+    </div>
+    <div class="ct-hero-img">
+      <img src="/images/kochi-airport-taxi-anand-welcome-cat-900.webp" srcset="/images/kochi-airport-taxi-anand-welcome-cat-900.webp 900w, /images/kochi-airport-taxi-anand-welcome-cat.webp 1680w" sizes="(max-width: 900px) 100vw, 560px" width="1680" height="936" fetchpriority="high" alt="Anand with the Tour With Anand Innova Crysta at Cochin International Airport, ready to welcome {{ c.people }}">
+    </div>
+  </div>
+</section>
+
+{% capture mv_heading %}Arriving from {{ c.name }}? Maxx Is Waiting at Kochi Airport{% endcapture %}
+{% capture mv_src %}country_{{ page.country }}_video{% endcapture %}
+{% include maxx-video.html src=mv_src cta_href=wa_link cta_text="Plan My Kerala Trip" heading=mv_heading %}
+
+<div class="ct-wrap">
+
+  <section class="ct-section">
+    <h2>Flying to Kerala from {{ c.name }}</h2>
+    <p>{{ c.flights }}</p>
+    <p>Whatever your route, you land at <strong>Cochin International Airport (COK)</strong>. Our <a href="/taxi/kochi-airport/">24/7 Kochi Airport taxi service</a> tracks your flight, and your driver waits at arrivals with a name board, with no extra charge if you are delayed.</p>
+  </section>
+
+  <section class="ct-section ct-two">
+    <div class="ct-card">
+      <h2>Best Time to Visit Kerala from {{ c.name }}</h2>
+      <p>{{ c.season }}</p>
+    </div>
+    <div class="ct-card">
+      <h2>Time Difference &amp; Planning</h2>
+      <p>{{ c.time }}</p>
+      <p class="ct-small"><strong>Visa:</strong> most visitors to India need a visa, and many nationalities can apply online for India's e-Tourist Visa; Cochin International Airport accepts e-Visa arrivals. Rules change, so always check the official portal, <a href="https://indianvisaonline.gov.in/" rel="nofollow noopener" target="_blank">indianvisaonline.gov.in</a>, before booking flights.</p>
+    </div>
+  </section>
+
+  <section class="ct-section">
+    <h2>How Long to Stay &amp; Suggested Itineraries</h2>
+    <p>{{ c.stay }}</p>
+    <div class="ct-packages">
+      {% for p in c.packages %}
+      <a href="{{ p.url }}" class="ct-pkg">
+        <h3>{{ p.name }}</h3>
+        <span>{{ p.note }}</span>
+        <em>View itinerary &rarr;</em>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="ct-small">Every itinerary can be changed to your dates, hotels and pace. See all <a href="/south-india-tours/">Kerala and South India tours</a>.</p>
+  </section>
+
+  <section class="ct-section">
+    <h2>Why {{ c.people }} Choose Tour With Anand</h2>
+    <ul class="ct-why">
+      <li><strong>Personally welcomed by Anand.</strong> Anand himself receives our guests at Kochi Airport, so your trip starts with a familiar face.</li>
+      <li><strong>Meet your driver before you book.</strong> Video call us on Google Meet or WhatsApp, see the car and talk to the driver.</li>
+      {% for pt in c.points %}<li>{{ pt }}</li>
+      {% endfor %}
+      <li><strong>No blunders, no excuses.</strong> Hygienic, well-maintained cabs and an educated, experienced team supporting every step of your travel.</li>
+    </ul>
+  </section>
+
+  <section class="ct-section">
+    <h2>First Stops from Kochi Airport</h2>
+    <div class="ct-table-wrap">
+      <table class="ct-table">
+        <thead><tr><th>Kochi Airport to</th><th>Distance</th><th>Drive time</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/taxi/kochi-airport-to-fort-kochi/">Fort Kochi</a></td><td>45 km</td><td>1.5 hours</td></tr>
+          <tr><td><a href="/taxi/kochi-airport-to-alleppey/">Alleppey (houseboats)</a></td><td>85 km</td><td>2.5 hours</td></tr>
+          <tr><td><a href="/taxi/kochi-airport-to-munnar/">Munnar (tea hills)</a></td><td>110 km</td><td>3.5 hours</td></tr>
+          <tr><td><a href="/taxi/kochi-airport-to-thekkady/">Thekkady (Periyar)</a></td><td>150 km</td><td>4.5 hours</td></tr>
+          <tr><td><a href="/taxi/kochi-airport-to-varkala/">Varkala (beach)</a></td><td>200 km</td><td>5 hours</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="ct-small">Read our guide to <a href="/blog/kerala-car-with-driver-taxi-guide/">hiring a car with driver in Kerala</a>, or see <a href="/kochi-airport-taxi-routes/">all Kochi Airport taxi routes</a>.</p>
+  </section>
+
+  <section class="ct-section">
+    <h2>Questions from {{ c.people }}</h2>
+    <div class="ct-faq">
+      {% for f in c.faqs %}
+      <details{% if forloop.first %} open{% endif %}><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="ct-final">
+    <h2>Plan Your Kerala Trip from {{ c.name }}</h2>
+    <p>Tell us your dates, your group and the places you want to see. Anand will reply on WhatsApp with an itinerary and one clear, all-inclusive price.</p>
+    <div class="ct-ctas ct-center">
+      <a href="{{ wa_link }}" class="luxury-btn" data-track="whatsapp_click" data-src="country_{{ c.slug }}_final">Plan My Trip on WhatsApp</a>
+      <a href="tel:+919400620615" class="luxury-btn-outline" data-track="call_click" data-src="country_{{ c.slug }}_final">Call Anand</a>
+    </div>
+  </section>
+
+  <nav class="ct-others" aria-label="Kerala tours from other countries">
+    <span>Kerala tours from:</span>
+    {% for pair in site.data.countries %}{% assign o = pair[1] %}{% if o.slug != c.slug %}<a href="/kerala-tours-from-{{ o.slug }}/">{{ o.short }}</a>{% endif %}{% endfor %}
+  </nav>
+
+</div>
+
+<!-- WhatsApp / call taps are tracked once per button by the global listener in default.html (data-src = button_location). -->
+
+<style>
+.ct-hero, .ct-hero *, .ct-wrap, .ct-wrap * { box-sizing: border-box; }
+.ct-hero { width: 100vw; background: radial-gradient(900px 500px at 85% 40%, rgba(255,204,0,.12), rgba(255,204,0,0) 60%), #0a0b0e; margin-top: 80px; padding: 50px 20px 60px; }
+.ct-hero-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+.ct-crumbs { font-size: 13px; color: #7a7e85; margin-bottom: 16px; }
+.ct-crumbs a { color: #a0a4ab; text-decoration: none; }
+.ct-crumbs span { color: #ffcc00; }
+.ct-eyebrow { display: inline-block; color: #ffcc00; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+.ct-hero h1 { color: #fff; font-size: 50px; line-height: 1.1; margin: 0 0 16px; }
+.ct-intro { color: #dcdfe4; font-size: 18px; line-height: 1.7; margin: 0 0 26px; }
+.ct-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.ct-center { justify-content: center; }
+.ct-ticks { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+.ct-ticks li { color: #dcdfe4; font-size: 14px; padding-left: 22px; position: relative; }
+.ct-ticks li::before { content: '✓'; position: absolute; left: 0; color: #ffcc00; font-weight: 700; }
+.ct-hero-img img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1px solid rgba(255,204,0,.3); box-shadow: 0 20px 40px rgba(0,0,0,.5); }
+
+.ct-wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px 60px; }
+.ct-section { padding-top: 56px; }
+.ct-section h2, .ct-final h2 { color: #ffcc00; font-size: 32px; line-height: 1.25; margin: 0 0 16px; }
+.ct-section p { color: #b4b8bf; font-size: 16.5px; line-height: 1.85; margin: 0 0 16px; }
+.ct-section a, .ct-small a { color: #ffcc00; }
+.ct-small { font-size: 14.5px !important; color: #8d929a !important; }
+.ct-two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ct-card { background: #15181e; border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 26px; }
+.ct-card h2 { font-size: 24px; }
+.ct-packages { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0 18px; }
+.ct-pkg { display: block; text-decoration: none; background: #15181e; border: 1px solid rgba(255,255,255,.07); border-radius: 14px; padding: 20px 22px; transition: border-color .3s, transform .3s; }
+.ct-pkg:hover { border-color: #ffcc00; transform: translateY(-3px); }
+.ct-pkg h3 { color: #fff; font-size: 18px; margin: 0 0 6px; }
+.ct-pkg span { color: #a0a4ab; font-size: 14px; display: block; }
+.ct-pkg em { color: #ffcc00; font-style: normal; font-size: 14px; font-weight: 600; display: inline-block; margin-top: 10px; }
+.ct-why { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.ct-why li { color: #c4c8cf; font-size: 16px; line-height: 1.7; padding: 14px 18px 14px 44px; background: #15181e; border-radius: 12px; position: relative; }
+.ct-why li::before { content: '✓'; position: absolute; left: 18px; top: 14px; color: #ffcc00; font-weight: 700; }
+.ct-why strong { color: #fff; }
+.ct-table-wrap { border: 1px solid rgba(255,255,255,.08); border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
+.ct-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.ct-table th { background: #15181e; color: #ffcc00; text-align: left; padding: 12px 14px; }
+.ct-table td { color: #c4c8cf; padding: 12px 14px; border-top: 1px solid rgba(255,255,255,.06); }
+.ct-table td a { color: #fff; font-weight: 600; text-decoration: none; }
+.ct-table td:nth-child(n+2) { white-space: nowrap; }
+.ct-faq details { background: #15181e; border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 0 20px; margin-bottom: 10px; }
+.ct-faq summary { cursor: pointer; color: #fff; font-size: 17px; font-weight: 600; padding: 16px 0; }
+.ct-faq details p { margin: 0 0 16px; }
+.ct-final { margin-top: 64px; text-align: center; background: linear-gradient(135deg, #1d1a10, #15181e 70%); border: 1px solid rgba(255,204,0,.5); border-radius: 18px; padding: 44px 24px; }
+.ct-final p { color: #c4c8cf; font-size: 16px; line-height: 1.7; max-width: 640px; margin: 0 auto 22px; }
+.ct-others { margin-top: 40px; text-align: center; color: #7a7e85; font-size: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 14px; }
+.ct-others a { color: #ffcc00; text-decoration: none; border: 1px solid rgba(255,204,0,.35); border-radius: 30px; padding: 5px 14px; }
+
+@media (max-width: 900px) {
+  .ct-hero { padding: 30px 20px 40px; }
+  .ct-hero-inner { grid-template-columns: 1fr; gap: 26px; }
+  .ct-hero-img { order: -1; }
+  .ct-hero h1 { font-size: 34px; }
+  .ct-intro { font-size: 16px; }
+  .ct-ctas { flex-direction: column; }
+  .ct-ctas a { width: 100%; text-align: center; }
+  .ct-two, .ct-packages { grid-template-columns: 1fr; }
+  .ct-section { padding-top: 44px; }
+  .ct-section h2, .ct-final h2 { font-size: 25px; }
+  .ct-card h2 { font-size: 22px; }
+  .ct-ticks li { font-size: 13px; }
+}
+</style>

@@ -1,0 +1,104 @@
+{%- comment -%}
+  Small WhatsApp chat card (owner request 2026-11-26).
+  - Slides up beside the WhatsApp button; never covers the page (no full-screen popup: Google
+    penalises intrusive popups on mobile pages that people land on from search).
+  - Shows 2 seconds after EVERY page opens, on all pages (owner 2026-11-26: 12 s was too slow, and
+    once-per-visit meant it was missing on the next pages).
+  - Closing it (x or Esc) hides it for the rest of that visit (browser session) only.
+    Not shown if the visitor already tapped a WhatsApp button on the page, or while they are typing in a form.
+  - Uses the same WhatsApp message as the header / sticky bar (twa_wa_href from the layout).
+  - Tracking: the tap is a normal "whatsapp_click" with button_location "chat_popup";
+    showing the card pushes "chat_popup_view" (ignored by the Ads conversions).
+  - Turn it off on a page with front matter  chat_card: false
+  - Text: page front matter chat_card_text wins; otherwise chosen by page type below.
+{%- endcomment -%}
+{%- if page.chat_card != false -%}
+{%- comment -%} Card text per page type (owner 2026-11-26: each page should talk about its own trip). {%- endcomment -%}
+{%- if page.chat_card_text -%}
+  {%- assign twa_cc_text = page.chat_card_text -%}
+{%- elsif page.layout == "taxi_page" and page.to_location -%}
+  {%- capture twa_cc_text -%}Going to {{ page.to_location }}? Send me your travel date and pickup time on WhatsApp and I'll reply with the taxi fare.{%- endcapture -%}
+{%- elsif page.layout == "tempo_page" and page.destination_name -%}
+  {%- capture twa_cc_text -%}Group trip to {{ page.destination_name }}? Tell me how many people and your date on WhatsApp, and I'll send the Tempo Traveller fare.{%- endcapture -%}
+{%- elsif page.layout == "tour_page" and page.package_name -%}
+  {%- capture twa_cc_text -%}Interested in the {{ page.package_name }}? Send me your dates and number of travellers on WhatsApp and I'll send the price. I can change the plan to suit you.{%- endcapture -%}
+{%- elsif page.layout == "country_page" and page.country -%}
+  {%- assign twa_cc_country = site.data.countries[page.country] -%}
+  {%- capture twa_cc_text -%}Planning a Kerala trip from {{ twa_cc_country.name }}? Send me your dates on WhatsApp and I'll suggest a route and send a price.{%- endcapture -%}
+{%- elsif page.collection == "posts" -%}
+  {%- assign twa_cc_text = "Planning your Kerala trip? Ask me anything on WhatsApp. I reply personally." -%}
+{%- else -%}
+  {%- assign twa_cc_text = "Need a taxi, a Tempo Traveller or a Kerala tour? Tell me where and when on WhatsApp and I'll send a quote." -%}
+{%- endif -%}
+<div id="twa-chat" class="twa-chat" role="dialog" aria-label="Chat with Anand on WhatsApp" hidden>
+<div class="twa-chat-head">
+<img src="/images/anand-chat-avatar.webp" width="44" height="44" alt="Anand" decoding="async">
+<div class="twa-chat-who"><strong>Anand · Tour With Anand</strong><span><i class="twa-chat-dot"></i>Usually replies within minutes</span></div>
+<button type="button" class="twa-chat-x" aria-label="Close">&times;</button>
+</div>
+<div class="twa-chat-body">
+<p class="twa-chat-msg">Hi 👋 I'm Anand. {{ twa_cc_text }}</p>
+</div>
+<a href="{{ twa_wa_href }}" class="twa-chat-btn" target="_blank" rel="noopener" data-loc="chat_popup">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+Chat on WhatsApp
+</a>
+</div>
+<style>
+.twa-chat { position: fixed; right: 30px; bottom: 170px; z-index: 1000; width: 320px; max-width: calc(100vw - 24px); background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 18px 45px rgba(0,0,0,.35); font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif; opacity: 0; transform: translateY(16px) scale(.97); transform-origin: bottom right; transition: opacity .25s ease, transform .25s ease; }
+.twa-chat.is-open { opacity: 1; transform: none; }
+.twa-chat[hidden] { display: none; }
+.twa-chat-head { display: flex; align-items: center; gap: 11px; padding: 13px 12px 13px 14px; background: #0b6b3a; color: #fff; }
+.twa-chat-head img { width: 44px; height: 44px; border-radius: 50%; flex: none; border: 2px solid rgba(255,255,255,.85); }
+.twa-chat-who { flex: 1; min-width: 0; line-height: 1.25; }
+.twa-chat-who strong { display: block; font-size: 14.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.twa-chat-who span { display: flex; align-items: center; gap: 6px; font-size: 12px; opacity: .92; margin-top: 2px; }
+.twa-chat-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; flex: none; }
+.twa-chat-x { flex: none; width: 34px; height: 34px; margin: -4px -2px 0 0; border: 0; border-radius: 50%; background: transparent; color: #fff; font-size: 26px; line-height: 1; cursor: pointer; }
+.twa-chat-x:hover, .twa-chat-x:focus-visible { background: rgba(255,255,255,.15); outline: none; }
+.twa-chat-body { padding: 16px 14px 6px; background: #efeae2; }
+.twa-chat-msg { position: relative; margin: 0; padding: 11px 13px; background: #fff; color: #1f2328; border-radius: 0 12px 12px 12px; font-size: 14.5px; line-height: 1.5; box-shadow: 0 1px 1px rgba(0,0,0,.08); }
+.twa-chat-btn { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 0; padding: 14px 16px calc(14px + 0px); background: #1da851; color: #fff !important; font-size: 16px; font-weight: 700; text-decoration: none !important; border-top: 10px solid #efeae2; }
+.twa-chat-btn:hover { background: #179647; }
+.twa-chat-btn svg { width: 20px; height: 20px; fill: #fff; flex: none; }
+@media (max-width: 768px) {
+  .twa-chat { right: 10px; left: auto; bottom: calc(66px + env(safe-area-inset-bottom, 0px)); width: 340px; max-width: calc(100vw - 20px); }
+  .twa-chat-msg { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .twa-chat { transition: none; } }
+</style>
+<script>
+(function () {
+  var card = document.getElementById('twa-chat');
+  if (!card) { return; }
+  var CLOSED = 'twaChatClosed';
+  function get(k) { try { return window.sessionStorage.getItem(k); } catch (e) { return null; } }
+  function put(k, v) { try { window.sessionStorage.setItem(k, v); } catch (e) {} }
+  if (get(CLOSED)) { return; }
+  var shown = false, done = false;
+  // Visitor already tapped a WhatsApp button on this page: don't interrupt.
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+    if (a && !card.contains(a)) { done = true; }
+  }, true);
+  function show() {
+    if (shown || done) { return; }
+    var ae = document.activeElement;
+    if (ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) { setTimeout(show, 6000); return; }
+    shown = true;
+    card.hidden = false;
+    requestAnimationFrame(function () { requestAnimationFrame(function () { card.classList.add('is-open'); }); });
+    if (typeof twaTrack === 'function') { twaTrack('chat_popup_view', 'chat_popup', ''); }
+  }
+  function hide() {
+    card.classList.remove('is-open');
+    put(CLOSED, '1');
+    setTimeout(function () { card.hidden = true; }, 260);
+  }
+  setTimeout(show, 2000);
+  card.querySelector('.twa-chat-x').addEventListener('click', hide);
+  card.querySelector('.twa-chat-btn').addEventListener('click', function () { setTimeout(hide, 150); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && shown && !card.hidden) { hide(); } });
+})();
+</script>
+{%- endif -%}
