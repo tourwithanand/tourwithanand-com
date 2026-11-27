@@ -2,6 +2,7 @@
 layout: default
 title: "How to Avoid Common Tourist Scams in Kerala and Tamil Nadu"
 date: 2026-07-25 10:00:00 +0530
+last_modified_at: 2026-11-27
 description: "The scams most likely to catch out first-time visitors to Kerala and Tamil Nadu, from fake guides to inflated taxi fares, and simple ways to avoid every one of them."
 permalink: /blog/avoid-tourist-scams-kerala-tamil-nadu/
 image: "/images/places-to-visit-tamilnadu-mobile.png"
@@ -33,7 +34,8 @@ keywords: "avoid scams kerala, taxi scams india tourists, fake guide scam india,
 "url": "https://tourwithanand.com/images/tour-with-anand-logo.png"
 }
 },
-"datePublished": "{{ page.date | date_to_xmlschema }}"
+"datePublished": "{{ page.date | date_to_xmlschema }}",
+"dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"
 }
 </script>
 
@@ -179,7 +181,7 @@ margin-top: 25px;
 <p>Most visitors to Kerala and Tamil Nadu have a completely trouble-free trip. The handful who don't almost always run into the same small set of scams, and every one of them is easy to avoid once you know what to look for.</p>
 
 <h2>1. The Overpriced "Prepaid" Taxi</h2>
-<p>At busy transport hubs, unofficial touts sometimes present themselves as running an official prepaid taxi counter and quote a fare well above the real rate. The fix: agree your fare in writing, such as a WhatsApp message, before you travel, with a company you've already vetted, not on the spot.</p>
+<p>At busy transport hubs, unofficial touts sometimes present themselves as running an official prepaid taxi counter and quote a fare well above the real rate. The fix: agree your fare in writing, such as a WhatsApp message, before you travel, with a company you've already vetted, not on the spot. For example, our <a href="/taxi/kochi-airport/">Kochi Airport taxi</a> page lists fixed fares from the airport to Aluva, Ernakulam, Fort Kochi, Munnar and Alappuzha, so you know the price before you land.</p>
 
 <h2>2. The "Helpful" Stranger Who Is Actually an Unofficial Guide</h2>
 <p>A friendly local offers to show you around, then asks for a large tip or steers you into a shop paying them commission. A polite decline and pointing to your own prearranged driver or guide ends this quickly.</p>

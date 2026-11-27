@@ -2,6 +2,7 @@
 layout: default
 title: "What Every International Traveler Should Know Before Visiting Kerala"
 date: 2026-07-01 10:00:00 +0530
+last_modified_at: 2026-11-27
 description: "Planning a trip to God's Own Country? Read these essential Kerala travel tips for international travelers covering safety, culture, and transit."
 permalink: /blog/kerala-travel-tips-international-travelers/
 image: "/images/places-to-visit-kerala-mobile.png"
@@ -33,7 +34,8 @@ keywords: "kerala travel tips for international travelers, visiting kerala for t
       "url": "https://tourwithanand.com/Tour%20With%20Anand%20Logo%20Home.png"
     }
   },
-  "datePublished": "{{ page.date | date_to_xmlschema }}"
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"
 }
 </script>
 
@@ -188,7 +190,7 @@ keywords: "kerala travel tips for international travelers, visiting kerala for t
 
     <h2>1. Getting Your Indian Visa & Arriving at Kochi Airport</h2>
     
-    <p>Most international tourists require an <strong>e-Visa</strong> to enter India. Ensure you apply online through the official government portal at least 4 to 7 days before your departure flight. When booking your flights, we highly recommend landing at <strong>Cochin International Airport (COK)</strong>. It is universally recognized as the most convenient, clean, and well-organized gateway into Kerala, offering smooth customs processing for foreigners.</p>
+    <p>Most international tourists require an <strong>e-Visa</strong> to enter India. Ensure you apply online through the official government portal at least 4 to 7 days before your departure flight. When booking your flights, we highly recommend landing at <strong>Cochin International Airport (COK)</strong>. It is universally recognized as the most convenient, clean, and well-organized gateway into Kerala, offering smooth customs processing for foreigners. To skip the taxi queue after a long flight, you can pre-book a <a href="/taxi/kochi-airport/">Kochi Airport taxi</a> so your driver is already waiting at arrivals.</p>
 
     <h2>2. Managing Money and Connectivity</h2>
     
