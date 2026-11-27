@@ -19,12 +19,38 @@ Secret GSC_SA_JSON = the service account's JSON key. Optional variable GSC_SITE
 """
 import csv, datetime as dt, json, os, sys
 
-TARGETS = [
-    "kochi airport taxi", "cochin airport taxi", "kochi airport taxi service",
-    "cochin airport taxi service", "kochi airport taxi fare", "taxi from kochi airport",
-    "kochi airport to munnar taxi", "cochin airport to munnar taxi", "kochi airport cab",
-    "sabarimala taxi from kochi airport", "tempo traveller kochi",
-]
+# Four business segments: 2 services (taxi, tempo traveller) x 2 airports (Kochi, Trivandrum).
+SEGMENTS = {
+    "Taxi – Kochi airport": [
+        "kochi airport taxi", "cochin airport taxi", "kochi airport taxi service",
+        "cochin airport taxi service", "kochi airport taxi fare", "taxi from kochi airport",
+        "kochi airport cab", "kochi airport to munnar taxi", "cochin airport to munnar taxi",
+        "sabarimala taxi from kochi airport",
+    ],
+    "Tempo traveller – Kochi airport": [
+        "tempo traveller kochi", "tempo traveller kochi airport", "tempo traveller cochin airport",
+        "tempo traveller rental kochi", "tempo traveller ernakulam", "12 seater tempo traveller kochi",
+        "urbania kochi", "tempo traveller kochi to munnar",
+    ],
+    "Taxi – Trivandrum airport": [
+        "trivandrum airport taxi", "trivandrum airport taxi service", "trivandrum airport cab",
+        "airport taxi trivandrum", "thiruvananthapuram airport taxi", "trivandrum airport cab services",
+        "taxi from trivandrum airport", "trivandrum airport to kovalam taxi", "trivandrum airport to varkala taxi",
+    ],
+    "Tempo traveller – Trivandrum airport": [
+        "tempo traveller trivandrum", "tempo traveller in trivandrum", "trivandrum tempo traveller",
+        "12 seater traveller in trivandrum", "tempo traveller trivandrum airport", "traveller trivandrum",
+    ],
+}
+TARGETS = [k for ks in SEGMENTS.values() for k in ks]
+SEGMENT_RULES = {  # used for segment totals over ALL queries
+    "Taxi – Kochi airport": lambda q: ("kochi" in q or "cochin" in q or "cial" in q) and not TEMPO(q),
+    "Tempo traveller – Kochi airport": lambda q: TEMPO(q) and not TVM(q),
+    "Taxi – Trivandrum airport": lambda q: TVM(q) and not TEMPO(q),
+    "Tempo traveller – Trivandrum airport": lambda q: TVM(q) and TEMPO(q),
+}
+TEMPO = lambda q: any(w in q for w in ("tempo", "traveller", "traveler", "urbania", "seater", "minibus", "mini bus"))
+TVM = lambda q: any(w in q for w in ("trivandrum", "thiruvananthapuram", "tvm", "kovalam", "varkala"))
 
 def main(out_dir):
     raw = os.environ.get("GSC_SA_JSON", "").strip()
@@ -84,12 +110,21 @@ def main(out_dir):
     p = {r["keys"][0]: r for r in prev}
     lines = [f"# Search Console summary ({site})", "",
              f"This week: {w1[0]} to {w1[1]} · last week: {w0[0]} to {w0[1]}", "",
-             "| Keyword | Position (this / last) | Impressions (this / last) | Clicks (this / last) |",
-             "|---|---|---|---|"]
+             "## Segment totals (all queries, this week / last week)", "",
+             "| Segment | Impressions | Clicks |", "|---|---|---|"]
+    for name, rule in SEGMENT_RULES.items():
+        ci = [r for r in cur if rule(r["keys"][0].lower())]
+        pi = [r for r in prev if rule(r["keys"][0].lower())]
+        lines.append(f"| {name} | {int(sum(r['impressions'] for r in ci))} / {int(sum(r['impressions'] for r in pi))} "
+                     f"| {int(sum(r['clicks'] for r in ci))} / {int(sum(r['clicks'] for r in pi))} |")
     fmt = lambda r, k: ("-" if r is None else (round(r[k], 1) if k == "position" else int(r[k])))
-    for k in TARGETS:
-        a, b = c.get(k), p.get(k)
-        lines.append(f"| {k} | {fmt(a,'position')} / {fmt(b,'position')} | {fmt(a,'impressions')} / {fmt(b,'impressions')} | {fmt(a,'clicks')} / {fmt(b,'clicks')} |")
+    for name, keys in SEGMENTS.items():
+        lines += ["", f"## {name}", "",
+                  "| Keyword | Position (this / last) | Impressions (this / last) | Clicks (this / last) |",
+                  "|---|---|---|---|"]
+        for k in keys:
+            a, b = c.get(k), p.get(k)
+            lines.append(f"| {k} | {fmt(a,'position')} / {fmt(b,'position')} | {fmt(a,'impressions')} / {fmt(b,'impressions')} | {fmt(a,'clicks')} / {fmt(b,'clicks')} |")
     quick = [r for r in cur if 8 <= r["position"] <= 20 and r["impressions"] >= 3]
     lines += ["", "## Quick wins (position 8–20, last 7 days)", ""]
     lines += [f"- {r['keys'][0]}: position {round(r['position'],1)}, {int(r['impressions'])} impressions"
