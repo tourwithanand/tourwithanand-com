@@ -9,6 +9,9 @@ collections:
     output: true
   tour_packages:
     output: true
+  # Old addresses (404s in Search Console) that now redirect to the right page
+  redirects:
+    output: true
 
 # Microsoft Clarity project ID (empty = Clarity off). Paste the ID to switch it on.
 clarity_id: "zjr7oleg5u"
