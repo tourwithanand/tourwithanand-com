@@ -2,6 +2,7 @@
 layout: default
 title: "Kochi Airport to Munnar: Taxi Fare, Route & Travel Time Guide"
 date: 2026-07-26 10:00:00 +0530
+last_modified_at: 2026-11-27
 description: "Everything you need to plan a Kochi Airport to Munnar taxi transfer: distance, travel time, route highlights, and an honest breakdown of what a fair fare looks like."
 permalink: /blog/kochi-airport-to-munnar-taxi-fare-guide/
 image: "/images/banner-kochi-airport-to-munnar-taxi.png"
@@ -33,7 +34,8 @@ keywords: "kochi airport to munnar taxi, munnar taxi fare, kochi to munnar dista
 "url": "https://tourwithanand.com/images/tour-with-anand-logo.png"
 }
 },
-"datePublished": "{{ page.date | date_to_xmlschema }}"
+"datePublished": "{{ page.date | date_to_xmlschema }}",
+"dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"
 }
 </script>
 
@@ -211,6 +213,7 @@ margin-top: 25px;
 <div class="blog-cta-box">
 <h3>Get an Exact Quote for Your Munnar Transfer</h3>
 <p>We run this route daily and can give you an exact, all-inclusive fare based on your travel date, group size, and preferred vehicle. Message us on WhatsApp with your flight details and we'll confirm pickup and pricing directly.</p>
+<p>You can see our starting fares by car type on the <a href="/taxi/kochi-airport-to-munnar/">Kochi Airport to Munnar taxi</a> page, and fares to other places on our main <a href="/taxi/kochi-airport/">Kochi Airport taxi</a> page.</p>
 <div class="blog-cta-buttons">
 <a href="https://wa.me/919400620615" class="luxury-btn">Book via WhatsApp</a>
 <a href="tel:+919400620615" class="luxury-btn-outline">Call Anand Now</a>
