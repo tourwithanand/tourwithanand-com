@@ -9,3 +9,4 @@
 - 28 Nov 2026: PR #41 opened - Trivandrum Airport arrival guide.
 - 28 Nov 2026: PR #41 merged ("merge 41" from Anand), Pages build succeeded.
 - 28 Nov 2026: PR #42 opened - Facebook, Instagram, Tripadvisor links and sameAs.
+- 28 Nov 2026: PR #42 merged ("merge 42" from Anand).
