@@ -117,6 +117,7 @@ body, html { margin: 0; padding: 0; background-color: #0a0b0e; color: #e0e0e0; f
 "addressRegion": "Kerala",
 "addressCountry": "IN"
 },
+"sameAs": ["https://www.facebook.com/share/1MMfQBWTyZ/", "https://www.instagram.com/tour_with_anand/", "https://www.youtube.com/@tour_with_anand", "https://www.tripadvisor.in/Attraction_Review-g3581631-d25427755-Reviews-Tour_With_Anand-Nedumbassery_Kochi_Cochin_Ernakulam_District_Kerala.html"],
 "url": "{{ site.url }}{{ page.url }}"
 }
 </script>
@@ -237,6 +238,12 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 <div class="footer-contact-item">
 <span class="icon">📍</span>
 <span>Kochi International Airport (COK), Kerala, India</span>
+</div>
+<div class="footer-social">
+<a href="https://www.facebook.com/share/1MMfQBWTyZ/" target="_blank" rel="noopener">Facebook</a>
+<a href="https://www.instagram.com/tour_with_anand/" target="_blank" rel="noopener">Instagram</a>
+<a href="https://www.youtube.com/@tour_with_anand" target="_blank" rel="noopener">YouTube</a>
+<a href="https://www.tripadvisor.in/Attraction_Review-g3581631-d25427755-Reviews-Tour_With_Anand-Nedumbassery_Kochi_Cochin_Ernakulam_District_Kerala.html" target="_blank" rel="noopener">Tripadvisor</a>
 </div>
 </div>
 
@@ -473,6 +480,9 @@ line-height: 1.5;
 .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; color: #a0a4ab; font-size: 15px; line-height: 1.6;}
 .footer-contact-item a { color: #ffcc00; text-decoration: none; transition: color 0.3s ease; }
 .footer-contact-item a:hover { color: #fff; }
+.footer-social { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; font-size: 15px; }
+.footer-social a { color: #ffcc00; text-decoration: none; padding: 6px 0; }
+.footer-social a:hover { color: #fff; }
 .footer-bottom { background: #020203; padding: 25px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
 .footer-bottom p { color: #555; font-size: 13px; margin: 0; }
 
@@ -580,6 +590,7 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 .footer-grid { grid-template-columns: 1fr; gap: 30px; padding: 40px 15px 80px; text-align: center; }
 .footer-logo { margin: 0 auto 20px; }
 .footer-contact-item { justify-content: center; }
+.footer-social { justify-content: center; }
 
 /* CONVERT FLOATING CORNER WIDGETS TO A CLEAN STICKY BOTTOM BAR */
 body { padding-bottom: calc(55px + env(safe-area-inset-bottom, 0px)) !important; }
