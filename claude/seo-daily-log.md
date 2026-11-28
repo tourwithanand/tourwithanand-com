@@ -20,3 +20,4 @@ Enquiries: WhatsApp 92 vs 148 (whatsapp_click + Event_Whatsapp; event renamed ~2
 Done: PR #41 (open) https://github.com/tourwithanand/tourwithanand-com/pull/41 - Trivandrum arrival guide + 3 links + WebP.
 Noted: no llms.txt in repo. Trivandrum pages use a 2.3 MB PNG hero (switch to the new WebP on an improve day).
 Open questions: one-way fares from Trivandrum airport; is T1 domestic / T2 international and where does the driver wait; vehicles/24x7 at Trivandrum; approx US$/GBP/EUR fares OK?
+Update: Anand approved; #41 merged and Pages build succeeded 28 Nov 01:34 UTC. Task for next run: confirm indexing request for the guide; distances check not separately confirmed.

@@ -8,7 +8,7 @@ Review 27 Dec, then write the next plan from learnings.md.
 - [x] Terminal 1 / 3 guide on the Kochi airport page (PR #34)
 - [x] 6 blog posts link to the Kochi airport page (PR #37)
 - [x] Redirect old 404 addresses (PR #39)
-- [ ] Trivandrum taxi: arrival guide (PR #41, waiting)
+- [x] Trivandrum taxi: arrival guide (PR #41, live 28 Nov)
 - [ ] Kochi taxi: upgrade the Amrita Hospital route page (77 impressions, position 8.5, 0 clicks) - next improve day (Sun 29 Nov)
 - [ ] Tempo Trivandrum: upgrade page for "12 seater traveller in trivandrum" (position 10)
 - [ ] Tempo Kochi: improve /tempo-traveller-kochi-airport/ (brings enquiries; "discovered, not indexed" on 27 Nov)

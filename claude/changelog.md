@@ -7,3 +7,4 @@
 - 27 Nov 2026: Tripadvisor review link shared with drivers.
 - 27 Nov 2026: PRs #37, #38, #39, #40 merged.
 - 28 Nov 2026: PR #41 opened - Trivandrum Airport arrival guide.
+- 28 Nov 2026: PR #41 merged ("merge 41" from Anand), Pages build succeeded.
