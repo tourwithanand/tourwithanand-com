@@ -11,3 +11,4 @@
   Taxi – Kochi airport · Tempo traveller – Kochi airport · Taxi – Trivandrum airport · Tempo traveller – Trivandrum airport.
   Work on all four every week.
 - 28 Nov: Anand says Tour With Anand has Facebook and Instagram pages. No links to them found in the website repo. Links received 28 Nov: https://www.facebook.com/share/1MMfQBWTyZ/ and https://www.instagram.com/tour_with_anand/ and YouTube https://www.youtube.com/@tour_with_anand (all added in PR 42). Open: Ertiga seats 4 or 5; cancellation rule.
+- 28 Nov: Anand sent 19 real Ertiga photos (2 cars; hills, tea estates, waterfall, hotel, interiors, one beside Adiyogi statue). 8 used in PR 43; unused ones can serve route pages later (ask him to resend if needed).
