@@ -5,6 +5,11 @@
 - [x] Search Console 404 "Validate fix" (27 Nov)
 - [x] Tripadvisor review link shared with drivers (27 Nov)
 
+## Given 28 Nov (waiting for confirmation)
+1. Merge #41 + Request indexing (guide URL; also /tempo-traveller-kochi-airport/)
+2. Answer Trivandrum fares / terminal / meeting point questions
+3. Bing Places listing
+
 ## To do
 - [ ] Bing Places: list Tour With Anand (import from Bing Webmaster) – same name/phone/website
 - [ ] Apple Business Connect (businessconnect.apple.com) listing

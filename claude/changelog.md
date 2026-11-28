@@ -5,3 +5,5 @@
 - 27 Nov 2026: PR #39 opened – redirects 37 old 404 URLs to current pages.
 - 27 Nov 2026: Bing Webmaster Tools set up, sitemap submitted.
 - 27 Nov 2026: Tripadvisor review link shared with drivers.
+- 27 Nov 2026: PRs #37, #38, #39, #40 merged.
+- 28 Nov 2026: PR #41 opened - Trivandrum Airport arrival guide.

@@ -1,8 +1,8 @@
 # Segment status (update every run)
 
-| Segment | Main page(s) | Impressions/week (18–24 Nov) | Best keyword | Notes |
+| Segment | Main page(s) | Impr (18-24 Nov vs 11-17) | Best keyword | Last improvement / next |
 |---|---|---|---|---|
-| Taxi – Kochi airport | /taxi/kochi-airport/ + _taxi_routes/ | 41 | cochin airport to munnar taxi (pos 3) | Main keywords not ranking yet; Sabarimala season now. Top enquiry page. |
-| Tempo traveller – Kochi airport | /tempo-traveller-kochi-airport/, /tempo-traveller-rentals-kochi-kerala/ | 1 | – | Strong enquiries from Ads but almost no organic visibility. |
-| Taxi – Trivandrum airport | /trivandrum-airport-taxi/ | 27 | trivandrum airport taxi (pos ~88) | Ranks very low – needs unique, helpful content. |
-| Tempo traveller – Trivandrum airport | /tempo-traveller-trivandrum-airport/ | 23 | 12 seater traveller in trivandrum (pos 10) | Closest to page 1 – quick win segment. |
+| Taxi - Kochi airport | /taxi/kochi-airport/ + _taxi_routes/ | 41 / 30 | cochin airport to munnar taxi (3) | #37 (27 Nov) / Amrita page 29 Nov |
+| Tempo - Kochi airport | /tempo-traveller-kochi-airport/, /tempo-traveller-rentals-kochi-kerala/ | 1 / 1 | - | none yet / guide 1 Dec |
+| Taxi - Trivandrum airport | /trivandrum-airport-taxi/ | 27 / 34 | ~85 | #41 guide (open) / unique page content |
+| Tempo - Trivandrum airport | /tempo-traveller-trivandrum-airport/ | 23 / 15 | 12 seater (10.3) | link in #41 / page upgrade (quick win) |
