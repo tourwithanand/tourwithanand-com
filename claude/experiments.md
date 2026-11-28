@@ -10,4 +10,4 @@
 | 28 Nov | #41 | New guide /blog/trivandrum-airport-arrival-guide/ + 3 internal links | "trivandrum airport taxi" -> /trivandrum-airport-taxi/ | page 74.8 / 32 / 0 / 0%; query 88 / 7 / 0 (28d: 82.2 / 16) | 19 Dec | - |
 | 28 Nov | #41 | Link from tempo page to guide | "12 seater traveller in trivandrum" -> /tempo-traveller-trivandrum-airport/ | query 10.3 / 3 / 0; page 18.6 / 28 / 0 | 19 Dec | - |
 | 28 Nov | #42 | Social/Tripadvisor links + sameAs | brand and "kochi airport taxi" -> /taxi/kochi-airport/ | 16.5 / 19 / 2 / 10.5%; main keyword no impressions | 19 Dec | - |
-| 28 Nov | #43 (open) | 8 real Ertiga photos | /taxi/kochi-airport/ (enquiries) | 16.5 / 19 / 2 / 10.5% | 21 days after merge | - |
+| 28 Nov | #43 | 8 real Ertiga photos | /taxi/kochi-airport/ (enquiries) | 16.5 / 19 / 2 / 10.5% | 19 Dec | - |

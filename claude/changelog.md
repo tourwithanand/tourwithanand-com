@@ -11,3 +11,4 @@
 - 28 Nov 2026: PR #42 opened - Facebook, Instagram, Tripadvisor links and sameAs.
 - 28 Nov 2026: PR #42 merged ("merge 42" from Anand).
 - 28 Nov 2026: PR #43 opened - Ertiga photo section on /taxi/kochi-airport/.
+- 28 Nov 2026: PR #43 merged ("merge 43" from Anand).
