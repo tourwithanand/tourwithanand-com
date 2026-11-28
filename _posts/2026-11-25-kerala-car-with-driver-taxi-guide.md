@@ -2,6 +2,7 @@
 layout: default
 title: "Car with Driver in Kerala: 2026 Guide to Hiring a Taxi"
 date: 2026-11-25 06:00:00 +0530
+last_modified_at: 2026-11-28
 description: "Planning a Kerala trip? How to hire a private car and driver: which vehicle to choose, how taxi fares work, sample routes with drive times, and booking tips."
 permalink: /blog/kerala-car-with-driver-taxi-guide/
 image: "/images/kochi-airport-taxi-anand-welcome-cat-900.webp"
@@ -24,7 +25,7 @@ keywords: "car with driver kerala, kerala taxi service, private driver kerala, k
     "logo": { "@type": "ImageObject", "url": "https://tourwithanand.com/images/tour-with-anand-logo.png" }
   },
   "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.date | date_to_xmlschema }}"
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"
 }
 </script>
 
@@ -186,7 +187,7 @@ keywords: "car with driver kerala, kerala taxi service, private driver kerala, k
 </div>
 
 <h2 id="routes">Popular Routes and Drive Times from Kochi Airport</h2>
-<p>Most Kerala trips start at Cochin International Airport (COK). These are approximate road distances and drive times under normal traffic; allow extra time in monsoon and on holiday weekends.</p>
+<p>Most Kerala trips start at Cochin International Airport (COK). These are approximate road distances and drive times under normal traffic; allow extra time in monsoon and on holiday weekends. Landing in the south instead? See our <a href="/blog/trivandrum-airport-arrival-guide/">Trivandrum Airport arrival guide</a>.</p>
 <div class="blog-table-wrap">
 <table class="blog-table">
 <thead><tr><th>Kochi Airport to</th><th>Distance</th><th>Drive time</th><th>Why go</th></tr></thead>
