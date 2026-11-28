@@ -53,3 +53,12 @@ From Search Console: tempo traveller in trivandrum, trivandrum tempo traveller, 
 
 ## Never
 Buying links, fake reviews, keyword stuffing, copied text, thin duplicate pages, price changes.
+
+## Improve-day schedule (added 28 Nov, after Anand asked about indexing/schedule)
+- Sun 29 Nov: Amrita Hospital route page (Taxi Kochi)
+- Wed 2 Dec: /tempo-traveller-trivandrum-airport/ (12 seater query)
+- Fri 4 Dec: Thekkady route page
+- Sun 6 Dec: /tempo-traveller-kochi-airport/
+- Wed 9 Dec: Alleppey route page
+- Fri 11 Dec: /trivandrum-airport-taxi/
+- Sun 13 Dec: Varkala route page
